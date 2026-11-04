@@ -9,7 +9,9 @@ permissions:
 
 jobs:
   linux-amd64:
-    runs-on: ubuntu-24.04
+    # Ubuntu 24.04 dropped the JavaScriptCore GTK 4.0 development package.
+    # GodeJS links libjavascriptcoregtk-4.0.so.18, so build on 22.04.
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out
         uses: actions/checkout@v4
