@@ -48,3 +48,7 @@ jobs:
 
       - name: Build
         run: CGO_ENABLED=1 GOARCH=${{ matrix.arch }} go build ./cmd/gode
+
+      - name: Smoke test
+        if: matrix.arch == 'arm64'
+        run: ./gode -e "console.log(process.version)"

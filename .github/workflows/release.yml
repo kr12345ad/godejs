@@ -66,6 +66,9 @@ jobs:
           cd dist
           shasum -a 256 gode-darwin-${{ matrix.arch }} \
             > gode-darwin-${{ matrix.arch }}.sha256
+          if [ "${{ matrix.arch }}" = "arm64" ]; then
+            ./gode-darwin-arm64 -e "console.log(process.version)"
+          fi
 
       - name: Upload binary
         uses: actions/upload-artifact@v4

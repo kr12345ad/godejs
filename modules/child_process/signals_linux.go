@@ -13,3 +13,21 @@ func platformSignal(name string) (syscall.Signal, bool) {
 	}
 	return 0, false
 }
+
+func platformValidSignal(name string) bool {
+	switch name {
+	case "SIGPWR", "SIGSTKFLT":
+		return true
+	}
+	return false
+}
+
+func platformSignalName(sig syscall.Signal) (string, bool) {
+	switch sig {
+	case syscall.SIGPWR:
+		return "SIGPWR", true
+	case syscall.SIGSTKFLT:
+		return "SIGSTKFLT", true
+	}
+	return "", false
+}

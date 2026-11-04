@@ -202,8 +202,8 @@ func resourceUsage() map[string]any {
 	if err := syscall.Getrusage(syscall.RUSAGE_SELF, &usageInfo); err != nil {
 		return usage
 	}
-	usage["userCPUTime"] = usageInfo.Utime.Sec*1000 + usageInfo.Utime.Usec/1000
-	usage["systemCPUTime"] = usageInfo.Stime.Sec*1000 + usageInfo.Stime.Usec/1000
+	usage["userCPUTime"] = usageInfo.Utime.Sec*1000 + int64(usageInfo.Utime.Usec)/1000
+	usage["systemCPUTime"] = usageInfo.Stime.Sec*1000 + int64(usageInfo.Stime.Usec)/1000
 	usage["maxRSS"] = usageInfo.Maxrss
 	usage["minorPageFault"] = usageInfo.Minflt
 	usage["majorPageFault"] = usageInfo.Majflt

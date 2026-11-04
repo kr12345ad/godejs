@@ -2759,6 +2759,9 @@ func (m *module) makeCPProto() js.Object {
 // sendToChild serializes a message onto the fork channel.
 // signalByNumber maps a libuv signal number to the canonical name Node uses.
 func signalByNumber(n int) (string, bool) {
+	if name, ok := platformSignalName(syscall.Signal(n)); ok {
+		return name, true
+	}
 	switch syscall.Signal(n) {
 	case syscall.SIGABRT:
 		return "SIGABRT", true
@@ -2786,14 +2789,10 @@ func signalByNumber(n int) (string, bool) {
 		return "SIGPIPE", true
 	case syscall.SIGPROF:
 		return "SIGPROF", true
-	case syscall.SIGPWR:
-		return "SIGPWR", true
 	case syscall.SIGQUIT:
 		return "SIGQUIT", true
 	case syscall.SIGSEGV:
 		return "SIGSEGV", true
-	case syscall.SIGSTKFLT:
-		return "SIGSTKFLT", true
 	case syscall.SIGSTOP:
 		return "SIGSTOP", true
 	case syscall.SIGSYS:
@@ -2917,13 +2916,15 @@ func (m *module) disconnectChild(cp js.Object) (js.Value, error) {
 
 // validSignal reports whether name is a signal this platform can deliver.
 func validSignal(name string) bool {
+	if platformValidSignal(name) {
+		return true
+	}
 	switch name {
 	case "SIGABRT", "SIGALRM", "SIGBUS", "SIGCHLD", "SIGCONT", "SIGFPE",
 		"SIGHUP", "SIGILL", "SIGINT", "SIGIO", "SIGIOT", "SIGKILL", "SIGPIPE",
-		"SIGPOLL", "SIGPROF", "SIGPWR", "SIGQUIT", "SIGSEGV", "SIGSTKFLT",
-		"SIGSTOP", "SIGSYS", "SIGTERM", "SIGTRAP", "SIGTSTP", "SIGTTIN",
-		"SIGTTOU", "SIGURG", "SIGUSR1", "SIGUSR2", "SIGVTALRM", "SIGWINCH",
-		"SIGXCPU", "SIGXFSZ":
+		"SIGPOLL", "SIGPROF", "SIGQUIT", "SIGSEGV", "SIGSTOP", "SIGSYS",
+		"SIGTERM", "SIGTRAP", "SIGTSTP", "SIGTTIN", "SIGTTOU", "SIGURG",
+		"SIGUSR1", "SIGUSR2", "SIGVTALRM", "SIGWINCH", "SIGXCPU", "SIGXFSZ":
 		return true
 	}
 	return false

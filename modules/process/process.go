@@ -1222,8 +1222,8 @@ func Install(e *env.Env) js.Object {
 			return js.Value{}, err
 		}
 		out := e.JS.Obj()
-		out.SetNum("userCPUTime", float64(ru.Utime.Sec*1e6+ru.Utime.Usec))
-		out.SetNum("systemCPUTime", float64(ru.Stime.Sec*1e6+ru.Stime.Usec))
+		out.SetNum("userCPUTime", float64(ru.Utime.Sec*1e6+int64(ru.Utime.Usec)))
+		out.SetNum("systemCPUTime", float64(ru.Stime.Sec*1e6+int64(ru.Stime.Usec)))
 		out.SetNum("maxRSS", float64(ru.Maxrss))
 		out.SetNum("sharedMemorySize", float64(ru.Ixrss))
 		out.SetNum("unsharedDataSize", float64(ru.Idrss))
@@ -2023,7 +2023,7 @@ func cpuUsage() (user, system int64) {
 	if err := syscall.Getrusage(syscall.RUSAGE_SELF, &ru); err != nil {
 		return 0, 0
 	}
-	return ru.Utime.Sec*1e6 + ru.Utime.Usec, ru.Stime.Sec*1e6 + ru.Stime.Usec
+	return ru.Utime.Sec*1e6 + int64(ru.Utime.Usec), ru.Stime.Sec*1e6 + int64(ru.Stime.Usec)
 }
 
 func availableMemory() int64 {
