@@ -18,7 +18,7 @@ set -eu
 REPO="${GODE_REPO:-kr12345ad/godejs}"
 PREFIX="${GODE_PREFIX:-$HOME/.local}"
 BIN_DIR="$PREFIX/bin"
-VERSION="${GODE_VERSION:-latest}"
+RELEASE="${GODE_VERSION:-latest}"
 REF="${GODE_REF:-main}"
 MODE="release"
 if [ "${GODE_FROM_SOURCE:-0}" = "1" ]; then
@@ -168,37 +168,14 @@ case "$(uname -m)" in
 esac
 
 asset="gode-${os}-${arch}"
-if [ "$VERSION" = "latest" ]; then
-  endpoint="https://api.github.com/repos/${REPO}/releases/latest"
+if [ "$RELEASE" = "latest" ]; then
+  base="https://github.com/${REPO}/releases/latest/download"
 else
-  endpoint="https://api.github.com/repos/${REPO}/releases/tags/${VERSION}"
+  base="https://github.com/${REPO}/releases/download/${RELEASE}"
 fi
-
-json=$(curl -fsSL -H 'Accept: application/vnd.github+json' "$endpoint") ||
-  die "could not query releases for ${REPO}; use --source to build from source"
-
-tag=""
-url=""
-sha_url=""
-if command -v jq >/dev/null 2>&1; then
-  tag=$(printf '%s' "$json" | jq -r '.tag_name // empty')
-  url=$(printf '%s' "$json" | jq -r --arg n "$asset" \
-    '.assets[]? | select(.name == $n) | .browser_download_url' | head -n 1)
-  sha_url=$(printf '%s' "$json" | jq -r --arg n "${asset}.sha256" \
-    '.assets[]? | select(.name == $n) | .browser_download_url' | head -n 1)
-else
-  tag=$(printf '%s' "$json" |
-    sed -n 's/.*"tag_name":[[:space:]]*"\([^"]*\)".*/\1/p' | head -n 1)
-  url=$(printf '%s' "$json" | tr ',' '\n' |
-    sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*\)".*/\1/p' |
-    grep -F "/${asset}" | grep -vF '.sha256' | head -n 1 || true)
-  sha_url=$(printf '%s' "$json" | tr ',' '\n' |
-    sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*\)".*/\1/p' |
-    grep -F "/${asset}.sha256" | head -n 1 || true)
-fi
-
-[ -n "$tag" ] || die "could not determine the release tag; use --source to build from source"
-[ -n "$url" ] || die "release ${tag} has no ${asset} asset; use --source to build from source"
+url="${base}/${asset}"
+sha_url="${url}.sha256"
+tag="$RELEASE"
 
 tmp=$(mktemp "${TMPDIR:-/tmp}/gode.XXXXXX")
 sha_tmp=""
@@ -209,11 +186,11 @@ cleanup_release() {
 trap cleanup_release EXIT HUP INT TERM
 
 say "Downloading gode ${tag} (${asset})..."
-curl -fsSL "$url" -o "$tmp" || die "could not download ${url}"
+curl --http1.1 --retry 4 --retry-delay 2 -fsSL "$url" -o "$tmp" || die "could not download ${url}"
 
 if [ -n "$sha_url" ]; then
   sha_tmp=$(mktemp "${TMPDIR:-/tmp}/gode-sha.XXXXXX")
-  curl -fsSL "$sha_url" -o "$sha_tmp" || die "could not download ${sha_url}"
+  curl --http1.1 --retry 4 --retry-delay 2 -fsSL "$sha_url" -o "$sha_tmp" || die "could not download ${sha_url}"
   expected=$(awk '{print $1}' "$sha_tmp" | head -n 1)
   if command -v sha256sum >/dev/null 2>&1; then
     actual=$(sha256sum "$tmp" | awk '{print $1}')

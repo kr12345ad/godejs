@@ -30,7 +30,7 @@ Release binaries link `libjavascriptcoregtk-4.0.so.18`. Install the runtime
 package for your distribution:
 
 ```sh
-# Debian / Ubuntu
+# Debian 12 / Ubuntu 22.04
 sudo apt install libjavascriptcoregtk-4.0-18
 
 # Alpine (BusyBox ash)
@@ -39,6 +39,10 @@ sudo apk add webkit2gtk-4.0
 # Fedora
 sudo dnf install webkit2gtk4.0
 ```
+
+Ubuntu 24.04 removed the JavaScriptCore GTK 4.0 packages. GodeJS links the
+4.0 soname, so build and run it in a 22.04 environment or build JSC 4.0 from
+source for 24.04; installing 4.1 does not provide the required soname.
 
 Package names move between distributions and releases. If your package manager
 cannot find the name above, search for the package that provides
@@ -50,7 +54,7 @@ You need Go 1.26+, a C compiler, and the JavaScriptCore GTK 4.0 **development**
 headers:
 
 ```sh
-# Debian / Ubuntu
+# Debian 12 / Ubuntu 22.04
 sudo apt install libjavascriptcoregtk-4.0-dev golang gcc
 
 # Alpine
