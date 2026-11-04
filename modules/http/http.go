@@ -71,6 +71,9 @@ type server struct {
 	port      int
 	family    string
 	tlsConfig *tls.Config
+	http3     bool
+	packet    stdnet.PacketConn
+	h3        any
 
 	headersTimeout   time.Duration
 	keepAliveTimeout time.Duration
@@ -123,6 +126,7 @@ func Install(e *env.Env) js.Object {
 	}
 	m.exports = e.JS.Obj().Keep()
 	m.host = e.JS.Obj().Keep()
+	activeHTTP.Store(e, m)
 
 	m.host.SetFuncHidden("pump", m.pump)
 	m.host.SetFuncHidden("initServer", m.hostInitServer)
@@ -266,7 +270,9 @@ func (m *module) shutdown() {
 	for _, s := range servers {
 		s.listening = false
 		s.closed = true
-		if s.hs != nil {
+		if s.h3 != nil {
+			m.closeHTTP3(s)
+		} else if s.hs != nil {
 			_ = s.hs.Close()
 		}
 		if s.ln != nil {
@@ -341,7 +347,8 @@ func (m *module) hostInitServer(this js.Object, args []js.Value) (js.Value, erro
 		s.headersTimeout = durationOption(o, "headersTimeout", s.headersTimeout)
 		s.keepAliveTimeout = durationOption(o, "keepAliveTimeout", s.keepAliveTimeout)
 		s.requestTimeout = durationOption(o, "requestTimeout", s.requestTimeout)
-		if o.Get("_tls").Bool() {
+		s.http3 = o.Get("_http3").Bool()
+		if o.Get("_tls").Bool() || s.http3 {
 			cfg, err := tlsServerConfig(o)
 			if err != nil {
 				return js.Value{}, err
@@ -456,6 +463,9 @@ func (m *module) hostSrvListen(this js.Object, args []js.Value) (js.Value, error
 	if err != nil {
 		return js.Value{}, err
 	}
+	if s.http3 {
+		return m.listenHTTP3(s, t, cb)
+	}
 
 	ln, listenErr := clusterutil.Listen(t.network, t.address)
 	if listenErr != nil {
@@ -563,7 +573,9 @@ func (m *module) hostSrvClose(this js.Object, args []js.Value) (js.Value, error)
 	s.closeCb = cb
 	s.listening = false
 	s.obj.SetBool("listening", false)
-	if s.hs != nil {
+	if s.h3 != nil {
+		m.closeHTTP3(s)
+	} else if s.hs != nil {
 		_ = s.hs.Close()
 	} else if s.ln != nil {
 		_ = s.ln.Close()

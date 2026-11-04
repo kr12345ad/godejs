@@ -70,6 +70,7 @@ func Modules() []Info {
 		{Name: "events", Install: events.Install, Implemented: events.Implemented},
 		{Name: "fs", Install: fs.Install, Implemented: fs.Implemented},
 		{Name: "http", Install: godehttp.Install, Implemented: godehttp.Implemented},
+		{Name: "http3", Install: godehttp.InstallHTTP3, Implemented: godehttp.HTTP3Implemented},
 		{Name: "http2", Install: http2.Install, Implemented: http2.Implemented},
 		{Name: "https", Install: https.Install, Implemented: https.Implemented},
 		{Name: "module", Install: module.Install, Implemented: module.Implemented},

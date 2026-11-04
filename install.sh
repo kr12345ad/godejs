@@ -1,20 +1,48 @@
 #!/bin/sh
-# Install the latest GodeJS release.
+# GodeJS installer. This is POSIX sh and runs under BusyBox ash on Alpine.
 #
 # Usage:
-#   curl -fsSL https://YOUR_PAGES_URL/install.sh | sh
+#   curl -fsSL https://kr12345ad.github.io/godejs/install.sh | sh
+#   curl -fsSL https://kr12345ad.github.io/godejs/install.sh | sh -s -- --source
+#   ./install.sh --source
 #
 # Optional environment:
-#   GODE_REPO=owner/repo     GitHub repository to read releases from
-#   GODE_VERSION=v0.1.0      Install a specific release instead of latest
-#   GODE_PREFIX=$HOME/.local Install under $GODE_PREFIX/bin/gode
+#   GODE_REPO=owner/repo      GitHub repository to read releases from
+#   GODE_VERSION=v0.1.0       Install a specific release instead of latest
+#   GODE_PREFIX=$HOME/.local  Install under $GODE_PREFIX/bin/gode
+#   GODE_FROM_SOURCE=1        Build from source instead of downloading a release
+#   GODE_REF=main             Branch or tag used by --source
 
 set -eu
 
-REPO="${GODE_REPO:-krishnaa/godejs}"
+REPO="${GODE_REPO:-kr12345ad/godejs}"
 PREFIX="${GODE_PREFIX:-$HOME/.local}"
 BIN_DIR="$PREFIX/bin"
 VERSION="${GODE_VERSION:-latest}"
+REF="${GODE_REF:-main}"
+MODE="release"
+if [ "${GODE_FROM_SOURCE:-0}" = "1" ]; then
+  MODE="source"
+fi
+
+usage() {
+  cat <<'EOF'
+Install GodeJS from a GitHub release, or build it from source.
+
+Usage: install.sh [--source]
+
+  --source    clone the repository and build with the local Go toolchain
+  -h, --help  show this help
+EOF
+}
+
+for arg in "$@"; do
+  case "$arg" in
+    --source) MODE="source" ;;
+    -h|--help) usage; exit 0 ;;
+    *) printf 'gode: unknown option: %s\n' "$arg" >&2; exit 2 ;;
+  esac
+done
 
 say() {
   printf '%s\n' "$*"
@@ -25,13 +53,111 @@ die() {
   exit 1
 }
 
-command -v curl >/dev/null 2>&1 || die "curl is required"
-command -v uname >/dev/null 2>&1 || die "uname is required"
-command -v mktemp >/dev/null 2>&1 || die "mktemp is required"
+need() {
+  command -v "$1" >/dev/null 2>&1 || die "$1 is required"
+}
+
+os_id=""
+os_like=""
+if [ -r /etc/os-release ]; then
+  # shellcheck disable=SC1091
+  . /etc/os-release
+  os_id="${ID:-}"
+  os_like="${ID_LIKE:-}"
+fi
+
+jsc_runtime_hint() {
+  say "JavaScriptCore GTK 4.0 is required to run gode. Install it:"
+  case " $os_id $os_like " in
+    *" alpine "*)
+      say "  sudo apk add webkit2gtk-4.0"
+      ;;
+    *" debian "*|*" ubuntu "*)
+      say "  sudo apt install libjavascriptcoregtk-4.0-18"
+      ;;
+    *" fedora "*)
+      say "  sudo dnf install webkit2gtk4.0"
+      ;;
+    *)
+      say "  Debian/Ubuntu: sudo apt install libjavascriptcoregtk-4.0-18"
+      say "  Alpine:        sudo apk add webkit2gtk-4.0"
+      ;;
+  esac
+  say "The binary links libjavascriptcoregtk-4.0.so.18."
+}
+
+jsc_dev_hint() {
+  say "Building gode needs the JavaScriptCore GTK 4.0 development headers:"
+  case " $os_id $os_like " in
+    *" alpine "*)
+      say "  sudo apk add webkit2gtk-4.0-dev go gcc musl-dev"
+      ;;
+    *" debian "*|*" ubuntu "*)
+      say "  sudo apt install libjavascriptcoregtk-4.0-dev golang gcc"
+      ;;
+    *" fedora "*)
+      say "  sudo dnf install webkit2gtk4.0-devel golang gcc"
+      ;;
+    *)
+      say "  Debian/Ubuntu: sudo apt install libjavascriptcoregtk-4.0-dev golang gcc"
+      say "  Alpine:        sudo apk add webkit2gtk-4.0-dev go gcc musl-dev"
+      ;;
+  esac
+}
+
+tmp=""
+tmpdir=""
+cleanup() {
+  [ -z "$tmp" ] || rm -f "$tmp"
+  [ -z "$tmpdir" ] || rm -rf "$tmpdir"
+}
+trap cleanup EXIT HUP INT TERM
+
+install_bin() {
+  src="$1"
+  label="$2"
+  chmod 755 "$src"
+  mkdir -p "$BIN_DIR" || die "could not create $BIN_DIR"
+  mv "$src" "$BIN_DIR/gode" || die "could not install to $BIN_DIR/gode"
+  chmod 755 "$BIN_DIR/gode"
+  say "Installed gode ${label} to ${BIN_DIR}/gode"
+  if ! "$BIN_DIR/gode" --version >/dev/null 2>&1; then
+    jsc_runtime_hint
+  fi
+  case ":$PATH:" in
+    *":$BIN_DIR:"*) ;;
+    *) say "Add it to PATH: export PATH=\"${BIN_DIR}:\$PATH\"" ;;
+  esac
+}
+
+if [ "$MODE" = "source" ]; then
+  need git
+  need go
+  need cc
+  need mktemp
+  tmpdir=$(mktemp -d "${TMPDIR:-/tmp}/gode-src.XXXXXX")
+  say "Cloning ${REPO} (${REF})..."
+  git clone --depth 1 --branch "$REF" "https://github.com/${REPO}.git" "$tmpdir/src" ||
+    die "could not clone ${REPO}"
+  say "Building gode with JavaScriptCore..."
+  (cd "$tmpdir/src" && CGO_ENABLED=1 go build -trimpath -o "$tmpdir/gode" ./cmd/gode) || {
+    jsc_dev_hint
+    die "source build failed"
+  }
+  install_bin "$tmpdir/gode" "from ${REF}"
+  rm -rf "$tmpdir"
+  tmpdir=""
+  exit 0
+fi
+
+need curl
+need uname
+need mktemp
+need awk
 
 case "$(uname -s)" in
   Linux) os=linux ;;
-  Darwin) die "GodeJS release binaries are currently Linux-only" ;;
+  Darwin) die "release binaries are Linux-only; use --source on macOS" ;;
   *) die "unsupported operating system: $(uname -s)" ;;
 esac
 
@@ -49,7 +175,7 @@ else
 fi
 
 json=$(curl -fsSL -H 'Accept: application/vnd.github+json' "$endpoint") ||
-  die "could not query releases for ${REPO}"
+  die "could not query releases for ${REPO}; use --source to build from source"
 
 tag=""
 url=""
@@ -71,16 +197,16 @@ else
     grep -F "/${asset}.sha256" | head -n 1 || true)
 fi
 
-[ -n "$tag" ] || die "could not determine the latest release tag"
-[ -n "$url" ] || die "release ${tag} has no ${asset} asset"
+[ -n "$tag" ] || die "could not determine the release tag; use --source to build from source"
+[ -n "$url" ] || die "release ${tag} has no ${asset} asset; use --source to build from source"
 
 tmp=$(mktemp "${TMPDIR:-/tmp}/gode.XXXXXX")
 sha_tmp=""
-cleanup() {
+cleanup_release() {
   [ -z "$tmp" ] || rm -f "$tmp"
   [ -z "$sha_tmp" ] || rm -f "$sha_tmp"
 }
-trap cleanup EXIT HUP INT TERM
+trap cleanup_release EXIT HUP INT TERM
 
 say "Downloading gode ${tag} (${asset})..."
 curl -fsSL "$url" -o "$tmp" || die "could not download ${url}"
@@ -97,19 +223,9 @@ if [ -n "$sha_url" ]; then
   [ "$expected" = "$actual" ] || die "checksum mismatch for ${asset}"
 fi
 
-chmod 755 "$tmp"
-mkdir -p "$BIN_DIR" || die "could not create ${BIN_DIR}"
-mv "$tmp" "$BIN_DIR/gode"
+install_bin "$tmp" "$tag"
 tmp=""
-chmod 755 "$BIN_DIR/gode"
-
-say "Installed gode ${tag} to ${BIN_DIR}/gode"
-if ! "$BIN_DIR/gode" --version >/dev/null 2>&1; then
-  say "The binary could not start. Install JavaScriptCore, for example:"
-  say "  sudo apt install libjavascriptcoregtk-4.0-18"
+if [ -n "$sha_tmp" ]; then
+  rm -f "$sha_tmp"
+  sha_tmp=""
 fi
-
-case ":$PATH:" in
-  *":$BIN_DIR:"*) ;;
-  *) say "Add it to PATH: export PATH=\"${BIN_DIR}:\$PATH\"" ;;
-esac
