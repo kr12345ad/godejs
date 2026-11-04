@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="2096" viewBox="0 0 1000 2096" role="img" aria-label="GodeJS Node.js 24 LTS parity: 54.8 percent">
+<rect width="100%" height="100%" fill="#0d1117"/>
+<rect x="24" y="24" width="952" height="2048" rx="14" fill="#11161d" stroke="#21262d"/>
+<text x="48" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="2">GODEJS · NODE.JS 24 LTS COMPATIBILITY</text>
+<text x="48" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="52" font-weight="700" fill="#e6edf3">54.8%</text>
+<text x="48" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#8b949e">of Node's official test suite passing unchanged</text>
+<text x="952" y="126" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9">731 / 1334 tests</text>
+<text x="952" y="152" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">100.0% API surface · 1099/1099</text>
+<line x1="48" y1="170" x2="952" y2="170" stroke="#21262d"/>
+<text x="48" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="1">NODE OFFICIAL TEST SUITE · test/parallel run unmodified against gode</text>
+<text x="48" y="231" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">fs</text>
+<rect x="228" y="223" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="223" width="432.5" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="231" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">70.9%</text>
+<text x="956" y="231" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">195/275</text>
+<text x="48" y="265" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">stream</text>
+<rect x="228" y="257" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="257" width="343.3" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="265" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">56.3%</text>
+<text x="956" y="265" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">121/215</text>
+<text x="48" y="299" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">crypto</text>
+<rect x="228" y="291" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="291" width="186.8" height="10" rx="5" fill="#d29922"/>
+<text x="902" y="299" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#d29922">30.6%</text>
+<text x="956" y="299" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">49/160</text>
+<text x="48" y="333" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">child-process</text>
+<rect x="228" y="325" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="325" width="194.3" height="10" rx="5" fill="#d29922"/>
+<text x="902" y="333" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#d29922">31.9%</text>
+<text x="956" y="333" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">36/113</text>
+<text x="48" y="367" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">vm</text>
+<rect x="228" y="359" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="359" width="228.8" height="10" rx="5" fill="#d29922"/>
+<text x="902" y="367" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#d29922">37.5%</text>
+<text x="956" y="367" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">36/96</text>
+<text x="48" y="401" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">process</text>
+<rect x="228" y="393" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="393" width="311.5" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="401" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">51.1%</text>
+<text x="956" y="401" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">48/94</text>
+<text x="48" y="435" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">buffer</text>
+<rect x="228" y="427" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="427" width="424.3" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="435" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">69.6%</text>
+<text x="956" y="435" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">48/69</text>
+<text x="48" y="469" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">zlib</text>
+<rect x="228" y="461" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="461" width="471.4" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="469" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">77.3%</text>
+<text x="956" y="469" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">51/66</text>
+<text x="48" y="503" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">timers</text>
+<rect x="228" y="495" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="495" width="413.6" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="503" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">67.8%</text>
+<text x="956" y="503" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">40/59</text>
+<text x="48" y="537" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">module</text>
+<rect x="228" y="529" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="529" width="203.3" height="10" rx="5" fill="#d29922"/>
+<text x="902" y="537" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#d29922">33.3%</text>
+<text x="956" y="537" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">11/33</text>
+<text x="48" y="571" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">util</text>
+<rect x="228" y="563" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="563" width="362.2" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="571" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">59.4%</text>
+<text x="956" y="571" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">19/32</text>
+<text x="48" y="605" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">v8</text>
+<rect x="228" y="597" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="597" width="530.4" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="605" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">87.0%</text>
+<text x="956" y="605" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">20/23</text>
+<text x="48" y="639" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">console</text>
+<rect x="228" y="631" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="631" width="332.7" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="639" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">54.5%</text>
+<text x="956" y="639" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">12/22</text>
+<text x="48" y="673" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">assert</text>
+<rect x="228" y="665" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="665" width="385.3" height="10" rx="5" fill="#58a6ff"/>
+<text x="902" y="673" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#58a6ff">63.2%</text>
+<text x="956" y="673" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">12/19</text>
+<text x="48" y="707" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">path</text>
+<rect x="228" y="699" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="699" width="574.1" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="707" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">94.1%</text>
+<text x="956" y="707" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">16/17</text>
+<text x="48" y="741" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">url</text>
+<rect x="228" y="733" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="733" width="81.3" height="10" rx="5" fill="#f85149"/>
+<text x="902" y="741" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#f85149">13.3%</text>
+<text x="956" y="741" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">2/15</text>
+<text x="48" y="775" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">events</text>
+<rect x="228" y="767" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="767" width="533.8" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="775" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">87.5%</text>
+<text x="956" y="775" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">7/8</text>
+<text x="48" y="809" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">os</text>
+<rect x="228" y="801" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="801" width="76.2" height="10" rx="5" fill="#f85149"/>
+<text x="902" y="809" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#f85149">12.5%</text>
+<text x="956" y="809" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">1/8</text>
+<text x="48" y="843" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">querystring</text>
+<rect x="228" y="835" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="835" width="457.5" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="843" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">75.0%</text>
+<text x="956" y="843" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">3/4</text>
+<text x="48" y="877" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">string-decoder</text>
+<rect x="228" y="869" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="869" width="203.3" height="10" rx="5" fill="#d29922"/>
+<text x="902" y="877" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#d29922">33.3%</text>
+<text x="956" y="877" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">1/3</text>
+<text x="48" y="911" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">tty</text>
+<rect x="228" y="903" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="903" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="911" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="911" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">3/3</text>
+<text x="48" y="968" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="1">REAL NODE PROGRAMS · run with node and gode, compare stdout and exit status</text>
+<text x="48" y="1007" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">child</text>
+<text x="952" y="1007" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1031" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">console</text>
+<text x="952" y="1031" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1055" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">crypto</text>
+<text x="952" y="1055" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1079" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">esm</text>
+<text x="952" y="1079" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">events</text>
+<text x="952" y="1103" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1127" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">fs</text>
+<text x="952" y="1127" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1151" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">packages</text>
+<text x="952" y="1151" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1175" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">packages-esm</text>
+<text x="952" y="1175" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">streams</text>
+<text x="952" y="1199" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1223" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">url</text>
+<text x="952" y="1223" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1247" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">util</text>
+<text x="952" y="1247" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#3fb950">PASS</text>
+<text x="48" y="1282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="1">CORE API SURFACE · implemented and unit-tested</text>
+<text x="48" y="1313" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">assert</text>
+<rect x="228" y="1305" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1305" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1313" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1313" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">27/27</text>
+<text x="48" y="1347" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">buffer</text>
+<rect x="228" y="1339" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1339" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1347" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1347" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">104/104</text>
+<text x="48" y="1381" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">child_process</text>
+<rect x="228" y="1373" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1373" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1381" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1381" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">26/26</text>
+<text x="48" y="1415" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">console</text>
+<rect x="228" y="1407" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1407" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1415" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1415" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">23/23</text>
+<text x="48" y="1449" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">crypto</text>
+<rect x="228" y="1441" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1441" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1449" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1449" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">151/151</text>
+<text x="48" y="1483" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">events</text>
+<rect x="228" y="1475" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1475" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1483" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1483" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">69/69</text>
+<text x="48" y="1517" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">fs</text>
+<rect x="228" y="1509" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1509" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1517" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1517" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">247/247</text>
+<text x="48" y="1551" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">module</text>
+<rect x="228" y="1543" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1543" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1551" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1551" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">19/19</text>
+<text x="48" y="1585" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">os</text>
+<rect x="228" y="1577" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1577" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1585" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1585" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">23/23</text>
+<text x="48" y="1619" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">path</text>
+<rect x="228" y="1611" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1611" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1619" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1619" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">16/16</text>
+<text x="48" y="1653" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">process</text>
+<rect x="228" y="1645" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1645" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1653" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1653" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">46/46</text>
+<text x="48" y="1687" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">querystring</text>
+<rect x="228" y="1679" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1679" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1687" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1687" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">6/6</text>
+<text x="48" y="1721" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">stream</text>
+<rect x="228" y="1713" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1713" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1721" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1721" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">16/16</text>
+<text x="48" y="1755" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">string_decoder</text>
+<rect x="228" y="1747" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1747" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1755" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1755" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">3/3</text>
+<text x="48" y="1789" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">timers</text>
+<rect x="228" y="1781" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1781" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1789" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1789" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">22/22</text>
+<text x="48" y="1823" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">tty</text>
+<rect x="228" y="1815" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1815" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1823" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1823" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">17/17</text>
+<text x="48" y="1857" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">url</text>
+<rect x="228" y="1849" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1849" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1857" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1857" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">59/59</text>
+<text x="48" y="1891" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">util</text>
+<rect x="228" y="1883" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1883" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1891" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1891" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">57/57</text>
+<text x="48" y="1925" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">v8</text>
+<rect x="228" y="1917" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1917" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1925" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1925" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">67/67</text>
+<text x="48" y="1959" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">vm</text>
+<rect x="228" y="1951" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1951" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1959" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1959" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">33/33</text>
+<text x="48" y="1993" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#c9d1d9">zlib</text>
+<rect x="228" y="1985" width="610" height="10" rx="5" fill="#21262d"/>
+<rect x="228" y="1985" width="610.0" height="10" rx="5" fill="#3fb950"/>
+<text x="902" y="1993" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#3fb950">100.0%</text>
+<text x="956" y="1993" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6e7681">68/68</text>
+<text x="48" y="2052" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#8b949e">baseline: nodejs.org/docs/latest-v24.x · gode v0.1.0 · 2026-11-04 01:34 UTC</text>
+<text x="952" y="2052" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#6e7681">generated from unit tests and differential program runs</text>
+</svg>

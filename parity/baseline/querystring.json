@@ -1,0 +1,8 @@
+[
+  "querystring.decode",
+  "querystring.encode",
+  "querystring.escape",
+  "querystring.parse",
+  "querystring.stringify",
+  "querystring.unescape"
+]

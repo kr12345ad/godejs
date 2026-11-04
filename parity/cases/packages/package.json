@@ -1,0 +1,7 @@
+{
+  "name": "packages-case",
+  "private": true,
+  "imports": {
+    "#private": "./private.js"
+  }
+}

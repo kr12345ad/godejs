@@ -1,0 +1,18 @@
+[
+  "stream.addAbortSignal",
+  "stream.compose",
+  "stream.finished",
+  "stream.from",
+  "stream.fromWeb",
+  "stream.getDefaultHighWaterMark",
+  "stream.isDestroyed",
+  "stream.isDisturbed",
+  "stream.isErrored",
+  "stream.isReadable",
+  "stream.isWritable",
+  "stream.pipeline",
+  "stream.push",
+  "stream.read",
+  "stream.setDefaultHighWaterMark",
+  "stream.toWeb"
+]

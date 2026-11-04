@@ -1,0 +1,5 @@
+[
+  "string_decoder.StringDecoder",
+  "string_decoder.StringDecoder#end",
+  "string_decoder.StringDecoder#write"
+]

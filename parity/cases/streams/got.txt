@@ -1,0 +1,5 @@
+gzip 31 139 hello
+crc 3421780262
+finish ab
+transform HELLO
+piped xy

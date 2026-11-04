@@ -1,0 +1,19 @@
+[
+  "tty.ReadStream",
+  "tty.ReadStream#setRawMode",
+  "tty.ReadStream.isRaw",
+  "tty.ReadStream.isTTY",
+  "tty.ReadStream.rawMode",
+  "tty.WriteStream",
+  "tty.WriteStream#clearLine",
+  "tty.WriteStream#clearScreenDown",
+  "tty.WriteStream#cursorTo",
+  "tty.WriteStream#getColorDepth",
+  "tty.WriteStream#getWindowSize",
+  "tty.WriteStream#hasColors",
+  "tty.WriteStream#moveCursor",
+  "tty.WriteStream.columns",
+  "tty.WriteStream.isTTY",
+  "tty.WriteStream.rows",
+  "tty.isatty"
+]

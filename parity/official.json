@@ -1,0 +1,112 @@
+{
+  "passed": 731,
+  "total": 1334,
+  "generated": "2026-11-02",
+  "modules": [
+    {
+      "name": "fs",
+      "passed": 195,
+      "total": 275
+    },
+    {
+      "name": "stream",
+      "passed": 121,
+      "total": 215
+    },
+    {
+      "name": "crypto",
+      "passed": 49,
+      "total": 160
+    },
+    {
+      "name": "child-process",
+      "passed": 36,
+      "total": 113
+    },
+    {
+      "name": "vm",
+      "passed": 36,
+      "total": 96
+    },
+    {
+      "name": "process",
+      "passed": 48,
+      "total": 94
+    },
+    {
+      "name": "buffer",
+      "passed": 48,
+      "total": 69
+    },
+    {
+      "name": "zlib",
+      "passed": 51,
+      "total": 66
+    },
+    {
+      "name": "timers",
+      "passed": 40,
+      "total": 59
+    },
+    {
+      "name": "module",
+      "passed": 11,
+      "total": 33
+    },
+    {
+      "name": "util",
+      "passed": 19,
+      "total": 32
+    },
+    {
+      "name": "v8",
+      "passed": 20,
+      "total": 23
+    },
+    {
+      "name": "console",
+      "passed": 12,
+      "total": 22
+    },
+    {
+      "name": "assert",
+      "passed": 12,
+      "total": 19
+    },
+    {
+      "name": "path",
+      "passed": 16,
+      "total": 17
+    },
+    {
+      "name": "url",
+      "passed": 2,
+      "total": 15
+    },
+    {
+      "name": "events",
+      "passed": 7,
+      "total": 8
+    },
+    {
+      "name": "os",
+      "passed": 1,
+      "total": 8
+    },
+    {
+      "name": "querystring",
+      "passed": 3,
+      "total": 4
+    },
+    {
+      "name": "string-decoder",
+      "passed": 1,
+      "total": 3
+    },
+    {
+      "name": "tty",
+      "passed": 3,
+      "total": 3
+    }
+  ]
+}

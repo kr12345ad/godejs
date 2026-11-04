@@ -1,0 +1,21 @@
+[
+  "module.SourceMap",
+  "module.SourceMap#findEntry",
+  "module.SourceMap#findOrigin",
+  "module.SourceMap.return",
+  "module.builtinModules",
+  "module.compileCacheStatus",
+  "module.createRequire",
+  "module.enableCompileCache",
+  "module.findPackageJSON",
+  "module.findSourceMap",
+  "module.flushCompileCache",
+  "module.getCompileCacheDir",
+  "module.getSourceMapsSupport",
+  "module.isBuiltin",
+  "module.register",
+  "module.registerHooks",
+  "module.setSourceMapsSupport",
+  "module.stripTypeScriptTypes",
+  "module.syncBuiltinESMExports"
+]

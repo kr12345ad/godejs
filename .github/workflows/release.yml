@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  linux-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Install JavaScriptCore
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libjavascriptcoregtk-4.0-dev
+
+      - name: Build release binary
+        run: |
+          mkdir -p dist
+          CGO_ENABLED=1 go build -trimpath -ldflags="-s -w" \
+            -o dist/gode-linux-amd64 ./cmd/gode
+          cd dist
+          sha256sum gode-linux-amd64 > gode-linux-amd64.sha256
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true

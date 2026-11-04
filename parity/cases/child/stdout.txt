@@ -1,0 +1,5 @@
+hi
+ok
+0 null 42
+7
+3 null Command failed: exit 3

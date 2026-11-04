@@ -1,0 +1,7 @@
+# Build output
+/gode
+/dist/
+/.tmp-httpbench.test
+
+# Local Node source snapshot used for parity checks
+/reference/
