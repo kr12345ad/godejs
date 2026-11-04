@@ -61,7 +61,7 @@ jobs:
       - name: Build release binary
         run: |
           mkdir -p dist
-          CGO_ENABLED=1 go build -trimpath -ldflags="-s -w" \
+          CGO_ENABLED=1 GOARCH=${{ matrix.arch }} go build -trimpath -ldflags="-s -w" \
             -o dist/gode-darwin-${{ matrix.arch }} ./cmd/gode
           cd dist
           shasum -a 256 gode-darwin-${{ matrix.arch }} \
@@ -69,6 +69,12 @@ jobs:
           if [ "${{ matrix.arch }}" = "arm64" ]; then
             ./gode-darwin-arm64 -e "console.log(process.version)"
           fi
+
+      - name: Verify architecture
+        run: |
+          want=arm64
+          if [ "${{ matrix.arch }}" = "amd64" ]; then want=x86_64; fi
+          lipo -archs dist/gode-darwin-${{ matrix.arch }} | grep -qw "$want"
 
       - name: Upload binary
         uses: actions/upload-artifact@v4

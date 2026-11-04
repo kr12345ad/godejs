@@ -49,6 +49,12 @@ jobs:
       - name: Build
         run: CGO_ENABLED=1 GOARCH=${{ matrix.arch }} go build ./cmd/gode
 
+      - name: Verify architecture
+        run: |
+          want=arm64
+          if [ "${{ matrix.arch }}" = "amd64" ]; then want=x86_64; fi
+          lipo -archs ./gode | grep -qw "$want"
+
       - name: Smoke test
         if: matrix.arch == 'arm64'
         run: ./gode -e "console.log(process.version)"
