@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"unsafe"
 
 	"golang.org/x/sys/unix"
 
@@ -659,7 +660,7 @@ func udpMembership(conn *net.UDPConn, group net.IP, iface *net.Interface, join b
 			option = unix.IP_DROP_MEMBERSHIP
 		}
 		return udpControl(conn, func(fd int) error {
-			return unix.SetsockoptIPMreq(fd, unix.IPPROTO_IP, option, mreq)
+			return setsockoptRaw(fd, unix.IPPROTO_IP, option, unsafe.Pointer(mreq), unsafe.Sizeof(*mreq))
 		})
 	}
 	mreq := &unix.IPv6Mreq{}
@@ -672,8 +673,20 @@ func udpMembership(conn *net.UDPConn, group net.IP, iface *net.Interface, join b
 		option = unix.IPV6_LEAVE_GROUP
 	}
 	return udpControl(conn, func(fd int) error {
-		return unix.SetsockoptIPv6Mreq(fd, unix.IPPROTO_IPV6, option, mreq)
+		return setsockoptRaw(fd, unix.IPPROTO_IPV6, option, unsafe.Pointer(mreq), unsafe.Sizeof(*mreq))
 	})
+}
+
+// setsockoptRaw passes a struct sockopt value (ip_mreq, ipv6_mreq) straight to
+// the kernel. x/sys/unix only ships the IPMreq convenience wrappers on Linux,
+// so calling setsockopt directly keeps multicast working on macOS too.
+func setsockoptRaw(fd, level, option int, value unsafe.Pointer, size uintptr) error {
+	_, _, errno := unix.Syscall6(unix.SYS_SETSOCKOPT, uintptr(fd), uintptr(level),
+		uintptr(option), uintptr(value), size, 0)
+	if errno != 0 {
+		return errno
+	}
+	return nil
 }
 
 func (m *module) hostConnect(this js.Object, args []js.Value) (js.Value, error) {

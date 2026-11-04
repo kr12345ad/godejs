@@ -67,6 +67,10 @@ if [ -r /etc/os-release ]; then
 fi
 
 jsc_runtime_hint() {
+  if [ "$(uname -s)" = "Darwin" ]; then
+    say "gode needs macOS 12 or later; JavaScriptCore is part of the system."
+    return
+  fi
   say "JavaScriptCore GTK 4.0 is required to run gode. Install it:"
   case " $os_id $os_like " in
     *" alpine "*)
@@ -87,6 +91,11 @@ jsc_runtime_hint() {
 }
 
 jsc_dev_hint() {
+  if [ "$(uname -s)" = "Darwin" ]; then
+    say "Building gode needs the Xcode Command Line Tools:"
+    say "  xcode-select --install"
+    return
+  fi
   say "Building gode needs the JavaScriptCore GTK 4.0 development headers:"
   case " $os_id $os_like " in
     *" alpine "*)
@@ -157,7 +166,7 @@ need awk
 
 case "$(uname -s)" in
   Linux) os=linux ;;
-  Darwin) die "release binaries are Linux-only; use --source on macOS" ;;
+  Darwin) os=darwin ;;
   *) die "unsupported operating system: $(uname -s)" ;;
 esac
 

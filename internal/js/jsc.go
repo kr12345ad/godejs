@@ -11,7 +11,6 @@
 package js
 
 /*
-#cgo LDFLAGS: -l:libjavascriptcoregtk-4.0.so.18
 #include <stdlib.h>
 #include "godejsc.h"
 

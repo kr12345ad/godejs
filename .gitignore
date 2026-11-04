@@ -3,5 +3,8 @@
 /dist/
 /.tmp-httpbench.test
 
+# Local documentation environment
+/.venv-docs/
+
 # Local Node source snapshot used for parity checks
 /reference/

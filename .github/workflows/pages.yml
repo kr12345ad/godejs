@@ -24,11 +24,19 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Assemble static site
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build documentation
         run: |
-          mkdir -p _site
-          cp -R site/. _site/
-          cp progress.svg _site/progress.svg
+          python -m pip install --upgrade pip
+          python -m pip install -r docs/requirements.txt
+          sphinx-build -W --keep-going -b html docs _site
+
+      - name: Add installer
+        run: |
           sed "s|krishnaa/godejs|${GITHUB_REPOSITORY}|g" install.sh > _site/install.sh
           chmod 755 _site/install.sh
           touch _site/.nojekyll

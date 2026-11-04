@@ -1,3 +1,5 @@
+//go:build linux
+
 package napi
 
 /*
@@ -82,25 +84,25 @@ func init() {
 var (
 	mu sync.Mutex
 
-	nextEnv     uintptr = 1
-	nextValue   uintptr = 1
-	nextRef     uintptr = 1
-	nextInfo    uintptr = 1
-	nextWrap    uintptr = 1
-	nextDefer   uintptr = 1
-	nextAsync   uintptr = 1
-	nextScope   uintptr = 1
-	pendingMod  *C.gode_napi_module
-	runtimes            = map[uintptr]*runtime{}
-	ctxRuntimes         = map[*js.Context]*runtime{}
-	values              = map[uintptr]js.Value{}
-	refs                = map[uintptr]*napiRef{}
-	infos               = map[uintptr]*callbackInfo{}
-	wraps               = map[uintptr]*wrapInfo{}
-	deferreds           = map[uintptr]*deferred{}
-	asyncWorks          = map[uintptr]*asyncWork{}
-	handleScopes        = map[uintptr]*runtime{}
-	escaped             = map[uintptr]uintptr{}
+	nextEnv      uintptr = 1
+	nextValue    uintptr = 1
+	nextRef      uintptr = 1
+	nextInfo     uintptr = 1
+	nextWrap     uintptr = 1
+	nextDefer    uintptr = 1
+	nextAsync    uintptr = 1
+	nextScope    uintptr = 1
+	pendingMod   *C.gode_napi_module
+	runtimes     = map[uintptr]*runtime{}
+	ctxRuntimes  = map[*js.Context]*runtime{}
+	values       = map[uintptr]js.Value{}
+	refs         = map[uintptr]*napiRef{}
+	infos        = map[uintptr]*callbackInfo{}
+	wraps        = map[uintptr]*wrapInfo{}
+	deferreds    = map[uintptr]*deferred{}
+	asyncWorks   = map[uintptr]*asyncWork{}
+	handleScopes = map[uintptr]*runtime{}
+	escaped      = map[uintptr]uintptr{}
 )
 
 const (
@@ -1757,4 +1759,3 @@ func napi_get_instance_data(env C.uintptr_t, result *C.uintptr_t) C.int {
 	*result = C.uintptr_t(rt.instanceData)
 	return napiOK
 }
-

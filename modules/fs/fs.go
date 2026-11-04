@@ -570,10 +570,8 @@ func (m *module) statsFromStat(st *syscall.Stat_t) js.Object {
 func (m *module) statsFromStatWith(st *syscall.Stat_t, big bool) js.Object {
 	o := m.e.JS.Obj()
 	o.SetProto(m.statsProto)
-	o.SetHidden("_kind", m.e.JS.Str(modeKind(st.Mode)))
-	atime := time.Unix(st.Atim.Sec, st.Atim.Nsec)
-	mtime := time.Unix(st.Mtim.Sec, st.Mtim.Nsec)
-	ctime := time.Unix(st.Ctim.Sec, st.Ctim.Nsec)
+	o.SetHidden("_kind", m.e.JS.Str(modeKind(uint32(st.Mode))))
+	atime, mtime, ctime, birthtime := statTimes(st)
 	set := func(k string, v int64) {
 		if big {
 			o.Set(k, m.bigint(v))
@@ -605,8 +603,7 @@ func (m *module) statsFromStatWith(st *syscall.Stat_t, big bool) js.Object {
 	stamp("atime", atime)
 	stamp("mtime", mtime)
 	stamp("ctime", ctime)
-	// Linux has no creation time in stat(2); Node reports ctime for birthtime.
-	stamp("birthtime", ctime)
+	stamp("birthtime", birthtime)
 	return o
 }
 
@@ -1530,7 +1527,7 @@ func (m *module) syncFd(args []js.Value, full bool) (js.Value, error) {
 	if full {
 		err = syscall.Fsync(fd)
 	} else {
-		err = syscall.Fdatasync(fd)
+		err = fdatasync(fd)
 	}
 	if err != nil {
 		return js.Value{}, m.nodeErr(err, "fsync", "")
@@ -2400,14 +2397,15 @@ func (m *module) statfsCore(args []js.Value) (js.Value, error) {
 		}
 		o.SetNum(k, float64(v))
 	}
-	set("type", int64(st.Type))
-	set("bsize", st.Bsize)
-	set("frsize", st.Frsize)
-	set("blocks", int64(st.Blocks))
-	set("bfree", int64(st.Bfree))
-	set("bavail", int64(st.Bavail))
-	set("files", int64(st.Files))
-	set("ffree", int64(st.Ffree))
+	fs := statfsFields(&st)
+	set("type", fs.fsType)
+	set("bsize", fs.bsize)
+	set("frsize", fs.frsize)
+	set("blocks", fs.blocks)
+	set("bfree", fs.bfree)
+	set("bavail", fs.bavail)
+	set("files", fs.files)
+	set("ffree", fs.ffree)
 	return o.V(), nil
 }
 
@@ -2922,7 +2920,7 @@ func (m *module) makeFileHandleProto() js.Object {
 		return m.e.JS.Undefined(), nil
 	}))
 	o.SetFunc("datasync", m.handleMethod(func(this js.Object, args []js.Value) (js.Value, error) {
-		if err := syscall.Fdatasync(this.Get("fd").Int()); err != nil {
+		if err := fdatasync(this.Get("fd").Int()); err != nil {
 			return js.Value{}, m.nodeErr(err, "fdatasync", "")
 		}
 		return m.e.JS.Undefined(), nil

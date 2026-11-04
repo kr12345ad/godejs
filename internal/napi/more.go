@@ -1,3 +1,5 @@
+//go:build linux
+
 package napi
 
 /*
@@ -28,14 +30,14 @@ type finalizer struct {
 }
 
 var (
-	nextAsyncCtx uintptr = 1
-	asyncContexts        = map[uintptr]*runtime{}
+	nextAsyncCtx  uintptr = 1
+	asyncContexts         = map[uintptr]*runtime{}
 
 	nextTSFN uintptr = 1
-	tsfns           = map[uintptr]*tsfn{}
+	tsfns            = map[uintptr]*tsfn{}
 
 	nextCleanupHandle uintptr = 1
-	asyncCleanup               = map[uintptr]*cleanupHook{}
+	asyncCleanup              = map[uintptr]*cleanupHook{}
 )
 
 // shutdown runs the addon's teardown callbacks before the runtime drops its

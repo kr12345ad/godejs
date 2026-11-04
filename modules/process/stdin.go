@@ -5,6 +5,8 @@ import (
 	"os"
 	"syscall"
 
+	"golang.org/x/sys/unix"
+
 	"godejs/internal/env"
 	"godejs/internal/js"
 	"godejs/modules/tty"
@@ -140,10 +142,10 @@ func (st *stdinState) readChunk() (js.Value, error) {
 
 // fdReadable reports whether fd has data (or EOF) ready without blocking.
 func fdReadable(fd int) (bool, error) {
-	var set syscall.FdSet
-	set.Bits[fd/64] |= int64(1) << (uint(fd) % 64)
-	tv := syscall.Timeval{}
-	n, err := syscall.Select(fd+1, &set, nil, nil, &tv)
+	var set unix.FdSet
+	set.Set(fd)
+	tv := unix.Timeval{}
+	n, err := unix.Select(fd+1, &set, nil, nil, &tv)
 	if err == syscall.EINTR {
 		return false, nil
 	}

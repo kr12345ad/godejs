@@ -1358,7 +1358,11 @@ func (m *module) run(opts runOptions) runResult {
 }
 
 func signalFor(name string) syscall.Signal {
-	switch strings.ToUpper(name) {
+	name = strings.ToUpper(name)
+	if sig, ok := platformSignal(name); ok {
+		return sig
+	}
+	switch name {
 	case "SIGABRT", "SIGIOT":
 		return syscall.SIGABRT
 	case "SIGALRM":
@@ -1385,14 +1389,10 @@ func signalFor(name string) syscall.Signal {
 		return syscall.SIGPIPE
 	case "SIGPROF":
 		return syscall.SIGPROF
-	case "SIGPWR":
-		return syscall.SIGPWR
 	case "SIGQUIT":
 		return syscall.SIGQUIT
 	case "SIGSEGV":
 		return syscall.SIGSEGV
-	case "SIGSTKFLT":
-		return syscall.SIGSTKFLT
 	case "SIGSTOP":
 		return syscall.SIGSTOP
 	case "SIGSYS":
