@@ -17,7 +17,6 @@ behaviour. Generated pages are checked in, so a normal Sphinx build needs
 neither a compiled binary nor the Node source checkout.
 """
 
-import html
 import json
 import os
 import re
@@ -1215,30 +1214,17 @@ def render_globals(api, sections, index):
     return "\n".join(out)
 
 
-def raw_html(text):
-    lines = [".. raw:: html", ""]
-    lines.extend("   " + line if line else "" for line in text.splitlines())
-    return "\n".join(lines) + "\n"
-
-
-def api_card(module, count):
+def api_index_entry(module, count):
     if module == "__globals__":
         slug = "globals"
         title = "Global objects"
         blurb = "Host globals, Web APIs, and the CommonJS globals GodeJS exposes."
     else:
         slug = module.replace("/", "-")
-        title = TITLES.get(module, module)
+        title = module
         blurb = MODULE_BLURBS.get(module, "Node-compatible APIs exposed by GodeJS.")
     label = "%d callable%s" % (count, "" if count == 1 else "s")
-    search = html.escape("%s %s %s" % (title, module, blurb), quote=True)
-    return (
-        '<a class="api-card" href="%s.html" data-search="%s">'
-        '<span class="api-card-title">%s</span>'
-        '<span class="api-card-blurb">%s</span>'
-        '<span class="api-card-meta">%s</span>'
-        '</a>'
-    ) % (slug, search, html.escape(title), html.escape(blurb), label)
+    return "* :doc:`%s <%s>` — %s (%s)" % (title, slug, blurb, label)
 
 
 def main():
@@ -1292,33 +1278,20 @@ def main():
     index_lines.append("Every callable in the runtime is listed here. The reference is generated from the running GodeJS binary, so signatures, argument counts, and return values describe the API you actually have, not a hoped-for one.\n")
     index_lines.append("Some prose and examples are adapted from MIT-licensed Node.js documentation; see the repository `NOTICE <https://github.com/kr12345ad/godejs/blob/main/NOTICE>`_ file.\n")
 
-    sections_html = ['<section class="api-toolbar" aria-label="Filter API modules">',
-                     '  <div><span class="api-toolbar-kicker">Browse by module</span>',
-                     '  <h2>Find an API surface</h2></div>',
-                     '  <div class="api-filter-wrap">',
-                     '    <label class="sr-only" for="api-filter">Filter modules</label>',
-                     '    <input id="api-filter" type="search" placeholder="Try fs, http, crypto…" autocomplete="off">',
-                     '    <span id="api-count" class="api-count">%d modules</span>' % (len(pages) + 1),
-                     '  </div>',
-                     '</section>']
-    sections_html.append('<section class="api-section" data-api-section>')
-    sections_html.append('  <div class="api-section-heading"><div><span class="api-section-kicker">Everywhere</span><h2>Global objects</h2></div><p>Host globals, Web APIs, and CommonJS globals.</p></div>')
-    sections_html.append('  <div class="api-grid">' + api_card("__globals__", counts.get("__globals__", 0)) + '</div>')
-    sections_html.append('</section>')
+    index_lines.append(rst_heading("Global objects", "-"))
+    index_lines.append("Host globals, Web APIs, and CommonJS globals.\n")
+    index_lines.append(api_index_entry("__globals__", counts.get("__globals__", 0)))
+    index_lines.append("")
     for title, modules in GROUPS:
         available = [module for module in modules if module in pages]
         if not available:
             continue
-        sections_html.append('<section class="api-section" data-api-section>')
-        sections_html.append('  <div class="api-section-heading"><div><span class="api-section-kicker">%s</span><h2>%s</h2></div><p>%s</p></div>' % (
-            html.escape("Collection"), html.escape(title), html.escape(GROUP_BLURBS.get(title, ""))))
-        sections_html.append('  <div class="api-grid">')
+        index_lines.append(rst_heading(title, "-"))
+        if GROUP_BLURBS.get(title):
+            index_lines.append(GROUP_BLURBS[title] + "\n")
         for module in available:
-            sections_html.append('    ' + api_card(module, counts.get(module, 0)))
-        sections_html.append('  </div>')
-        sections_html.append('</section>')
-    sections_html.append('<p id="api-empty" class="api-empty" hidden>No modules match that filter. Try a shorter term.</p>')
-    index_lines.append(raw_html("\n".join(sections_html)))
+            index_lines.append(api_index_entry(module, counts.get(module, 0)))
+        index_lines.append("")
     index_lines.append(".. toctree::\n   :hidden:\n   :maxdepth: 1\n\n   " + "\n   ".join(["globals"] + pages) + "\n")
     index_lines.append(".. note::\n")
     index_lines.append("   Entries with a runtime-only note are still callable, but their argument names and descriptions may be incomplete. The snapshot is the source of truth for what exists.\n")

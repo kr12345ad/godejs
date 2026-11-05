@@ -1,0 +1,233 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background: #10151a;
+  }
+
+  body {
+    background: #10151a;
+    color: #d7dee6;
+  }
+
+  div.document,
+  div.documentwrapper,
+  div.bodywrapper,
+  div.body {
+    background: transparent;
+    color: #d7dee6;
+  }
+
+  div.body h1,
+  div.body h2,
+  div.body h3,
+  div.body h4,
+  div.body h5,
+  div.body h6 {
+    background: transparent;
+    color: #f1f5f8;
+    text-shadow: none;
+  }
+
+  a {
+    color: #8dc8f5;
+  }
+
+  a:hover {
+    color: #c4e3fa;
+  }
+
+  div.body a.headerlink {
+    color: #5d7181;
+  }
+
+  div.sphinxsidebar {
+    color: #b9c7d3;
+  }
+
+  div.sphinxsidebar h3,
+  div.sphinxsidebar h4,
+  div.sphinxsidebar p {
+    color: #d7dee6;
+  }
+
+  div.sphinxsidebar a {
+    color: #9ecbed;
+    border-bottom-color: #40515f;
+  }
+
+  div.sphinxsidebar a:hover {
+    border-bottom-color: #7fa9c7;
+  }
+
+  div.sphinxsidebar input {
+    background: #0b1015;
+    border-color: #40515f;
+    color: #d7dee6;
+  }
+
+  div.related {
+    background: #19232c;
+    color: #c4d0da;
+  }
+
+  div.related a {
+    color: #9ecbed;
+  }
+
+  div.footer {
+    color: #8b9aa6;
+  }
+
+  div.footer a {
+    color: #9ecbed;
+  }
+
+  div.body .admonition,
+  div.body .note,
+  div.body .warning,
+  div.body .tip,
+  div.body .hint,
+  div.body .important,
+  div.body .caution,
+  div.body .attention,
+  div.body .danger,
+  div.body .error,
+  div.body .seealso,
+  div.body .topic {
+    background: #19232c;
+    border-color: #40515f;
+    color: #d7dee6;
+  }
+
+  div.body .admonition-title {
+    color: #f0c674;
+  }
+
+  div.body table.docutils {
+    border-color: #40515f;
+  }
+
+  div.body table.docutils th {
+    background: #19232c;
+    color: #f1f5f8;
+  }
+
+  div.body table.docutils td {
+    border-color: #40515f;
+  }
+
+  div.body table.docutils tr:nth-child(even) td {
+    background: #151d24;
+  }
+
+  div.highlight {
+    background: #0b1117;
+    border: 1px solid #2b3a46;
+  }
+
+  div.highlight pre {
+    background: transparent;
+    color: #d7dee6;
+  }
+
+  code,
+  div.body code.literal {
+    background: #1a242d;
+    border-color: #2b3a46;
+    color: #e3ebf2;
+  }
+
+  div.body pre {
+    background: #0b1117;
+    border-color: #2b3a46;
+    color: #d7dee6;
+  }
+
+  .highlight .c,
+  .highlight .ch,
+  .highlight .cm,
+  .highlight .cp,
+  .highlight .cpf,
+  .highlight .c1,
+  .highlight .cs {
+    color: #7f919f;
+  }
+
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt,
+  .highlight .ow {
+    color: #c792ea;
+  }
+
+  .highlight .o {
+    color: #89ddff;
+  }
+
+  .highlight .s,
+  .highlight .sa,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .dl,
+  .highlight .sd,
+  .highlight .s1,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sr,
+  .highlight .ss,
+  .highlight .sx {
+    color: #a5d6a7;
+  }
+
+  .highlight .m,
+  .highlight .mb,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo,
+  .highlight .il {
+    color: #f78c6c;
+  }
+
+  .highlight .na,
+  .highlight .nt {
+    color: #ffcb6b;
+  }
+
+  .highlight .nb,
+  .highlight .bp {
+    color: #89ddff;
+  }
+
+  .highlight .nc,
+  .highlight .nn {
+    color: #ffcb6b;
+  }
+
+  .highlight .nf,
+  .highlight .fm {
+    color: #82aaff;
+  }
+
+  .highlight .nv,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vi,
+  .highlight .vm {
+    color: #f07178;
+  }
+
+  .highlight .err {
+    border-color: #ff5370;
+    color: #ff5370;
+  }
+}
