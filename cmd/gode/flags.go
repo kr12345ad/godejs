@@ -13,6 +13,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"godejs/internal/env"
 )
 
 type flagKind int
@@ -780,6 +782,16 @@ func printCompletion(w io.Writer) {
 	fmt.Fprintf(w, "  COMPREPLY=( $(compgen -W %q -- \"$cur\") )\n", strings.Join(words, " "))
 	fmt.Fprintln(w, "}")
 	fmt.Fprintln(w, "complete -F _gode_complete gode node")
+}
+
+// formatForInputWithSource applies Node's module-syntax detection to --eval
+// and stdin input when --input-type was not given explicitly. Node accepts
+// static import/export in `-e` snippets, just as it does in .mjs files.
+func formatForInputWithSource(inputType, file, source string) string {
+	if inputType == "" && (file == "[eval]" || file == "[stdin]") && env.HasModuleSyntax(source) {
+		return "module"
+	}
+	return formatForInput(inputType, file)
 }
 
 // formatForInput maps --input-type and a filename to a loader format.

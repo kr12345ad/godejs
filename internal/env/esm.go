@@ -49,6 +49,15 @@ func transformESM(src, filename string) string {
 	return head.String() + body
 }
 
+// HasModuleSyntax reports whether src contains top-level ES module syntax that
+// must be transformed before JavaScriptCore can parse it. Dynamic import() is
+// deliberately not considered module-only syntax because CommonJS supports it.
+func HasModuleSyntax(src string) bool {
+	t := &esmTransform{src: src}
+	t.scan()
+	return t.moduleSyntax
+}
+
 func fileURL(path string) string {
 	u := url.URL{Scheme: "file", Path: path}
 	return u.String()
@@ -78,11 +87,12 @@ func jsString(s string) string {
 }
 
 type esmTransform struct {
-	src         string
-	requires    []string
-	exports     []string
-	seq         int
-	dynamicOnly bool
+	src          string
+	requires     []string
+	exports      []string
+	seq          int
+	dynamicOnly  bool
+	moduleSyntax bool
 }
 
 func (t *esmTransform) nextID(prefix string) string {
@@ -172,6 +182,7 @@ func (t *esmTransform) scan() string {
 				}
 			case word == "export" && depth == 0 && prevSig != '.':
 				if k, ok := t.rewriteExport(src, i, j); ok {
+					t.moduleSyntax = true
 					out.WriteString(k.text)
 					i = k.end
 					lastSig = ';'
@@ -245,6 +256,7 @@ func (t *esmTransform) rewriteImport(src string, start, wordEnd, depth int) (rew
 		}
 		// import.meta
 		if strings.HasPrefix(src[j:], ".meta") {
+			t.moduleSyntax = true
 			return rewrite{text: "__godeImportMeta", end: j + len(".meta")}, true
 		}
 		return rewrite{}, false
@@ -270,6 +282,7 @@ func (t *esmTransform) rewriteImport(src string, start, wordEnd, depth int) (rew
 			return rewrite{}, false
 		}
 		end = skipImportAttributes(src, end)
+		t.moduleSyntax = true
 		t.requires = append(t.requires, esmRequire+"("+jsString(spec)+");")
 		return rewrite{text: blank(end), end: end}, true
 	}
@@ -326,6 +339,7 @@ func (t *esmTransform) rewriteImport(src string, start, wordEnd, depth int) (rew
 
 	clause := strings.TrimSpace(src[j:fromAt])
 	clause = strings.TrimSuffix(clause, ",")
+	t.moduleSyntax = true
 	t.requires = append(t.requires, importLines(clause, spec, t)...)
 	return rewrite{text: blank(end), end: end}, true
 }

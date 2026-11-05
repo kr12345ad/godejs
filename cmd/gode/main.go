@@ -137,7 +137,7 @@ func run(argv []string) int {
 			Stdin:    os.Stdin,
 		})
 		defer e.JS.Close()
-		if err := e.CheckScript(source, file, formatForInput(opts.inputType, file)); err != nil {
+		if err := e.CheckScript(source, file, formatForInputWithSource(opts.inputType, file, source)); err != nil {
 			fmt.Fprint(os.Stderr, diag.Render(diag.FromError("gode", err, file, source)))
 			return 1
 		}
@@ -204,7 +204,7 @@ func run(argv []string) int {
 		if vmExports := e.Exports("vm"); vmExports.Valid() {
 			e.Global().Set("vm", vmExports.V())
 		}
-		val, err := e.RunScriptType(source, file, formatForInput(opts.inputType, file))
+		val, err := e.RunScriptType(source, file, formatForInputWithSource(opts.inputType, file, source))
 		runErr = err
 		if err == nil && opts.print {
 			printValue(e, val)
@@ -236,7 +236,7 @@ func run(argv []string) int {
 		}
 		source = string(data)
 		file = "[stdin]"
-		val, err := e.RunScriptType(source, file, formatForInput(opts.inputType, file))
+		val, err := e.RunScriptType(source, file, formatForInputWithSource(opts.inputType, file, source))
 		runErr = err
 		if err == nil && opts.print {
 			printValue(e, val)
