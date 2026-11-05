@@ -1,0 +1,1444 @@
+v8
+===
+
+The ``node:v8`` module exposes APIs that are specific to the version of V8 built into the Node.js binary. It can be accessed using:
+
+Loading
+-------
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+   // ESM
+   import * as v8 from 'node:v8';
+
+Quick start
+-----------
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+API
+---
+
+addDeserializeCallback
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.addDeserializeCallback(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+Add a callback that will be called when the Node.js instance is deserialized from a snapshot. The ``callback`` and the ``data`` (if provided) will be serialized into the snapshot, they can be used to re-initialize the state of the application or to re-acquire resources that the application needs when the application is restarted from the snapshot.
+
+Callbacks are run in the order in which they are added.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked after the snapshot is
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotadddeserializecallbackcallback-data>`__
+
+addSerializeCallback
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.addSerializeCallback(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+Add a callback that will be called when the Node.js instance is about to get serialized into a snapshot and exit. This can be used to release resources that should not or cannot be serialized or to convert user data into a form more suitable for serialization.
+
+Callbacks are run in the order in which they are added.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked before serialization.
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotaddserializecallbackcallback-data>`__
+
+after
+~~~~~
+
+.. code-block:: text
+
+   after(promise)
+
+*Kind:* function · *Arguments:* 1
+
+Called immediately after a promise continuation executes. This may be after a ``then()``, ``catch()``, or ``finally()`` handler or before an ``await`` after another ``await``.
+
+**Arguments**
+
+* ``promise`` (*Promise*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#afterpromise>`__
+
+before
+~~~~~~
+
+.. code-block:: text
+
+   before(promise)
+
+*Kind:* function · *Arguments:* 1
+
+Called before a promise continuation executes. This can be in the form of ``then()``, ``catch()``, or ``finally()`` handlers or an ``await`` resuming.
+
+The ``before`` callback will be called 0 to N times. The ``before`` callback will typically be called 0 times if no continuation was ever made for the promise. The ``before`` callback may be called many times in the case where many continuations have been made from the same promise.
+
+**Arguments**
+
+* ``promise`` (*Promise*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#beforepromise>`__
+
+cachedDataVersionTag
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.cachedDataVersionTag()
+
+*Kind:* function · *Arguments:* 0
+
+Returns an integer representing a version tag derived from the V8 version, command-line flags, and detected CPU features. This is useful for determining whether a ``vm.Script`` ``cachedData`` buffer is compatible with this instance of V8.
+
+This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(v8.cachedDataVersionTag()); // 3947234607
+   // The value returned by v8.cachedDataVersionTag() is derived from the V8
+   // version, command-line flags, and detected CPU features. Test that the value
+   // does indeed update when flags are toggled.
+   v8.setFlagsFromString('--allow_natives_syntax');
+   console.log(v8.cachedDataVersionTag()); // 183726201
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8cacheddataversiontag>`__
+
+CPUProfileHandle
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   CPUProfileHandle
+
+*Kind:* class · *Arguments:* 0
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-cpuprofilehandle>`__
+
+createHook
+~~~~~~~~~~
+
+.. code-block:: text
+
+   promiseHooks.createHook(callbacks)
+
+*Kind:* function · *Arguments:* 1
+
+**The hook callbacks must be plain functions. Providing async functions will throw as it would produce an infinite microtask loop.**
+
+Registers functions to be called for different lifetime events of each promise.
+
+**Arguments**
+
+* ``callbacks`` (*Object*): The Hook Callbacks to register
+
+**Example**
+
+.. code-block:: javascript
+
+   const { promiseHooks } = require('node:v8');
+
+   const stopAll = promiseHooks.createHook({
+     init(promise, parent) {},
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehookscreatehookcallbacks>`__
+
+DefaultDeserializer
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.DefaultDeserializer
+
+*Kind:* class · *Arguments:* 1
+
+A subclass of ``Deserializer`` corresponding to the format written by ``DefaultSerializer``.
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8defaultdeserializer>`__
+
+DefaultSerializer
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.DefaultSerializer
+
+*Kind:* class · *Arguments:* 0
+
+A subclass of ``Serializer`` that serializes ``TypedArray`` (in particular ``Buffer``) and ``DataView`` objects as host objects, and only stores the part of their underlying ``ArrayBuffer``\ s that they are referring to.
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8defaultserializer>`__
+
+deserialize
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.deserialize(buffer)
+
+*Kind:* function · *Arguments:* 1
+
+Uses a ``DefaultDeserializer`` with default options to read a JS value from a buffer.
+
+**Arguments**
+
+* ``buffer`` (*Buffer|TypedArray|DataView*): A buffer returned by ``serialize()``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8deserializebuffer>`__
+
+Deserializer
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.Deserializer
+
+*Kind:* class · *Arguments:* 1
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8deserializer>`__
+
+GCProfiler
+~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.GCProfiler
+
+*Kind:* class · *Arguments:* 0
+
+This API collects GC data in current thread.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { GCProfiler } = require('node:v8');
+   const profiler = new GCProfiler();
+   profiler.start();
+   setTimeout(() => {
+     console.log(profiler.stop());
+   }, 1000);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8gcprofiler>`__
+
+getCppHeapStatistics
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.getCppHeapStatistics([detailLevel])
+
+*Kind:* function · *Arguments:* 1
+
+Retrieves CppHeap statistics regarding memory consumption and utilization using the V8 ``CollectStatistics()`` function which may change from one V8 version to the next.
+
+It returns an object with a structure similar to the ``cppgc::HeapStatistics`` object. See the V8 documentation for more information about the properties of the object.
+
+**Arguments**
+
+* ``detailLevel`` (*string|undefined*) — optional: :  **Default:** ``'detailed'``.
+
+**Example**
+
+.. code-block:: javascript
+
+   // Detailed
+   ({
+     committed_size_bytes: 131072,
+     resident_size_bytes: 131072,
+     used_size_bytes: 152,
+     space_statistics: [
+       {
+         name: 'NormalPageSpace0',
+         committed_size_bytes: 0,
+         resident_size_bytes: 0,
+         used_size_bytes: 0,
+         page_stats: [{}],
+         free_list_stats: {},
+       },
+       {
+         name: 'NormalPageSpace1',
+         committed_size_bytes: 131072,
+         resident_size_bytes: 131072,
+         used_size_bytes: 152,
+         page_stats: [{}],
+         free_list_stats: {},
+       },
+       {
+         name: 'NormalPageSpace2',
+         committed_size_bytes: 0,
+         resident_size_bytes: 0,
+         used_size_bytes: 0,
+         page_stats: [{}],
+         free_list_stats: {},
+       },
+       {
+         name: 'NormalPageSpace3',
+         committed_size_bytes: 0,
+         resident_size_bytes: 0,
+         used_size_bytes: 0,
+         page_stats: [{}],
+         free_list_stats: {},
+       },
+       {
+         name: 'LargePageSpace',
+         committed_size_bytes: 0,
+         resident_size_bytes: 0,
+         used_size_bytes: 0,
+         page_stats: [{}],
+         free_list_stats: {},
+       },
+     ],
+     type_names: [],
+     detail_level: 'detailed',
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getcppheapstatisticsdetaillevel>`__
+
+getHeapCodeStatistics
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.getHeapCodeStatistics()
+
+*Kind:* function · *Arguments:* 0
+
+Get statistics about code and its metadata in the heap, see V8 ``GetHeapCodeAndMetadataStatistics`` API. Returns an object with the following properties:
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapcodestatistics>`__
+
+getHeapSnapshot
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.getHeapSnapshot([options])
+
+*Kind:* function · *Arguments:* 1
+
+Generates a snapshot of the current V8 heap and returns a Readable Stream that may be used to read the JSON serialized representation. This JSON stream format is intended to be used with tools such as Chrome DevTools. The JSON schema is undocumented and specific to the V8 engine. Therefore, the schema may change from one version of V8 to the next.
+
+Creating a heap snapshot requires memory about twice the size of the heap at the time the snapshot is created. This results in the risk of OOM killers terminating the process.
+
+**Arguments**
+
+* ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   // Print heap snapshot to the console
+   const v8 = require('node:v8');
+   const stream = v8.getHeapSnapshot();
+   stream.pipe(process.stdout);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapsnapshotoptions>`__
+
+getHeapSpaceStatistics
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.getHeapSpaceStatistics()
+
+*Kind:* function · *Arguments:* 0
+
+Returns statistics about the V8 heap spaces, i.e. the segments which make up the V8 heap. Neither the ordering of heap spaces, nor the availability of a heap space can be guaranteed as the statistics are provided via the V8 ``GetHeapSpaceStatistics`` function and may change from one V8 version to the next.
+
+The value returned is an array of objects containing the following properties:
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapspacestatistics>`__
+
+getHeapStatistics
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.getHeapStatistics()
+
+*Kind:* function · *Arguments:* 0
+
+Returns an object with the following properties:
+
+``total_heap_size`` The value of total\\_heap\\_size is the number of bytes V8 has allocated for the heap. This can grow if used\\_heap needs more memory.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapstatistics>`__
+
+HeapProfileHandle
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   HeapProfileHandle
+
+*Kind:* class · *Arguments:* 0
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-heapprofilehandle>`__
+
+init
+~~~~
+
+.. code-block:: text
+
+   init(promise, parent)
+
+*Kind:* function · *Arguments:* 2
+
+Called when a promise is constructed. This *does not* mean that corresponding ``before``/``after`` events will occur, only that the possibility exists. This will happen if a promise is created without ever getting a continuation.
+
+**Arguments**
+
+* ``promise`` (*Promise*): The promise being created.
+* ``parent`` (*Promise*): The promise continued from, if applicable.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#initpromise-parent>`__
+
+isBuildingSnapshot
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.isBuildingSnapshot()
+
+*Kind:* function · *Arguments:* 0
+
+Returns true if the Node.js instance is run to build a snapshot.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotisbuildingsnapshot>`__
+
+isStringOneByteRepresentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.isStringOneByteRepresentation(content)
+
+*Kind:* function · *Arguments:* 1
+
+V8 only supports ``Latin-1/ISO-8859-1`` and ``UTF16`` as the underlying representation of a string. If the ``content`` uses ``Latin-1/ISO-8859-1`` as the underlying representation, this function will return true; otherwise, it returns false.
+
+If this method returns false, that does not mean that the string contains some characters not in ``Latin-1/ISO-8859-1``. Sometimes a ``Latin-1`` string may also be represented as ``UTF16``.
+
+**Arguments**
+
+* ``content`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const { isStringOneByteRepresentation } = require('node:v8');
+   const { Buffer } = require('node:buffer');
+
+   const Encoding = {
+     latin1: 1,
+     utf16le: 2,
+   };
+   const buffer = Buffer.alloc(100);
+   function writeString(input) {
+     if (isStringOneByteRepresentation(input)) {
+       console.log(`input: '${input}'`);
+       buffer.writeUint8(Encoding.latin1);
+       buffer.writeUint32LE(input.length, 1);
+       buffer.write(input, 5, 'latin1');
+       console.log(`decoded: '${buffer.toString('latin1', 5, 5 + input.length)}'\n`);
+     } else {
+       console.log(`input: '${input}'`);
+       buffer.writeUint8(Encoding.utf16le);
+       buffer.writeUint32LE(input.length * 2, 1);
+       buffer.write(input, 5, 'utf16le');
+       console.log(`decoded: '${buffer.toString('utf16le', 5, 5 + input.length * 2)}'`);
+     }
+   }
+   writeString('hello');
+   writeString('你好');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8isstringonebyterepresentationcontent>`__
+
+onAfter
+~~~~~~~
+
+.. code-block:: text
+
+   promiseHooks.onAfter(after)
+
+*Kind:* function · *Arguments:* 1
+
+**The ``after`` hook must be a plain function. Providing an async function will throw as it would produce an infinite microtask loop.**
+
+**Arguments**
+
+* ``after`` (*Function*): The ``after`` callback to call after a promise
+
+**Example**
+
+.. code-block:: javascript
+
+   const { promiseHooks } = require('node:v8');
+
+   const stop = promiseHooks.onAfter((promise) => {});
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonafterafter>`__
+
+onBefore
+~~~~~~~~
+
+.. code-block:: text
+
+   promiseHooks.onBefore(before)
+
+*Kind:* function · *Arguments:* 1
+
+**The ``before`` hook must be a plain function. Providing an async function will throw as it would produce an infinite microtask loop.**
+
+**Arguments**
+
+* ``before`` (*Function*): The ``before`` callback to call before a promise
+
+**Example**
+
+.. code-block:: javascript
+
+   const { promiseHooks } = require('node:v8');
+
+   const stop = promiseHooks.onBefore((promise) => {});
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonbeforebefore>`__
+
+onInit
+~~~~~~
+
+.. code-block:: text
+
+   promiseHooks.onInit(init)
+
+*Kind:* function · *Arguments:* 1
+
+**The ``init`` hook must be a plain function. Providing an async function will throw as it would produce an infinite microtask loop.**
+
+**Arguments**
+
+* ``init`` (*Function*): The ``init`` callback to call when a promise is created.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { promiseHooks } = require('node:v8');
+
+   const stop = promiseHooks.onInit((promise, parent) => {});
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksoninitinit>`__
+
+onSettled
+~~~~~~~~~
+
+.. code-block:: text
+
+   promiseHooks.onSettled(settled)
+
+*Kind:* function · *Arguments:* 1
+
+**The ``settled`` hook must be a plain function. Providing an async function will throw as it would produce an infinite microtask loop.**
+
+**Arguments**
+
+* ``settled`` (*Function*): The ``settled`` callback to call when a promise
+
+**Example**
+
+.. code-block:: javascript
+
+   const { promiseHooks } = require('node:v8');
+
+   const stop = promiseHooks.onSettled((promise) => {});
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonsettledsettled>`__
+
+queryObjects
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.queryObjects(ctor[, options])
+
+*Kind:* function · *Arguments:* 2
+
+This is similar to the ``queryObjects()`` console API provided by the Chromium DevTools console. It can be used to search for objects that have the matching constructor on its prototype chain in the heap after a full garbage collection, which can be useful for memory leak regression tests. To avoid surprising results, users should avoid using this API on constructors whose implementation they don't control, or on constructors that can be invoked by other parties in the application.
+
+To avoid accidental leaks, this API does not return raw references to the objects found. By default, it returns the count of the objects found. If ``options.format`` is ``'summary'``, it returns an array containing brief string representations for each object. The visibility provided in this API is similar to what the heap snapshot provides, while users can save the cost of serialization and parsing and directly filter the target objects during the search.
+
+**Arguments**
+
+* ``ctor`` (*Function*): The constructor that can be used to search on the
+* ``options`` (*undefined|Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const { queryObjects } = require('node:v8');
+   class A { foo = 'bar'; }
+   console.log(queryObjects(A)); // 0
+   const a = new A();
+   console.log(queryObjects(A)); // 1
+   // [ "A { foo: 'bar' }" ]
+   console.log(queryObjects(A, { format: 'summary' }));
+
+   class B extends A { bar = 'qux'; }
+   const b = new B();
+   console.log(queryObjects(B)); // 1
+   // [ "B { foo: 'bar', bar: 'qux' }" ]
+   console.log(queryObjects(B, { format: 'summary' }));
+
+   // Note that, when there are child classes inheriting from a constructor,
+   // the constructor also shows up in the prototype chain of the child
+   // classes's prototype, so the child classes's prototype would also be
+   // included in the result.
+   console.log(queryObjects(A));  // 3
+   // [ "B { foo: 'bar', bar: 'qux' }", 'A {}', "A { foo: 'bar' }" ]
+   console.log(queryObjects(A, { format: 'summary' }));
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8queryobjectsctor-options>`__
+
+serialize
+~~~~~~~~~
+
+.. code-block:: text
+
+   v8.serialize(value)
+
+*Kind:* function · *Arguments:* 1
+
+Uses a ``DefaultSerializer`` to serialize ``value`` into a buffer.
+
+``ERR_BUFFER_TOO_LARGE`` will be thrown when trying to serialize a huge object which requires buffer larger than ``buffer.constants.MAX_LENGTH``.
+
+**Arguments**
+
+* ``value`` (*any*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8serializevalue>`__
+
+Serializer
+~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.Serializer
+
+*Kind:* class · *Arguments:* 0
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8serializer>`__
+
+setDeserializeMainFunction
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.setDeserializeMainFunction(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+This sets the entry point of the Node.js application when it is deserialized from a snapshot. This can be called only once in the snapshot building script. If called, the deserialized application no longer needs an additional entry point script to start up and will simply invoke the callback along with the deserialized data (if provided), otherwise an entry point script still needs to be provided to the deserialized application.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked as the entry point after the
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotsetdeserializemainfunctioncallback-data>`__
+
+setFlagsFromString
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.setFlagsFromString(flags)
+
+*Kind:* function · *Arguments:* 1
+
+The ``v8.setFlagsFromString()`` method can be used to programmatically set V8 command-line flags. This method should be used with care. Changing settings after the VM has started may result in unpredictable behavior, including crashes and data loss; or it may simply do nothing.
+
+The V8 options available for a version of Node.js may be determined by running ``node --v8-options``.
+
+**Arguments**
+
+* ``flags`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const { setFlagsFromString } = require('node:v8');
+   const { setInterval } = require('node:timers');
+
+   // setFlagsFromString to trace garbage collection events
+   setFlagsFromString('--trace-gc');
+
+   // Trigger GC events by using some memory
+   let arrays = [];
+   const interval = setInterval(() => {
+     for (let i = 0; i < 500; i++) {
+       arrays.push(new Array(10000).fill(Math.random()));
+     }
+
+     if (arrays.length > 5000) {
+       arrays = arrays.slice(-1000);
+     }
+
+     console.log(`\n* Created ${arrays.length} arrays\n`);
+   }, 100);
+
+   // setFlagsFromString to stop tracing GC events after 1.5 seconds
+   setTimeout(() => {
+     console.log('\nStopped tracing!\n');
+     setFlagsFromString('--notrace-gc');
+   }, 1500);
+
+   // Stop triggering GC events altogether after 2.5 seconds
+   setTimeout(() => {
+     clearInterval(interval);
+   }, 2500);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8setflagsfromstringflags>`__
+
+setHeapSnapshotNearHeapLimit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.setHeapSnapshotNearHeapLimit(limit)
+
+*Kind:* function · *Arguments:* 1
+
+The API is a no-op if ``--heapsnapshot-near-heap-limit`` is already set from the command line or the API is called more than once. ``limit`` must be a positive integer. See ``--heapsnapshot-near-heap-limit`` for more information.
+
+**Arguments**
+
+* ``limit`` (*integer*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8setheapsnapshotnearheaplimitlimit>`__
+
+settled
+~~~~~~~
+
+.. code-block:: text
+
+   settled(promise)
+
+*Kind:* function · *Arguments:* 1
+
+Called when the promise receives a resolution or rejection value. This may occur synchronously in the case of ``Promise.resolve()`` or ``Promise.reject()``.
+
+**Arguments**
+
+* ``promise`` (*Promise*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#settledpromise>`__
+
+startCpuProfile
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startCpuProfile()
+
+*Kind:* function · *Arguments:* 0
+
+Starting a CPU profile then return a ``SyncCPUProfileHandle`` object. This API supports ``using`` syntax.
+
+This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const handle = v8.startCpuProfile();
+   const profile = handle.stop();
+   console.log(profile);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startcpuprofile>`__
+
+stopCoverage
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.stopCoverage()
+
+*Kind:* function · *Arguments:* 0
+
+The ``v8.stopCoverage()`` method allows the user to stop the coverage collection started by ``NODE_V8_COVERAGE``, so that V8 can release the execution count records and optimize code. This can be used in conjunction with ``v8.takeCoverage()`` if the user wants to collect the coverage on demand.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8stopcoverage>`__
+
+SyncCPUProfileHandle
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   SyncCPUProfileHandle
+
+*Kind:* class · *Arguments:* 0
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-synccpuprofilehandle>`__
+
+takeCoverage
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.takeCoverage()
+
+*Kind:* function · *Arguments:* 0
+
+The ``v8.takeCoverage()`` method allows the user to write the coverage started by ``NODE_V8_COVERAGE`` to disk on demand. This method can be invoked multiple times during the lifetime of the process. Each time the execution counter will be reset and a new coverage report will be written to the directory specified by ``NODE_V8_COVERAGE``.
+
+When the process is about to exit, one last coverage will still be written to disk unless ``v8.stopCoverage()`` is invoked before the process exits.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8takecoverage>`__
+
+writeHeapSnapshot
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.writeHeapSnapshot([filename[,options]])
+
+*Kind:* function · *Arguments:* 2
+
+Generates a snapshot of the current V8 heap and writes it to a JSON file. This file is intended to be used with tools such as Chrome DevTools. The JSON schema is undocumented and specific to the V8 engine, and may change from one version of V8 to the next.
+
+A heap snapshot is specific to a single V8 isolate. When using worker threads, a heap snapshot generated from the main thread will not contain any information about the workers, and vice versa.
+
+**Arguments**
+
+* ``filename`` (*string*) — optional: The file path where the V8 heap snapshot is to be
+* ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const { writeHeapSnapshot } = require('node:v8');
+   const { Worker, isMainThread, parentPort } = require('node:worker_threads');
+
+   if (isMainThread) {
+     const worker = new Worker(__filename);
+
+     worker.once('message', (filename) => {
+       console.log(`worker heapdump: ${filename}`);
+       // Now get a heapdump for the main thread.
+       console.log(`main thread heapdump: ${writeHeapSnapshot()}`);
+     });
+
+     // Tell the worker to create a heapdump.
+     worker.postMessage('heapdump');
+   } else {
+     parentPort.once('message', (message) => {
+       if (message === 'heapdump') {
+         // Generate a heapdump for the worker
+         // and return the filename to the parent.
+         parentPort.postMessage(writeHeapSnapshot());
+       }
+     });
+   }
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8writeheapsnapshotfilenameoptions>`__
+
+CPUProfileHandle class
+----------------------
+
+CPUProfileHandle.stop
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   cpuProfileHandle.stop()
+
+*Kind:* function · *Arguments:* 0
+
+Stopping collecting the profile, then return a Promise that fulfills with an error or the profile data.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#cpuprofilehandlestop>`__
+
+Deserializer class
+------------------
+
+Deserializer._readHostObject
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer._readHostObject()
+
+*Kind:* function · *Arguments:* 0
+
+This method is called to read some kind of host object, i.e. an object that is created by native C++ bindings. If it is not possible to deserialize the data, a suitable exception should be thrown.
+
+This method is not present on the ``Deserializer`` class itself but can be provided by subclasses.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializer_readhostobject>`__
+
+Deserializer.getWireFormatVersion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.getWireFormatVersion()
+
+*Kind:* function · *Arguments:* 0
+
+Reads the underlying wire format version. Likely mostly to be useful to legacy code reading old wire format versions. May not be called before ``.readHeader()``.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializergetwireformatversion>`__
+
+Deserializer.readDouble
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readDouble()
+
+*Kind:* function · *Arguments:* 0
+
+Read a JS ``number`` value. For use inside of a custom ``deserializer._readHostObject()``.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaddouble>`__
+
+Deserializer.readHeader
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readHeader()
+
+*Kind:* function · *Arguments:* 0
+
+Reads and validates a header (including the format version). May, for example, reject an invalid or unsupported wire format. In that case, an ``Error`` is thrown.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadheader>`__
+
+Deserializer.readRawBytes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readRawBytes(length)
+
+*Kind:* function · *Arguments:* 1
+
+Read raw bytes from the deserializer's internal buffer. The ``length`` parameter must correspond to the length of the buffer that was passed to ``serializer.writeRawBytes()``. For use inside of a custom ``deserializer._readHostObject()``.
+
+**Arguments**
+
+* ``length`` (*integer*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadrawbyteslength>`__
+
+Deserializer.readUint32
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readUint32()
+
+*Kind:* function · *Arguments:* 0
+
+Read a raw 32-bit unsigned integer and return it. For use inside of a custom ``deserializer._readHostObject()``.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaduint32>`__
+
+Deserializer.readUint64
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readUint64()
+
+*Kind:* function · *Arguments:* 0
+
+Read a raw 64-bit unsigned integer and return it as an array ``[hi, lo]`` with two 32-bit unsigned integer entries. For use inside of a custom ``deserializer._readHostObject()``.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaduint64>`__
+
+Deserializer.readValue
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.readValue()
+
+*Kind:* function · *Arguments:* 0
+
+Deserializes a JavaScript value from the buffer and returns it.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadvalue>`__
+
+Deserializer.transferArrayBuffer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   deserializer.transferArrayBuffer(id, arrayBuffer)
+
+*Kind:* function · *Arguments:* 2
+
+Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass the corresponding ``ArrayBuffer`` in the serializing context to ``serializer.transferArrayBuffer()`` (or return the ``id`` from ``serializer._getSharedArrayBufferId()`` in the case of ``SharedArrayBuffer``\ s).
+
+**Arguments**
+
+* ``id`` (*integer*): A 32-bit unsigned integer.
+* ``arrayBuffer`` (*ArrayBuffer|SharedArrayBuffer*): An ``ArrayBuffer`` instance.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializertransferarraybufferid-arraybuffer>`__
+
+GCProfiler class
+----------------
+
+**GCProfiler** — This API collects GC data in current thread.
+
+GCProfiler.start
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   profiler.start()
+
+*Kind:* function · *Arguments:* 0
+
+Start collecting GC data.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#profilerstart>`__
+
+GCProfiler.stop
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   profiler.stop()
+
+*Kind:* function · *Arguments:* 0
+
+Stop collecting GC data and return an object. The content of object is as follows.
+
+Here's an example.
+
+This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { GCProfiler } = require('node:v8');
+   const profiler = new GCProfiler();
+   profiler.start();
+   setTimeout(() => {
+     console.log(profiler.stop());
+   }, 1000);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#profilerstop>`__
+
+HeapProfileHandle class
+-----------------------
+
+HeapProfileHandle.stop
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   heapProfileHandle.stop()
+
+*Kind:* function · *Arguments:* 0
+
+Stopping collecting the profile, then return a Promise that fulfills with an error or the profile data.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#heapprofilehandlestop>`__
+
+Serializer class
+----------------
+
+Serializer._getDataCloneError
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer._getDataCloneError(message)
+
+*Kind:* function · *Arguments:* 1
+
+This method is called to generate error objects that will be thrown when an object can not be cloned.
+
+This method defaults to the ``Error`` constructor and can be overridden on subclasses.
+
+**Arguments**
+
+* ``message`` (*string*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_getdatacloneerrormessage>`__
+
+Serializer._getSharedArrayBufferId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer._getSharedArrayBufferId(sharedArrayBuffer)
+
+*Kind:* function · *Arguments:* 1
+
+This method is called when the serializer is going to serialize a ``SharedArrayBuffer`` object. It must return an unsigned 32-bit integer ID for the object, using the same ID if this ``SharedArrayBuffer`` has already been serialized. When deserializing, this ID will be passed to ``deserializer.transferArrayBuffer()``.
+
+If the object cannot be serialized, an exception should be thrown.
+
+**Arguments**
+
+* ``sharedArrayBuffer`` (*SharedArrayBuffer*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_getsharedarraybufferidsharedarraybuffer>`__
+
+Serializer._setTreatArrayBufferViewsAsHostObjects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer._setTreatArrayBufferViewsAsHostObjects(flag)
+
+*Kind:* function · *Arguments:* 1
+
+Indicate whether to treat ``TypedArray`` and ``DataView`` objects as host objects, i.e. pass them to ``serializer._writeHostObject()``.
+
+**Arguments**
+
+* ``flag`` (*boolean*): **Default:** ``false``
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_settreatarraybufferviewsashostobjectsflag>`__
+
+Serializer._writeHostObject
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer._writeHostObject(object)
+
+*Kind:* function · *Arguments:* 1
+
+This method is called to write some kind of host object, i.e. an object created by native C++ bindings. If it is not possible to serialize ``object``, a suitable exception should be thrown.
+
+This method is not present on the ``Serializer`` class itself but can be provided by subclasses.
+
+**Arguments**
+
+* ``object`` (*Object*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_writehostobjectobject>`__
+
+Serializer.releaseBuffer
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.releaseBuffer()
+
+*Kind:* function · *Arguments:* 0
+
+Returns the stored internal buffer. This serializer should not be used once the buffer is released. Calling this method results in undefined behavior if a previous write has failed.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerreleasebuffer>`__
+
+Serializer.transferArrayBuffer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.transferArrayBuffer(id, arrayBuffer)
+
+*Kind:* function · *Arguments:* 2
+
+Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass the corresponding ``ArrayBuffer`` in the deserializing context to ``deserializer.transferArrayBuffer()``.
+
+**Arguments**
+
+* ``id`` (*integer*): A 32-bit unsigned integer.
+* ``arrayBuffer`` (*ArrayBuffer*): An ``ArrayBuffer`` instance.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializertransferarraybufferid-arraybuffer>`__
+
+Serializer.writeDouble
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeDouble(value)
+
+*Kind:* function · *Arguments:* 1
+
+Write a JS ``number`` value. For use inside of a custom ``serializer._writeHostObject()``.
+
+**Arguments**
+
+* ``value`` (*number*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwritedoublevalue>`__
+
+Serializer.writeHeader
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeHeader()
+
+*Kind:* function · *Arguments:* 0
+
+Writes out a header, which includes the serialization format version.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteheader>`__
+
+Serializer.writeRawBytes
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeRawBytes(buffer)
+
+*Kind:* function · *Arguments:* 1
+
+Write raw bytes into the serializer's internal buffer. The deserializer will require a way to compute the length of the buffer. For use inside of a custom ``serializer._writeHostObject()``.
+
+**Arguments**
+
+* ``buffer`` (*Buffer|TypedArray|DataView*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriterawbytesbuffer>`__
+
+Serializer.writeUint32
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeUint32(value)
+
+*Kind:* function · *Arguments:* 1
+
+Write a raw 32-bit unsigned integer. For use inside of a custom ``serializer._writeHostObject()``.
+
+**Arguments**
+
+* ``value`` (*integer*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteuint32value>`__
+
+Serializer.writeUint64
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeUint64(hi, lo)
+
+*Kind:* function · *Arguments:* 2
+
+Write a raw 64-bit unsigned integer, split into high and low 32-bit parts. For use inside of a custom ``serializer._writeHostObject()``.
+
+**Arguments**
+
+* ``hi`` (*integer*)
+* ``lo`` (*integer*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteuint64hi-lo>`__
+
+Serializer.writeValue
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   serializer.writeValue(value)
+
+*Kind:* function · *Arguments:* 1
+
+Serializes a JavaScript value and adds the serialized representation to the internal buffer.
+
+This throws an error if ``value`` cannot be serialized.
+
+**Arguments**
+
+* ``value`` (*any*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwritevaluevalue>`__
+
+startupSnapshot
+---------------
+
+startupSnapshot.addDeserializeCallback
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.addDeserializeCallback(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+Add a callback that will be called when the Node.js instance is deserialized from a snapshot. The ``callback`` and the ``data`` (if provided) will be serialized into the snapshot, they can be used to re-initialize the state of the application or to re-acquire resources that the application needs when the application is restarted from the snapshot.
+
+Callbacks are run in the order in which they are added.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked after the snapshot is
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotadddeserializecallbackcallback-data>`__
+
+startupSnapshot.addSerializeCallback
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.addSerializeCallback(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+Add a callback that will be called when the Node.js instance is about to get serialized into a snapshot and exit. This can be used to release resources that should not or cannot be serialized or to convert user data into a form more suitable for serialization.
+
+Callbacks are run in the order in which they are added.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked before serialization.
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotaddserializecallbackcallback-data>`__
+
+startupSnapshot.isBuildingSnapshot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.isBuildingSnapshot()
+
+*Kind:* function · *Arguments:* 0
+
+Returns true if the Node.js instance is run to build a snapshot.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotisbuildingsnapshot>`__
+
+startupSnapshot.setDeserializeMainFunction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   v8.startupSnapshot.setDeserializeMainFunction(callback[, data])
+
+*Kind:* function · *Arguments:* 2
+
+This sets the entry point of the Node.js application when it is deserialized from a snapshot. This can be called only once in the snapshot building script. If called, the deserialized application no longer needs an additional entry point script to start up and will simply invoke the callback along with the deserialized data (if provided), otherwise an entry point script still needs to be provided to the deserialized application.
+
+**Arguments**
+
+* ``callback`` (*Function*): Callback to be invoked as the entry point after the
+* ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotsetdeserializemainfunctioncallback-data>`__
+
+SyncCPUProfileHandle class
+--------------------------
+
+SyncCPUProfileHandle.stop
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   syncCpuProfileHandle.stop()
+
+*Kind:* function · *Arguments:* 0
+
+Stopping collecting the profile and return the profile data.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#synccpuprofilehandlestop>`__
+
+Properties and constants
+------------------------
+
+* ``startupSnapshot`` — object
+
+.. note::
+
+   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.

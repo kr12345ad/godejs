@@ -1,0 +1,318 @@
+domain
+======
+
+**This module is pending deprecation.** Once a replacement API has been finalized, this module will be fully deprecated. Most developers should **not** have cause to use this module. Users who absolutely must have the functionality that domains provide may rely on it for the time being but should expect to have to migrate to a different solution in the future.
+
+Domains provide a way to handle multiple different IO operations as a single group. If any of the event emitters or callbacks registered to a domain emit an ``'error'`` event, or throw an error, then the domain object will be notified, rather than losing the context of the error in the ``process.on('uncaughtException')`` handler, or causing the program to exit immediately with an error code.
+
+Loading
+-------
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+   // ESM
+   import * as domain from 'node:domain';
+
+API
+---
+
+create
+~~~~~~
+
+.. code-block:: text
+
+   domain.create()
+
+*Kind:* function · *Arguments:* 0
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domaincreate>`__
+
+createDomain
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.createDomain(...args)
+
+*Kind:* function · *Arguments:* 0
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+Domain
+~~~~~~
+
+.. code-block:: text
+
+   Domain
+
+*Kind:* class · *Arguments:* 0
+
+The ``Domain`` class encapsulates the functionality of routing errors and uncaught exceptions to the active ``Domain`` object.
+
+To handle the errors that it catches, listen to its ``'error'`` event.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const d = domain.create();
+
+   function readSomeFile(filename, cb) {
+     fs.readFile(filename, 'utf8', d.bind((er, data) => {
+       // If this throws, it will also be passed to the domain.
+       return cb(er, data ? JSON.parse(data) : null);
+     }));
+   }
+
+   d.on('error', (er) => {
+     // An error occurred somewhere. If we throw it now, it will crash the program
+     // with the normal line number and stack message.
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#class-domain>`__
+
+Domain class
+------------
+
+**Domain** — The ``Domain`` class encapsulates the functionality of routing errors and uncaught exceptions to the active ``Domain`` object.
+
+To handle the errors that it catches, listen to its ``'error'`` event.
+
+Domain._errorHandler
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.Domain._errorHandler(arg0)
+
+*Kind:* function · *Arguments:* 1
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+Domain.add
+~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.add(emitter)
+
+*Kind:* function · *Arguments:* 1
+
+Explicitly adds an emitter to the domain. If any event handlers called by the emitter throw an error, or if the emitter emits an ``'error'`` event, it will be routed to the domain's ``'error'`` event, just like with implicit binding.
+
+If the ``EventEmitter`` was already bound to a domain, it is removed from that one, and bound to this one instead.
+
+**Arguments**
+
+* ``emitter`` (*EventEmitter*): emitter to be added to the domain
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainaddemitter>`__
+
+Domain.bind
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.bind(callback)
+
+*Kind:* function · *Arguments:* 1
+
+The returned function will be a wrapper around the supplied callback function. When the returned function is called, any errors that are thrown will be routed to the domain's ``'error'`` event.
+
+**Arguments**
+
+* ``callback`` (*Function*): The callback function
+
+**Example**
+
+.. code-block:: javascript
+
+   const d = domain.create();
+
+   function readSomeFile(filename, cb) {
+     fs.readFile(filename, 'utf8', d.bind((er, data) => {
+       // If this throws, it will also be passed to the domain.
+       return cb(er, data ? JSON.parse(data) : null);
+     }));
+   }
+
+   d.on('error', (er) => {
+     // An error occurred somewhere. If we throw it now, it will crash the program
+     // with the normal line number and stack message.
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainbindcallback>`__
+
+Domain.dispose
+~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   Domain.dispose
+
+*Kind:* function · *Arguments:* 0
+
+Type: End-of-Life
+
+``Domain.dispose()`` has been removed. Recover from failed I/O actions explicitly via error event handlers set on the domain instead.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0012-domaindispose>`__
+
+Domain.enter
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.enter()
+
+*Kind:* function · *Arguments:* 0
+
+The ``enter()`` method is plumbing used by the ``run()``, ``bind()``, and ``intercept()`` methods to set the active domain. It sets ``domain.active`` and ``process.domain`` to the domain, and implicitly pushes the domain onto the domain stack managed by the domain module (see ``domain.exit()`` for details on the domain stack). The call to ``enter()`` delimits the beginning of a chain of asynchronous calls and I/O operations bound to a domain.
+
+Calling ``enter()`` changes only the active domain, and does not alter the domain itself. ``enter()`` and ``exit()`` can be called an arbitrary number of times on a single domain.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainenter>`__
+
+Domain.exit
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.exit()
+
+*Kind:* function · *Arguments:* 0
+
+The ``exit()`` method exits the current domain, popping it off the domain stack. Any time execution is going to switch to the context of a different chain of asynchronous calls, it's important to ensure that the current domain is exited. The call to ``exit()`` delimits either the end of or an interruption to the chain of asynchronous calls and I/O operations bound to a domain.
+
+If there are multiple, nested domains bound to the current execution context, ``exit()`` will exit any domains nested within this domain.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainexit>`__
+
+Domain.intercept
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.intercept(callback)
+
+*Kind:* function · *Arguments:* 1
+
+This method is almost identical to ``domain.bind(callback)``. However, in addition to catching thrown errors, it will also intercept ``Error`` objects sent as the first argument to the function.
+
+In this way, the common ``if (err) return callback(err);`` pattern can be replaced with a single error handler in a single place.
+
+**Arguments**
+
+* ``callback`` (*Function*): The callback function
+
+**Example**
+
+.. code-block:: javascript
+
+   const d = domain.create();
+
+   function readSomeFile(filename, cb) {
+     fs.readFile(filename, 'utf8', d.intercept((data) => {
+       // Note, the first argument is never passed to the
+       // callback since it is assumed to be the 'Error' argument
+       // and thus intercepted by the domain.
+
+       // If this throws, it will also be passed to the domain
+       // so the error-handling logic can be moved to the 'error'
+       // event on the domain instead of being repeated throughout
+       // the program.
+       return cb(null, JSON.parse(data));
+     }));
+   }
+
+   d.on('error', (er) => {
+     // An error occurred somewhere. If we throw it now, it will crash the program
+     // with the normal line number and stack message.
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domaininterceptcallback>`__
+
+Domain.remove
+~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.remove(emitter)
+
+*Kind:* function · *Arguments:* 1
+
+The opposite of ``domain.add(emitter)``. Removes domain handling from the specified emitter.
+
+**Arguments**
+
+* ``emitter`` (*EventEmitter*): emitter to be removed from the domain
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainremoveemitter>`__
+
+Domain.run
+~~~~~~~~~~
+
+.. code-block:: text
+
+   domain.run(fn[, ...args])
+
+*Kind:* function · *Arguments:* 2
+
+Run the supplied function in the context of the domain, implicitly binding all event emitters, timers, and low-level requests that are created in that context. Optionally, arguments can be passed to the function.
+
+This is the most basic way to use a domain.
+
+**Arguments**
+
+* ``fn`` (*Function*)
+* ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+   const fs = require('node:fs');
+   const d = domain.create();
+   d.on('error', (er) => {
+     console.error('Caught error!', er);
+   });
+   d.run(() => {
+     process.nextTick(() => {
+       setTimeout(() => { // Simulating some various async stuff
+         fs.open('non-existent file', 'r', (er, fd) => {
+           if (er) throw er;
+           // proceed...
+         });
+       }, 100);
+     });
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainrunfn-args>`__
+
+Properties and constants
+------------------------
+
+* ``_stack`` — array
+* ``active`` — null
+
+.. note::
+
+   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.

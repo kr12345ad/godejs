@@ -82,7 +82,9 @@ Documentation
 .. toctree::
    :maxdepth: 2
 
+   usage/index
    platforms
    javascriptcore
    http3
    module-guide
+   usage/api/index

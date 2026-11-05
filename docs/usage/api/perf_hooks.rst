@@ -1,0 +1,870 @@
+perf_hooks
+==========
+
+This module provides an implementation of a subset of the W3C Web Performance APIs as well as additional APIs for Node.js-specific performance measurements.
+
+Node.js supports the following Web Performance APIs:
+
+Loading
+-------
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+   // ESM
+   import * as perf_hooks from 'node:perf_hooks';
+
+Quick start
+-----------
+
+.. code-block:: javascript
+
+   const { PerformanceObserver, performance } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((items) => {
+     console.log(items.getEntries()[0].duration);
+   });
+   obs.observe({ type: 'measure' });
+   performance.measure('Start to Now');
+
+   performance.mark('A');
+   (async function doSomeLongRunningProcess() {
+     await new Promise((r) => setTimeout(r, 5000));
+     performance.measure('A to Now', 'A');
+
+     performance.mark('B');
+     performance.measure('A to B', 'A', 'B');
+   })();
+
+API
+---
+
+createHistogram
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.createHistogram([options])
+
+*Kind:* function · *Arguments:* 1
+
+Returns a ``RecordableHistogram``.
+
+**Arguments**
+
+* ``options`` (*Object*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#perf_hookscreatehistogramoptions>`__
+
+histogram
+~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.histogram(arg0)
+
+*Kind:* function · *Arguments:* 1
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+Histogram
+~~~~~~~~~
+
+.. code-block:: text
+
+   Histogram
+
+*Kind:* class · *Arguments:* 1
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { createHistogram } = require('node:perf_hooks');
+
+   // Track latency with a 200ms SLO threshold, half-life of 100 samples
+   const h = createHistogram({ halfLife: 100, threshold: 200_000_000 });
+
+   // ... record latency values ...
+
+   // Check burn rate against a 99.9% SLO
+   const rate = h.burnRate(0.999);
+   if (rate > 1) {
+     console.log(`SLO burn rate: ${rate.toFixed(2)}x — error budget depleting`);
+   }
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-histogram>`__
+
+monitorEventLoopDelay
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.monitorEventLoopDelay([options])
+
+*Kind:* function · *Arguments:* 1
+
+*This property is an extension by Node.js. It is not available in Web browsers.*
+
+Creates a histogram object that samples and reports the event loop delay over time. The delays will be reported in nanoseconds.
+
+**Arguments**
+
+* ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const { monitorEventLoopDelay } = require('node:perf_hooks');
+   const h = monitorEventLoopDelay({ resolution: 20 });
+   h.enable();
+   // Do something.
+   h.disable();
+   console.log(h.min);
+   console.log(h.max);
+   console.log(h.mean);
+   console.log(h.stddev);
+   console.log(h.percentiles);
+   console.log(h.percentile(50));
+   console.log(h.percentile(99));
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#perf_hooksmonitoreventloopdelayoptions>`__
+
+PerformanceEntry
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   PerformanceEntry
+
+*Kind:* class · *Arguments:* 4
+
+The constructor of this class is not exposed to users directly.
+
+This is a class; construct instances with ``new``.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceentry>`__
+
+PerformanceNodeTiming
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   PerformanceNodeTiming
+
+*Kind:* class · *Arguments:* 0
+
+*This property is an extension by Node.js. It is not available in Web browsers.*
+
+Provides timing details for Node.js itself. The constructor of this class is not exposed to users.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { performance } = require('node:perf_hooks');
+
+   setImmediate(() => {
+     console.log(performance.nodeTiming.uvMetricsInfo);
+   });
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performancenodetiming>`__
+
+PerformanceObserver
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   PerformanceObserver
+
+*Kind:* class · *Arguments:* 1
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((list, observer) => {
+     console.log(list.getEntries());
+
+     performance.clearMarks();
+     performance.clearMeasures();
+     observer.disconnect();
+   });
+   obs.observe({ entryTypes: ['mark'], buffered: true });
+
+   performance.mark('test');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceobserver>`__
+
+PerformanceObserverEntryList
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   PerformanceObserverEntryList
+
+*Kind:* class · *Arguments:* 1
+
+The ``PerformanceObserverEntryList`` class is used to provide access to the ``PerformanceEntry`` instances passed to a ``PerformanceObserver``. The constructor of this class is not exposed to users.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((perfObserverList, observer) => {
+     console.log(perfObserverList.getEntries());
+     /**
+      * [
+      *   PerformanceEntry {
+      *     name: 'test',
+      *     entryType: 'mark',
+      *     startTime: 81.465639,
+      *     duration: 0,
+      *     detail: null
+      *   },
+      *   PerformanceEntry {
+      *     name: 'meow',
+      *     entryType: 'mark',
+      *     startTime: 81.860064,
+      *     duration: 0,
+      *     detail: null
+      *   }
+      * ]
+      */
+
+     performance.clearMarks();
+     performance.clearMeasures();
+     observer.disconnect();
+   });
+   obs.observe({ type: 'mark' });
+
+   performance.mark('test');
+   performance.mark('meow');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceobserverentrylist>`__
+
+Histogram class
+---------------
+
+Histogram.percentile
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   histogram.percentile(percentile)
+
+*Kind:* function · *Arguments:* 1
+
+Returns the value at the given percentile.
+
+**Arguments**
+
+* ``percentile`` (*number*): A percentile value in the range (0, 100].
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogrampercentilepercentile>`__
+
+Histogram.record
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   histogram.record(val)
+
+*Kind:* function · *Arguments:* 1
+
+**Arguments**
+
+* ``val`` (*number|bigint*): The amount to record in the histogram.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogramrecordval>`__
+
+Histogram.reset
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   histogram.reset()
+
+*Kind:* function · *Arguments:* 0
+
+Resets the collected histogram data.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogramreset>`__
+
+Histogram.toJSON
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.toJSON()
+
+*Kind:* function · *Arguments:* 0
+
+An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
+
+performance
+-----------
+
+**performance** — An object that can be used to collect performance metrics from the current Node.js instance. It is similar to ``window.performance`` in browsers.
+
+performance.clearMarks
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.clearMarks([name])
+
+*Kind:* function · *Arguments:* 1
+
+If ``name`` is not provided, removes all ``PerformanceMark`` objects from the Performance Timeline. If ``name`` is provided, removes only the named mark.
+
+**Arguments**
+
+* ``name`` (*string*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmarksname>`__
+
+performance.clearMeasures
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.clearMeasures([name])
+
+*Kind:* function · *Arguments:* 1
+
+If ``name`` is not provided, removes all ``PerformanceMeasure`` objects from the Performance Timeline. If ``name`` is provided, removes only the named measure.
+
+**Arguments**
+
+* ``name`` (*string*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmeasuresname>`__
+
+performance.eventLoopUtilization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.eventLoopUtilization([utilization1[, utilization2]])
+
+*Kind:* function · *Arguments:* 2
+
+This is an alias of ``perf_hooks.eventLoopUtilization()``.
+
+*This property is an extension by Node.js. It is not available in Web browsers.*
+
+**Arguments**
+
+* ``utilization1`` (*Object*) — optional: The result of a previous call to
+* ``utilization2`` (*Object*) — optional: The result of a previous call to
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceeventlooputilizationutilization1-utilization2>`__
+
+performance.getEntries
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.getEntries()
+
+*Kind:* function · *Arguments:* 0
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime``. If you are only interested in performance entries of certain types or that have certain names, see ``performance.getEntriesByType()`` and ``performance.getEntriesByName()``.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentries>`__
+
+performance.getEntriesByName
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.getEntriesByName(name[, type])
+
+*Kind:* function · *Arguments:* 2
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime`` whose ``performanceEntry.name`` is equal to ``name``, and optionally, whose ``performanceEntry.entryType`` is equal to ``type``.
+
+**Arguments**
+
+* ``name`` (*string*)
+* ``type`` (*string*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbynamename-type>`__
+
+performance.getEntriesByType
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.getEntriesByType(type)
+
+*Kind:* function · *Arguments:* 1
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime`` whose ``performanceEntry.entryType`` is equal to ``type``.
+
+**Arguments**
+
+* ``type`` (*string*)
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbytypetype>`__
+
+performance.mark
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.mark(name[, options])
+
+*Kind:* function · *Arguments:* 2
+
+Creates a new ``PerformanceMark`` entry in the Performance Timeline. A ``PerformanceMark`` is a subclass of ``PerformanceEntry`` whose ``performanceEntry.entryType`` is always ``'mark'``, and whose ``performanceEntry.duration`` is always ``0``. Performance marks are used to mark specific significant moments in the Performance Timeline.
+
+The created ``PerformanceMark`` entry is put in the global Performance Timeline and can be queried with ``performance.getEntries``, ``performance.getEntriesByName``, and ``performance.getEntriesByType``. When the observation is performed, the entries should be cleared from the global Performance Timeline manually with ``performance.clearMarks``.
+
+**Arguments**
+
+* ``name`` (*string*)
+* ``options`` (*Object*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemarkname-options>`__
+
+performance.measure
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.measure(name[, startMarkOrOptions[, endMark]])
+
+*Kind:* function · *Arguments:* 3
+
+Creates a new ``PerformanceMeasure`` entry in the Performance Timeline. A ``PerformanceMeasure`` is a subclass of ``PerformanceEntry`` whose ``performanceEntry.entryType`` is always ``'measure'``, and whose ``performanceEntry.duration`` measures the number of milliseconds elapsed since ``startMark`` and ``endMark``.
+
+The ``startMark`` argument may identify any *existing* ``PerformanceMark`` in the Performance Timeline, or *may* identify any of the timestamp properties provided by the ``PerformanceNodeTiming`` class. If the named ``startMark`` does not exist, an error is thrown.
+
+**Arguments**
+
+* ``name`` (*string*)
+* ``startMarkOrOptions`` (*string|Object*) — optional: Optional.
+* ``endMark`` (*string*) — optional: Optional. Must be omitted if ``startMarkOrOptions`` is an
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemeasurename-startmarkoroptions-endmark>`__
+
+performance.now
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.now()
+
+*Kind:* function · *Arguments:* 0
+
+Returns the current high resolution millisecond timestamp, where 0 represents the start of the current ``node`` process.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancenow>`__
+
+performance.timerify
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.timerify(fn[, options])
+
+*Kind:* function · *Arguments:* 2
+
+This is an alias of ``perf_hooks.timerify()``.
+
+*This property is an extension by Node.js. It is not available in Web browsers.*
+
+**Arguments**
+
+* ``fn`` (*Function*)
+* ``options`` (*Object*) — optional
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetimerifyfn-options>`__
+
+performance.toJSON
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.toJSON()
+
+*Kind:* function · *Arguments:* 0
+
+An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
+
+PerformanceEntry class
+----------------------
+
+**PerformanceEntry** — The constructor of this class is not exposed to users directly.
+
+PerformanceEntry.toJSON
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.toJSON()
+
+*Kind:* function · *Arguments:* 0
+
+An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
+
+PerformanceNodeTiming class
+---------------------------
+
+**PerformanceNodeTiming** — *This property is an extension by Node.js. It is not available in Web browsers.*
+
+Provides timing details for Node.js itself. The constructor of this class is not exposed to users.
+
+PerformanceNodeTiming.toJSON
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performance.toJSON()
+
+*Kind:* function · *Arguments:* 0
+
+An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
+
+PerformanceObserver class
+-------------------------
+
+PerformanceObserver._enqueue
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.PerformanceObserver._enqueue(arg0)
+
+*Kind:* function · *Arguments:* 1
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+PerformanceObserver._flush
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.PerformanceObserver._flush(...args)
+
+*Kind:* function · *Arguments:* 0
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+PerformanceObserver._matches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   perf_hooks.PerformanceObserver._matches(arg0)
+
+*Kind:* function · *Arguments:* 1
+
+.. note::
+
+   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+
+
+PerformanceObserver.disconnect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserver.disconnect()
+
+*Kind:* function · *Arguments:* 0
+
+Disconnects the ``PerformanceObserver`` instance from all notifications.
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverdisconnect>`__
+
+PerformanceObserver.observe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserver.observe(options)
+
+*Kind:* function · *Arguments:* 1
+
+Subscribes the ``PerformanceObserver`` instance to notifications of new ``PerformanceEntry`` instances identified either by ``options.entryTypes`` or ``options.type``:
+
+**Arguments**
+
+* ``options`` (*Object*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((list, observer) => {
+     // Called once asynchronously. `list` contains three items.
+   });
+   obs.observe({ type: 'mark' });
+
+   for (let n = 0; n < 3; n++)
+     performance.mark(`test${n}`);
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverobserveoptions>`__
+
+PerformanceObserver.takeRecords
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserver.takeRecords()
+
+*Kind:* function · *Arguments:* 0
+
+This callable takes no arguments.
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobservertakerecords>`__
+
+PerformanceObserverEntryList class
+----------------------------------
+
+**PerformanceObserverEntryList** — The ``PerformanceObserverEntryList`` class is used to provide access to the ``PerformanceEntry`` instances passed to a ``PerformanceObserver``. The constructor of this class is not exposed to users.
+
+PerformanceObserverEntryList.getEntries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserverEntryList.getEntries()
+
+*Kind:* function · *Arguments:* 0
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime``.
+
+This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((perfObserverList, observer) => {
+     console.log(perfObserverList.getEntries());
+     /**
+      * [
+      *   PerformanceEntry {
+      *     name: 'test',
+      *     entryType: 'mark',
+      *     startTime: 81.465639,
+      *     duration: 0,
+      *     detail: null
+      *   },
+      *   PerformanceEntry {
+      *     name: 'meow',
+      *     entryType: 'mark',
+      *     startTime: 81.860064,
+      *     duration: 0,
+      *     detail: null
+      *   }
+      * ]
+      */
+
+     performance.clearMarks();
+     performance.clearMeasures();
+     observer.disconnect();
+   });
+   obs.observe({ type: 'mark' });
+
+   performance.mark('test');
+   performance.mark('meow');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentries>`__
+
+PerformanceObserverEntryList.getEntriesByName
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserverEntryList.getEntriesByName(name[, type])
+
+*Kind:* function · *Arguments:* 2
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime`` whose ``performanceEntry.name`` is equal to ``name``, and optionally, whose ``performanceEntry.entryType`` is equal to ``type``.
+
+**Arguments**
+
+* ``name`` (*string*)
+* ``type`` (*string*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((perfObserverList, observer) => {
+     console.log(perfObserverList.getEntriesByName('meow'));
+     /**
+      * [
+      *   PerformanceEntry {
+      *     name: 'meow',
+      *     entryType: 'mark',
+      *     startTime: 98.545991,
+      *     duration: 0,
+      *     detail: null
+      *   }
+      * ]
+      */
+     console.log(perfObserverList.getEntriesByName('nope')); // []
+
+     console.log(perfObserverList.getEntriesByName('test', 'mark'));
+     /**
+      * [
+      *   PerformanceEntry {
+      *     name: 'test',
+      *     entryType: 'mark',
+      *     startTime: 63.518931,
+      *     duration: 0,
+      *     detail: null
+      *   }
+      * ]
+      */
+     console.log(perfObserverList.getEntriesByName('test', 'measure')); // []
+
+     performance.clearMarks();
+     performance.clearMeasures();
+     observer.disconnect();
+   });
+   obs.observe({ entryTypes: ['mark', 'measure'] });
+
+   performance.mark('test');
+   performance.mark('meow');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentriesbynamename-type>`__
+
+PerformanceObserverEntryList.getEntriesByType
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   performanceObserverEntryList.getEntriesByType(type)
+
+*Kind:* function · *Arguments:* 1
+
+Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime`` whose ``performanceEntry.entryType`` is equal to ``type``.
+
+**Arguments**
+
+* ``type`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const {
+     performance,
+     PerformanceObserver,
+   } = require('node:perf_hooks');
+
+   const obs = new PerformanceObserver((perfObserverList, observer) => {
+     console.log(perfObserverList.getEntriesByType('mark'));
+     /**
+      * [
+      *   PerformanceEntry {
+      *     name: 'test',
+      *     entryType: 'mark',
+      *     startTime: 55.897834,
+      *     duration: 0,
+      *     detail: null
+      *   },
+      *   PerformanceEntry {
+      *     name: 'meow',
+      *     entryType: 'mark',
+      *     startTime: 56.350146,
+      *     duration: 0,
+      *     detail: null
+      *   }
+      * ]
+      */
+     performance.clearMarks();
+     performance.clearMeasures();
+     observer.disconnect();
+   });
+   obs.observe({ type: 'mark' });
+
+   performance.mark('test');
+   performance.mark('meow');
+
+`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentriesbytypetype>`__
+
+Properties and constants
+------------------------
+
+* ``performance`` — object
+* ``performance.timeOrigin`` — number
+* ``performance_node`` — object
+
+.. note::
+
+   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
