@@ -13,13 +13,13 @@ AbortSignal
 
    AbortSignal
 
-*Kind:* function · *Arguments:* 1
+*Kind:* class · *Arguments:* 1
 
 Type: Documentation-only
 
 Using ``AbortSignal`` to destroy long-lived resources is deprecated. Prefer ``using`` for resource cleanup.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
 
 **Example**
 
@@ -53,6 +53,13 @@ An automated migration is available (source):
 
 * ``data``
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = atob('hello');
+   console.log(result);
+
 
 btoa
 ~~~~
@@ -71,6 +78,13 @@ An automated migration is available (source):
 
 * ``data``
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = btoa('hello');
+   console.log(result);
+
 
 clearImmediate
 ~~~~~~~~~~~~~~
@@ -86,6 +100,13 @@ clearImmediate
 **Arguments**
 
 * ``immediateObject``
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = clearImmediate(undefined);
+   console.log(result);
 
 
 clearInterval
@@ -103,6 +124,13 @@ clearInterval
 
 * ``intervalObject``
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = clearInterval(undefined);
+   console.log(result);
+
 
 clearTimeout
 ~~~~~~~~~~~~
@@ -119,6 +147,13 @@ clearTimeout
 
 * ``timeoutObject``
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = clearTimeout(undefined);
+   console.log(result);
+
 
 CryptoKey
 ~~~~~~~~~
@@ -127,13 +162,20 @@ CryptoKey
 
    CryptoKey
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 Type: Documentation-only
 
 Passing a ``CryptoKey`` to ``node:crypto`` functions is deprecated and will throw an error in a future version. This includes ``crypto.createPublicKey()``, ``crypto.createPrivateKey()``, ``crypto.sign()``, ``crypto.verify()``, ``crypto.publicEncrypt()``, ``crypto.publicDecrypt()``, ``crypto.privateEncrypt()``, ``crypto.privateDecrypt()``, ``Sign.prototype.sign()``, ``Verify.prototype.verify()``, ``crypto.createHmac()``, ``crypto.createCipheriv()``, ``crypto.createDecipheriv()``, ``crypto.encapsulate()``, and ``crypto.decapsulate()``.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new CryptoKey();
+   console.log(instance);
 
 
 EventTarget
@@ -143,11 +185,11 @@ EventTarget
 
    EventTarget
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 The ``EventTarget`` and ``Event`` objects are a Node.js-specific implementation of the ``EventTarget`` Web API that are exposed by some Node.js core APIs.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
 
 **Example**
 
@@ -230,7 +272,16 @@ QuotaExceededError
 
    globalThis.QuotaExceededError(arg0, arg1)
 
-*Kind:* function · *Arguments:* 2
+*Kind:* class · *Arguments:* 2
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new QuotaExceededError(undefined, undefined);
+   console.log(instance);
 
 .. note::
 
@@ -256,6 +307,13 @@ Load a CommonJS builtin or file relative to the current module. In ``-e`` and st
 
 any
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+   console.log(typeof fs.readFileSync); // 'function'
+
 
 setImmediate
 ~~~~~~~~~~~~
@@ -272,6 +330,13 @@ setImmediate
 
 * ``callback``
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = setImmediate(() => {}, []);
+   console.log(result);
 
 
 setInterval
@@ -291,6 +356,13 @@ setInterval
 * ``delay``
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = setInterval(() => {}, 1000, []);
+   console.log(result);
+
 
 setTimeout
 ~~~~~~~~~~
@@ -309,6 +381,13 @@ setTimeout
 * ``delay``
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = setTimeout(() => {}, 1000, []);
+   console.log(result);
+
 
 structuredClone
 ~~~~~~~~~~~~~~~
@@ -325,6 +404,13 @@ The WHATWG ``structuredClone`` method.
 
 * ``value``
 * ``options`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = structuredClone('hello', {});
+   console.log(result);
 
 
 localStorage
@@ -347,6 +433,14 @@ Delete every key in the area.
 
 undefined
 
+**Example**
+
+.. code-block:: javascript
+
+   localStorage.setItem('theme', 'dark');
+   localStorage.clear();
+   console.log(localStorage.length); // 0
+
 
 localStorage.getItem
 ~~~~~~~~~~~~~~~~~~~~
@@ -366,6 +460,15 @@ Return the value stored under ``key``, or ``null`` when the key does not exist.
 **Returns**
 
 string | null
+
+**Example**
+
+.. code-block:: javascript
+
+   localStorage.setItem('theme', 'dark');
+
+   const theme = localStorage.getItem('theme');
+   console.log(theme); // 'dark'
 
 
 localStorage.key
@@ -387,6 +490,13 @@ Return the key at ``index`` in insertion order, or ``null`` when the index is ou
 
 string | null
 
+**Example**
+
+.. code-block:: javascript
+
+   localStorage.setItem('theme', 'dark');
+   console.log(localStorage.key(0)); // 'theme'
+
 
 localStorage.removeItem
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -406,6 +516,14 @@ Delete ``key`` from the area. Removing a missing key is a no-op.
 **Returns**
 
 undefined
+
+**Example**
+
+.. code-block:: javascript
+
+   localStorage.setItem('theme', 'dark');
+   localStorage.removeItem('theme');
+   console.log(localStorage.getItem('theme')); // null
 
 
 localStorage.setItem
@@ -428,11 +546,45 @@ Store ``value`` under ``key``. Both arguments are converted to strings.
 
 undefined
 
+**Example**
+
+.. code-block:: javascript
+
+   localStorage.setItem('theme', 'dark');
+   console.log(localStorage.getItem('theme')); // 'dark'
+
 
 AbortController
 ---------------
 
 A utility class used to signal cancelation in selected ``Promise``-based APIs. The API is based on the Web API ``AbortController``.
+
+AbortController
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   AbortController
+
+*Kind:* class · *Arguments:* 0
+
+A utility class used to signal cancelation in selected ``Promise``-based APIs. The API is based on the Web API ``AbortController``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const ac = new AbortController();
+
+   ac.signal.addEventListener('abort', () => console.log('Aborted!'),
+                              { once: true });
+
+   ac.abort();
+
+   console.log(ac.signal.aborted);  // Prints true
+
 
 AbortController.abort
 ~~~~~~~~~~~~~~~~~~~~~
@@ -448,6 +600,14 @@ Triggers the abort signal, causing the ``abortController.signal`` to emit the ``
 **Arguments**
 
 * ``reason`` (*any*) — optional: An optional reason, retrievable on the ``AbortSignal``'s
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new AbortController();
+   const result = instance.abort(undefined);
+   console.log(result);
 
 
 AbortSignal
@@ -468,6 +628,13 @@ Returns a new already aborted ``AbortSignal``.
 
 * ``reason`` (*any*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = AbortSignal.abort(undefined);
+   console.log(result);
+
 
 AbortSignal.any
 ~~~~~~~~~~~~~~~
@@ -484,6 +651,13 @@ Returns a new ``AbortSignal`` which will be aborted if any of the provided signa
 
 * ``signals`` (*AbortSignal\[]*): The ``AbortSignal``\ s of which to compose a new ``AbortSignal``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = AbortSignal.any([]);
+   console.log(result);
+
 
 AbortSignal._abort
 ~~~~~~~~~~~~~~~~~~
@@ -493,6 +667,13 @@ AbortSignal._abort
    globalThis.AbortSignal._abort(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof AbortSignal.prototype._abort()); // 'function'
+   console.log(AbortSignal.prototype._abort().length);
 
 .. note::
 
@@ -508,6 +689,13 @@ AbortSignal._fire
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof AbortSignal.prototype._fire()); // 'function'
+   console.log(AbortSignal.prototype._fire().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -521,6 +709,13 @@ AbortSignal._makeEvent
    globalThis.AbortSignal._makeEvent(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof AbortSignal.prototype._makeEvent()); // 'function'
+   console.log(AbortSignal.prototype._makeEvent().length);
 
 .. note::
 
@@ -536,6 +731,14 @@ AbortSignal.addEventListener
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new AbortSignal();
+   const result = instance.addEventListener(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -550,6 +753,14 @@ AbortSignal.dispatchEvent
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new AbortSignal();
+   const result = instance.dispatchEvent(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -563,6 +774,14 @@ AbortSignal.removeEventListener
    globalThis.AbortSignal.removeEventListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new AbortSignal();
+   const result = instance.removeEventListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -582,6 +801,14 @@ If ``abortSignal.aborted`` is ``true``, throws ``abortSignal.reason``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new AbortSignal();
+   const result = instance.throwIfAborted();
+   console.log(result);
+
 
 AbortSignal.timeout
 ~~~~~~~~~~~~~~~~~~~
@@ -598,11 +825,61 @@ Returns a new ``AbortSignal`` which will be aborted in ``delay`` milliseconds.
 
 * ``delay`` (*number*): The number of milliseconds to wait before triggering
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = AbortSignal.timeout(1000);
+   console.log(result);
+
 
 Blob
 ----
 
 A ``Blob`` encapsulates immutable, raw data that can be safely shared across multiple worker threads.
+
+Blob
+~~~~
+
+.. code-block:: text
+
+   Blob
+
+*Kind:* class · *Arguments:* 0
+
+A ``Blob`` encapsulates immutable, raw data that can be safely shared across multiple worker threads.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { Blob } = require('node:buffer');
+   const { setTimeout: delay } = require('node:timers/promises');
+
+   const blob = new Blob(['hello there']);
+
+   const mc1 = new MessageChannel();
+   const mc2 = new MessageChannel();
+
+   mc1.port1.onmessage = async ({ data }) => {
+     console.log(await data.arrayBuffer());
+     mc1.port1.close();
+   };
+
+   mc2.port1.onmessage = async ({ data }) => {
+     await delay(1000);
+     console.log(await data.arrayBuffer());
+     mc2.port1.close();
+   };
+
+   mc1.port2.postMessage(blob);
+   mc2.port2.postMessage(blob);
+
+   // The Blob is still usable after posting.
+   blob.text().then(console.log);
+
 
 Blob.arrayBuffer
 ~~~~~~~~~~~~~~~~
@@ -616,6 +893,14 @@ Blob.arrayBuffer
 Returns a promise that fulfills with an ``ArrayBuffer`` containing a copy of the ``Blob`` data.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Blob();
+   const result = instance.arrayBuffer();
+   console.log(result);
 
 
 Blob.bytes
@@ -658,6 +943,14 @@ Creates and returns a new ``Blob`` containing a subset of this ``Blob`` objects 
 * ``end`` (*number*) — optional: The ending index.
 * ``type`` (*string*) — optional: The content-type for the new ``Blob``
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Blob();
+   const result = instance.slice(0, 0, 'example');
+   console.log(result);
+
 
 Blob.stream
 ~~~~~~~~~~~
@@ -671,6 +964,14 @@ Blob.stream
 Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be read.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Blob();
+   const result = instance.stream();
+   console.log(result);
 
 
 Blob.text
@@ -686,6 +987,14 @@ Returns a promise that fulfills with the contents of the ``Blob`` decoded as a U
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Blob();
+   const result = instance.text();
+   console.log(result);
+
 
 Blob.textStream
 ~~~~~~~~~~~~~~~
@@ -700,6 +1009,14 @@ Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be r
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Blob();
+   const result = instance.textStream();
+   console.log(result);
+
 
 **Properties**
 
@@ -709,6 +1026,27 @@ BroadcastChannel
 ----------------
 
 See ``BroadcastChannel``.
+
+BroadcastChannel
+~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   BroadcastChannel
+
+*Kind:* class · *Arguments:* 1
+
+See ``BroadcastChannel``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new BroadcastChannel(undefined);
+   console.log(instance);
+
 
 BroadcastChannel.close
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -722,6 +1060,14 @@ BroadcastChannel.close
 Closes the ``BroadcastChannel`` connection.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new BroadcastChannel();
+   const result = instance.close();
+   console.log(result);
 
 
 BroadcastChannel.postMessage
@@ -737,6 +1083,14 @@ BroadcastChannel.postMessage
 
 * ``message`` (*any*): Any cloneable JavaScript value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new BroadcastChannel();
+   const result = instance.postMessage('hello');
+   console.log(result);
+
 
 BroadcastChannel.ref
 ~~~~~~~~~~~~~~~~~~~~
@@ -750,6 +1104,14 @@ BroadcastChannel.ref
 Opposite of ``unref()``. Calling ``ref()`` on a previously ``unref()``\ ed BroadcastChannel does *not* let the program exit if it's the only active handle left (the default behavior). If the port is ``ref()``\ ed, calling ``ref()`` again has no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new BroadcastChannel();
+   const result = instance.ref();
+   console.log(result);
 
 
 BroadcastChannel.unref
@@ -765,11 +1127,44 @@ Calling ``unref()`` on a BroadcastChannel allows the thread to exit if this is t
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new BroadcastChannel();
+   const result = instance.unref();
+   console.log(result);
+
 
 Buffer
 ------
 
 The ``Buffer`` class is a global type for dealing with binary data directly. It can be constructed in a variety of ways.
+
+Buffer
+~~~~~~
+
+.. code-block:: text
+
+   Buffer
+
+*Kind:* class · *Arguments:* 3
+
+The ``Buffer`` class is a global type for dealing with binary data directly. It can be constructed in a variety of ways.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const { Buffer } = require('node:buffer');
+
+   const buf = Buffer.alloc(5);
+
+   console.log(buf);
+   // Prints: <Buffer 00 00 00 00 00>
+
 
 Buffer.alloc
 ~~~~~~~~~~~~
@@ -1107,6 +1502,13 @@ Buffer.of
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = Buffer.of();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1120,6 +1522,14 @@ Buffer.asciiSlice
    globalThis.Buffer.asciiSlice(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.asciiSlice();
+   console.log(result);
 
 .. note::
 
@@ -1135,6 +1545,14 @@ Buffer.asciiWrite
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.asciiWrite();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1148,6 +1566,14 @@ Buffer.base64Slice
    globalThis.Buffer.base64Slice(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.base64Slice();
+   console.log(result);
 
 .. note::
 
@@ -1163,6 +1589,14 @@ Buffer.base64urlSlice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.base64urlSlice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1177,6 +1611,14 @@ Buffer.base64urlWrite
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.base64urlWrite();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1190,6 +1632,14 @@ Buffer.base64Write
    globalThis.Buffer.base64Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.base64Write();
+   console.log(result);
 
 .. note::
 
@@ -1236,6 +1686,14 @@ Buffer.copy
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.copy();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1249,6 +1707,14 @@ Buffer.equals
    globalThis.Buffer.equals(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.equals();
+   console.log(result);
 
 .. note::
 
@@ -1264,6 +1730,14 @@ Buffer.fill
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.fill();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1277,6 +1751,14 @@ Buffer.hexSlice
    globalThis.Buffer.hexSlice(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.hexSlice();
+   console.log(result);
 
 .. note::
 
@@ -1292,6 +1774,14 @@ Buffer.hexWrite
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.hexWrite();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1305,6 +1795,14 @@ Buffer.includes
    globalThis.Buffer.includes(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.includes();
+   console.log(result);
 
 .. note::
 
@@ -1320,6 +1818,14 @@ Buffer.indexOf
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.indexOf();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1333,6 +1839,14 @@ Buffer.inspect
    globalThis.Buffer.inspect(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.inspect(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1348,6 +1862,14 @@ Buffer.lastIndexOf
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.lastIndexOf();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1361,6 +1883,14 @@ Buffer.latin1Slice
    globalThis.Buffer.latin1Slice(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.latin1Slice();
+   console.log(result);
 
 .. note::
 
@@ -1376,6 +1906,14 @@ Buffer.latin1Write
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.latin1Write();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1389,6 +1927,14 @@ Buffer.readBigInt64BE
    globalThis.Buffer.readBigInt64BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigInt64BE();
+   console.log(result);
 
 .. note::
 
@@ -1404,6 +1950,14 @@ Buffer.readBigInt64LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigInt64LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1417,6 +1971,14 @@ Buffer.readBigUInt64BE
    globalThis.Buffer.readBigUInt64BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigUInt64BE();
+   console.log(result);
 
 .. note::
 
@@ -1432,6 +1994,14 @@ Buffer.readBigUint64BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigUint64BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1445,6 +2015,14 @@ Buffer.readBigUInt64LE
    globalThis.Buffer.readBigUInt64LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigUInt64LE();
+   console.log(result);
 
 .. note::
 
@@ -1460,6 +2038,14 @@ Buffer.readBigUint64LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readBigUint64LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1473,6 +2059,14 @@ Buffer.readDoubleBE
    globalThis.Buffer.readDoubleBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readDoubleBE();
+   console.log(result);
 
 .. note::
 
@@ -1488,6 +2082,14 @@ Buffer.readDoubleLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readDoubleLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1501,6 +2103,14 @@ Buffer.readFloatBE
    globalThis.Buffer.readFloatBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readFloatBE();
+   console.log(result);
 
 .. note::
 
@@ -1516,6 +2126,14 @@ Buffer.readFloatLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readFloatLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1529,6 +2147,14 @@ Buffer.readInt16BE
    globalThis.Buffer.readInt16BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readInt16BE();
+   console.log(result);
 
 .. note::
 
@@ -1544,6 +2170,14 @@ Buffer.readInt16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readInt16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1557,6 +2191,14 @@ Buffer.readInt32BE
    globalThis.Buffer.readInt32BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readInt32BE();
+   console.log(result);
 
 .. note::
 
@@ -1572,6 +2214,14 @@ Buffer.readInt32LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readInt32LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1585,6 +2235,14 @@ Buffer.readInt8
    globalThis.Buffer.readInt8(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readInt8();
+   console.log(result);
 
 .. note::
 
@@ -1600,6 +2258,14 @@ Buffer.readIntBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readIntBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1613,6 +2279,14 @@ Buffer.readIntLE
    globalThis.Buffer.readIntLE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readIntLE();
+   console.log(result);
 
 .. note::
 
@@ -1628,6 +2302,14 @@ Buffer.readUInt16BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUInt16BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1641,6 +2323,14 @@ Buffer.readUint16BE
    globalThis.Buffer.readUint16BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUint16BE();
+   console.log(result);
 
 .. note::
 
@@ -1656,6 +2346,14 @@ Buffer.readUInt16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUInt16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1669,6 +2367,14 @@ Buffer.readUint16LE
    globalThis.Buffer.readUint16LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUint16LE();
+   console.log(result);
 
 .. note::
 
@@ -1684,6 +2390,14 @@ Buffer.readUInt32BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUInt32BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1697,6 +2411,14 @@ Buffer.readUint32BE
    globalThis.Buffer.readUint32BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUint32BE();
+   console.log(result);
 
 .. note::
 
@@ -1712,6 +2434,14 @@ Buffer.readUInt32LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUInt32LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1725,6 +2455,14 @@ Buffer.readUint32LE
    globalThis.Buffer.readUint32LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUint32LE();
+   console.log(result);
 
 .. note::
 
@@ -1740,6 +2478,14 @@ Buffer.readUInt8
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUInt8();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1753,6 +2499,14 @@ Buffer.readUint8
    globalThis.Buffer.readUint8(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUint8();
+   console.log(result);
 
 .. note::
 
@@ -1768,6 +2522,14 @@ Buffer.readUIntBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUIntBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1781,6 +2543,14 @@ Buffer.readUintBE
    globalThis.Buffer.readUintBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUintBE();
+   console.log(result);
 
 .. note::
 
@@ -1796,6 +2566,14 @@ Buffer.readUIntLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUIntLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1809,6 +2587,14 @@ Buffer.readUintLE
    globalThis.Buffer.readUintLE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.readUintLE();
+   console.log(result);
 
 .. note::
 
@@ -1833,6 +2619,14 @@ This method was deprecated because it is not compatible with ``Uint8Array.protot
 * ``start``
 * ``end``
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.slice(0, 0);
+   console.log(result);
+
 
 Buffer.subarray
 ~~~~~~~~~~~~~~~
@@ -1842,6 +2636,14 @@ Buffer.subarray
    globalThis.Buffer.subarray(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.subarray();
+   console.log(result);
 
 .. note::
 
@@ -1857,6 +2659,14 @@ Buffer.swap16
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.swap16();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1870,6 +2680,14 @@ Buffer.swap32
    globalThis.Buffer.swap32(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.swap32();
+   console.log(result);
 
 .. note::
 
@@ -1885,6 +2703,14 @@ Buffer.swap64
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.swap64();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1898,6 +2724,14 @@ Buffer.toJSON
    globalThis.Buffer.toJSON(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.toJSON();
+   console.log(result);
 
 .. note::
 
@@ -1913,6 +2747,14 @@ Buffer.toLocaleString
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.toLocaleString();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1926,6 +2768,14 @@ Buffer.toString
    globalThis.Buffer.toString(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.toString();
+   console.log(result);
 
 .. note::
 
@@ -1941,6 +2791,14 @@ Buffer.ucs2Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.ucs2Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1954,6 +2812,14 @@ Buffer.ucs2Write
    globalThis.Buffer.ucs2Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.ucs2Write();
+   console.log(result);
 
 .. note::
 
@@ -1969,6 +2835,14 @@ Buffer.utf8Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.utf8Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1982,6 +2856,14 @@ Buffer.utf8Write
    globalThis.Buffer.utf8Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.utf8Write();
+   console.log(result);
 
 .. note::
 
@@ -1997,6 +2879,14 @@ Buffer.write
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.write();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2010,6 +2900,14 @@ Buffer.writeBigInt64BE
    globalThis.Buffer.writeBigInt64BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigInt64BE();
+   console.log(result);
 
 .. note::
 
@@ -2025,6 +2923,14 @@ Buffer.writeBigInt64LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigInt64LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2038,6 +2944,14 @@ Buffer.writeBigUInt64BE
    globalThis.Buffer.writeBigUInt64BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigUInt64BE();
+   console.log(result);
 
 .. note::
 
@@ -2053,6 +2967,14 @@ Buffer.writeBigUint64BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigUint64BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2066,6 +2988,14 @@ Buffer.writeBigUInt64LE
    globalThis.Buffer.writeBigUInt64LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigUInt64LE();
+   console.log(result);
 
 .. note::
 
@@ -2081,6 +3011,14 @@ Buffer.writeBigUint64LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeBigUint64LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2094,6 +3032,14 @@ Buffer.writeDoubleBE
    globalThis.Buffer.writeDoubleBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeDoubleBE();
+   console.log(result);
 
 .. note::
 
@@ -2109,6 +3055,14 @@ Buffer.writeDoubleLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeDoubleLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2122,6 +3076,14 @@ Buffer.writeFloatBE
    globalThis.Buffer.writeFloatBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeFloatBE();
+   console.log(result);
 
 .. note::
 
@@ -2137,6 +3099,14 @@ Buffer.writeFloatLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeFloatLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2150,6 +3120,14 @@ Buffer.writeInt16BE
    globalThis.Buffer.writeInt16BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeInt16BE();
+   console.log(result);
 
 .. note::
 
@@ -2165,6 +3143,14 @@ Buffer.writeInt16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeInt16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2178,6 +3164,14 @@ Buffer.writeInt32BE
    globalThis.Buffer.writeInt32BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeInt32BE();
+   console.log(result);
 
 .. note::
 
@@ -2193,6 +3187,14 @@ Buffer.writeInt32LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeInt32LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2206,6 +3208,14 @@ Buffer.writeInt8
    globalThis.Buffer.writeInt8(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeInt8();
+   console.log(result);
 
 .. note::
 
@@ -2221,6 +3231,14 @@ Buffer.writeIntBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeIntBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2234,6 +3252,14 @@ Buffer.writeIntLE
    globalThis.Buffer.writeIntLE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeIntLE();
+   console.log(result);
 
 .. note::
 
@@ -2249,6 +3275,14 @@ Buffer.writeUInt16BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUInt16BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2262,6 +3296,14 @@ Buffer.writeUint16BE
    globalThis.Buffer.writeUint16BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUint16BE();
+   console.log(result);
 
 .. note::
 
@@ -2277,6 +3319,14 @@ Buffer.writeUInt16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUInt16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2290,6 +3340,14 @@ Buffer.writeUint16LE
    globalThis.Buffer.writeUint16LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUint16LE();
+   console.log(result);
 
 .. note::
 
@@ -2305,6 +3363,14 @@ Buffer.writeUInt32BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUInt32BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2318,6 +3384,14 @@ Buffer.writeUint32BE
    globalThis.Buffer.writeUint32BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUint32BE();
+   console.log(result);
 
 .. note::
 
@@ -2333,6 +3407,14 @@ Buffer.writeUInt32LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUInt32LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2346,6 +3428,14 @@ Buffer.writeUint32LE
    globalThis.Buffer.writeUint32LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUint32LE();
+   console.log(result);
 
 .. note::
 
@@ -2361,6 +3451,14 @@ Buffer.writeUInt8
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUInt8();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2374,6 +3472,14 @@ Buffer.writeUint8
    globalThis.Buffer.writeUint8(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUint8();
+   console.log(result);
 
 .. note::
 
@@ -2389,6 +3495,14 @@ Buffer.writeUIntBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUIntBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2402,6 +3516,14 @@ Buffer.writeUintBE
    globalThis.Buffer.writeUintBE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUintBE();
+   console.log(result);
 
 .. note::
 
@@ -2417,6 +3539,14 @@ Buffer.writeUIntLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUIntLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2430,6 +3560,14 @@ Buffer.writeUintLE
    globalThis.Buffer.writeUintLE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Buffer();
+   const result = instance.writeUintLE();
+   console.log(result);
 
 .. note::
 
@@ -2447,6 +3585,27 @@ ByteLengthQueuingStrategy
 
 A browser-compatible implementation of ``ByteLengthQueuingStrategy``.
 
+ByteLengthQueuingStrategy
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   ByteLengthQueuingStrategy
+
+*Kind:* class · *Arguments:* 1
+
+A browser-compatible implementation of ``ByteLengthQueuingStrategy``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ByteLengthQueuingStrategy(undefined);
+   console.log(instance);
+
+
 ByteLengthQueuingStrategy.size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2458,11 +3617,40 @@ ByteLengthQueuingStrategy.size
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ByteLengthQueuingStrategy();
+   const result = instance.size(undefined);
+   console.log(result);
+
 
 CompressionStream
 -----------------
 
 A browser-compatible implementation of ``CompressionStream``.
+
+CompressionStream
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   CompressionStream
+
+*Kind:* class · *Arguments:* 1
+
+A browser-compatible implementation of ``CompressionStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new CompressionStream(undefined);
+   console.log(instance);
+
 
 **Properties**
 
@@ -2479,6 +3667,27 @@ CountQueuingStrategy
 
 A browser-compatible implementation of ``CountQueuingStrategy``.
 
+CountQueuingStrategy
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   CountQueuingStrategy
+
+*Kind:* class · *Arguments:* 1
+
+A browser-compatible implementation of ``CountQueuingStrategy``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new CountQueuingStrategy(undefined);
+   console.log(instance);
+
+
 CountQueuingStrategy.size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2489,6 +3698,14 @@ CountQueuingStrategy.size
 *Kind:* function · *Arguments:* 0
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new CountQueuingStrategy();
+   const result = instance.size();
+   console.log(result);
 
 
 crypto
@@ -2509,6 +3726,13 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = crypto.getRandomValues([]);
+   console.log(result);
+
 
 crypto.randomUUID
 ~~~~~~~~~~~~~~~~~
@@ -2525,6 +3749,13 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = crypto.randomUUID({});
+   console.log(result);
+
 
 **Properties**
 
@@ -2534,6 +3765,27 @@ Crypto
 ------
 
 A browser-compatible implementation of ``Crypto``. This global is available only if the Node.js binary was compiled with including support for the ``node:crypto`` module.
+
+Crypto
+~~~~~~
+
+.. code-block:: text
+
+   Crypto
+
+*Kind:* class · *Arguments:* 0
+
+A browser-compatible implementation of ``Crypto``. This global is available only if the Node.js binary was compiled with including support for the ``node:crypto`` module.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Crypto();
+   console.log(instance);
+
 
 CryptoKey
 ---------
@@ -2547,6 +3799,27 @@ CustomEvent
 
 The ``CustomEvent`` object is an adaptation of the ``CustomEvent`` Web API. Instances are created internally by Node.js.
 
+CustomEvent
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   CustomEvent
+
+*Kind:* class · *Arguments:* 1
+
+The ``CustomEvent`` object is an adaptation of the ``CustomEvent`` Web API. Instances are created internally by Node.js.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new CustomEvent(undefined);
+   console.log(instance);
+
+
 **Properties**
 
 * ``CustomEvent.detail`` — undefined
@@ -2555,6 +3828,27 @@ DecompressionStream
 -------------------
 
 A browser-compatible implementation of ``DecompressionStream``.
+
+DecompressionStream
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   DecompressionStream
+
+*Kind:* class · *Arguments:* 1
+
+A browser-compatible implementation of ``DecompressionStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new DecompressionStream(undefined);
+   console.log(instance);
+
 
 **Properties**
 
@@ -2568,10 +3862,54 @@ The Web IDL ``DOMException`` class. These errors are thrown by web-platform APIs
 
 The ``domException.name`` property identifies the type of the exception (for example, ``'AbortError'``). Unlike most errors in Node.js, the ``domException.code`` property is a number that corresponds to a legacy error code name (for example, ``20`` for ``ABORT_ERR``).
 
+DOMException
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   DOMException
+
+*Kind:* class · *Arguments:* 2
+
+The Web IDL ``DOMException`` class. These errors are thrown by web-platform APIs in Node.js such as ``fetch()``, ``AbortController``, ``AbortSignal``, and Web Streams. For details, see also ``Class: DOMException`` on the Globals page.
+
+The ``domException.name`` property identifies the type of the exception (for example, ``'AbortError'``). Unlike most errors in Node.js, the ``domException.code`` property is a number that corresponds to a legacy error code name (for example, ``20`` for ``ABORT_ERR``).
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new DOMException(undefined, undefined);
+   console.log(instance);
+
+
 Event
 -----
 
 The ``Event`` object is an adaptation of the ``Event`` Web API. Instances are created internally by Node.js.
+
+Event
+~~~~~
+
+.. code-block:: text
+
+   Event
+
+*Kind:* class · *Arguments:* 2
+
+The ``Event`` object is an adaptation of the ``Event`` Web API. Instances are created internally by Node.js.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event(undefined, undefined);
+   console.log(instance);
+
 
 Event.composedPath
 ~~~~~~~~~~~~~~~~~~
@@ -2585,6 +3923,14 @@ Event.composedPath
 Returns an array containing the current ``EventTarget`` as the only entry or empty if the event is not being dispatched. This is not used in Node.js and is provided purely for completeness.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event();
+   const result = instance.composedPath();
+   console.log(result);
 
 
 Event.initEvent
@@ -2604,6 +3950,14 @@ Redundant with event constructors and incapable of setting ``composed``. This is
 * ``bubbles`` (*boolean*) — optional
 * ``cancelable`` (*boolean*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event();
+   const result = instance.initEvent('example', true, true);
+   console.log(result);
+
 
 Event.preventDefault
 ~~~~~~~~~~~~~~~~~~~~
@@ -2617,6 +3971,14 @@ Event.preventDefault
 Sets the ``defaultPrevented`` property to ``true`` if ``cancelable`` is ``true``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event();
+   const result = instance.preventDefault();
+   console.log(result);
 
 
 Event.stopImmediatePropagation
@@ -2632,6 +3994,14 @@ Stops the invocation of event listeners after the current one completes.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event();
+   const result = instance.stopImmediatePropagation();
+   console.log(result);
+
 
 Event.stopPropagation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2645,6 +4015,14 @@ Event.stopPropagation
 This is not used in Node.js and is provided purely for completeness.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Event();
+   const result = instance.stopPropagation();
+   console.log(result);
 
 
 **Properties**
@@ -2723,6 +4101,14 @@ The registered event listeners is synchronously invoked in the order they were r
 
 * ``event`` (*Event*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new EventTarget();
+   const result = instance.dispatchEvent(undefined);
+   console.log(result);
+
 
 EventTarget.removeEventListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2741,11 +4127,40 @@ Removes the ``listener`` from the list of handlers for event ``type``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new EventTarget();
+   const result = instance.removeEventListener('example', () => {}, {});
+   console.log(result);
+
 
 File
 ----
 
 A ``File`` provides information about files.
+
+File
+~~~~
+
+.. code-block:: text
+
+   File
+
+*Kind:* class · *Arguments:* 2
+
+A ``File`` provides information about files.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new File(undefined, undefined);
+   console.log(instance);
+
 
 **Properties**
 
@@ -2757,6 +4172,27 @@ FormData
 
 A browser-compatible implementation of ``FormData``.
 
+FormData
+~~~~~~~~
+
+.. code-block:: text
+
+   FormData
+
+*Kind:* class · *Arguments:* 0
+
+A browser-compatible implementation of ``FormData``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   console.log(instance);
+
+
 FormData.append
 ~~~~~~~~~~~~~~~
 
@@ -2765,6 +4201,14 @@ FormData.append
    globalThis.FormData.append(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.append(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -2780,6 +4224,14 @@ FormData.delete
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.delete(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2793,6 +4245,14 @@ FormData.entries
    globalThis.FormData.entries(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.entries();
+   console.log(result);
 
 .. note::
 
@@ -2808,6 +4268,14 @@ FormData.forEach
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.forEach(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2821,6 +4289,14 @@ FormData.get
    globalThis.FormData.get(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.get(undefined);
+   console.log(result);
 
 .. note::
 
@@ -2836,6 +4312,14 @@ FormData.getAll
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.getAll(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2849,6 +4333,14 @@ FormData.has
    globalThis.FormData.has(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.has(undefined);
+   console.log(result);
 
 .. note::
 
@@ -2864,6 +4356,14 @@ FormData.keys
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.keys();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2878,6 +4378,14 @@ FormData.set
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.set(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2891,6 +4399,14 @@ FormData.values
    globalThis.FormData.values(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new FormData();
+   const result = instance.values();
+   console.log(result);
 
 .. note::
 
@@ -2907,6 +4423,27 @@ Headers
 
 A browser-compatible implementation of ``Headers``.
 
+Headers
+~~~~~~~
+
+.. code-block:: text
+
+   Headers
+
+*Kind:* class · *Arguments:* 1
+
+A browser-compatible implementation of ``Headers``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers(undefined);
+   console.log(instance);
+
+
 Headers.append
 ~~~~~~~~~~~~~~
 
@@ -2915,6 +4452,14 @@ Headers.append
    globalThis.Headers.append(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.append(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -2930,6 +4475,14 @@ Headers.delete
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.delete(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2943,6 +4496,14 @@ Headers.entries
    globalThis.Headers.entries(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.entries();
+   console.log(result);
 
 .. note::
 
@@ -2958,6 +4519,14 @@ Headers.forEach
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.forEach(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2971,6 +4540,14 @@ Headers.get
    globalThis.Headers.get(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.get(undefined);
+   console.log(result);
 
 .. note::
 
@@ -2986,6 +4563,14 @@ Headers.getSetCookie
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.getSetCookie();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2999,6 +4584,14 @@ Headers.has
    globalThis.Headers.has(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.has(undefined);
+   console.log(result);
 
 .. note::
 
@@ -3014,6 +4607,14 @@ Headers.keys
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.keys();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3027,6 +4628,14 @@ Headers.set
    globalThis.Headers.set(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.set(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -3042,6 +4651,14 @@ Headers.values
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Headers();
+   const result = instance.values();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3052,15 +4669,78 @@ MessageChannel
 
 The ``MessageChannel`` class. See ``MessageChannel`` for more details.
 
+MessageChannel
+~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   MessageChannel
+
+*Kind:* class · *Arguments:* 0
+
+The ``MessageChannel`` class. See ``MessageChannel`` for more details.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessageChannel();
+   console.log(instance);
+
+
 MessageEvent
 ------------
 
 A browser-compatible implementation of ``MessageEvent``.
 
+MessageEvent
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   MessageEvent
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``MessageEvent``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessageEvent(undefined, undefined);
+   console.log(instance);
+
+
 MessagePort
 -----------
 
 The ``MessagePort`` class. See ``MessagePort`` for more details.
+
+MessagePort
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   MessagePort
+
+*Kind:* class · *Arguments:* 0
+
+The ``MessagePort`` class. See ``MessagePort`` for more details.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   console.log(instance);
+
 
 MessagePort.close
 ~~~~~~~~~~~~~~~~~
@@ -3070,6 +4750,14 @@ MessagePort.close
    globalThis.MessagePort.close(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.close();
+   console.log(result);
 
 .. note::
 
@@ -3085,6 +4773,14 @@ MessagePort.hasRef
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.hasRef();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3098,6 +4794,14 @@ MessagePort.postMessage
    globalThis.MessagePort.postMessage(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.postMessage(undefined);
+   console.log(result);
 
 .. note::
 
@@ -3113,6 +4817,14 @@ MessagePort.ref
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.ref();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3127,6 +4839,14 @@ MessagePort.start
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.start();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3140,6 +4860,14 @@ MessagePort.unref
    globalThis.MessagePort.unref(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new MessagePort();
+   const result = instance.unref();
+   console.log(result);
 
 .. note::
 
@@ -3179,6 +4907,13 @@ If ``name`` is not provided, removes all ``PerformanceMark`` objects from the Pe
 
 * ``name`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.clearMarks('example');
+   console.log(result);
+
 
 performance.clearMeasures
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3195,6 +4930,13 @@ If ``name`` is not provided, removes all ``PerformanceMeasure`` objects from the
 
 * ``name`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.clearMeasures('example');
+   console.log(result);
+
 
 performance.getEntries
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3208,6 +4950,13 @@ performance.getEntries
 Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime``. If you are only interested in performance entries of certain types or that have certain names, see ``performance.getEntriesByType()`` and ``performance.getEntriesByName()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.getEntries();
+   console.log(result);
 
 
 performance.getEntriesByName
@@ -3226,6 +4975,13 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 * ``name`` (*string*)
 * ``type`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.getEntriesByName('example', 'example');
+   console.log(result);
+
 
 performance.getEntriesByType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3241,6 +4997,13 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 **Arguments**
 
 * ``type`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.getEntriesByType('example');
+   console.log(result);
 
 
 performance.mark
@@ -3260,6 +5023,13 @@ The created ``PerformanceMark`` entry is put in the global Performance Timeline 
 
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.mark('example', {});
+   console.log(result);
 
 
 performance.measure
@@ -3281,6 +5051,13 @@ The ``startMark`` argument may identify any *existing* ``PerformanceMark`` in th
 * ``startMarkOrOptions`` (*string|Object*) — optional: Optional.
 * ``endMark`` (*string*) — optional: Optional. Must be omitted if ``startMarkOrOptions`` is an
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.measure('example', 'value', 'value');
+   console.log(result);
+
 
 performance.now
 ~~~~~~~~~~~~~~~
@@ -3295,6 +5072,13 @@ Returns the current high resolution millisecond timestamp, where 0 represents th
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.now();
+   console.log(result);
+
 
 performance.toJSON
 ~~~~~~~~~~~~~~~~~~
@@ -3308,6 +5092,13 @@ performance.toJSON
 An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = performance.toJSON();
+   console.log(result);
 
 
 **Properties**
@@ -3324,6 +5115,27 @@ ReadableStream
 
 A browser-compatible implementation of ``ReadableStream``.
 
+ReadableStream
+~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   ReadableStream
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``ReadableStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ReadableStream(undefined, undefined);
+   console.log(instance);
+
+
 ReadableStream._next
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -3332,6 +5144,13 @@ ReadableStream._next
    globalThis.ReadableStream._next(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof ReadableStream.prototype._next()); // 'function'
+   console.log(ReadableStream.prototype._next().length);
 
 .. note::
 
@@ -3346,6 +5165,13 @@ ReadableStream._wake
    globalThis.ReadableStream._wake(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof ReadableStream.prototype._wake()); // 'function'
+   console.log(ReadableStream.prototype._wake().length);
 
 .. note::
 
@@ -3364,6 +5190,14 @@ ReadableStream.cancel
 **Arguments**
 
 * ``reason`` (*any*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ReadableStream();
+   const result = instance.cancel(undefined);
+   console.log(result);
 
 
 ReadableStream.getReader
@@ -3458,6 +5292,14 @@ Causes the ``readableStream.locked`` to be ``true`` while the pipe operation is 
 * ``destination`` (*WritableStream*): A ``WritableStream`` to which this
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ReadableStream();
+   const result = instance.pipeTo('./target.txt', {});
+   console.log(result);
+
 
 ReadableStream.tee
 ~~~~~~~~~~~~~~~~~~
@@ -3473,6 +5315,14 @@ Returns a pair of new ``ReadableStream`` instances to which this ``ReadableStrea
 Causes the ``readableStream.locked`` to be ``true``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new ReadableStream();
+   const result = instance.tee();
+   console.log(result);
 
 
 ReadableStream.values
@@ -3509,6 +5359,27 @@ Request
 
 A browser-compatible implementation of ``Request``.
 
+Request
+~~~~~~~
+
+.. code-block:: text
+
+   Request
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``Request``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request(undefined, undefined);
+   console.log(instance);
+
+
 Request.arrayBuffer
 ~~~~~~~~~~~~~~~~~~~
 
@@ -3517,6 +5388,14 @@ Request.arrayBuffer
    globalThis.Request.arrayBuffer(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.arrayBuffer();
+   console.log(result);
 
 .. note::
 
@@ -3532,6 +5411,14 @@ Request.blob
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.blob();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3545,6 +5432,14 @@ Request.bytes
    globalThis.Request.bytes(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.bytes();
+   console.log(result);
 
 .. note::
 
@@ -3560,6 +5455,14 @@ Request.clone
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.clone();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3573,6 +5476,14 @@ Request.formData
    globalThis.Request.formData(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.formData();
+   console.log(result);
 
 .. note::
 
@@ -3588,6 +5499,14 @@ Request.json
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.json();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3601,6 +5520,14 @@ Request.text
    globalThis.Request.text(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Request();
+   const result = instance.text();
+   console.log(result);
 
 .. note::
 
@@ -3625,6 +5552,13 @@ For a complete ``require.resolve`` replacement, there is the import.meta.resolve
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = require.resolve();
+   console.log(result);
+
 
 **Properties**
 
@@ -3636,6 +5570,27 @@ Response
 
 A browser-compatible implementation of ``Response``.
 
+Response
+~~~~~~~~
+
+.. code-block:: text
+
+   Response
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``Response``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response(undefined, undefined);
+   console.log(instance);
+
+
 Response.error
 ~~~~~~~~~~~~~~
 
@@ -3644,6 +5599,13 @@ Response.error
    globalThis.Response.error(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = Response.error();
+   console.log(result);
 
 .. note::
 
@@ -3659,6 +5621,13 @@ Response.json
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = Response.json(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3672,6 +5641,14 @@ Response.arrayBuffer
    globalThis.Response.arrayBuffer(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.arrayBuffer();
+   console.log(result);
 
 .. note::
 
@@ -3687,6 +5664,14 @@ Response.blob
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.blob();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3700,6 +5685,14 @@ Response.bytes
    globalThis.Response.bytes(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.bytes();
+   console.log(result);
 
 .. note::
 
@@ -3715,6 +5708,14 @@ Response.clone
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.clone();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3728,6 +5729,14 @@ Response.formData
    globalThis.Response.formData(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.formData();
+   console.log(result);
 
 .. note::
 
@@ -3743,6 +5752,14 @@ Response.json
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.json();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3757,6 +5774,14 @@ Response.text
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Response();
+   const result = instance.text();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3770,6 +5795,13 @@ Response.redirect
    globalThis.Response.redirect(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = Response.redirect(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -3796,6 +5828,14 @@ Delete every key in the area.
 
 undefined
 
+**Example**
+
+.. code-block:: javascript
+
+   sessionStorage.setItem('step', '2');
+   sessionStorage.clear();
+   console.log(sessionStorage.length); // 0
+
 
 sessionStorage.getItem
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3815,6 +5855,13 @@ Return the value stored under ``key``, or ``null`` when the key does not exist.
 **Returns**
 
 string | null
+
+**Example**
+
+.. code-block:: javascript
+
+   sessionStorage.setItem('step', '2');
+   console.log(sessionStorage.getItem('step')); // '2'
 
 
 sessionStorage.key
@@ -3836,6 +5883,13 @@ Return the key at ``index`` in insertion order, or ``null`` when out of range.
 
 string | null
 
+**Example**
+
+.. code-block:: javascript
+
+   sessionStorage.setItem('step', '2');
+   console.log(sessionStorage.key(0)); // 'step'
+
 
 sessionStorage.removeItem
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3855,6 +5909,14 @@ Delete ``key`` from the area.
 **Returns**
 
 undefined
+
+**Example**
+
+.. code-block:: javascript
+
+   sessionStorage.setItem('step', '2');
+   sessionStorage.removeItem('step');
+   console.log(sessionStorage.getItem('step')); // null
 
 
 sessionStorage.setItem
@@ -3877,11 +5939,39 @@ Store ``value`` under ``key`` for the lifetime of the process.
 
 undefined
 
+**Example**
+
+.. code-block:: javascript
+
+   sessionStorage.setItem('step', '2');
+   console.log(sessionStorage.getItem('step')); // '2'
+
 
 Storage
 -------
 
 The Web Storage interface implemented by ``localStorage`` and ``sessionStorage``. Constructing it directly is illegal; use one of the two global areas.
+
+Storage
+~~~~~~~
+
+.. code-block:: text
+
+   globalThis.Storage(arg0, arg1)
+
+*Kind:* class · *Arguments:* 2
+
+The Web Storage interface implemented by ``localStorage`` and ``sessionStorage``. Constructing it directly is illegal; use one of the two global areas.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const storage = localStorage;
+   console.log(storage.length);
+
 
 Storage.clear
 ~~~~~~~~~~~~~
@@ -3897,6 +5987,14 @@ Delete every key in the area.
 **Returns**
 
 undefined
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Storage();
+   const result = instance.clear();
+   console.log(result);
 
 
 Storage.getItem
@@ -3918,6 +6016,14 @@ Return the value stored under ``key``, or ``null`` when absent.
 
 string | null
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Storage();
+   const result = instance.getItem('example');
+   console.log(result);
+
 
 Storage.key
 ~~~~~~~~~~~
@@ -3938,6 +6044,14 @@ Return the key at ``index`` in insertion order, or ``null`` when out of range.
 
 string | null
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Storage();
+   const result = instance.key(0);
+   console.log(result);
+
 
 Storage.removeItem
 ~~~~~~~~~~~~~~~~~~
@@ -3957,6 +6071,14 @@ Delete ``key`` from the area.
 **Returns**
 
 undefined
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Storage();
+   const result = instance.removeItem('example');
+   console.log(result);
 
 
 Storage.setItem
@@ -3979,16 +6101,66 @@ Store a string value under ``key``.
 
 undefined
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new Storage();
+   const result = instance.setItem('example', 'hello');
+   console.log(result);
+
 
 SubtleCrypto
 ------------
 
 A browser-compatible implementation of ``SubtleCrypto``. This global is available only if the Node.js binary was compiled with including support for the ``node:crypto`` module.
 
+SubtleCrypto
+~~~~~~~~~~~~
+
+.. code-block:: text
+
+   SubtleCrypto
+
+*Kind:* class · *Arguments:* 0
+
+A browser-compatible implementation of ``SubtleCrypto``. This global is available only if the Node.js binary was compiled with including support for the ``node:crypto`` module.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new SubtleCrypto();
+   console.log(instance);
+
+
 TextDecoder
 -----------
 
 The WHATWG ``TextDecoder`` class. See the ``TextDecoder`` section.
+
+TextDecoder
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   TextDecoder
+
+*Kind:* class · *Arguments:* 2
+
+The WHATWG ``TextDecoder`` class. See the ``TextDecoder`` section.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextDecoder(undefined, undefined);
+   console.log(instance);
+
 
 TextDecoder.decode
 ~~~~~~~~~~~~~~~~~~
@@ -4008,11 +6180,40 @@ If ``textDecoder.fatal`` is ``true``, decoding errors that occur will result in 
 * ``input`` (*ArrayBuffer|DataView|TypedArray*) — optional: An ``ArrayBuffer``, ``DataView``, or
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextDecoder();
+   const result = instance.decode([], {});
+   console.log(result);
+
 
 TextDecoderStream
 -----------------
 
 A browser-compatible implementation of ``TextDecoderStream``.
+
+TextDecoderStream
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   TextDecoderStream
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``TextDecoderStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextDecoderStream(undefined, undefined);
+   console.log(instance);
+
 
 **Properties**
 
@@ -4023,6 +6224,27 @@ TextEncoder
 -----------
 
 The WHATWG ``TextEncoder`` class. See the ``TextEncoder`` section.
+
+TextEncoder
+~~~~~~~~~~~
+
+.. code-block:: text
+
+   TextEncoder
+
+*Kind:* class · *Arguments:* 0
+
+The WHATWG ``TextEncoder`` class. See the ``TextEncoder`` section.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextEncoder();
+   console.log(instance);
+
 
 TextEncoder.encode
 ~~~~~~~~~~~~~~~~~~
@@ -4038,6 +6260,14 @@ UTF-8 encodes the ``input`` string and returns a ``Uint8Array`` containing the e
 **Arguments**
 
 * ``input`` (*string*) — optional: The text to encode. **Default:** an empty string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextEncoder();
+   const result = instance.encode('value');
+   console.log(result);
 
 
 TextEncoder.encodeInto
@@ -4075,6 +6305,27 @@ TextEncoderStream
 
 A browser-compatible implementation of ``TextEncoderStream``.
 
+TextEncoderStream
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   TextEncoderStream
+
+*Kind:* class · *Arguments:* 0
+
+A browser-compatible implementation of ``TextEncoderStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TextEncoderStream();
+   console.log(instance);
+
+
 **Properties**
 
 * ``TextEncoderStream.encoding`` — string
@@ -4086,10 +6337,52 @@ TransformStream
 
 A browser-compatible implementation of ``TransformStream``.
 
+TransformStream
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   TransformStream
+
+*Kind:* class · *Arguments:* 3
+
+A browser-compatible implementation of ``TransformStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new TransformStream(undefined, undefined, undefined);
+   console.log(instance);
+
+
 URL
 ---
 
 The WHATWG ``URL`` class. See the ``URL`` section.
+
+URL
+~~~
+
+.. code-block:: text
+
+   URL
+
+*Kind:* class · *Arguments:* 2
+
+The WHATWG ``URL`` class. See the ``URL`` section.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URL(undefined, undefined);
+   console.log(instance);
+
 
 URL.canParse
 ~~~~~~~~~~~~
@@ -4167,6 +6460,13 @@ Parses a string as a URL. If ``base`` is provided, it will be used as the base U
 * ``input`` (*string*): The absolute or relative input URL to parse. If ``input``
 * ``base`` (*string*) — optional: The base URL to resolve against if the ``input`` is not
 
+**Example**
+
+.. code-block:: javascript
+
+   const result = URL.parse('value', 'value');
+   console.log(result);
+
 
 URL.toJSON
 ~~~~~~~~~~
@@ -4208,6 +6508,14 @@ The ``toString()`` method on the ``URL`` object returns the serialized URL. The 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URL();
+   const result = instance.toString();
+   console.log(result);
+
 
 URL.revokeObjectURL
 ~~~~~~~~~~~~~~~~~~~
@@ -4223,6 +6531,13 @@ Removes the stored ``Blob`` identified by the given ID. Attempting to revoke a I
 **Arguments**
 
 * ``id`` (*string*): A ``'blob:nodedata:...`` URL string returned by a prior call to
+
+**Example**
+
+.. code-block:: javascript
+
+   const result = URL.revokeObjectURL('example');
+   console.log(result);
 
 
 **Properties**
@@ -4249,6 +6564,27 @@ URLPattern
 ----------
 
 The WHATWG ``URLPattern`` class. See the ``URLPattern`` section.
+
+URLPattern
+~~~~~~~~~~
+
+.. code-block:: text
+
+   URLPattern
+
+*Kind:* class · *Arguments:* 3
+
+The WHATWG ``URLPattern`` class. See the ``URLPattern`` section.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLPattern(undefined, undefined, undefined);
+   console.log(instance);
+
 
 URLPattern.exec
 ~~~~~~~~~~~~~~~
@@ -4326,6 +6662,27 @@ URLSearchParams
 
 The WHATWG ``URLSearchParams`` class. See the ``URLSearchParams`` section.
 
+URLSearchParams
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   URLSearchParams
+
+*Kind:* class · *Arguments:* 1
+
+The WHATWG ``URLSearchParams`` class. See the ``URLSearchParams`` section.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams(undefined);
+   console.log(instance);
+
+
 URLSearchParams.append
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4341,6 +6698,14 @@ Append a new name-value pair to the query string.
 
 * ``name`` (*string*)
 * ``value`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.append('example', 'hello');
+   console.log(result);
 
 
 URLSearchParams.delete
@@ -4361,6 +6726,14 @@ If ``value`` is not provided, removes all name-value pairs whose name is ``name`
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.delete('example', 'hello');
+   console.log(result);
+
 
 URLSearchParams.entries
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -4376,6 +6749,14 @@ Returns an ES6 ``Iterator`` over each of the name-value pairs in the query. Each
 Alias for ``urlSearchParams[Symbol.iterator]()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.entries();
+   console.log(result);
 
 
 URLSearchParams.forEach
@@ -4422,6 +6803,14 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.get('example');
+   console.log(result);
+
 
 URLSearchParams.getAll
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4437,6 +6826,14 @@ Returns the values of all name-value pairs whose name is ``name``. If there are 
 **Arguments**
 
 * ``name`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.getAll('example');
+   console.log(result);
 
 
 URLSearchParams.has
@@ -4456,6 +6853,14 @@ If ``value`` is provided, returns ``true`` when name-value pair with same ``name
 
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.has('example', 'hello');
+   console.log(result);
 
 
 URLSearchParams.keys
@@ -4555,6 +6960,14 @@ Returns the search parameters serialized as a string, with characters percent-en
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.toString();
+   console.log(result);
+
 
 URLSearchParams.values
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4569,6 +6982,14 @@ Returns an ES6 ``Iterator`` over the values of each name-value pair.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new URLSearchParams();
+   const result = instance.values();
+   console.log(result);
+
 
 **Properties**
 
@@ -4579,6 +7000,27 @@ WebSocket
 
 A browser-compatible implementation of ``WebSocket``. Disable this API with the ``--no-experimental-websocket`` CLI flag.
 
+WebSocket
+~~~~~~~~~
+
+.. code-block:: text
+
+   WebSocket
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``WebSocket``. Disable this API with the ``--no-experimental-websocket`` CLI flag.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WebSocket(undefined, undefined);
+   console.log(instance);
+
+
 WebSocket._deliver
 ~~~~~~~~~~~~~~~~~~
 
@@ -4587,6 +7029,13 @@ WebSocket._deliver
    globalThis.WebSocket._deliver(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._deliver()); // 'function'
+   console.log(WebSocket.prototype._deliver().length);
 
 .. note::
 
@@ -4602,6 +7051,13 @@ WebSocket._dispatch
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._dispatch()); // 'function'
+   console.log(WebSocket.prototype._dispatch().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4615,6 +7071,13 @@ WebSocket._fail
    globalThis.WebSocket._fail(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._fail()); // 'function'
+   console.log(WebSocket.prototype._fail().length);
 
 .. note::
 
@@ -4630,6 +7093,13 @@ WebSocket._finishClose
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._finishClose()); // 'function'
+   console.log(WebSocket.prototype._finishClose().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4643,6 +7113,13 @@ WebSocket._handleFrame
    globalThis.WebSocket._handleFrame(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._handleFrame()); // 'function'
+   console.log(WebSocket.prototype._handleFrame().length);
 
 .. note::
 
@@ -4658,6 +7135,13 @@ WebSocket._handshakeRequest
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._handshakeRequest()); // 'function'
+   console.log(WebSocket.prototype._handshakeRequest().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4671,6 +7155,13 @@ WebSocket._onData
    globalThis.WebSocket._onData(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._onData()); // 'function'
+   console.log(WebSocket.prototype._onData().length);
 
 .. note::
 
@@ -4686,6 +7177,13 @@ WebSocket._parseFrames
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._parseFrames()); // 'function'
+   console.log(WebSocket.prototype._parseFrames().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4699,6 +7197,13 @@ WebSocket._sendClose
    globalThis.WebSocket._sendClose(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._sendClose()); // 'function'
+   console.log(WebSocket.prototype._sendClose().length);
 
 .. note::
 
@@ -4714,6 +7219,13 @@ WebSocket._validateHandshake
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   console.log(typeof WebSocket.prototype._validateHandshake()); // 'function'
+   console.log(WebSocket.prototype._validateHandshake().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4728,6 +7240,14 @@ WebSocket.close
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WebSocket();
+   const result = instance.close(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4741,6 +7261,14 @@ WebSocket.send
    globalThis.WebSocket.send(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WebSocket();
+   const result = instance.send(undefined);
+   console.log(result);
 
 .. note::
 
@@ -4767,6 +7295,27 @@ WritableStream
 
 A browser-compatible implementation of ``WritableStream``.
 
+WritableStream
+~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   WritableStream
+
+*Kind:* class · *Arguments:* 2
+
+A browser-compatible implementation of ``WritableStream``.
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WritableStream(undefined, undefined);
+   console.log(instance);
+
+
 WritableStream.abort
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -4782,6 +7331,14 @@ Abruptly terminates the ``WritableStream``. All queued writes will be canceled w
 
 * ``reason`` (*any*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WritableStream();
+   const result = instance.abort(undefined);
+   console.log(result);
+
 
 WritableStream.close
 ~~~~~~~~~~~~~~~~~~~~
@@ -4796,6 +7353,14 @@ Closes the ``WritableStream`` when no additional writes are expected.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WritableStream();
+   const result = instance.close();
+   console.log(result);
+
 
 WritableStream.getWriter
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4809,4 +7374,12 @@ WritableStream.getWriter
 Creates and returns a new writer instance that can be used to write data into the ``WritableStream``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const instance = new WritableStream();
+   const result = instance.getWriter();
+   console.log(result);
 

@@ -138,6 +138,15 @@ Like ``url.fileURLToPath(...)`` except that instead of returning a string repres
 * ``url`` (*URL | string*): The file URL string or URL object to convert to a path.
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const result = url.fileURLToPathBuffer('https://example.com', {});
+   console.log(result);
+
 
 format
 ~~~~~~
@@ -188,6 +197,15 @@ Type: Runtime
 ``url.parse()`` accepts URLs with ports that are not numbers. This behavior might result in host name spoofing with unexpected input. These URLs will throw an error in future versions of Node.js, as the WHATWG URL API does already.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const result = url.parse();
+   console.log(result);
 
 
 pathToFileURL
@@ -260,6 +278,15 @@ resolveObject
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const result = url.resolveObject();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -294,7 +321,18 @@ Url
 
    url.Url(...args)
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.Url();
+   console.log(instance);
 
 .. note::
 
@@ -474,6 +512,16 @@ The ``toString()`` method on the ``URL`` object returns the serialized URL. The 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URL();
+   const result = instance.toString();
+   console.log(result);
+
 
 URLPattern class
 ----------------
@@ -570,6 +618,16 @@ Append a new name-value pair to the query string.
 * ``name`` (*string*)
 * ``value`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.append('example', 'hello');
+   console.log(result);
+
 
 URLSearchParams.delete
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -589,6 +647,16 @@ If ``value`` is not provided, removes all name-value pairs whose name is ``name`
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.delete('example', 'hello');
+   console.log(result);
+
 
 URLSearchParams.entries
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -604,6 +672,16 @@ Returns an ES6 ``Iterator`` over each of the name-value pairs in the query. Each
 Alias for ``urlSearchParams[Symbol.iterator]()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.entries();
+   console.log(result);
 
 
 URLSearchParams.forEach
@@ -650,6 +728,16 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.get('example');
+   console.log(result);
+
 
 URLSearchParams.getAll
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -665,6 +753,16 @@ Returns the values of all name-value pairs whose name is ``name``. If there are 
 **Arguments**
 
 * ``name`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.getAll('example');
+   console.log(result);
 
 
 URLSearchParams.has
@@ -684,6 +782,16 @@ If ``value`` is provided, returns ``true`` when name-value pair with same ``name
 
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.has('example', 'hello');
+   console.log(result);
 
 
 URLSearchParams.keys
@@ -783,6 +891,16 @@ Returns the search parameters serialized as a string, with characters percent-en
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.toString();
+   console.log(result);
+
 
 URLSearchParams.values
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -796,6 +914,16 @@ URLSearchParams.values
 Returns an ES6 ``Iterator`` over the values of each name-value pair.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const url = require('node:url');
+
+   const instance = new url.URLSearchParams();
+   const result = instance.values();
+   console.log(result);
 
 
 Properties and constants

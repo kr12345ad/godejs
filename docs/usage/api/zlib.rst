@@ -37,6 +37,15 @@ Compress data using the Brotli algorithm.
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.BrotliCompress(undefined);
+   console.log(instance);
+
 
 brotliCompress
 ~~~~~~~~~~~~~~
@@ -52,6 +61,15 @@ brotliCompress
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*brotli options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.brotliCompress([], {}, () => {});
+   console.log(result);
 
 
 brotliCompressSync
@@ -70,6 +88,15 @@ Compress a chunk of data with ``BrotliCompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*brotli options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.brotliCompressSync([], {});
+   console.log(result);
+
 
 BrotliDecompress
 ~~~~~~~~~~~~~~~~
@@ -83,6 +110,15 @@ BrotliDecompress
 Decompress data using the Brotli algorithm.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.BrotliDecompress(undefined);
+   console.log(instance);
 
 
 brotliDecompress
@@ -100,6 +136,15 @@ brotliDecompress
 * ``options`` (*brotli options*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.brotliDecompress([], {}, () => {});
+   console.log(result);
+
 
 brotliDecompressSync
 ~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +161,15 @@ Decompress a chunk of data with ``BrotliDecompress``.
 
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*brotli options*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.brotliDecompressSync([], {});
+   console.log(result);
 
 
 crc32
@@ -165,6 +219,15 @@ Creates and returns a new ``BrotliCompress`` object.
 
 * ``options`` (*brotli options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createBrotliCompress({});
+   console.log(result);
+
 
 createBrotliDecompress
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -181,6 +244,15 @@ Creates and returns a new ``BrotliDecompress`` object.
 
 * ``options`` (*brotli options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createBrotliDecompress({});
+   console.log(result);
+
 
 createDeflate
 ~~~~~~~~~~~~~
@@ -196,6 +268,15 @@ Creates and returns a new ``Deflate`` object.
 **Arguments**
 
 * ``options`` (*zlib options*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createDeflate({});
+   console.log(result);
 
 
 createDeflateRaw
@@ -215,6 +296,15 @@ An upgrade of zlib from 1.2.8 to 1.2.11 changed behavior when ``windowBits`` is 
 
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createDeflateRaw({});
+   console.log(result);
+
 
 createGunzip
 ~~~~~~~~~~~~
@@ -230,6 +320,15 @@ Creates and returns a new ``Gunzip`` object.
 **Arguments**
 
 * ``options`` (*zlib options*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createGunzip({});
+   console.log(result);
 
 
 createGzip
@@ -247,6 +346,15 @@ Creates and returns a new ``Gzip`` object. See example.
 
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createGzip({});
+   console.log(result);
+
 
 createInflate
 ~~~~~~~~~~~~~
@@ -262,6 +370,15 @@ Creates and returns a new ``Inflate`` object.
 **Arguments**
 
 * ``options`` (*zlib options*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createInflate({});
+   console.log(result);
 
 
 createInflateRaw
@@ -279,6 +396,15 @@ Creates and returns a new ``InflateRaw`` object.
 
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createInflateRaw({});
+   console.log(result);
+
 
 createUnzip
 ~~~~~~~~~~~
@@ -294,6 +420,15 @@ Creates and returns a new ``Unzip`` object.
 **Arguments**
 
 * ``options`` (*zlib options*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createUnzip({});
+   console.log(result);
 
 
 createZstdCompress
@@ -311,6 +446,15 @@ Creates and returns a new ``ZstdCompress`` object.
 
 * ``options`` (*zstd options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createZstdCompress({});
+   console.log(result);
+
 
 createZstdDecompress
 ~~~~~~~~~~~~~~~~~~~~
@@ -327,6 +471,15 @@ Creates and returns a new ``ZstdDecompress`` object.
 
 * ``options`` (*zstd options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.createZstdDecompress({});
+   console.log(result);
+
 
 Deflate
 ~~~~~~~
@@ -340,6 +493,15 @@ Deflate
 Compress data using deflate.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.Deflate(undefined);
+   console.log(instance);
 
 
 deflate
@@ -357,6 +519,15 @@ deflate
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.deflate([], {}, () => {});
+   console.log(result);
+
 
 DeflateRaw
 ~~~~~~~~~~
@@ -370,6 +541,15 @@ DeflateRaw
 Compress data using deflate, and do not append a ``zlib`` header.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.DeflateRaw(undefined);
+   console.log(instance);
 
 
 deflateRaw
@@ -386,6 +566,15 @@ deflateRaw
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.deflateRaw([], {}, () => {});
+   console.log(result);
 
 
 deflateRawSync
@@ -404,6 +593,15 @@ Compress a chunk of data with ``DeflateRaw``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.deflateRawSync([], {});
+   console.log(result);
+
 
 deflateSync
 ~~~~~~~~~~~
@@ -421,6 +619,15 @@ Compress a chunk of data with ``Deflate``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.deflateSync([], {});
+   console.log(result);
+
 
 Gunzip
 ~~~~~~
@@ -434,6 +641,15 @@ Gunzip
 Decompress a gzip stream.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.Gunzip(undefined);
+   console.log(instance);
 
 
 gunzip
@@ -450,6 +666,15 @@ gunzip
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.gunzip([], {}, () => {});
+   console.log(result);
 
 
 gunzipSync
@@ -468,6 +693,15 @@ Decompress a chunk of data with ``Gunzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.gunzipSync([], {});
+   console.log(result);
+
 
 Gzip
 ~~~~
@@ -481,6 +715,15 @@ Gzip
 Compress data using gzip.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.Gzip(undefined);
+   console.log(instance);
 
 
 gzip
@@ -497,6 +740,15 @@ gzip
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.gzip([], {}, () => {});
+   console.log(result);
 
 
 gzipSync
@@ -515,6 +767,15 @@ Compress a chunk of data with ``Gzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.gzipSync([], {});
+   console.log(result);
+
 
 Inflate
 ~~~~~~~
@@ -528,6 +789,15 @@ Inflate
 Decompress a deflate stream.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.Inflate(undefined);
+   console.log(instance);
 
 
 inflate
@@ -545,6 +815,15 @@ inflate
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.inflate([], {}, () => {});
+   console.log(result);
+
 
 InflateRaw
 ~~~~~~~~~~
@@ -558,6 +837,15 @@ InflateRaw
 Decompress a raw deflate stream.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.InflateRaw(undefined);
+   console.log(instance);
 
 
 inflateRaw
@@ -574,6 +862,15 @@ inflateRaw
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.inflateRaw([], {}, () => {});
+   console.log(result);
 
 
 inflateRawSync
@@ -592,6 +889,15 @@ Decompress a chunk of data with ``InflateRaw``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.inflateRawSync([], {});
+   console.log(result);
+
 
 inflateSync
 ~~~~~~~~~~~
@@ -609,6 +915,15 @@ Decompress a chunk of data with ``Inflate``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.inflateSync([], {});
+   console.log(result);
+
 
 Unzip
 ~~~~~
@@ -622,6 +937,15 @@ Unzip
 Decompress either a Gzip- or Deflate-compressed stream by auto-detecting the header.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.Unzip(undefined);
+   console.log(instance);
 
 
 unzip
@@ -638,6 +962,15 @@ unzip
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.unzip([], {}, () => {});
+   console.log(result);
 
 
 unzipSync
@@ -656,6 +989,15 @@ Decompress a chunk of data with ``Unzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.unzipSync([], {});
+   console.log(result);
+
 
 ZlibBase
 ~~~~~~~~
@@ -672,6 +1014,15 @@ This class inherits from ``stream.Transform``, allowing ``node:zlib`` objects to
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase(undefined, undefined);
+   console.log(instance);
+
 
 ZstdCompress
 ~~~~~~~~~~~~
@@ -685,6 +1036,15 @@ ZstdCompress
 Compress data using the Zstd algorithm.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZstdCompress(undefined);
+   console.log(instance);
 
 
 zstdCompress
@@ -701,6 +1061,15 @@ zstdCompress
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.zstdCompress([], {}, () => {});
+   console.log(result);
 
 
 zstdCompressSync
@@ -719,6 +1088,15 @@ Compress a chunk of data with ``ZstdCompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.zstdCompressSync([], {});
+   console.log(result);
+
 
 ZstdDecompress
 ~~~~~~~~~~~~~~
@@ -732,6 +1110,15 @@ ZstdDecompress
 Decompress data using the Zstd algorithm. Concatenated Zstd and skippable frames are decoded as a single stream.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZstdDecompress(undefined);
+   console.log(instance);
 
 
 zstdDecompress
@@ -748,6 +1135,15 @@ zstdDecompress
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.zstdDecompress([], {}, () => {});
+   console.log(result);
 
 
 zstdDecompressSync
@@ -766,6 +1162,15 @@ Decompress a chunk of data with ``ZstdDecompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const result = zlib.zstdDecompressSync([], {});
+   console.log(result);
+
 
 ZlibBase class
 --------------
@@ -783,6 +1188,15 @@ ZlibBase._destroy
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._destroy()); // 'function'
+   console.log(zlib.ZlibBase.prototype._destroy().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -796,6 +1210,15 @@ ZlibBase._emitClose
    zlib.ZlibBase._emitClose(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._emitClose()); // 'function'
+   console.log(zlib.ZlibBase.prototype._emitClose().length);
 
 .. note::
 
@@ -811,6 +1234,15 @@ ZlibBase._emitData
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._emitData()); // 'function'
+   console.log(zlib.ZlibBase.prototype._emitData().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -824,6 +1256,15 @@ ZlibBase._final
    zlib.ZlibBase._final(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._final()); // 'function'
+   console.log(zlib.ZlibBase.prototype._final().length);
 
 .. note::
 
@@ -839,6 +1280,15 @@ ZlibBase._finishOutput
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._finishOutput()); // 'function'
+   console.log(zlib.ZlibBase.prototype._finishOutput().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -852,6 +1302,15 @@ ZlibBase._flush
    zlib.ZlibBase._flush(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._flush()); // 'function'
+   console.log(zlib.ZlibBase.prototype._flush().length);
 
 .. note::
 
@@ -867,6 +1326,15 @@ ZlibBase._maybeDrain
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._maybeDrain()); // 'function'
+   console.log(zlib.ZlibBase.prototype._maybeDrain().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -880,6 +1348,15 @@ ZlibBase._processChunk
    zlib.ZlibBase._processChunk(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._processChunk()); // 'function'
+   console.log(zlib.ZlibBase.prototype._processChunk().length);
 
 .. note::
 
@@ -895,6 +1372,15 @@ ZlibBase._transform
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   console.log(typeof zlib.ZlibBase.prototype._transform()); // 'function'
+   console.log(zlib.ZlibBase.prototype._transform().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -908,6 +1394,16 @@ ZlibBase.addListener
    zlib.ZlibBase.addListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.addListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -929,6 +1425,16 @@ Close the underlying handle.
 
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 ZlibBase.destroy
 ~~~~~~~~~~~~~~~~
@@ -938,6 +1444,16 @@ ZlibBase.destroy
    zlib.ZlibBase.destroy(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.destroy(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -953,6 +1469,16 @@ ZlibBase.emit
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.emit(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -967,6 +1493,16 @@ ZlibBase.end
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -980,6 +1516,16 @@ ZlibBase.eventNames
    zlib.ZlibBase.eventNames(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.eventNames();
+   console.log(result);
 
 .. note::
 
@@ -1004,6 +1550,16 @@ Calling this only flushes data from the internal ``zlib`` state, and does not pe
 * ``kind`` — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.flush(undefined, () => {});
+   console.log(result);
+
 
 ZlibBase.isPaused
 ~~~~~~~~~~~~~~~~~
@@ -1013,6 +1569,16 @@ ZlibBase.isPaused
    zlib.ZlibBase.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -1028,6 +1594,16 @@ ZlibBase.listenerCount
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.listenerCount(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1041,6 +1617,16 @@ ZlibBase.listeners
    zlib.ZlibBase.listeners(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.listeners(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1056,6 +1642,16 @@ ZlibBase.off
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.off(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1070,6 +1666,16 @@ ZlibBase.on
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1083,6 +1689,16 @@ ZlibBase.once
    zlib.ZlibBase.once(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.once(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1108,6 +1724,16 @@ Dynamically update the compression level and compression strategy. Only applicab
 * ``strategy`` (*integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.params(1, 1, () => {});
+   console.log(result);
+
 
 ZlibBase.pause
 ~~~~~~~~~~~~~~
@@ -1117,6 +1743,16 @@ ZlibBase.pause
    zlib.ZlibBase.pause(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.pause();
+   console.log(result);
 
 .. note::
 
@@ -1132,6 +1768,16 @@ ZlibBase.pipe
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.pipe(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1145,6 +1791,16 @@ ZlibBase.prependListener
    zlib.ZlibBase.prependListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.prependListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1160,6 +1816,16 @@ ZlibBase.push
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.push(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1173,6 +1839,16 @@ ZlibBase.read
    zlib.ZlibBase.read(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.read(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1188,6 +1864,16 @@ ZlibBase.removeAllListeners
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.removeAllListeners(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1201,6 +1887,16 @@ ZlibBase.removeListener
    zlib.ZlibBase.removeListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.removeListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1222,6 +1918,16 @@ For Zstd streams, cancel the current frame and start a new session while preserv
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.reset();
+   console.log(result);
+
 
 ZlibBase.resume
 ~~~~~~~~~~~~~~~
@@ -1231,6 +1937,16 @@ ZlibBase.resume
    zlib.ZlibBase.resume(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.resume();
+   console.log(result);
 
 .. note::
 
@@ -1246,6 +1962,16 @@ ZlibBase.setEncoding
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.setEncoding();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1260,6 +1986,16 @@ ZlibBase.unpipe
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.unpipe();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1273,6 +2009,16 @@ ZlibBase.write
    zlib.ZlibBase.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const zlib = require('node:zlib');
+
+   const instance = new zlib.ZlibBase();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 

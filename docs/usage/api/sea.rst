@@ -35,6 +35,15 @@ This method can be used to retrieve the assets configured to be bundled into the
 * ``key``
 * ``encoding`` (*string*) — optional: If specified, the asset will be decoded as
 
+**Example**
+
+.. code-block:: javascript
+
+   const sea = require('node:sea');
+
+   const result = sea.getAsset('example', 'utf8');
+   console.log(result);
+
 
 getAssetAsBlob
 ~~~~~~~~~~~~~~
@@ -54,6 +63,15 @@ Similar to ``sea.getAsset()``, but returns the result in a ``Blob``. An error is
 * ``key``
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const sea = require('node:sea');
+
+   const result = sea.getAssetAsBlob('example', {});
+   console.log(result);
+
 
 getRawAsset
 ~~~~~~~~~~~
@@ -72,6 +90,15 @@ Unlike ``sea.getAsset()`` or ``sea.getAssetAsBlob()``, this method does not retu
 
 * ``key``
 
+**Example**
+
+.. code-block:: javascript
+
+   const sea = require('node:sea');
+
+   const result = sea.getRawAsset('example');
+   console.log(result);
+
 
 isSea
 ~~~~~
@@ -83,6 +110,15 @@ isSea
 *Kind:* function · *Arguments:* 0
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sea = require('node:sea');
+
+   const result = sea.isSea();
+   console.log(result);
 
 
 .. note::

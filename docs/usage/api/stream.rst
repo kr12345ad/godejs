@@ -33,6 +33,15 @@ _isUint8Array
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   console.log(typeof stream._isUint8Array); // 'function'
+   console.log(stream._isUint8Array.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -79,6 +88,15 @@ addAbortSignalNoValidate
    stream.addAbortSignalNoValidate(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.addAbortSignalNoValidate(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -146,6 +164,15 @@ When the stream is destroyed with an ``error`` (or with an explicit ``options.co
 * ``error`` (*any*) — optional
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.destroy(new Error('example'), {});
+   console.log(result);
+
 
 Duplex
 ~~~~~~
@@ -161,6 +188,15 @@ Duplex streams are streams that implement both the ``Readable`` and ``Writable``
 Examples of ``Duplex`` streams include:
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex(undefined);
+   console.log(instance);
 
 
 duplexPair
@@ -274,6 +310,15 @@ Returns the default highWaterMark used by streams. Defaults to ``16`` for ``obje
 
 * ``objectMode`` (*boolean*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.getDefaultHighWaterMark(true);
+   console.log(result);
+
 
 isDestroyed
 ~~~~~~~~~~~
@@ -289,6 +334,15 @@ Returns whether the stream has been destroyed.
 **Arguments**
 
 * ``stream`` (*Readable|Writable|Duplex*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.isDestroyed(process.stdout);
+   console.log(result);
 
 
 isDisturbed
@@ -306,6 +360,15 @@ Returns whether the stream has been read from or cancelled.
 
 * ``stream`` (*stream.Readable|ReadableStream*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.isDisturbed(process.stdout);
+   console.log(result);
+
 
 isErrored
 ~~~~~~~~~
@@ -322,6 +385,15 @@ Returns whether the stream has encountered an error.
 
 * ``stream`` (*Readable|Writable|Duplex|WritableStream|ReadableStream*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.isErrored(process.stdout);
+   console.log(result);
+
 
 isReadable
 ~~~~~~~~~~
@@ -337,6 +409,15 @@ Returns whether the stream is readable.
 **Arguments**
 
 * ``stream`` (*Readable|Duplex|ReadableStream*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.isReadable(process.stdout);
+   console.log(result);
 
 
 isUint8Array
@@ -378,6 +459,15 @@ Returns whether the stream is writable.
 
 * ``stream`` (*Writable|Duplex|WritableStream*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.isWritable(process.stdout);
+   console.log(result);
+
 
 PassThrough
 ~~~~~~~~~~~
@@ -391,6 +481,15 @@ PassThrough
 The ``stream.PassThrough`` class is a trivial implementation of a ``Transform`` stream that simply passes the input bytes across to the output. Its purpose is primarily for examples and testing, but there are some use cases where ``stream.PassThrough`` is useful as a building block for novel sorts of streams.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.PassThrough(undefined);
+   console.log(instance);
 
 
 pipeline
@@ -406,6 +505,15 @@ pipeline
 
 * ``streams``
 * ``options`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.pipeline(undefined, {});
+   console.log(result);
 
 
 push
@@ -475,6 +583,15 @@ If the internal read buffer is below the ``highWaterMark``, and the stream is no
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.read(undefined);
+   console.log(result);
+
 
 Readable
 ~~~~~~~~
@@ -525,6 +642,15 @@ Sets the default highWaterMark used by streams.
 * ``objectMode`` (*boolean*)
 * ``value`` (*integer*): highWaterMark value
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.setDefaultHighWaterMark(true, 'hello');
+   console.log(result);
+
 
 Stream
 ~~~~~~
@@ -533,7 +659,18 @@ Stream
 
    stream.Stream(arg0)
 
-*Kind:* function · *Arguments:* 1
+*Kind:* class · *Arguments:* 1
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Stream(undefined);
+   console.log(instance);
 
 .. note::
 
@@ -554,6 +691,15 @@ Transform streams are ``Duplex`` streams where the output is in some way related
 Examples of ``Transform`` streams include:
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Transform(undefined);
+   console.log(instance);
 
 
 Writable
@@ -607,6 +753,16 @@ The ``_destroy()`` method is called by ``writable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance._destroy(new Error('example'), () => {});
+   console.log(result);
+
 
 Duplex._undestroy
 ~~~~~~~~~~~~~~~~~
@@ -616,6 +772,15 @@ Duplex._undestroy
    stream.Duplex._undestroy(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   console.log(typeof stream.Duplex.prototype._undestroy()); // 'function'
+   console.log(stream.Duplex.prototype._undestroy().length);
 
 .. note::
 
@@ -641,6 +806,16 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance._write(Buffer.from('hello'), 'utf8', () => {});
+   console.log(result);
+
 
 Duplex.cork
 ~~~~~~~~~~~
@@ -650,6 +825,16 @@ Duplex.cork
    stream.Duplex.cork(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.cork();
+   console.log(result);
 
 .. note::
 
@@ -665,6 +850,16 @@ Duplex.destroy
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.destroy(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -678,6 +873,16 @@ Duplex.destroySoon
    stream.Duplex.destroySoon(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.destroySoon();
+   console.log(result);
 
 .. note::
 
@@ -693,6 +898,16 @@ Duplex.end
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -706,6 +921,16 @@ Duplex.setDefaultEncoding
    stream.Duplex.setDefaultEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.setDefaultEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -721,6 +946,16 @@ Duplex.uncork
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.uncork();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -734,6 +969,16 @@ Duplex.write
    stream.Duplex.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Duplex();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -831,6 +1076,15 @@ promises.pipeline
 * ``streams``
 * ``options`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const result = stream.promises.pipeline(undefined, {});
+   console.log(result);
+
 
 Readable class
 --------------
@@ -855,6 +1109,16 @@ The ``_destroy()`` method is called by ``readable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance._destroy(new Error('example'), () => {});
+   console.log(result);
+
 
 Readable._read
 ~~~~~~~~~~~~~~
@@ -873,6 +1137,16 @@ All ``Readable`` stream implementations must provide an implementation of the ``
 
 * ``size`` (*number*): Number of bytes to read asynchronously
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance._read(0);
+   console.log(result);
+
 
 Readable._undestroy
 ~~~~~~~~~~~~~~~~~~~
@@ -882,6 +1156,15 @@ Readable._undestroy
    stream.Readable._undestroy(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   console.log(typeof stream.Readable.prototype._undestroy()); // 'function'
+   console.log(stream.Readable.prototype._undestroy().length);
 
 .. note::
 
@@ -897,6 +1180,16 @@ Readable.addListener
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.addListener(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -910,6 +1203,16 @@ Readable.asIndexedPairs
    stream.Readable.asIndexedPairs(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.asIndexedPairs();
+   console.log(result);
 
 .. note::
 
@@ -968,6 +1271,16 @@ Readable.destroy
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.destroy(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -981,6 +1294,16 @@ Readable.drop
    stream.Readable.drop(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.drop(undefined);
+   console.log(result);
 
 .. note::
 
@@ -996,6 +1319,16 @@ Readable.every
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.every(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1009,6 +1342,16 @@ Readable.filter
    stream.Readable.filter(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.filter(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1024,6 +1367,16 @@ Readable.find
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.find(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1037,6 +1390,16 @@ Readable.flatMap
    stream.Readable.flatMap(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.flatMap(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1052,6 +1415,16 @@ Readable.forEach
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.forEach(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1065,6 +1438,16 @@ Readable.isPaused
    stream.Readable.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -1080,6 +1463,16 @@ Readable.iterator
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.iterator(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1093,6 +1486,16 @@ Readable.map
    stream.Readable.map(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.map(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1108,6 +1511,16 @@ Readable.on
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1121,6 +1534,16 @@ Readable.once
    stream.Readable.once(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.once(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1136,6 +1559,16 @@ Readable.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1149,6 +1582,16 @@ Readable.pipe
    stream.Readable.pipe(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.pipe(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1222,6 +1665,16 @@ If the internal read buffer is below the ``highWaterMark``, and the stream is no
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.read(undefined);
+   console.log(result);
+
 
 Readable.reduce
 ~~~~~~~~~~~~~~~
@@ -1231,6 +1684,16 @@ Readable.reduce
    stream.Readable.reduce(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.reduce(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1246,6 +1709,16 @@ Readable.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1259,6 +1732,16 @@ Readable.setEncoding
    stream.Readable.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1274,6 +1757,16 @@ Readable.some
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.some(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1287,6 +1780,16 @@ Readable.take
    stream.Readable.take(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.take(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1302,6 +1805,16 @@ Readable.toArray
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.toArray();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1315,6 +1828,16 @@ Readable.unpipe
    stream.Readable.unpipe(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.unpipe(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1330,6 +1853,16 @@ Readable.unshift
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.unshift(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1343,6 +1876,16 @@ Readable.wrap
    stream.Readable.wrap(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Readable();
+   const result = instance.wrap(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1361,6 +1904,16 @@ Stream.off
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Stream();
+   const result = instance.off();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1374,6 +1927,16 @@ Stream.pipe
    stream.Stream.pipe(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Stream();
+   const result = instance.pipe(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1404,6 +1967,16 @@ This optional function will be called before the stream closes, delaying the ``'
 
 * ``callback`` (*Function*): Call this function (optionally with an error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Transform();
+   const result = instance._final(() => {});
+   console.log(result);
+
 
 Transform._read
 ~~~~~~~~~~~~~~~
@@ -1421,6 +1994,16 @@ All ``Readable`` stream implementations must provide an implementation of the ``
 **Arguments**
 
 * ``size`` (*number*): Number of bytes to read asynchronously
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Transform();
+   const result = instance._read(0);
+   console.log(result);
 
 
 Transform._transform
@@ -1475,6 +2058,16 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Transform();
+   const result = instance._write(Buffer.from('hello'), 'utf8', () => {});
+   console.log(result);
+
 
 Transform._writev
 ~~~~~~~~~~~~~~~~~
@@ -1493,6 +2086,16 @@ The ``writable._writev()`` method may be implemented in addition or alternativel
 
 * ``chunks`` (*Object\[]*): The data to be written. The value is an array of ``Object``
 * ``callback`` (*Function*): A callback function (optionally with an error
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Transform();
+   const result = instance._writev([], () => {});
+   console.log(result);
 
 
 Writable class
@@ -1518,6 +2121,16 @@ The ``_destroy()`` method is called by ``writable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance._destroy(new Error('example'), () => {});
+   console.log(result);
+
 
 Writable._undestroy
 ~~~~~~~~~~~~~~~~~~~
@@ -1527,6 +2140,15 @@ Writable._undestroy
    stream.Writable._undestroy(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   console.log(typeof stream.Writable.prototype._undestroy()); // 'function'
+   console.log(stream.Writable.prototype._undestroy().length);
 
 .. note::
 
@@ -1552,6 +2174,16 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance._write(Buffer.from('hello'), 'utf8', () => {});
+   console.log(result);
+
 
 Writable.cork
 ~~~~~~~~~~~~~
@@ -1561,6 +2193,16 @@ Writable.cork
    stream.Writable.cork(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.cork();
+   console.log(result);
 
 .. note::
 
@@ -1576,6 +2218,16 @@ Writable.destroy
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.destroy(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1589,6 +2241,16 @@ Writable.destroySoon
    stream.Writable.destroySoon(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.destroySoon();
+   console.log(result);
 
 .. note::
 
@@ -1604,6 +2266,16 @@ Writable.end
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1617,6 +2289,16 @@ Writable.setDefaultEncoding
    stream.Writable.setDefaultEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.setDefaultEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1632,6 +2314,16 @@ Writable.uncork
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.uncork();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1645,6 +2337,16 @@ Writable.write
    stream.Writable.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const stream = require('node:stream');
+
+   const instance = new stream.Writable();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 

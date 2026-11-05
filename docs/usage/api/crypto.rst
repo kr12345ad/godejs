@@ -114,11 +114,11 @@ Certificate
 
    crypto.Certificate()
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 Instances of the ``Certificate`` class can be created using the ``new`` keyword or by calling ``crypto.Certificate()`` as a function:
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
 
 **Example**
 
@@ -147,6 +147,15 @@ Checks the primality of the ``candidate``.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.checkPrime([], {}, () => {});
+   console.log(result);
+
 
 checkPrimeSync
 ~~~~~~~~~~~~~~
@@ -163,6 +172,15 @@ Checks the primality of the ``candidate``.
 
 * ``candidate`` (*ArrayBuffer|SharedArrayBuffer|TypedArray|Buffer|DataView|bigint*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.checkPrimeSync([], {});
+   console.log(result);
 
 
 Cipheriv
@@ -236,6 +254,15 @@ The ``options`` argument controls cipher-specific settings and stream behavior. 
 * ``iv`` (*string|ArrayBuffer|Buffer|TypedArray|DataView|null*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options with these additional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createCipheriv('value', 'example', [], {});
+   console.log(result);
+
 
 createDecipheriv
 ~~~~~~~~~~~~~~~~
@@ -256,6 +283,15 @@ The ``options`` argument controls cipher-specific settings and stream behavior. 
 * ``key`` (*string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``iv`` (*string|ArrayBuffer|Buffer|TypedArray|DataView|null*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options with these additional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createDecipheriv('value', 'example', [], {});
+   console.log(result);
 
 
 createDiffieHellman
@@ -278,6 +314,15 @@ The ``generator`` argument can be a number, string, or ``Buffer``. If ``generato
 * ``generator`` (*number|string|ArrayBuffer|Buffer|TypedArray|DataView*) — optional
 * ``generatorEncoding`` (*string*) — optional: The encoding of the ``generator`` string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createDiffieHellman([], 'utf8', [], 'utf8');
+   console.log(result);
+
 
 createDiffieHellmanGroup
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,6 +339,15 @@ An alias for ``crypto.getDiffieHellman()``
 
 * ``name`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createDiffieHellmanGroup('example');
+   console.log(result);
+
 
 createECDH
 ~~~~~~~~~~
@@ -309,6 +363,15 @@ Creates an Elliptic Curve Diffie-Hellman (``ECDH``) key exchange object using a 
 **Arguments**
 
 * ``curveName`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createECDH('value');
+   console.log(result);
 
 
 createHash
@@ -425,6 +488,15 @@ The following table summarizes the MAC-specific options accepted by MAC implemen
 * ``key`` (*ArrayBuffer|Buffer|TypedArray|DataView|KeyObject*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createMac('value', 'example', {});
+   console.log(result);
+
 
 createPrivateKey
 ~~~~~~~~~~~~~~~~
@@ -442,6 +514,15 @@ If the private key is encrypted, a ``passphrase`` must be specified. The length 
 **Arguments**
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|URL*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createPrivateKey('example');
+   console.log(result);
 
 
 createPublicKey
@@ -461,6 +542,15 @@ If the format is ``'pem'``, the ``'key'`` may also be an X.509 certificate.
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createPublicKey('example');
+   console.log(result);
+
 
 createSecretKey
 ~~~~~~~~~~~~~~~
@@ -477,6 +567,15 @@ Creates and returns a new key object containing a secret key for symmetric encry
 
 * ``key`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The string encoding when ``key`` is a string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createSecretKey('example', 'utf8');
+   console.log(result);
 
 
 createSign
@@ -497,6 +596,15 @@ In some cases, a ``Sign`` instance can be created using the name of a signature 
 * ``algorithm`` (*string*)
 * ``options`` (*Object*) — optional: ``stream.Writable`` options
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createSign('value', {});
+   console.log(result);
+
 
 createVerify
 ~~~~~~~~~~~~
@@ -515,6 +623,15 @@ In some cases, a ``Verify`` instance can be created using the name of a signatur
 
 * ``algorithm`` (*string*)
 * ``options`` (*Object*) — optional: ``stream.Writable`` options
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.createVerify('value', {});
+   console.log(result);
 
 
 decapsulate
@@ -535,6 +652,15 @@ Supported key types and their KEM algorithms are:
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|URL*): Private Key
 * ``ciphertext`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``callback`` (*Function*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.decapsulate('example', [], () => {});
+   console.log(result);
 
 
 Decipheriv
@@ -651,6 +777,15 @@ If ``options.privateKey`` is not a ``KeyObject``, this function behaves as if ``
 * ``options`` (*Object*)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.diffieHellman({}, () => {});
+   console.log(result);
+
 
 DiffieHellmanGroup
 ~~~~~~~~~~~~~~~~~~
@@ -733,6 +868,15 @@ Supported key types and their KEM algorithms are:
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject*): Public Key
 * ``callback`` (*Function*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.encapsulate('example', () => {});
+   console.log(result);
 
 
 generateKey
@@ -905,6 +1049,15 @@ If ``options.safe`` is ``true``, the prime will be a safe prime -- that is, ``(p
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.generatePrime(0, {}, () => {});
+   console.log(result);
+
 
 generatePrimeSync
 ~~~~~~~~~~~~~~~~~
@@ -924,6 +1077,15 @@ If ``options.safe`` is ``true``, the prime will be a safe prime -- that is, ``(p
 * ``size`` (*number*): The size (in bits) of the prime to generate.
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.generatePrimeSync(0, {});
+   console.log(result);
+
 
 getCipherInfo
 ~~~~~~~~~~~~~
@@ -942,6 +1104,15 @@ Some ciphers accept variable length keys and initialization vectors. By default,
 
 * ``nameOrNid`` (*string|number*): The name or nid of the cipher to query.
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.getCipherInfo('value', {});
+   console.log(result);
 
 
 getCiphers
@@ -1039,6 +1210,15 @@ With OpenSSL 3, this reports whether the default property query includes ``fips=
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.getFips();
+   console.log(result);
+
 
 getHashes
 ~~~~~~~~~
@@ -1105,6 +1285,15 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 **Arguments**
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.getRandomValues([]);
+   console.log(result);
 
 
 Hash
@@ -1477,6 +1666,15 @@ Decrypts ``buffer`` with ``privateKey``. ``buffer`` was previously encrypted usi
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.privateDecrypt([], []);
+   console.log(result);
+
 
 privateEncrypt
 ~~~~~~~~~~~~~~
@@ -1496,6 +1694,15 @@ If ``privateKey`` is not a ``KeyObject``, this function behaves as if ``privateK
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.privateEncrypt([], []);
+   console.log(result);
+
 
 prng
 ~~~~
@@ -1512,6 +1719,15 @@ In recent versions of Node.js, there is no difference between ``crypto.randomByt
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.prng();
+   console.log(result);
+
 
 pseudoRandomBytes
 ~~~~~~~~~~~~~~~~~
@@ -1521,6 +1737,15 @@ pseudoRandomBytes
    crypto.pseudoRandomBytes(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.pseudoRandomBytes();
+   console.log(result);
 
 .. note::
 
@@ -1545,6 +1770,15 @@ If ``key`` is not a ``KeyObject``, this function behaves as if ``key`` had been 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.publicDecrypt('example', []);
+   console.log(result);
+
 
 publicEncrypt
 ~~~~~~~~~~~~~
@@ -1563,6 +1797,15 @@ Encrypts the content of ``buffer`` with ``key`` and returns a new ``Buffer`` wit
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.publicEncrypt('example', []);
+   console.log(result);
 
 
 randomBytes
@@ -1729,6 +1972,15 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.randomUUID({});
+   console.log(result);
+
 
 randomUUIDv7
 ~~~~~~~~~~~~
@@ -1745,6 +1997,15 @@ Generates a random RFC 9562 version 7 UUID. The UUID contains a millisecond prec
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.randomUUIDv7({});
+   console.log(result);
+
 
 rng
 ~~~
@@ -1754,6 +2015,15 @@ rng
    crypto.rng(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.rng();
+   console.log(result);
 
 .. note::
 
@@ -1848,6 +2118,15 @@ secureHeapUsed
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.secureHeapUsed();
+   console.log(result);
+
 
 setEngine
 ~~~~~~~~~
@@ -1867,6 +2146,15 @@ Load and set the ``engine`` for some or all OpenSSL functions (selected by flags
 * ``engine`` (*string*)
 * ``flags`` (*crypto.constants*) — optional: **Default:** ``crypto.constants.ENGINE_METHOD_ALL``
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.setEngine('value', 'r');
+   console.log(result);
+
 
 setFips
 ~~~~~~~
@@ -1884,6 +2172,15 @@ If no loaded provider supplies a requested cryptographic implementation matching
 **Arguments**
 
 * ``bool`` (*boolean*): ``true`` to enable FIPS mode, ``false`` to disable it.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.setFips(true);
+   console.log(result);
 
 
 Sign
@@ -1947,6 +2244,15 @@ Calculates and returns the signature for ``data`` using the given private key an
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.sign('value', 'hello', 'example', () => {});
+   console.log(result);
+
 
 timingSafeEqual
 ~~~~~~~~~~~~~~~
@@ -1966,6 +2272,15 @@ This function does not leak timing information that would allow an attacker to g
 * ``a`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``b`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.timingSafeEqual([], []);
+   console.log(result);
+
 
 Verify
 ~~~~~~
@@ -1981,6 +2296,15 @@ The ``Verify`` class is a utility for verifying signatures. It can be used in on
 * As a writable stream where written data is used to validate against the supplied signature, or * Using the ``verify.update()`` and ``verify.verify()`` methods to verify the signature.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Verify();
+   console.log(instance);
 
 
 verify
@@ -2003,6 +2327,15 @@ Verifies the given signature for ``data`` using the given key and algorithm. If 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``signature`` (*ArrayBuffer|Buffer|SharedArrayBuffer|TypedArray|DataView*)
 * ``callback`` (*Function*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.verify('value', 'hello', 'example', [], () => {});
+   console.log(result);
 
 
 X509Certificate
@@ -2134,6 +2467,16 @@ Once the ``cipher.final()`` method has been called, the ``Cipheriv`` object can 
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Cipheriv();
+   const result = instance.final('utf8');
+   console.log(result);
+
 
 Cipheriv.getAuthTag
 ~~~~~~~~~~~~~~~~~~~
@@ -2149,6 +2492,16 @@ The ``cipher.getAuthTag()`` method should only be called after encryption has be
 If the ``authTagLength`` option was set during the ``cipher`` instance's creation, this function will return exactly ``authTagLength`` bytes.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Cipheriv();
+   const result = instance.getAuthTag();
+   console.log(result);
 
 
 Cipheriv.setAAD
@@ -2169,6 +2522,16 @@ The ``plaintextLength`` option is optional for ``GCM``, ``OCB``, ``SIV``, and ``
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Cipheriv();
+   const result = instance.setAAD([], {});
+   console.log(result);
+
 
 Cipheriv.setAutoPadding
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2186,6 +2549,16 @@ For block ciphers that use standard block padding, when ``autoPadding`` is ``fal
 **Arguments**
 
 * ``autoPadding`` (*boolean*) — optional: **Default:** ``true``
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Cipheriv();
+   const result = instance.setAutoPadding(true);
+   console.log(result);
 
 
 Cipheriv.update
@@ -2206,6 +2579,16 @@ The ``outputEncoding`` specifies the output format of the enciphered data. If th
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the data.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Cipheriv();
+   const result = instance.update('hello', 'utf8', 'utf8');
+   console.log(result);
 
 
 Decipheriv class
@@ -2232,6 +2615,16 @@ Once the ``cipher.final()`` method has been called, the ``Cipheriv`` object can 
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Decipheriv();
+   const result = instance.final('utf8');
+   console.log(result);
+
 
 Decipheriv.setAAD
 ~~~~~~~~~~~~~~~~~
@@ -2250,6 +2643,16 @@ The ``plaintextLength`` option is optional for ``GCM``, ``OCB``, ``SIV``, and ``
 
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Decipheriv();
+   const result = instance.setAAD([], {});
+   console.log(result);
 
 
 Decipheriv.setAuthTag
@@ -2270,6 +2673,16 @@ The ``decipher.setAuthTag()`` method must be called before ``decipher.update()``
 * ``buffer`` (*string|Buffer|ArrayBuffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: String encoding to use when ``buffer`` is a string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Decipheriv();
+   const result = instance.setAuthTag([], 'utf8');
+   console.log(result);
+
 
 Decipheriv.setAutoPadding
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2287,6 +2700,16 @@ For block ciphers that use standard block padding, when ``autoPadding`` is ``fal
 **Arguments**
 
 * ``autoPadding`` (*boolean*) — optional: **Default:** ``true``
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Decipheriv();
+   const result = instance.setAutoPadding(true);
+   console.log(result);
 
 
 Decipheriv.update
@@ -2308,6 +2731,16 @@ The ``outputEncoding`` specifies the output format of the enciphered data. If th
 * ``inputEncoding`` (*string*) — optional: The encoding of the data.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Decipheriv();
+   const result = instance.update('hello', 'utf8', 'utf8');
+   console.log(result);
+
 
 DiffieHellman class
 -------------------
@@ -2325,6 +2758,16 @@ DiffieHellman.$godeComputeSecret
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeComputeSecret();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2338,6 +2781,16 @@ DiffieHellman.$godeGenerateKeys
    crypto.DiffieHellman.$godeGenerateKeys(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeGenerateKeys();
+   console.log(result);
 
 .. note::
 
@@ -2353,6 +2806,16 @@ DiffieHellman.$godeGetGenerator
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeGetGenerator();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2366,6 +2829,16 @@ DiffieHellman.$godeGetPrime
    crypto.DiffieHellman.$godeGetPrime(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeGetPrime();
+   console.log(result);
 
 .. note::
 
@@ -2381,6 +2854,16 @@ DiffieHellman.$godeGetPrivateKey
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeGetPrivateKey();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2394,6 +2877,16 @@ DiffieHellman.$godeGetPublicKey
    crypto.DiffieHellman.$godeGetPublicKey(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeGetPublicKey();
+   console.log(result);
 
 .. note::
 
@@ -2409,6 +2902,16 @@ DiffieHellman.$godeSetPrivateKey
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeSetPrivateKey();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2423,6 +2926,16 @@ DiffieHellman.$godeSetPublicKey
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeSetPublicKey();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2436,6 +2949,16 @@ DiffieHellman.$godeVerifyError
    crypto.DiffieHellman.$godeVerifyError(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.$godeVerifyError();
+   console.log(result);
 
 .. note::
 
@@ -2461,6 +2984,16 @@ If ``outputEncoding`` is given a string is returned; otherwise, a ``Buffer`` is 
 * ``inputEncoding`` (*string*) — optional: The encoding of an ``otherPublicKey`` string.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.computeSecret([], 'utf8', 'utf8');
+   console.log(result);
+
 
 DiffieHellman.generateKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2479,6 +3012,16 @@ This function is a thin wrapper around ``DH_generate_key()``. In particular, onc
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.generateKeys('utf8');
+   console.log(result);
+
 
 DiffieHellman.getGenerator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2494,6 +3037,16 @@ Returns the Diffie-Hellman generator in the specified ``encoding``. If ``encodin
 **Arguments**
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.getGenerator('utf8');
+   console.log(result);
 
 
 DiffieHellman.getPrime
@@ -2511,6 +3064,16 @@ Returns the Diffie-Hellman prime in the specified ``encoding``. If ``encoding`` 
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.getPrime('utf8');
+   console.log(result);
+
 
 DiffieHellman.getPrivateKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2527,6 +3090,16 @@ Returns the Diffie-Hellman private key in the specified ``encoding``. If ``encod
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.getPrivateKey('utf8');
+   console.log(result);
+
 
 DiffieHellman.getPublicKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2542,6 +3115,16 @@ Returns the Diffie-Hellman public key in the specified ``encoding``. If ``encodi
 **Arguments**
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.getPublicKey('utf8');
+   console.log(result);
 
 
 DiffieHellman.setPrivateKey
@@ -2562,6 +3145,16 @@ This function does not automatically compute the associated public key. Either `
 * ``privateKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``privateKey`` string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.setPrivateKey([], 'utf8');
+   console.log(result);
+
 
 DiffieHellman.setPublicKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2578,6 +3171,16 @@ Sets the Diffie-Hellman public key. If the ``encoding`` argument is provided, ``
 
 * ``publicKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``publicKey`` string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.DiffieHellman();
+   const result = instance.setPublicKey([], 'utf8');
+   console.log(result);
 
 
 ECDH class
@@ -2596,6 +3199,16 @@ ECDH.$godeComputeSecret
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeComputeSecret();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2609,6 +3222,16 @@ ECDH.$godeGenerateKeys
    crypto.ECDH.$godeGenerateKeys(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeGenerateKeys();
+   console.log(result);
 
 .. note::
 
@@ -2624,6 +3247,16 @@ ECDH.$godeGetPrivateKey
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeGetPrivateKey();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2637,6 +3270,16 @@ ECDH.$godeGetPublicKey
    crypto.ECDH.$godeGetPublicKey(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeGetPublicKey();
+   console.log(result);
 
 .. note::
 
@@ -2652,6 +3295,16 @@ ECDH.$godeSetPrivateKey
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeSetPrivateKey();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2665,6 +3318,16 @@ ECDH.$godeSetPublicKey
    crypto.ECDH.$godeSetPublicKey(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.$godeSetPublicKey();
+   console.log(result);
 
 .. note::
 
@@ -2690,6 +3353,16 @@ If ``outputEncoding`` is given a string will be returned; otherwise a ``Buffer``
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``otherPublicKey`` string.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.computeSecret([], 'utf8', 'utf8');
+   console.log(result);
+
 
 ECDH.generateKeys
 ~~~~~~~~~~~~~~~~~
@@ -2709,6 +3382,16 @@ The ``format`` argument specifies point encoding and can be ``'compressed'`` or 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 * ``format`` (*string*) — optional: **Default:** ``'uncompressed'``
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.generateKeys('utf8', 'value');
+   console.log(result);
+
 
 ECDH.getPrivateKey
 ~~~~~~~~~~~~~~~~~~
@@ -2724,6 +3407,16 @@ If ``encoding`` is specified, a string is returned; otherwise a ``Buffer`` is re
 **Arguments**
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.getPrivateKey('utf8');
+   console.log(result);
 
 
 ECDH.getPublicKey
@@ -2744,6 +3437,16 @@ If ``encoding`` is specified, a string is returned; otherwise a ``Buffer`` is re
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 * ``format`` (*string*) — optional: **Default:** ``'uncompressed'``
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.getPublicKey('utf8', 'value');
+   console.log(result);
+
 
 ECDH.setPrivateKey
 ~~~~~~~~~~~~~~~~~~
@@ -2762,6 +3465,16 @@ If ``privateKey`` is not valid for the curve specified when the ``ECDH`` object 
 
 * ``privateKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``privateKey`` string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.ECDH();
+   const result = instance.setPrivateKey([], 'utf8');
+   console.log(result);
 
 
 ECDH.setPublicKey
@@ -2876,6 +3589,16 @@ The ``Hash`` object can not be used again after ``hash.digest()`` method has bee
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hash();
+   const result = instance.digest('utf8');
+   console.log(result);
+
 
 Hash.end
 ~~~~~~~~
@@ -2885,6 +3608,16 @@ Hash.end
    crypto.Hash.end(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hash();
+   const result = instance.end();
+   console.log(result);
 
 .. note::
 
@@ -2899,6 +3632,16 @@ Hash.read
    crypto.Hash.read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hash();
+   const result = instance.read();
+   console.log(result);
 
 .. note::
 
@@ -2923,6 +3666,16 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hash();
+   const result = instance.update('hello', 'utf8');
+   console.log(result);
+
 
 Hash.write
 ~~~~~~~~~~
@@ -2932,6 +3685,16 @@ Hash.write
    crypto.Hash.write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hash();
+   const result = instance.write();
+   console.log(result);
 
 .. note::
 
@@ -2962,6 +3725,16 @@ The ``Hmac`` object can not be used again after ``hmac.digest()`` has been calle
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hmac();
+   const result = instance.digest('utf8');
+   console.log(result);
+
 
 Hmac.update
 ~~~~~~~~~~~
@@ -2981,6 +3754,16 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Hmac();
+   const result = instance.update('hello', 'utf8');
+   console.log(result);
+
 
 KeyObject class
 ---------------
@@ -2998,6 +3781,16 @@ KeyObject.$godeAsymType
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeAsymType();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3011,6 +3804,16 @@ KeyObject.$godeAttachId
    crypto.KeyObject.$godeAttachId(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeAttachId(undefined);
+   console.log(result);
 
 .. note::
 
@@ -3026,6 +3829,16 @@ KeyObject.$godeDetails
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeDetails();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3039,6 +3852,16 @@ KeyObject.$godeEquals
    crypto.KeyObject.$godeEquals(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeEquals();
+   console.log(result);
 
 .. note::
 
@@ -3054,6 +3877,16 @@ KeyObject.$godeExport
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeExport();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3067,6 +3900,16 @@ KeyObject.$godeOwnId
    crypto.KeyObject.$godeOwnId(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeOwnId();
+   console.log(result);
 
 .. note::
 
@@ -3082,6 +3925,16 @@ KeyObject.$godeSymSize
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeSymSize();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -3095,6 +3948,16 @@ KeyObject.$godeType
    crypto.KeyObject.$godeType(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.$godeType();
+   console.log(result);
 
 .. note::
 
@@ -3116,6 +3979,16 @@ Returns ``true`` or ``false`` depending on whether the keys have exactly the sam
 
 * ``otherKeyObject`` (*KeyObject*): A ``KeyObject`` with which to
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.equals(undefined);
+   console.log(result);
+
 
 KeyObject.export
 ~~~~~~~~~~~~~~~~
@@ -3134,6 +4007,16 @@ For public keys, the following encoding options can be used:
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.export({});
+   console.log(result);
+
 
 KeyObject.toCryptoKey
 ~~~~~~~~~~~~~~~~~~~~~
@@ -3151,6 +4034,16 @@ Converts a ``KeyObject`` instance to a ``CryptoKey``.
 * ``algorithm`` (*string|Algorithm|RsaHashedImportParams|EcKeyImportParams|HmacImportParams*)
 * ``extractable`` (*boolean*)
 * ``keyUsages`` (*string\[]*): See Key usages.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.KeyObject();
+   const result = instance.toCryptoKey('value', true, []);
+   console.log(result);
 
 
 Mac class
@@ -3177,6 +4070,16 @@ To verify an authentication tag, compare equal-length ``Buffer`` values using ``
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Mac();
+   const result = instance.final('utf8');
+   console.log(result);
+
 
 Mac.update
 ~~~~~~~~~~
@@ -3195,6 +4098,16 @@ This method can be called multiple times before finalization. If an underlying M
 
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Mac();
+   const result = instance.update('hello', 'utf8');
+   console.log(result);
 
 
 Sign class
@@ -3222,6 +4135,16 @@ If ``privateKey`` is not a ``KeyObject``, this function behaves as if ``privateK
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Sign();
+   const result = instance.sign([], 'utf8');
+   console.log(result);
+
 
 Sign.update
 ~~~~~~~~~~~
@@ -3240,6 +4163,16 @@ This can be called many times with new data as it is streamed.
 
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Sign();
+   const result = instance.update('hello', 'utf8');
+   console.log(result);
 
 
 Verify class
@@ -3267,6 +4200,16 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Verify();
+   const result = instance.update('hello', 'utf8');
+   console.log(result);
+
 
 Verify.verify
 ~~~~~~~~~~~~~
@@ -3286,6 +4229,16 @@ If ``key`` is not a ``KeyObject``, this function behaves as if ``key`` had been 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``signature`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``signatureEncoding`` (*string*) — optional: The encoding of the ``signature`` string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.Verify();
+   const result = instance.verify('example', [], 'utf8');
+   console.log(result);
 
 
 webcrypto
@@ -3310,6 +4263,15 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.getRandomValues([]);
+   console.log(result);
+
 
 webcrypto.randomUUID
 ~~~~~~~~~~~~~~~~~~~~
@@ -3325,6 +4287,15 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 **Arguments**
 
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.randomUUID({});
+   console.log(result);
 
 
 webcrypto.subtle.decrypt
@@ -3346,6 +4317,15 @@ The algorithms currently supported include:
 * ``key`` (*CryptoKey*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.subtle.decrypt(undefined, 'example', 'hello');
+   console.log(result);
+
 
 webcrypto.subtle.digest
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -3364,6 +4344,15 @@ If ``algorithm`` is provided as a ``string``, it must be one of:
 
 * ``algorithm`` (*string|Algorithm|CShakeParams|TurboShakeParams|KangarooTwelveParams*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.subtle.digest('value', 'hello');
+   console.log(result);
 
 
 webcrypto.subtle.encrypt
@@ -3384,6 +4373,15 @@ The algorithms currently supported include:
 * ``algorithm`` (*RsaOaepParams|AesCtrParams|AesCbcParams|AeadParams*)
 * ``key`` (*CryptoKey*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.subtle.encrypt(undefined, 'example', 'hello');
+   console.log(result);
 
 
 webcrypto.subtle.importKey
@@ -3406,6 +4404,15 @@ If importing KDF algorithm keys, ``extractable`` must be ``false``.
 * ``algorithm`` (*string|Algorithm|RsaHashedImportParams|EcKeyImportParams|HmacImportParams|KmacImportParams*)
 * ``extractable`` (*boolean*)
 * ``keyUsages`` (*string\[]*): See Key usages.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const result = crypto.webcrypto.subtle.importKey('value', [], 'value', true, []);
+   console.log(result);
 
 
 X509Certificate class
@@ -3431,6 +4438,16 @@ If the ``'subject'`` option is undefined or set to ``'default'``, the certificat
 * ``email`` (*string*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.checkEmail('value', {});
+   console.log(result);
+
 
 X509Certificate.checkHost
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3450,6 +4467,16 @@ If the certificate matches the given host name, the matching subject name is ret
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.checkHost('example', {});
+   console.log(result);
+
 
 X509Certificate.checkIP
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -3467,6 +4494,16 @@ Only RFC 5280 ``iPAddress`` subject alternative names are considered, and they m
 **Arguments**
 
 * ``ip`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.checkIP('value');
+   console.log(result);
 
 
 X509Certificate.checkIssued
@@ -3510,6 +4547,16 @@ Checks whether the public key for this certificate is consistent with the given 
 
 * ``privateKey`` (*KeyObject*): A private key.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.checkPrivateKey(undefined);
+   console.log(result);
+
 
 X509Certificate.toJSON
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3523,6 +4570,16 @@ X509Certificate.toJSON
 There is no standard JSON encoding for X509 certificates. The ``toJSON()`` method returns a string containing the PEM encoded certificate.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.toJSON();
+   console.log(result);
 
 
 X509Certificate.toLegacyObject
@@ -3538,6 +4595,16 @@ Returns information about this certificate using the legacy certificate object e
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.toLegacyObject();
+   console.log(result);
+
 
 X509Certificate.toString
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3551,6 +4618,16 @@ X509Certificate.toString
 Returns the PEM-encoded certificate.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.toString();
+   console.log(result);
 
 
 X509Certificate.verify
@@ -3567,6 +4644,16 @@ Verifies that this certificate was signed by the given public key. Does not perf
 **Arguments**
 
 * ``publicKey`` (*KeyObject*): A public key.
+
+**Example**
+
+.. code-block:: javascript
+
+   const crypto = require('node:crypto');
+
+   const instance = new crypto.X509Certificate();
+   const result = instance.verify(undefined);
+   console.log(result);
 
 
 Properties and constants

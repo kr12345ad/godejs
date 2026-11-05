@@ -97,6 +97,15 @@ It is possible to apply the same configuration to all files by placing common co
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.assert(undefined, undefined);
+   console.log(result);
+
 
 before
 ~~~~~~
@@ -195,6 +204,15 @@ The ``it()`` function is imported from the ``node:test`` module.
 * ``options`` — optional
 * ``fn`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.it('example', {}, () => {});
+   console.log(result);
+
 
 only
 ~~~~
@@ -212,6 +230,15 @@ Shorthand for marking a test as ``only``, same as ``test([name], { only: true }[
 * ``name`` — optional
 * ``options`` — optional
 * ``fn`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.only('example', {}, () => {});
+   console.log(result);
 
 
 skip
@@ -231,6 +258,15 @@ Shorthand for skipping a test, same as ``test([name], { skip: true }[, fn])``.
 * ``options`` — optional
 * ``fn`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.skip('example', {}, () => {});
+   console.log(result);
+
 
 suite
 ~~~~~
@@ -248,6 +284,15 @@ The ``suite()`` function is imported from the ``node:test`` module.
 * ``name`` (*string*) — optional: The name of the suite, which is displayed when reporting test
 * ``options`` (*Object*) — optional: Optional configuration options for the suite.
 * ``fn`` (*Function|AsyncFunction*) — optional: The suite function declaring nested tests and
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.suite('example', {}, () => {});
+   console.log(result);
 
 
 test
@@ -301,6 +346,15 @@ Shorthand for marking a test as ``TODO``, same as ``test([name], { todo: true }[
 * ``name`` — optional
 * ``options`` — optional
 * ``fn`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.todo('example', {}, () => {});
+   console.log(result);
 
 
 mock
@@ -368,6 +422,15 @@ This function is syntax sugar for ``MockTracker.method`` with ``options.getter``
 * ``methodName``
 * ``implementation`` — optional
 * ``options`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.getter(undefined, undefined, undefined, {});
+   console.log(result);
 
 
 mock.method
@@ -470,6 +533,15 @@ After each test completes, this function is called on the test context's ``MockT
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.reset();
+   console.log(result);
+
 
 mock.restoreAll
 ~~~~~~~~~~~~~~~
@@ -483,6 +555,15 @@ mock.restoreAll
 This function restores the default behavior of all mocks that were previously created by this ``MockTracker``. Unlike ``mock.reset()``, ``mock.restoreAll()`` does not disassociate the mocks from the ``MockTracker`` instance.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.restoreAll();
+   console.log(result);
 
 
 mock.setter
@@ -502,6 +583,15 @@ This function is syntax sugar for ``MockTracker.method`` with ``options.setter``
 * ``methodName``
 * ``implementation`` — optional
 * ``options`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.setter(undefined, undefined, undefined, {});
+   console.log(result);
 
 
 mock.timers.enable
@@ -538,6 +628,15 @@ mock.timers.enableFor
 
 *Kind:* function · *Arguments:* 2 · *Node test harness*
 
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.timers.enableFor(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -551,6 +650,15 @@ mock.timers.get
    test.mock.timers.get(...args)
 
 *Kind:* function · *Arguments:* 0 · *Node test harness*
+
+**Example**
+
+.. code-block:: javascript
+
+   const test = require('node:test');
+
+   const result = test.mock.timers.get();
+   console.log(result);
 
 .. note::
 

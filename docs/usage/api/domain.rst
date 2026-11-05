@@ -28,6 +28,15 @@ create
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const result = domain.create();
+   console.log(result);
+
 
 createDomain
 ~~~~~~~~~~~~
@@ -37,6 +46,15 @@ createDomain
    domain.createDomain(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const result = domain.createDomain();
+   console.log(result);
 
 .. note::
 
@@ -93,6 +111,15 @@ Domain._errorHandler
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   console.log(typeof domain.Domain.prototype._errorHandler()); // 'function'
+   console.log(domain.Domain.prototype._errorHandler().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -114,6 +141,16 @@ If the ``EventEmitter`` was already bound to a domain, it is removed from that o
 **Arguments**
 
 * ``emitter`` (*EventEmitter*): emitter to be added to the domain
+
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const instance = new domain.Domain();
+   const result = instance.add(undefined);
+   console.log(result);
 
 
 Domain.bind
@@ -165,6 +202,16 @@ Type: End-of-Life
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const instance = new domain.Domain();
+   const result = instance.dispose();
+   console.log(result);
+
 
 Domain.enter
 ~~~~~~~~~~~~
@@ -181,6 +228,16 @@ Calling ``enter()`` changes only the active domain, and does not alter the domai
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const instance = new domain.Domain();
+   const result = instance.enter();
+   console.log(result);
+
 
 Domain.exit
 ~~~~~~~~~~~
@@ -196,6 +253,16 @@ The ``exit()`` method exits the current domain, popping it off the domain stack.
 If there are multiple, nested domains bound to the current execution context, ``exit()`` will exit any domains nested within this domain.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const instance = new domain.Domain();
+   const result = instance.exit();
+   console.log(result);
 
 
 Domain.intercept
@@ -255,6 +322,16 @@ The opposite of ``domain.add(emitter)``. Removes domain handling from the specif
 **Arguments**
 
 * ``emitter`` (*EventEmitter*): emitter to be removed from the domain
+
+**Example**
+
+.. code-block:: javascript
+
+   const domain = require('node:domain');
+
+   const instance = new domain.Domain();
+   const result = instance.remove(undefined);
+   console.log(result);
 
 
 Domain.run

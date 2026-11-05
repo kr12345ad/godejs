@@ -29,7 +29,18 @@ Recoverable
 
    repl.Recoverable(arg0)
 
-*Kind:* function · *Arguments:* 1
+*Kind:* class · *Arguments:* 1
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.Recoverable(undefined);
+   console.log(instance);
 
 .. note::
 
@@ -106,6 +117,15 @@ REPLServer._help
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   console.log(typeof repl.REPLServer.prototype._help()); // 'function'
+   console.log(repl.REPLServer.prototype._help().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -119,6 +139,15 @@ REPLServer._onLine
    repl.REPLServer._onLine(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   console.log(typeof repl.REPLServer.prototype._onLine()); // 'function'
+   console.log(repl.REPLServer.prototype._onLine().length);
 
 .. note::
 
@@ -138,6 +167,16 @@ The ``replServer.clearBufferedCommand()`` method clears any command that has bee
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.REPLServer();
+   const result = instance.clearBufferedCommand();
+   console.log(result);
+
 
 REPLServer.close
 ~~~~~~~~~~~~~~~~
@@ -147,6 +186,16 @@ REPLServer.close
    repl.REPLServer.close(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.REPLServer();
+   const result = instance.close();
+   console.log(result);
 
 .. note::
 
@@ -161,6 +210,16 @@ REPLServer.defaultEval
    repl.REPLServer.defaultEval(arg0, arg1, arg2, arg3)
 
 *Kind:* function · *Arguments:* 4
+
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.REPLServer();
+   const result = instance.defaultEval(undefined, undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -223,6 +282,16 @@ When multi-line input is being entered, a pipe ``'|'`` is printed rather than th
 
 * ``preserveCursor`` (*boolean*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.REPLServer();
+   const result = instance.displayPrompt(true);
+   console.log(result);
+
 
 REPLServer.setupContext
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,6 +301,16 @@ REPLServer.setupContext
    repl.REPLServer.setupContext(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const repl = require('node:repl');
+
+   const instance = new repl.REPLServer();
+   const result = instance.setupContext(undefined);
+   console.log(result);
 
 .. note::
 

@@ -386,6 +386,15 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 
 * ``path`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const path = require('node:path');
+
+   const result = path.toNamespacedPath('./file.txt');
+   console.log(result);
+
 
 posix
 -----
@@ -758,6 +767,15 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 
 * ``path`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const path = require('node:path');
+
+   const result = path.posix.toNamespacedPath('./file.txt');
+   console.log(result);
+
 
 win32
 -----
@@ -1129,6 +1147,15 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 **Arguments**
 
 * ``path`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const path = require('node:path');
+
+   const result = path.win32.toNamespacedPath('./file.txt');
+   console.log(result);
 
 
 Properties and constants

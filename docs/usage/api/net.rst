@@ -70,6 +70,15 @@ Possible signatures:
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const result = net.connect();
+   console.log(result);
+
 
 createConnection
 ~~~~~~~~~~~~~~~~
@@ -160,6 +169,15 @@ Gets the current default value of the ``autoSelectFamily`` option of ``socket.co
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const result = net.getDefaultAutoSelectFamily();
+   console.log(result);
+
 
 getDefaultAutoSelectFamilyAttemptTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,6 +193,15 @@ Gets the current default value of the ``autoSelectFamilyAttemptTimeout`` option 
 * Returns: ``number`` The current default value of the ``autoSelectFamilyAttemptTimeout`` option.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const result = net.getDefaultAutoSelectFamilyAttemptTimeout();
+   console.log(result);
 
 
 isIP
@@ -260,13 +287,22 @@ Server
 
    net.Server
 
-*Kind:* function · *Arguments:* 2
+*Kind:* class · *Arguments:* 2
 
 Type: End-of-Life
 
 Accessing several internal, undocumented properties of ``net.Server`` instances with inappropriate names is deprecated.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Server(undefined, undefined);
+   console.log(instance);
 
 
 setDefaultAutoSelectFamily
@@ -284,6 +320,15 @@ Sets the default value of the ``autoSelectFamily`` option of ``socket.connect(op
 
 * ``value`` (*boolean*): The new default value.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const result = net.setDefaultAutoSelectFamily('hello');
+   console.log(result);
+
 
 setDefaultAutoSelectFamilyAttemptTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,6 +344,15 @@ Sets the default value of the ``autoSelectFamilyAttemptTimeout`` option of ``soc
 **Arguments**
 
 * ``value`` (*number*): The new default value, which must be a positive number. If the number is less than ``10``,
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const result = net.setDefaultAutoSelectFamilyAttemptTimeout('hello');
+   console.log(result);
 
 
 Socket
@@ -344,6 +398,15 @@ SocketAddress
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.SocketAddress(undefined);
+   console.log(instance);
+
 
 BlockList class
 ---------------
@@ -366,6 +429,16 @@ Adds a rule to block the given IP address.
 * ``address`` (*string|net.SocketAddress*): An IPv4 or IPv6 address.
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.BlockList();
+   const result = instance.addAddress('127.0.0.1', 'example');
+   console.log(result);
+
 
 BlockList.addRange
 ~~~~~~~~~~~~~~~~~~
@@ -384,6 +457,16 @@ Adds a rule to block a range of IP addresses from ``start`` (inclusive) to ``end
 * ``end`` (*string|net.SocketAddress*): The ending IPv4 or IPv6 address in the range.
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.BlockList();
+   const result = instance.addRange(0, 0, 'example');
+   console.log(result);
+
 
 BlockList.addSubnet
 ~~~~~~~~~~~~~~~~~~~
@@ -401,6 +484,16 @@ Adds a rule to block a range of IP addresses specified as a subnet mask.
 * ``net`` (*string|net.SocketAddress*): The network IPv4 or IPv6 address.
 * ``prefix`` (*number*): The number of CIDR prefix bits. For IPv4, this
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.BlockList();
+   const result = instance.addSubnet('value', 1, 'example');
+   console.log(result);
 
 
 BlockList.check
@@ -491,6 +584,16 @@ Stops the server from accepting new connections and keeps existing connections. 
 
 * ``callback`` (*Function*) — optional: Called when the server is closed.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Server();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~
@@ -508,6 +611,16 @@ Callback should take two arguments ``err`` and ``count``.
 **Arguments**
 
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Server();
+   const result = instance.getConnections(() => {});
+   console.log(result);
 
 
 Server.listen
@@ -553,6 +666,16 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Server();
+   const result = instance.ref();
+   console.log(result);
+
 
 Server.unref
 ~~~~~~~~~~~~
@@ -566,6 +689,16 @@ Server.unref
 Calling ``unref()`` on a server will allow the program to exit if this is the only active server in the event system. If the server is already ``unref``\ ed calling ``unref()`` again will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Server();
+   const result = instance.unref();
+   console.log(result);
 
 
 Socket class
@@ -588,6 +721,16 @@ Returns the bound ``address``, the address ``family`` name and ``port`` of the s
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.address();
+   console.log(result);
+
 
 Socket.connect
 ~~~~~~~~~~~~~~
@@ -603,6 +746,16 @@ Initiate a connection on a given socket.
 Possible signatures:
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.connect();
+   console.log(result);
 
 
 Socket.destroy
@@ -621,6 +774,16 @@ See ``writable.destroy()`` for further details.
 **Arguments**
 
 * ``error`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
 
 
 Socket.end
@@ -642,6 +805,16 @@ See ``writable.end()`` for further details.
 * ``encoding`` (*string*) — optional: Only used when data is ``string``. **Default:** ``'utf8'``.
 * ``callback`` (*Function*) — optional: Optional callback for when the socket is finished.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 Socket.pause
 ~~~~~~~~~~~~
@@ -656,6 +829,16 @@ Pauses the reading of data. That is, ``'data'`` events will not be emitted. Usef
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.pause();
+   console.log(result);
+
 
 Socket.pipe
 ~~~~~~~~~~~
@@ -665,6 +848,16 @@ Socket.pipe
    net.Socket.pipe(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.pipe(undefined);
+   console.log(result);
 
 .. note::
 
@@ -684,6 +877,16 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed socket 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.ref();
+   console.log(result);
+
 
 Socket.resetAndDestroy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -698,6 +901,16 @@ Close the TCP connection by sending an RST packet and destroy the stream. If thi
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.resetAndDestroy();
+   console.log(result);
+
 
 Socket.resume
 ~~~~~~~~~~~~~
@@ -711,6 +924,16 @@ Socket.resume
 Resumes reading after a call to ``socket.pause()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.resume();
+   console.log(result);
 
 
 Socket.setEncoding
@@ -727,6 +950,16 @@ Set the encoding for the socket as a Readable Stream. See ``readable.setEncoding
 **Arguments**
 
 * ``encoding`` (*string*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.setEncoding('utf8');
+   console.log(result);
 
 
 Socket.setKeepAlive
@@ -767,6 +1000,16 @@ When a TCP connection is created, it will have Nagle's algorithm enabled.
 **Arguments**
 
 * ``noDelay`` (*boolean*) — optional: **Default:** ``true``
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.setNoDelay(true);
+   console.log(result);
 
 
 Socket.setTimeout
@@ -811,6 +1054,16 @@ Calling ``unref()`` on a socket will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.unref();
+   console.log(result);
+
 
 Socket.write
 ~~~~~~~~~~~~
@@ -831,6 +1084,16 @@ Returns ``true`` if the entire data was flushed successfully to the kernel buffe
 * ``encoding`` (*string*) — optional: Only used when data is ``string``. **Default:** ``utf8``.
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.Socket();
+   const result = instance.write('hello', 'utf8', () => {});
+   console.log(result);
+
 
 SocketAddress class
 -------------------
@@ -846,6 +1109,16 @@ SocketAddress.toJSON
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.SocketAddress();
+   const result = instance.toJSON();
+   console.log(result);
+
 
 SocketAddress.toString
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -855,6 +1128,16 @@ SocketAddress.toString
    net.SocketAddress.toString(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const net = require('node:net');
+
+   const instance = new net.SocketAddress();
+   const result = instance.toString();
+   console.log(result);
 
 .. note::
 

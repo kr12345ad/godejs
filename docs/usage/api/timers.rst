@@ -32,6 +32,15 @@ Cancels an ``Immediate`` object created by ``setImmediate()``.
 
 * ``immediate`` (*Immediate*): An ``Immediate`` object as returned by
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.clearImmediate(undefined);
+   console.log(result);
+
 
 clearInterval
 ~~~~~~~~~~~~~
@@ -47,6 +56,15 @@ Cancels a ``Timeout`` object created by ``setInterval()``.
 **Arguments**
 
 * ``timeout`` (*Timeout|string|number*): A ``Timeout`` object as returned by ``setInterval()``
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.clearInterval(1000);
+   console.log(result);
 
 
 clearTimeout
@@ -64,6 +82,15 @@ Cancels a ``Timeout`` object created by ``setTimeout()``.
 
 * ``timeout`` (*Timeout|string|number*): A ``Timeout`` object as returned by ``setTimeout()``
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.clearTimeout(1000);
+   console.log(result);
+
 
 Immediate
 ~~~~~~~~~
@@ -79,6 +106,15 @@ This object is created internally and is returned from ``setImmediate()``. It ca
 By default, when an immediate is scheduled, the Node.js event loop will continue running as long as the immediate is active. The ``Immediate`` object returned by ``setImmediate()`` exports both ``immediate.ref()`` and ``immediate.unref()`` functions that can be used to control this default behavior.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Immediate(undefined, undefined);
+   console.log(instance);
 
 
 setImmediate
@@ -98,6 +134,15 @@ When multiple calls to ``setImmediate()`` are made, the ``callback`` functions a
 
 * ``callback`` (*Function*): The function to call at the end of this turn of
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.setImmediate(() => {}, []);
+   console.log(result);
 
 
 setInterval
@@ -119,6 +164,15 @@ When ``delay`` is larger than ``2147483647`` or less than ``1`` or ``NaN``, the 
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.setInterval(() => {}, 1000, []);
+   console.log(result);
+
 
 setTimeout
 ~~~~~~~~~~
@@ -139,6 +193,15 @@ The ``callback`` will likely not be invoked in precisely ``delay`` milliseconds.
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.setTimeout(() => {}, 1000, []);
+   console.log(result);
+
 
 Timeout
 ~~~~~~~
@@ -154,6 +217,15 @@ This object is created internally and is returned from ``setTimeout()`` and ``se
 By default, when a timer is scheduled using either ``setTimeout()`` or ``setInterval()``, the Node.js event loop will continue running as long as the timer is active. Each of the ``Timeout`` objects returned by these functions export both ``timeout.ref()`` and ``timeout.unref()`` functions that can be used to control this default behavior.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout(undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 
 Immediate class
@@ -176,6 +248,16 @@ If true, the ``Immediate`` object will keep the Node.js event loop active.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Immediate();
+   const result = instance.hasRef();
+   console.log(result);
+
 
 Immediate.ref
 ~~~~~~~~~~~~~
@@ -192,6 +274,16 @@ By default, all ``Immediate`` objects are "ref'ed", making it normally unnecessa
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Immediate();
+   const result = instance.ref();
+   console.log(result);
+
 
 Immediate.unref
 ~~~~~~~~~~~~~~~
@@ -205,6 +297,16 @@ Immediate.unref
 When called, the active ``Immediate`` object will not require the Node.js event loop to remain active. If there is no other activity keeping the event loop running, the process may exit before the ``Immediate`` object's callback is invoked. Calling ``immediate.unref()`` multiple times will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Immediate();
+   const result = instance.unref();
+   console.log(result);
 
 
 promises
@@ -252,6 +354,15 @@ Calling ``timersPromises.scheduler.yield()`` is equivalent to calling ``timersPr
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.promises.scheduler.yield();
+   console.log(result);
+
 
 promises.setImmediate
 ~~~~~~~~~~~~~~~~~~~~~
@@ -270,6 +381,15 @@ When multiple calls to ``setImmediate()`` are made, the ``callback`` functions a
 
 * ``callback`` (*Function*): The function to call at the end of this turn of
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.promises.setImmediate(() => {}, []);
+   console.log(result);
 
 
 promises.setInterval
@@ -291,6 +411,15 @@ When ``delay`` is larger than ``2147483647`` or less than ``1`` or ``NaN``, the 
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.promises.setInterval(() => {}, 1000, []);
+   console.log(result);
+
 
 promises.setTimeout
 ~~~~~~~~~~~~~~~~~~~
@@ -310,6 +439,15 @@ The ``callback`` will likely not be invoked in precisely ``delay`` milliseconds.
 * ``callback`` (*Function*): The function to call when the timer elapses.
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const result = timers.promises.setTimeout(() => {}, 1000, []);
+   console.log(result);
 
 
 Timeout class
@@ -332,6 +470,16 @@ Cancels the timeout.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout();
+   const result = instance.close();
+   console.log(result);
+
 
 Timeout.hasRef
 ~~~~~~~~~~~~~~
@@ -345,6 +493,16 @@ Timeout.hasRef
 If true, the ``Timeout`` object will keep the Node.js event loop active.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout();
+   const result = instance.hasRef();
+   console.log(result);
 
 
 Timeout.ref
@@ -362,6 +520,16 @@ By default, all ``Timeout`` objects are "ref'ed", making it normally unnecessary
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout();
+   const result = instance.ref();
+   console.log(result);
+
 
 Timeout.refresh
 ~~~~~~~~~~~~~~~
@@ -378,6 +546,16 @@ Using this on a timer that has already called its callback will reactivate the t
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout();
+   const result = instance.refresh();
+   console.log(result);
+
 
 Timeout.unref
 ~~~~~~~~~~~~~
@@ -391,6 +569,16 @@ Timeout.unref
 When called, the active ``Timeout`` object will not require the Node.js event loop to remain active. If there is no other activity keeping the event loop running, the process may exit before the ``Timeout`` object's callback is invoked. Calling ``timeout.unref()`` multiple times will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const timers = require('node:timers');
+
+   const instance = new timers.Timeout();
+   const result = instance.unref();
+   console.log(result);
 
 
 Properties and constants

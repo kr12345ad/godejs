@@ -39,6 +39,15 @@ The ``tty.isatty()`` method returns ``true`` if the given ``fd`` is associated w
 
 * ``fd`` (*number*): A numeric file descriptor
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const result = tty.isatty(0);
+   console.log(result);
+
 
 ReadStream
 ~~~~~~~~~~
@@ -52,6 +61,15 @@ ReadStream
 Represents the readable side of a TTY. In normal circumstances ``process.stdin`` will be the only ``tty.ReadStream`` instance in a Node.js process and there should be no reason to create additional instances.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.ReadStream(undefined, undefined);
+   console.log(instance);
 
 
 WriteStream
@@ -91,6 +109,16 @@ ReadStream.destroy
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.ReadStream();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -105,6 +133,16 @@ ReadStream.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.ReadStream();
+   const result = instance.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -118,6 +156,16 @@ ReadStream.resume
    tty.ReadStream.resume(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.ReadStream();
+   const result = instance.resume();
+   console.log(result);
 
 .. note::
 
@@ -141,6 +189,16 @@ When in raw mode, input is always available character-by-character, not includin
 
 * ``mode`` (*boolean|string*): If ``true`` or ``'raw'``, configures the
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.ReadStream();
+   const result = instance.setRawMode(0o644);
+   console.log(result);
+
 
 WriteStream class
 -----------------
@@ -155,6 +213,15 @@ WriteStream._refreshSize
    tty.WriteStream._refreshSize(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   console.log(typeof tty.WriteStream.prototype._refreshSize()); // 'function'
+   console.log(tty.WriteStream.prototype._refreshSize().length);
 
 .. note::
 
@@ -177,6 +244,16 @@ WriteStream.clearLine
 * ``dir`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.clearLine('./file.txt', () => {});
+   console.log(result);
+
 
 WriteStream.clearScreenDown
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,6 +269,16 @@ WriteStream.clearScreenDown
 **Arguments**
 
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.clearScreenDown(() => {});
+   console.log(result);
 
 
 WriteStream.cursorTo
@@ -211,6 +298,16 @@ WriteStream.cursorTo
 * ``y`` (*number*) — optional
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.cursorTo(1, 1, () => {});
+   console.log(result);
+
 
 WriteStream.destroy
 ~~~~~~~~~~~~~~~~~~~
@@ -220,6 +317,16 @@ WriteStream.destroy
    tty.WriteStream.destroy(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.destroy(undefined);
+   console.log(result);
 
 .. note::
 
@@ -234,6 +341,16 @@ WriteStream.end
    tty.WriteStream.end(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -257,6 +374,16 @@ Returns:
 
 * ``env`` (*Object*) — optional: An object containing the environment variables to check. This
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.getColorDepth({});
+   console.log(result);
+
 
 WriteStream.getWindowSize
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -270,6 +397,16 @@ WriteStream.getWindowSize
 ``writeStream.getWindowSize()`` returns the size of the TTY corresponding to this ``WriteStream``. The array is of the type ``[numColumns, numRows]`` where ``numColumns`` and ``numRows`` represent the number of columns and rows in the corresponding TTY.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.getWindowSize();
+   console.log(result);
 
 
 WriteStream.hasColors
@@ -321,6 +458,16 @@ WriteStream.moveCursor
 * ``dy`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.moveCursor(1, 1, () => {});
+   console.log(result);
+
 
 WriteStream.write
 ~~~~~~~~~~~~~~~~~
@@ -330,6 +477,16 @@ WriteStream.write
    tty.WriteStream.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const tty = require('node:tty');
+
+   const instance = new tty.WriteStream();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 

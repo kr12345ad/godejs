@@ -321,6 +321,16 @@ If specified, the ``callback`` function is registered as a handler for the ``'cl
 
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 ClientHttp2Session.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -340,6 +350,16 @@ Once destroyed, the ``Http2Session`` will emit the ``'close'`` event. If ``error
 * ``error`` (*Error*) — optional: An ``Error`` object if the ``Http2Session`` is being destroyed
 * ``code`` (*number*) — optional: The HTTP/2 error code to send in the final ``GOAWAY`` frame.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.destroy(new Error('example'), 1);
+   console.log(result);
+
 
 ClientHttp2Session.goaway
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,6 +377,16 @@ Transmits a ``GOAWAY`` frame to the connected peer *without* shutting down the `
 * ``code`` (*number*) — optional: An HTTP/2 error code
 * ``lastStreamID`` (*number*) — optional: The numeric ID of the last processed ``Http2Stream``
 * ``opaqueData`` (*Buffer|TypedArray|DataView*) — optional: A ``TypedArray`` or ``DataView``
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.goaway(1, 1, []);
+   console.log(result);
 
 
 ClientHttp2Session.ping
@@ -401,6 +431,16 @@ ClientHttp2Session.ref
 Calls ``ref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.ref();
+   console.log(result);
 
 
 ClientHttp2Session.request
@@ -456,6 +496,16 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 ClientHttp2Session.settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -475,6 +525,16 @@ Once called, the ``http2session.pendingSettingsAck`` property will be ``true`` w
 * ``settings`` (*HTTP/2 Settings Object*) — optional
 * ``callback`` (*Function*) — optional: Callback that is called once the session is connected or
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.settings(undefined, () => {});
+   console.log(result);
+
 
 ClientHttp2Session.unref
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -488,6 +548,16 @@ ClientHttp2Session.unref
 Calls ``unref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Session();
+   const result = instance.unref();
+   console.log(result);
 
 
 ClientHttp2Stream class
@@ -511,6 +581,16 @@ Closes the ``Http2Stream`` instance by sending an ``RST_STREAM`` frame to the co
 * ``code`` (*number*): Unsigned 32-bit integer identifying the error code.
 * ``callback`` (*Function*) — optional: An optional function registered to listen for the
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.close(1, () => {});
+   console.log(result);
+
 
 ClientHttp2Stream.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -528,6 +608,16 @@ It does nothing if the stream was already destroyed.
 **Arguments**
 
 * ``error`` (*Error*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
 
 
 ClientHttp2Stream.end
@@ -549,6 +639,16 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 ClientHttp2Stream.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -558,6 +658,16 @@ ClientHttp2Stream.isPaused
    http2.ClientHttp2Stream.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -572,6 +682,16 @@ ClientHttp2Stream.pause
    http2.ClientHttp2Stream.pause(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.pause();
+   console.log(result);
 
 .. note::
 
@@ -593,6 +713,16 @@ Empty method, only there to maintain some backward compatibility.
 
 * ``options``
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.priority({});
+   console.log(result);
+
 
 ClientHttp2Stream.resume
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -602,6 +732,16 @@ ClientHttp2Stream.resume
    http2.ClientHttp2Stream.resume(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.resume();
+   console.log(result);
 
 .. note::
 
@@ -616,6 +756,16 @@ ClientHttp2Stream.setEncoding
    http2.ClientHttp2Stream.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -638,6 +788,16 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 ClientHttp2Stream.write
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -658,6 +818,16 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.ClientHttp2Stream();
+   const result = instance.write([], 'utf8', () => {});
+   console.log(result);
+
 
 Http2Server class
 -----------------
@@ -672,6 +842,16 @@ Http2Server.address
    http2.Http2Server.address(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.address();
+   console.log(result);
 
 .. note::
 
@@ -695,6 +875,16 @@ If specified, the ``callback`` function is registered as a handler for the ``'cl
 
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 Http2Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -704,6 +894,16 @@ Http2Server.getConnections
    http2.Http2Server.getConnections(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.getConnections(undefined);
+   console.log(result);
 
 .. note::
 
@@ -718,6 +918,16 @@ Http2Server.listen
    http2.Http2Server.listen(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.listen();
+   console.log(result);
 
 .. note::
 
@@ -737,6 +947,16 @@ Calls ``ref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.ref();
+   console.log(result);
+
 
 Http2Server.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -754,6 +974,16 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 Http2Server.unref
 ~~~~~~~~~~~~~~~~~
@@ -767,6 +997,16 @@ Http2Server.unref
 Calls ``unref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Server();
+   const result = instance.unref();
+   console.log(result);
 
 
 Http2ServerRequest class
@@ -782,6 +1022,15 @@ Http2ServerRequest._emitBody
    http2.Http2ServerRequest._emitBody(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   console.log(typeof http2.Http2ServerRequest.prototype._emitBody()); // 'function'
+   console.log(http2.Http2ServerRequest.prototype._emitBody().length);
 
 .. note::
 
@@ -805,6 +1054,16 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
+
 
 Http2ServerRequest.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -814,6 +1073,16 @@ Http2ServerRequest.isPaused
    http2.Http2ServerRequest.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -829,6 +1098,16 @@ Http2ServerRequest.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -842,6 +1121,16 @@ Http2ServerRequest.read
    http2.Http2ServerRequest.read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.read();
+   console.log(result);
 
 .. note::
 
@@ -857,6 +1146,16 @@ Http2ServerRequest.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -870,6 +1169,16 @@ Http2ServerRequest.setEncoding
    http2.Http2ServerRequest.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -892,6 +1201,16 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerRequest();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 Http2ServerResponse class
 -------------------------
@@ -907,6 +1226,15 @@ Http2ServerResponse._emitTrailers
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   console.log(typeof http2.Http2ServerResponse.prototype._emitTrailers()); // 'function'
+   console.log(http2.Http2ServerResponse.prototype._emitTrailers().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -921,6 +1249,15 @@ Http2ServerResponse._headersObject
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   console.log(typeof http2.Http2ServerResponse.prototype._headersObject()); // 'function'
+   console.log(http2.Http2ServerResponse.prototype._headersObject().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -934,6 +1271,15 @@ Http2ServerResponse._sendHead
    http2.Http2ServerResponse._sendHead(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   console.log(typeof http2.Http2ServerResponse.prototype._sendHead()); // 'function'
+   console.log(http2.Http2ServerResponse.prototype._sendHead().length);
 
 .. note::
 
@@ -956,6 +1302,16 @@ Attempting to set a header field name or value that contains invalid characters 
 **Arguments**
 
 * ``headers`` (*Object*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.addTrailers({});
+   console.log(result);
 
 
 Http2ServerResponse.appendHeader
@@ -1006,6 +1362,16 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
+
 
 Http2ServerResponse.end
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1026,6 +1392,16 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 Http2ServerResponse.flushHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1035,6 +1411,16 @@ Http2ServerResponse.flushHeaders
    http2.Http2ServerResponse.flushHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.flushHeaders();
+   console.log(result);
 
 .. note::
 
@@ -1198,6 +1584,16 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 Http2ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1218,6 +1614,16 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.write([], 'utf8', () => {});
+   console.log(result);
+
 
 Http2ServerResponse.writeContinue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1231,6 +1637,16 @@ Http2ServerResponse.writeContinue
 Sends a status ``100 Continue`` to the client, indicating that the request body should be sent. See the ``'checkContinue'`` event on ``Http2Server`` and ``Http2SecureServer``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.writeContinue();
+   console.log(result);
 
 
 Http2ServerResponse.writeHead
@@ -1272,6 +1688,16 @@ Http2ServerResponse.writeProcessing
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2ServerResponse();
+   const result = instance.writeProcessing();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1299,6 +1725,16 @@ Sends an additional informational ``HEADERS`` frame to the connected HTTP/2 peer
 
 * ``headers`` (*HTTP/2 Headers Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.additionalHeaders(undefined);
+   console.log(result);
+
 
 Http2Stream.addTrailers
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1317,6 +1753,16 @@ Attempting to set a header field name or value that contains invalid characters 
 
 * ``headers`` (*Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.addTrailers({});
+   console.log(result);
+
 
 Http2Stream.close
 ~~~~~~~~~~~~~~~~~
@@ -1333,6 +1779,16 @@ Closes the ``Http2Stream`` instance by sending an ``RST_STREAM`` frame to the co
 
 * ``code`` (*number*): Unsigned 32-bit integer identifying the error code.
 * ``callback`` (*Function*) — optional: An optional function registered to listen for the
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.close(1, () => {});
+   console.log(result);
 
 
 Http2Stream.destroy
@@ -1351,6 +1807,16 @@ It does nothing if the stream was already destroyed.
 **Arguments**
 
 * ``error`` (*Error*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
 
 
 Http2Stream.end
@@ -1372,6 +1838,16 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 Http2Stream.isPaused
 ~~~~~~~~~~~~~~~~~~~~
@@ -1381,6 +1857,16 @@ Http2Stream.isPaused
    http2.Http2Stream.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -1395,6 +1881,16 @@ Http2Stream.pause
    http2.Http2Stream.pause(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.pause();
+   console.log(result);
 
 .. note::
 
@@ -1445,6 +1941,16 @@ Http2Stream.read
    http2.Http2Stream.read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.read();
+   console.log(result);
 
 .. note::
 
@@ -1583,6 +2089,16 @@ Http2Stream.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1596,6 +2112,16 @@ Http2Stream.setEncoding
    http2.Http2Stream.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1647,6 +2173,16 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``chunk`` (*string|Buffer|Uint8Array*)
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const http2 = require('node:http2');
+
+   const instance = new http2.Http2Stream();
+   const result = instance.write([], 'utf8', () => {});
+   console.log(result);
 
 
 Properties and constants

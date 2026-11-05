@@ -41,6 +41,15 @@ The ``readline.clearLine()`` method clears current line of given TTY stream in a
 * ``dir`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const result = readline.clearLine(process.stdout, './file.txt', () => {});
+   console.log(result);
+
 
 clearScreenDown
 ~~~~~~~~~~~~~~~
@@ -57,6 +66,15 @@ The ``readline.clearScreenDown()`` method clears the given TTY stream from the c
 
 * ``stream`` (*stream.Writable*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const result = readline.clearScreenDown(process.stdout, () => {});
+   console.log(result);
 
 
 createInterface
@@ -104,6 +122,15 @@ The ``readline.cursorTo()`` method moves cursor to the specified position in a g
 * ``x`` (*number*)
 * ``y`` (*number*) — optional
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const result = readline.cursorTo(process.stdout, 1, 1, () => {});
+   console.log(result);
 
 
 emitKeypressEvents
@@ -173,6 +200,15 @@ The ``readline.moveCursor()`` method moves the cursor *relative* to its current 
 * ``dy`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const result = readline.moveCursor(process.stdout, 1, 1, () => {});
+   console.log(result);
+
 
 Interface class
 ---------------
@@ -188,6 +224,15 @@ Interface._ask
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   console.log(typeof readline.Interface.prototype._ask()); // 'function'
+   console.log(readline.Interface.prototype._ask().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -201,6 +246,15 @@ Interface._handleData
    readline.Interface._handleData(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   console.log(typeof readline.Interface.prototype._handleData()); // 'function'
+   console.log(readline.Interface.prototype._handleData().length);
 
 .. note::
 
@@ -216,6 +270,15 @@ Interface._handleEnd
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   console.log(typeof readline.Interface.prototype._handleEnd()); // 'function'
+   console.log(readline.Interface.prototype._handleEnd().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -229,6 +292,15 @@ Interface._line
    readline.Interface._line(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   console.log(typeof readline.Interface.prototype._line()); // 'function'
+   console.log(readline.Interface.prototype._line().length);
 
 .. note::
 
@@ -250,6 +322,16 @@ Calling ``rl.close()`` does not immediately stop other events (including ``'line
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.close();
+   console.log(result);
+
 
 Interface.getCursorPos
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -264,6 +346,16 @@ Returns the real position of the cursor in relation to the input prompt + string
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.getCursorPos();
+   console.log(result);
+
 
 Interface.getPrompt
 ~~~~~~~~~~~~~~~~~~~
@@ -277,6 +369,16 @@ Interface.getPrompt
 The ``rl.getPrompt()`` method returns the current prompt used by ``rl.prompt()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.getPrompt();
+   console.log(result);
 
 
 Interface.pause
@@ -293,6 +395,16 @@ The ``rl.pause()`` method pauses the ``input`` stream, allowing it to be resumed
 Calling ``rl.pause()`` does not immediately pause other events (including ``'line'``) from being emitted by the ``InterfaceConstructor`` instance.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.pause();
+   console.log(result);
 
 
 Interface.prompt
@@ -311,6 +423,16 @@ When called, ``rl.prompt()`` will resume the ``input`` stream if it has been pau
 **Arguments**
 
 * ``preserveCursor`` (*boolean*) — optional: If ``true``, prevents the cursor placement from
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.prompt(true);
+   console.log(result);
 
 
 Interface.question
@@ -354,6 +476,16 @@ The ``rl.resume()`` method resumes the ``input`` stream if it has been paused.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.resume();
+   console.log(result);
+
 
 Interface.setPrompt
 ~~~~~~~~~~~~~~~~~~~
@@ -369,6 +501,16 @@ The ``rl.setPrompt()`` method sets the prompt that will be written to ``output``
 **Arguments**
 
 * ``prompt`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const readline = require('node:readline');
+
+   const instance = new readline.Interface();
+   const result = instance.setPrompt('value');
+   console.log(result);
 
 
 Interface.write

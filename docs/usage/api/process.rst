@@ -31,6 +31,15 @@ _rawDebug
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   console.log(typeof process._rawDebug); // 'function'
+   console.log(process._rawDebug.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -51,6 +60,15 @@ This feature is not available in ``Worker`` threads.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.abort();
+   console.log(result);
+
 
 addListener
 ~~~~~~~~~~~
@@ -68,6 +86,15 @@ Alias for ``emitter.on(eventName, listener)``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.addListener('value', () => {});
+   console.log(result);
+
 
 availableMemory
 ~~~~~~~~~~~~~~~
@@ -83,6 +110,15 @@ Gets the amount of free memory that is still available to the process (in bytes)
 See ``uv_get_available_memory`` for more information.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.availableMemory();
+   console.log(result);
 
 
 binding
@@ -101,6 +137,15 @@ Using ``process.binding()`` in general should be avoided. The type checking meth
 **Arguments**
 
 * ``util``
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.binding(undefined);
+   console.log(result);
 
 
 chdir
@@ -149,6 +194,15 @@ Gets the amount of memory available to the process (in bytes) based on limits im
 See ``uv_get_constrained_memory`` for more information.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.constrainedMemory();
+   console.log(result);
 
 
 cpuUsage
@@ -221,6 +275,15 @@ If the Node.js process is spawned with an IPC channel (see the Child Process and
 The effect of calling ``process.disconnect()`` is the same as calling ``ChildProcess.disconnect()`` from the parent process.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.disconnect();
+   console.log(result);
 
 
 dlopen
@@ -352,6 +415,15 @@ emitWarningSync
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.emitWarningSync();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -406,6 +478,15 @@ This is achieved by using the ``execve`` POSIX function and therefore no memory 
 * ``args`` (*string\[]*) — optional: List of string arguments. No argument can contain a null-byte (``\u0000``).
 * ``env`` (*Object*) — optional: Environment key-value pairs.
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.execve('./file.txt', [], {});
+   console.log(result);
+
 
 exit
 ~~~~
@@ -424,6 +505,15 @@ Values other than ``undefined``, ``null``, integer numbers, and integer strings 
 
 * ``code``
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.exit(undefined);
+   console.log(result);
+
 
 getActiveRequests
 ~~~~~~~~~~~~~~~~~
@@ -433,6 +523,15 @@ getActiveRequests
    process.getActiveRequests(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.getActiveRequests();
+   console.log(result);
 
 .. note::
 
@@ -631,6 +730,15 @@ Indicates whether a callback has been set using ``process.setUncaughtExceptionCa
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.hasUncaughtExceptionCaptureCallback();
+   console.log(result);
+
 
 hrtime
 ~~~~~~
@@ -747,6 +855,15 @@ Type: Revoked
 The ``events.listenerCount(emitter, eventName)`` API was deprecated, as it provided identical functionality to ``emitter.listenerCount(eventName)``. The deprecation was revoked because this function has been repurposed to also accept ``EventTarget`` arguments.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.listenerCount();
+   console.log(result);
 
 
 listeners
@@ -881,6 +998,15 @@ Alias for ``emitter.removeListener()``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.off('value', () => {});
+   console.log(result);
+
 
 on
 ~~~
@@ -899,6 +1025,15 @@ This event was deprecated because it did not work with V8 promise combinators wh
 
 * ``multipleResolves``
 * ``handler``
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.on(undefined, () => {});
+   console.log(result);
 
 
 once
@@ -996,6 +1131,15 @@ rawDebug
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.rawDebug();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1053,6 +1197,15 @@ reallyExit
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.reallyExit();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1072,6 +1225,15 @@ An object is "refable" if it implements the Node.js "Refable protocol". Specific
 **Arguments**
 
 * ``maybeRefable`` (*any*): An object that may be "refable".
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.ref(undefined);
+   console.log(result);
 
 
 register
@@ -1139,6 +1301,15 @@ Be aware that all limitations applied to the ``beforeExit`` event are also appli
 * ``ref`` (*Object | Function*): The reference
 * ``callback`` (*Function*): The callback function to be called when the resource
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.registerBeforeExit(() => {}, () => {});
+   console.log(result);
+
 
 removeAllListeners
 ~~~~~~~~~~~~~~~~~~
@@ -1156,6 +1327,15 @@ It is bad practice to remove listeners added elsewhere in the code, particularly
 **Arguments**
 
 * ``eventName`` (*string|symbol*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.removeAllListeners('value');
+   console.log(result);
 
 
 removeListener
@@ -1296,6 +1476,15 @@ If Node.js was not spawned with an IPC channel, ``process.send`` will be ``undef
 * ``sendHandle`` (*net.Server|net.Socket*) — optional
 * ``options`` (*Object*) — optional: used to parameterize the sending of certain types of
 * ``callback`` (*Function*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.send({}, undefined, {}, () => {});
+   console.log(result);
 
 
 setegid
@@ -1442,6 +1631,15 @@ It provides same features as launching Node.js process with commandline options 
 
 * ``val`` (*boolean*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.setSourceMapsEnabled(true);
+   console.log(result);
+
 
 setuid
 ~~~~~~
@@ -1492,6 +1690,15 @@ If such a function is set, the ``'uncaughtException'`` event will not be emitted
 
 * ``fn`` (*Function|null*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.setUncaughtExceptionCaptureCallback(() => {});
+   console.log(result);
+
 
 threadCpuUsage
 ~~~~~~~~~~~~~~
@@ -1509,6 +1716,15 @@ The result of a previous call to ``process.threadCpuUsage()`` can be passed as t
 **Arguments**
 
 * ``previousValue`` (*Object*) — optional: A previous return value from calling
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.threadCpuUsage({});
+   console.log(result);
 
 
 traceProcessWarnings
@@ -1553,6 +1769,15 @@ Calling ``process.umask()`` with no argument causes the process-wide umask to be
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.umask(undefined);
+   console.log(result);
+
 
 unref
 ~~~~~
@@ -1568,6 +1793,15 @@ An object is "unrefable" if it implements the Node.js "Refable protocol". Specif
 **Arguments**
 
 * ``maybeRefable`` (*any*): An object that may be "unref'd".
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.unref(undefined);
+   console.log(result);
 
 
 unregister
@@ -1634,6 +1868,15 @@ The return value includes fractions of a second. Use ``Math.floor()`` to get who
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.uptime();
+   console.log(result);
+
 
 allowedNodeEnvironmentFlags
 ---------------------------
@@ -1651,6 +1894,15 @@ allowedNodeEnvironmentFlags.add
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.add();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1665,19 +1917,14 @@ allowedNodeEnvironmentFlags.add
 
 *Kind:* function · *Arguments:* 1
 
-.. note::
+**Example**
 
-   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+.. code-block:: javascript
 
+   const process = require('node:process');
 
-allowedNodeEnvironmentFlags.clear
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   process.allowedNodeEnvironmentFlags.clear(...args)
-
-*Kind:* function · *Arguments:* 0
+   const result = process.allowedNodeEnvironmentFlags.add(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1692,6 +1939,38 @@ allowedNodeEnvironmentFlags.clear
    process.allowedNodeEnvironmentFlags.clear(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.clear();
+   console.log(result);
+
+.. note::
+
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+
+
+allowedNodeEnvironmentFlags.clear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   process.allowedNodeEnvironmentFlags.clear(...args)
+
+*Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.clear();
+   console.log(result);
 
 .. note::
 
@@ -1707,6 +1986,15 @@ allowedNodeEnvironmentFlags.delete
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.delete();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1720,6 +2008,15 @@ allowedNodeEnvironmentFlags.delete
    process.allowedNodeEnvironmentFlags.delete(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.delete(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1735,19 +2032,14 @@ allowedNodeEnvironmentFlags.difference
 
 *Kind:* function · *Arguments:* 1
 
-.. note::
+**Example**
 
-   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+.. code-block:: javascript
 
+   const process = require('node:process');
 
-allowedNodeEnvironmentFlags.entries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   process.allowedNodeEnvironmentFlags.entries(...args)
-
-*Kind:* function · *Arguments:* 0
+   const result = process.allowedNodeEnvironmentFlags.difference(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1762,6 +2054,38 @@ allowedNodeEnvironmentFlags.entries
    process.allowedNodeEnvironmentFlags.entries(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.entries();
+   console.log(result);
+
+.. note::
+
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+
+
+allowedNodeEnvironmentFlags.entries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   process.allowedNodeEnvironmentFlags.entries(...args)
+
+*Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.entries();
+   console.log(result);
 
 .. note::
 
@@ -1777,6 +2101,15 @@ allowedNodeEnvironmentFlags.forEach
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.forEach(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1790,6 +2123,15 @@ allowedNodeEnvironmentFlags.forEach
    process.allowedNodeEnvironmentFlags.forEach(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.forEach(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1861,6 +2203,15 @@ allowedNodeEnvironmentFlags.intersection
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.intersection(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1874,6 +2225,15 @@ allowedNodeEnvironmentFlags.isDisjointFrom
    process.allowedNodeEnvironmentFlags.isDisjointFrom(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.isDisjointFrom(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1889,6 +2249,15 @@ allowedNodeEnvironmentFlags.isSubsetOf
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.isSubsetOf(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1903,19 +2272,14 @@ allowedNodeEnvironmentFlags.isSupersetOf
 
 *Kind:* function · *Arguments:* 1
 
-.. note::
+**Example**
 
-   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+.. code-block:: javascript
 
+   const process = require('node:process');
 
-allowedNodeEnvironmentFlags.keys
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   process.allowedNodeEnvironmentFlags.keys(...args)
-
-*Kind:* function · *Arguments:* 0
+   const result = process.allowedNodeEnvironmentFlags.isSupersetOf(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1930,6 +2294,38 @@ allowedNodeEnvironmentFlags.keys
    process.allowedNodeEnvironmentFlags.keys(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.keys();
+   console.log(result);
+
+.. note::
+
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+
+
+allowedNodeEnvironmentFlags.keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   process.allowedNodeEnvironmentFlags.keys(...args)
+
+*Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.keys();
+   console.log(result);
 
 .. note::
 
@@ -1945,6 +2341,15 @@ allowedNodeEnvironmentFlags.symmetricDifference
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.symmetricDifference(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1959,19 +2364,14 @@ allowedNodeEnvironmentFlags.union
 
 *Kind:* function · *Arguments:* 1
 
-.. note::
+**Example**
 
-   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+.. code-block:: javascript
 
+   const process = require('node:process');
 
-allowedNodeEnvironmentFlags.values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   process.allowedNodeEnvironmentFlags.values(...args)
-
-*Kind:* function · *Arguments:* 0
+   const result = process.allowedNodeEnvironmentFlags.union(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1986,6 +2386,38 @@ allowedNodeEnvironmentFlags.values
    process.allowedNodeEnvironmentFlags.values(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.values();
+   console.log(result);
+
+.. note::
+
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
+
+
+allowedNodeEnvironmentFlags.values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   process.allowedNodeEnvironmentFlags.values(...args)
+
+*Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.allowedNodeEnvironmentFlags.values();
+   console.log(result);
 
 .. note::
 
@@ -2072,6 +2504,15 @@ stderr.end
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stderr.end();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2085,6 +2526,15 @@ stderr.write
    process.stderr.write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stderr.write();
+   console.log(result);
 
 .. note::
 
@@ -2107,6 +2557,15 @@ stdin._read
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   console.log(typeof process.stdin._read()); // 'function'
+   console.log(process.stdin._read().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2120,6 +2579,15 @@ stdin.destroy
    process.stdin.destroy(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdin.destroy(undefined);
+   console.log(result);
 
 .. note::
 
@@ -2135,6 +2603,15 @@ stdin.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdin.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2149,6 +2626,15 @@ stdin.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdin.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2162,6 +2648,15 @@ stdin.setRawMode
    process.stdin.setRawMode(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdin.setRawMode(undefined);
+   console.log(result);
 
 .. note::
 
@@ -2184,6 +2679,15 @@ stdout.end
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdout.end();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2197,6 +2701,15 @@ stdout.write
    process.stdout.write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const process = require('node:process');
+
+   const result = process.stdout.write();
+   console.log(result);
 
 .. note::
 

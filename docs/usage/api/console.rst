@@ -87,6 +87,15 @@ The specific operation of ``console.clear()`` can vary across operating systems 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.clear();
+   console.log(result);
+
 
 Console
 ~~~~~~~
@@ -123,6 +132,15 @@ Maintains an internal counter specific to ``label`` and outputs to ``stdout`` th
 
 * ``label`` (*string*) — optional: The display label for the counter. **Default:** ``'default'``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.count('example');
+   console.log(result);
+
 
 countReset
 ~~~~~~~~~~
@@ -138,6 +156,15 @@ Resets the internal counter specific to ``label``.
 **Arguments**
 
 * ``label`` (*string*) — optional: The display label for the counter. **Default:** ``'default'``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.countReset('example');
+   console.log(result);
 
 
 debug
@@ -156,6 +183,15 @@ The ``console.debug()`` function is an alias for ``console.log()``.
 * ``data`` (*any*)
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.debug('hello', []);
+   console.log(result);
+
 
 dir
 ~~~
@@ -173,6 +209,15 @@ Uses ``util.inspect()`` on ``obj`` and prints the resulting string to ``stdout``
 * ``obj`` (*any*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.dir(undefined, {});
+   console.log(result);
+
 
 dirxml
 ~~~~~~
@@ -188,6 +233,15 @@ This method calls ``console.log()`` passing it the arguments received. This meth
 **Arguments**
 
 * ``...data``
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.dirxml('hello');
+   console.log(result);
 
 
 error
@@ -236,6 +290,15 @@ If one or more ``label``\ s are provided, those are printed first without the ad
 
 * ``...label`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.group('example');
+   console.log(result);
+
 
 groupCollapsed
 ~~~~~~~~~~~~~~
@@ -250,6 +313,15 @@ An alias for ``console.group()``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.groupCollapsed();
+   console.log(result);
+
 
 groupEnd
 ~~~~~~~~
@@ -263,6 +335,15 @@ groupEnd
 Decreases indentation of subsequent lines by spaces for ``groupIndentation`` length.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.groupEnd();
+   console.log(result);
 
 
 info
@@ -280,6 +361,15 @@ The ``console.info()`` function is an alias for ``console.log()``.
 
 * ``data`` (*any*) — optional
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.info('hello', []);
+   console.log(result);
 
 
 log
@@ -353,6 +443,15 @@ If this method is called without a label, the most recently started profile is s
 
 * ``label`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.profileEnd('example');
+   console.log(result);
+
 
 table
 ~~~~~
@@ -412,6 +511,15 @@ Starts a timer that can be used to compute the duration of an operation. Timers 
 **Arguments**
 
 * ``label`` (*string*) — optional: **Default:** ``'default'``
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.time('example');
+   console.log(result);
 
 
 timeEnd
@@ -482,6 +590,15 @@ This method does not display anything unless used in the inspector. The ``consol
 
 * ``label`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.timeStamp('example');
+   console.log(result);
+
 
 trace
 ~~~~~
@@ -533,6 +650,15 @@ The ``console.warn()`` function is an alias for ``console.error()``.
 
 * ``data`` (*any*) — optional
 * ``...args`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const console = require('node:console');
+
+   const result = console.warn('hello', []);
+   console.log(result);
 
 
 .. note::

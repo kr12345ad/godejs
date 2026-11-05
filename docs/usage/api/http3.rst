@@ -55,6 +55,15 @@ Alias of ``http3.createServer``. The listener is always TLS because QUIC require
 
 http3.Server
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const result = http3.createSecureServer({}, () => {});
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 createServer
@@ -77,6 +86,15 @@ Create an HTTP/3 server. TLS options must include ``key`` and ``cert``; ``reques
 
 http3.Server
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const result = http3.createServer({}, () => {});
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage
@@ -86,7 +104,18 @@ IncomingMessage
 
    http3.IncomingMessage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
-*Kind:* function · *Arguments:* 8 · *GodeJS extension*
+*Kind:* class · *Arguments:* 8 · *GodeJS extension*
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -97,7 +126,7 @@ Server
 
    new http3.Server([options][, requestListener])
 
-*Kind:* function · *Arguments:* 2 · *GodeJS extension*
+*Kind:* class · *Arguments:* 2 · *GodeJS extension*
 
 The HTTP/3 server class. Its request, response, and lifecycle methods mirror ``http.Server``.
 
@@ -110,6 +139,15 @@ The HTTP/3 server class. Its request, response, and lifecycle methods mirror ``h
 
 http3.Server
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server({}, () => {});
+   console.log(instance);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse
@@ -119,7 +157,18 @@ ServerResponse
 
    http3.ServerResponse(arg0, arg1)
 
-*Kind:* function · *Arguments:* 2 · *GodeJS extension*
+*Kind:* class · *Arguments:* 2 · *GodeJS extension*
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse(undefined, undefined);
+   console.log(instance);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -135,6 +184,15 @@ IncomingMessage._completeWithoutListeners
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.IncomingMessage.prototype._completeWithoutListeners()); // 'function'
+   console.log(http3.IncomingMessage.prototype._completeWithoutListeners().length);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage._emitBody
@@ -145,6 +203,15 @@ IncomingMessage._emitBody
    http3.IncomingMessage._emitBody(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.IncomingMessage.prototype._emitBody()); // 'function'
+   console.log(http3.IncomingMessage.prototype._emitBody().length);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -157,6 +224,15 @@ IncomingMessage._hasBodyListeners
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.IncomingMessage.prototype._hasBodyListeners()); // 'function'
+   console.log(http3.IncomingMessage.prototype._hasBodyListeners().length);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage._parseHeaders
@@ -167,6 +243,15 @@ IncomingMessage._parseHeaders
    http3.IncomingMessage._parseHeaders(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.IncomingMessage.prototype._parseHeaders()); // 'function'
+   console.log(http3.IncomingMessage.prototype._parseHeaders().length);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -179,6 +264,16 @@ IncomingMessage.destroy
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.isPaused
@@ -189,6 +284,16 @@ IncomingMessage.isPaused
    http3.IncomingMessage.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.isPaused();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -201,6 +306,16 @@ IncomingMessage.pause
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.pause();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.read
@@ -211,6 +326,16 @@ IncomingMessage.read
    http3.IncomingMessage.read(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.read();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -223,6 +348,16 @@ IncomingMessage.resume
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.resume();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.setEncoding
@@ -234,6 +369,16 @@ IncomingMessage.setEncoding
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.setTimeout
@@ -244,6 +389,16 @@ IncomingMessage.setTimeout
    http3.IncomingMessage.setTimeout(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.IncomingMessage();
+   const result = instance.setTimeout(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -261,6 +416,16 @@ Server.addListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.addListener(undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.address
@@ -271,6 +436,16 @@ Server.address
    http3.Server.address(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.address();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -283,6 +458,16 @@ Server.close
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.close(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.closeAllConnections
@@ -293,6 +478,16 @@ Server.closeAllConnections
    http3.Server.closeAllConnections(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.closeAllConnections();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -305,6 +500,16 @@ Server.closeIdleConnections
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.closeIdleConnections();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.getConnections
@@ -315,6 +520,16 @@ Server.getConnections
    http3.Server.getConnections(arg0)
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.getConnections(undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -327,6 +542,16 @@ Server.listen
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.listen();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.off
@@ -337,6 +562,16 @@ Server.off
    http3.Server.off(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.off(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -349,6 +584,16 @@ Server.on
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.once
@@ -359,6 +604,16 @@ Server.once
    http3.Server.once(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.once(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -371,6 +626,16 @@ Server.prependListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.prependListener(undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.prependOnceListener
@@ -381,6 +646,16 @@ Server.prependOnceListener
    http3.Server.prependOnceListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.prependOnceListener(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -393,6 +668,16 @@ Server.ref
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.ref();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.removeAllListeners
@@ -403,6 +688,16 @@ Server.removeAllListeners
    http3.Server.removeAllListeners(arg0)
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.removeAllListeners(undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -415,6 +710,16 @@ Server.removeListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.removeListener(undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.unref
@@ -425,6 +730,16 @@ Server.unref
    http3.Server.unref(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.Server();
+   const result = instance.unref();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -440,6 +755,15 @@ ServerResponse._flushHead
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.ServerResponse.prototype._flushHead()); // 'function'
+   console.log(http3.ServerResponse.prototype._flushHead().length);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse._headersObject
@@ -450,6 +774,15 @@ ServerResponse._headersObject
    http3.ServerResponse._headersObject(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.ServerResponse.prototype._headersObject()); // 'function'
+   console.log(http3.ServerResponse.prototype._headersObject().length);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -462,6 +795,15 @@ ServerResponse._packedHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.ServerResponse.prototype._packedHeaders()); // 'function'
+   console.log(http3.ServerResponse.prototype._packedHeaders().length);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse._sendHead
@@ -472,6 +814,15 @@ ServerResponse._sendHead
    http3.ServerResponse._sendHead(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   console.log(typeof http3.ServerResponse.prototype._sendHead()); // 'function'
+   console.log(http3.ServerResponse.prototype._sendHead().length);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -484,6 +835,16 @@ ServerResponse.addTrailers
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.addTrailers(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.appendHeader
@@ -494,6 +855,16 @@ ServerResponse.appendHeader
    http3.ServerResponse.appendHeader(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.appendHeader(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -506,6 +877,16 @@ ServerResponse.destroy
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.end
@@ -516,6 +897,16 @@ ServerResponse.end
    http3.ServerResponse.end(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -528,6 +919,16 @@ ServerResponse.flushHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.flushHeaders();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getHeader
@@ -538,6 +939,16 @@ ServerResponse.getHeader
    http3.ServerResponse.getHeader(arg0)
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.getHeader(undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -550,6 +961,16 @@ ServerResponse.getHeaderNames
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.getHeaderNames();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getHeaders
@@ -560,6 +981,16 @@ ServerResponse.getHeaders
    http3.ServerResponse.getHeaders(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.getHeaders();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -572,6 +1003,16 @@ ServerResponse.getRawHeaderNames
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.getRawHeaderNames();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.hasHeader
@@ -582,6 +1023,16 @@ ServerResponse.hasHeader
    http3.ServerResponse.hasHeader(arg0)
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.hasHeader(undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -594,6 +1045,16 @@ ServerResponse.removeHeader
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.removeHeader(undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.setHeader
@@ -604,6 +1065,16 @@ ServerResponse.setHeader
    http3.ServerResponse.setHeader(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.setHeader(undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -616,6 +1087,16 @@ ServerResponse.setTimeout
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.setTimeout(undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.write
@@ -626,6 +1107,16 @@ ServerResponse.write
    http3.ServerResponse.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
@@ -638,6 +1129,16 @@ ServerResponse.writeContinue
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.writeContinue();
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.writeHead
@@ -649,6 +1150,16 @@ ServerResponse.writeHead
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
 
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.writeHead(undefined, undefined, undefined);
+   console.log(result);
+
 `GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.writeProcessing
@@ -659,6 +1170,16 @@ ServerResponse.writeProcessing
    http3.ServerResponse.writeProcessing(...args)
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
+
+**Example**
+
+.. code-block:: javascript
+
+   const http3 = require('gode:http3');
+
+   const instance = new http3.ServerResponse();
+   const result = instance.writeProcessing();
+   console.log(result);
 
 `GodeJS HTTP/3 guide <../../http3.html>`__
 

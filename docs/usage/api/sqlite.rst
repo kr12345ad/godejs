@@ -111,6 +111,15 @@ Session
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.Session(undefined, undefined);
+   console.log(instance);
+
 
 StatementSync
 ~~~~~~~~~~~~~
@@ -237,6 +246,16 @@ Closes the database connection. An exception is thrown if the database is not op
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.close();
+   console.log(result);
+
 
 DatabaseSync.createSession
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,6 +271,16 @@ Creates and attaches a session to the database. This method is a wrapper around 
 **Arguments**
 
 * ``options`` (*Object*) — optional: The configuration options for the session.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.createSession({});
+   console.log(result);
 
 
 DatabaseSync.deserialize
@@ -304,6 +333,16 @@ Enables or disables the ``loadExtension`` SQL function, and the ``loadExtension(
 
 * ``allow`` (*boolean*): Whether to allow loading extensions.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.enableLoadExtension(true);
+   console.log(result);
+
 
 DatabaseSync.exec
 ~~~~~~~~~~~~~~~~~
@@ -319,6 +358,16 @@ This method allows one or more SQL statements to be executed without returning a
 **Arguments**
 
 * ``sql`` (*string*): A SQL string to execute.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.exec('value');
+   console.log(result);
 
 
 DatabaseSync.function
@@ -338,6 +387,16 @@ This method is used to create SQLite user-defined functions. This method is a wr
 * ``options`` (*Object*) — optional: Optional configuration settings for the function. The
 * ``fn`` (*Function*): The JavaScript function to call when the SQLite function is
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.function('example', {}, () => {});
+   console.log(result);
+
 
 DatabaseSync.isOpen
 ~~~~~~~~~~~~~~~~~~~
@@ -349,6 +408,16 @@ DatabaseSync.isOpen
 *Kind:* function · *Arguments:* 0
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.isOpen();
+   console.log(result);
 
 
 DatabaseSync.loadExtension
@@ -396,6 +465,16 @@ This method is a wrapper around ``sqlite3_db_filename()``
 
 * ``dbName`` (*string*) — optional: Name of the database. This can be ``'main'`` (the default primary database) or any other
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.location('value');
+   console.log(result);
+
 
 DatabaseSync.open
 ~~~~~~~~~~~~~~~~~
@@ -409,6 +488,16 @@ DatabaseSync.open
 Opens the database specified in the ``path`` argument of the ``DatabaseSync`` constructor. This method should only be used when the database is not opened via the constructor. An exception is thrown if the database is already open.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.open();
+   console.log(result);
 
 
 DatabaseSync.prepare
@@ -426,6 +515,16 @@ Compiles a SQL statement into a prepared statement. This method is a wrapper aro
 
 * ``sql`` (*string*): A SQL string to compile to a prepared statement.
 * ``options`` (*Object*) — optional: Optional configuration for the prepared statement.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.DatabaseSync();
+   const result = instance.prepare('value', {});
+   console.log(result);
 
 
 DatabaseSync.serialize
@@ -516,6 +615,16 @@ Retrieves a changeset containing all changes since the changeset was created. Ca
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.Session();
+   const result = instance.changeset();
+   console.log(result);
+
 
 Session.close
 ~~~~~~~~~~~~~
@@ -530,6 +639,16 @@ Closes the session. An exception is thrown if the database or the session is not
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.Session();
+   const result = instance.close();
+   console.log(result);
+
 
 Session.patchset
 ~~~~~~~~~~~~~~~~
@@ -543,6 +662,16 @@ Session.patchset
 Similar to the method above, but generates a more compact patchset. See Changesets and Patchsets in the documentation of SQLite. An exception is thrown if the database or the session is not open. This method is a wrapper around ``sqlite3session_patchset()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.Session();
+   const result = instance.patchset();
+   console.log(result);
 
 
 StatementSync class
@@ -568,6 +697,16 @@ This method executes a prepared statement and returns all results as an array of
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.all({}, undefined);
+   console.log(result);
+
 
 StatementSync.close
 ~~~~~~~~~~~~~~~~~~~
@@ -582,6 +721,16 @@ Closes the database connection. An exception is thrown if the database is not op
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.close();
+   console.log(result);
+
 
 StatementSync.columns
 ~~~~~~~~~~~~~~~~~~~~~
@@ -595,6 +744,16 @@ StatementSync.columns
 This method is used to retrieve information about the columns returned by the prepared statement.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.columns();
+   console.log(result);
 
 
 StatementSync.get
@@ -613,6 +772,16 @@ This method executes a prepared statement and returns the first result as an obj
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.get({}, undefined);
+   console.log(result);
+
 
 StatementSync.iterate
 ~~~~~~~~~~~~~~~~~~~~~
@@ -630,6 +799,16 @@ This method executes a prepared statement and returns an iterator of objects. If
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.iterate({}, undefined);
+   console.log(result);
+
 
 StatementSync.run
 ~~~~~~~~~~~~~~~~~
@@ -646,6 +825,16 @@ This method executes a prepared statement and returns an object summarizing the 
 
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.run({}, undefined);
+   console.log(result);
 
 
 StatementSync.setAllowBareNamedParameters
@@ -665,6 +854,16 @@ To improve ergonomics, ``node:sqlite`` allows bare named parameters, which do no
 
 * ``enabled`` (*boolean*): Enables or disables support for binding named parameters
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.setAllowBareNamedParameters(true);
+   console.log(result);
+
 
 StatementSync.setReadBigInts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -681,6 +880,16 @@ When reading from the database, SQLite ``INTEGER``\ s are mapped to JavaScript n
 
 * ``enabled`` (*boolean*): Enables or disables the use of ``BigInt``\ s when reading
 
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.setReadBigInts(true);
+   console.log(result);
+
 
 StatementSync.setReturnArrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -696,6 +905,16 @@ When enabled, query results returned by the ``all()``, ``get()``, and ``iterate(
 **Arguments**
 
 * ``enabled`` (*boolean*): Enables or disables the return of query results as arrays.
+
+**Example**
+
+.. code-block:: javascript
+
+   const sqlite = require('node:sqlite');
+
+   const instance = new sqlite.StatementSync();
+   const result = instance.setReturnArrays(true);
+   console.log(result);
 
 
 Properties and constants

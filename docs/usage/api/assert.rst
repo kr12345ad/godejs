@@ -862,6 +862,15 @@ strict
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const assert = require('node:assert');
+
+   const result = assert.strict();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1917,6 +1926,16 @@ AssertionError.toString
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const assert = require('node:assert');
+
+   const instance = new assert.AssertionError();
+   const result = instance.toString();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1935,6 +1954,15 @@ CallTracker._getTracked
    assert.CallTracker._getTracked(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const assert = require('node:assert');
+
+   console.log(typeof assert.CallTracker.prototype._getTracked()); // 'function'
+   console.log(assert.CallTracker.prototype._getTracked().length);
 
 .. note::
 

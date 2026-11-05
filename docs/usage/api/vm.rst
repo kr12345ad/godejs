@@ -56,6 +56,15 @@ Compiles the given code into the provided context (if no context is supplied, th
 * ``params`` (*string\[]*) — optional: An array of strings containing all parameters for the
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const result = vm.compileFunction('value', [], {});
+   console.log(result);
+
 
 createContext
 ~~~~~~~~~~~~~
@@ -104,6 +113,15 @@ createScript
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const result = vm.createScript();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -123,6 +141,15 @@ Returns ``true`` if the given ``object`` object has been contextified using ``vm
 **Arguments**
 
 * ``object`` (*Object*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const result = vm.isContext({});
+   console.log(result);
 
 
 measureMemory
@@ -393,13 +420,22 @@ Script
 
    vm.Script
 
-*Kind:* function · *Arguments:* 2
+*Kind:* class · *Arguments:* 2
 
 Type: Documentation-only
 
 The ``produceCachedData`` option is deprecated. Use ``script.createCachedData()`` instead.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const instance = new vm.Script(undefined, undefined);
+   console.log(instance);
 
 
 SourceTextModule
@@ -501,6 +537,15 @@ Module._evaluateNow
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   console.log(typeof vm.Module.prototype._evaluateNow()); // 'function'
+   console.log(vm.Module.prototype._evaluateNow().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -523,6 +568,16 @@ If the module is a ``vm.SourceTextModule``, ``evaluate()`` must be called after 
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const instance = new vm.Module();
+   const result = instance.evaluate({});
+   console.log(result);
+
 
 Module.instantiate
 ~~~~~~~~~~~~~~~~~~
@@ -538,6 +593,16 @@ Instantiate the module with the linked requested modules.
 This resolves the imported bindings of the module, including re-exported binding names. When there are any bindings that cannot be resolved, an error would be thrown synchronously.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const instance = new vm.Module();
+   const result = instance.instantiate();
+   console.log(result);
 
 
 Module.link
@@ -743,6 +808,15 @@ SourceTextModule._evaluateNow
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   console.log(typeof vm.SourceTextModule.prototype._evaluateNow()); // 'function'
+   console.log(vm.SourceTextModule.prototype._evaluateNow().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -792,6 +866,16 @@ The search may be slow if the graph is big enough.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const instance = new vm.SourceTextModule();
+   const result = instance.hasAsyncGraph();
+   console.log(result);
+
 
 SourceTextModule.hasTopLevelAwait
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -807,6 +891,16 @@ Returns whether the module itself contains any top-level ``await`` expressions.
 This corresponds to the field ``[[HasTLA]]`` in Cyclic Module Record in the ECMAScript specification.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   const instance = new vm.SourceTextModule();
+   const result = instance.hasTopLevelAwait();
+   console.log(result);
 
 
 SourceTextModule.linkRequests
@@ -849,6 +943,15 @@ SyntheticModule._evaluateNow
    vm.SyntheticModule._evaluateNow(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const vm = require('node:vm');
+
+   console.log(typeof vm.SyntheticModule.prototype._evaluateNow()); // 'function'
+   console.log(vm.SyntheticModule.prototype._evaluateNow().length);
 
 .. note::
 

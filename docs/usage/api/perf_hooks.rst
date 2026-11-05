@@ -54,6 +54,15 @@ Returns a ``RecordableHistogram``.
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.createHistogram({});
+   console.log(result);
+
 
 histogram
 ~~~~~~~~~
@@ -63,6 +72,15 @@ histogram
    perf_hooks.histogram(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.histogram(undefined);
+   console.log(result);
 
 .. note::
 
@@ -145,6 +163,15 @@ PerformanceEntry
 The constructor of this class is not exposed to users directly.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.PerformanceEntry(undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 
 PerformanceNodeTiming
@@ -276,6 +303,16 @@ Returns the value at the given percentile.
 
 * ``percentile`` (*number*): A percentile value in the range (0, 100].
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.Histogram();
+   const result = instance.percentile(1);
+   console.log(result);
+
 
 Histogram.record
 ~~~~~~~~~~~~~~~~
@@ -289,6 +326,16 @@ Histogram.record
 **Arguments**
 
 * ``val`` (*number|bigint*): The amount to record in the histogram.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.Histogram();
+   const result = instance.record(1);
+   console.log(result);
 
 
 Histogram.reset
@@ -304,6 +351,16 @@ Resets the collected histogram data.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.Histogram();
+   const result = instance.reset();
+   console.log(result);
+
 
 Histogram.toJSON
 ~~~~~~~~~~~~~~~~
@@ -317,6 +374,16 @@ Histogram.toJSON
 An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.Histogram();
+   const result = instance.toJSON();
+   console.log(result);
 
 
 performance
@@ -339,6 +406,15 @@ If ``name`` is not provided, removes all ``PerformanceMark`` objects from the Pe
 
 * ``name`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.clearMarks('example');
+   console.log(result);
+
 
 performance.clearMeasures
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -354,6 +430,15 @@ If ``name`` is not provided, removes all ``PerformanceMeasure`` objects from the
 **Arguments**
 
 * ``name`` (*string*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.clearMeasures('example');
+   console.log(result);
 
 
 performance.eventLoopUtilization
@@ -374,6 +459,15 @@ This is an alias of ``perf_hooks.eventLoopUtilization()``.
 * ``utilization1`` (*Object*) — optional: The result of a previous call to
 * ``utilization2`` (*Object*) — optional: The result of a previous call to
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.eventLoopUtilization({}, {});
+   console.log(result);
+
 
 performance.getEntries
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -387,6 +481,15 @@ performance.getEntries
 Returns a list of ``PerformanceEntry`` objects in chronological order with respect to ``performanceEntry.startTime``. If you are only interested in performance entries of certain types or that have certain names, see ``performance.getEntriesByType()`` and ``performance.getEntriesByName()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.getEntries();
+   console.log(result);
 
 
 performance.getEntriesByName
@@ -405,6 +508,15 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 * ``name`` (*string*)
 * ``type`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.getEntriesByName('example', 'example');
+   console.log(result);
+
 
 performance.getEntriesByType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -420,6 +532,15 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 **Arguments**
 
 * ``type`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.getEntriesByType('example');
+   console.log(result);
 
 
 performance.mark
@@ -439,6 +560,15 @@ The created ``PerformanceMark`` entry is put in the global Performance Timeline 
 
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.mark('example', {});
+   console.log(result);
 
 
 performance.measure
@@ -460,6 +590,15 @@ The ``startMark`` argument may identify any *existing* ``PerformanceMark`` in th
 * ``startMarkOrOptions`` (*string|Object*) — optional: Optional.
 * ``endMark`` (*string*) — optional: Optional. Must be omitted if ``startMarkOrOptions`` is an
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.measure('example', 'value', 'value');
+   console.log(result);
+
 
 performance.now
 ~~~~~~~~~~~~~~~
@@ -473,6 +612,15 @@ performance.now
 Returns the current high resolution millisecond timestamp, where 0 represents the start of the current ``node`` process.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.now();
+   console.log(result);
 
 
 performance.timerify
@@ -493,6 +641,15 @@ This is an alias of ``perf_hooks.timerify()``.
 * ``fn`` (*Function*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.timerify(() => {}, {});
+   console.log(result);
+
 
 performance.toJSON
 ~~~~~~~~~~~~~~~~~~
@@ -506,6 +663,15 @@ performance.toJSON
 An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const result = perf_hooks.performance.toJSON();
+   console.log(result);
 
 
 PerformanceEntry class
@@ -525,6 +691,16 @@ PerformanceEntry.toJSON
 An object which is JSON representation of the ``performance`` object. It is similar to ``window.performance.toJSON`` in browsers.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.PerformanceEntry();
+   const result = instance.toJSON();
+   console.log(result);
 
 
 PerformanceNodeTiming class
@@ -547,6 +723,16 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.PerformanceNodeTiming();
+   const result = instance.toJSON();
+   console.log(result);
+
 
 PerformanceObserver class
 -------------------------
@@ -559,6 +745,15 @@ PerformanceObserver._enqueue
    perf_hooks.PerformanceObserver._enqueue(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   console.log(typeof perf_hooks.PerformanceObserver.prototype._enqueue()); // 'function'
+   console.log(perf_hooks.PerformanceObserver.prototype._enqueue().length);
 
 .. note::
 
@@ -574,6 +769,15 @@ PerformanceObserver._flush
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   console.log(typeof perf_hooks.PerformanceObserver.prototype._flush()); // 'function'
+   console.log(perf_hooks.PerformanceObserver.prototype._flush().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -587,6 +791,15 @@ PerformanceObserver._matches
    perf_hooks.PerformanceObserver._matches(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   console.log(typeof perf_hooks.PerformanceObserver.prototype._matches()); // 'function'
+   console.log(perf_hooks.PerformanceObserver.prototype._matches().length);
 
 .. note::
 
@@ -605,6 +818,16 @@ PerformanceObserver.disconnect
 Disconnects the ``PerformanceObserver`` instance from all notifications.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.PerformanceObserver();
+   const result = instance.disconnect();
+   console.log(result);
 
 
 PerformanceObserver.observe
@@ -650,6 +873,16 @@ PerformanceObserver.takeRecords
 *Kind:* function · *Arguments:* 0
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const perf_hooks = require('node:perf_hooks');
+
+   const instance = new perf_hooks.PerformanceObserver();
+   const result = instance.takeRecords();
+   console.log(result);
 
 
 PerformanceObserverEntryList class

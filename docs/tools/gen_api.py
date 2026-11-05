@@ -142,6 +142,61 @@ GROUPS = [
     ]),
 ]
 
+MODULE_BLURBS = {
+    "assert": "Assertions for tests and invariants.",
+    "async_hooks": "Track asynchronous resources and their lifetimes.",
+    "buffer": "Binary data with Buffer and typed-array views.",
+    "child_process": "Run subprocesses and connect to their pipes.",
+    "cluster": "Fork workers that share a listening server.",
+    "console": "Formatted output, timers, and counters.",
+    "constants": "Operating-system and signal constants.",
+    "crypto": "Hashes, ciphers, signatures, and random bytes.",
+    "dgram": "UDP sockets and datagrams.",
+    "diagnostics_channel": "Named channels for runtime diagnostics.",
+    "dns": "Resolve hostnames and IP addresses.",
+    "domain": "Legacy error-handling domains.",
+    "events": "EventEmitter and event-driven APIs.",
+    "fs": "Files, directories, streams, and file descriptors.",
+    "http": "HTTP/1.1 clients, servers, and messages.",
+    "http2": "HTTP/2 sessions, streams, and servers.",
+    "http3": "HTTP/3 servers built on QUIC.",
+    "https": "TLS-backed HTTP clients and servers.",
+    "inspector": "Debugger and inspector session APIs.",
+    "module": "CommonJS and ES module loading and metadata.",
+    "net": "TCP and IPC sockets and servers.",
+    "os": "Host CPU, memory, network, and platform details.",
+    "path": "Cross-platform filesystem paths.",
+    "perf_hooks": "Performance marks, measures, and observers.",
+    "process": "The current process, environment, and streams.",
+    "punycode": "Unicode and ASCII domain-name conversion.",
+    "querystring": "Parse and serialize URL query strings.",
+    "readline": "Line-oriented terminal input and prompts.",
+    "repl": "Interactive JavaScript evaluation.",
+    "sea": "Single executable application helpers.",
+    "sqlite": "Embedded SQLite databases.",
+    "stream": "Readable, writable, transform, and duplex streams.",
+    "string_decoder": "Decode Buffers into strings across chunks.",
+    "test": "Write and run tests with the node:test harness.",
+    "timers": "Timeouts, intervals, and immediate callbacks.",
+    "tls": "TLS sockets, servers, and secure contexts.",
+    "trace_events": "Create trace event categories and hooks.",
+    "tty": "Terminal detection and raw-mode control.",
+    "url": "Parse, build, and resolve URLs.",
+    "util": "Formatting, inspection, promises, and type helpers.",
+    "v8": "V8-compatible inspection and serialization helpers.",
+    "vm": "Run JavaScript in isolated contexts.",
+    "wasi": "WASI preview 1 applications.",
+    "worker_threads": "Run JavaScript on additional threads.",
+    "zlib": "Compress and decompress streams and buffers.",
+}
+
+GROUP_BLURBS = {
+    "Core runtime": "Everyday modules for files, paths, processes, streams, and utilities.",
+    "Networking": "Clients and servers for HTTP, TLS, TCP, UDP, DNS, and QUIC.",
+    "Concurrency and loading": "Workers, child processes, module loading, testing, and storage.",
+    "Platform and diagnostics": "Crypto, performance, tracing, terminal, and host integration.",
+}
+
 KIND_LABEL = {
     "function": "function",
     "object": "object",
@@ -203,35 +258,41 @@ server.listen(4433, '0.0.0.0', () => {
     },
     "globalThis.Storage": {
         "description": "The Web Storage interface implemented by ``localStorage`` and ``sessionStorage``. Constructing it directly is illegal; use one of the two global areas.",
+        "example": "const storage = localStorage;\nconsole.log(storage.length);",
     },
     "globalThis.localStorage.getItem": {
         "sig": "localStorage.getItem(key)",
         "description": "Return the value stored under ``key``, or ``null`` when the key does not exist.",
         "args": [("key", "string", False, "Key to look up; converted to a string.")],
         "returns": "string | null",
+        "example": "localStorage.setItem('theme', 'dark');\n\nconst theme = localStorage.getItem('theme');\nconsole.log(theme); // 'dark'",
     },
     "globalThis.localStorage.setItem": {
         "sig": "localStorage.setItem(key, value)",
         "description": "Store ``value`` under ``key``. Both arguments are converted to strings.",
         "args": [("key", "string", False, "Key to write."), ("value", "string", False, "Value to store.")],
         "returns": "undefined",
+        "example": "localStorage.setItem('theme', 'dark');\nconsole.log(localStorage.getItem('theme')); // 'dark'",
     },
     "globalThis.localStorage.removeItem": {
         "sig": "localStorage.removeItem(key)",
         "description": "Delete ``key`` from the area. Removing a missing key is a no-op.",
         "args": [("key", "string", False, "Key to delete.")],
         "returns": "undefined",
+        "example": "localStorage.setItem('theme', 'dark');\nlocalStorage.removeItem('theme');\nconsole.log(localStorage.getItem('theme')); // null",
     },
     "globalThis.localStorage.clear": {
         "sig": "localStorage.clear()",
         "description": "Delete every key in the area.",
         "returns": "undefined",
+        "example": "localStorage.setItem('theme', 'dark');\nlocalStorage.clear();\nconsole.log(localStorage.length); // 0",
     },
     "globalThis.localStorage.key": {
         "sig": "localStorage.key(index)",
         "description": "Return the key at ``index`` in insertion order, or ``null`` when the index is out of range.",
         "args": [("index", "number", False, "Zero-based key index.")],
         "returns": "string | null",
+        "example": "localStorage.setItem('theme', 'dark');\nconsole.log(localStorage.key(0)); // 'theme'",
     },
     "globalThis.localStorage.length": {
         "description": "The number of stored keys.",
@@ -241,29 +302,34 @@ server.listen(4433, '0.0.0.0', () => {
         "description": "Return the value stored under ``key``, or ``null`` when the key does not exist.",
         "args": [("key", "string", False, "Key to look up.")],
         "returns": "string | null",
+        "example": "sessionStorage.setItem('step', '2');\nconsole.log(sessionStorage.getItem('step')); // '2'",
     },
     "globalThis.sessionStorage.setItem": {
         "sig": "sessionStorage.setItem(key, value)",
         "description": "Store ``value`` under ``key`` for the lifetime of the process.",
         "args": [("key", "string", False, "Key to write."), ("value", "string", False, "Value to store.")],
         "returns": "undefined",
+        "example": "sessionStorage.setItem('step', '2');\nconsole.log(sessionStorage.getItem('step')); // '2'",
     },
     "globalThis.sessionStorage.removeItem": {
         "sig": "sessionStorage.removeItem(key)",
         "description": "Delete ``key`` from the area.",
         "args": [("key", "string", False, "Key to delete.")],
         "returns": "undefined",
+        "example": "sessionStorage.setItem('step', '2');\nsessionStorage.removeItem('step');\nconsole.log(sessionStorage.getItem('step')); // null",
     },
     "globalThis.sessionStorage.clear": {
         "sig": "sessionStorage.clear()",
         "description": "Delete every key in the area.",
         "returns": "undefined",
+        "example": "sessionStorage.setItem('step', '2');\nsessionStorage.clear();\nconsole.log(sessionStorage.length); // 0",
     },
     "globalThis.sessionStorage.key": {
         "sig": "sessionStorage.key(index)",
         "description": "Return the key at ``index`` in insertion order, or ``null`` when out of range.",
         "args": [("index", "number", False, "Zero-based key index.")],
         "returns": "string | null",
+        "example": "sessionStorage.setItem('step', '2');\nconsole.log(sessionStorage.key(0)); // 'step'",
     },
     "globalThis.sessionStorage.length": {
         "description": "The number of stored keys.",
@@ -302,6 +368,7 @@ server.listen(4433, '0.0.0.0', () => {
         "description": "Load a CommonJS builtin or file relative to the current module. In ``-e`` and stdin code the base directory is the working directory.",
         "args": [("id", "string", False, "Builtin name, package name, or relative/absolute path.")],
         "returns": "any",
+        "example": "const fs = require('node:fs');\nconsole.log(typeof fs.readFileSync); // 'function'",
     },
     "globalThis.os": {
         "description": "GodeJS exposes ``os`` as a convenience global in ``--eval`` code. It is the same object as ``require('node:os')``.",
@@ -516,16 +583,33 @@ def extract_returns(body):
     return paragraphs(m.group(1), limit=1)
 
 
-def extract_example(body):
-    matches = CODE_RE.findall(body)
-    if not matches:
-        return ""
+def runnable_example(code):
+    """Reject documentation blocks that show output rather than code."""
+    for line in code.splitlines():
+        line = line.strip()
+        if not line or line.startswith(("//", "/*", "*")):
+            continue
+        if line.startswith(("[", "{", "'", '"', "`", "<", "=>", "...")):
+            return False
+        return True
+    return False
+
+
+def pick_example(matches, truncate=False):
     priority = {"cjs": 0, "js": 1, "mjs": 2, "javascript": 3}
-    matches.sort(key=lambda item: priority.get(item[0], 9))
-    code = matches[0][1].strip("\n").replace("nodejs.org", "example.com")
-    if len(code) > 3200:
-        code = code[:3200].rstrip() + "\n// ... truncated"
-    return code
+    ordered = sorted(matches, key=lambda item: priority.get(item[0], 9))
+    for _, code in ordered:
+        code = code.strip("\n").replace("nodejs.org", "example.com")
+        if not runnable_example(code):
+            continue
+        if truncate and len(code) > 3200:
+            code = code[:3200].rstrip() + "\n// ... truncated"
+        return code
+    return ""
+
+
+def extract_example(body):
+    return pick_example(CODE_RE.findall(body), truncate=True)
 
 
 def description_from(body):
@@ -624,12 +708,7 @@ def parse_module_intro(filename):
 
 
 def parse_examples(text):
-    matches = CODE_RE.findall(text)
-    if not matches:
-        return ""
-    priority = {"cjs": 0, "js": 1, "mjs": 2, "javascript": 3}
-    matches.sort(key=lambda item: priority.get(item[0], 9))
-    return matches[0][1].strip("\n").replace("nodejs.org", "example.com")
+    return pick_example(CODE_RE.findall(text))
 
 
 def runtime_rows(api, module):
@@ -700,6 +779,174 @@ def curated_for(module, short):
         if key in CURATED:
             return CURATED[key]
     return None
+
+
+def module_spec(module):
+    if module == "http3":
+        return "gode:http3"
+    return "node:" + module
+
+
+def module_variable(module):
+    name = re.sub(r"[^A-Za-z0-9_$]", "_", module)
+    if not name or name[0].isdigit():
+        name = "_" + name
+    return name
+
+
+def entry_shape(row, sec, short):
+    title = sec["title"] if sec else ""
+    if title.startswith("Class:"):
+        return "class"
+    if title.startswith("Static method:"):
+        return "static"
+    if title.startswith("Method:"):
+        return "method"
+    if ".prototype." in row["p"]:
+        return "method"
+    if "." not in short and short[:1].isupper():
+        return "class"
+    return "function"
+
+
+def example_value(module, arg, sec):
+    if not isinstance(arg, dict):
+        return "undefined"
+    name = arg.get("name", "") or ""
+    lname = name.lower()
+    info = sec["params"].get(name, {}) if sec else {}
+    typ = (info.get("type") or arg.get("type") or "").lower()
+
+    if "function" in typ or "callback" in typ or lname in {
+        "callback", "cb", "fn", "function", "handler", "handlerfn",
+        "listener", "predicate", "executor", "onmessage", "onerror",
+    }:
+        return "() => {}"
+    if lname in {"err", "error"} or "error" in typ:
+        return "new Error('example')"
+    if lname in {"options", "option", "opts"} or typ in {"object", "record"}:
+        return "{}"
+    if "url" in lname:
+        return "'https://example.com'"
+    if "encoding" in lname:
+        return "'utf8'"
+    if "path" in lname or lname in {"filename", "file", "dir", "directory"}:
+        return "'./file.txt'"
+    if lname in {"src", "source"}:
+        return "'./source.txt'"
+    if lname in {"dest", "destination", "target"}:
+        return "'./target.txt'"
+    if lname in {"port", "localport", "remoteport"}:
+        return "8080"
+    if lname in {"host", "hostname", "address"}:
+        return "'127.0.0.1'"
+    if lname in {"delay", "timeout", "ms", "milliseconds", "interval"}:
+        return "1000"
+    if lname in {"index", "offset", "length", "size", "count", "fd", "position", "start", "end"}:
+        return "0"
+    if lname in {"key", "name", "label", "id", "type"}:
+        return "'example'"
+    if lname in {"pattern", "regexp", "regex"}:
+        return "/example/"
+    if lname == "signal":
+        return "new AbortController().signal"
+    if lname in {"stream", "writable", "readable"}:
+        return "process.stdout"
+    if lname in {"module", "moduleid"}:
+        return "'node:fs'"
+    if lname in {"mode"}:
+        return "0o644"
+    if lname in {"flags"}:
+        return "'r'"
+    if module == "assert" and lname in {"value", "actual", "expected"}:
+        return "true"
+    if lname in {"value", "data", "text", "string", "message", "body"}:
+        return "'hello'"
+    if "[]" in typ or "array" in typ or lname in {"array", "list", "items", "signals", "paths", "values", "args"}:
+        return "[]"
+    if "buffer" in typ or "uint8array" in typ or "arraybuffer" in typ:
+        return "Buffer.from('hello')"
+    if "string" in typ:
+        return "'value'"
+    if "number" in typ or "integer" in typ:
+        return "1"
+    if "boolean" in typ:
+        return "true"
+    return "undefined"
+
+
+def example_arguments(args, arity, module, sec):
+    values = []
+    for arg in args:
+        if isinstance(arg, dict):
+            values.append(example_value(module, arg, sec))
+        else:
+            values.append("undefined")
+    if not values and arity > 0:
+        values = ["undefined"] * arity
+    return ", ".join(values)
+
+
+def example_for(module, short, row, sec, curated, args):
+    shape = entry_shape(row, sec, short)
+    arity = int(row.get("a") or 0)
+    values = example_arguments(args, arity, module, sec)
+    setup = []
+    if module == "__globals__":
+        accessor = short
+        raw_accessor = re.sub(r"^globalThis\.", "", row["p"])
+    else:
+        var = module_variable(module)
+        setup = ["const %s = require('%s');" % (var, module_spec(module)), ""]
+        accessor = var + "." + short
+        prefix = module + "."
+        raw_accessor = var + "." + (row["p"][len(prefix):] if row["p"].startswith(prefix) else row["p"])
+
+    leaf = short.rsplit(".", 1)[-1]
+    if not sec and not curated and leaf.startswith("_"):
+        lines = setup + [
+            "console.log(typeof %s); // 'function'" % raw_accessor,
+            "console.log(%s.length);" % raw_accessor,
+        ]
+        return "\n".join(lines)
+
+    if short == "Buffer":
+        lines = setup + [
+            "const value = Buffer.from('hello');",
+            "console.log(value.toString()); // 'hello'",
+        ]
+        return "\n".join(lines)
+
+    if shape == "class":
+        lines = setup + [
+            "const instance = new %s(%s);" % (accessor, values),
+            "console.log(instance);",
+        ]
+        return "\n".join(lines)
+
+    if shape == "method":
+        owner = short.rsplit(".", 1)[0]
+        method = short.rsplit(".", 1)[1]
+        if module == "__globals__":
+            owner_accessor = owner
+        else:
+            owner_accessor = module_variable(module) + "." + owner
+        if owner[:1].isupper():
+            instance = "new %s()" % owner_accessor
+        else:
+            instance = owner_accessor
+        lines = setup + [
+            "const instance = %s;" % instance,
+            "const result = instance.%s(%s);" % (method, values),
+            "console.log(result);",
+        ]
+        return "\n".join(lines)
+
+    lines = setup + [
+        "const result = %s(%s);" % (accessor, values),
+        "console.log(result);",
+    ]
+    return "\n".join(lines)
 
 
 def module_marker(module):
@@ -795,8 +1042,10 @@ def render_entry(module, row, sec, curated):
         example = sec["example"]
     if not sig:
         sig = signature_for(module, short, row)
+    if not example:
+        example = example_for(module, short, row, sec, curated, args)
 
-    is_class = bool(sec and sec["title"].startswith("Class:"))
+    is_class = entry_shape(row, sec, short) == "class"
     out.append(".. code-block:: text\n")
     out.append("   " + sig + "\n")
     shown_kind = "class" if is_class else KIND_LABEL.get(kind, kind)
@@ -948,6 +1197,8 @@ def render_globals(api, sections, index):
                 out.append(curated["description"] + "\n")
             elif sec and sec["description"]:
                 out.append(sec["description"] + "\n")
+            if root_row["k"] == "function":
+                out.append(render_entry("__globals__", root_row, sec, curated))
         funcs = [r for r in group_rows if r["k"] == "function" and r is not root_row]
         values = [r for r in group_rows if r["k"] != "function" and runtime_short("__globals__", r["p"]) != root]
         for row in funcs:
@@ -964,6 +1215,32 @@ def render_globals(api, sections, index):
     return "\n".join(out)
 
 
+def raw_html(text):
+    lines = [".. raw:: html", ""]
+    lines.extend("   " + line if line else "" for line in text.splitlines())
+    return "\n".join(lines) + "\n"
+
+
+def api_card(module, count):
+    if module == "__globals__":
+        slug = "globals"
+        title = "Global objects"
+        blurb = "Host globals, Web APIs, and the CommonJS globals GodeJS exposes."
+    else:
+        slug = module.replace("/", "-")
+        title = TITLES.get(module, module)
+        blurb = MODULE_BLURBS.get(module, "Node-compatible APIs exposed by GodeJS.")
+    label = "%d callable%s" % (count, "" if count == 1 else "s")
+    search = html.escape("%s %s %s" % (title, module, blurb), quote=True)
+    return (
+        '<a class="api-card" href="%s.html" data-search="%s">'
+        '<span class="api-card-title">%s</span>'
+        '<span class="api-card-blurb">%s</span>'
+        '<span class="api-card-meta">%s</span>'
+        '</a>'
+    ) % (slug, search, html.escape(title), html.escape(blurb), label)
+
+
 def main():
     with open(API_JSON, encoding="utf-8") as f:
         api = json.load(f)
@@ -975,14 +1252,16 @@ def main():
         index["symbol"].setdefault(sec["symbol"], []).append(sec)
 
     pages, callables, matched, examples = [], 0, 0, 0
+    counts = {}
     for module in TITLES:
         rows = runtime_rows(api, module)
         if not rows:
             continue
-        text = render_module(module, rows, sections, index)
+        text = render_module(module, rows, sections, index).replace("\x00", "\\0")
         with open(os.path.join(OUT, module.replace("/", "-") + ".rst"), "w", encoding="utf-8") as f:
             f.write(text)
         pages.append(module)
+        counts[module] = sum(1 for row in rows if row["k"] == "function")
         for row in rows:
             if row["k"] != "function":
                 continue
@@ -996,7 +1275,8 @@ def main():
 
     globals_rows = runtime_rows(api, "__globals__")
     with open(os.path.join(OUT, "globals.rst"), "w", encoding="utf-8") as f:
-        f.write(render_globals(api, sections, index))
+        f.write(render_globals(api, sections, index).replace("\x00", "\\0"))
+    counts["__globals__"] = sum(1 for row in globals_rows if row["k"] == "function")
     for row in globals_rows:
         if row["k"] != "function":
             continue
@@ -1009,18 +1289,39 @@ def main():
                 examples += 1
 
     index_lines = [rst_heading("API Reference", "=")]
-    index_lines.append("This reference is generated from the running GodeJS runtime, not hand-maintained. Every callable the runtime exposes has its own entry with a signature, typed arguments, return value, and an example where one is available. Private helpers and GodeJS extensions are labelled explicitly.\n")
-    index_lines.append("Signatures, argument names, return values, and examples reflect the GodeJS runtime surface. The runtime is the source of truth for what is available here.\n")
-    index_lines.append("Some prose and examples are adapted from MIT-licensed material; see the repository `NOTICE <https://github.com/kr12345ad/godejs/blob/main/NOTICE>`_ file for the applicable notice.\n")
-    index_lines.append("Global objects\n--------------\n")
-    index_lines.append(".. toctree::\n   :maxdepth: 1\n\n   globals\n")
+    index_lines.append("Every callable in the runtime is listed here. The reference is generated from the running GodeJS binary, so signatures, argument counts, and return values describe the API you actually have, not a hoped-for one.\n")
+    index_lines.append("Some prose and examples are adapted from MIT-licensed Node.js documentation; see the repository `NOTICE <https://github.com/kr12345ad/godejs/blob/main/NOTICE>`_ file.\n")
+
+    sections_html = ['<section class="api-toolbar" aria-label="Filter API modules">',
+                     '  <div><span class="api-toolbar-kicker">Browse by module</span>',
+                     '  <h2>Find an API surface</h2></div>',
+                     '  <div class="api-filter-wrap">',
+                     '    <label class="sr-only" for="api-filter">Filter modules</label>',
+                     '    <input id="api-filter" type="search" placeholder="Try fs, http, crypto…" autocomplete="off">',
+                     '    <span id="api-count" class="api-count">%d modules</span>' % (len(pages) + 1),
+                     '  </div>',
+                     '</section>']
+    sections_html.append('<section class="api-section" data-api-section>')
+    sections_html.append('  <div class="api-section-heading"><div><span class="api-section-kicker">Everywhere</span><h2>Global objects</h2></div><p>Host globals, Web APIs, and CommonJS globals.</p></div>')
+    sections_html.append('  <div class="api-grid">' + api_card("__globals__", counts.get("__globals__", 0)) + '</div>')
+    sections_html.append('</section>')
     for title, modules in GROUPS:
-        index_lines.append(title + "\n" + "-" * len(title) + "\n")
-        index_lines.append(".. toctree::\n   :maxdepth: 1\n")
-        for module in modules:
-            if module in pages:
-                index_lines.append("   " + module)
-        index_lines.append("")
+        available = [module for module in modules if module in pages]
+        if not available:
+            continue
+        sections_html.append('<section class="api-section" data-api-section>')
+        sections_html.append('  <div class="api-section-heading"><div><span class="api-section-kicker">%s</span><h2>%s</h2></div><p>%s</p></div>' % (
+            html.escape("Collection"), html.escape(title), html.escape(GROUP_BLURBS.get(title, ""))))
+        sections_html.append('  <div class="api-grid">')
+        for module in available:
+            sections_html.append('    ' + api_card(module, counts.get(module, 0)))
+        sections_html.append('  </div>')
+        sections_html.append('</section>')
+    sections_html.append('<p id="api-empty" class="api-empty" hidden>No modules match that filter. Try a shorter term.</p>')
+    index_lines.append(raw_html("\n".join(sections_html)))
+    index_lines.append(".. toctree::\n   :hidden:\n   :maxdepth: 1\n\n   " + "\n   ".join(["globals"] + pages) + "\n")
+    index_lines.append(".. note::\n")
+    index_lines.append("   Entries with a runtime-only note are still callable, but their argument names and descriptions may be incomplete. The snapshot is the source of truth for what exists.\n")
     with open(os.path.join(OUT, "index.rst"), "w", encoding="utf-8") as f:
         f.write("\n".join(index_lines))
 

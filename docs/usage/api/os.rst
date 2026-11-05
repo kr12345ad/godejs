@@ -37,6 +37,15 @@ The return value is equivalent to ``process.arch``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.arch();
+   console.log(result);
+
 
 availableParallelism
 ~~~~~~~~~~~~~~~~~~~~
@@ -52,6 +61,15 @@ Returns an estimate of the default amount of parallelism a program should use. A
 This function is a small wrapper about libuv's ``uv_available_parallelism()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.availableParallelism();
+   console.log(result);
 
 
 cpus
@@ -73,52 +91,10 @@ This callable takes no arguments.
 
 .. code-block:: javascript
 
-   [
-     {
-       model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
-       speed: 2926,
-       times: {
-         user: 252020,
-         nice: 0,
-         sys: 30340,
-         idle: 1070356870,
-         irq: 0,
-       },
-     },
-     {
-       model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
-       speed: 2926,
-       times: {
-         user: 306960,
-         nice: 0,
-         sys: 26980,
-         idle: 1071569080,
-         irq: 0,
-       },
-     },
-     {
-       model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
-       speed: 2926,
-       times: {
-         user: 248450,
-         nice: 0,
-         sys: 21750,
-         idle: 1070919370,
-         irq: 0,
-       },
-     },
-     {
-       model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
-       speed: 2926,
-       times: {
-         user: 256880,
-         nice: 0,
-         sys: 19430,
-         idle: 1070905480,
-         irq: 20,
-       },
-     },
-   ];
+   const os = require('node:os');
+
+   const result = os.cpus();
+   console.log(result);
 
 
 endianness
@@ -136,6 +112,15 @@ Possible values are ``'BE'`` for big endian and ``'LE'`` for little endian.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.endianness();
+   console.log(result);
+
 
 freemem
 ~~~~~~~
@@ -149,6 +134,15 @@ freemem
 Returns the amount of free system memory in bytes as an integer.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.freemem();
+   console.log(result);
 
 
 getPriority
@@ -166,6 +160,15 @@ Returns the scheduling priority for the process specified by ``pid``. If ``pid``
 
 * ``pid`` (*integer*) — optional: The process ID to retrieve scheduling priority for.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.getPriority(1);
+   console.log(result);
+
 
 homedir
 ~~~~~~~
@@ -182,6 +185,15 @@ On POSIX, it uses the ``$HOME`` environment variable if defined. Otherwise it us
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.homedir();
+   console.log(result);
+
 
 hostname
 ~~~~~~~~
@@ -195,6 +207,15 @@ hostname
 Returns the host name of the operating system as a string.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.hostname();
+   console.log(result);
 
 
 loadavg
@@ -212,6 +233,15 @@ The load average is a measure of system activity calculated by the operating sys
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.loadavg();
+   console.log(result);
+
 
 machine
 ~~~~~~~
@@ -227,6 +257,15 @@ Returns the machine type as a string, such as ``arm``, ``arm64``, ``aarch64``, `
 On POSIX systems, the machine type is determined by calling ``uname(3)``. On Windows, ``RtlGetVersion()`` is used, and if it is not available, ``GetVersionExW()`` will be used. See <https://en.wikipedia.org/wiki/Uname#Examples> for more information.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.machine();
+   console.log(result);
 
 
 networkInterfaces
@@ -244,6 +283,15 @@ Each key on the returned object identifies a network interface. The associated v
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.networkInterfaces();
+   console.log(result);
+
 
 platform
 ~~~~~~~~
@@ -260,6 +308,15 @@ The return value is equivalent to ``process.platform``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.platform();
+   console.log(result);
+
 
 release
 ~~~~~~~
@@ -275,6 +332,15 @@ Returns the operating system as a string.
 On POSIX systems, the operating system release is determined by calling ``uname(3)``. On Windows, ``GetVersionExW()`` is used. See <https://en.wikipedia.org/wiki/Uname#Examples> for more information.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.release();
+   console.log(result);
 
 
 setPriority
@@ -295,6 +361,15 @@ The ``priority`` input must be an integer between ``-20`` (high priority) and ``
 * ``pid`` (*integer*) — optional: The process ID to set scheduling priority for.
 * ``priority`` (*integer*) — optional: The scheduling priority to assign to the process.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.setPriority(1, 1);
+   console.log(result);
+
 
 tmpdir
 ~~~~~~
@@ -311,6 +386,15 @@ On Windows, the result can be overridden by ``TEMP`` and ``TMP`` environment var
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.tmpdir();
+   console.log(result);
+
 
 totalmem
 ~~~~~~~~
@@ -324,6 +408,15 @@ totalmem
 Returns the total amount of system memory in bytes as an integer.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.totalmem();
+   console.log(result);
 
 
 type
@@ -341,6 +434,15 @@ See <https://en.wikipedia.org/wiki/Uname#Examples> for additional information ab
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.type();
+   console.log(result);
+
 
 uptime
 ~~~~~~
@@ -354,6 +456,15 @@ uptime
 Returns the system uptime in number of seconds.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.uptime();
+   console.log(result);
 
 
 userInfo
@@ -373,6 +484,15 @@ The value of ``homedir`` returned by ``os.userInfo()`` is provided by the operat
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.userInfo({});
+   console.log(result);
+
 
 version
 ~~~~~~~
@@ -388,6 +508,15 @@ Returns a string identifying the kernel version.
 On POSIX systems, the operating system release is determined by calling ``uname(3)``. On Windows, ``RtlGetVersion()`` is used, and if it is not available, ``GetVersionExW()`` will be used. See <https://en.wikipedia.org/wiki/Uname#Examples> for more information.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const os = require('node:os');
+
+   const result = os.version();
+   console.log(result);
 
 
 Properties and constants

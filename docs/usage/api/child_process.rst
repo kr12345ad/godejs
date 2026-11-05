@@ -206,6 +206,15 @@ If the process times out or has a non-zero exit code, this method will throw. Th
 * ``command`` (*string*): The command to run.
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const result = child_process.execSync('value', {});
+   console.log(result);
+
 
 fork
 ~~~~
@@ -305,6 +314,15 @@ The ``child_process.spawnSync()`` method is generally identical to ``child_proce
 * ``args`` (*string\[]*) — optional: List of string arguments.
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const result = child_process.spawnSync('value', [], {});
+   console.log(result);
+
 
 ChildProcess class
 ------------------
@@ -321,6 +339,16 @@ ChildProcess.addListener
    child_process.ChildProcess.addListener(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.addListener();
+   console.log(result);
 
 .. note::
 
@@ -342,6 +370,16 @@ The ``'disconnect'`` event will be emitted when there are no messages in the pro
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.disconnect();
+   console.log(result);
+
 
 ChildProcess.emit
 ~~~~~~~~~~~~~~~~~
@@ -351,6 +389,16 @@ ChildProcess.emit
    child_process.ChildProcess.emit(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.emit();
+   console.log(result);
 
 .. note::
 
@@ -365,6 +413,16 @@ ChildProcess.getMaxListeners
    child_process.ChildProcess.getMaxListeners(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.getMaxListeners();
+   console.log(result);
 
 .. note::
 
@@ -413,6 +471,16 @@ ChildProcess.listenerCount
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.listenerCount();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -426,6 +494,16 @@ ChildProcess.off
    child_process.ChildProcess.off(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.off();
+   console.log(result);
 
 .. note::
 
@@ -441,6 +519,16 @@ ChildProcess.on
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.on();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -454,6 +542,16 @@ ChildProcess.once
    child_process.ChildProcess.once(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.once();
+   console.log(result);
 
 .. note::
 
@@ -473,6 +571,16 @@ This method makes the IPC channel keep the event loop of the parent process runn
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.ref();
+   console.log(result);
+
 
 ChildProcess.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -482,6 +590,16 @@ ChildProcess.removeAllListeners
    child_process.ChildProcess.removeAllListeners(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.removeAllListeners();
+   console.log(result);
 
 .. note::
 
@@ -496,6 +614,16 @@ ChildProcess.removeListener
    child_process.ChildProcess.removeListener(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.removeListener();
+   console.log(result);
 
 .. note::
 
@@ -545,6 +673,16 @@ ChildProcess.setMaxListeners
    child_process.ChildProcess.setMaxListeners(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.setMaxListeners();
+   console.log(result);
 
 .. note::
 
@@ -602,6 +740,16 @@ ChildProcess.unref
 This method makes the IPC channel not keep the event loop of the parent process running, and lets it finish even while the channel is open.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const child_process = require('node:child_process');
+
+   const instance = new child_process.ChildProcess();
+   const result = instance.unref();
+   console.log(result);
 
 
 .. note::

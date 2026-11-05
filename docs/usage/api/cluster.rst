@@ -65,6 +65,15 @@ When they are disconnected all internal handles will be closed, allowing the pri
 
 * ``callback`` (*Function*) — optional: Called when all workers are disconnected and handles are
 
+**Example**
+
+.. code-block:: javascript
+
+   const cluster = require('node:cluster');
+
+   const result = cluster.disconnect(() => {});
+   console.log(result);
+
 
 fork
 ~~~~
@@ -83,6 +92,15 @@ This can only be called from the primary process.
 
 * ``env`` (*Object*) — optional: Key/value pairs to add to worker process environment.
 
+**Example**
+
+.. code-block:: javascript
+
+   const cluster = require('node:cluster');
+
+   const result = cluster.fork({});
+   console.log(result);
+
 
 setupMaster
 ~~~~~~~~~~~
@@ -98,6 +116,15 @@ Deprecated alias for ``.setupPrimary()``.
 **Arguments**
 
 * ``settings`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const cluster = require('node:cluster');
+
+   const result = cluster.setupMaster(undefined);
+   console.log(result);
 
 
 setupPrimary
@@ -241,6 +268,16 @@ The ``kill()`` function kills the worker process without waiting for a graceful 
 **Arguments**
 
 * ``signal`` (*string*) — optional: Name of the kill signal to send to the worker
+
+**Example**
+
+.. code-block:: javascript
+
+   const cluster = require('node:cluster');
+
+   const instance = new cluster.Worker();
+   const result = instance.kill(new AbortController().signal);
+   console.log(result);
 
 
 Worker.send

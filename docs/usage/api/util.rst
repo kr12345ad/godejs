@@ -31,6 +31,15 @@ __rawStack
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   console.log(typeof util.__rawStack); // 'function'
+   console.log(util.__rawStack.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -44,6 +53,15 @@ _exceptionWithHostPort
    util._exceptionWithHostPort(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   console.log(typeof util._exceptionWithHostPort); // 'function'
+   console.log(util._exceptionWithHostPort.length);
 
 .. note::
 
@@ -64,6 +82,15 @@ Type: Runtime
 The ``util._extend()`` API is deprecated because it's an unmaintained legacy API that was exposed to user land by accident. Please use ``target = Object.assign(target, source)`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util._extend();
+   console.log(result);
 
 
 aborted
@@ -218,6 +245,15 @@ Type: End-of-Life
 ``util.debug()`` has been removed. Please use ``console.error()`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.debug();
+   console.log(result);
 
 
 debuglog
@@ -572,6 +608,15 @@ inspect
 * ``object``
 * ``options`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.inspect(undefined, {});
+   console.log(result);
+
 
 isArray
 ~~~~~~~
@@ -587,6 +632,15 @@ Type: Runtime
 The ``util.isArray()`` API is deprecated. Please use ``Array.isArray()`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isArray();
+   console.log(result);
 
 
 isBoolean
@@ -604,6 +658,15 @@ The ``util.isBoolean()`` API has been removed. Please use ``typeof arg === 'bool
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isBoolean();
+   console.log(result);
+
 
 isBuffer
 ~~~~~~~~
@@ -620,6 +683,15 @@ The ``util.isBuffer()`` API has been removed. Please use ``Buffer.isBuffer()`` i
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isBuffer();
+   console.log(result);
+
 
 isDate
 ~~~~~~
@@ -635,6 +707,15 @@ Type: End-of-Life
 The ``util.isDate()`` API has been removed. Please use ``arg instanceof Date`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isDate();
+   console.log(result);
 
 
 isDeepStrictEqual
@@ -700,6 +781,15 @@ The ``util.isError()`` API has been removed. Please use ``Error.isError(arg)``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isError();
+   console.log(result);
+
 
 isFunction
 ~~~~~~~~~~
@@ -715,6 +805,15 @@ Type: End-of-Life
 The ``util.isFunction()`` API has been removed. Please use ``typeof arg === 'function'`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isFunction();
+   console.log(result);
 
 
 isNull
@@ -732,6 +831,15 @@ The ``util.isNull()`` API has been removed. Please use ``arg === null`` instead.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isNull();
+   console.log(result);
+
 
 isNullOrUndefined
 ~~~~~~~~~~~~~~~~~
@@ -747,6 +855,15 @@ Type: End-of-Life
 The ``util.isNullOrUndefined()`` API has been removed. Please use ``arg === null || arg === undefined`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isNullOrUndefined();
+   console.log(result);
 
 
 isNumber
@@ -764,6 +881,15 @@ The ``util.isNumber()`` API has been removed. Please use ``typeof arg === 'numbe
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isNumber();
+   console.log(result);
+
 
 isObject
 ~~~~~~~~
@@ -779,6 +905,15 @@ Type: End-of-Life
 The ``util.isObject()`` API has been removed. Please use ``arg && typeof arg === 'object'`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isObject();
+   console.log(result);
 
 
 isPrimitive
@@ -796,6 +931,15 @@ The ``util.isPrimitive()`` API has been removed. Please use ``Object(arg) !== ar
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isPrimitive();
+   console.log(result);
+
 
 isRegExp
 ~~~~~~~~
@@ -811,6 +955,15 @@ Type: End-of-Life
 The ``util.isRegExp()`` API has been removed. Please use ``arg instanceof RegExp`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isRegExp();
+   console.log(result);
 
 
 isString
@@ -828,6 +981,15 @@ The ``util.isString()`` API has been removed. Please use ``typeof arg === 'strin
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isString();
+   console.log(result);
+
 
 isSymbol
 ~~~~~~~~
@@ -843,6 +1005,15 @@ Type: End-of-Life
 The ``util.isSymbol()`` API has been removed. Please use ``typeof arg === 'symbol'`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isSymbol();
+   console.log(result);
 
 
 isUndefined
@@ -860,6 +1031,15 @@ The ``util.isUndefined()`` API has been removed. Please use ``arg === undefined`
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.isUndefined();
+   console.log(result);
+
 
 markPromiseAsHandled
 ~~~~~~~~~~~~~~~~~~~~
@@ -875,6 +1055,15 @@ Marks a promise as handled so that unhandled rejections are ignored and are not 
 **Arguments**
 
 * ``promise`` (*Promise*): The promise to mark as handled
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.markPromiseAsHandled(undefined);
+   console.log(result);
 
 
 MIMEParams
@@ -1035,6 +1224,15 @@ Enable or disable printing a stack trace on ``SIGINT``. The API is only availabl
 
 * ``enable`` (*boolean*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.setTraceSigInt(true);
+   console.log(result);
+
 
 sleep
 ~~~~~
@@ -1044,6 +1242,15 @@ sleep
    util.sleep(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.sleep(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1212,6 +1419,15 @@ The ``util.toUSVString()`` API is deprecated. Please use ``String.prototype.toWe
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.toUSVString();
+   console.log(result);
+
 
 transferableAbortController
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1225,6 +1441,15 @@ transferableAbortController
 Creates and returns an ``AbortController`` instance whose ``AbortSignal`` is marked as transferable and can be used with ``structuredClone()`` or ``postMessage()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.transferableAbortController();
+   console.log(result);
 
 
 transferableAbortSignal
@@ -1271,6 +1496,16 @@ Remove all name-value pairs whose name is ``name``.
 
 * ``name`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.delete('example');
+   console.log(result);
+
 
 MIMEParams.entries
 ~~~~~~~~~~~~~~~~~~
@@ -1284,6 +1519,16 @@ MIMEParams.entries
 Returns an iterator over each of the name-value pairs in the parameters. Each item of the iterator is a JavaScript ``Array``. The first item of the array is the ``name``, the second item of the array is the ``value``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.entries();
+   console.log(result);
 
 
 MIMEParams.get
@@ -1301,6 +1546,16 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.get('example');
+   console.log(result);
+
 
 MIMEParams.has
 ~~~~~~~~~~~~~~
@@ -1316,6 +1571,16 @@ Returns ``true`` if there is at least one name-value pair whose name is ``name``
 **Arguments**
 
 * ``name`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.has('example');
+   console.log(result);
 
 
 MIMEParams.keys
@@ -1419,6 +1684,16 @@ Because of the need for standard compliance, this method does not allow users to
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.toString();
+   console.log(result);
+
 
 MIMEParams.values
 ~~~~~~~~~~~~~~~~~
@@ -1432,6 +1707,16 @@ MIMEParams.values
 Returns an iterator over the values of each name-value pair.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEParams();
+   const result = instance.values();
+   console.log(result);
 
 
 MIMEType class
@@ -1485,6 +1770,16 @@ Because of the need for standard compliance, this method does not allow users to
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.MIMEType();
+   const result = instance.toString();
+   console.log(result);
+
 
 TextDecoder class
 -----------------
@@ -1509,6 +1804,16 @@ If ``textDecoder.fatal`` is ``true``, decoding errors that occur will result in 
 * ``input`` (*ArrayBuffer|DataView|TypedArray*) — optional: An ``ArrayBuffer``, ``DataView``, or
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.TextDecoder();
+   const result = instance.decode([], {});
+   console.log(result);
+
 
 TextEncoder class
 -----------------
@@ -1531,6 +1836,16 @@ UTF-8 encodes the ``input`` string and returns a ``Uint8Array`` containing the e
 **Arguments**
 
 * ``input`` (*string*) — optional: The text to encode. **Default:** an empty string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const instance = new util.TextEncoder();
+   const result = instance.encode('value');
+   console.log(result);
 
 
 TextEncoder.encodeInto
@@ -1826,6 +2141,15 @@ Returns ``true`` if ``value`` is a ``CryptoKey``, ``false`` otherwise.
 
 * ``value`` (*Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.types.isCryptoKey({});
+   console.log(result);
+
 
 types.isDataView
 ~~~~~~~~~~~~~~~~
@@ -2111,6 +2435,15 @@ Returns ``true`` if ``value`` is a ``KeyObject``, ``false`` otherwise.
 
 * ``value`` (*Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.types.isKeyObject({});
+   console.log(result);
+
 
 types.isMap
 ~~~~~~~~~~~
@@ -2198,6 +2531,15 @@ Type: Documentation-only
 The ``util.types.isNativeError`` API is deprecated. Please use ``Error.isError`` instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const util = require('node:util');
+
+   const result = util.types.isNativeError();
+   console.log(result);
 
 
 types.isNumberObject

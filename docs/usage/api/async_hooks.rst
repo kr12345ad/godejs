@@ -37,6 +37,15 @@ The documentation for this class has moved ``AsyncLocalStorage``.
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncLocalStorage();
+   console.log(instance);
+
 
 AsyncResource
 ~~~~~~~~~~~~~
@@ -50,6 +59,15 @@ AsyncResource
 The documentation for this class has moved ``AsyncResource``.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource(undefined, undefined);
+   console.log(instance);
 
 
 createHook
@@ -189,6 +207,15 @@ Binds the given function to the current execution context.
 
 * ``fn`` (*Function*): The function to bind to the current execution context.
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const result = async_hooks.AsyncLocalStorage.bind(() => {});
+   console.log(result);
+
 
 AsyncLocalStorage.disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,6 +231,16 @@ Disables the instance of ``AsyncLocalStorage``. All subsequent calls to ``asyncL
 When calling ``asyncLocalStorage.disable()``, all current contexts linked to the instance will be exited.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncLocalStorage();
+   const result = instance.disable();
+   console.log(result);
 
 
 AsyncLocalStorage.enterWith
@@ -284,6 +321,16 @@ Returns the current store. If called outside of an asynchronous context initiali
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncLocalStorage();
+   const result = instance.getStore();
+   console.log(result);
+
 
 AsyncLocalStorage.run
 ~~~~~~~~~~~~~~~~~~~~~
@@ -339,6 +386,16 @@ AsyncResource.asyncId
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource();
+   const result = instance.asyncId();
+   console.log(result);
+
 
 AsyncResource.bind
 ~~~~~~~~~~~~~~~~~~
@@ -356,6 +413,16 @@ Binds the given function to execute to this ``AsyncResource``'s scope.
 * ``fn`` (*Function*): The function to bind to the current ``AsyncResource``.
 * ``thisArg`` (*any*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource();
+   const result = instance.bind(() => {}, undefined);
+   console.log(result);
+
 
 AsyncResource.emitDestroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -369,6 +436,16 @@ AsyncResource.emitDestroy
 Call all ``destroy`` hooks. This should only ever be called once. An error will be thrown if it is called more than once. This **must** be manually called. If the resource is left to be collected by the GC then the ``destroy`` hooks will never be called.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource();
+   const result = instance.emitDestroy();
+   console.log(result);
 
 
 AsyncResource.runInAsyncScope
@@ -388,6 +465,16 @@ Call the provided function with the provided arguments in the execution context 
 * ``thisArg`` (*any*) — optional: The receiver to be used for the function call.
 * ``...args`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource();
+   const result = instance.runInAsyncScope(() => {}, undefined, []);
+   console.log(result);
+
 
 AsyncResource.triggerAsyncId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -401,6 +488,16 @@ AsyncResource.triggerAsyncId
 <a id="async-resource-worker-pool"></a>
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const async_hooks = require('node:async_hooks');
+
+   const instance = new async_hooks.AsyncResource();
+   const result = instance.triggerAsyncId();
+   console.log(result);
 
 
 Properties and constants

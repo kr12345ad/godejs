@@ -70,6 +70,15 @@ The ``data`` may be any JavaScript-value that can be coerced into a string.
 
 * ``data`` (*any*): The Base64-encoded input string.
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const result = buffer.atob('hello');
+   console.log(result);
+
 
 Blob
 ~~~~
@@ -78,7 +87,7 @@ Blob
 
    buffer.Blob([sources[, options]])
 
-*Kind:* function · *Arguments:* 2
+*Kind:* class · *Arguments:* 2
 
 Creates a new ``Blob`` object containing a concatenation of the given sources.
 
@@ -88,6 +97,15 @@ Creates a new ``Blob`` object containing a concatenation of the given sources.
 
 * ``sources`` (*string\[]|ArrayBuffer\[]|TypedArray\[]|DataView\[]|Blob\[]*) — optional: An
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob([], {});
+   console.log(instance);
 
 
 btoa
@@ -106,6 +124,15 @@ The ``data`` may be any JavaScript-value that can be coerced into a string.
 **Arguments**
 
 * ``data`` (*any*): An ASCII (Latin1) string.
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const result = buffer.btoa('hello');
+   console.log(result);
 
 
 Buffer
@@ -140,13 +167,22 @@ File
 
    buffer.File(sources, fileName[, options])
 
-*Kind:* function · *Arguments:* 3
+*Kind:* class · *Arguments:* 3
 
 **Arguments**
 
 * ``sources`` (*string\[]|ArrayBuffer\[]|TypedArray\[]|DataView\[]|Blob\[]|File\[]*)
 * ``fileName`` (*string*): The name of the file.
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.File([], './file.txt', {});
+   console.log(instance);
 
 
 isAscii
@@ -166,6 +202,15 @@ A detached ``ArrayBuffer``, or a ``TypedArray`` backed by one, is treated as emp
 
 * ``input`` (*Buffer | ArrayBuffer | TypedArray*): The input to validate.
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const result = buffer.isAscii([]);
+   console.log(result);
+
 
 isUtf8
 ~~~~~~
@@ -184,6 +229,15 @@ A detached ``ArrayBuffer``, or a ``TypedArray`` backed by one, is treated as emp
 
 * ``input`` (*Buffer | ArrayBuffer | TypedArray*): The input to validate.
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const result = buffer.isUtf8([]);
+   console.log(result);
+
 
 resolveObjectURL
 ~~~~~~~~~~~~~~~~
@@ -200,6 +254,15 @@ Resolves a ``'blob:nodedata:...'`` an associated ``Blob`` object registered usin
 
 * ``id`` (*string*): A ``'blob:nodedata:...`` URL string returned by a prior call to
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const result = buffer.resolveObjectURL('example');
+   console.log(result);
+
 
 SlowBuffer
 ~~~~~~~~~~
@@ -213,6 +276,15 @@ SlowBuffer
 See ``Buffer.allocUnsafeSlow()``. This was never a class in the sense that the constructor always returned a ``Buffer`` instance, rather than a ``SlowBuffer`` instance.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.SlowBuffer(undefined);
+   console.log(instance);
 
 
 transcode
@@ -265,6 +337,16 @@ Returns a promise that fulfills with an ``ArrayBuffer`` containing a copy of the
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob();
+   const result = instance.arrayBuffer();
+   console.log(result);
+
 
 Blob.bytes
 ~~~~~~~~~~
@@ -306,6 +388,16 @@ Creates and returns a new ``Blob`` containing a subset of this ``Blob`` objects 
 * ``end`` (*number*) — optional: The ending index.
 * ``type`` (*string*) — optional: The content-type for the new ``Blob``
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob();
+   const result = instance.slice(0, 0, 'example');
+   console.log(result);
+
 
 Blob.stream
 ~~~~~~~~~~~
@@ -319,6 +411,16 @@ Blob.stream
 Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be read.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob();
+   const result = instance.stream();
+   console.log(result);
 
 
 Blob.text
@@ -334,6 +436,16 @@ Returns a promise that fulfills with the contents of the ``Blob`` decoded as a U
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob();
+   const result = instance.text();
+   console.log(result);
+
 
 Blob.textStream
 ~~~~~~~~~~~~~~~
@@ -347,6 +459,16 @@ Blob.textStream
 Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be read as a stream of UTF-8 decoded strings. It is equivalent to piping ``blob.stream()`` through a ``TextDecoderStream`` set up with UTF-8.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Blob();
+   const result = instance.textStream();
+   console.log(result);
 
 
 Buffer class
@@ -363,6 +485,16 @@ Buffer.asciiSlice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.asciiSlice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -376,6 +508,16 @@ Buffer.asciiWrite
    buffer.Buffer.asciiWrite(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.asciiWrite();
+   console.log(result);
 
 .. note::
 
@@ -391,6 +533,16 @@ Buffer.base64Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.base64Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -404,6 +556,16 @@ Buffer.base64urlSlice
    buffer.Buffer.base64urlSlice(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.base64urlSlice();
+   console.log(result);
 
 .. note::
 
@@ -419,6 +581,16 @@ Buffer.base64urlWrite
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.base64urlWrite();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -432,6 +604,16 @@ Buffer.base64Write
    buffer.Buffer.base64Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.base64Write();
+   console.log(result);
 
 .. note::
 
@@ -593,6 +775,16 @@ Buffer.hexSlice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.hexSlice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -606,6 +798,16 @@ Buffer.hexWrite
    buffer.Buffer.hexWrite(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.hexWrite();
+   console.log(result);
 
 .. note::
 
@@ -712,6 +914,16 @@ Buffer.inspect
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.inspect(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -777,6 +989,16 @@ Buffer.latin1Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.latin1Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -790,6 +1012,16 @@ Buffer.latin1Write
    buffer.Buffer.latin1Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.latin1Write();
+   console.log(result);
 
 .. note::
 
@@ -813,6 +1045,16 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
 
 * ``offset`` (*integer*) — optional: Number of bytes to skip before starting to read. Must
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readBigInt64BE(0);
+   console.log(result);
+
 
 Buffer.readBigInt64LE
 ~~~~~~~~~~~~~~~~~~~~~
@@ -830,6 +1072,16 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
 **Arguments**
 
 * ``offset`` (*integer*) — optional: Number of bytes to skip before starting to read. Must
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readBigInt64LE(0);
+   console.log(result);
 
 
 Buffer.readBigUInt64BE
@@ -869,6 +1121,16 @@ Buffer.readBigUint64BE
    buffer.Buffer.readBigUint64BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readBigUint64BE();
+   console.log(result);
 
 .. note::
 
@@ -912,6 +1174,16 @@ Buffer.readBigUint64LE
    buffer.Buffer.readBigUint64LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readBigUint64LE();
+   console.log(result);
 
 .. note::
 
@@ -1283,6 +1555,16 @@ Buffer.readUint16BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUint16BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1330,6 +1612,16 @@ Buffer.readUint16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUint16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1372,6 +1664,16 @@ Buffer.readUint32BE
    buffer.Buffer.readUint32BE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUint32BE();
+   console.log(result);
 
 .. note::
 
@@ -1417,6 +1719,16 @@ Buffer.readUint32LE
    buffer.Buffer.readUint32LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUint32LE();
+   console.log(result);
 
 .. note::
 
@@ -1465,6 +1777,16 @@ Buffer.readUint8
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUint8();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1511,6 +1833,16 @@ Buffer.readUintBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUintBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1555,6 +1887,16 @@ Buffer.readUintLE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.readUintLE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1577,6 +1919,16 @@ This method was deprecated because it is not compatible with ``Uint8Array.protot
 
 * ``start``
 * ``end``
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.slice(0, 0);
+   console.log(result);
 
 
 Buffer.subarray
@@ -1777,6 +2129,16 @@ Buffer.toLocaleString
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.toLocaleString();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1838,6 +2200,16 @@ Buffer.ucs2Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.ucs2Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1851,6 +2223,16 @@ Buffer.ucs2Write
    buffer.Buffer.ucs2Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.ucs2Write();
+   console.log(result);
 
 .. note::
 
@@ -1866,6 +2248,16 @@ Buffer.utf8Slice
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.utf8Slice();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1879,6 +2271,16 @@ Buffer.utf8Write
    buffer.Buffer.utf8Write(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.utf8Write();
+   console.log(result);
 
 .. note::
 
@@ -2029,6 +2431,16 @@ Buffer.writeBigUint64BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeBigUint64BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2074,6 +2486,16 @@ Buffer.writeBigUint64LE
    buffer.Buffer.writeBigUint64LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeBigUint64LE();
+   console.log(result);
 
 .. note::
 
@@ -2465,6 +2887,16 @@ Buffer.writeUint16BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUint16BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2512,6 +2944,16 @@ Buffer.writeUint16LE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUint16LE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2558,6 +3000,16 @@ Buffer.writeUint32BE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUint32BE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2603,6 +3055,16 @@ Buffer.writeUint32LE
    buffer.Buffer.writeUint32LE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUint32LE();
+   console.log(result);
 
 .. note::
 
@@ -2653,6 +3115,16 @@ Buffer.writeUint8
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUint8();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2700,6 +3172,16 @@ Buffer.writeUintBE
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUintBE();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -2746,6 +3228,16 @@ Buffer.writeUintLE
    buffer.Buffer.writeUintLE(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const buffer = require('node:buffer');
+
+   const instance = new buffer.Buffer();
+   const result = instance.writeUintLE();
+   console.log(result);
 
 .. note::
 

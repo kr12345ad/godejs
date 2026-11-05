@@ -20,14 +20,26 @@ Install the runtime before running a downloaded binary:
 macOS
 -----
 
-The macOS binary links the system ``JavaScriptCore.framework``, so no separate
+The macOS build links the system ``JavaScriptCore.framework``, so no separate
 runtime package is required. Releases are built for both architectures:
 
-* ``gode-darwin-arm64`` for Apple silicon
-* ``gode-darwin-amd64`` for Intel Macs
+* ``gode-darwin-arm64.pkg`` for Apple silicon
+* ``gode-darwin-amd64.pkg`` for Intel Macs
 
-macOS 12 or later is required. The release binary is not code-signed; if
-Gatekeeper blocks it, allow it under System Settings > Privacy & Security, or
+Double-click the package, or install it from a terminal:
+
+.. code-block:: sh
+
+   sudo installer -pkg gode-darwin-arm64.pkg -target /
+   gode --version
+
+The package installs ``/usr/local/bin/gode`` and the project licenses under
+``/usr/local/share/doc/godejs``. It is not notarized by default; if Gatekeeper
+blocks it, right-click the package and choose **Open**, or allow it in
+**System Settings > Privacy & Security**. A Homebrew-style prefix is not used.
+
+Standalone binaries remain available as ``gode-darwin-arm64`` and
+``gode-darwin-amd64`` for automation. If Gatekeeper blocks a raw binary,
 remove the quarantine attribute:
 
 .. code-block:: sh

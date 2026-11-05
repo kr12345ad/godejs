@@ -37,6 +37,15 @@ The ``querystring.decode()`` function is an alias for ``querystring.parse()``.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const querystring = require('node:querystring');
+
+   const result = querystring.decode();
+   console.log(result);
+
 
 encode
 ~~~~~~
@@ -50,6 +59,15 @@ encode
 The ``querystring.encode()`` function is an alias for ``querystring.stringify()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const querystring = require('node:querystring');
+
+   const result = querystring.encode(undefined, undefined, undefined, undefined);
+   console.log(result);
 
 
 escape
@@ -68,6 +86,15 @@ The ``querystring.escape()`` method is used by ``querystring.stringify()`` and i
 **Arguments**
 
 * ``str`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const querystring = require('node:querystring');
+
+   const result = querystring.escape('value');
+   console.log(result);
 
 
 parse
@@ -148,6 +175,15 @@ The ``querystring.unescape()`` method is used by ``querystring.parse()`` and is 
 
 * ``str`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const querystring = require('node:querystring');
+
+   const result = querystring.unescape('value');
+   console.log(result);
+
 
 unescapeBuffer
 ~~~~~~~~~~~~~~
@@ -157,6 +193,15 @@ unescapeBuffer
    querystring.unescapeBuffer(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const querystring = require('node:querystring');
+
+   const result = querystring.unescapeBuffer();
+   console.log(result);
 
 .. note::
 

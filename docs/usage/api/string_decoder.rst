@@ -35,6 +35,15 @@ StringDecoder
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const string_decoder = require('node:string_decoder');
+
+   const instance = new string_decoder.StringDecoder(undefined);
+   console.log(instance);
+
 
 StringDecoder class
 -------------------
@@ -56,6 +65,16 @@ If the ``buffer`` argument is provided, one final call to ``stringDecoder.write(
 
 * ``buffer`` (*string|Buffer|TypedArray|DataView*) — optional: The bytes to decode.
 
+**Example**
+
+.. code-block:: javascript
+
+   const string_decoder = require('node:string_decoder');
+
+   const instance = new string_decoder.StringDecoder();
+   const result = instance.end([]);
+   console.log(result);
+
 
 StringDecoder.text
 ~~~~~~~~~~~~~~~~~~
@@ -65,6 +84,16 @@ StringDecoder.text
    string_decoder.StringDecoder.text(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const string_decoder = require('node:string_decoder');
+
+   const instance = new string_decoder.StringDecoder();
+   const result = instance.text(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -85,6 +114,16 @@ Returns a decoded string, ensuring that any incomplete multibyte characters at t
 **Arguments**
 
 * ``buffer`` (*string|Buffer|TypedArray|DataView*): The bytes to decode.
+
+**Example**
+
+.. code-block:: javascript
+
+   const string_decoder = require('node:string_decoder');
+
+   const instance = new string_decoder.StringDecoder();
+   const result = instance.write([]);
+   console.log(result);
 
 
 .. note::

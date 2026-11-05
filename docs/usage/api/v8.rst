@@ -40,6 +40,15 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked after the snapshot is
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.addDeserializeCallback(() => {}, 'hello');
+   console.log(result);
+
 
 addSerializeCallback
 ~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +68,15 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked before serialization.
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.addSerializeCallback(() => {}, 'hello');
+   console.log(result);
+
 
 after
 ~~~~~
@@ -74,6 +92,15 @@ Called immediately after a promise continuation executes. This may be after a ``
 **Arguments**
 
 * ``promise`` (*Promise*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.after(undefined);
+   console.log(result);
 
 
 before
@@ -92,6 +119,15 @@ The ``before`` callback will be called 0 to N times. The ``before`` callback wil
 **Arguments**
 
 * ``promise`` (*Promise*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.before(undefined);
+   console.log(result);
 
 
 cachedDataVersionTag
@@ -129,6 +165,15 @@ CPUProfileHandle
 *Kind:* class · *Arguments:* 0
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.CPUProfileHandle();
+   console.log(instance);
 
 
 createHook
@@ -172,6 +217,15 @@ A subclass of ``Deserializer`` corresponding to the format written by ``DefaultS
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.DefaultDeserializer(undefined);
+   console.log(instance);
+
 
 DefaultSerializer
 ~~~~~~~~~~~~~~~~~
@@ -185,6 +239,15 @@ DefaultSerializer
 A subclass of ``Serializer`` that serializes ``TypedArray`` (in particular ``Buffer``) and ``DataView`` objects as host objects, and only stores the part of their underlying ``ArrayBuffer``\ s that they are referring to.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.DefaultSerializer();
+   console.log(instance);
 
 
 deserialize
@@ -202,6 +265,15 @@ Uses a ``DefaultDeserializer`` with default options to read a JS value from a bu
 
 * ``buffer`` (*Buffer|TypedArray|DataView*): A buffer returned by ``serialize()``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.deserialize([]);
+   console.log(result);
+
 
 Deserializer
 ~~~~~~~~~~~~
@@ -213,6 +285,15 @@ Deserializer
 *Kind:* class · *Arguments:* 1
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer(undefined);
+   console.log(instance);
 
 
 GCProfiler
@@ -326,6 +407,15 @@ Get statistics about code and its metadata in the heap, see V8 ``GetHeapCodeAndM
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.getHeapCodeStatistics();
+   console.log(result);
+
 
 getHeapSnapshot
 ~~~~~~~~~~~~~~~
@@ -369,6 +459,15 @@ The value returned is an array of objects containing the following properties:
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.getHeapSpaceStatistics();
+   console.log(result);
+
 
 getHeapStatistics
 ~~~~~~~~~~~~~~~~~
@@ -385,6 +484,15 @@ Returns an object with the following properties:
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.getHeapStatistics();
+   console.log(result);
+
 
 HeapProfileHandle
 ~~~~~~~~~~~~~~~~~
@@ -396,6 +504,15 @@ HeapProfileHandle
 *Kind:* class · *Arguments:* 0
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.HeapProfileHandle();
+   console.log(instance);
 
 
 init
@@ -414,6 +531,15 @@ Called when a promise is constructed. This *does not* mean that corresponding ``
 * ``promise`` (*Promise*): The promise being created.
 * ``parent`` (*Promise*): The promise continued from, if applicable.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.init(undefined, undefined);
+   console.log(result);
+
 
 isBuildingSnapshot
 ~~~~~~~~~~~~~~~~~~
@@ -427,6 +553,15 @@ isBuildingSnapshot
 Returns true if the Node.js instance is run to build a snapshot.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.isBuildingSnapshot();
+   console.log(result);
 
 
 isStringOneByteRepresentation
@@ -635,6 +770,15 @@ Uses a ``DefaultSerializer`` to serialize ``value`` into a buffer.
 
 * ``value`` (*any*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.serialize('hello');
+   console.log(result);
+
 
 Serializer
 ~~~~~~~~~~
@@ -646,6 +790,15 @@ Serializer
 *Kind:* class · *Arguments:* 0
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   console.log(instance);
 
 
 setDeserializeMainFunction
@@ -663,6 +816,15 @@ This sets the entry point of the Node.js application when it is deserialized fro
 
 * ``callback`` (*Function*): Callback to be invoked as the entry point after the
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.setDeserializeMainFunction(() => {}, 'hello');
+   console.log(result);
 
 
 setFlagsFromString
@@ -733,6 +895,15 @@ The API is a no-op if ``--heapsnapshot-near-heap-limit`` is already set from the
 
 * ``limit`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.setHeapSnapshotNearHeapLimit(1);
+   console.log(result);
+
 
 settled
 ~~~~~~~
@@ -748,6 +919,15 @@ Called when the promise receives a resolution or rejection value. This may occur
 **Arguments**
 
 * ``promise`` (*Promise*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.settled(undefined);
+   console.log(result);
 
 
 startCpuProfile
@@ -785,6 +965,15 @@ The ``v8.stopCoverage()`` method allows the user to stop the coverage collection
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.stopCoverage();
+   console.log(result);
+
 
 SyncCPUProfileHandle
 ~~~~~~~~~~~~~~~~~~~~
@@ -796,6 +985,15 @@ SyncCPUProfileHandle
 *Kind:* class · *Arguments:* 0
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.SyncCPUProfileHandle();
+   console.log(instance);
 
 
 takeCoverage
@@ -812,6 +1010,15 @@ The ``v8.takeCoverage()`` method allows the user to write the coverage started b
 When the process is about to exit, one last coverage will still be written to disk unless ``v8.stopCoverage()`` is invoked before the process exits.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.takeCoverage();
+   console.log(result);
 
 
 writeHeapSnapshot
@@ -877,6 +1084,16 @@ Stopping collecting the profile, then return a Promise that fulfills with an err
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.CPUProfileHandle();
+   const result = instance.stop();
+   console.log(result);
+
 
 Deserializer class
 ------------------
@@ -896,6 +1113,16 @@ This method is not present on the ``Deserializer`` class itself but can be provi
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance._readHostObject();
+   console.log(result);
+
 
 Deserializer.getWireFormatVersion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -909,6 +1136,16 @@ Deserializer.getWireFormatVersion
 Reads the underlying wire format version. Likely mostly to be useful to legacy code reading old wire format versions. May not be called before ``.readHeader()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.getWireFormatVersion();
+   console.log(result);
 
 
 Deserializer.readDouble
@@ -924,6 +1161,16 @@ Read a JS ``number`` value. For use inside of a custom ``deserializer._readHostO
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readDouble();
+   console.log(result);
+
 
 Deserializer.readHeader
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -937,6 +1184,16 @@ Deserializer.readHeader
 Reads and validates a header (including the format version). May, for example, reject an invalid or unsupported wire format. In that case, an ``Error`` is thrown.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readHeader();
+   console.log(result);
 
 
 Deserializer.readRawBytes
@@ -954,6 +1211,16 @@ Read raw bytes from the deserializer's internal buffer. The ``length`` parameter
 
 * ``length`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readRawBytes(0);
+   console.log(result);
+
 
 Deserializer.readUint32
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -967,6 +1234,16 @@ Deserializer.readUint32
 Read a raw 32-bit unsigned integer and return it. For use inside of a custom ``deserializer._readHostObject()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readUint32();
+   console.log(result);
 
 
 Deserializer.readUint64
@@ -982,6 +1259,16 @@ Read a raw 64-bit unsigned integer and return it as an array ``[hi, lo]`` with t
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readUint64();
+   console.log(result);
+
 
 Deserializer.readValue
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -995,6 +1282,16 @@ Deserializer.readValue
 Deserializes a JavaScript value from the buffer and returns it.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.readValue();
+   console.log(result);
 
 
 Deserializer.transferArrayBuffer
@@ -1012,6 +1309,16 @@ Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass th
 
 * ``id`` (*integer*): A 32-bit unsigned integer.
 * ``arrayBuffer`` (*ArrayBuffer|SharedArrayBuffer*): An ``ArrayBuffer`` instance.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Deserializer();
+   const result = instance.transferArrayBuffer('example', []);
+   console.log(result);
 
 
 GCProfiler class
@@ -1031,6 +1338,16 @@ GCProfiler.start
 Start collecting GC data.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.GCProfiler();
+   const result = instance.start();
+   console.log(result);
 
 
 GCProfiler.stop
@@ -1076,6 +1393,16 @@ Stopping collecting the profile, then return a Promise that fulfills with an err
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.HeapProfileHandle();
+   const result = instance.stop();
+   console.log(result);
+
 
 Serializer class
 ----------------
@@ -1097,6 +1424,16 @@ This method defaults to the ``Error`` constructor and can be overridden on subcl
 
 * ``message`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance._getDataCloneError('hello');
+   console.log(result);
+
 
 Serializer._getSharedArrayBufferId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1115,6 +1452,16 @@ If the object cannot be serialized, an exception should be thrown.
 
 * ``sharedArrayBuffer`` (*SharedArrayBuffer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance._getSharedArrayBufferId([]);
+   console.log(result);
+
 
 Serializer._setTreatArrayBufferViewsAsHostObjects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1130,6 +1477,16 @@ Indicate whether to treat ``TypedArray`` and ``DataView`` objects as host object
 **Arguments**
 
 * ``flag`` (*boolean*): **Default:** ``false``
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance._setTreatArrayBufferViewsAsHostObjects(true);
+   console.log(result);
 
 
 Serializer._writeHostObject
@@ -1149,6 +1506,16 @@ This method is not present on the ``Serializer`` class itself but can be provide
 
 * ``object`` (*Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance._writeHostObject({});
+   console.log(result);
+
 
 Serializer.releaseBuffer
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1162,6 +1529,16 @@ Serializer.releaseBuffer
 Returns the stored internal buffer. This serializer should not be used once the buffer is released. Calling this method results in undefined behavior if a previous write has failed.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.releaseBuffer();
+   console.log(result);
 
 
 Serializer.transferArrayBuffer
@@ -1180,6 +1557,16 @@ Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass th
 * ``id`` (*integer*): A 32-bit unsigned integer.
 * ``arrayBuffer`` (*ArrayBuffer*): An ``ArrayBuffer`` instance.
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.transferArrayBuffer('example', []);
+   console.log(result);
+
 
 Serializer.writeDouble
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1196,6 +1583,16 @@ Write a JS ``number`` value. For use inside of a custom ``serializer._writeHostO
 
 * ``value`` (*number*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeDouble('hello');
+   console.log(result);
+
 
 Serializer.writeHeader
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1209,6 +1606,16 @@ Serializer.writeHeader
 Writes out a header, which includes the serialization format version.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeHeader();
+   console.log(result);
 
 
 Serializer.writeRawBytes
@@ -1226,6 +1633,16 @@ Write raw bytes into the serializer's internal buffer. The deserializer will req
 
 * ``buffer`` (*Buffer|TypedArray|DataView*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeRawBytes([]);
+   console.log(result);
+
 
 Serializer.writeUint32
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1241,6 +1658,16 @@ Write a raw 32-bit unsigned integer. For use inside of a custom ``serializer._wr
 **Arguments**
 
 * ``value`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeUint32('hello');
+   console.log(result);
 
 
 Serializer.writeUint64
@@ -1259,6 +1686,16 @@ Write a raw 64-bit unsigned integer, split into high and low 32-bit parts. For u
 * ``hi`` (*integer*)
 * ``lo`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeUint64(1, 1);
+   console.log(result);
+
 
 Serializer.writeValue
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1276,6 +1713,16 @@ This throws an error if ``value`` cannot be serialized.
 **Arguments**
 
 * ``value`` (*any*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.Serializer();
+   const result = instance.writeValue('hello');
+   console.log(result);
 
 
 startupSnapshot
@@ -1299,6 +1746,15 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked after the snapshot is
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.startupSnapshot.addDeserializeCallback(() => {}, 'hello');
+   console.log(result);
+
 
 startupSnapshot.addSerializeCallback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1318,6 +1774,15 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked before serialization.
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.startupSnapshot.addSerializeCallback(() => {}, 'hello');
+   console.log(result);
+
 
 startupSnapshot.isBuildingSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1331,6 +1796,15 @@ startupSnapshot.isBuildingSnapshot
 Returns true if the Node.js instance is run to build a snapshot.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.startupSnapshot.isBuildingSnapshot();
+   console.log(result);
 
 
 startupSnapshot.setDeserializeMainFunction
@@ -1349,6 +1823,15 @@ This sets the entry point of the Node.js application when it is deserialized fro
 * ``callback`` (*Function*): Callback to be invoked as the entry point after the
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const result = v8.startupSnapshot.setDeserializeMainFunction(() => {}, 'hello');
+   console.log(result);
+
 
 SyncCPUProfileHandle class
 --------------------------
@@ -1365,6 +1848,16 @@ SyncCPUProfileHandle.stop
 Stopping collecting the profile and return the profile data.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const v8 = require('node:v8');
+
+   const instance = new v8.SyncCPUProfileHandle();
+   const result = instance.stop();
+   console.log(result);
 
 
 Properties and constants

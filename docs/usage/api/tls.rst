@@ -40,6 +40,15 @@ Returns ``Error`` object, populating it with ``reason``, ``host``, and ``cert`` 
 * ``hostname`` (*string*): The host name or IP address to verify the certificate
 * ``cert`` (*Object*): A certificate object representing the peer's certificate.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const result = tls.checkServerIdentity('127.0.0.1', {});
+   console.log(result);
+
 
 connect
 ~~~~~~~
@@ -110,6 +119,15 @@ createSecureContext
 **Arguments**
 
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const result = tls.createSecureContext({});
+   console.log(result);
 
 
 createServer
@@ -250,6 +268,16 @@ Returns the bound address, the address family name, and port of the server as re
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.address();
+   console.log(result);
+
 
 Server.close
 ~~~~~~~~~~~~
@@ -267,6 +295,16 @@ This function operates asynchronously. The ``'close'`` event will be emitted whe
 **Arguments**
 
 * ``callback`` (*Function*) — optional: A listener callback that will be registered to listen
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.close(() => {});
+   console.log(result);
 
 
 Server.getConnections
@@ -286,6 +324,16 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.getConnections(() => {});
+   console.log(result);
+
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -299,6 +347,16 @@ Server.listen
 Starts the server listening for encrypted connections. This method is identical to ``server.listen()`` from ``net.Server``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.listen();
+   console.log(result);
 
 
 Server.ref
@@ -314,6 +372,16 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.ref();
+   console.log(result);
+
 
 Server.unref
 ~~~~~~~~~~~~
@@ -327,6 +395,16 @@ Server.unref
 Calling ``unref()`` on a server will allow the program to exit if this is the only active server in the event system. If the server is already ``unref``\ ed calling ``unref()`` again will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.Server();
+   const result = instance.unref();
+   console.log(result);
 
 
 TLSSocket class
@@ -344,6 +422,15 @@ TLSSocket._receive
    tls.TLSSocket._receive(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   console.log(typeof tls.TLSSocket.prototype._receive()); // 'function'
+   console.log(tls.TLSSocket.prototype._receive().length);
 
 .. note::
 
@@ -363,6 +450,16 @@ Returns the bound ``address``, the address ``family`` name, and ``port`` of the 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.address();
+   console.log(result);
+
 
 TLSSocket.destroy
 ~~~~~~~~~~~~~~~~~
@@ -372,6 +469,16 @@ TLSSocket.destroy
    tls.TLSSocket.destroy(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.destroy(undefined);
+   console.log(result);
 
 .. note::
 
@@ -386,6 +493,16 @@ TLSSocket.end
    tls.TLSSocket.end(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -406,6 +523,16 @@ Returns an object containing information on the negotiated cipher suite.
 For example, a TLSv1.2 protocol with AES256-SHA cipher:
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.getCipher();
+   console.log(result);
 
 
 TLSSocket.getPeerCertificate
@@ -429,31 +556,11 @@ If the full certificate chain was requested, each certificate will include an ``
 
 .. code-block:: javascript
 
-   { subject:
-      { OU: [ 'Domain Control Validated', 'PositiveSSL Wildcard' ],
-        CN: '*.example.com' },
-     issuer:
-      { C: 'GB',
-        ST: 'Greater Manchester',
-        L: 'Salford',
-        O: 'COMODO CA Limited',
-        CN: 'COMODO RSA Domain Validation Secure Server CA' },
-     subjectaltname: 'DNS:*.example.com, DNS:example.com',
-     infoAccess:
-      { 'CA Issuers - URI':
-         [ 'http://crt.comodoca.com/COMODORSADomainValidationSecureServerCA.crt' ],
-        'OCSP - URI': [ 'http://ocsp.comodoca.com' ] },
-     modulus: 'B56CE45CB740B09A13F64AC543B712FF9EE8E4C284B542A1708A27E82A8D151CA178153E12E6DDA15BF70FFD96CB8A88618641BDFCCA03527E665B70D779C8A349A6F88FD4EF6557180BD4C98192872BCFE3AF56E863C09DDD8BC1EC58DF9D94F914F0369102B2870BECFA1348A0838C9C49BD1C20124B442477572347047506B1FCD658A80D0C44BCC16BC5C5496CFE6E4A8428EF654CD3D8972BF6E5BFAD59C93006830B5EB1056BBB38B53D1464FA6E02BFDF2FF66CD949486F0775EC43034EC2602AEFBF1703AD221DAA2A88353C3B6A688EFE8387811F645CEED7B3FE46E1F8B9F59FAD028F349B9BC14211D5830994D055EEA3D547911E07A0ADDEB8A82B9188E58720D95CD478EEC9AF1F17BE8141BE80906F1A339445A7EB5B285F68039B0F294598A7D1C0005FC22B5271B0752F58CCDEF8C8FD856FB7AE21C80B8A2CE983AE94046E53EDE4CB89F42502D31B5360771C01C80155918637490550E3F555E2EE75CC8C636DDE3633CFEDD62E91BF0F7688273694EEEBA20C2FC9F14A2A435517BC1D7373922463409AB603295CEB0BB53787A334C9CA3CA8B30005C5A62FC0715083462E00719A8FA3ED0A9828C3871360A73F8B04A4FC1E71302844E9BB9940B77E745C9D91F226D71AFCAD4B113AAF68D92B24DDB4A2136B55A1CD1ADF39605B63CB639038ED0F4C987689866743A68769CC55847E4A06D6E2E3F1',
-     exponent: '0x10001',
-     pubkey: <Buffer ... >,
-     valid_from: 'Aug 14 00:00:00 2017 GMT',
-     valid_to: 'Nov 20 23:59:59 2019 GMT',
-     fingerprint: '01:02:59:D9:C3:D2:0D:08:F7:82:4E:44:A4:B4:53:C5:E2:3A:87:4D',
-     fingerprint256: '69:AE:1A:6A:D4:3D:C6:C1:1B:EA:C6:23:DE:BA:2A:14:62:62:93:5C:7A:EA:06:41:9B:0B:BC:87:CE:48:4E:02',
-     fingerprint512: '19:2B:3E:C3:B3:5B:32:E8:AE:BB:78:97:27:E4:BA:6C:39:C9:92:79:4F:31:46:39:E2:70:E5:5F:89:42:17:C9:E8:64:CA:FF:BB:72:56:73:6E:28:8A:92:7E:A3:2A:15:8B:C2:E0:45:CA:C3:BC:EA:40:52:EC:CA:A2:68:CB:32',
-     ext_key_usage: [ '1.3.6.1.5.5.7.3.1', '1.3.6.1.5.5.7.3.2' ],
-     serialNumber: '66593D57F20CBC573E433381B5FEC280',
-     raw: <Buffer ... > }
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.getPeerCertificate(true);
+   console.log(result);
 
 
 TLSSocket.getProtocol
@@ -471,6 +578,16 @@ Protocol versions are:
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.getProtocol();
+   console.log(result);
+
 
 TLSSocket.getSession
 ~~~~~~~~~~~~~~~~~~~~
@@ -487,6 +604,16 @@ See Session Resumption for more information.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.getSession();
+   console.log(result);
+
 
 TLSSocket.isSessionReused
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -501,6 +628,16 @@ See Session Resumption for more information.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.isSessionReused();
+   console.log(result);
+
 
 TLSSocket.pause
 ~~~~~~~~~~~~~~~
@@ -510,6 +647,16 @@ TLSSocket.pause
    tls.TLSSocket.pause(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.pause();
+   console.log(result);
 
 .. note::
 
@@ -525,6 +672,16 @@ TLSSocket.ref
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.ref();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -538,6 +695,16 @@ TLSSocket.resume
    tls.TLSSocket.resume(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.resume();
+   console.log(result);
 
 .. note::
 
@@ -553,6 +720,16 @@ TLSSocket.setEncoding
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -566,6 +743,16 @@ TLSSocket.setServername
    tls.TLSSocket.setServername(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.setServername(undefined);
+   console.log(result);
 
 .. note::
 
@@ -581,6 +768,16 @@ TLSSocket.unref
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.unref();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -594,6 +791,16 @@ TLSSocket.write
    tls.TLSSocket.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const tls = require('node:tls');
+
+   const instance = new tls.TLSSocket();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 

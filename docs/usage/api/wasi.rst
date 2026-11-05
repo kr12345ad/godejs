@@ -58,6 +58,15 @@ The ``WASI`` class provides the WASI system call API and additional convenience 
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const wasi = require('node:wasi');
+
+   const instance = new wasi.WASI(undefined);
+   console.log(instance);
+
 
 WASI class
 ----------
@@ -82,6 +91,16 @@ Set up WASI host bindings to ``instance`` without calling ``initialize()`` or ``
 * ``instance`` (*WebAssembly.Instance*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const wasi = require('node:wasi');
+
+   const instance = new wasi.WASI();
+   const result = instance.finalizeBindings(undefined, {});
+   console.log(result);
+
 
 WASI.getImportObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -97,6 +116,16 @@ Return an import object that can be passed to ``WebAssembly.instantiate()`` if n
 If version ``unstable`` was passed into the constructor it will return:
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const wasi = require('node:wasi');
+
+   const instance = new wasi.WASI();
+   const result = instance.getImportObject();
+   console.log(result);
 
 
 WASI.initialize
@@ -116,6 +145,16 @@ Attempt to initialize ``instance`` as a WASI reactor by invoking its ``_initiali
 
 * ``instance`` (*WebAssembly.Instance*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const wasi = require('node:wasi');
+
+   const instance = new wasi.WASI();
+   const result = instance.initialize(undefined);
+   console.log(result);
+
 
 WASI.start
 ~~~~~~~~~~
@@ -133,6 +172,16 @@ Attempt to begin execution of ``instance`` as a WASI command by invoking its ``_
 **Arguments**
 
 * ``instance`` (*WebAssembly.Instance*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const wasi = require('node:wasi');
+
+   const instance = new wasi.WASI();
+   const result = instance.start(undefined);
+   console.log(result);
 
 
 Properties and constants

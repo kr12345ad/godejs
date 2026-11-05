@@ -79,6 +79,15 @@ The ``CustomEvent`` object is an adaptation of the ``CustomEvent`` Web API. Inst
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.CustomEvent(undefined);
+   console.log(instance);
+
 
 Event
 ~~~~~
@@ -92,6 +101,15 @@ Event
 The ``Event`` object is an adaptation of the ``Event`` Web API. Instances are created internally by Node.js.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event(undefined, undefined);
+   console.log(instance);
 
 
 EventEmitter
@@ -123,11 +141,20 @@ EventEmitterAsyncResource
 
    events.EventEmitterAsyncResource([options])
 
-*Kind:* function · *Arguments:* 1
+*Kind:* class · *Arguments:* 1
 
 **Arguments**
 
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitterAsyncResource({});
+   console.log(instance);
 
 
 EventTarget
@@ -137,11 +164,11 @@ EventTarget
 
    EventTarget
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 The ``EventTarget`` and ``Event`` objects are a Node.js-specific implementation of the ``EventTarget`` Web API that are exposed by some Node.js core APIs.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
 
 **Example**
 
@@ -274,13 +301,22 @@ NodeEventTarget
 
    NodeEventTarget
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 The ``NodeEventTarget`` object implements a modified subset of the ``EventEmitter`` API that allows it to closely *emulate* an ``EventEmitter`` in certain situations. A ``NodeEventTarget`` is *not* an instance of ``EventEmitter`` and cannot be used in place of an ``EventEmitter`` in most cases.
 
 1. Unlike ``EventEmitter``, any given ``listener`` can be registered at most once per event ``type``. Attempts to register a ``listener`` multiple times are ignored. 2. The ``NodeEventTarget`` does not emulate the full ``EventEmitter`` API. Specifically the ``prependListener()``, ``prependOnceListener()``, ``rawListeners()``, and ``errorMonitor`` APIs are not emulated. The ``'newListener'`` and ``'removeListener'`` events will also not be emitted. 3. The ``NodeEventTarget`` does not implement any special default behavior for events with type ``'error'``. 4. The ``NodeEventTarget`` supports ``EventListener`` objects as well as functions as handlers for all event types.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   console.log(instance);
 
 
 on
@@ -424,6 +460,16 @@ Returns an array containing the current ``EventTarget`` as the only entry or emp
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event();
+   const result = instance.composedPath();
+   console.log(result);
+
 
 Event.initEvent
 ~~~~~~~~~~~~~~~
@@ -442,6 +488,16 @@ Redundant with event constructors and incapable of setting ``composed``. This is
 * ``bubbles`` (*boolean*) — optional
 * ``cancelable`` (*boolean*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event();
+   const result = instance.initEvent('example', true, true);
+   console.log(result);
+
 
 Event.preventDefault
 ~~~~~~~~~~~~~~~~~~~~
@@ -455,6 +511,16 @@ Event.preventDefault
 Sets the ``defaultPrevented`` property to ``true`` if ``cancelable`` is ``true``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event();
+   const result = instance.preventDefault();
+   console.log(result);
 
 
 Event.stopImmediatePropagation
@@ -470,6 +536,16 @@ Stops the invocation of event listeners after the current one completes.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event();
+   const result = instance.stopImmediatePropagation();
+   console.log(result);
+
 
 Event.stopPropagation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -483,6 +559,16 @@ Event.stopPropagation
 This is not used in Node.js and is provided purely for completeness.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.Event();
+   const result = instance.stopPropagation();
+   console.log(result);
 
 
 EventEmitter class
@@ -500,6 +586,15 @@ EventEmitter._godeHasAnyListeners
    events.EventEmitter._godeHasAnyListeners(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   console.log(typeof events.EventEmitter.prototype._godeHasAnyListeners()); // 'function'
+   console.log(events.EventEmitter.prototype._godeHasAnyListeners().length);
 
 .. note::
 
@@ -521,6 +616,16 @@ Alias for ``emitter.on(eventName, listener)``.
 
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.addListener('value', () => {});
+   console.log(result);
 
 
 EventEmitter.emit
@@ -620,6 +725,16 @@ Returns the current max listener value for the ``EventEmitter`` which is either 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.getMaxListeners();
+   console.log(result);
+
 
 EventEmitter.listenerCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -635,6 +750,16 @@ Type: Revoked
 The ``events.listenerCount(emitter, eventName)`` API was deprecated, as it provided identical functionality to ``emitter.listenerCount(eventName)``. The deprecation was revoked because this function has been repurposed to also accept ``EventTarget`` arguments.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.listenerCount();
+   console.log(result);
 
 
 EventEmitter.listeners
@@ -678,6 +803,16 @@ Alias for ``emitter.removeListener()``.
 
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.off('value', () => {});
+   console.log(result);
 
 
 EventEmitter.on
@@ -858,6 +993,16 @@ It is bad practice to remove listeners added elsewhere in the code, particularly
 
 * ``eventName`` (*string|symbol*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.removeAllListeners('value');
+   console.log(result);
+
 
 EventEmitter.removeListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -929,6 +1074,16 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
 
 * ``n`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitter();
+   const result = instance.setMaxListeners(1);
+   console.log(result);
+
 
 EventEmitterAsyncResource class
 -------------------------------
@@ -945,6 +1100,16 @@ EventEmitterAsyncResource.emitDestroy
 Call all ``destroy`` hooks. This should only ever be called once. An error will be thrown if it is called more than once. This **must** be manually called. If the resource is left to be collected by the GC then the ``destroy`` hooks will never be called.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventEmitterAsyncResource();
+   const result = instance.emitDestroy();
+   console.log(result);
 
 
 EventTarget class
@@ -1005,6 +1170,16 @@ The registered event listeners is synchronously invoked in the order they were r
 
 * ``event`` (*Event*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventTarget();
+   const result = instance.dispatchEvent(undefined);
+   console.log(result);
+
 
 EventTarget.removeEventListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1023,6 +1198,16 @@ Removes the ``listener`` from the list of handlers for event ``type``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.EventTarget();
+   const result = instance.removeEventListener('example', () => {}, {});
+   console.log(result);
+
 
 NodeEventTarget class
 ---------------------
@@ -1039,6 +1224,15 @@ NodeEventTarget._godeHasAnyListeners
    events.NodeEventTarget._godeHasAnyListeners(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   console.log(typeof events.NodeEventTarget.prototype._godeHasAnyListeners()); // 'function'
+   console.log(events.NodeEventTarget.prototype._godeHasAnyListeners().length);
 
 .. note::
 
@@ -1061,6 +1255,16 @@ Node.js-specific extension to the ``EventTarget`` class that emulates the equiva
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.addListener('example', () => {});
+   console.log(result);
+
 
 NodeEventTarget.emit
 ~~~~~~~~~~~~~~~~~~~~
@@ -1078,6 +1282,16 @@ Node.js-specific extension to the ``EventTarget`` class that dispatches the ``ar
 * ``type`` (*string*)
 * ``arg`` (*any*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.emit('example', undefined);
+   console.log(result);
+
 
 NodeEventTarget.eventNames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1092,6 +1306,16 @@ Node.js-specific extension to the ``EventTarget`` class that returns an array of
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.eventNames();
+   console.log(result);
+
 
 NodeEventTarget.getMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1105,6 +1329,16 @@ NodeEventTarget.getMaxListeners
 Node.js-specific extension to the ``EventTarget`` class that returns the number of max event listeners.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.getMaxListeners();
+   console.log(result);
 
 
 NodeEventTarget.listenerCount
@@ -1121,6 +1355,16 @@ Node.js-specific extension to the ``EventTarget`` class that returns the number 
 **Arguments**
 
 * ``type`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.listenerCount('example');
+   console.log(result);
 
 
 NodeEventTarget.listeners
@@ -1166,6 +1410,16 @@ Node.js-specific alias for ``eventTarget.removeEventListener()``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.off('example', () => {}, {});
+   console.log(result);
+
 
 NodeEventTarget.on
 ~~~~~~~~~~~~~~~~~~
@@ -1183,6 +1437,16 @@ Node.js-specific alias for ``eventTarget.addEventListener()``.
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.on('example', () => {});
+   console.log(result);
+
 
 NodeEventTarget.once
 ~~~~~~~~~~~~~~~~~~~~
@@ -1199,6 +1463,16 @@ Node.js-specific extension to the ``EventTarget`` class that adds a ``once`` lis
 
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.once('example', () => {});
+   console.log(result);
 
 
 NodeEventTarget.prependListener
@@ -1313,6 +1587,16 @@ Node.js-specific extension to the ``EventTarget`` class. If ``type`` is specifie
 
 * ``type`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.removeAllListeners('example');
+   console.log(result);
+
 
 NodeEventTarget.removeListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1331,6 +1615,16 @@ Node.js-specific extension to the ``EventTarget`` class that removes the ``liste
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.removeListener('example', () => {}, {});
+   console.log(result);
+
 
 NodeEventTarget.setMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1346,6 +1640,16 @@ Node.js-specific extension to the ``EventTarget`` class that sets the number of 
 **Arguments**
 
 * ``n`` (*number*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const events = require('node:events');
+
+   const instance = new events.NodeEventTarget();
+   const result = instance.setMaxListeners(1);
+   console.log(result);
 
 
 Properties and constants

@@ -24,6 +24,15 @@ _findPath
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._findPath); // 'function'
+   console.log(module._findPath.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -37,6 +46,15 @@ _initPaths
    module._initPaths(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._initPaths); // 'function'
+   console.log(module._initPaths.length);
 
 .. note::
 
@@ -52,6 +70,15 @@ _nodeModulePaths
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._nodeModulePaths); // 'function'
+   console.log(module._nodeModulePaths.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -65,6 +92,15 @@ _resolveFilename
    module._resolveFilename(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._resolveFilename); // 'function'
+   console.log(module._resolveFilename.length);
 
 .. note::
 
@@ -80,6 +116,15 @@ _resolveLookupPaths
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._resolveLookupPaths); // 'function'
+   console.log(module._resolveLookupPaths.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -93,6 +138,15 @@ _stat
    module._stat(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   console.log(typeof module._stat); // 'function'
+   console.log(module._stat.length);
 
 .. note::
 
@@ -138,6 +192,15 @@ Use ``module.createRequire()`` instead.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.createRequireFromPath();
+   console.log(result);
+
 
 enableCompileCache
 ~~~~~~~~~~~~~~~~~~
@@ -155,6 +218,15 @@ For general use cases, it's recommended to call ``module.enableCompileCache()`` 
 **Arguments**
 
 * ``options`` (*string|Object*) — optional: Optional. If a string is passed, it is considered to be ``options.directory``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.enableCompileCache({});
+   console.log(result);
 
 
 findPackageJSON
@@ -211,6 +283,15 @@ findSourceMap
 
 * ``path`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.findSourceMap('./file.txt');
+   console.log(result);
+
 
 flushCompileCache
 ~~~~~~~~~~~~~~~~~
@@ -225,6 +306,15 @@ Flush the module compile cache accumulated from modules already loaded in the cu
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.flushCompileCache();
+   console.log(result);
+
 
 getCompileCacheDir
 ~~~~~~~~~~~~~~~~~~
@@ -238,6 +328,15 @@ getCompileCacheDir
 <i id="module\_customization\_hooks"></i>
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.getCompileCacheDir();
+   console.log(result);
 
 
 getSourceMapsSupport
@@ -254,6 +353,15 @@ This method returns whether the Source Map v3 support for stack traces is enable
 <a id="module\_module\_findsourcemap\_path\_error"></a>
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.getSourceMapsSupport();
+   console.log(result);
 
 
 isBuiltin
@@ -286,11 +394,11 @@ Module
 
    Module
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 Provides general utility methods when interacting with instances of ``Module``, the ``module`` variable often seen in CommonJS modules. Accessed via ``import 'node:module'`` or ``require('node:module')``.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
 
 **Example**
 
@@ -316,6 +424,15 @@ Type: Documentation-only
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.register(undefined, undefined, undefined);
+   console.log(result);
+
 
 registerHooks
 ~~~~~~~~~~~~~
@@ -332,6 +449,15 @@ Register hooks that customize Node.js module resolution and loading behavior. Se
 
 * ``options`` (*Object*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.registerHooks({});
+   console.log(result);
+
 
 runMain
 ~~~~~~~
@@ -341,6 +467,15 @@ runMain
    module.runMain(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.runMain();
+   console.log(result);
 
 .. note::
 
@@ -365,6 +500,15 @@ It provides same features as launching Node.js process with commandline options 
 * ``enabled`` (*boolean*): Enable the source map support.
 * ``options`` (*Object*) — optional: Optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.setSourceMapsSupport(true, {});
+   console.log(result);
+
 
 SourceMap
 ~~~~~~~~~
@@ -376,6 +520,15 @@ SourceMap
 *Kind:* class · *Arguments:* 1
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const instance = new module.SourceMap(undefined);
+   console.log(instance);
 
 
 stripTypeScriptTypes
@@ -461,6 +614,15 @@ wrap
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.wrap();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -474,6 +636,15 @@ wrapSafe
    module.wrapSafe(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module.wrapSafe();
+   console.log(result);
 
 .. note::
 
@@ -492,6 +663,15 @@ _extensions..js
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module._extensions..js();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -506,6 +686,15 @@ _extensions..json
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module._extensions..json();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -519,6 +708,15 @@ _extensions..node
    module._extensions..node(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const result = module._extensions..node();
+   console.log(result);
 
 .. note::
 
@@ -597,6 +795,16 @@ In order to do this, it is necessary to get a reference to the ``module`` object
 
 * ``id`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const instance = new module.Module();
+   const result = instance.require('example');
+   console.log(result);
+
 
 Module.resolve
 ~~~~~~~~~~~~~~
@@ -672,6 +880,16 @@ The object returned contains the following keys:
 * ``lineOffset`` (*number*): The zero-indexed line number offset in
 * ``columnOffset`` (*number*): The zero-indexed column number offset
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const instance = new module.SourceMap();
+   const result = instance.findEntry(1, 1);
+   console.log(result);
+
 
 SourceMap.findOrigin
 ~~~~~~~~~~~~~~~~~~~~
@@ -691,6 +909,16 @@ If the ``lineNumber`` and ``columnNumber`` provided are not found in any source 
 * ``lineNumber`` (*number*): The 1-indexed lineNumber of the
 * ``columnNumber`` (*number*): The 1-indexed columnNumber of the
 
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const instance = new module.SourceMap();
+   const result = instance.findOrigin(1, 1);
+   console.log(result);
+
 
 SourceMap.return
 ~~~~~~~~~~~~~~~~
@@ -700,6 +928,16 @@ SourceMap.return
    module.SourceMap.return(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const module = require('node:module');
+
+   const instance = new module.SourceMap();
+   const result = instance.return();
+   console.log(result);
 
 .. note::
 

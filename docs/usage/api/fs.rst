@@ -33,6 +33,15 @@ _toUnixTimestamp
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs._toUnixTimestamp); // 'function'
+   console.log(fs._toUnixTimestamp.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -232,6 +241,15 @@ See the POSIX chmod(2) documentation for more detail.
 * ``path`` (*string|Buffer|URL*)
 * ``mode`` (*string|integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.chmodSync('./file.txt', 0o644);
+   console.log(result);
+
 
 chown
 ~~~~~
@@ -253,6 +271,15 @@ See the POSIX chown(2) documentation for more detail.
 * ``gid`` (*integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.chown('./file.txt', 1, 1, () => {});
+   console.log(result);
+
 
 chownSync
 ~~~~~~~~~
@@ -273,6 +300,15 @@ See the POSIX chown(2) documentation for more detail.
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.chownSync('./file.txt', 1, 1);
+   console.log(result);
+
 
 close
 ~~~~~
@@ -292,6 +328,15 @@ Calling ``fs.close()`` on any file descriptor (``fd``) that is currently in use 
 * ``fd`` (*integer*)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.close(0, () => {});
+   console.log(result);
+
 
 closeSync
 ~~~~~~~~~
@@ -309,6 +354,15 @@ Calling ``fs.closeSync()`` on any file descriptor (``fd``) that is currently in 
 **Arguments**
 
 * ``fd`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.closeSync(0);
+   console.log(result);
 
 
 copyFile
@@ -402,6 +456,15 @@ When copying a directory to another directory, globs are not supported and behav
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.cp('./source.txt', './target.txt', {}, () => {});
+   console.log(result);
+
 
 cpSync
 ~~~~~~
@@ -421,6 +484,15 @@ When copying a directory to another directory, globs are not supported and behav
 * ``src`` (*string|URL*): source path to copy.
 * ``dest`` (*string|URL*): destination path to copy to.
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.cpSync('./source.txt', './target.txt', {});
+   console.log(result);
 
 
 createReadStream
@@ -479,6 +551,15 @@ If ``autoClose`` is set to true (default behavior) on ``'error'`` or ``'finish'`
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.createWriteStream('./file.txt', {});
+   console.log(result);
+
 
 Dir
 ~~~
@@ -525,6 +606,15 @@ Additionally, when ``fs.readdir()`` or ``fs.readdirSync()`` is called with the `
 
 This is a class; construct instances with ``new``.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   console.log(instance);
+
 
 exists
 ~~~~~~
@@ -544,6 +634,15 @@ The ``fs.exists(path, callback)`` API is deprecated. Please use ``fs.stat()`` or
 * ``path``
 * ``callback``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.exists('./file.txt', () => {});
+   console.log(result);
+
 
 existsSync
 ~~~~~~~~~~
@@ -559,6 +658,15 @@ Type: Runtime
 Passing non-supported argument types is deprecated and, instead of returning ``false``, will throw an error in a future version.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.existsSync();
+   console.log(result);
 
 
 fchmod
@@ -580,6 +688,15 @@ See the POSIX fchmod(2) documentation for more detail.
 * ``mode`` (*string|integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fchmod(0, 0o644, () => {});
+   console.log(result);
+
 
 fchmodSync
 ~~~~~~~~~~
@@ -598,6 +715,15 @@ See the POSIX fchmod(2) documentation for more detail.
 
 * ``fd`` (*integer*)
 * ``mode`` (*string|integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fchmodSync(0, 0o644);
+   console.log(result);
 
 
 fchown
@@ -620,6 +746,15 @@ See the POSIX fchown(2) documentation for more detail.
 * ``gid`` (*integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fchown(0, 1, 1, () => {});
+   console.log(result);
+
 
 fchownSync
 ~~~~~~~~~~
@@ -640,6 +775,15 @@ See the POSIX fchown(2) documentation for more detail.
 * ``uid`` (*integer*): The file's new owner's user id.
 * ``gid`` (*integer*): The file's new group's group id.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fchownSync(0, 1, 1);
+   console.log(result);
+
 
 fdatasync
 ~~~~~~~~~
@@ -657,6 +801,15 @@ Forces all currently queued I/O operations associated with the file to the opera
 * ``fd`` (*integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fdatasync(0, () => {});
+   console.log(result);
+
 
 fdatasyncSync
 ~~~~~~~~~~~~~
@@ -672,6 +825,15 @@ Forces all currently queued I/O operations associated with the file to the opera
 **Arguments**
 
 * ``fd`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fdatasyncSync(0);
+   console.log(result);
 
 
 fstat
@@ -693,6 +855,15 @@ See the POSIX fstat(2) documentation for more detail.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fstat(0, {}, () => {});
+   console.log(result);
+
 
 fstatSync
 ~~~~~~~~~
@@ -711,6 +882,15 @@ See the POSIX fstat(2) documentation for more detail.
 
 * ``fd`` (*integer*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fstatSync(0, {});
+   console.log(result);
 
 
 FSWatcher
@@ -758,6 +938,15 @@ Request that all data for the open file descriptor is flushed to the storage dev
 * ``fd`` (*integer*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fsync(0, () => {});
+   console.log(result);
+
 
 fsyncSync
 ~~~~~~~~~
@@ -773,6 +962,15 @@ Request that all data for the open file descriptor is flushed to the storage dev
 **Arguments**
 
 * ``fd`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.fsyncSync(0);
+   console.log(result);
 
 
 ftruncate
@@ -839,6 +1037,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``fd`` (*integer*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.ftruncateSync(0, 1);
+   console.log(result);
+
 
 futimes
 ~~~~~~~
@@ -858,6 +1065,15 @@ Change the file system timestamps of the object referenced by the supplied file 
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.futimes(0, 'value', 'value', () => {});
+   console.log(result);
+
 
 futimesSync
 ~~~~~~~~~~~
@@ -875,6 +1091,15 @@ Synchronous version of ``fs.futimes()``. Returns ``undefined``.
 * ``fd`` (*integer*)
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.futimesSync(0, 'value', 'value');
+   console.log(result);
 
 
 glob
@@ -951,6 +1176,15 @@ The ``fs.lchown(path, uid, gid, callback)`` API was deprecated. The deprecation 
 * ``gid``
 * ``callback``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lchown('./file.txt', undefined, undefined, () => {});
+   console.log(result);
+
 
 lchownSync
 ~~~~~~~~~~
@@ -971,6 +1205,15 @@ The ``fs.lchownSync(path, uid, gid)`` API was deprecated. The deprecation was re
 * ``uid``
 * ``gid``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lchownSync('./file.txt', undefined, undefined);
+   console.log(result);
+
 
 link
 ~~~~
@@ -989,6 +1232,15 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 * ``newPath`` (*string|Buffer|URL*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.link('./file.txt', './file.txt', () => {});
+   console.log(result);
+
 
 linkSync
 ~~~~~~~~
@@ -1005,6 +1257,15 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 
 * ``existingPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.linkSync('./file.txt', './file.txt');
+   console.log(result);
 
 
 lstat
@@ -1026,6 +1287,15 @@ See the POSIX lstat(2) documentation for more details.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lstat('./file.txt', {}, () => {});
+   console.log(result);
+
 
 lstatSync
 ~~~~~~~~~
@@ -1044,6 +1314,15 @@ See the POSIX lstat(2) documentation for more details.
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lstatSync('./file.txt', {});
+   console.log(result);
 
 
 lutimes
@@ -1066,6 +1345,15 @@ No arguments other than a possible exception are given to the completion callbac
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lutimes('./file.txt', 'value', 'value', () => {});
+   console.log(result);
+
 
 lutimesSync
 ~~~~~~~~~~~
@@ -1083,6 +1371,15 @@ Change the file system timestamps of the symbolic link referenced by ``path``. R
 * ``path`` (*string|Buffer|URL*)
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.lutimesSync('./file.txt', 'value', 'value');
+   console.log(result);
 
 
 mkdir
@@ -1133,6 +1430,15 @@ See the POSIX mkdir(2) documentation for more details.
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object|integer*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.mkdirSync('./file.txt', {});
+   console.log(result);
 
 
 mkdtemp
@@ -1187,6 +1493,15 @@ See the MDN documentation on ``using`` statements for more information about exp
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.mkdtempDisposableSync(Buffer.from('hello'), {});
+   console.log(result);
+
 
 mkdtempSync
 ~~~~~~~~~~~
@@ -1205,6 +1520,15 @@ For detailed information, see the documentation of the asynchronous version of t
 
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.mkdtempSync(Buffer.from('hello'), {});
+   console.log(result);
 
 
 open
@@ -1226,6 +1550,15 @@ Asynchronous file open. See the POSIX open(2) documentation for more details.
 * ``flags`` (*string|number*) — optional: See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: **Default:** ``0o666`` (readable and writable)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.open('./file.txt', 'r', 0o644, () => {});
+   console.log(result);
 
 
 openAsBlob
@@ -1278,6 +1611,15 @@ Creates an ``fs.Dir``, which contains all further functions for reading from and
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.opendir('./file.txt', {}, () => {});
+   console.log(result);
+
 
 opendirSync
 ~~~~~~~~~~~
@@ -1296,6 +1638,15 @@ Creates an ``fs.Dir``, which contains all further functions for reading from and
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.opendirSync('./file.txt', {});
+   console.log(result);
 
 
 openSync
@@ -1317,6 +1668,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``flags`` (*string|number*) — optional: **Default:** ``'r'``.
 * ``mode`` (*string|integer*) — optional: **Default:** ``0o666``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.openSync('./file.txt', 'r', 0o644);
+   console.log(result);
+
 
 read
 ~~~~
@@ -1332,6 +1692,15 @@ Type: End-of-Life
 The ``fs.read()`` legacy ``String`` interface is deprecated. Use the ``Buffer`` API as mentioned in the documentation instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.read();
+   console.log(result);
 
 
 readdir
@@ -1353,6 +1722,15 @@ See the POSIX readdir(3) documentation for more details.
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readdir('./file.txt', {}, () => {});
+   console.log(result);
+
 
 readdirSync
 ~~~~~~~~~~~
@@ -1371,6 +1749,15 @@ See the POSIX readdir(3) documentation for more details.
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readdirSync('./file.txt', {});
+   console.log(result);
 
 
 readFile
@@ -1455,6 +1842,15 @@ See the POSIX readlink(2) documentation for more details.
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readlink('./file.txt', {}, () => {});
+   console.log(result);
+
 
 readlinkSync
 ~~~~~~~~~~~~
@@ -1474,6 +1870,15 @@ See the POSIX readlink(2) documentation for more details.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readlinkSync('./file.txt', {});
+   console.log(result);
+
 
 ReadStream
 ~~~~~~~~~~
@@ -1487,6 +1892,15 @@ ReadStream
 Instances of ``fs.ReadStream`` cannot be constructed directly. They are created and returned using the ``fs.createReadStream()`` function.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream(undefined, undefined);
+   console.log(instance);
 
 
 readSync
@@ -1503,6 +1917,15 @@ Type: End-of-Life
 The ``fs.readSync()`` legacy ``String`` interface is deprecated. Use the ``Buffer`` API as mentioned in the documentation instead.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readSync();
+   console.log(result);
 
 
 readv
@@ -1525,6 +1948,15 @@ Read from a file specified by ``fd`` and write to an array of ``ArrayBufferView`
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readv(0, [], 0, () => {});
+   console.log(result);
+
 
 readvSync
 ~~~~~~~~~
@@ -1542,6 +1974,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``fd`` (*integer*)
 * ``buffers`` (*ArrayBufferView\[]*)
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.readvSync(0, [], 0);
+   console.log(result);
 
 
 realpath
@@ -1563,6 +2004,15 @@ A canonical pathname is not necessarily unique. Hard links and bind mounts can e
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.realpath('./file.txt', {}, () => {});
+   console.log(result);
+
 
 realpathSync
 ~~~~~~~~~~~~
@@ -1581,6 +2031,15 @@ For detailed information, see the documentation of the asynchronous version of t
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.realpathSync('./file.txt', {});
+   console.log(result);
 
 
 rename
@@ -1632,6 +2091,15 @@ See the POSIX rename(2) documentation for more details.
 * ``oldPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.renameSync('./file.txt', './file.txt');
+   console.log(result);
+
 
 rm
 ~~~
@@ -1649,6 +2117,15 @@ Asynchronously removes files and directories (modeled on the standard POSIX ``rm
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.rm('./file.txt', {}, () => {});
+   console.log(result);
 
 
 rmdir
@@ -1670,6 +2147,15 @@ In future versions of Node.js, ``recursive`` option will be ignored for ``fs.rmd
 * ``recursive``
 * ``true`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.rmdir('./file.txt', undefined, undefined);
+   console.log(result);
+
 
 rmdirSync
 ~~~~~~~~~
@@ -1689,6 +2175,15 @@ Using ``fs.rmdirSync()`` on a file (not a directory) results in an ``ENOENT`` er
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.rmdirSync('./file.txt', {});
+   console.log(result);
+
 
 rmSync
 ~~~~~~
@@ -1705,6 +2200,15 @@ Synchronously removes files and directories (modeled on the standard POSIX ``rm`
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.rmSync('./file.txt', {});
+   console.log(result);
 
 
 stat
@@ -1761,6 +2265,15 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.statfs('./file.txt', {}, () => {});
+   console.log(result);
+
 
 StatFs
 ~~~~~~
@@ -1808,6 +2321,15 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.statfsSync('./file.txt', {});
+   console.log(result);
+
 
 Stats
 ~~~~~
@@ -1816,13 +2338,22 @@ Stats
 
    fs.Stats
 
-*Kind:* function · *Arguments:* 0
+*Kind:* class · *Arguments:* 0
 
 Type: Runtime
 
 Calling ``fs.Stats`` class directly with ``Stats()`` or ``new Stats()`` is deprecated due to being internals, not intended for public use.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   console.log(instance);
 
 
 statSync
@@ -1841,6 +2372,15 @@ Retrieves the ``fs.Stats`` for the path.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.statSync('./file.txt', {});
+   console.log(result);
+
 
 StatWatcher
 ~~~~~~~~~~~
@@ -1854,6 +2394,15 @@ StatWatcher
 A successful call to ``fs.watchFile()`` method will return a new ``fs.StatWatcher`` object.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.StatWatcher();
+   console.log(instance);
 
 
 symlink
@@ -1902,6 +2451,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``path`` (*string|Buffer|URL*)
 * ``type`` (*string|null*) — optional: **Default:** ``null``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.symlinkSync('./target.txt', './file.txt', 'example');
+   console.log(result);
+
 
 truncate
 ~~~~~~~~
@@ -1917,6 +2475,15 @@ Type: End-of-Life
 ``fs.truncate()`` ``fs.truncateSync()`` usage with a file descriptor is deprecated. Please use ``fs.ftruncate()`` or ``fs.ftruncateSync()`` to work with file descriptors.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.truncate();
+   console.log(result);
 
 
 truncateSync
@@ -1936,6 +2503,15 @@ Passing a file descriptor is deprecated and may result in an error being thrown 
 
 * ``path`` (*string|Buffer|URL*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.truncateSync('./file.txt', 1);
+   console.log(result);
 
 
 unlink
@@ -1983,6 +2559,15 @@ Synchronous unlink(2). Returns ``undefined``.
 
 * ``path`` (*string|Buffer|URL*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.unlinkSync('./file.txt');
+   console.log(result);
+
 
 unwatchFile
 ~~~~~~~~~~~
@@ -2002,6 +2587,15 @@ Calling ``fs.unwatchFile()`` with a filename that is not being watched is a no-o
 * ``filename`` (*string|Buffer|URL*)
 * ``listener`` (*Function*) — optional: Optional, a listener previously attached using
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.unwatchFile('./file.txt', () => {});
+   console.log(result);
+
 
 Utf8Stream
 ~~~~~~~~~~
@@ -2015,6 +2609,15 @@ Utf8Stream
 An optimized UTF-8 stream writer that allows for flushing all the internal buffering on demand. It handles ``EAGAIN`` errors correctly, allowing for customization, for example, by dropping content if the disk is busy.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream(undefined);
+   console.log(instance);
 
 
 utimes
@@ -2037,6 +2640,15 @@ The ``atime`` and ``mtime`` arguments follow these rules:
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.utimes('./file.txt', 'value', 'value', () => {});
+   console.log(result);
+
 
 utimesSync
 ~~~~~~~~~~
@@ -2054,6 +2666,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``path`` (*string|Buffer|URL*)
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.utimesSync('./file.txt', 'value', 'value');
+   console.log(result);
 
 
 watch
@@ -2136,6 +2757,15 @@ Implicit coercion of objects with own ``toString`` property, passed as second pa
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.write();
+   console.log(result);
+
 
 writeFile
 ~~~~~~~~~
@@ -2190,6 +2820,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``options`` (*Object|string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.writeFileSync('./file.txt', 'hello', {});
+   console.log(result);
+
 
 WriteStream
 ~~~~~~~~~~~
@@ -2203,6 +2842,15 @@ WriteStream
 Instances of ``fs.WriteStream`` cannot be constructed directly. They are created and returned using the ``fs.createWriteStream()`` function.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.WriteStream(undefined, undefined);
+   console.log(instance);
 
 
 writeSync
@@ -2223,6 +2871,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``offset`` (*integer*): **Default:** ``0``
 * ``length`` (*integer*) — optional: **Default:** ``buffer.byteLength - offset``
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.writeSync(0, [], 0, 0, 0);
+   console.log(result);
 
 
 writev
@@ -2245,6 +2902,15 @@ Write an array of ``ArrayBufferView``\ s to the file specified by ``fd`` using `
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.writev(0, [], 0, () => {});
+   console.log(result);
+
 
 writevSync
 ~~~~~~~~~~
@@ -2262,6 +2928,15 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``fd`` (*integer*)
 * ``buffers`` (*ArrayBufferView\[]*)
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.writevSync(0, [], 0);
+   console.log(result);
 
 
 Dir class
@@ -2288,6 +2963,16 @@ The ``callback`` will be called after the resource handle has been closed.
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dir();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 Dir.closeSync
 ~~~~~~~~~~~~~
@@ -2301,6 +2986,16 @@ Dir.closeSync
 Synchronously close the directory's underlying resource handle. Subsequent reads will result in errors.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dir();
+   const result = instance.closeSync();
+   console.log(result);
 
 
 Dir.read
@@ -2320,6 +3015,16 @@ After the read is completed, the ``callback`` will be called with an ``fs.Dirent
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dir();
+   const result = instance.read(() => {});
+   console.log(result);
+
 
 Dir.readSync
 ~~~~~~~~~~~~
@@ -2335,6 +3040,16 @@ Synchronously read the next directory entry as an ``fs.Dirent``. See the POSIX r
 If there are no more directory entries to read, ``null`` will be returned.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dir();
+   const result = instance.readSync();
+   console.log(result);
 
 
 Dirent class
@@ -2357,6 +3072,16 @@ Returns ``true`` if the ``fs.Dirent`` object describes a block device.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isBlockDevice();
+   console.log(result);
+
 
 Dirent.isCharacterDevice
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2370,6 +3095,16 @@ Dirent.isCharacterDevice
 Returns ``true`` if the ``fs.Dirent`` object describes a character device.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isCharacterDevice();
+   console.log(result);
 
 
 Dirent.isDirectory
@@ -2385,6 +3120,16 @@ Returns ``true`` if the ``fs.Dirent`` object describes a file system directory.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isDirectory();
+   console.log(result);
+
 
 Dirent.isFIFO
 ~~~~~~~~~~~~~
@@ -2398,6 +3143,16 @@ Dirent.isFIFO
 Returns ``true`` if the ``fs.Dirent`` object describes a first-in-first-out (FIFO) pipe.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isFIFO();
+   console.log(result);
 
 
 Dirent.isFile
@@ -2413,6 +3168,16 @@ Returns ``true`` if the ``fs.Dirent`` object describes a regular file.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isFile();
+   console.log(result);
+
 
 Dirent.isSocket
 ~~~~~~~~~~~~~~~
@@ -2427,6 +3192,16 @@ Returns ``true`` if the ``fs.Dirent`` object describes a socket.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isSocket();
+   console.log(result);
+
 
 Dirent.isSymbolicLink
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2440,6 +3215,16 @@ Dirent.isSymbolicLink
 Returns ``true`` if the ``fs.Dirent`` object describes a symbolic link.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Dirent();
+   const result = instance.isSymbolicLink();
+   console.log(result);
 
 
 FSWatcher class
@@ -2491,6 +3276,16 @@ By default, all ``fs.FSWatcher`` objects are "ref'ed", making it normally unnece
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.FSWatcher();
+   const result = instance.ref();
+   console.log(result);
+
 
 FSWatcher.unref
 ~~~~~~~~~~~~~~~
@@ -2504,6 +3299,16 @@ FSWatcher.unref
 When called, the active ``fs.FSWatcher`` object will not require the Node.js event loop to remain active. If there is no other activity keeping the event loop running, the process may exit before the ``fs.FSWatcher`` object's callback is invoked. Calling ``watcher.unref()`` multiple times will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.FSWatcher();
+   const result = instance.unref();
+   console.log(result);
 
 
 native
@@ -2559,6 +3364,15 @@ See the POSIX fstat(2) documentation for more detail.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.fstat(0, {}, () => {});
+   console.log(result);
+
 
 native.open
 ~~~~~~~~~~~
@@ -2579,6 +3393,15 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.open('./file.txt', 'r', 0o644);
+   console.log(result);
+
 
 native.read
 ~~~~~~~~~~~
@@ -2595,6 +3418,15 @@ A promise is returned that will be fulfilled with an ``fs.Dirent``, or ``null`` 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.read();
+   console.log(result);
+
 
 native.statfs
 ~~~~~~~~~~~~~
@@ -2609,6 +3441,15 @@ native.statfs
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.statfs('./file.txt', {});
+   console.log(result);
 
 
 native.statfsSync
@@ -2628,6 +3469,15 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.statfsSync('./file.txt', {});
+   console.log(result);
 
 
 native.write
@@ -2649,6 +3499,15 @@ The promise is fulfilled with an object containing two properties:
 * ``offset`` (*integer*): The start position from within ``buffer`` where the data
 * ``length`` (*integer*) — optional: The number of bytes from ``buffer`` to write. **Default:**
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.native.write([], 0, 0, 0);
+   console.log(result);
 
 
 promises
@@ -2705,6 +3564,15 @@ If ``options`` is a string, then it specifies the ``encoding``.
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.appendFile('./file.txt', 'hello', {});
+   console.log(result);
+
 
 promises.chmod
 ~~~~~~~~~~~~~~
@@ -2721,6 +3589,15 @@ Changes the permissions of a file.
 
 * ``path`` (*string|Buffer|URL*)
 * ``mode`` (*string|integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.chmod('./file.txt', 0o644);
+   console.log(result);
 
 
 promises.chown
@@ -2739,6 +3616,15 @@ Changes the ownership of a file.
 * ``path`` (*string|Buffer|URL*)
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.chown('./file.txt', 1, 1);
+   console.log(result);
 
 
 promises.copyFile
@@ -2800,6 +3686,15 @@ When copying a directory to another directory, globs are not supported and behav
 * ``src`` (*string|URL*): source path to copy.
 * ``dest`` (*string|URL*): destination path to copy to.
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.cp('./source.txt', './target.txt', {});
+   console.log(result);
 
 
 promises.FileHandle
@@ -2888,6 +3783,15 @@ Changes the ownership on a symbolic link.
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.lchown('./file.txt', 1, 1);
+   console.log(result);
+
 
 promises.link
 ~~~~~~~~~~~~~
@@ -2904,6 +3808,15 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 
 * ``existingPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.link('./file.txt', './file.txt');
+   console.log(result);
 
 
 promises.lstat
@@ -2922,6 +3835,15 @@ Equivalent to ``fsPromises.stat()`` unless ``path`` refers to a symbolic link, i
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.lstat('./file.txt', {});
+   console.log(result);
+
 
 promises.lutimes
 ~~~~~~~~~~~~~~~~
@@ -2939,6 +3861,15 @@ Changes the access and modification times of a file in the same way as ``fsPromi
 * ``path`` (*string|Buffer|URL*)
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.lutimes('./file.txt', 'value', 'value');
+   console.log(result);
 
 
 promises.mkdir
@@ -3028,6 +3959,15 @@ Both this function and the disposal function on the resulting object are async, 
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.mkdtempDisposable(Buffer.from('hello'), {});
+   console.log(result);
+
 
 promises.open
 ~~~~~~~~~~~~~
@@ -3047,6 +3987,15 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``path`` (*string|Buffer|URL*)
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.open('./file.txt', 'r', 0o644);
+   console.log(result);
 
 
 promises.opendir
@@ -3169,6 +4118,15 @@ The optional ``options`` argument can be a string specifying an encoding, or an 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.readlink('./file.txt', {});
+   console.log(result);
+
 
 promises.realpath
 ~~~~~~~~~~~~~~~~~
@@ -3188,6 +4146,15 @@ Only paths that can be converted to UTF8 strings are supported.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.realpath('./file.txt', {});
+   console.log(result);
+
 
 promises.rename
 ~~~~~~~~~~~~~~~
@@ -3205,6 +4172,15 @@ Renames ``oldPath`` to ``newPath``.
 * ``oldPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.rename('./file.txt', './file.txt');
+   console.log(result);
+
 
 promises.rm
 ~~~~~~~~~~~
@@ -3221,6 +4197,15 @@ Removes files and directories (modeled on the standard POSIX ``rm`` utility).
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.rm('./file.txt', {});
+   console.log(result);
 
 
 promises.rmdir
@@ -3241,6 +4226,15 @@ Using ``fsPromises.rmdir()`` on a file (not a directory) results in the promise 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.rmdir('./file.txt', {});
+   console.log(result);
+
 
 promises.stat
 ~~~~~~~~~~~~~
@@ -3256,6 +4250,15 @@ promises.stat
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.stat('./file.txt', {});
+   console.log(result);
+
 
 promises.statfs
 ~~~~~~~~~~~~~~~
@@ -3270,6 +4273,15 @@ promises.statfs
 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.statfs('./file.txt', {});
+   console.log(result);
 
 
 promises.symlink
@@ -3291,6 +4303,15 @@ The ``type`` argument is only used on Windows platforms and can be one of ``'dir
 * ``path`` (*string|Buffer|URL*)
 * ``type`` (*string|null*) — optional: **Default:** ``null``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.symlink('./target.txt', './file.txt', 'example');
+   console.log(result);
+
 
 promises.truncate
 ~~~~~~~~~~~~~~~~~
@@ -3308,6 +4329,15 @@ Truncates (shortens or extends the length) of the content at ``path`` to ``len``
 * ``path`` (*string|Buffer|URL*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.truncate('./file.txt', 1);
+   console.log(result);
+
 
 promises.unlink
 ~~~~~~~~~~~~~~~
@@ -3323,6 +4353,15 @@ If ``path`` refers to a symbolic link, then the link is removed without affectin
 **Arguments**
 
 * ``path`` (*string|Buffer|URL*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.unlink('./file.txt');
+   console.log(result);
 
 
 promises.utimes
@@ -3343,6 +4382,15 @@ The ``atime`` and ``mtime`` arguments follow these rules:
 * ``path`` (*string|Buffer|URL*)
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const result = fs.promises.utimes('./file.txt', 'value', 'value');
+   console.log(result);
 
 
 promises.watch
@@ -3453,6 +4501,16 @@ When operating on file handles, the mode cannot be changed from what it was set 
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.appendFile('hello', {});
+   console.log(result);
+
 
 promises.FileHandle.chmod
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3468,6 +4526,16 @@ Modifies the permissions on the file. See chmod(2).
 **Arguments**
 
 * ``mode`` (*integer*): the file mode bit mask.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.chmod(0o644);
+   console.log(result);
 
 
 promises.FileHandle.chown
@@ -3485,6 +4553,16 @@ Changes the ownership of the file. A wrapper for chown(2).
 
 * ``uid`` (*integer*): The file's new owner's user id.
 * ``gid`` (*integer*): The file's new group's group id.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.chown(1, 1);
+   console.log(result);
 
 
 promises.FileHandle.close
@@ -3569,6 +4647,16 @@ If ``autoClose`` is set to true (default behavior) on ``'error'`` or ``'finish'`
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.createWriteStream({});
+   console.log(result);
+
 
 promises.FileHandle.datasync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3584,6 +4672,16 @@ Forces all currently queued I/O operations associated with the file to the opera
 Unlike ``filehandle.sync`` this method does not flush modified metadata.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.datasync();
+   console.log(result);
 
 
 promises.FileHandle.pull
@@ -3693,6 +4791,16 @@ If the file is not modified concurrently, the end-of-file is reached when the nu
 * ``offset`` (*integer*): The location in the buffer at which to start filling.
 * ``length`` (*integer*): The number of bytes to read. **Default:**
 * ``position`` (*integer|bigint|null*): The location where to begin reading data
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.read([], 0, 0, 0);
+   console.log(result);
 
 
 promises.FileHandle.readableWebStream
@@ -3810,6 +4918,16 @@ Read from a file and write to an array of ``ArrayBufferView``\ s
 * ``buffers`` (*Buffer\[]|TypedArray\[]|DataView\[]*)
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.readv([], 0);
+   console.log(result);
+
 
 promises.FileHandle.stat
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3824,6 +4942,16 @@ promises.FileHandle.stat
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.stat({});
+   console.log(result);
+
 
 promises.FileHandle.sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3837,6 +4965,16 @@ promises.FileHandle.sync
 Request that all data for the open file descriptor is flushed to the storage device. The specific implementation is operating system and device specific. Refer to the POSIX fsync(2) documentation for more detail.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.sync();
+   console.log(result);
 
 
 promises.FileHandle.truncate
@@ -3887,6 +5025,16 @@ Change the file system timestamps of the object referenced by the ``FileHandle``
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.utimes('value', 'value');
+   console.log(result);
+
 
 promises.FileHandle.write
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3908,6 +5056,16 @@ The promise is fulfilled with an object containing two properties:
 * ``length`` (*integer*) — optional: The number of bytes from ``buffer`` to write. **Default:**
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.write([], 0, 0, 0);
+   console.log(result);
+
 
 promises.FileHandle.writeFile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3926,6 +5084,16 @@ If ``options`` is a string, then it specifies the ``encoding``.
 
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.writeFile('hello', {});
+   console.log(result);
 
 
 promises.FileHandle.writer
@@ -3988,6 +5156,16 @@ The promise is fulfilled with an object containing a two properties:
 * ``buffers`` (*Buffer\[]|TypedArray\[]|DataView\[]*): a reference to the ``buffers``
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = fs.promises.FileHandle;
+   const result = instance.writev([], 0);
+   console.log(result);
+
 
 ReadStream class
 ----------------
@@ -4003,6 +5181,15 @@ ReadStream._finishRead
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.ReadStream.prototype._finishRead()); // 'function'
+   console.log(fs.ReadStream.prototype._finishRead().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4017,6 +5204,15 @@ ReadStream._pumpRead
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.ReadStream.prototype._pumpRead()); // 'function'
+   console.log(fs.ReadStream.prototype._pumpRead().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4030,6 +5226,15 @@ ReadStream._read
    fs.ReadStream._read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.ReadStream.prototype._read()); // 'function'
+   console.log(fs.ReadStream.prototype._read().length);
 
 .. note::
 
@@ -4053,6 +5258,16 @@ The ``callback`` will be called after the resource handle has been closed.
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 ReadStream.destroy
 ~~~~~~~~~~~~~~~~~~
@@ -4067,6 +5282,16 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 
 ReadStream.on
 ~~~~~~~~~~~~~
@@ -4076,6 +5301,16 @@ ReadStream.on
    fs.ReadStream.on(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -4101,6 +5336,16 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.open('./file.txt', 'r', 0o644);
+   console.log(result);
+
 
 ReadStream.read
 ~~~~~~~~~~~~~~~
@@ -4119,6 +5364,16 @@ If the file is not modified concurrently, the end-of-file is reached when the nu
 
 * ``options`` (*Object*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.read({});
+   console.log(result);
+
 
 ReadStream.resume
 ~~~~~~~~~~~~~~~~~
@@ -4128,6 +5383,16 @@ ReadStream.resume
    fs.ReadStream.resume(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.ReadStream();
+   const result = instance.resume();
+   console.log(result);
 
 .. note::
 
@@ -4154,6 +5419,16 @@ Returns ``true`` if the ``fs.Stats`` object describes a block device.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isBlockDevice();
+   console.log(result);
+
 
 Stats.isCharacterDevice
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -4167,6 +5442,16 @@ Stats.isCharacterDevice
 Returns ``true`` if the ``fs.Stats`` object describes a character device.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isCharacterDevice();
+   console.log(result);
 
 
 Stats.isDirectory
@@ -4184,6 +5469,16 @@ If the ``fs.Stats`` object was obtained from calling ``fs.lstat()`` on a symboli
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isDirectory();
+   console.log(result);
+
 
 Stats.isFIFO
 ~~~~~~~~~~~~
@@ -4197,6 +5492,16 @@ Stats.isFIFO
 Returns ``true`` if the ``fs.Stats`` object describes a first-in-first-out (FIFO) pipe.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isFIFO();
+   console.log(result);
 
 
 Stats.isFile
@@ -4212,6 +5517,16 @@ Returns ``true`` if the ``fs.Stats`` object describes a regular file.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isFile();
+   console.log(result);
+
 
 Stats.isSocket
 ~~~~~~~~~~~~~~
@@ -4225,6 +5540,16 @@ Stats.isSocket
 Returns ``true`` if the ``fs.Stats`` object describes a socket.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isSocket();
+   console.log(result);
 
 
 Stats.isSymbolicLink
@@ -4241,6 +5566,16 @@ Returns ``true`` if the ``fs.Stats`` object describes a symbolic link.
 This method is only valid when using ``fs.lstat()``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Stats();
+   const result = instance.isSymbolicLink();
+   console.log(result);
 
 
 StatWatcher class
@@ -4263,6 +5598,16 @@ By default, all ``fs.FSWatcher`` objects are "ref'ed", making it normally unnece
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.StatWatcher();
+   const result = instance.ref();
+   console.log(result);
+
 
 StatWatcher.unref
 ~~~~~~~~~~~~~~~~~
@@ -4276,6 +5621,16 @@ StatWatcher.unref
 When called, the active ``fs.FSWatcher`` object will not require the Node.js event loop to remain active. If there is no other activity keeping the event loop running, the process may exit before the ``fs.FSWatcher`` object's callback is invoked. Calling ``watcher.unref()`` multiple times will have no effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.StatWatcher();
+   const result = instance.unref();
+   console.log(result);
 
 
 Utf8Stream class
@@ -4292,6 +5647,15 @@ Utf8Stream._drain
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.Utf8Stream.prototype._drain()); // 'function'
+   console.log(fs.Utf8Stream.prototype._drain().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4305,6 +5669,15 @@ Utf8Stream._open
    fs.Utf8Stream._open(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.Utf8Stream.prototype._open()); // 'function'
+   console.log(fs.Utf8Stream.prototype._open().length);
 
 .. note::
 
@@ -4324,6 +5697,16 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.destroy();
+   console.log(result);
+
 
 Utf8Stream.end
 ~~~~~~~~~~~~~~
@@ -4337,6 +5720,16 @@ Utf8Stream.end
 Close the stream gracefully, flushing the internal buffer before closing.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.end(undefined);
+   console.log(result);
 
 
 Utf8Stream.flush
@@ -4354,6 +5747,16 @@ Writes the current buffer to the file if a write was not in progress. Do nothing
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.flush(() => {});
+   console.log(result);
+
 
 Utf8Stream.flushSync
 ~~~~~~~~~~~~~~~~~~~~
@@ -4367,6 +5770,16 @@ Utf8Stream.flushSync
 Flushes the buffered data synchronously. This is a costly operation.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.flushSync();
+   console.log(result);
 
 
 Utf8Stream.reopen
@@ -4384,6 +5797,16 @@ Reopen the file in place, useful for log rotation.
 
 * ``file``
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.reopen('./file.txt');
+   console.log(result);
+
 
 Utf8Stream.write
 ~~~~~~~~~~~~~~~~
@@ -4400,6 +5823,16 @@ When the ``options.contentMode`` is set to ``'utf8'`` when the stream is created
 
 * ``data`` (*string|Buffer*): The data to write.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.Utf8Stream();
+   const result = instance.write('hello');
+   console.log(result);
+
 
 WriteStream class
 -----------------
@@ -4415,6 +5848,15 @@ WriteStream._close
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.WriteStream.prototype._close()); // 'function'
+   console.log(fs.WriteStream.prototype._close().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -4428,6 +5870,15 @@ WriteStream._write
    fs.WriteStream._write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   console.log(typeof fs.WriteStream.prototype._write()); // 'function'
+   console.log(fs.WriteStream.prototype._write().length);
 
 .. note::
 
@@ -4449,6 +5900,16 @@ Closes ``writeStream``. Optionally accepts a callback that will be executed once
 
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.WriteStream();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 WriteStream.destroy
 ~~~~~~~~~~~~~~~~~~~
@@ -4463,6 +5924,16 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.WriteStream();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 
 WriteStream.end
 ~~~~~~~~~~~~~~~
@@ -4476,6 +5947,16 @@ WriteStream.end
 Close the stream gracefully, flushing the internal buffer before closing.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const fs = require('node:fs');
+
+   const instance = new fs.WriteStream();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
 
 
 Properties and constants

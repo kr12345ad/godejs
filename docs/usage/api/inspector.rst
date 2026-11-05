@@ -37,6 +37,15 @@ Deactivates the inspector. If there are active connections, they are forcibly te
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const result = inspector.close();
+   console.log(result);
+
 
 isOpen
 ~~~~~~
@@ -48,6 +57,15 @@ isOpen
 *Kind:* function · *Arguments:* 0
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const result = inspector.isOpen();
+   console.log(result);
 
 
 open
@@ -68,6 +86,15 @@ If wait is ``true``, will block until a client has connected to the inspect port
 * ``port`` (*number*) — optional: Port to listen on for inspector connections. Optional.
 * ``host`` (*string*) — optional: Host to listen on for inspector connections. Optional.
 * ``wait`` (*boolean*) — optional: Block until a client has connected. Optional.
+
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const result = inspector.open(8080, '127.0.0.1', true);
+   console.log(result);
 
 
 Session
@@ -105,6 +132,15 @@ Return the URL of the active inspector, or ``undefined`` if there is none.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const result = inspector.url();
+   console.log(result);
+
 
 waitForDebugger
 ~~~~~~~~~~~~~~~
@@ -120,6 +156,15 @@ Blocks until a client (existing or connected later) has sent ``Runtime.runIfWait
 An exception will be thrown if there is no active inspector.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const result = inspector.waitForDebugger();
+   console.log(result);
 
 
 Session class
@@ -140,6 +185,16 @@ Connects a session to the inspector back-end.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const instance = new inspector.Session();
+   const result = instance.connect();
+   console.log(result);
+
 
 Session.connectToMainThread
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,6 +209,16 @@ Connects a session to the main thread inspector back-end. An exception will be t
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const instance = new inspector.Session();
+   const result = instance.connectToMainThread();
+   console.log(result);
+
 
 Session.disconnect
 ~~~~~~~~~~~~~~~~~~
@@ -167,6 +232,16 @@ Session.disconnect
 Immediately close the session. All pending message callbacks will be called with an error. ``session.connect()`` will need to be called to be able to send messages again. Reconnected session will lose all inspector state, such as enabled agents or configured breakpoints.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const inspector = require('node:inspector');
+
+   const instance = new inspector.Session();
+   const result = instance.disconnect();
+   console.log(result);
 
 
 Session.post

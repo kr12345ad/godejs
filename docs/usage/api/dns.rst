@@ -42,6 +42,15 @@ Returns an array of IP address strings, formatted according to RFC 5952, that ar
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.getServers();
+   console.log(result);
+
 
 lookup
 ~~~~~~
@@ -57,6 +66,15 @@ Type: Runtime
 Previous versions of Node.js supported ``dns.lookup()`` with a falsy host name like ``dns.lookup(false)`` due to backward compatibility. This behavior is undocumented and is thought to be unused in real world apps. It will become an error in future versions of Node.js.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.lookup(undefined, undefined, undefined);
+   console.log(result);
 
 
 lookupService
@@ -108,6 +126,15 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolve('127.0.0.1', 'value', () => {});
+   console.log(result);
+
 
 resolve4
 ~~~~~~~~
@@ -126,6 +153,15 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolve4('127.0.0.1', {}, () => {});
+   console.log(result);
+
 
 resolve6
 ~~~~~~~~
@@ -143,6 +179,15 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``hostname`` (*string*): Host name to resolve.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolve6('127.0.0.1', {}, () => {});
+   console.log(result);
 
 
 resolveAny
@@ -167,19 +212,10 @@ Here is an example of the ``ret`` object passed to the callback:
 
 .. code-block:: javascript
 
-   [ { type: 'A', address: '127.0.0.1', ttl: 299 },
-     { type: 'CNAME', value: 'example.com' },
-     { type: 'MX', exchange: 'alt4.aspmx.l.example.com', priority: 50 },
-     { type: 'NS', value: 'ns1.example.com' },
-     { type: 'TXT', entries: [ 'v=spf1 include:_spf.example.com ~all' ] },
-     { type: 'SOA',
-       nsname: 'ns1.example.com',
-       hostmaster: 'admin.example.com',
-       serial: 156696742,
-       refresh: 900,
-       retry: 900,
-       expire: 1800,
-       minttl: 60 } ];
+   const dns = require('node:dns');
+
+   const result = dns.resolveAny('127.0.0.1', () => {});
+   console.log(result);
 
 
 resolveCaa
@@ -198,6 +234,15 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. The ``add
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolveCaa('127.0.0.1', () => {});
+   console.log(result);
+
 
 resolveCname
 ~~~~~~~~~~~~
@@ -215,6 +260,15 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. The ``a
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolveCname('127.0.0.1', () => {});
+   console.log(result);
+
 
 resolveMx
 ~~~~~~~~~
@@ -231,6 +285,15 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolveMx('127.0.0.1', () => {});
+   console.log(result);
 
 
 resolveNaptr
@@ -281,6 +344,15 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolveNs('127.0.0.1', () => {});
+   console.log(result);
+
 
 resolvePtr
 ~~~~~~~~~~
@@ -297,6 +369,15 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolvePtr('127.0.0.1', () => {});
+   console.log(result);
 
 
 Resolver
@@ -407,6 +488,15 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.resolveTxt('127.0.0.1', () => {});
+   console.log(result);
+
 
 reverse
 ~~~~~~~
@@ -425,6 +515,15 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 
 * ``ip`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.reverse('value', () => {});
+   console.log(result);
 
 
 setServers
@@ -549,6 +648,15 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolve('127.0.0.1', 'value', () => {});
+   console.log(result);
+
 
 promises.resolve4
 ~~~~~~~~~~~~~~~~~
@@ -567,6 +675,15 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolve4('127.0.0.1', {}, () => {});
+   console.log(result);
+
 
 promises.resolve6
 ~~~~~~~~~~~~~~~~~
@@ -584,6 +701,15 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``hostname`` (*string*): Host name to resolve.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolve6('127.0.0.1', {}, () => {});
+   console.log(result);
 
 
 promises.resolveAny
@@ -607,19 +733,10 @@ Here is an example of the result object:
 
 .. code-block:: javascript
 
-   [ { type: 'A', address: '127.0.0.1', ttl: 299 },
-     { type: 'CNAME', value: 'example.com' },
-     { type: 'MX', exchange: 'alt4.aspmx.l.example.com', priority: 50 },
-     { type: 'NS', value: 'ns1.example.com' },
-     { type: 'TXT', entries: [ 'v=spf1 include:_spf.example.com ~all' ] },
-     { type: 'SOA',
-       nsname: 'ns1.example.com',
-       hostmaster: 'admin.example.com',
-       serial: 156696742,
-       refresh: 900,
-       retry: 900,
-       expire: 1800,
-       minttl: 60 } ];
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveAny('127.0.0.1');
+   console.log(result);
 
 
 promises.resolveCaa
@@ -637,6 +754,15 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. On succes
 
 * ``hostname`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveCaa('127.0.0.1');
+   console.log(result);
+
 
 promises.resolveCname
 ~~~~~~~~~~~~~~~~~~~~~
@@ -653,6 +779,15 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. On succ
 
 * ``hostname`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveCname('127.0.0.1');
+   console.log(result);
+
 
 promises.resolveMx
 ~~~~~~~~~~~~~~~~~~
@@ -668,6 +803,15 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 **Arguments**
 
 * ``hostname`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveMx('127.0.0.1');
+   console.log(result);
 
 
 promises.resolveNaptr
@@ -716,6 +860,15 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 
 * ``hostname`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveNs('127.0.0.1');
+   console.log(result);
+
 
 promises.resolvePtr
 ~~~~~~~~~~~~~~~~~~~
@@ -731,6 +884,15 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 **Arguments**
 
 * ``hostname`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolvePtr('127.0.0.1');
+   console.log(result);
 
 
 promises.resolveSoa
@@ -809,6 +971,15 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 
 * ``hostname`` (*string*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.resolveTxt('127.0.0.1');
+   console.log(result);
+
 
 promises.reverse
 ~~~~~~~~~~~~~~~~
@@ -826,6 +997,15 @@ On error, the ``Promise`` is rejected with an ``Error`` object, where ``err.code
 **Arguments**
 
 * ``ip`` (*string*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const result = dns.promises.reverse('value');
+   console.log(result);
 
 
 Resolver class
@@ -848,6 +1028,16 @@ Cancel all outstanding DNS queries made by this resolver. The corresponding call
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.cancel();
+   console.log(result);
+
 
 Resolver.getServers
 ~~~~~~~~~~~~~~~~~~~
@@ -861,6 +1051,16 @@ Resolver.getServers
 Returns an array of IP address strings, formatted according to RFC 5952, that are currently configured for DNS resolution. A string will include a port section if a custom port is used.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.getServers();
+   console.log(result);
 
 
 Resolver.lookup
@@ -921,6 +1121,16 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolve('127.0.0.1', 'value', () => {});
+   console.log(result);
+
 
 Resolver.resolve4
 ~~~~~~~~~~~~~~~~~
@@ -939,6 +1149,16 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolve4('127.0.0.1', {}, () => {});
+   console.log(result);
+
 
 Resolver.resolve6
 ~~~~~~~~~~~~~~~~~
@@ -956,6 +1176,16 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``hostname`` (*string*): Host name to resolve.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolve6('127.0.0.1', {}, () => {});
+   console.log(result);
 
 
 Resolver.resolveAny
@@ -980,19 +1210,11 @@ Here is an example of the ``ret`` object passed to the callback:
 
 .. code-block:: javascript
 
-   [ { type: 'A', address: '127.0.0.1', ttl: 299 },
-     { type: 'CNAME', value: 'example.com' },
-     { type: 'MX', exchange: 'alt4.aspmx.l.example.com', priority: 50 },
-     { type: 'NS', value: 'ns1.example.com' },
-     { type: 'TXT', entries: [ 'v=spf1 include:_spf.example.com ~all' ] },
-     { type: 'SOA',
-       nsname: 'ns1.example.com',
-       hostmaster: 'admin.example.com',
-       serial: 156696742,
-       refresh: 900,
-       retry: 900,
-       expire: 1800,
-       minttl: 60 } ];
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveAny('127.0.0.1', () => {});
+   console.log(result);
 
 
 Resolver.resolveCaa
@@ -1011,6 +1233,16 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. The ``add
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveCaa('127.0.0.1', () => {});
+   console.log(result);
+
 
 Resolver.resolveCname
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1028,6 +1260,16 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. The ``a
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveCname('127.0.0.1', () => {});
+   console.log(result);
+
 
 Resolver.resolveMx
 ~~~~~~~~~~~~~~~~~~
@@ -1044,6 +1286,16 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveMx('127.0.0.1', () => {});
+   console.log(result);
 
 
 Resolver.resolveNaptr
@@ -1094,6 +1346,16 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveNs('127.0.0.1', () => {});
+   console.log(result);
+
 
 Resolver.resolvePtr
 ~~~~~~~~~~~~~~~~~~~
@@ -1110,6 +1372,16 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolvePtr('127.0.0.1', () => {});
+   console.log(result);
 
 
 Resolver.resolveSoa
@@ -1191,6 +1463,16 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.resolveTxt('127.0.0.1', () => {});
+   console.log(result);
+
 
 Resolver.reverse
 ~~~~~~~~~~~~~~~~
@@ -1209,6 +1491,16 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 
 * ``ip`` (*string*)
 * ``callback`` (*Function*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dns = require('node:dns');
+
+   const instance = new dns.Resolver();
+   const result = instance.reverse('value', () => {});
+   console.log(result);
 
 
 Resolver.setServers

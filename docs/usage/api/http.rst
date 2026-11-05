@@ -26,6 +26,15 @@ _createSecureServer
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http._createSecureServer); // 'function'
+   console.log(http._createSecureServer.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -40,6 +49,15 @@ _getSecure
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http._getSecure); // 'function'
+   console.log(http._getSecure.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -53,6 +71,15 @@ _requestSecure
    http._requestSecure(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http._requestSecure); // 'function'
+   console.log(http._requestSecure.length);
 
 .. note::
 
@@ -164,7 +191,18 @@ ClientResponse
 
    http.ClientResponse(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
-*Kind:* function · *Arguments:* 8
+*Kind:* class · *Arguments:* 8
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientResponse(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 .. note::
 
@@ -220,6 +258,15 @@ get
 * ``options``
 * ``callback`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const result = http.get({}, () => {});
+   console.log(result);
+
 
 IncomingMessage
 ~~~~~~~~~~~~~~~
@@ -228,13 +275,22 @@ IncomingMessage
 
    http.IncomingMessage
 
-*Kind:* function · *Arguments:* 8
+*Kind:* class · *Arguments:* 8
 
 Type: Documentation-only
 
 In a future version of Node.js, ``message.headers``, ``message.headersDistinct``, ``message.trailers``, and ``message.trailersDistinct`` will be read-only.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 
 request
@@ -250,6 +306,15 @@ request
 
 * ``options``
 * ``callback`` — optional
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const result = http.request({}, () => {});
+   console.log(result);
 
 
 Server
@@ -399,6 +464,16 @@ It is usually not necessary to do this. However, if using an agent with ``keepAl
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Agent();
+   const result = instance.destroy();
+   console.log(result);
+
 
 ClientRequest class
 -------------------
@@ -415,6 +490,15 @@ ClientRequest._headersObject
    http.ClientRequest._headersObject(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.ClientRequest.prototype._headersObject()); // 'function'
+   console.log(http.ClientRequest.prototype._headersObject().length);
 
 .. note::
 
@@ -433,6 +517,16 @@ ClientRequest.abort
 Marks the request as aborting. Calling this will cause remaining data in the response to be dropped and the socket to be destroyed.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientRequest();
+   const result = instance.abort();
+   console.log(result);
 
 
 ClientRequest.end
@@ -454,6 +548,16 @@ If ``data`` is specified, it is equivalent to calling ``request.write(data, enco
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientRequest();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 ClientRequest.flushHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -469,6 +573,16 @@ Flushes the request headers.
 For efficiency reasons, Node.js normally buffers the request headers until ``request.end()`` is called or the first chunk of request data is written. It then tries to pack the request headers and data into a single TCP packet.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientRequest();
+   const result = instance.flushHeaders();
+   console.log(result);
 
 
 ClientRequest.getHeader
@@ -590,6 +704,16 @@ Once a socket is assigned to this request and is connected ``socket.setTimeout()
 * ``timeout`` (*number*): Milliseconds before a request times out.
 * ``callback`` (*Function*) — optional: Optional function to be called when a timeout occurs.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientRequest();
+   const result = instance.setTimeout(1000, () => {});
+   console.log(result);
+
 
 ClientRequest.write
 ~~~~~~~~~~~~~~~~~~~
@@ -610,6 +734,16 @@ The ``encoding`` argument is optional and only applies when ``chunk`` is a strin
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ClientRequest();
+   const result = instance.write([], 'utf8', () => {});
+   console.log(result);
+
 
 IncomingMessage class
 ---------------------
@@ -627,6 +761,15 @@ IncomingMessage._completeWithoutListeners
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.IncomingMessage.prototype._completeWithoutListeners()); // 'function'
+   console.log(http.IncomingMessage.prototype._completeWithoutListeners().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -640,6 +783,15 @@ IncomingMessage._emitBody
    http.IncomingMessage._emitBody(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.IncomingMessage.prototype._emitBody()); // 'function'
+   console.log(http.IncomingMessage.prototype._emitBody().length);
 
 .. note::
 
@@ -655,6 +807,15 @@ IncomingMessage._hasBodyListeners
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.IncomingMessage.prototype._hasBodyListeners()); // 'function'
+   console.log(http.IncomingMessage.prototype._hasBodyListeners().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -668,6 +829,15 @@ IncomingMessage._parseHeaders
    http.IncomingMessage._parseHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.IncomingMessage.prototype._parseHeaders()); // 'function'
+   console.log(http.IncomingMessage.prototype._parseHeaders().length);
 
 .. note::
 
@@ -691,6 +861,16 @@ See ``writable.destroy()`` for further details.
 
 * ``error`` (*Error*) — optional: Optional, an error to emit with ``'error'`` event.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
+
 
 IncomingMessage.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -700,6 +880,16 @@ IncomingMessage.isPaused
    http.IncomingMessage.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -715,6 +905,16 @@ IncomingMessage.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -728,6 +928,16 @@ IncomingMessage.read
    http.IncomingMessage.read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.read();
+   console.log(result);
 
 .. note::
 
@@ -743,6 +953,16 @@ IncomingMessage.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -756,6 +976,16 @@ IncomingMessage.setEncoding
    http.IncomingMessage.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -778,6 +1008,16 @@ Once a socket is assigned to this request and is connected ``socket.setTimeout()
 * ``timeout`` (*number*): Milliseconds before a request times out.
 * ``callback`` (*Function*) — optional: Optional function to be called when a timeout occurs.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.IncomingMessage();
+   const result = instance.setTimeout(1000, () => {});
+   console.log(result);
+
 
 Server class
 ------------
@@ -790,6 +1030,16 @@ Server.addListener
    http.Server.addListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.addListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -957,6 +1207,16 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.getConnections(() => {});
+   console.log(result);
+
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -971,6 +1231,16 @@ Starts the HTTP server listening for connections. This method is identical to ``
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.listen();
+   console.log(result);
+
 
 Server.off
 ~~~~~~~~~~
@@ -980,6 +1250,16 @@ Server.off
    http.Server.off(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.off(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -995,6 +1275,16 @@ Server.on
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1008,6 +1298,16 @@ Server.once
    http.Server.once(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.once(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1023,6 +1323,16 @@ Server.prependListener
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.prependListener(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1036,6 +1346,16 @@ Server.prependOnceListener
    http.Server.prependOnceListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.prependOnceListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1055,6 +1375,16 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.ref();
+   console.log(result);
+
 
 Server.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1064,6 +1394,16 @@ Server.removeAllListeners
    http.Server.removeAllListeners(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.removeAllListeners(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1078,6 +1418,16 @@ Server.removeListener
    http.Server.removeListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.removeListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1097,6 +1447,16 @@ Calling ``unref()`` on a server will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.Server();
+   const result = instance.unref();
+   console.log(result);
+
 
 ServerResponse class
 --------------------
@@ -1112,6 +1472,15 @@ ServerResponse._flushHead
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.ServerResponse.prototype._flushHead()); // 'function'
+   console.log(http.ServerResponse.prototype._flushHead().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1125,6 +1494,15 @@ ServerResponse._headersObject
    http.ServerResponse._headersObject(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.ServerResponse.prototype._headersObject()); // 'function'
+   console.log(http.ServerResponse.prototype._headersObject().length);
 
 .. note::
 
@@ -1140,6 +1518,15 @@ ServerResponse._packedHeaders
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.ServerResponse.prototype._packedHeaders()); // 'function'
+   console.log(http.ServerResponse.prototype._packedHeaders().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1153,6 +1540,15 @@ ServerResponse._sendHead
    http.ServerResponse._sendHead(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   console.log(typeof http.ServerResponse.prototype._sendHead()); // 'function'
+   console.log(http.ServerResponse.prototype._sendHead().length);
 
 .. note::
 
@@ -1205,6 +1601,16 @@ If the value is an array, this is equivalent to calling this method multiple tim
 * ``name`` (*string*): Header name
 * ``value`` (*string|string\[]*): Header value
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.appendHeader('example', 'hello');
+   console.log(result);
+
 
 ServerResponse.destroy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1222,6 +1628,16 @@ See ``writable.destroy()`` for further details.
 **Arguments**
 
 * ``error`` (*Error*) — optional: Optional, an error to emit with ``'error'`` event.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.destroy(new Error('example'));
+   console.log(result);
 
 
 ServerResponse.end
@@ -1243,6 +1659,16 @@ If ``data`` is specified, it is equivalent to calling ``request.write(data, enco
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.end('hello', 'utf8', () => {});
+   console.log(result);
+
 
 ServerResponse.flushHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1258,6 +1684,16 @@ Flushes the request headers.
 For efficiency reasons, Node.js normally buffers the request headers until ``request.end()`` is called or the first chunk of request data is written. It then tries to pack the request headers and data into a single TCP packet.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.flushHeaders();
+   console.log(result);
 
 
 ServerResponse.getHeader
@@ -1449,6 +1885,16 @@ Once a socket is assigned to this request and is connected ``socket.setTimeout()
 * ``timeout`` (*number*): Milliseconds before a request times out.
 * ``callback`` (*Function*) — optional: Optional function to be called when a timeout occurs.
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.setTimeout(1000, () => {});
+   console.log(result);
+
 
 ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~
@@ -1469,6 +1915,16 @@ The ``encoding`` argument is optional and only applies when ``chunk`` is a strin
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.write([], 'utf8', () => {});
+   console.log(result);
+
 
 ServerResponse.writeContinue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1482,6 +1938,16 @@ ServerResponse.writeContinue
 Sends an HTTP/1.1 100 Continue message to the client, indicating that the request body should be sent. See the ``'checkContinue'`` event on ``Server``.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.writeContinue();
+   console.log(result);
 
 
 ServerResponse.writeHead
@@ -1528,6 +1994,16 @@ ServerResponse.writeProcessing
 Sends an HTTP/1.1 102 Processing message to the client, indicating that the request body should be sent.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const http = require('node:http');
+
+   const instance = new http.ServerResponse();
+   const result = instance.writeProcessing();
+   console.log(result);
 
 
 Properties and constants

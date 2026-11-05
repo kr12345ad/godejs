@@ -24,6 +24,15 @@ _createSecureServer
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https._createSecureServer); // 'function'
+   console.log(https._createSecureServer.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -38,6 +47,15 @@ _getSecure
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https._getSecure); // 'function'
+   console.log(https._getSecure.length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -51,6 +69,15 @@ _requestSecure
    https._requestSecure(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https._requestSecure); // 'function'
+   console.log(https._requestSecure.length);
 
 .. note::
 
@@ -162,7 +189,18 @@ ClientResponse
 
    https.ClientResponse(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
-*Kind:* function · *Arguments:* 8
+*Kind:* class · *Arguments:* 8
+
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientResponse(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 .. note::
 
@@ -220,6 +258,15 @@ get
 * ``options``
 * ``callback`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const result = https.get({}, () => {});
+   console.log(result);
+
 
 IncomingMessage
 ~~~~~~~~~~~~~~~
@@ -228,13 +275,22 @@ IncomingMessage
 
    http.IncomingMessage
 
-*Kind:* function · *Arguments:* 8
+*Kind:* class · *Arguments:* 8
 
 Type: Documentation-only
 
 In a future version of Node.js, ``message.headers``, ``message.headersDistinct``, ``message.trailers``, and ``message.trailersDistinct`` will be read-only.
 
-This callable takes no arguments.
+This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+   console.log(instance);
 
 
 request
@@ -251,6 +307,15 @@ request
 * ``options``
 * ``callback`` — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const result = https.request({}, () => {});
+   console.log(result);
+
 
 Server
 ~~~~~~
@@ -264,6 +329,15 @@ Server
 See ``http.Server`` for more information.
 
 This is a class; construct instances with ``new``.
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server(undefined, undefined);
+   console.log(instance);
 
 
 ServerResponse
@@ -387,6 +461,16 @@ It is usually not necessary to do this. However, if using an agent with ``keepAl
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Agent();
+   const result = instance.destroy();
+   console.log(result);
+
 
 ClientRequest class
 -------------------
@@ -404,6 +488,15 @@ ClientRequest._headersObject
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.ClientRequest.prototype._headersObject()); // 'function'
+   console.log(https.ClientRequest.prototype._headersObject().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -417,6 +510,16 @@ ClientRequest.abort
    https.ClientRequest.abort(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.abort();
+   console.log(result);
 
 .. note::
 
@@ -432,6 +535,16 @@ ClientRequest.end
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -445,6 +558,16 @@ ClientRequest.flushHeaders
    https.ClientRequest.flushHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.flushHeaders();
+   console.log(result);
 
 .. note::
 
@@ -460,6 +583,16 @@ ClientRequest.getHeader
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.getHeader(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -473,6 +606,16 @@ ClientRequest.getHeaders
    https.ClientRequest.getHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.getHeaders();
+   console.log(result);
 
 .. note::
 
@@ -488,6 +631,16 @@ ClientRequest.removeHeader
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.removeHeader(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -501,6 +654,16 @@ ClientRequest.setHeader
    https.ClientRequest.setHeader(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.setHeader(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -523,6 +686,16 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 ClientRequest.write
 ~~~~~~~~~~~~~~~~~~~
@@ -532,6 +705,16 @@ ClientRequest.write
    https.ClientRequest.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ClientRequest();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -554,6 +737,15 @@ IncomingMessage._completeWithoutListeners
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.IncomingMessage.prototype._completeWithoutListeners()); // 'function'
+   console.log(https.IncomingMessage.prototype._completeWithoutListeners().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -567,6 +759,15 @@ IncomingMessage._emitBody
    https.IncomingMessage._emitBody(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.IncomingMessage.prototype._emitBody()); // 'function'
+   console.log(https.IncomingMessage.prototype._emitBody().length);
 
 .. note::
 
@@ -582,6 +783,15 @@ IncomingMessage._hasBodyListeners
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.IncomingMessage.prototype._hasBodyListeners()); // 'function'
+   console.log(https.IncomingMessage.prototype._hasBodyListeners().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -595,6 +805,15 @@ IncomingMessage._parseHeaders
    https.IncomingMessage._parseHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.IncomingMessage.prototype._parseHeaders()); // 'function'
+   console.log(https.IncomingMessage.prototype._parseHeaders().length);
 
 .. note::
 
@@ -610,6 +829,16 @@ IncomingMessage.destroy
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -623,6 +852,16 @@ IncomingMessage.isPaused
    https.IncomingMessage.isPaused(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.isPaused();
+   console.log(result);
 
 .. note::
 
@@ -638,6 +877,16 @@ IncomingMessage.pause
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.pause();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -651,6 +900,16 @@ IncomingMessage.read
    https.IncomingMessage.read(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.read();
+   console.log(result);
 
 .. note::
 
@@ -666,6 +925,16 @@ IncomingMessage.resume
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.resume();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -679,6 +948,16 @@ IncomingMessage.setEncoding
    https.IncomingMessage.setEncoding(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.setEncoding(undefined);
+   console.log(result);
 
 .. note::
 
@@ -701,6 +980,16 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.IncomingMessage();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 Server class
 ------------
@@ -715,6 +1004,16 @@ Server.addListener
    https.Server.addListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.addListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -768,6 +1067,16 @@ See ``server.close()`` in the ``node:http`` module.
 
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 Server.closeAllConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -782,6 +1091,16 @@ See ``server.closeAllConnections()`` in the ``node:http`` module.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.closeAllConnections();
+   console.log(result);
+
 
 Server.closeIdleConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -795,6 +1114,16 @@ Server.closeIdleConnections
 See ``server.closeIdleConnections()`` in the ``node:http`` module.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.closeIdleConnections();
+   console.log(result);
 
 
 Server.getConnections
@@ -814,6 +1143,16 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.getConnections(() => {});
+   console.log(result);
+
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -828,6 +1167,16 @@ Starts the HTTPS server listening for encrypted connections. This method is iden
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.listen();
+   console.log(result);
+
 
 Server.off
 ~~~~~~~~~~
@@ -837,6 +1186,16 @@ Server.off
    https.Server.off(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.off(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -852,6 +1211,16 @@ Server.on
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.on(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -865,6 +1234,16 @@ Server.once
    https.Server.once(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.once(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -880,6 +1259,16 @@ Server.prependListener
 
 *Kind:* function · *Arguments:* 2
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.prependListener(undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -893,6 +1282,16 @@ Server.prependOnceListener
    https.Server.prependOnceListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.prependOnceListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -912,6 +1311,16 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.ref();
+   console.log(result);
+
 
 Server.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -921,6 +1330,16 @@ Server.removeAllListeners
    https.Server.removeAllListeners(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.removeAllListeners(undefined);
+   console.log(result);
 
 .. note::
 
@@ -935,6 +1354,16 @@ Server.removeListener
    https.Server.removeListener(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.removeListener(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -954,6 +1383,16 @@ Calling ``unref()`` on a server will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.Server();
+   const result = instance.unref();
+   console.log(result);
+
 
 ServerResponse class
 --------------------
@@ -969,6 +1408,15 @@ ServerResponse._flushHead
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.ServerResponse.prototype._flushHead()); // 'function'
+   console.log(https.ServerResponse.prototype._flushHead().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -982,6 +1430,15 @@ ServerResponse._headersObject
    https.ServerResponse._headersObject(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.ServerResponse.prototype._headersObject()); // 'function'
+   console.log(https.ServerResponse.prototype._headersObject().length);
 
 .. note::
 
@@ -997,6 +1454,15 @@ ServerResponse._packedHeaders
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.ServerResponse.prototype._packedHeaders()); // 'function'
+   console.log(https.ServerResponse.prototype._packedHeaders().length);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1010,6 +1476,15 @@ ServerResponse._sendHead
    https.ServerResponse._sendHead(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   console.log(typeof https.ServerResponse.prototype._sendHead()); // 'function'
+   console.log(https.ServerResponse.prototype._sendHead().length);
 
 .. note::
 
@@ -1025,6 +1500,16 @@ ServerResponse.addTrailers
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.addTrailers(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1038,6 +1523,16 @@ ServerResponse.appendHeader
    https.ServerResponse.appendHeader(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.appendHeader(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1053,6 +1548,16 @@ ServerResponse.destroy
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.destroy(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1066,6 +1571,16 @@ ServerResponse.end
    https.ServerResponse.end(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.end(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1081,6 +1596,16 @@ ServerResponse.flushHeaders
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.flushHeaders();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1094,6 +1619,16 @@ ServerResponse.getHeader
    https.ServerResponse.getHeader(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.getHeader(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1109,6 +1644,16 @@ ServerResponse.getHeaderNames
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.getHeaderNames();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1122,6 +1667,16 @@ ServerResponse.getHeaders
    https.ServerResponse.getHeaders(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.getHeaders();
+   console.log(result);
 
 .. note::
 
@@ -1137,6 +1692,16 @@ ServerResponse.getRawHeaderNames
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.getRawHeaderNames();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1150,6 +1715,16 @@ ServerResponse.hasHeader
    https.ServerResponse.hasHeader(arg0)
 
 *Kind:* function · *Arguments:* 1
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.hasHeader(undefined);
+   console.log(result);
 
 .. note::
 
@@ -1165,6 +1740,16 @@ ServerResponse.removeHeader
 
 *Kind:* function · *Arguments:* 1
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.removeHeader(undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1178,6 +1763,16 @@ ServerResponse.setHeader
    https.ServerResponse.setHeader(arg0, arg1)
 
 *Kind:* function · *Arguments:* 2
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.setHeader(undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1200,6 +1795,16 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.setTimeout(1, () => {});
+   console.log(result);
+
 
 ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~
@@ -1209,6 +1814,16 @@ ServerResponse.write
    https.ServerResponse.write(arg0, arg1, arg2)
 
 *Kind:* function · *Arguments:* 3
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.write(undefined, undefined, undefined);
+   console.log(result);
 
 .. note::
 
@@ -1224,6 +1839,16 @@ ServerResponse.writeContinue
 
 *Kind:* function · *Arguments:* 0
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.writeContinue();
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1238,6 +1863,16 @@ ServerResponse.writeHead
 
 *Kind:* function · *Arguments:* 3
 
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.writeHead(undefined, undefined, undefined);
+   console.log(result);
+
 .. note::
 
    This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
@@ -1251,6 +1886,16 @@ ServerResponse.writeProcessing
    https.ServerResponse.writeProcessing(...args)
 
 *Kind:* function · *Arguments:* 0
+
+**Example**
+
+.. code-block:: javascript
+
+   const https = require('node:https');
+
+   const instance = new https.ServerResponse();
+   const result = instance.writeProcessing();
+   console.log(result);
 
 .. note::
 

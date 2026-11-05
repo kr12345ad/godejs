@@ -163,6 +163,16 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.address();
+   console.log(result);
+
 
 Socket.bind
 ~~~~~~~~~~~
@@ -223,6 +233,16 @@ Close the underlying socket and stop listening for data on it. If a callback is 
 
 * ``callback`` (*Function*) — optional: Called when the socket has been closed.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.close(() => {});
+   console.log(result);
+
 
 Socket.connect
 ~~~~~~~~~~~~~~
@@ -241,6 +261,16 @@ Associates the ``dgram.Socket`` to a remote address and port. Every message sent
 * ``address`` (*string*) — optional
 * ``callback`` (*Function*) — optional: Called when the connection is completed or on error.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.connect(8080, '127.0.0.1', () => {});
+   console.log(result);
+
 
 Socket.disconnect
 ~~~~~~~~~~~~~~~~~
@@ -254,6 +284,16 @@ Socket.disconnect
 A synchronous function that disassociates a connected ``dgram.Socket`` from its remote address. Trying to call ``disconnect()`` on an unbound or already disconnected socket will result in an ``ERR_SOCKET_DGRAM_NOT_CONNECTED`` exception.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.disconnect();
+   console.log(result);
 
 
 Socket.dropMembership
@@ -274,6 +314,16 @@ If ``multicastInterface`` is not specified, the operating system will attempt to
 * ``multicastAddress`` (*string*)
 * ``multicastInterface`` (*string*) — optional
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.dropMembership('value', 'value');
+   console.log(result);
+
 
 Socket.getRecvBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,6 +338,16 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.getRecvBufferSize();
+   console.log(result);
+
 
 Socket.getSendBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,6 +361,16 @@ Socket.getSendBufferSize
 This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.getSendBufferSize();
+   console.log(result);
 
 
 Socket.ref
@@ -318,6 +388,16 @@ Calling ``socket.ref()`` multiple times will have no additional effect.
 
 This callable takes no arguments.
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.ref();
+   console.log(result);
+
 
 Socket.remoteAddress
 ~~~~~~~~~~~~~~~~~~~~
@@ -331,6 +411,16 @@ Socket.remoteAddress
 Returns an object containing the ``address``, ``family``, and ``port`` of the remote endpoint. This method throws an ``ERR_SOCKET_DGRAM_NOT_CONNECTED`` exception if the socket is not connected.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.remoteAddress();
+   console.log(result);
 
 
 Socket.send
@@ -386,6 +476,16 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 * ``flag`` (*boolean*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setBroadcast(true);
+   console.log(result);
+
 
 Socket.setMulticastInterface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -432,6 +532,16 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 * ``flag`` (*boolean*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setMulticastLoopback(true);
+   console.log(result);
+
 
 Socket.setMulticastTTL
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -449,6 +559,16 @@ The ``ttl`` argument may be between 0 and 255. The default on most systems is ``
 **Arguments**
 
 * ``ttl`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setMulticastTTL(1);
+   console.log(result);
 
 
 Socket.setRecvBufferSize
@@ -468,6 +588,16 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 * ``size`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setRecvBufferSize(0);
+   console.log(result);
+
 
 Socket.setSendBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -485,6 +615,16 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 **Arguments**
 
 * ``size`` (*integer*)
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setSendBufferSize(0);
+   console.log(result);
 
 
 Socket.setTTL
@@ -504,6 +644,16 @@ The ``ttl`` argument may be between 1 and 255. The default on most systems is 64
 
 * ``ttl`` (*integer*)
 
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.setTTL(1);
+   console.log(result);
+
 
 Socket.unref
 ~~~~~~~~~~~~
@@ -519,6 +669,16 @@ By default, binding a socket will cause it to block the Node.js process from exi
 Calling ``socket.unref()`` multiple times will have no additional effect.
 
 This callable takes no arguments.
+
+**Example**
+
+.. code-block:: javascript
+
+   const dgram = require('node:dgram');
+
+   const instance = new dgram.Socket();
+   const result = instance.unref();
+   console.log(result);
 
 
 .. note::
