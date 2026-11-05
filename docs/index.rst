@@ -14,25 +14,25 @@ macOS ``.pkg`` · Linux binary · Node 24.22.2
 
 .. _install:
 
-Install
--------
+Download
+--------
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 38 32
+   :widths: 26 40 34
 
    * - Platform
      - Download
-     - Notes
-   * - macOS · Apple silicon
-     - `gode-darwin-arm64.pkg <https://github.com/kr12345ad/godejs/releases/latest/download/gode-darwin-arm64.pkg>`_
-     - macOS 12 or later · installer package
-   * - macOS · Intel
-     - `gode-darwin-amd64.pkg <https://github.com/kr12345ad/godejs/releases/latest/download/gode-darwin-amd64.pkg>`_
-     - macOS 12 or later · installer package
-   * - Linux · x86-64
+     - Requirements
+   * - Linux x86-64
      - `One-line installer <https://kr12345ad.github.io/godejs/install.sh>`_
-     - Requires JavaScriptCore GTK 4.0
+     - JavaScriptCore GTK 4.0
+   * - macOS Apple silicon
+     - `gode-darwin-arm64.pkg <https://github.com/kr12345ad/godejs/releases/latest/download/gode-darwin-arm64.pkg>`_
+     - macOS 12 or later
+   * - macOS Intel
+     - `gode-darwin-amd64.pkg <https://github.com/kr12345ad/godejs/releases/latest/download/gode-darwin-amd64.pkg>`_
+     - macOS 12 or later
 
 On macOS, open the package or install it from a terminal:
 
