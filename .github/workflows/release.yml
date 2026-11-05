@@ -76,7 +76,16 @@ jobs:
           if [ "${{ matrix.arch }}" = "amd64" ]; then want=x86_64; fi
           lipo -archs dist/gode-darwin-${{ matrix.arch }} | grep -qw "$want"
 
-      - name: Upload binary
+      - name: Build macOS installer
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          packaging/macos/build-pkg.sh \
+            "dist/gode-darwin-${{ matrix.arch }}" "$version" \
+            "${{ matrix.arch }}" dist
+          pkgutil --payload-files dist/gode-darwin-${{ matrix.arch }}.pkg | \
+            grep -q './usr/local/bin/gode'
+
+      - name: Upload binary and installer
         uses: actions/upload-artifact@v4
         with:
           name: gode-darwin-${{ matrix.arch }}
