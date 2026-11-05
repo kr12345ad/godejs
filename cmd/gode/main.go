@@ -4,60 +4,58 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
+	"net/url"
 	"os"
+	"os/exec"
 	"runtime"
+	"strconv"
 	"strings"
 
+	"godejs/internal/all"
 	"godejs/internal/diag"
 	"godejs/internal/env"
 	"godejs/internal/js"
 	"godejs/internal/version"
-
-	"godejs/internal/all"
 )
 
 func main() { os.Exit(run(os.Args)) }
 
 type options struct {
-	eval             string
-	hasEval          bool
-	print            bool
-	script           string
-	args             []string
-	help             bool
-	version          bool
-	preserveSymlinks bool
-	debug            bool
-	execArgv         []string
-	preloads         []string
-}
-
-// valueFlags are the Node CLI options that consume the following argument.
-// Everything else that starts with a dash is a boolean flag we record for
-// process.execArgv and otherwise ignore: real programs pass flags like
-// --no-warnings, --expose-internals or --experimental-vm-modules, and refusing
-// them would stop working code from running.
-var valueFlags = map[string]bool{
-	"--require": true, "-r": true,
-	"--import": true,
-	"--loader": true, "--experimental-loader": true,
-	"--inspect-port":        true,
-	"--title":               true,
-	"--stack-trace-limit":   true,
-	"--max-old-space-size":  true,
-	"--max-semi-space-size": true,
-	"--icu-data-dir":        true,
-	"--openssl-config":      true,
-	"--redirect-warnings":   true,
-	"--diagnostic-dir":      true,
-	"--conditions":          true, "-C": true,
-	"--input-type":          true,
-	"--experimental-policy": true,
-	"--heapsnapshot-signal": true,
-	"--localstorage-file":   true,
+	eval                 string
+	hasEval              bool
+	print                bool
+	check                bool
+	interactive          bool
+	script               string
+	args                 []string
+	help                 bool
+	version              bool
+	completionBash       bool
+	preserveSymlinks     bool
+	preserveSymlinksMain bool
+	entryURL             bool
+	debug                bool
+	watch                bool
+	watchPaths           []string
+	watchPreserve        bool
+	watchKill            string
+	envFiles             []string
+	envFilesOptional     []string
+	runScript            string
+	inputType            string
+	title                string
+	stackTraceLimit      int
+	exposeGC             bool
+	frozenIntrinsics     bool
+	disableProto         string
+	traceExit            bool
+	execArgv             []string
+	preloads             []string
+	cfg                  *cliConfig
 }
 
 func run(argv []string) int {
@@ -74,7 +72,6 @@ func run(argv []string) int {
 		}))
 		return 9
 	}
-	opts = applyScriptFlags(opts)
 	if opts.help {
 		usage(os.Stdout)
 		return 0
@@ -83,12 +80,70 @@ func run(argv []string) int {
 		fmt.Println(version.NodeVersion)
 		return 0
 	}
+	if opts.completionBash {
+		printCompletion(os.Stdout)
+		return 0
+	}
+	if reason := opts.unsupportedReason(); reason != "" {
+		fmt.Fprintf(os.Stderr, "gode: %s\n", reason)
+		return 9
+	}
+
+	environment := os.Environ()
+	if len(opts.envFiles)+len(opts.envFilesOptional) > 0 {
+		environment, err = mergeEnvFiles(environment, opts.envFiles, opts.envFilesOptional)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "gode: %s\n", err)
+			return 9
+		}
+	}
+	if opts.runScript != "" {
+		return runPackageScript(opts, environment)
+	}
+	if opts.watch && os.Getenv("GODE_WATCH_CHILD") != "1" {
+		return watchLoop(argv, opts)
+	}
+	if opts.entryURL && opts.script != "" {
+		path, err := entryPath(opts.script)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "gode: %s\n", err)
+			return 9
+		}
+		opts.script = path
+	}
+	opts = applyScriptFlags(opts)
 	if opts.debug && (opts.hasEval || opts.script == "") {
 		fmt.Fprintln(os.Stderr, "gode: --debug requires a script file")
 		return 9
 	}
 
 	evalMode := opts.hasEval || (opts.print && opts.script != "" && !fileExists(opts.script))
+
+	if opts.check {
+		source, file, err := checkSource(opts)
+		if err != nil {
+			fmt.Fprint(os.Stderr, diag.Render(diag.Diagnostic{Program: "gode", Message: err.Error()}))
+			return 1
+		}
+		e := env.New(env.Options{
+			Args:     []string{argv[0]},
+			Env:      environment,
+			Cwd:      mustGetwd(),
+			ExecPath: argv[0],
+			Version:  version.NodeVersion,
+			ExecArgv: opts.execArgv,
+			Stdout:   os.Stdout,
+			Stderr:   os.Stderr,
+			Stdin:    os.Stdin,
+		})
+		defer e.JS.Close()
+		if err := e.CheckScript(source, file, formatForInput(opts.inputType, file)); err != nil {
+			fmt.Fprint(os.Stderr, diag.Render(diag.FromError("gode", err, file, source)))
+			return 1
+		}
+		return 0
+	}
+
 	argvForProcess := []string{argv[0]}
 	if !evalMode && opts.script != "" {
 		argvForProcess = append(argvForProcess, opts.script)
@@ -97,23 +152,31 @@ func run(argv []string) int {
 
 	e := env.New(env.Options{
 		Args:             argvForProcess,
-		Env:              os.Environ(),
+		Env:              environment,
 		Cwd:              mustGetwd(),
 		ExecPath:         argv[0],
 		Version:          version.NodeVersion,
 		ExecArgv:         opts.execArgv,
-		PreserveSymlinks: opts.preserveSymlinks,
+		PreserveSymlinks: opts.preserveSymlinks || opts.preserveSymlinksMain,
 		Stdout:           os.Stdout,
 		Stderr:           os.Stderr,
 		Stdin:            os.Stdin,
 	})
 	defer e.JS.Close()
+	if opts.traceExit {
+		// Register after Close so this deferred trace runs first (defers run
+		// last-in, first-out).
+		defer func() { printTraceExit(e) }()
+	}
 	e.InstallAll()
 	all.InstallGlobals(e)
-	e.Global().SetFunc("gc", func(this js.Object, args []js.Value) (js.Value, error) {
-		runtime.GC()
-		return e.JS.Undefined(), nil
-	})
+	if opts.exposeGC {
+		e.Global().SetFunc("gc", func(this js.Object, args []js.Value) (js.Value, error) {
+			runtime.GC()
+			return e.JS.Undefined(), nil
+		})
+	}
+	applyStartupFlags(e, opts)
 
 	for _, pre := range opts.preloads {
 		if _, err := e.RequireFrom(mustGetwd(), pre); err != nil {
@@ -124,6 +187,7 @@ func run(argv []string) int {
 
 	var source, file string
 	var runErr error
+	replMode := false
 
 	switch {
 	case evalMode:
@@ -140,7 +204,7 @@ func run(argv []string) int {
 		if vmExports := e.Exports("vm"); vmExports.Valid() {
 			e.Global().Set("vm", vmExports.V())
 		}
-		val, err := e.RunScript(source, file)
+		val, err := e.RunScriptType(source, file, formatForInput(opts.inputType, file))
 		runErr = err
 		if err == nil && opts.print {
 			printValue(e, val)
@@ -161,6 +225,9 @@ func run(argv []string) int {
 		} else {
 			_, runErr = e.RunFile(file)
 		}
+	case opts.interactive && !isPipe(os.Stdin):
+		replMode = true
+		runErr = repl(e)
 	case isPipe(os.Stdin):
 		data, err := io.ReadAll(os.Stdin)
 		if err != nil {
@@ -169,11 +236,19 @@ func run(argv []string) int {
 		}
 		source = string(data)
 		file = "[stdin]"
-		_, runErr = e.RunScript(source, file)
+		val, err := e.RunScriptType(source, file, formatForInput(opts.inputType, file))
+		runErr = err
+		if err == nil && opts.print {
+			printValue(e, val)
+		}
 	default:
+		replMode = true
 		runErr = repl(e)
 	}
 
+	if runErr == nil && opts.interactive && !replMode {
+		runErr = repl(e)
+	}
 	if runErr == nil {
 		runErr = e.RunMain()
 	}
@@ -192,12 +267,254 @@ func run(argv []string) int {
 		if code == 0 {
 			code = 1
 		}
+		e.ExitCode = code
 		return code
 	}
 	// process.exitCode (and an exit hook that sets it) must decide the status
 	// even when the program ended by draining the event loop.
 	return e.ExitCode
 }
+
+func parseArgs(args []string) (options, error) {
+	cfg, err := parseCLI(args)
+	if err != nil {
+		return options{}, err
+	}
+	o := options{cfg: cfg, execArgv: cfg.execArgv}
+	o.help = cfg.has("help")
+	o.version = cfg.has("version")
+	o.check = cfg.has("check")
+	o.interactive = cfg.has("interactive")
+	o.debug = cfg.has("debug")
+	o.completionBash = cfg.has("completion-bash")
+	o.preserveSymlinks = cfg.has("preserve-symlinks")
+	o.preserveSymlinksMain = cfg.has("preserve-symlinks-main")
+	o.entryURL = cfg.has("entry-url")
+	o.watch = cfg.has("watch")
+	o.watchPreserve = cfg.has("watch-preserve-output")
+	o.watchPaths = cfg.all("watch-path")
+	o.watchKill = cfg.value("watch-kill-signal")
+	if o.watchKill == "" {
+		o.watchKill = "SIGTERM"
+	}
+	o.envFiles = cfg.all("env-file")
+	o.envFilesOptional = cfg.all("env-file-if-exists")
+	o.runScript = cfg.value("run")
+	o.inputType = cfg.value("input-type")
+	switch o.inputType {
+	case "", "commonjs", "module":
+	default:
+		return o, fmt.Errorf("--input-type must be 'commonjs' or 'module'")
+	}
+	o.title = cfg.value("title")
+	o.exposeGC = cfg.has("expose-gc")
+	o.frozenIntrinsics = cfg.has("frozen-intrinsics")
+	o.traceExit = cfg.has("trace-exit")
+	if value, ok := cfg.last("stack-trace-limit"); ok {
+		n, err := strconv.Atoi(value)
+		if err != nil || n < 0 {
+			return o, fmt.Errorf("--stack-trace-limit must be a non-negative integer")
+		}
+		o.stackTraceLimit = n
+	} else {
+		o.stackTraceLimit = -1
+	}
+	if value, ok := cfg.last("disable-proto"); ok {
+		switch value {
+		case "delete", "throw":
+			o.disableProto = value
+		default:
+			return o, fmt.Errorf("--disable-proto must be 'delete' or 'throw'")
+		}
+	}
+	if value, ok := cfg.last("eval"); ok {
+		o.eval = value
+		o.hasEval = true
+	}
+	o.print = cfg.has("print")
+	if value, ok := cfg.last("print"); ok {
+		o.eval = value
+		o.hasEval = true
+	}
+	o.preloads = append(cfg.all("require"), cfg.all("import")...)
+	if len(cfg.positionals) > 0 {
+		o.script = cfg.positionals[0]
+		o.args = cfg.positionals[1:]
+	}
+	return o, nil
+}
+
+func applyStartupFlags(e *env.Env, o options) {
+	set := func(src string) {
+		if _, err := e.Eval(src); err != nil {
+			fmt.Fprintf(e.Err(), "gode: startup option failed: %v\n", err)
+		}
+	}
+	if o.title != "" {
+		set("process.title = " + quoteJS(o.title))
+	}
+	if o.stackTraceLimit >= 0 {
+		set(fmt.Sprintf("Error.stackTraceLimit = %d", o.stackTraceLimit))
+	}
+	if o.cfg.has("throw-deprecation") {
+		set("process.throwDeprecation = true")
+	}
+	if o.cfg.has("no-deprecation") {
+		set("process.noDeprecation = true")
+	}
+	if o.cfg.has("trace-deprecation") {
+		set("process.traceDeprecation = true")
+	}
+	if o.cfg.has("pending-deprecation") {
+		set("process.pendingDeprecation = true")
+	}
+	if o.frozenIntrinsics {
+		set(frozenIntrinsicsJS)
+	}
+	switch o.disableProto {
+	case "delete":
+		set("delete Object.prototype.__proto__")
+	case "throw":
+		set(disableProtoThrowJS)
+	}
+	if props := reportProperties(o.cfg); len(props) > 0 {
+		set(strings.Join(props, "; "))
+	}
+}
+
+func reportProperties(cfg *cliConfig) []string {
+	var props []string
+	addString := func(flag, prop string) {
+		if value, ok := cfg.last(flag); ok {
+			props = append(props, prop+" = "+quoteJS(value))
+		}
+	}
+	addBool := func(flag, prop string) {
+		if cfg.has(flag) {
+			props = append(props, prop+" = true")
+		}
+	}
+	if _, ok := cfg.last("report-dir"); ok {
+		addString("report-dir", "process.report.directory")
+	} else {
+		addString("diagnostic-dir", "process.report.directory")
+	}
+	addString("report-filename", "process.report.filename")
+	addBool("report-compact", "process.report.compact")
+	addBool("report-on-fatalerror", "process.report.reportOnFatalError")
+	addBool("report-on-signal", "process.report.reportOnSignal")
+	addBool("report-uncaught-exception", "process.report.reportOnUncaughtException")
+	addString("report-signal", "process.report.signal")
+	return props
+}
+
+func runPackageScript(o options, environment []string) int {
+	name := o.runScript
+	if name == "" {
+		fmt.Fprintln(os.Stderr, "gode: --run requires a script name")
+		return 9
+	}
+	path := "package.json"
+	data, err := os.ReadFile(path)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "gode: --run: %v\n", err)
+		return 1
+	}
+	var pkg struct {
+		Scripts map[string]string `json:"scripts"`
+	}
+	if err := json.Unmarshal(data, &pkg); err != nil {
+		fmt.Fprintf(os.Stderr, "gode: --run: %s: %v\n", path, err)
+		return 1
+	}
+	command, ok := pkg.Scripts[name]
+	if !ok || strings.TrimSpace(command) == "" {
+		fmt.Fprintf(os.Stderr, "gode: --run: no script named %q in %s\n", name, path)
+		return 9
+	}
+	cmd := exec.Command("sh", "-c", command)
+	cmd.Stdin, cmd.Stdout, cmd.Stderr = os.Stdin, os.Stdout, os.Stderr
+	abs, _ := os.Getwd()
+	cmd.Env = append(append([]string{}, environment...),
+		"npm_lifecycle_event="+name,
+		"npm_package_json="+abs+string(os.PathSeparator)+path,
+	)
+	if err := cmd.Run(); err != nil {
+		var exit *exec.ExitError
+		if errors.As(err, &exit) {
+			return exit.ExitCode()
+		}
+		fmt.Fprintf(os.Stderr, "gode: --run: %v\n", err)
+		return 1
+	}
+	return 0
+}
+
+func checkSource(o options) (string, string, error) {
+	if o.hasEval {
+		return o.eval, "[eval]", nil
+	}
+	if o.script != "" {
+		source, err := readSource(o.script)
+		return source, o.script, err
+	}
+	if isPipe(os.Stdin) {
+		data, err := io.ReadAll(os.Stdin)
+		return string(data), "[stdin]", err
+	}
+	return "", "", fmt.Errorf("--check requires a script file, --eval, or piped input")
+}
+
+func entryPath(raw string) (string, error) {
+	u, err := url.Parse(raw)
+	if err != nil {
+		return "", fmt.Errorf("--entry-url: %v", err)
+	}
+	if u.Scheme != "file" {
+		return "", fmt.Errorf("--entry-url expects a file: URL, got %q", raw)
+	}
+	return u.Path, nil
+}
+
+func printTraceExit(e *env.Env) {
+	fmt.Fprintf(e.Err(), "WARNING: Exited the environment with code %d\n", e.ExitCode)
+	if value, err := e.Eval("new Error().stack"); err == nil && value.IsString() && value.Str() != "" {
+		fmt.Fprintln(e.Err(), value.Str())
+	}
+}
+
+const frozenIntrinsicsJS = `(function () {
+  const names = ["Object", "Function", "Array", "String", "Number", "Boolean",
+    "Symbol", "Math", "JSON", "Reflect", "Promise", "Map", "Set", "WeakMap",
+    "WeakSet", "WeakRef", "FinalizationRegistry", "Date", "RegExp", "Error",
+    "EvalError", "RangeError", "ReferenceError", "SyntaxError", "TypeError",
+    "URIError", "AggregateError", "ArrayBuffer", "SharedArrayBuffer", "DataView",
+    "Int8Array", "Uint8Array", "Uint8ClampedArray", "Int16Array", "Uint16Array",
+    "Int32Array", "Uint32Array", "Float32Array", "Float64Array",
+    "BigInt64Array", "BigUint64Array", "Intl", "Temporal"];
+  for (const name of names) {
+    const value = globalThis[name];
+    if (value === undefined) continue;
+    if (typeof value === "function" && value.prototype) {
+      try { Object.freeze(value.prototype); } catch {}
+    }
+    try { Object.freeze(value); } catch {}
+  }
+})();`
+
+const disableProtoThrowJS = `Object.defineProperty(Object.prototype, "__proto__", {
+  configurable: false,
+  get() {
+    const error = new TypeError("Cannot access Object.prototype.__proto__");
+    error.code = "ERR_PROTO_ACCESS";
+    throw error;
+  },
+  set() {
+    const error = new TypeError("Cannot set Object.prototype.__proto__");
+    error.code = "ERR_PROTO_ACCESS";
+    throw error;
+  }
+});`
 
 func repl(e *env.Env) error {
 	in := bufio.NewReader(e.In())
@@ -220,7 +537,7 @@ func repl(e *env.Env) error {
 		basePrompt = green + "> " + reset
 		contPrompt = yellow + "... " + reset
 	}
-	banner := "Welcome to GodeJS v0.1.0!"
+	banner := "Welcome to GodeJS " + version.NodeVersion + "!"
 	fmt.Fprintln(e.Out(), style(green, banner))
 	fmt.Fprintln(e.Out(), "Type \".help\" for more information.")
 
@@ -375,73 +692,6 @@ func printValue(e *env.Env, v js.Value) {
 	fmt.Fprintln(e.Out(), v.Str())
 }
 
-func parseArgs(args []string) (options, error) {
-	var o options
-	i := 0
-	for ; i < len(args); i++ {
-		a := args[i]
-		switch {
-		case a == "--":
-			i++
-			goto positional
-		case a == "-h" || a == "--help":
-			o.help = true
-		case a == "-v" || a == "--version":
-			o.version = true
-		case a == "-p" || a == "--print":
-			o.print = true
-		case a == "--preserve-symlinks":
-			o.preserveSymlinks = true
-			o.execArgv = append(o.execArgv, a)
-		case a == "--debug" || a == "-d":
-			o.debug = true
-		case a == "-e" || a == "--eval":
-			if i+1 >= len(args) {
-				return o, fmt.Errorf("bad option '%s': requires an argument", a)
-			}
-			i++
-			o.eval = args[i]
-			o.hasEval = true
-		case strings.HasPrefix(a, "--eval="):
-			o.eval = strings.TrimPrefix(a, "--eval=")
-			o.hasEval = true
-		case strings.HasPrefix(a, "--print="):
-			o.print = true
-			o.eval = strings.TrimPrefix(a, "--print=")
-			o.hasEval = true
-		case strings.HasPrefix(a, "-") && a != "-":
-			o.execArgv = append(o.execArgv, a)
-			flag := a
-			if eq := strings.IndexByte(a, '='); eq >= 0 {
-				flag = a[:eq]
-			} else if valueFlags[flag] {
-				if i+1 >= len(args) {
-					return o, fmt.Errorf("bad option '%s': requires an argument", a)
-				}
-				i++
-				o.execArgv = append(o.execArgv, args[i])
-				if flag == "--require" || flag == "-r" || flag == "--import" {
-					o.preloads = append(o.preloads, args[i])
-				}
-				continue
-			}
-			if flag == "--require" || flag == "-r" || flag == "--import" {
-				if eq := strings.IndexByte(a, '='); eq >= 0 {
-					o.preloads = append(o.preloads, a[eq+1:])
-				}
-			}
-		default:
-			goto positional
-		}
-	}
-positional:
-	if i < len(args) {
-		o.script = args[i]
-		o.args = args[i+1:]
-	}
-	return o, nil
-}
-
 func applyScriptFlags(o options) options {
 	if o.script == "" || o.hasEval {
 		return o
@@ -466,13 +716,30 @@ func usage(w io.Writer) {
 
 A Node.js-compatible runtime on JavaScriptCore, written in Go.
 
-Options:
-  -e, --eval <source>   evaluate source as JavaScript
-  -p, --print           print the result of --eval (or the positional source)
-  -d, --debug           run a script under the line debugger
-  -v, --version         print the tracked Node.js version
+If no script is given, gode reads a script from stdin or starts the REPL.
+Every Node.js CLI flag is recognized. Flags marked below are implemented;
+engine-specific flags (V8, OpenSSL, snapshots, SEA, inspector) fail with a
+clear message instead of being silently ignored.
+
+Common options:
+  -e, --eval=...        evaluate source as JavaScript
+  -p, --print           evaluate and print the result
+  -c, --check           syntax check without executing
+  -i, --interactive     enter the REPL after the script
+  -r, --require=...     preload a CommonJS module
+      --import=...      preload an ES module
+      --env-file=...    load environment variables from a file
+      --run=...         run a script from package.json
+      --watch           restart when files change
+      --title=...       set process.title
+      --input-type=...  module type for --eval and stdin
+  -d, --debug           run under gode's line debugger
+  -v, --version         print the Node.js compatibility version
   -h, --help            print this help
+
+All recognized flags:
 `)
+	flagHelpText(w)
 }
 
 func mustGetwd() string {

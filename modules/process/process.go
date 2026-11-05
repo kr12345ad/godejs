@@ -1165,44 +1165,82 @@ func Install(e *env.Env) js.Object {
 	}
 	// writeWarning echoes a warning to stderr with Node's shape.
 	writeWarning = func(warning js.Value) {
-		suppressed := false
-		for _, a := range e.Argv() {
-			if a == "--no-warnings" || strings.HasPrefix(a, "--no-warnings=") || a == "--no-deprecation" {
-				suppressed = true
+		flags := append(append([]string(nil), e.Argv()...), e.Opts.ExecArgv...)
+		noWarnings, noDeprecation := false, false
+		traceWarnings, traceDeprecation := false, false
+		disabled := map[string]bool{}
+		redirect := ""
+		for i := 0; i < len(flags); i++ {
+			switch a := flags[i]; {
+			case a == "--no-warnings":
+				noWarnings = true
+			case a == "--no-deprecation":
+				noDeprecation = true
+			case a == "--trace-warnings":
+				traceWarnings = true
+			case a == "--trace-deprecation":
+				traceDeprecation = true
+			case strings.HasPrefix(a, "--disable-warning="):
+				disabled[strings.TrimPrefix(a, "--disable-warning=")] = true
+			case a == "--disable-warning" && i+1 < len(flags):
+				disabled[flags[i+1]] = true
+			case strings.HasPrefix(a, "--redirect-warnings="):
+				redirect = strings.TrimPrefix(a, "--redirect-warnings=")
+			case a == "--redirect-warnings" && i+1 < len(flags):
+				redirect = flags[i+1]
 			}
 		}
-		if !suppressed && errorLikeValue(warning) {
-			obj := warning.Object()
-			name := "Warning"
-			if v := obj.Get("name"); v.IsString() {
-				name = v.Str()
-			}
-			msg := ""
-			if v := obj.Get("message"); v.IsString() {
-				msg = v.Str()
-			}
-			codeStr := ""
-			if v := obj.Get("code"); v.IsString() {
-				codeStr = v.Str()
-			}
-			prefix := fmt.Sprintf("(node:%d) ", os.Getpid())
-			if codeStr != "" {
-				prefix += "[" + codeStr + "] "
-			}
-			line := prefix + name + ": " + msg
-			if v := obj.Get("detail"); v.IsString() {
+		if noWarnings || !errorLikeValue(warning) {
+			return
+		}
+		obj := warning.Object()
+		name := "Warning"
+		if v := obj.Get("name"); v.IsString() {
+			name = v.Str()
+		}
+		msg := ""
+		if v := obj.Get("message"); v.IsString() {
+			msg = v.Str()
+		}
+		codeStr := ""
+		if v := obj.Get("code"); v.IsString() {
+			codeStr = v.Str()
+		}
+		if noDeprecation && name == "DeprecationWarning" {
+			return
+		}
+		if codeStr != "" && disabled[codeStr] {
+			return
+		}
+		prefix := fmt.Sprintf("(node:%d) ", os.Getpid())
+		if codeStr != "" {
+			prefix += "[" + codeStr + "] "
+		}
+		line := prefix + name + ": " + msg
+		if v := obj.Get("detail"); v.IsString() {
+			line += "\n" + v.Str()
+		}
+		traced := traceWarnings || (traceDeprecation && name == "DeprecationWarning")
+		if traced {
+			if v := obj.Get("stack"); v.IsString() && v.Str() != "" {
 				line += "\n" + v.Str()
 			}
-			if !warningHelperShown {
-				flag := "--trace-warnings"
-				if name == "DeprecationWarning" {
-					flag = "--trace-deprecation"
-				}
-				line += "\n(Use `node " + flag + " ...` to show where the warning was created)"
-				warningHelperShown = true
+		} else if !warningHelperShown {
+			flag := "--trace-warnings"
+			if name == "DeprecationWarning" {
+				flag = "--trace-deprecation"
 			}
-			fmt.Fprintln(e.Err(), line)
+			line += "\n(Use `node " + flag + " ...` to show where the warning was created)"
+			warningHelperShown = true
 		}
+		if redirect != "" {
+			if f, err := os.OpenFile(redirect, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0o600); err == nil {
+				fmt.Fprintln(f, line)
+				_ = f.Close()
+			}
+			return
+		}
+		fmt.Fprintln(e.Err(), line)
 	}
 	proc.SetFunc("emitWarning", func(this js.Object, args []js.Value) (js.Value, error) {
 		return emitWarning(args, false)

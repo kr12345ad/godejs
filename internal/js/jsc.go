@@ -195,6 +195,26 @@ func (c *Context) Global() Object {
 
 // Eval runs source in this context. filename is used for stack traces and
 // diagnostics.
+// CheckSyntax compiles src without executing it, matching node --check.
+func (c *Context) CheckSyntax(src, filename string) error {
+	script := c.newString(src)
+	defer C.JSStringRelease(script)
+	var name C.uintptr_t
+	if filename != "" {
+		name = c.newString(filename)
+		defer C.JSStringRelease(name)
+	}
+	ex := newExcBox()
+	defer ex.release()
+	if C.JSCheckScriptSyntax(u(c.ref), script, name, 1, ex.addr()) != 0 {
+		return nil
+	}
+	if exception := ex.value(); exception != 0 {
+		return c.errorFrom(exception)
+	}
+	return &Error{Name: "SyntaxError", Message: "Invalid or unexpected token"}
+}
+
 func (c *Context) Eval(src, filename string) (Value, error) {
 	script := c.newString(src)
 	defer C.JSStringRelease(script)

@@ -120,15 +120,15 @@ type Env struct {
 	exports      map[string]js.Object
 	stackScripts map[string]*stackScript
 	installing   map[string]bool
-	timers     []*Timer
-	timerSeq   int
-	ticks      []tick
-	native     []func()
-	cache      map[string]js.Object
-	sources    map[string]string
-	mainModule js.Object
-	lastErr    error
-	exitHooks  []func(int)
+	timers       []*Timer
+	timerSeq     int
+	ticks        []tick
+	native       []func()
+	cache        map[string]js.Object
+	sources      map[string]string
+	mainModule   js.Object
+	lastErr      error
+	exitHooks    []func(int)
 
 	// uncaught delivers an exception that escaped the loop to the process
 	// builtin (an 'uncaughtException' listener or the capture callback).
@@ -285,6 +285,51 @@ func (e *Env) setDefaultRequire(dir string) {
 
 // Eval evaluates source in the global context.
 func (e *Env) Eval(src string) (js.Value, error) { return e.JS.Eval(src, "[eval]") }
+
+// CheckScript compiles source without executing it. format is "module" for
+// transformed ES module text and anything else for plain script/CommonJS.
+func (e *Env) CheckScript(src, filename, format string) error {
+	if format == "module" || format == "esm" {
+		src = transformESM(src, filename)
+	}
+	return e.JS.CheckSyntax(src, filename)
+}
+
+// RunScriptType evaluates string input using the requested module format.
+// ES module strings need the same exports/require/module bindings that file
+// loading installs, because transformESM rewrites imports and exports into
+// uses of those bindings.
+func (e *Env) RunScriptType(src, filename, format string) (js.Value, error) {
+	if format != "module" && format != "esm" {
+		return e.RunScript(src, filename)
+	}
+	body := transformESM(src, filename)
+	dir := e.Opts.Cwd
+	if dir == "" || (filename != "" && !strings.HasPrefix(filename, "[")) {
+		dir = filepath.Dir(filename)
+	}
+	moduleObj := e.JS.Obj()
+	exports := e.JS.Obj()
+	moduleObj.SetStr("id", filename)
+	moduleObj.SetStr("filename", filename)
+	e.defineOwn(moduleObj, "exports", exports.V())
+	moduleObj.SetBool("loaded", false)
+	moduleObj.Set("children", e.JS.Arr(nil).V())
+	requireFn := e.makeRequire(dir, e.mainModule)
+	prefix := "(function (" + esmExports + ", " + esmRequire + ", " + esmModule + ") {"
+	wrapped := prefix + body + "\n})"
+	lineOffset, colShift := stackOffsets(prefix)
+	e.registerScript(filename, body, e.JS.Undefined(), lineOffset, colShift)
+	fnVal, err := e.JS.Eval(wrapped, filename)
+	if err != nil {
+		return js.Value{}, err
+	}
+	if _, err := fnVal.Object().Call(js.Object{}, exports.V(), requireFn.V(), moduleObj.V()); err != nil {
+		return js.Value{}, err
+	}
+	moduleObj.SetBool("loaded", true)
+	return moduleObj.Get("exports"), nil
+}
 
 // RunScript evaluates source and returns its completion value.
 func (e *Env) RunScript(src, filename string) (js.Value, error) {

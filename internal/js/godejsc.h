@@ -24,6 +24,8 @@ extern uintptr_t JSStringGetCharactersPtr(uintptr_t string);
 
 extern uintptr_t JSEvaluateScript(uintptr_t ctx, uintptr_t script, uintptr_t thisObject,
                                   uintptr_t sourceURL, int startingLineNumber, uintptr_t exception);
+extern uint8_t JSCheckScriptSyntax(uintptr_t ctx, uintptr_t script, uintptr_t sourceURL,
+                                   int startingLineNumber, uintptr_t exception);
 extern uintptr_t JSValueMakeUndefined(uintptr_t ctx);
 extern uintptr_t JSValueMakeNull(uintptr_t ctx);
 extern uintptr_t JSValueMakeBoolean(uintptr_t ctx, uint8_t boolean);
