@@ -13,8 +13,9 @@ options. Use ``gode --help`` for the complete list.
    echo "console.log(1)" | gode    # read a script from stdin
    gode                            # start the REPL
 
-The REPL understands ``.help``, ``.clear`` and ``.exit``. ``Ctrl-D`` also
-exits. Expressions are inspected with ``util.inspect``.
+The REPL understands ``.break``, ``.clear``, ``.editor``, ``.exit``, ``.help``,
+``.load`` and ``.save``. ``Ctrl-D`` also exits. Expressions are inspected with
+``util.inspect``.
 
 Input and execution
 -------------------

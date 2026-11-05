@@ -6,7 +6,7 @@ Run ``gode`` with no script and a terminal on stdin:
 .. code-block:: sh
 
    $ gode
-   Welcome to GodeJS v24.22.2!
+   Welcome to gode v0.2.1!
    Type ".help" for more information.
    > 1 + 1
    2
@@ -46,17 +46,29 @@ Commands
 
    * - Command
      - Effect
-   * - ``.help``
-     - Print the command list.
-   * - ``.clear``
+   * - ``.break``
      - Discard the current multiline buffer.
+   * - ``.clear``
+     - Alias for ``.break``.
+   * - ``.editor``
+     - Enter editor mode. Finish with a line containing only ``.`` or ``Ctrl-D``.
    * - ``.exit`` or ``exit``
      - Leave the REPL with status 0.
+   * - ``.help``
+     - Print the command list.
+   * - ``.load <file>``
+     - Evaluate a JavaScript file in the current REPL session.
+   * - ``.save <file>``
+     - Save every completed input from this session to a file.
    * - ``Ctrl-D``
      - Leave the REPL when the current line is empty.
 
 ``Ctrl-C`` is handled by the terminal; the REPL itself does not install a
 signal handler while reading a line.
+
+``.load`` resolves relative paths against the process working directory and
+keeps declarations from the file available to later input. ``.save`` writes
+the completed inputs, not the printed results or the contents of loaded files.
 
 Colors and prompts
 ------------------

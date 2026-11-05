@@ -11,6 +11,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"runtime"
 	"strconv"
 	"strings"
@@ -516,6 +517,14 @@ const disableProtoThrowJS = `Object.defineProperty(Object.prototype, "__proto__"
   }
 });`
 
+const replHelp = `.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the REPL
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands in this REPL session to a file`
+
 func repl(e *env.Env) error {
 	in := bufio.NewReader(e.In())
 	color := !isPipe(os.Stdout) && os.Getenv("NO_COLOR") == "" && os.Getenv("TERM") != "dumb"
@@ -537,12 +546,13 @@ func repl(e *env.Env) error {
 		basePrompt = green + "> " + reset
 		contPrompt = yellow + "... " + reset
 	}
-	banner := "Welcome to GodeJS " + version.NodeVersion + "!"
+	banner := "Welcome to gode v" + version.Gode + "!"
 	fmt.Fprintln(e.Out(), style(green, banner))
 	fmt.Fprintln(e.Out(), "Type \".help\" for more information.")
 
 	prompt := basePrompt
 	var buffer string
+	var history []string
 	for {
 		fmt.Fprint(e.Out(), prompt)
 		line, err := in.ReadString('\n')
@@ -552,30 +562,50 @@ func repl(e *env.Env) error {
 		}
 		line = strings.TrimRight(line, "\r\n")
 		trimmed := strings.TrimSpace(line)
-		if trimmed == ".exit" || trimmed == "exit" {
+		if trimmed == "exit" {
 			return nil
 		}
-		if trimmed == ".clear" {
+
+		command, arg := splitReplCommand(trimmed)
+		switch command {
+		case ".exit":
+			return nil
+		case ".break", ".clear":
 			buffer = ""
 			prompt = basePrompt
 			continue
 		}
+
+		fromEditor := false
 		if buffer == "" {
-			switch trimmed {
-			case "":
-				continue
+			switch command {
 			case ".help":
-				fmt.Fprintln(e.Out(), ".help   Show this help\n.clear  Clear the current input\n.exit   Exit the REPL")
+				fmt.Fprintln(e.Out(), replHelp)
 				continue
+			case ".load":
+				loadReplFile(e, arg, color)
+				continue
+			case ".save":
+				saveReplHistory(e, arg, history)
+				continue
+			case ".editor":
+				buffer = readReplEditor(e, in, contPrompt)
+				fromEditor = true
+				if strings.TrimSpace(buffer) == "" {
+					continue
+				}
 			}
 		}
 
-		buffer += line + "\n"
+		if !fromEditor {
+			buffer += line + "\n"
+		}
 		if replNeedsMore(buffer) {
 			prompt = contPrompt
 			continue
 		}
 
+		history = append(history, buffer)
 		val, evalErr := e.RunScript(buffer, "[repl]")
 		if evalErr != nil {
 			if replIncomplete(evalErr) {
@@ -594,6 +624,94 @@ func repl(e *env.Env) error {
 		buffer = ""
 		prompt = basePrompt
 	}
+}
+
+func splitReplCommand(line string) (string, string) {
+	if !strings.HasPrefix(line, ".") {
+		return "", ""
+	}
+	if i := strings.IndexAny(line, " \t"); i >= 0 {
+		return line[:i], strings.TrimSpace(line[i:])
+	}
+	return line, ""
+}
+
+func replArgument(arg string) string {
+	arg = strings.TrimSpace(arg)
+	if len(arg) >= 2 {
+		if (arg[0] == '\'' && arg[len(arg)-1] == '\'') || (arg[0] == '"' && arg[len(arg)-1] == '"') {
+			return arg[1 : len(arg)-1]
+		}
+	}
+	return arg
+}
+
+func replFilePath(e *env.Env, arg string) string {
+	path := replArgument(arg)
+	if path == "" || filepath.IsAbs(path) {
+		return path
+	}
+	return filepath.Join(e.Cwd(), path)
+}
+
+func readReplEditor(e *env.Env, in *bufio.Reader, prompt string) string {
+	fmt.Fprintln(e.Out(), "// Entering editor mode (Ctrl+D to finish, Ctrl+C to cancel)")
+	var source strings.Builder
+	for {
+		fmt.Fprint(e.Out(), prompt)
+		line, err := in.ReadString('\n')
+		if err != nil && line == "" {
+			return source.String()
+		}
+		line = strings.TrimRight(line, "\r\n")
+		if strings.TrimSpace(line) == "." {
+			return source.String()
+		}
+		source.WriteString(line)
+		source.WriteByte('\n')
+		if err != nil {
+			return source.String()
+		}
+	}
+}
+
+func loadReplFile(e *env.Env, arg string, color bool) {
+	path := replFilePath(e, arg)
+	if path == "" {
+		fmt.Fprintln(e.Err(), "gode: .load requires a filename")
+		return
+	}
+	source, err := readSource(path)
+	if err != nil {
+		fmt.Fprintf(e.Err(), "gode: .load: %v\n", err)
+		return
+	}
+	val, err := e.RunScriptType(source, path, formatForInputWithSource("", path, source))
+	if err != nil {
+		fmt.Fprint(e.Err(), diag.Render(diag.FromError("gode", err, path, source)))
+		return
+	}
+	if val.Valid() && !val.IsUndefined() {
+		e.Global().Set("_", val)
+		printReplValue(e, val, color)
+	}
+}
+
+func saveReplHistory(e *env.Env, arg string, history []string) {
+	path := replFilePath(e, arg)
+	if path == "" {
+		fmt.Fprintln(e.Err(), "gode: .save requires a filename")
+		return
+	}
+	data := strings.Join(history, "\n")
+	if data != "" {
+		data += "\n"
+	}
+	if err := os.WriteFile(path, []byte(data), 0644); err != nil {
+		fmt.Fprintf(e.Err(), "gode: .save: %v\n", err)
+		return
+	}
+	fmt.Fprintf(e.Out(), "Saved REPL session to %s\n", path)
 }
 
 func replNeedsMore(src string) bool {

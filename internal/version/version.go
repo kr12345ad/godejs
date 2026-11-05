@@ -3,7 +3,7 @@
 package version
 
 // Gode is the GodeJS release.
-const Gode = "0.1.0"
+const Gode = "0.2.1"
 
 // Node is the Node.js LTS release GodeJS tracks.
 const Node = "24.22.2"
