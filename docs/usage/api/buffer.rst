@@ -70,7 +70,6 @@ The ``data`` may be any JavaScript-value that can be coerced into a string.
 
 * ``data`` (*any*): The Base64-encoded input string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufferatobdata>`__
 
 Blob
 ~~~~
@@ -90,7 +89,6 @@ Creates a new ``Blob`` object containing a concatenation of the given sources.
 * ``sources`` (*string\[]|ArrayBuffer\[]|TypedArray\[]|DataView\[]|Blob\[]*) — optional: An
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#new-bufferblobsources-options>`__
 
 btoa
 ~~~~
@@ -109,7 +107,6 @@ The ``data`` may be any JavaScript-value that can be coerced into a string.
 
 * ``data`` (*any*): An ASCII (Latin1) string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufferbtoadata>`__
 
 Buffer
 ~~~~~~
@@ -135,7 +132,6 @@ This is a class; construct instances with ``new``.
    console.log(buf);
    // Prints: <Buffer 00 00 00 00 00>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#class-buffer>`__
 
 File
 ~~~~
@@ -152,7 +148,6 @@ File
 * ``fileName`` (*string*): The name of the file.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#new-bufferfilesources-filename-options>`__
 
 isAscii
 ~~~~~~~
@@ -171,7 +166,6 @@ A detached ``ArrayBuffer``, or a ``TypedArray`` backed by one, is treated as emp
 
 * ``input`` (*Buffer | ArrayBuffer | TypedArray*): The input to validate.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufferisasciiinput>`__
 
 isUtf8
 ~~~~~~
@@ -190,7 +184,6 @@ A detached ``ArrayBuffer``, or a ``TypedArray`` backed by one, is treated as emp
 
 * ``input`` (*Buffer | ArrayBuffer | TypedArray*): The input to validate.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufferisutf8input>`__
 
 resolveObjectURL
 ~~~~~~~~~~~~~~~~
@@ -207,7 +200,6 @@ Resolves a ``'blob:nodedata:...'`` an associated ``Blob`` object registered usin
 
 * ``id`` (*string*): A ``'blob:nodedata:...`` URL string returned by a prior call to
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufferresolveobjecturlid>`__
 
 SlowBuffer
 ~~~~~~~~~~
@@ -222,7 +214,6 @@ See ``Buffer.allocUnsafeSlow()``. This was never a class in the sense that the c
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#class-slowbuffer>`__
 
 transcode
 ~~~~~~~~~
@@ -253,7 +244,6 @@ Throws if the ``fromEnc`` or ``toEnc`` specify invalid character encodings or if
    console.log(newBuf.toString('ascii'));
    // Prints: '?'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#buffertranscodesource-fromenc-toenc>`__
 
 Blob class
 ----------
@@ -275,7 +265,6 @@ Returns a promise that fulfills with an ``ArrayBuffer`` containing a copy of the
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobarraybuffer>`__
 
 Blob.bytes
 ~~~~~~~~~~
@@ -299,7 +288,6 @@ This callable takes no arguments.
      console.log(bytes); // Outputs: Uint8Array(5) [ 104, 101, 108, 108, 111 ]
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobbytes>`__
 
 Blob.slice
 ~~~~~~~~~~
@@ -318,7 +306,6 @@ Creates and returns a new ``Blob`` containing a subset of this ``Blob`` objects 
 * ``end`` (*number*) — optional: The ending index.
 * ``type`` (*string*) — optional: The content-type for the new ``Blob``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobslicestart-end-type>`__
 
 Blob.stream
 ~~~~~~~~~~~
@@ -333,7 +320,6 @@ Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be r
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobstream>`__
 
 Blob.text
 ~~~~~~~~~
@@ -348,7 +334,6 @@ Returns a promise that fulfills with the contents of the ``Blob`` decoded as a U
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobtext>`__
 
 Blob.textStream
 ~~~~~~~~~~~~~~~
@@ -363,7 +348,6 @@ Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be r
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobtextstream>`__
 
 Buffer class
 ------------
@@ -381,7 +365,7 @@ Buffer.asciiSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.asciiWrite
@@ -395,7 +379,7 @@ Buffer.asciiWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64Slice
@@ -409,7 +393,7 @@ Buffer.base64Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64urlSlice
@@ -423,7 +407,7 @@ Buffer.base64urlSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64urlWrite
@@ -437,7 +421,7 @@ Buffer.base64urlWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64Write
@@ -451,7 +435,7 @@ Buffer.base64Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.compare
@@ -484,7 +468,6 @@ Compares ``buf1`` to ``buf2``, typically for the purpose of sorting arrays of ``
    // Prints: [ <Buffer 30 31 32 33>, <Buffer 31 32 33 34> ]
    // (This result is equal to: [buf2, buf1].)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-buffercomparebuf1-buf2>`__
 
 Buffer.copy
 ~~~~~~~~~~~
@@ -529,7 +512,6 @@ Copies data from a region of ``buf`` to a region in ``target``, even if the ``ta
    console.log(buf2.toString('ascii', 0, 25));
    // Prints: !!!!!!!!qrst!!!!!!!!!!!!!
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufcopytarget-targetstart-sourcestart-sourceend>`__
 
 Buffer.equals
 ~~~~~~~~~~~~~
@@ -561,7 +543,6 @@ Returns ``true`` if both ``buf`` and ``otherBuffer`` have exactly the same bytes
    console.log(buf1.equals(buf3));
    // Prints: false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufequalsotherbuffer>`__
 
 Buffer.fill
 ~~~~~~~~~~~
@@ -602,7 +583,6 @@ Fills ``buf`` with the specified ``value``. If the ``offset`` and ``end`` are no
    console.log(c.fill(''));
    // Prints: <Buffer 00 00 00 00 00>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#buffillvalue-offset-end-encoding>`__
 
 Buffer.hexSlice
 ~~~~~~~~~~~~~~~
@@ -615,7 +595,7 @@ Buffer.hexSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.hexWrite
@@ -629,7 +609,7 @@ Buffer.hexWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.includes
@@ -673,7 +653,6 @@ Equivalent to ``buf.indexOf() !== -1``.
    console.log(buf.includes('this', 4));
    // Prints: false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufincludesvalue-start-end-encoding>`__
 
 Buffer.indexOf
 ~~~~~~~~~~~~~~
@@ -723,7 +702,6 @@ If ``value`` is:
    console.log(utf16Buffer.indexOf('\u03a3', -4, 'utf16le'));
    // Prints: 6
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufindexofvalue-start-end-encoding>`__
 
 Buffer.inspect
 ~~~~~~~~~~~~~~
@@ -736,7 +714,7 @@ Buffer.inspect
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.lastIndexOf
@@ -789,7 +767,6 @@ If ``value`` is not a string, number, or ``Buffer``, this method will throw a ``
    console.log(utf16Buffer.lastIndexOf('\u03a3', -5, 'utf16le'));
    // Prints: 4
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#buflastindexofvalue-start-end-encoding>`__
 
 Buffer.latin1Slice
 ~~~~~~~~~~~~~~~~~~
@@ -802,7 +779,7 @@ Buffer.latin1Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.latin1Write
@@ -816,7 +793,7 @@ Buffer.latin1Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigInt64BE
@@ -836,7 +813,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
 
 * ``offset`` (*integer*) — optional: Number of bytes to skip before starting to read. Must
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadbigint64beoffset>`__
 
 Buffer.readBigInt64LE
 ~~~~~~~~~~~~~~~~~~~~~
@@ -855,7 +831,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
 
 * ``offset`` (*integer*) — optional: Number of bytes to skip before starting to read. Must
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadbigint64leoffset>`__
 
 Buffer.readBigUInt64BE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -885,7 +860,6 @@ This function is also available under the ``readBigUint64BE`` alias.
    console.log(buf.readBigUInt64BE(0));
    // Prints: 4294967295n
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadbiguint64beoffset>`__
 
 Buffer.readBigUint64BE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -898,7 +872,7 @@ Buffer.readBigUint64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigUInt64LE
@@ -929,7 +903,6 @@ This function is also available under the ``readBigUint64LE`` alias.
    console.log(buf.readBigUInt64LE(0));
    // Prints: 18446744069414584320n
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadbiguint64leoffset>`__
 
 Buffer.readBigUint64LE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -942,7 +915,7 @@ Buffer.readBigUint64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readDoubleBE
@@ -971,7 +944,6 @@ Reads a 64-bit, big-endian double from ``buf`` at the specified ``offset``.
    console.log(buf.readDoubleBE(0));
    // Prints: 8.20788039913184e-304
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaddoublebeoffset>`__
 
 Buffer.readDoubleLE
 ~~~~~~~~~~~~~~~~~~~
@@ -1001,7 +973,6 @@ Reads a 64-bit, little-endian double from ``buf`` at the specified ``offset``.
    console.log(buf.readDoubleLE(1));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaddoubleleoffset>`__
 
 Buffer.readFloatBE
 ~~~~~~~~~~~~~~~~~~
@@ -1029,7 +1000,6 @@ Reads a 32-bit, big-endian float from ``buf`` at the specified ``offset``.
    console.log(buf.readFloatBE(0));
    // Prints: 2.387939260590663e-38
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadfloatbeoffset>`__
 
 Buffer.readFloatLE
 ~~~~~~~~~~~~~~~~~~
@@ -1059,7 +1029,6 @@ Reads a 32-bit, little-endian float from ``buf`` at the specified ``offset``.
    console.log(buf.readFloatLE(1));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadfloatleoffset>`__
 
 Buffer.readInt16BE
 ~~~~~~~~~~~~~~~~~~
@@ -1089,7 +1058,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
    console.log(buf.readInt16BE(0));
    // Prints: 5
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadint16beoffset>`__
 
 Buffer.readInt16LE
 ~~~~~~~~~~~~~~~~~~
@@ -1121,7 +1089,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
    console.log(buf.readInt16LE(1));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadint16leoffset>`__
 
 Buffer.readInt32BE
 ~~~~~~~~~~~~~~~~~~
@@ -1151,7 +1118,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
    console.log(buf.readInt32BE(0));
    // Prints: 5
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadint32beoffset>`__
 
 Buffer.readInt32LE
 ~~~~~~~~~~~~~~~~~~
@@ -1183,7 +1149,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
    console.log(buf.readInt32LE(1));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadint32leoffset>`__
 
 Buffer.readInt8
 ~~~~~~~~~~~~~~~
@@ -1217,7 +1182,6 @@ Integers read from a ``Buffer`` are interpreted as two's complement signed value
    console.log(buf.readInt8(2));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadint8offset>`__
 
 Buffer.readIntBE
 ~~~~~~~~~~~~~~~~
@@ -1250,7 +1214,6 @@ Reads ``byteLength`` number of bytes from ``buf`` at the specified ``offset`` an
    console.log(buf.readIntBE(1, 0).toString(16));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadintbeoffset-bytelength>`__
 
 Buffer.readIntLE
 ~~~~~~~~~~~~~~~~
@@ -1279,7 +1242,6 @@ Reads ``byteLength`` number of bytes from ``buf`` at the specified ``offset`` an
    console.log(buf.readIntLE(0, 6).toString(16));
    // Prints: -546f87a9cbee
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreadintleoffset-bytelength>`__
 
 Buffer.readUInt16BE
 ~~~~~~~~~~~~~~~~~~~
@@ -1311,7 +1273,6 @@ This function is also available under the ``readUint16BE`` alias.
    console.log(buf.readUInt16BE(1).toString(16));
    // Prints: 3456
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduint16beoffset>`__
 
 Buffer.readUint16BE
 ~~~~~~~~~~~~~~~~~~~
@@ -1324,7 +1285,7 @@ Buffer.readUint16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt16LE
@@ -1359,7 +1320,6 @@ This function is also available under the ``readUint16LE`` alias.
    console.log(buf.readUInt16LE(2).toString(16));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduint16leoffset>`__
 
 Buffer.readUint16LE
 ~~~~~~~~~~~~~~~~~~~
@@ -1372,7 +1332,7 @@ Buffer.readUint16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt32BE
@@ -1403,7 +1363,6 @@ This function is also available under the ``readUint32BE`` alias.
    console.log(buf.readUInt32BE(0).toString(16));
    // Prints: 12345678
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduint32beoffset>`__
 
 Buffer.readUint32BE
 ~~~~~~~~~~~~~~~~~~~
@@ -1416,7 +1375,7 @@ Buffer.readUint32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt32LE
@@ -1449,7 +1408,6 @@ This function is also available under the ``readUint32LE`` alias.
    console.log(buf.readUInt32LE(1).toString(16));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduint32leoffset>`__
 
 Buffer.readUint32LE
 ~~~~~~~~~~~~~~~~~~~
@@ -1462,7 +1420,7 @@ Buffer.readUint32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt8
@@ -1497,7 +1455,6 @@ This function is also available under the ``readUint8`` alias.
    console.log(buf.readUInt8(2));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduint8offset>`__
 
 Buffer.readUint8
 ~~~~~~~~~~~~~~~~
@@ -1510,7 +1467,7 @@ Buffer.readUint8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUIntBE
@@ -1544,7 +1501,6 @@ This function is also available under the ``readUintBE`` alias.
    console.log(buf.readUIntBE(1, 6).toString(16));
    // Throws ERR_OUT_OF_RANGE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduintbeoffset-bytelength>`__
 
 Buffer.readUintBE
 ~~~~~~~~~~~~~~~~~
@@ -1557,7 +1513,7 @@ Buffer.readUintBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUIntLE
@@ -1589,7 +1545,6 @@ This function is also available under the ``readUintLE`` alias.
    console.log(buf.readUIntLE(0, 6).toString(16));
    // Prints: ab9078563412
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufreaduintleoffset-bytelength>`__
 
 Buffer.readUintLE
 ~~~~~~~~~~~~~~~~~
@@ -1602,7 +1557,7 @@ Buffer.readUintLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.slice
@@ -1623,7 +1578,6 @@ This method was deprecated because it is not compatible with ``Uint8Array.protot
 * ``start``
 * ``end``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0158-bufferslicestart-end>`__
 
 Buffer.subarray
 ~~~~~~~~~~~~~~~
@@ -1669,7 +1623,6 @@ Specifying ``end`` greater than ``buf.length`` will return the same result as th
    console.log(buf2.toString('ascii', 0, buf2.length));
    // Prints: !bc
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufsubarraystart-end>`__
 
 Buffer.swap16
 ~~~~~~~~~~~~~
@@ -1707,7 +1660,6 @@ This callable takes no arguments.
    buf2.swap16();
    // Throws ERR_INVALID_BUFFER_SIZE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufswap16>`__
 
 Buffer.swap32
 ~~~~~~~~~~~~~
@@ -1743,7 +1695,6 @@ This callable takes no arguments.
    buf2.swap32();
    // Throws ERR_INVALID_BUFFER_SIZE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufswap32>`__
 
 Buffer.swap64
 ~~~~~~~~~~~~~
@@ -1779,7 +1730,6 @@ This callable takes no arguments.
    buf2.swap64();
    // Throws ERR_INVALID_BUFFER_SIZE.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufswap64>`__
 
 Buffer.toJSON
 ~~~~~~~~~~~~~
@@ -1817,7 +1767,6 @@ This callable takes no arguments.
    console.log(copy);
    // Prints: <Buffer 01 02 03 04 05>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#buftojson>`__
 
 Buffer.toLocaleString
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1830,7 +1779,7 @@ Buffer.toLocaleString
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.toString
@@ -1879,7 +1828,6 @@ If ``encoding`` is ``'utf8'`` and a byte sequence in the input is not valid UTF-
    console.log(buf2.toString(undefined, 0, 3));
    // Prints: té
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#buftostringencoding-start-end>`__
 
 Buffer.ucs2Slice
 ~~~~~~~~~~~~~~~~
@@ -1892,7 +1840,7 @@ Buffer.ucs2Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.ucs2Write
@@ -1906,7 +1854,7 @@ Buffer.ucs2Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.utf8Slice
@@ -1920,7 +1868,7 @@ Buffer.utf8Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.utf8Write
@@ -1934,7 +1882,7 @@ Buffer.utf8Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.write
@@ -1975,7 +1923,6 @@ Writes ``string`` to ``buf`` at ``offset`` according to the character encoding i
    console.log(`${length} bytes: ${buffer.toString('utf8', 8, 10)}`);
    // Prints: 2 bytes : ab
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritestring-offset-length-encoding>`__
 
 Buffer.writeBigInt64BE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2008,7 +1955,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as big-endian.
    console.log(buf);
    // Prints: <Buffer 01 02 03 04 05 06 07 08>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritebigint64bevalue-offset>`__
 
 Buffer.writeBigInt64LE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2041,7 +1987,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as little-endian.
    console.log(buf);
    // Prints: <Buffer 08 07 06 05 04 03 02 01>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritebigint64levalue-offset>`__
 
 Buffer.writeBigUInt64BE
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2074,7 +2019,6 @@ This function is also available under the ``writeBigUint64BE`` alias.
    console.log(buf);
    // Prints: <Buffer de ca fa fe ca ce fa de>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritebiguint64bevalue-offset>`__
 
 Buffer.writeBigUint64BE
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2087,7 +2031,7 @@ Buffer.writeBigUint64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigUInt64LE
@@ -2121,7 +2065,6 @@ This function is also available under the ``writeBigUint64LE`` alias.
    console.log(buf);
    // Prints: <Buffer de fa ce ca fe fa ca de>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritebiguint64levalue-offset>`__
 
 Buffer.writeBigUint64LE
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2134,7 +2077,7 @@ Buffer.writeBigUint64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeDoubleBE
@@ -2166,7 +2109,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as big-endian. The ``val
    console.log(buf);
    // Prints: <Buffer 40 5e dd 2f 1a 9f be 77>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritedoublebevalue-offset>`__
 
 Buffer.writeDoubleLE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2197,7 +2139,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as little-endian. The ``
    console.log(buf);
    // Prints: <Buffer 77 be 9f 1a 2f dd 5e 40>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritedoublelevalue-offset>`__
 
 Buffer.writeFloatBE
 ~~~~~~~~~~~~~~~~~~~
@@ -2228,7 +2169,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as big-endian. Behavior 
    console.log(buf);
    // Prints: <Buffer 4f 4a fe bb>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritefloatbevalue-offset>`__
 
 Buffer.writeFloatLE
 ~~~~~~~~~~~~~~~~~~~
@@ -2259,7 +2199,6 @@ Writes ``value`` to ``buf`` at the specified ``offset`` as little-endian. Behavi
    console.log(buf);
    // Prints: <Buffer bb fe 4a 4f>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwritefloatlevalue-offset>`__
 
 Buffer.writeInt16BE
 ~~~~~~~~~~~~~~~~~~~
@@ -2292,7 +2231,6 @@ The ``value`` is interpreted and written as a two's complement signed integer.
    console.log(buf);
    // Prints: <Buffer 01 02>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteint16bevalue-offset>`__
 
 Buffer.writeInt16LE
 ~~~~~~~~~~~~~~~~~~~
@@ -2325,7 +2263,6 @@ The ``value`` is interpreted and written as a two's complement signed integer.
    console.log(buf);
    // Prints: <Buffer 04 03>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteint16levalue-offset>`__
 
 Buffer.writeInt32BE
 ~~~~~~~~~~~~~~~~~~~
@@ -2358,7 +2295,6 @@ The ``value`` is interpreted and written as a two's complement signed integer.
    console.log(buf);
    // Prints: <Buffer 01 02 03 04>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteint32bevalue-offset>`__
 
 Buffer.writeInt32LE
 ~~~~~~~~~~~~~~~~~~~
@@ -2391,7 +2327,6 @@ The ``value`` is interpreted and written as a two's complement signed integer.
    console.log(buf);
    // Prints: <Buffer 08 07 06 05>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteint32levalue-offset>`__
 
 Buffer.writeInt8
 ~~~~~~~~~~~~~~~~
@@ -2425,7 +2360,6 @@ Writes ``value`` to ``buf`` at the specified ``offset``. ``value`` must be a val
    console.log(buf);
    // Prints: <Buffer 02 fe>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteint8value-offset>`__
 
 Buffer.writeIntBE
 ~~~~~~~~~~~~~~~~~
@@ -2457,7 +2391,6 @@ Writes ``byteLength`` bytes of ``value`` to ``buf`` at the specified ``offset`` 
    console.log(buf);
    // Prints: <Buffer 12 34 56 78 90 ab>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteintbevalue-offset-bytelength>`__
 
 Buffer.writeIntLE
 ~~~~~~~~~~~~~~~~~
@@ -2489,7 +2422,6 @@ Writes ``byteLength`` bytes of ``value`` to ``buf`` at the specified ``offset`` 
    console.log(buf);
    // Prints: <Buffer ab 90 78 56 34 12>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteintlevalue-offset-bytelength>`__
 
 Buffer.writeUInt16BE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2523,7 +2455,6 @@ This function is also available under the ``writeUint16BE`` alias.
    console.log(buf);
    // Prints: <Buffer de ad be ef>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuint16bevalue-offset>`__
 
 Buffer.writeUint16BE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2536,7 +2467,7 @@ Buffer.writeUint16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt16LE
@@ -2571,7 +2502,6 @@ This function is also available under the ``writeUint16LE`` alias.
    console.log(buf);
    // Prints: <Buffer ad de ef be>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuint16levalue-offset>`__
 
 Buffer.writeUint16LE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2584,7 +2514,7 @@ Buffer.writeUint16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt32BE
@@ -2618,7 +2548,6 @@ This function is also available under the ``writeUint32BE`` alias.
    console.log(buf);
    // Prints: <Buffer fe ed fa ce>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuint32bevalue-offset>`__
 
 Buffer.writeUint32BE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2631,7 +2560,7 @@ Buffer.writeUint32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt32LE
@@ -2665,7 +2594,6 @@ This function is also available under the ``writeUint32LE`` alias.
    console.log(buf);
    // Prints: <Buffer ce fa ed fe>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuint32levalue-offset>`__
 
 Buffer.writeUint32LE
 ~~~~~~~~~~~~~~~~~~~~
@@ -2678,7 +2606,7 @@ Buffer.writeUint32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt8
@@ -2715,7 +2643,6 @@ This function is also available under the ``writeUint8`` alias.
    console.log(buf);
    // Prints: <Buffer 03 04 23 42>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuint8value-offset>`__
 
 Buffer.writeUint8
 ~~~~~~~~~~~~~~~~~
@@ -2728,7 +2655,7 @@ Buffer.writeUint8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUIntBE
@@ -2763,7 +2690,6 @@ This function is also available under the ``writeUintBE`` alias.
    console.log(buf);
    // Prints: <Buffer 12 34 56 78 90 ab>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuintbevalue-offset-bytelength>`__
 
 Buffer.writeUintBE
 ~~~~~~~~~~~~~~~~~~
@@ -2776,7 +2702,7 @@ Buffer.writeUintBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUIntLE
@@ -2811,7 +2737,6 @@ This function is also available under the ``writeUintLE`` alias.
    console.log(buf);
    // Prints: <Buffer ab 90 78 56 34 12>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#bufwriteuintlevalue-offset-bytelength>`__
 
 Buffer.writeUintLE
 ~~~~~~~~~~~~~~~~~~
@@ -2824,7 +2749,7 @@ Buffer.writeUintLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -2846,4 +2771,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

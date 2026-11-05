@@ -53,7 +53,6 @@ This function creates a hook that runs after executing a suite.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#afterfn-options>`__
 
 afterEach
 ~~~~~~~~~
@@ -82,7 +81,6 @@ This function creates a hook that runs after each test in the current suite. The
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#aftereachfn-options>`__
 
 assert
 ~~~~~~
@@ -99,7 +97,6 @@ It is possible to apply the same configuration to all files by placing common co
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#assert>`__
 
 before
 ~~~~~~
@@ -128,7 +125,6 @@ This function creates a hook that runs before executing a suite.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#beforefn-options>`__
 
 beforeEach
 ~~~~~~~~~~
@@ -157,7 +153,6 @@ This function creates a hook that runs before each test in the current suite.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#beforeeachfn-options>`__
 
 describe
 ~~~~~~~~
@@ -180,7 +175,6 @@ This callable takes no arguments.
 
    const { describe, it } = require('node:test');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#describe-and-it-aliases>`__
 
 it
 ~~~
@@ -201,7 +195,6 @@ The ``it()`` function is imported from the ``node:test`` module.
 * ``options`` — optional
 * ``fn`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#itname-options-fn>`__
 
 only
 ~~~~
@@ -220,7 +213,6 @@ Shorthand for marking a test as ``only``, same as ``test([name], { only: true }[
 * ``options`` — optional
 * ``fn`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#testonlyname-options-fn>`__
 
 skip
 ~~~~
@@ -239,7 +231,6 @@ Shorthand for skipping a test, same as ``test([name], { skip: true }[, fn])``.
 * ``options`` — optional
 * ``fn`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#testskipname-options-fn>`__
 
 suite
 ~~~~~
@@ -258,7 +249,6 @@ The ``suite()`` function is imported from the ``node:test`` module.
 * ``options`` (*Object*) — optional: Optional configuration options for the suite.
 * ``fn`` (*Function|AsyncFunction*) — optional: The suite function declaring nested tests and
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#suitename-options-fn>`__
 
 test
 ~~~~
@@ -294,7 +284,6 @@ The ``TestContext`` object passed to the ``fn`` argument can be used to perform 
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#testname-options-fn>`__
 
 todo
 ~~~~
@@ -313,7 +302,6 @@ Shorthand for marking a test as ``TODO``, same as ``test([name], { todo: true }[
 * ``options`` — optional
 * ``fn`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#testtodoname-options-fn>`__
 
 mock
 ----
@@ -362,7 +350,6 @@ The following example creates a mock function that increments a counter by one o
      assert.strictEqual(fn(), 6);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockfnoriginal-implementation-options>`__
 
 mock.getter
 ~~~~~~~~~~~
@@ -382,7 +369,6 @@ This function is syntax sugar for ``MockTracker.method`` with ``options.getter``
 * ``implementation`` — optional
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockgetterobject-methodname-implementation-options>`__
 
 mock.method
 ~~~~~~~~~~~
@@ -428,7 +414,6 @@ This function is used to create a mock on an existing object method. The followi
      assert.strictEqual(call.this, number);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockmethodobject-methodname-implementation-options>`__
 
 mock.property
 ~~~~~~~~~~~~~
@@ -469,7 +454,6 @@ Creates a mock for a property value on an object. This allows you to track and c
      assert.strictEqual(obj.foo, 42);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockpropertyobject-propertyname-value>`__
 
 mock.reset
 ~~~~~~~~~~
@@ -486,7 +470,6 @@ After each test completes, this function is called on the test context's ``MockT
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockreset>`__
 
 mock.restoreAll
 ~~~~~~~~~~~~~~~
@@ -501,7 +484,6 @@ This function restores the default behavior of all mocks that were previously cr
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mockrestoreall>`__
 
 mock.setter
 ~~~~~~~~~~~
@@ -521,7 +503,6 @@ This function is syntax sugar for ``MockTracker.method`` with ``options.setter``
 * ``implementation`` — optional
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#mocksetterobject-methodname-implementation-options>`__
 
 mock.timers.enable
 ~~~~~~~~~~~~~~~~~~
@@ -547,7 +528,6 @@ Enables timer mocking for the specified timers.
    const { mock } = require('node:test');
    mock.timers.enable({ apis: ['setInterval'] });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#timersenableenableoptions>`__
 
 mock.timers.enableFor
 ~~~~~~~~~~~~~~~~~~~~~
@@ -560,7 +540,7 @@ mock.timers.enableFor
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 mock.timers.get
@@ -574,7 +554,7 @@ mock.timers.get
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 mock.timers.reset
@@ -599,7 +579,6 @@ This callable takes no arguments.
    const { mock } = require('node:test');
    mock.timers.reset();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#timersreset>`__
 
 mock.timers.runAll
 ~~~~~~~~~~~~~~~~~~
@@ -641,7 +620,6 @@ This callable takes no arguments.
      assert.strictEqual(Date.now(), 9999);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#timersrunall>`__
 
 mock.timers.setTime
 ~~~~~~~~~~~~~~~~~~~
@@ -677,7 +655,6 @@ Sets the current Unix timestamp that will be used as reference for any mocked ``
      assert.strictEqual(Date.now(), setTime);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#timerssettimemilliseconds>`__
 
 mock.timers.tick
 ~~~~~~~~~~~~~~~~
@@ -716,7 +693,6 @@ Advances time for all mocked timers.
      assert.strictEqual(fn.mock.callCount(), 1);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/test.html#timerstickmilliseconds>`__
 
 Properties and constants
 ------------------------
@@ -728,4 +704,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

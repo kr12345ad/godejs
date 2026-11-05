@@ -33,7 +33,7 @@ _rawDebug
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 abort
@@ -51,7 +51,6 @@ This feature is not available in ``Worker`` threads.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processabort>`__
 
 addListener
 ~~~~~~~~~~~
@@ -69,7 +68,6 @@ Alias for ``emitter.on(eventName, listener)``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteraddlistenereventname-listener>`__
 
 availableMemory
 ~~~~~~~~~~~~~~~
@@ -86,7 +84,6 @@ See ``uv_get_available_memory`` for more information.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processavailablememory>`__
 
 binding
 ~~~~~~~
@@ -105,7 +102,6 @@ Using ``process.binding()`` in general should be avoided. The type checking meth
 
 * ``util``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0103-processbindingutilis-typechecks>`__
 
 chdir
 ~~~~~
@@ -138,7 +134,6 @@ This feature is not available in ``Worker`` threads.
      console.error(`chdir: ${err}`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processchdirdirectory>`__
 
 constrainedMemory
 ~~~~~~~~~~~~~~~~~
@@ -155,7 +150,6 @@ See ``uv_get_constrained_memory`` for more information.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processconstrainedmemory>`__
 
 cpuUsage
 ~~~~~~~~
@@ -190,7 +184,6 @@ The result of a previous call to ``process.cpuUsage()`` can be passed as the arg
    console.log(cpuUsage(startUsage));
    // { user: 514883, system: 11226 }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processcpuusagepreviousvalue>`__
 
 cwd
 ~~~
@@ -213,7 +206,6 @@ This callable takes no arguments.
 
    console.log(`Current directory: ${cwd()}`);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processcwd>`__
 
 disconnect
 ~~~~~~~~~~
@@ -230,7 +222,6 @@ The effect of calling ``process.disconnect()`` is the same as calling ``ChildPro
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processdisconnect>`__
 
 dlopen
 ~~~~~~
@@ -263,7 +254,6 @@ The ``flags`` argument is an integer that allows to specify dlopen behavior. See
    dlopen(module, join(__dirname, 'local.node'), constants.dlopen.RTLD_NOW);
    module.exports.foo();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processdlopenmodule-filename-flags>`__
 
 emit
 ~~~~
@@ -318,7 +308,6 @@ Returns ``true`` if the event had listeners, ``false`` otherwise.
    // event with parameters 1, 2 in second listener
    // event with parameters 1, 2, 3, 4, 5 in third listener
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteremiteventname-args>`__
 
 emitWarning
 ~~~~~~~~~~~
@@ -353,7 +342,6 @@ In this example, an ``Error`` object is generated internally by ``process.emitWa
    // (node:56338) [MY_WARNING] Warning: Something happened!
    // This is some additional information
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processemitwarningwarning-options>`__
 
 emitWarningSync
 ~~~~~~~~~~~~~~~
@@ -366,7 +354,7 @@ emitWarningSync
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 eventNames
@@ -398,7 +386,6 @@ This callable takes no arguments.
    console.log(myEE.eventNames());
    // Prints: [ 'foo', 'bar', Symbol(symbol) ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emittereventnames>`__
 
 execve
 ~~~~~~
@@ -419,7 +406,6 @@ This is achieved by using the ``execve`` POSIX function and therefore no memory 
 * ``args`` (*string\[]*) — optional: List of string arguments. No argument can contain a null-byte (``\u0000``).
 * ``env`` (*Object*) — optional: Environment key-value pairs.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processexecvefile-args-env>`__
 
 exit
 ~~~~
@@ -438,7 +424,6 @@ Values other than ``undefined``, ``null``, integer numbers, and integer strings 
 
 * ``code``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0164-processexitcode-processexitcode-coercion-to-integer>`__
 
 getActiveRequests
 ~~~~~~~~~~~~~~~~~
@@ -451,7 +436,7 @@ getActiveRequests
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 getActiveResourcesInfo
@@ -481,7 +466,6 @@ This callable takes no arguments.
    //   Before: [ 'TTYWrap', 'TTYWrap', 'TTYWrap' ]
    //   After: [ 'TTYWrap', 'TTYWrap', 'TTYWrap', 'Timeout' ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetactiveresourcesinfo>`__
 
 getBuiltinModule
 ~~~~~~~~~~~~~~~~
@@ -513,7 +497,6 @@ If ``id`` specifies a built-in module available in the current Node.js process, 
      const foo = require('foo');
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetbuiltinmoduleid>`__
 
 getegid
 ~~~~~~~
@@ -538,7 +521,6 @@ This callable takes no arguments.
      console.log(`Current gid: ${process.getegid()}`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetegid>`__
 
 geteuid
 ~~~~~~~
@@ -563,7 +545,6 @@ This callable takes no arguments.
      console.log(`Current uid: ${process.geteuid()}`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgeteuid>`__
 
 getgid
 ~~~~~~
@@ -588,7 +569,6 @@ This callable takes no arguments.
      console.log(`Current gid: ${process.getgid()}`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetgid>`__
 
 getgroups
 ~~~~~~~~~
@@ -613,7 +593,6 @@ This callable takes no arguments.
      console.log(process.getgroups()); // [ 16, 21, 297 ]
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetgroups>`__
 
 getuid
 ~~~~~~
@@ -638,7 +617,6 @@ This callable takes no arguments.
      console.log(`Current uid: ${process.getuid()}`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processgetuid>`__
 
 hasUncaughtExceptionCaptureCallback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -653,7 +631,6 @@ Indicates whether a callback has been set using ``process.setUncaughtExceptionCa
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processhasuncaughtexceptioncapturecallback>`__
 
 hrtime
 ~~~~~~
@@ -690,7 +667,6 @@ The ``process.hrtime()`` method returns the current high-resolution real time in
      // Benchmark took 1000000552 nanoseconds
    }, 1000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processhrtimetime>`__
 
 initgroups
 ~~~~~~~~~~
@@ -722,7 +698,6 @@ Use care when dropping privileges:
    setgid(1000);                     // drop root gid
    console.log(getgroups());         // [ 27, 30, 46, 1000 ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processinitgroupsuser-extragroup>`__
 
 kill
 ~~~~
@@ -757,7 +732,6 @@ Signal names are strings such as ``'SIGINT'`` or ``'SIGHUP'``. See Signal Events
 
    process.kill(process.pid, 'SIGHUP');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processkillpid-signal>`__
 
 listenerCount
 ~~~~~~~~~~~~~
@@ -774,7 +748,6 @@ The ``events.listenerCount(emitter, eventName)`` API was deprecated, as it provi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0033-eventemitterlistenercount>`__
 
 listeners
 ~~~~~~~~~
@@ -801,7 +774,6 @@ Returns a copy of the array of listeners for the event named ``eventName``.
    console.log(util.inspect(server.listeners('connection')));
    // Prints: [ [Function] ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterlistenerseventname>`__
 
 loadEnvFile
 ~~~~~~~~~~~
@@ -825,7 +797,6 @@ Loads the ``.env`` file into ``process.env``. Usage of ``NODE_OPTIONS`` in the `
    const { loadEnvFile } = require('node:process');
    loadEnvFile();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processloadenvfilepath>`__
 
 memoryUsage
 ~~~~~~~~~~~
@@ -858,7 +829,6 @@ This callable takes no arguments.
    //  arrayBuffers: 9386
    // }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processmemoryusage>`__
 
 nextTick
 ~~~~~~~~
@@ -894,7 +864,6 @@ This is important when developing APIs in order to give users the opportunity to
    // scheduled
    // nextTick callback
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processnexttickcallback-args>`__
 
 off
 ~~~
@@ -912,7 +881,6 @@ Alias for ``emitter.removeListener()``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteroffeventname-listener>`__
 
 on
 ~~~
@@ -932,7 +900,6 @@ This event was deprecated because it did not work with V8 promise combinators wh
 * ``multipleResolves``
 * ``handler``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0160-processonmultipleresolves-handler>`__
 
 once
 ~~~~
@@ -965,7 +932,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
    //   b
    //   a
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteronceeventname-listener>`__
 
 prependListener
 ~~~~~~~~~~~~~~~
@@ -993,7 +959,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('someone connected!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependlistenereventname-listener>`__
 
 prependOnceListener
 ~~~~~~~~~~~~~~~~~~~
@@ -1021,7 +986,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('Ah, we have our first user!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependoncelistenereventname-listener>`__
 
 rawDebug
 ~~~~~~~~
@@ -1034,7 +998,7 @@ rawDebug
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 rawListeners
@@ -1079,7 +1043,6 @@ Returns a copy of the array of listeners for the event named ``eventName``, incl
    newListeners[0]();
    emitter.emit('log');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterrawlistenerseventname>`__
 
 reallyExit
 ~~~~~~~~~~
@@ -1092,7 +1055,7 @@ reallyExit
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ref
@@ -1110,7 +1073,6 @@ An object is "refable" if it implements the Node.js "Refable protocol". Specific
 
 * ``maybeRefable`` (*any*): An object that may be "refable".
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processrefmayberefable>`__
 
 register
 ~~~~~~~~
@@ -1158,7 +1120,6 @@ Inside the callback you can release the resources allocated by the ``ref`` objec
 
    setup();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processfinalizationregisterref-callback>`__
 
 registerBeforeExit
 ~~~~~~~~~~~~~~~~~~
@@ -1178,7 +1139,6 @@ Be aware that all limitations applied to the ``beforeExit`` event are also appli
 * ``ref`` (*Object | Function*): The reference
 * ``callback`` (*Function*): The callback function to be called when the resource
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processfinalizationregisterbeforeexitref-callback>`__
 
 removeAllListeners
 ~~~~~~~~~~~~~~~~~~
@@ -1197,7 +1157,6 @@ It is bad practice to remove listeners added elsewhere in the code, particularly
 
 * ``eventName`` (*string|symbol*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterremovealllistenerseventname>`__
 
 removeListener
 ~~~~~~~~~~~~~~
@@ -1251,7 +1210,6 @@ Removes the specified ``listener`` from the listener array for the event named `
    // Prints:
    //   A
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterremovelistenereventname-listener>`__
 
 resourceUsage
 ~~~~~~~~~~~~~
@@ -1293,7 +1251,6 @@ This callable takes no arguments.
      }
    */
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processresourceusage>`__
 
 rss
 ~~~
@@ -1319,7 +1276,6 @@ This callable takes no arguments.
    console.log(memoryUsage.rss());
    // 35655680
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processmemoryusagerss>`__
 
 send
 ~~~~
@@ -1341,7 +1297,6 @@ If Node.js was not spawned with an IPC channel, ``process.send`` will be ``undef
 * ``options`` (*Object*) — optional: used to parameterize the sending of certain types of
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsendmessage-sendhandle-options-callback>`__
 
 setegid
 ~~~~~~~
@@ -1374,7 +1329,6 @@ This function is only available on POSIX platforms (i.e. not Windows or Android)
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetegidid>`__
 
 seteuid
 ~~~~~~~
@@ -1407,7 +1361,6 @@ This function is only available on POSIX platforms (i.e. not Windows or Android)
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processseteuidid>`__
 
 setgid
 ~~~~~~
@@ -1440,7 +1393,6 @@ This function is only available on POSIX platforms (i.e. not Windows or Android)
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetgidid>`__
 
 setgroups
 ~~~~~~~~~
@@ -1472,7 +1424,6 @@ The ``groups`` array can contain numeric group IDs, group names, or both.
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetgroupsgroups>`__
 
 setSourceMapsEnabled
 ~~~~~~~~~~~~~~~~~~~~
@@ -1491,7 +1442,6 @@ It provides same features as launching Node.js process with commandline options 
 
 * ``val`` (*boolean*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetsourcemapsenabledval>`__
 
 setuid
 ~~~~~~
@@ -1524,7 +1474,6 @@ This function is only available on POSIX platforms (i.e. not Windows or Android)
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetuidid>`__
 
 setUncaughtExceptionCaptureCallback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1543,7 +1492,6 @@ If such a function is set, the ``'uncaughtException'`` event will not be emitted
 
 * ``fn`` (*Function|null*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processsetuncaughtexceptioncapturecallbackfn>`__
 
 threadCpuUsage
 ~~~~~~~~~~~~~~
@@ -1562,7 +1510,6 @@ The result of a previous call to ``process.threadCpuUsage()`` can be passed as t
 
 * ``previousValue`` (*Object*) — optional: A previous return value from calling
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processthreadcpuusagepreviousvalue>`__
 
 traceProcessWarnings
 ~~~~~~~~~~~~~~~~~~~~
@@ -1590,7 +1537,6 @@ This callable takes no arguments.
    // Disable trace warnings
    process.traceProcessWarnings = false;
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processtraceprocesswarnings>`__
 
 umask
 ~~~~~
@@ -1607,7 +1553,6 @@ Calling ``process.umask()`` with no argument causes the process-wide umask to be
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0139-processumask-with-no-arguments>`__
 
 unref
 ~~~~~
@@ -1624,7 +1569,6 @@ An object is "unrefable" if it implements the Node.js "Refable protocol". Specif
 
 * ``maybeRefable`` (*any*): An object that may be "unref'd".
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processunrefmayberefable>`__
 
 unregister
 ~~~~~~~~~~
@@ -1674,7 +1618,6 @@ This function remove the register of the object from the finalization registry, 
 
    setup();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processfinalizationunregisterref>`__
 
 uptime
 ~~~~~~
@@ -1691,7 +1634,6 @@ The return value includes fractions of a second. Use ``Math.floor()`` to get who
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processuptime>`__
 
 allowedNodeEnvironmentFlags
 ---------------------------
@@ -1711,7 +1653,7 @@ allowedNodeEnvironmentFlags.add
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.add
@@ -1725,7 +1667,7 @@ allowedNodeEnvironmentFlags.add
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.clear
@@ -1739,7 +1681,7 @@ allowedNodeEnvironmentFlags.clear
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.clear
@@ -1753,7 +1695,7 @@ allowedNodeEnvironmentFlags.clear
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.delete
@@ -1767,7 +1709,7 @@ allowedNodeEnvironmentFlags.delete
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.delete
@@ -1781,7 +1723,7 @@ allowedNodeEnvironmentFlags.delete
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.difference
@@ -1795,7 +1737,7 @@ allowedNodeEnvironmentFlags.difference
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.entries
@@ -1809,7 +1751,7 @@ allowedNodeEnvironmentFlags.entries
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.entries
@@ -1823,7 +1765,7 @@ allowedNodeEnvironmentFlags.entries
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.forEach
@@ -1837,7 +1779,7 @@ allowedNodeEnvironmentFlags.forEach
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.forEach
@@ -1851,7 +1793,7 @@ allowedNodeEnvironmentFlags.forEach
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.has
@@ -1881,7 +1823,6 @@ In audit mode (``--permission-audit``), this method still returns the actual per
    // Check if the process has read permission operations
    process.permission.has('fs.read');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processpermissionhasscope-reference>`__
 
 allowedNodeEnvironmentFlags.has
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1910,7 +1851,6 @@ In audit mode (``--permission-audit``), this method still returns the actual per
    // Check if the process has read permission operations
    process.permission.has('fs.read');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processpermissionhasscope-reference>`__
 
 allowedNodeEnvironmentFlags.intersection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1923,7 +1863,7 @@ allowedNodeEnvironmentFlags.intersection
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.isDisjointFrom
@@ -1937,7 +1877,7 @@ allowedNodeEnvironmentFlags.isDisjointFrom
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.isSubsetOf
@@ -1951,7 +1891,7 @@ allowedNodeEnvironmentFlags.isSubsetOf
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.isSupersetOf
@@ -1965,7 +1905,7 @@ allowedNodeEnvironmentFlags.isSupersetOf
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.keys
@@ -1979,7 +1919,7 @@ allowedNodeEnvironmentFlags.keys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.keys
@@ -1993,7 +1933,7 @@ allowedNodeEnvironmentFlags.keys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.symmetricDifference
@@ -2007,7 +1947,7 @@ allowedNodeEnvironmentFlags.symmetricDifference
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.union
@@ -2021,7 +1961,7 @@ allowedNodeEnvironmentFlags.union
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.values
@@ -2035,7 +1975,7 @@ allowedNodeEnvironmentFlags.values
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 allowedNodeEnvironmentFlags.values
@@ -2049,7 +1989,7 @@ allowedNodeEnvironmentFlags.values
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 report
@@ -2088,7 +2028,6 @@ Additional documentation is available in the report documentation.
    const fs = require('node:fs');
    fs.writeFileSync('my-report.log', util.inspect(data), 'utf8');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processreportgetreporterr>`__
 
 report.writeReport
 ~~~~~~~~~~~~~~~~~~
@@ -2116,7 +2055,6 @@ If the value of ``filename`` is set to ``'stdout'`` or ``'stderr'``, the report 
 
    report.writeReport();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/process.html#processreportwritereportfilename-err>`__
 
 stderr
 ------
@@ -2136,7 +2074,7 @@ stderr.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stderr.write
@@ -2150,7 +2088,7 @@ stderr.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdin
@@ -2171,7 +2109,7 @@ stdin._read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdin.destroy
@@ -2185,7 +2123,7 @@ stdin.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdin.pause
@@ -2199,7 +2137,7 @@ stdin.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdin.resume
@@ -2213,7 +2151,7 @@ stdin.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdin.setRawMode
@@ -2227,7 +2165,7 @@ stdin.setRawMode
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdout
@@ -2248,7 +2186,7 @@ stdout.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stdout.write
@@ -2262,7 +2200,7 @@ stdout.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -2465,4 +2403,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

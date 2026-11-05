@@ -35,7 +35,6 @@ This method can be used to retrieve the assets configured to be bundled into the
 * ``key``
 * ``encoding`` (*string*) — optional: If specified, the asset will be decoded as
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/single-executable-applications.html#seagetassetkey-encoding>`__
 
 getAssetAsBlob
 ~~~~~~~~~~~~~~
@@ -55,7 +54,6 @@ Similar to ``sea.getAsset()``, but returns the result in a ``Blob``. An error is
 * ``key``
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/single-executable-applications.html#seagetassetasblobkey-options>`__
 
 getRawAsset
 ~~~~~~~~~~~
@@ -74,7 +72,6 @@ Unlike ``sea.getAsset()`` or ``sea.getAssetAsBlob()``, this method does not retu
 
 * ``key``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/single-executable-applications.html#seagetrawassetkey>`__
 
 isSea
 ~~~~~
@@ -87,8 +84,7 @@ isSea
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/single-executable-applications.html#seaissea>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

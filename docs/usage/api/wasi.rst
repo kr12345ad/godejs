@@ -58,7 +58,6 @@ The ``WASI`` class provides the WASI system call API and additional convenience 
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/wasi.html#class-wasi>`__
 
 WASI class
 ----------
@@ -83,7 +82,6 @@ Set up WASI host bindings to ``instance`` without calling ``initialize()`` or ``
 * ``instance`` (*WebAssembly.Instance*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/wasi.html#wasifinalizebindingsinstance-options>`__
 
 WASI.getImportObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +98,6 @@ If version ``unstable`` was passed into the constructor it will return:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/wasi.html#wasigetimportobject>`__
 
 WASI.initialize
 ~~~~~~~~~~~~~~~
@@ -119,7 +116,6 @@ Attempt to initialize ``instance`` as a WASI reactor by invoking its ``_initiali
 
 * ``instance`` (*WebAssembly.Instance*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/wasi.html#wasiinitializeinstance>`__
 
 WASI.start
 ~~~~~~~~~~
@@ -138,7 +134,6 @@ Attempt to begin execution of ``instance`` as a WASI command by invoking its ``_
 
 * ``instance`` (*WebAssembly.Instance*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/wasi.html#wasistartinstance>`__
 
 Properties and constants
 ------------------------
@@ -155,4 +150,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

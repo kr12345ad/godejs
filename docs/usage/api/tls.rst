@@ -40,7 +40,6 @@ Returns ``Error`` object, populating it with ``reason``, ``host``, and ``cert`` 
 * ``hostname`` (*string*): The host name or IP address to verify the certificate
 * ``cert`` (*Object*): A certificate object representing the peer's certificate.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlscheckserveridentityhostname-cert>`__
 
 connect
 ~~~~~~~
@@ -94,7 +93,6 @@ The ``callback`` function, if specified, will be added as a listener for the ``'
      console.log('server ends connection');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlsconnectoptions-callback>`__
 
 createSecureContext
 ~~~~~~~~~~~~~~~~~~~
@@ -113,7 +111,6 @@ createSecureContext
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlscreatesecurecontextoptions>`__
 
 createServer
 ~~~~~~~~~~~~
@@ -162,7 +159,6 @@ The ``ticketKeys`` option is automatically shared between ``node:cluster`` modul
      console.log('server bound');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlscreateserveroptions-secureconnectionlistener>`__
 
 getCiphers
 ~~~~~~~~~~
@@ -185,7 +181,6 @@ This callable takes no arguments.
 
    console.log(tls.getCiphers()); // ['aes128-gcm-sha256', 'aes128-sha', ...]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlsgetciphers>`__
 
 Server
 ~~~~~~
@@ -212,7 +207,6 @@ This is a class; construct instances with ``new``.
      logFile.write(line);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#class-tlsserver>`__
 
 TLSSocket
 ~~~~~~~~~
@@ -237,7 +231,6 @@ This is a class; construct instances with ``new``.
    // ...
    tlsSocket.on('keylog', (line) => logFile.write(line));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#class-tlstlssocket>`__
 
 Server class
 ------------
@@ -257,7 +250,6 @@ Returns the bound address, the address family name, and port of the server as re
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#serveraddress>`__
 
 Server.close
 ~~~~~~~~~~~~
@@ -276,7 +268,6 @@ This function operates asynchronously. The ``'close'`` event will be emitted whe
 
 * ``callback`` (*Function*) — optional: A listener callback that will be registered to listen
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#serverclosecallback>`__
 
 Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~
@@ -295,7 +286,6 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#servergetconnectionscallback>`__
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -310,7 +300,6 @@ Starts the server listening for encrypted connections. This method is identical 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#serverlisten>`__
 
 Server.ref
 ~~~~~~~~~~
@@ -325,7 +314,6 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverref>`__
 
 Server.unref
 ~~~~~~~~~~~~
@@ -340,7 +328,6 @@ Calling ``unref()`` on a server will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverunref>`__
 
 TLSSocket class
 ---------------
@@ -360,7 +347,7 @@ TLSSocket._receive
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.address
@@ -376,7 +363,6 @@ Returns the bound ``address``, the address ``family`` name, and ``port`` of the 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketaddress>`__
 
 TLSSocket.destroy
 ~~~~~~~~~~~~~~~~~
@@ -389,7 +375,7 @@ TLSSocket.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.end
@@ -403,7 +389,7 @@ TLSSocket.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.getCipher
@@ -421,7 +407,6 @@ For example, a TLSv1.2 protocol with AES256-SHA cipher:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketgetcipher>`__
 
 TLSSocket.getPeerCertificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -446,14 +431,14 @@ If the full certificate chain was requested, each certificate will include an ``
 
    { subject:
       { OU: [ 'Domain Control Validated', 'PositiveSSL Wildcard' ],
-        CN: '*.nodejs.org' },
+        CN: '*.example.com' },
      issuer:
       { C: 'GB',
         ST: 'Greater Manchester',
         L: 'Salford',
         O: 'COMODO CA Limited',
         CN: 'COMODO RSA Domain Validation Secure Server CA' },
-     subjectaltname: 'DNS:*.nodejs.org, DNS:nodejs.org',
+     subjectaltname: 'DNS:*.example.com, DNS:example.com',
      infoAccess:
       { 'CA Issuers - URI':
          [ 'http://crt.comodoca.com/COMODORSADomainValidationSecureServerCA.crt' ],
@@ -470,7 +455,6 @@ If the full certificate chain was requested, each certificate will include an ``
      serialNumber: '66593D57F20CBC573E433381B5FEC280',
      raw: <Buffer ... > }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketgetpeercertificatedetailed>`__
 
 TLSSocket.getProtocol
 ~~~~~~~~~~~~~~~~~~~~~
@@ -487,7 +471,6 @@ Protocol versions are:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketgetprotocol>`__
 
 TLSSocket.getSession
 ~~~~~~~~~~~~~~~~~~~~
@@ -504,7 +487,6 @@ See Session Resumption for more information.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketgetsession>`__
 
 TLSSocket.isSessionReused
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -519,7 +501,6 @@ See Session Resumption for more information.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tls.html#tlssocketissessionreused>`__
 
 TLSSocket.pause
 ~~~~~~~~~~~~~~~
@@ -532,7 +513,7 @@ TLSSocket.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.ref
@@ -546,7 +527,7 @@ TLSSocket.ref
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.resume
@@ -560,7 +541,7 @@ TLSSocket.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.setEncoding
@@ -574,7 +555,7 @@ TLSSocket.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.setServername
@@ -588,7 +569,7 @@ TLSSocket.setServername
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.unref
@@ -602,7 +583,7 @@ TLSSocket.unref
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 TLSSocket.write
@@ -616,7 +597,7 @@ TLSSocket.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -631,4 +612,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

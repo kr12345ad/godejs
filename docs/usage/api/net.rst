@@ -54,7 +54,6 @@ This is a class; construct instances with ``new``.
    console.log(blockList.check('::ffff:7b7b:7b7b', 'ipv6')); // Prints: true
    console.log(blockList.check('::ffff:123.123.123.123', 'ipv6')); // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#class-netblocklist>`__
 
 connect
 ~~~~~~~
@@ -71,7 +70,6 @@ Possible signatures:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netconnect>`__
 
 createConnection
 ~~~~~~~~~~~~~~~~
@@ -106,7 +104,6 @@ This callable takes no arguments.
      console.log('disconnected from server');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netcreateconnection>`__
 
 createServer
 ~~~~~~~~~~~~
@@ -147,7 +144,6 @@ If ``allowHalfOpen`` is set to ``true``, when the other end of the socket signal
      console.log('server bound');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netcreateserveroptions-connectionlistener>`__
 
 getDefaultAutoSelectFamily
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,7 +160,6 @@ Gets the current default value of the ``autoSelectFamily`` option of ``socket.co
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netgetdefaultautoselectfamily>`__
 
 getDefaultAutoSelectFamilyAttemptTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +176,6 @@ Gets the current default value of the ``autoSelectFamilyAttemptTimeout`` option 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netgetdefaultautoselectfamilyattempttimeout>`__
 
 isIP
 ~~~~
@@ -209,7 +203,6 @@ Returns ``6`` if ``input`` is an IPv6 address, including an IPv4-mapped IPv6 add
    net.isIP('127.0.0.1/24'); // returns 0
    net.isIP('fhqwhgads'); // returns 0
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netisipinput>`__
 
 isIPv4
 ~~~~~~
@@ -235,7 +228,6 @@ Returns ``true`` if ``input`` is an IPv4 address in dot-decimal notation with no
    net.isIPv4('127.0.0.1/24'); // returns false
    net.isIPv4('fhqwhgads'); // returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netisipv4input>`__
 
 isIPv6
 ~~~~~~
@@ -260,7 +252,6 @@ Returns ``true`` if ``input`` is an IPv6 address, including an IPv4-mapped IPv6 
    net.isIPv6('::ffff:127.0.0.1'); // returns true
    net.isIPv6('fhqwhgads'); // returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netisipv6input>`__
 
 Server
 ~~~~~~
@@ -277,7 +268,6 @@ Accessing several internal, undocumented properties of ``net.Server`` instances 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0073-several-internal-properties-of-netserver>`__
 
 setDefaultAutoSelectFamily
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,7 +284,6 @@ Sets the default value of the ``autoSelectFamily`` option of ``socket.connect(op
 
 * ``value`` (*boolean*): The new default value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netsetdefaultautoselectfamilyvalue>`__
 
 setDefaultAutoSelectFamilyAttemptTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -311,7 +300,6 @@ Sets the default value of the ``autoSelectFamilyAttemptTimeout`` option of ``soc
 
 * ``value`` (*number*): The new default value, which must be a positive number. If the number is less than ``10``,
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#netsetdefaultautoselectfamilyattempttimeoutvalue>`__
 
 Socket
 ~~~~~~
@@ -344,7 +332,6 @@ This is a class; construct instances with ``new``.
    });
    server.listen(8000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket>`__
 
 SocketAddress
 ~~~~~~~~~~~~~
@@ -357,7 +344,6 @@ SocketAddress
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocketaddress>`__
 
 BlockList class
 ---------------
@@ -380,7 +366,6 @@ Adds a rule to block the given IP address.
 * ``address`` (*string|net.SocketAddress*): An IPv4 or IPv6 address.
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#blocklistaddaddressaddress-type>`__
 
 BlockList.addRange
 ~~~~~~~~~~~~~~~~~~
@@ -399,7 +384,6 @@ Adds a rule to block a range of IP addresses from ``start`` (inclusive) to ``end
 * ``end`` (*string|net.SocketAddress*): The ending IPv4 or IPv6 address in the range.
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#blocklistaddrangestart-end-type>`__
 
 BlockList.addSubnet
 ~~~~~~~~~~~~~~~~~~~
@@ -418,7 +402,6 @@ Adds a rule to block a range of IP addresses specified as a subnet mask.
 * ``prefix`` (*number*): The number of CIDR prefix bits. For IPv4, this
 * ``type`` (*string*) — optional: Either ``'ipv4'`` or ``'ipv6'``. **Default:** ``'ipv4'``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#blocklistaddsubnetnet-prefix-type>`__
 
 BlockList.check
 ~~~~~~~~~~~~~~~
@@ -453,7 +436,6 @@ Returns ``true`` if the given IP address matches any of the rules added to the `
    console.log(blockList.check('::ffff:7b7b:7b7b', 'ipv6')); // Prints: true
    console.log(blockList.check('::ffff:123.123.123.123', 'ipv6')); // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#blocklistcheckaddress-type>`__
 
 Server class
 ------------
@@ -493,7 +475,6 @@ This callable takes no arguments.
      console.log('opened server on', server.address());
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serveraddress>`__
 
 Server.close
 ~~~~~~~~~~~~
@@ -510,7 +491,6 @@ Stops the server from accepting new connections and keeps existing connections. 
 
 * ``callback`` (*Function*) — optional: Called when the server is closed.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverclosecallback>`__
 
 Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~
@@ -529,7 +509,6 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#servergetconnectionscallback>`__
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -560,7 +539,6 @@ This callable takes no arguments.
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverlisten>`__
 
 Server.ref
 ~~~~~~~~~~
@@ -575,7 +553,6 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverref>`__
 
 Server.unref
 ~~~~~~~~~~~~
@@ -590,7 +567,6 @@ Calling ``unref()`` on a server will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverunref>`__
 
 Socket class
 ------------
@@ -612,7 +588,6 @@ Returns the bound ``address``, the address ``family`` name and ``port`` of the s
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketaddress>`__
 
 Socket.connect
 ~~~~~~~~~~~~~~
@@ -629,7 +604,6 @@ Possible signatures:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketconnect>`__
 
 Socket.destroy
 ~~~~~~~~~~~~~~
@@ -648,7 +622,6 @@ See ``writable.destroy()`` for further details.
 
 * ``error`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketdestroyerror>`__
 
 Socket.end
 ~~~~~~~~~~
@@ -669,7 +642,6 @@ See ``writable.end()`` for further details.
 * ``encoding`` (*string*) — optional: Only used when data is ``string``. **Default:** ``'utf8'``.
 * ``callback`` (*Function*) — optional: Optional callback for when the socket is finished.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketenddata-encoding-callback>`__
 
 Socket.pause
 ~~~~~~~~~~~~
@@ -684,7 +656,6 @@ Pauses the reading of data. That is, ``'data'`` events will not be emitted. Usef
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketpause>`__
 
 Socket.pipe
 ~~~~~~~~~~~
@@ -697,7 +668,7 @@ Socket.pipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Socket.ref
@@ -713,7 +684,6 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed socket 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketref>`__
 
 Socket.resetAndDestroy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -728,7 +698,6 @@ Close the TCP connection by sending an RST packet and destroy the stream. If thi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketresetanddestroy>`__
 
 Socket.resume
 ~~~~~~~~~~~~~
@@ -743,7 +712,6 @@ Resumes reading after a call to ``socket.pause()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketresume>`__
 
 Socket.setEncoding
 ~~~~~~~~~~~~~~~~~~
@@ -760,7 +728,6 @@ Set the encoding for the socket as a Readable Stream. See ``readable.setEncoding
 
 * ``encoding`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketsetencodingencoding>`__
 
 Socket.setKeepAlive
 ~~~~~~~~~~~~~~~~~~~
@@ -783,7 +750,6 @@ This callable takes no arguments.
 
    socket.setKeepAlive({ enable: true, initialDelay: 1000, interval: 1000, count: 10 });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketsetkeepalive>`__
 
 Socket.setNoDelay
 ~~~~~~~~~~~~~~~~~
@@ -802,7 +768,6 @@ When a TCP connection is created, it will have Nagle's algorithm enabled.
 
 * ``noDelay`` (*boolean*) — optional: **Default:** ``true``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketsetnodelaynodelay>`__
 
 Socket.setTimeout
 ~~~~~~~~~~~~~~~~~
@@ -832,7 +797,6 @@ When an idle timeout is triggered the socket will receive a ``'timeout'`` event 
      socket.end();
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketsettimeouttimeout-callback>`__
 
 Socket.unref
 ~~~~~~~~~~~~
@@ -847,7 +811,6 @@ Calling ``unref()`` on a socket will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketunref>`__
 
 Socket.write
 ~~~~~~~~~~~~
@@ -868,7 +831,6 @@ Returns ``true`` if the entire data was flushed successfully to the kernel buffe
 * ``encoding`` (*string*) — optional: Only used when data is ``string``. **Default:** ``utf8``.
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#socketwritedata-encoding-callback>`__
 
 SocketAddress class
 -------------------
@@ -884,7 +846,6 @@ SocketAddress.toJSON
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#blocklisttojson>`__
 
 SocketAddress.toString
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -897,9 +858,9 @@ SocketAddress.toString
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -1,9 +1,11 @@
 API Reference
 =============
 
-This reference is generated from the running runtime, not hand-maintained. Every callable the runtime exposes has its own entry with a signature, typed arguments, return value, and an example where the upstream Node.js documentation provides one. Private helpers and GodeJS extensions are labelled explicitly.
+This reference is generated from the running GodeJS runtime, not hand-maintained. Every callable the runtime exposes has its own entry with a signature, typed arguments, return value, and an example where one is available. Private helpers and GodeJS extensions are labelled explicitly.
 
-Signatures and prose are derived from the Node.js v24.22.2 documentation, licensed under the MIT License. The runtime surface is the source of truth for what is available here.
+Signatures, argument names, return values, and examples reflect the GodeJS runtime surface. The runtime is the source of truth for what is available here.
+
+Some prose and examples are adapted from MIT-licensed material; see the repository `NOTICE <https://github.com/kr12345ad/godejs/blob/main/NOTICE>`_ file for the applicable notice.
 
 Global objects
 --------------

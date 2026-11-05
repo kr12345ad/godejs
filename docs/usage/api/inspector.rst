@@ -37,7 +37,6 @@ Deactivates the inspector. If there are active connections, they are forcibly te
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#inspectorclose>`__
 
 isOpen
 ~~~~~~
@@ -50,7 +49,6 @@ isOpen
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseisopen>`__
 
 open
 ~~~~
@@ -71,7 +69,6 @@ If wait is ``true``, will block until a client has connected to the inspect port
 * ``host`` (*string*) — optional: Host to listen on for inspector connections. Optional.
 * ``wait`` (*boolean*) — optional: Block until a client has connected. Optional.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#inspectoropenport-host-wait>`__
 
 Session
 ~~~~~~~
@@ -94,7 +91,6 @@ This is a class; construct instances with ``new``.
    // Debugger.paused
    // Debugger.resumed
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#class-inspectorsession>`__
 
 url
 ~~~
@@ -109,7 +105,6 @@ Return the URL of the active inspector, or ``undefined`` if there is none.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#inspectorurl>`__
 
 waitForDebugger
 ~~~~~~~~~~~~~~~
@@ -126,7 +121,6 @@ An exception will be thrown if there is no active inspector.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#inspectorwaitfordebugger>`__
 
 Session class
 -------------
@@ -146,7 +140,6 @@ Connects a session to the inspector back-end.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#sessionconnect>`__
 
 Session.connectToMainThread
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,7 +154,6 @@ Connects a session to the main thread inspector back-end. An exception will be t
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#sessionconnecttomainthread>`__
 
 Session.disconnect
 ~~~~~~~~~~~~~~~~~~
@@ -176,7 +168,6 @@ Immediately close the session. All pending message callbacks will be called with
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#sessiondisconnect>`__
 
 Session.post
 ~~~~~~~~~~~~
@@ -205,8 +196,7 @@ The latest version of the V8 inspector protocol is published on the Chrome DevTo
                 (error, { result }) => console.log(result));
    // Output: { type: 'number', value: 4, description: '4' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/inspector.html#sessionpostmethod-params-callback>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

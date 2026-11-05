@@ -26,7 +26,7 @@ _findPath
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _initPaths
@@ -40,7 +40,7 @@ _initPaths
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _nodeModulePaths
@@ -54,7 +54,7 @@ _nodeModulePaths
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _resolveFilename
@@ -68,7 +68,7 @@ _resolveFilename
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _resolveLookupPaths
@@ -82,7 +82,7 @@ _resolveLookupPaths
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _stat
@@ -96,7 +96,7 @@ _stat
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 createRequire
@@ -122,7 +122,6 @@ createRequire
    // sibling-module.js is a CommonJS module.
    const siblingModule = require('./sibling-module');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulecreaterequirefilename>`__
 
 createRequireFromPath
 ~~~~~~~~~~~~~~~~~~~~~
@@ -139,7 +138,6 @@ Use ``module.createRequire()`` instead.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0130-modulecreaterequirefrompath>`__
 
 enableCompileCache
 ~~~~~~~~~~~~~~~~~~
@@ -158,7 +156,6 @@ For general use cases, it's recommended to call ``module.enableCompileCache()`` 
 
 * ``options`` (*string|Object*) — optional: Optional. If a string is passed, it is considered to be ``options.directory``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#moduleenablecompilecacheoptions>`__
 
 findPackageJSON
 ~~~~~~~~~~~~~~~
@@ -198,7 +195,6 @@ findPackageJSON
    findPackageJSON('@foo/qux', __filename);
    // '/path/to/project/packages/qux/package.json'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulefindpackagejsonspecifier-base>`__
 
 findSourceMap
 ~~~~~~~~~~~~~
@@ -215,7 +211,6 @@ findSourceMap
 
 * ``path`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulefindsourcemappath>`__
 
 flushCompileCache
 ~~~~~~~~~~~~~~~~~
@@ -230,7 +225,6 @@ Flush the module compile cache accumulated from modules already loaded in the cu
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#moduleflushcompilecache>`__
 
 getCompileCacheDir
 ~~~~~~~~~~~~~~~~~~
@@ -245,7 +239,6 @@ getCompileCacheDir
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulegetcompilecachedir>`__
 
 getSourceMapsSupport
 ~~~~~~~~~~~~~~~~~~~~
@@ -262,7 +255,6 @@ This method returns whether the Source Map v3 support for stack traces is enable
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulegetsourcemapssupport>`__
 
 isBuiltin
 ~~~~~~~~~
@@ -286,7 +278,6 @@ isBuiltin
    isBuiltin('fs'); // true
    isBuiltin('wss'); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#moduleisbuiltinmodulename>`__
 
 Module
 ~~~~~~
@@ -309,7 +300,6 @@ This callable takes no arguments.
    // In a CommonJS module
    const builtin = require('node:module').builtinModules;
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#the-module-object>`__
 
 register
 ~~~~~~~~
@@ -326,7 +316,6 @@ Type: Documentation-only
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0205-moduleregister>`__
 
 registerHooks
 ~~~~~~~~~~~~~
@@ -343,7 +332,6 @@ Register hooks that customize Node.js module resolution and loading behavior. Se
 
 * ``options`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#moduleregisterhooksoptions>`__
 
 runMain
 ~~~~~~~
@@ -356,7 +344,7 @@ runMain
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 setSourceMapsSupport
@@ -377,7 +365,6 @@ It provides same features as launching Node.js process with commandline options 
 * ``enabled`` (*boolean*): Enable the source map support.
 * ``options`` (*Object*) — optional: Optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulesetsourcemapssupportenabled-options>`__
 
 SourceMap
 ~~~~~~~~~
@@ -390,7 +377,6 @@ SourceMap
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#class-modulesourcemap>`__
 
 stripTypeScriptTypes
 ~~~~~~~~~~~~~~~~~~~~
@@ -420,7 +406,6 @@ By default, it will throw an error if the code contains TypeScript features that
    console.log(strippedCode);
    // Prints: const a         = 1;
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulestriptypescripttypescode-options>`__
 
 syncBuiltinESMExports
 ~~~~~~~~~~~~~~~~~~~~~
@@ -466,7 +451,6 @@ This callable takes no arguments.
      assert.strictEqual(esmFS.newAPI, undefined);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#modulesyncbuiltinesmexports>`__
 
 wrap
 ~~~~
@@ -479,7 +463,7 @@ wrap
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 wrapSafe
@@ -493,7 +477,7 @@ wrapSafe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _extensions
@@ -510,7 +494,7 @@ _extensions..js
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _extensions..json
@@ -524,7 +508,7 @@ _extensions..json
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _extensions..node
@@ -538,7 +522,7 @@ _extensions..node
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Module class
@@ -595,7 +579,6 @@ In a more advanced scenario, this can also be used to transform an unsupported s
 
    registerHooks({ load });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#synchronous-loadurl-context-nextload>`__
 
 Module.require
 ~~~~~~~~~~~~~~
@@ -614,7 +597,6 @@ In order to do this, it is necessary to get a reference to the ``module`` object
 
 * ``id`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/modules.html#modulerequireid>`__
 
 Module.resolve
 ~~~~~~~~~~~~~~
@@ -668,7 +650,6 @@ Import type attributes are part of the cache key for saving loaded modules into 
 
    registerHooks({ resolve });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#synchronous-resolvespecifier-context-nextresolve>`__
 
 SourceMap class
 ---------------
@@ -691,7 +672,6 @@ The object returned contains the following keys:
 * ``lineOffset`` (*number*): The zero-indexed line number offset in
 * ``columnOffset`` (*number*): The zero-indexed column number offset
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#sourcemapfindentrylineoffset-columnoffset>`__
 
 SourceMap.findOrigin
 ~~~~~~~~~~~~~~~~~~~~
@@ -711,7 +691,6 @@ If the ``lineNumber`` and ``columnNumber`` provided are not found in any source 
 * ``lineNumber`` (*number*): The 1-indexed lineNumber of the
 * ``columnNumber`` (*number*): The 1-indexed columnNumber of the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/module.html#sourcemapfindoriginlinenumber-columnnumber>`__
 
 SourceMap.return
 ~~~~~~~~~~~~~~~~
@@ -724,7 +703,7 @@ SourceMap.return
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -747,4 +726,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -47,7 +47,6 @@ This is the primary entry-point for anyone wanting to publish to a named channel
 
    const channel = diagnostics_channel.channel('my-channel');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/diagnostics_channel.html#diagnostics_channelchannelname>`__
 
 hasSubscribers
 ~~~~~~~~~~~~~~
@@ -76,7 +75,6 @@ This API is optional but helpful when trying to publish messages from very perfo
      // There are subscribers, prepare and publish message
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/diagnostics_channel.html#diagnostics_channelhassubscribersname>`__
 
 subscribe
 ~~~~~~~~~
@@ -104,7 +102,6 @@ Register a message handler to subscribe to this channel. This message handler wi
      // Received data
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/diagnostics_channel.html#diagnostics_channelsubscribename-onmessage>`__
 
 tracingChannel
 ~~~~~~~~~~~~~~
@@ -139,7 +136,6 @@ Creates a ``TracingChannel`` wrapper for the given TracingChannel Channels. If a
      error: diagnostics_channel.channel('tracing:my-channel:error'),
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/diagnostics_channel.html#diagnostics_channeltracingchannelnameorchannels>`__
 
 unsubscribe
 ~~~~~~~~~~~
@@ -171,8 +167,7 @@ Remove a message handler previously registered to this channel with ``diagnostic
 
    diagnostics_channel.unsubscribe('my-channel', onMessage);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/diagnostics_channel.html#diagnostics_channelunsubscribename-onmessage>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -37,7 +37,6 @@ The ``querystring.decode()`` function is an alias for ``querystring.parse()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringdecode>`__
 
 encode
 ~~~~~~
@@ -52,7 +51,6 @@ The ``querystring.encode()`` function is an alias for ``querystring.stringify()`
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringencode>`__
 
 escape
 ~~~~~~
@@ -71,7 +69,6 @@ The ``querystring.escape()`` method is used by ``querystring.stringify()`` and i
 
 * ``str`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringescapestr>`__
 
 parse
 ~~~~~
@@ -102,7 +99,6 @@ For example, the query string ``'foo=bar&abc=xyz&abc=123'`` is parsed into:
    querystring.parse('w=%D6%D0%CE%C4&foo=bar', null, null,
                      { decodeURIComponent: gbkDecodeURIComponent });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringparsestr-sep-eq-options>`__
 
 stringify
 ~~~~~~~~~
@@ -134,7 +130,6 @@ It serializes the following types of values passed in ``obj``: ``string|number|b
    querystring.stringify({ foo: 'bar', baz: 'qux' }, ';', ':');
    // Returns 'foo:bar;baz:qux'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringstringifyobj-sep-eq-options>`__
 
 unescape
 ~~~~~~~~
@@ -153,7 +148,6 @@ The ``querystring.unescape()`` method is used by ``querystring.parse()`` and is 
 
 * ``str`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/querystring.html#querystringunescapestr>`__
 
 unescapeBuffer
 ~~~~~~~~~~~~~~
@@ -166,9 +160,9 @@ unescapeBuffer
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

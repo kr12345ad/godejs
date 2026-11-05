@@ -35,7 +35,7 @@ _isUint8Array
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 addAbortSignal
@@ -70,7 +70,6 @@ Calling ``abort`` on the ``AbortController`` corresponding to the passed ``Abort
    // Later, abort the operation closing the stream
    controller.abort();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamaddabortsignalsignal-stream>`__
 
 addAbortSignalNoValidate
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +82,7 @@ addAbortSignalNoValidate
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 compose
@@ -128,7 +127,6 @@ Because ``stream.compose`` returns a new stream that in turn can (and should) be
 
    console.log(res); // prints 'HELLOWORLD'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamcomposestreams>`__
 
 destroy
 ~~~~~~~
@@ -148,7 +146,6 @@ When the stream is destroyed with an ``error`` (or with an explicit ``options.co
 * ``error`` (*any*) — optional
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/quic.html#streamdestroyerror-options>`__
 
 Duplex
 ~~~~~~
@@ -165,7 +162,6 @@ Examples of ``Duplex`` streams include:
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#class-streamduplex>`__
 
 duplexPair
 ~~~~~~~~~~
@@ -190,7 +186,6 @@ Whatever is written to one stream is made readable on the other. It provides beh
 
    const [ sideA, sideB ] = duplexPair();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamduplexpairoptions>`__
 
 finished
 ~~~~~~~~
@@ -227,7 +222,6 @@ The ``finished`` API also provides a callback version.
    run().catch(console.error);
    rs.resume(); // Drain the stream.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamfinishedstream-options>`__
 
 from
 ~~~~
@@ -264,7 +258,6 @@ Calling ``Readable.from(string)`` or ``Readable.from(buffer)`` will not have the
      console.log(chunk);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamreadablefromiterable-options>`__
 
 getDefaultHighWaterMark
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,7 +274,6 @@ Returns the default highWaterMark used by streams. Defaults to ``16`` for ``obje
 
 * ``objectMode`` (*boolean*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode>`__
 
 isDestroyed
 ~~~~~~~~~~~
@@ -298,7 +290,6 @@ Returns whether the stream has been destroyed.
 
 * ``stream`` (*Readable|Writable|Duplex*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamisdestroyedstream>`__
 
 isDisturbed
 ~~~~~~~~~~~
@@ -315,7 +306,6 @@ Returns whether the stream has been read from or cancelled.
 
 * ``stream`` (*stream.Readable|ReadableStream*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamreadableisdisturbedstream>`__
 
 isErrored
 ~~~~~~~~~
@@ -332,7 +322,6 @@ Returns whether the stream has encountered an error.
 
 * ``stream`` (*Readable|Writable|Duplex|WritableStream|ReadableStream*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamiserroredstream>`__
 
 isReadable
 ~~~~~~~~~~
@@ -349,7 +338,6 @@ Returns whether the stream is readable.
 
 * ``stream`` (*Readable|Duplex|ReadableStream*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamisreadablestream>`__
 
 isUint8Array
 ~~~~~~~~~~~~
@@ -374,7 +362,6 @@ Returns ``true`` if the value is a built-in ``Uint8Array`` instance.
    util.types.isUint8Array(new Uint8Array());  // Returns true
    util.types.isUint8Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisuint8arrayvalue>`__
 
 isWritable
 ~~~~~~~~~~
@@ -391,7 +378,6 @@ Returns whether the stream is writable.
 
 * ``stream`` (*Writable|Duplex|WritableStream*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamiswritablestream>`__
 
 PassThrough
 ~~~~~~~~~~~
@@ -406,7 +392,6 @@ The ``stream.PassThrough`` class is a trivial implementation of a ``Transform`` 
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#class-streampassthrough>`__
 
 pipeline
 ~~~~~~~~
@@ -422,7 +407,6 @@ pipeline
 * ``streams``
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streampipelinestreams-options>`__
 
 push
 ~~~~
@@ -475,7 +459,6 @@ When the ``Readable`` is operating in paused mode, the data added with ``readabl
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readablepushchunk-encoding>`__
 
 read
 ~~~~
@@ -492,7 +475,6 @@ If the internal read buffer is below the ``highWaterMark``, and the stream is no
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readableread0>`__
 
 Readable
 ~~~~~~~~
@@ -526,7 +508,6 @@ This is a class; construct instances with ``new``.
 
    run().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#class-streamreadable>`__
 
 setDefaultHighWaterMark
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -544,7 +525,6 @@ Sets the default highWaterMark used by streams.
 * ``objectMode`` (*boolean*)
 * ``value`` (*integer*): highWaterMark value
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamsetdefaulthighwatermarkobjectmode-value>`__
 
 Stream
 ~~~~~~
@@ -557,7 +537,7 @@ Stream
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Transform
@@ -575,7 +555,6 @@ Examples of ``Transform`` streams include:
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#class-streamtransform>`__
 
 Writable
 ~~~~~~~~
@@ -604,7 +583,6 @@ This is a class; construct instances with ``new``.
    myStream.destroy(fooErr);
    myStream.on('error', (fooErr) => console.error(fooErr.message)); // foo error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#class-streamwritable>`__
 
 Duplex class
 ------------
@@ -629,7 +607,6 @@ The ``_destroy()`` method is called by ``writable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_destroyerr-callback>`__
 
 Duplex._undestroy
 ~~~~~~~~~~~~~~~~~
@@ -642,7 +619,7 @@ Duplex._undestroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex._write
@@ -664,7 +641,6 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_writechunk-encoding-callback>`__
 
 Duplex.cork
 ~~~~~~~~~~~
@@ -677,7 +653,7 @@ Duplex.cork
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.destroy
@@ -691,7 +667,7 @@ Duplex.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.destroySoon
@@ -705,7 +681,7 @@ Duplex.destroySoon
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.end
@@ -719,7 +695,7 @@ Duplex.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.setDefaultEncoding
@@ -733,7 +709,7 @@ Duplex.setDefaultEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.uncork
@@ -747,7 +723,7 @@ Duplex.uncork
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Duplex.write
@@ -761,7 +737,7 @@ Duplex.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 PassThrough class
@@ -801,7 +777,6 @@ All ``Transform`` stream implementations must provide a ``_transform()`` method 
      callback(null, data);
    };
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#transform_transformchunk-encoding-callback>`__
 
 promises
 --------
@@ -841,7 +816,6 @@ The ``finished`` API also provides a callback version.
    run().catch(console.error);
    rs.resume(); // Drain the stream.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamfinishedstream-options>`__
 
 promises.pipeline
 ~~~~~~~~~~~~~~~~~
@@ -857,7 +831,6 @@ promises.pipeline
 * ``streams``
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streampipelinestreams-options>`__
 
 Readable class
 --------------
@@ -882,7 +855,6 @@ The ``_destroy()`` method is called by ``readable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readable_destroyerr-callback>`__
 
 Readable._read
 ~~~~~~~~~~~~~~
@@ -901,7 +873,6 @@ All ``Readable`` stream implementations must provide an implementation of the ``
 
 * ``size`` (*number*): Number of bytes to read asynchronously
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readable_readsize>`__
 
 Readable._undestroy
 ~~~~~~~~~~~~~~~~~~~
@@ -914,7 +885,7 @@ Readable._undestroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.addListener
@@ -928,7 +899,7 @@ Readable.addListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.asIndexedPairs
@@ -942,7 +913,7 @@ Readable.asIndexedPairs
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.compose
@@ -987,7 +958,6 @@ Because ``stream.compose`` returns a new stream that in turn can (and should) be
 
    console.log(res); // prints 'HELLOWORLD'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#streamcomposestreams>`__
 
 Readable.destroy
 ~~~~~~~~~~~~~~~~
@@ -1000,7 +970,7 @@ Readable.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.drop
@@ -1014,7 +984,7 @@ Readable.drop
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.every
@@ -1028,7 +998,7 @@ Readable.every
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.filter
@@ -1042,7 +1012,7 @@ Readable.filter
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.find
@@ -1056,7 +1026,7 @@ Readable.find
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.flatMap
@@ -1070,7 +1040,7 @@ Readable.flatMap
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.forEach
@@ -1084,7 +1054,7 @@ Readable.forEach
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.isPaused
@@ -1098,7 +1068,7 @@ Readable.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.iterator
@@ -1112,7 +1082,7 @@ Readable.iterator
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.map
@@ -1126,7 +1096,7 @@ Readable.map
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.on
@@ -1140,7 +1110,7 @@ Readable.on
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.once
@@ -1154,7 +1124,7 @@ Readable.once
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.pause
@@ -1168,7 +1138,7 @@ Readable.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.pipe
@@ -1182,7 +1152,7 @@ Readable.pipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.push
@@ -1236,7 +1206,6 @@ When the ``Readable`` is operating in paused mode, the data added with ``readabl
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readablepushchunk-encoding>`__
 
 Readable.read
 ~~~~~~~~~~~~~
@@ -1253,7 +1222,6 @@ If the internal read buffer is below the ``highWaterMark``, and the stream is no
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readableread0>`__
 
 Readable.reduce
 ~~~~~~~~~~~~~~~
@@ -1266,7 +1234,7 @@ Readable.reduce
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.resume
@@ -1280,7 +1248,7 @@ Readable.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.setEncoding
@@ -1294,7 +1262,7 @@ Readable.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.some
@@ -1308,7 +1276,7 @@ Readable.some
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.take
@@ -1322,7 +1290,7 @@ Readable.take
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.toArray
@@ -1336,7 +1304,7 @@ Readable.toArray
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.unpipe
@@ -1350,7 +1318,7 @@ Readable.unpipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.unshift
@@ -1364,7 +1332,7 @@ Readable.unshift
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Readable.wrap
@@ -1378,7 +1346,7 @@ Readable.wrap
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Stream class
@@ -1395,7 +1363,7 @@ Stream.off
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Stream.pipe
@@ -1409,7 +1377,7 @@ Stream.pipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Transform class
@@ -1436,7 +1404,6 @@ This optional function will be called before the stream closes, delaying the ``'
 
 * ``callback`` (*Function*): Call this function (optionally with an error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_finalcallback>`__
 
 Transform._read
 ~~~~~~~~~~~~~~~
@@ -1455,7 +1422,6 @@ All ``Readable`` stream implementations must provide an implementation of the ``
 
 * ``size`` (*number*): Number of bytes to read asynchronously
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#readable_readsize>`__
 
 Transform._transform
 ~~~~~~~~~~~~~~~~~~~~
@@ -1489,7 +1455,6 @@ All ``Transform`` stream implementations must provide a ``_transform()`` method 
      callback(null, data);
    };
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#transform_transformchunk-encoding-callback>`__
 
 Transform._write
 ~~~~~~~~~~~~~~~~
@@ -1510,7 +1475,6 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_writechunk-encoding-callback>`__
 
 Transform._writev
 ~~~~~~~~~~~~~~~~~
@@ -1530,7 +1494,6 @@ The ``writable._writev()`` method may be implemented in addition or alternativel
 * ``chunks`` (*Object\[]*): The data to be written. The value is an array of ``Object``
 * ``callback`` (*Function*): A callback function (optionally with an error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_writevchunks-callback>`__
 
 Writable class
 --------------
@@ -1555,7 +1518,6 @@ The ``_destroy()`` method is called by ``writable.destroy()``. It can be overrid
 * ``err`` (*Error*): A possible error.
 * ``callback`` (*Function*): A callback function that takes an optional error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_destroyerr-callback>`__
 
 Writable._undestroy
 ~~~~~~~~~~~~~~~~~~~
@@ -1568,7 +1530,7 @@ Writable._undestroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable._write
@@ -1590,7 +1552,6 @@ All ``Writable`` stream implementations must provide a ``writable._write()`` and
 * ``encoding`` (*string*): If the chunk is a string, then ``encoding`` is the
 * ``callback`` (*Function*): Call this function (optionally with an error
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/stream.html#writable_writechunk-encoding-callback>`__
 
 Writable.cork
 ~~~~~~~~~~~~~
@@ -1603,7 +1564,7 @@ Writable.cork
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.destroy
@@ -1617,7 +1578,7 @@ Writable.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.destroySoon
@@ -1631,7 +1592,7 @@ Writable.destroySoon
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.end
@@ -1645,7 +1606,7 @@ Writable.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.setDefaultEncoding
@@ -1659,7 +1620,7 @@ Writable.setDefaultEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.uncork
@@ -1673,7 +1634,7 @@ Writable.uncork
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Writable.write
@@ -1687,7 +1648,7 @@ Writable.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -1768,4 +1729,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

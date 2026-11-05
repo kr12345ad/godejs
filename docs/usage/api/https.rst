@@ -26,7 +26,7 @@ _createSecureServer
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _getSecure
@@ -40,7 +40,7 @@ _getSecure
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _requestSecure
@@ -54,7 +54,7 @@ _requestSecure
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Agent
@@ -81,7 +81,6 @@ This is a class; construct instances with ``new``.
      fs.appendFileSync('/tmp/ssl-keys.log', line, { mode: 0o600 });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#class-httpsagent>`__
 
 ClientRequest
 ~~~~~~~~~~~~~
@@ -155,7 +154,6 @@ This is a class; construct instances with ``new``.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpclientrequest>`__
 
 ClientResponse
 ~~~~~~~~~~~~~~
@@ -168,7 +166,7 @@ ClientResponse
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 createServer
@@ -207,7 +205,6 @@ To generate the certificate and key for this example, run:
      res.end('hello world\n');
    }).listen(8000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#httpscreateserveroptions-requestlistener>`__
 
 get
 ~~~
@@ -223,7 +220,6 @@ get
 * ``options``
 * ``callback`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#httpsgetoptions-callback>`__
 
 IncomingMessage
 ~~~~~~~~~~~~~~~
@@ -240,7 +236,6 @@ In a future version of Node.js, ``message.headers``, ``message.headersDistinct``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0171-setters-for-httpincomingmessage-headers-and-trailers>`__
 
 request
 ~~~~~~~
@@ -256,7 +251,6 @@ request
 * ``options``
 * ``callback`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#httpsrequestoptions-callback>`__
 
 Server
 ~~~~~~
@@ -271,7 +265,6 @@ See ``http.Server`` for more information.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#class-httpsserver>`__
 
 ServerResponse
 ~~~~~~~~~~~~~~
@@ -297,7 +290,6 @@ This is a class; construct instances with ``new``.
      res.end(`Your IP address is ${ip} and your source port is ${port}.`);
    }).listen(3000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpserverresponse>`__
 
 validateHeaderName
 ~~~~~~~~~~~~~~~~~~
@@ -331,7 +323,6 @@ Passing illegal value as ``name`` will result in a ``TypeError`` being thrown, i
      console.error(err.message); // --> 'Header name must be a valid HTTP token [""]'
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http.html#httpvalidateheadernamename-label>`__
 
 validateHeaderValue
 ~~~~~~~~~~~~~~~~~~~
@@ -373,7 +364,6 @@ Passing illegal value as ``value`` will result in a ``TypeError`` being thrown.
      console.error(err.message); // --> 'Invalid character in header content ["x-my-header"]'
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http.html#httpvalidateheadervaluename-value>`__
 
 Agent class
 -----------
@@ -397,7 +387,6 @@ It is usually not necessary to do this. However, if using an agent with ``keepAl
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http.html#agentdestroy>`__
 
 ClientRequest class
 -------------------
@@ -417,7 +406,7 @@ ClientRequest._headersObject
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.abort
@@ -431,7 +420,7 @@ ClientRequest.abort
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.end
@@ -445,7 +434,7 @@ ClientRequest.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.flushHeaders
@@ -459,7 +448,7 @@ ClientRequest.flushHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.getHeader
@@ -473,7 +462,7 @@ ClientRequest.getHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.getHeaders
@@ -487,7 +476,7 @@ ClientRequest.getHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.removeHeader
@@ -501,7 +490,7 @@ ClientRequest.removeHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.setHeader
@@ -515,7 +504,7 @@ ClientRequest.setHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientRequest.setTimeout
@@ -534,7 +523,6 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#serversettimeoutmsecs-callback>`__
 
 ClientRequest.write
 ~~~~~~~~~~~~~~~~~~~
@@ -547,7 +535,7 @@ ClientRequest.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage class
@@ -568,7 +556,7 @@ IncomingMessage._completeWithoutListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage._emitBody
@@ -582,7 +570,7 @@ IncomingMessage._emitBody
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage._hasBodyListeners
@@ -596,7 +584,7 @@ IncomingMessage._hasBodyListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage._parseHeaders
@@ -610,7 +598,7 @@ IncomingMessage._parseHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.destroy
@@ -624,7 +612,7 @@ IncomingMessage.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.isPaused
@@ -638,7 +626,7 @@ IncomingMessage.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.pause
@@ -652,7 +640,7 @@ IncomingMessage.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.read
@@ -666,7 +654,7 @@ IncomingMessage.read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.resume
@@ -680,7 +668,7 @@ IncomingMessage.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.setEncoding
@@ -694,7 +682,7 @@ IncomingMessage.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 IncomingMessage.setTimeout
@@ -713,7 +701,6 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#serversettimeoutmsecs-callback>`__
 
 Server class
 ------------
@@ -731,7 +718,7 @@ Server.addListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.address
@@ -765,7 +752,6 @@ This callable takes no arguments.
      console.log('opened server on', server.address());
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serveraddress>`__
 
 Server.close
 ~~~~~~~~~~~~
@@ -782,7 +768,6 @@ See ``server.close()`` in the ``node:http`` module.
 
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#serverclosecallback>`__
 
 Server.closeAllConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -797,7 +782,6 @@ See ``server.closeAllConnections()`` in the ``node:http`` module.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#servercloseallconnections>`__
 
 Server.closeIdleConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -812,7 +796,6 @@ See ``server.closeIdleConnections()`` in the ``node:http`` module.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#servercloseidleconnections>`__
 
 Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~
@@ -831,7 +814,6 @@ Callback should take two arguments ``err`` and ``count``.
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#servergetconnectionscallback>`__
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -846,7 +828,6 @@ Starts the HTTPS server listening for encrypted connections. This method is iden
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#serverlisten>`__
 
 Server.off
 ~~~~~~~~~~
@@ -859,7 +840,7 @@ Server.off
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.on
@@ -873,7 +854,7 @@ Server.on
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.once
@@ -887,7 +868,7 @@ Server.once
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.prependListener
@@ -901,7 +882,7 @@ Server.prependListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.prependOnceListener
@@ -915,7 +896,7 @@ Server.prependOnceListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.ref
@@ -931,7 +912,6 @@ Opposite of ``unref()``, calling ``ref()`` on a previously ``unref``\ ed server 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverref>`__
 
 Server.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -944,7 +924,7 @@ Server.removeAllListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.removeListener
@@ -958,7 +938,7 @@ Server.removeListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Server.unref
@@ -974,7 +954,6 @@ Calling ``unref()`` on a server will allow the program to exit if this is the on
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/net.html#serverunref>`__
 
 ServerResponse class
 --------------------
@@ -992,7 +971,7 @@ ServerResponse._flushHead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse._headersObject
@@ -1006,7 +985,7 @@ ServerResponse._headersObject
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse._packedHeaders
@@ -1020,7 +999,7 @@ ServerResponse._packedHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse._sendHead
@@ -1034,7 +1013,7 @@ ServerResponse._sendHead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.addTrailers
@@ -1048,7 +1027,7 @@ ServerResponse.addTrailers
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.appendHeader
@@ -1062,7 +1041,7 @@ ServerResponse.appendHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.destroy
@@ -1076,7 +1055,7 @@ ServerResponse.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.end
@@ -1090,7 +1069,7 @@ ServerResponse.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.flushHeaders
@@ -1104,7 +1083,7 @@ ServerResponse.flushHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.getHeader
@@ -1118,7 +1097,7 @@ ServerResponse.getHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.getHeaderNames
@@ -1132,7 +1111,7 @@ ServerResponse.getHeaderNames
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.getHeaders
@@ -1146,7 +1125,7 @@ ServerResponse.getHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.getRawHeaderNames
@@ -1160,7 +1139,7 @@ ServerResponse.getRawHeaderNames
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.hasHeader
@@ -1174,7 +1153,7 @@ ServerResponse.hasHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.removeHeader
@@ -1188,7 +1167,7 @@ ServerResponse.removeHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.setHeader
@@ -1202,7 +1181,7 @@ ServerResponse.setHeader
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.setTimeout
@@ -1221,7 +1200,6 @@ See ``server.setTimeout()`` in the ``node:http`` module.
 * ``msecs`` (*number*) — optional: **Default:** ``120000`` (2 minutes)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/https.html#serversettimeoutmsecs-callback>`__
 
 ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~
@@ -1234,7 +1212,7 @@ ServerResponse.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.writeContinue
@@ -1248,7 +1226,7 @@ ServerResponse.writeContinue
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.writeHead
@@ -1262,7 +1240,7 @@ ServerResponse.writeHead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ServerResponse.writeProcessing
@@ -1276,7 +1254,7 @@ ServerResponse.writeProcessing
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -1362,4 +1340,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

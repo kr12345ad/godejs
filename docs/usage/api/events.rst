@@ -65,7 +65,6 @@ Listening to the ``abort`` event on abort signals is unsafe and may lead to reso
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventsaddabortlistenersignal-listener>`__
 
 CustomEvent
 ~~~~~~~~~~~
@@ -80,7 +79,6 @@ The ``CustomEvent`` object is an adaptation of the ``CustomEvent`` Web API. Inst
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#class-customevent>`__
 
 Event
 ~~~~~
@@ -95,7 +93,6 @@ The ``Event`` object is an adaptation of the ``Event`` Web API. Instances are cr
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#class-event>`__
 
 EventEmitter
 ~~~~~~~~~~~~
@@ -118,7 +115,6 @@ This is a class; construct instances with ``new``.
 
    const EventEmitter = require('node:events');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#class-eventemitter>`__
 
 EventEmitterAsyncResource
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +129,6 @@ EventEmitterAsyncResource
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#new-eventseventemitterasyncresourceoptions>`__
 
 EventTarget
 ~~~~~~~~~~~
@@ -158,7 +153,6 @@ This callable takes no arguments.
      console.log('foo event happened!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtarget-and-event-api>`__
 
 getEventListeners
 ~~~~~~~~~~~~~~~~~
@@ -197,7 +191,6 @@ For ``EventEmitter``\ s this behaves exactly the same as calling ``.listeners`` 
      console.log(getEventListeners(et, 'foo')); // [ [Function: listener] ]
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventsgeteventlistenersemitterortarget-eventname>`__
 
 getMaxListeners
 ~~~~~~~~~~~~~~~
@@ -235,7 +228,6 @@ For ``EventEmitter``\ s this behaves exactly the same as calling ``.getMaxListen
      console.log(getMaxListeners(et)); // 11
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventsgetmaxlistenersemitterortarget>`__
 
 listenerCount
 ~~~~~~~~~~~~~
@@ -274,7 +266,6 @@ For ``EventEmitter``\ s this behaves exactly the same as calling ``.listenerCoun
      console.log(listenerCount(et, 'event')); // 2
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventslistenercountemitterortarget-eventname>`__
 
 NodeEventTarget
 ~~~~~~~~~~~~~~~
@@ -291,7 +282,6 @@ The ``NodeEventTarget`` object implements a modified subset of the ``EventEmitte
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtarget-vs-eventemitter>`__
 
 on
 ~~~
@@ -336,7 +326,6 @@ An ``AbortSignal`` can be used to cancel waiting on events:
      // Unreachable here
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventsonemitter-eventname-options>`__
 
 once
 ~~~~
@@ -387,7 +376,6 @@ This method is intentionally generic and works with the web platform EventTarget
 
    run();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventsonceemitter-name-options>`__
 
 setMaxListeners
 ~~~~~~~~~~~~~~~
@@ -417,7 +405,6 @@ setMaxListeners
 
    setMaxListeners(5, target, emitter);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventssetmaxlistenersn-eventtargets>`__
 
 Event class
 -----------
@@ -437,7 +424,6 @@ Returns an array containing the current ``EventTarget`` as the only entry or emp
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventcomposedpath>`__
 
 Event.initEvent
 ~~~~~~~~~~~~~~~
@@ -456,7 +442,6 @@ Redundant with event constructors and incapable of setting ``composed``. This is
 * ``bubbles`` (*boolean*) — optional
 * ``cancelable`` (*boolean*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventiniteventtype-bubbles-cancelable>`__
 
 Event.preventDefault
 ~~~~~~~~~~~~~~~~~~~~
@@ -471,7 +456,6 @@ Sets the ``defaultPrevented`` property to ``true`` if ``cancelable`` is ``true``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventpreventdefault>`__
 
 Event.stopImmediatePropagation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -486,7 +470,6 @@ Stops the invocation of event listeners after the current one completes.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventstopimmediatepropagation>`__
 
 Event.stopPropagation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -501,7 +484,6 @@ This is not used in Node.js and is provided purely for completeness.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventstoppropagation>`__
 
 EventEmitter class
 ------------------
@@ -521,7 +503,7 @@ EventEmitter._godeHasAnyListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 EventEmitter.addListener
@@ -540,7 +522,6 @@ Alias for ``emitter.on(eventName, listener)``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteraddlistenereventname-listener>`__
 
 EventEmitter.emit
 ~~~~~~~~~~~~~~~~~
@@ -595,7 +576,6 @@ Returns ``true`` if the event had listeners, ``false`` otherwise.
    // event with parameters 1, 2 in second listener
    // event with parameters 1, 2, 3, 4, 5 in third listener
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteremiteventname-args>`__
 
 EventEmitter.eventNames
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -626,7 +606,6 @@ This callable takes no arguments.
    console.log(myEE.eventNames());
    // Prints: [ 'foo', 'bar', Symbol(symbol) ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emittereventnames>`__
 
 EventEmitter.getMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -641,7 +620,6 @@ Returns the current max listener value for the ``EventEmitter`` which is either 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emittergetmaxlisteners>`__
 
 EventEmitter.listenerCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -658,7 +636,6 @@ The ``events.listenerCount(emitter, eventName)`` API was deprecated, as it provi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0033-eventemitterlistenercount>`__
 
 EventEmitter.listeners
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -685,7 +662,6 @@ Returns a copy of the array of listeners for the event named ``eventName``.
    console.log(util.inspect(server.listeners('connection')));
    // Prints: [ [Function] ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterlistenerseventname>`__
 
 EventEmitter.off
 ~~~~~~~~~~~~~~~~
@@ -703,7 +679,6 @@ Alias for ``emitter.removeListener()``.
 * ``eventName`` (*string|symbol*)
 * ``listener`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteroffeventname-listener>`__
 
 EventEmitter.on
 ~~~~~~~~~~~~~~~
@@ -736,7 +711,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
    //   b
    //   a
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteroneventname-listener>`__
 
 EventEmitter.once
 ~~~~~~~~~~~~~~~~~
@@ -769,7 +743,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
    //   b
    //   a
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitteronceeventname-listener>`__
 
 EventEmitter.prependListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -797,7 +770,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('someone connected!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependlistenereventname-listener>`__
 
 EventEmitter.prependOnceListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -825,7 +797,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('Ah, we have our first user!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependoncelistenereventname-listener>`__
 
 EventEmitter.rawListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -869,7 +840,6 @@ Returns a copy of the array of listeners for the event named ``eventName``, incl
    newListeners[0]();
    emitter.emit('log');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterrawlistenerseventname>`__
 
 EventEmitter.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -888,7 +858,6 @@ It is bad practice to remove listeners added elsewhere in the code, particularly
 
 * ``eventName`` (*string|symbol*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterremovealllistenerseventname>`__
 
 EventEmitter.removeListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -942,7 +911,6 @@ Removes the specified ``listener`` from the listener array for the event named `
    // Prints:
    //   A
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterremovelistenereventname-listener>`__
 
 EventEmitter.setMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -961,7 +929,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
 
 * ``n`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emittersetmaxlistenersn>`__
 
 EventEmitterAsyncResource class
 -------------------------------
@@ -979,7 +946,6 @@ Call all ``destroy`` hooks. This should only ever be called once. An error will 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventemitterasyncresourceemitdestroy>`__
 
 EventTarget class
 -----------------
@@ -1021,7 +987,6 @@ If the ``once`` option is ``true``, the ``listener`` is removed after the next t
    // Removes the first instance of handler
    target.removeEventListener('foo', handler, { capture: true });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetaddeventlistenertype-listener-options>`__
 
 EventTarget.dispatchEvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1040,7 +1005,6 @@ The registered event listeners is synchronously invoked in the order they were r
 
 * ``event`` (*Event*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetdispatcheventevent>`__
 
 EventTarget.removeEventListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1059,7 +1023,6 @@ Removes the ``listener`` from the list of handlers for event ``type``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetremoveeventlistenertype-listener-options>`__
 
 NodeEventTarget class
 ---------------------
@@ -1079,7 +1042,7 @@ NodeEventTarget._godeHasAnyListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 NodeEventTarget.addListener
@@ -1098,7 +1061,6 @@ Node.js-specific extension to the ``EventTarget`` class that emulates the equiva
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetaddlistenertype-listener>`__
 
 NodeEventTarget.emit
 ~~~~~~~~~~~~~~~~~~~~
@@ -1116,7 +1078,6 @@ Node.js-specific extension to the ``EventTarget`` class that dispatches the ``ar
 * ``type`` (*string*)
 * ``arg`` (*any*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetemittype-arg>`__
 
 NodeEventTarget.eventNames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1131,7 +1092,6 @@ Node.js-specific extension to the ``EventTarget`` class that returns an array of
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargeteventnames>`__
 
 NodeEventTarget.getMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1146,7 +1106,6 @@ Node.js-specific extension to the ``EventTarget`` class that returns the number 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetgetmaxlisteners>`__
 
 NodeEventTarget.listenerCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1163,7 +1122,6 @@ Node.js-specific extension to the ``EventTarget`` class that returns the number 
 
 * ``type`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetlistenercounttype>`__
 
 NodeEventTarget.listeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1190,7 +1148,6 @@ Returns a copy of the array of listeners for the event named ``eventName``.
    console.log(util.inspect(server.listeners('connection')));
    // Prints: [ [Function] ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterlistenerseventname>`__
 
 NodeEventTarget.off
 ~~~~~~~~~~~~~~~~~~~
@@ -1209,7 +1166,6 @@ Node.js-specific alias for ``eventTarget.removeEventListener()``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetofftype-listener-options>`__
 
 NodeEventTarget.on
 ~~~~~~~~~~~~~~~~~~
@@ -1227,7 +1183,6 @@ Node.js-specific alias for ``eventTarget.addEventListener()``.
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetontype-listener>`__
 
 NodeEventTarget.once
 ~~~~~~~~~~~~~~~~~~~~
@@ -1245,7 +1200,6 @@ Node.js-specific extension to the ``EventTarget`` class that adds a ``once`` lis
 * ``type`` (*string*)
 * ``listener`` (*Function|EventListener*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetoncetype-listener>`__
 
 NodeEventTarget.prependListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1273,7 +1227,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('someone connected!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependlistenereventname-listener>`__
 
 NodeEventTarget.prependOnceListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1301,7 +1254,6 @@ Returns a reference to the ``EventEmitter``, so that calls can be chained.
      console.log('Ah, we have our first user!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterprependoncelistenereventname-listener>`__
 
 NodeEventTarget.rawListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1345,7 +1297,6 @@ Returns a copy of the array of listeners for the event named ``eventName``, incl
    newListeners[0]();
    emitter.emit('log');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#emitterrawlistenerseventname>`__
 
 NodeEventTarget.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1362,7 +1313,6 @@ Node.js-specific extension to the ``EventTarget`` class. If ``type`` is specifie
 
 * ``type`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetremovealllistenerstype>`__
 
 NodeEventTarget.removeListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1381,7 +1331,6 @@ Node.js-specific extension to the ``EventTarget`` class that removes the ``liste
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetremovelistenertype-listener-options>`__
 
 NodeEventTarget.setMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1398,7 +1347,6 @@ Node.js-specific extension to the ``EventTarget`` class that sets the number of 
 
 * ``n`` (*number*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#nodeeventtargetsetmaxlistenersn>`__
 
 Properties and constants
 ------------------------
@@ -1426,4 +1374,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -65,7 +65,6 @@ When they are disconnected all internal handles will be closed, allowing the pri
 
 * ``callback`` (*Function*) — optional: Called when all workers are disconnected and handles are
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#clusterdisconnectcallback>`__
 
 fork
 ~~~~
@@ -84,7 +83,6 @@ This can only be called from the primary process.
 
 * ``env`` (*Object*) — optional: Key/value pairs to add to worker process environment.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#clusterforkenv>`__
 
 setupMaster
 ~~~~~~~~~~~
@@ -101,7 +99,6 @@ Deprecated alias for ``.setupPrimary()``.
 
 * ``settings`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#clustersetupmastersettings>`__
 
 setupPrimary
 ~~~~~~~~~~~~
@@ -138,7 +135,6 @@ Any settings changes only affect future calls to ``.fork()`` and have no effect 
    });
    cluster.fork(); // http worker
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#clustersetupprimarysettings>`__
 
 Worker
 ~~~~~~
@@ -172,7 +168,6 @@ This is a class; construct instances with ``new``.
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#class-worker>`__
 
 Worker class
 ------------
@@ -229,7 +224,6 @@ This callable takes no arguments.
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#workerdisconnect>`__
 
 Worker.kill
 ~~~~~~~~~~~
@@ -248,7 +242,6 @@ The ``kill()`` function kills the worker process without waiting for a graceful 
 
 * ``signal`` (*string*) — optional: Name of the kill signal to send to the worker
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#workerkillsignal>`__
 
 Worker.send
 ~~~~~~~~~~~
@@ -284,7 +277,6 @@ In the primary, this sends a message to a specific worker. It is identical to ``
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/cluster.html#workersendmessage-sendhandle-options-callback>`__
 
 Properties and constants
 ------------------------
@@ -312,4 +304,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

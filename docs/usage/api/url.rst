@@ -52,7 +52,6 @@ It performs the inverse operation to ``url.domainToUnicode()``.
    console.log(url.domainToASCII('xn--iñvalid.com'));
    // Prints an empty string
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urldomaintoasciidomain>`__
 
 domainToUnicode
 ~~~~~~~~~~~~~~~
@@ -84,7 +83,6 @@ It performs the inverse operation to ``url.domainToASCII()``.
    console.log(url.domainToUnicode('xn--iñvalid.com'));
    // Prints an empty string
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urldomaintounicodedomain>`__
 
 fileURLToPath
 ~~~~~~~~~~~~~
@@ -121,7 +119,6 @@ This function ensures the correct decodings of percent-encoded characters as wel
    new URL('file:///hello world').pathname;   // Incorrect: /hello%20world
    fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlfileurltopathurl-options>`__
 
 fileURLToPathBuffer
 ~~~~~~~~~~~~~~~~~~~
@@ -141,7 +138,6 @@ Like ``url.fileURLToPath(...)`` except that instead of returning a string repres
 * ``url`` (*URL | string*): The file URL string or URL object to convert to a path.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlfileurltopathbufferurl-options>`__
 
 format
 ~~~~~~
@@ -177,7 +173,6 @@ The URL object has both a ``toString()`` method and ``href`` property that retur
    console.log(url.format(myURL, { fragment: false, unicode: true, auth: false }));
    // Prints 'https://測試/?abc'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlformaturl-options>`__
 
 parse
 ~~~~~
@@ -194,7 +189,6 @@ Type: Runtime
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0170-invalid-port-when-using-urlparse>`__
 
 pathToFileURL
 ~~~~~~~~~~~~~
@@ -228,7 +222,6 @@ This function ensures that ``path`` is resolved absolutely, and that the URL con
    new URL('/some/path%.c', 'file:');    // Incorrect: file:///some/path%.c
    pathToFileURL('/some/path%.c');       // Correct:   file:///some/path%25.c (POSIX)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlpathtofileurlpath-options>`__
 
 resolve
 ~~~~~~~
@@ -257,7 +250,6 @@ Because it invokes the deprecated ``url.parse()`` internally, ``url.resolve()`` 
    url.resolve('http://example.com/', '/one');    // 'http://example.com/one'
    url.resolve('http://example.com/one', '/two'); // 'http://example.com/two'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlresolvefrom-to>`__
 
 resolveObject
 ~~~~~~~~~~~~~
@@ -270,7 +262,7 @@ resolveObject
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 URL
@@ -294,7 +286,6 @@ This is a class; construct instances with ``new``.
 
    console.log(URL === require('node:url').URL); // Prints 'true'.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#class-url>`__
 
 Url
 ~~~
@@ -307,7 +298,7 @@ Url
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 URLPattern
@@ -327,14 +318,14 @@ This is a class; construct instances with ``new``.
 
 .. code-block:: javascript
 
-   const myPattern = new URLPattern('https://nodejs.org/docs/latest/api/*.html');
-   console.log(myPattern.exec('https://nodejs.org/docs/latest/api/dns.html'));
+   const myPattern = new URLPattern('https://example.com/docs/latest/api/*.html');
+   console.log(myPattern.exec('https://example.com/docs/latest/api/dns.html'));
    // Prints:
    // {
    //  "hash": { "groups": {  "0": "" },  "input": "" },
-   //  "hostname": { "groups": {}, "input": "nodejs.org" },
+   //  "hostname": { "groups": {}, "input": "example.com" },
    //  "inputs": [
-   //    "https://nodejs.org/docs/latest/api/dns.html"
+   //    "https://example.com/docs/latest/api/dns.html"
    //  ],
    //  "password": { "groups": { "0": "" }, "input": "" },
    //  "pathname": { "groups": { "0": "dns" }, "input": "/docs/latest/api/dns.html" },
@@ -344,10 +335,9 @@ This is a class; construct instances with ``new``.
    //  "username": { "groups": { "0": "" }, "input": "" }
    // }
 
-   console.log(myPattern.test('https://nodejs.org/docs/latest/api/dns.html'));
+   console.log(myPattern.test('https://example.com/docs/latest/api/dns.html'));
    // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#class-urlpattern>`__
 
 URLSearchParams
 ~~~~~~~~~~~~~~~
@@ -399,7 +389,6 @@ This is a class; construct instances with ``new``.
    console.log(myURL.href);
    // Prints https://example.org/?a=b&a=c
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#class-urlsearchparams>`__
 
 urlToHttpOptions
 ~~~~~~~~~~~~~~~~
@@ -437,7 +426,6 @@ This utility function converts a URL object into an ordinary options object as e
    }
    */
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlurltohttpoptionsurl>`__
 
 URL class
 ---------
@@ -472,7 +460,6 @@ This callable takes no arguments.
    console.log(JSON.stringify(myURLs));
    // Prints ["https://www.example.com/","https://test.example.org/"]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urltojson>`__
 
 URL.toString
 ~~~~~~~~~~~~
@@ -487,7 +474,6 @@ The ``toString()`` method on the ``URL`` object returns the serialized URL. The 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urltostring>`__
 
 URLPattern class
 ----------------
@@ -516,14 +502,14 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
 
 .. code-block:: javascript
 
-   const myPattern = new URLPattern('https://nodejs.org/docs/latest/api/*.html');
-   console.log(myPattern.exec('https://nodejs.org/docs/latest/api/dns.html'));
+   const myPattern = new URLPattern('https://example.com/docs/latest/api/*.html');
+   console.log(myPattern.exec('https://example.com/docs/latest/api/dns.html'));
    // Prints:
    // {
    //  "hash": { "groups": {  "0": "" },  "input": "" },
-   //  "hostname": { "groups": {}, "input": "nodejs.org" },
+   //  "hostname": { "groups": {}, "input": "example.com" },
    //  "inputs": [
-   //    "https://nodejs.org/docs/latest/api/dns.html"
+   //    "https://example.com/docs/latest/api/dns.html"
    //  ],
    //  "password": { "groups": { "0": "" }, "input": "" },
    //  "pathname": { "groups": { "0": "dns" }, "input": "/docs/latest/api/dns.html" },
@@ -533,7 +519,6 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
    //  "username": { "groups": { "0": "" }, "input": "" }
    // }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlpatternexecinput-baseurl>`__
 
 URLPattern.test
 ~~~~~~~~~~~~~~~
@@ -557,11 +542,10 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
 
 .. code-block:: javascript
 
-   const myPattern = new URLPattern('https://nodejs.org/docs/latest/api/*.html');
-   console.log(myPattern.test('https://nodejs.org/docs/latest/api/dns.html'));
+   const myPattern = new URLPattern('https://example.com/docs/latest/api/*.html');
+   console.log(myPattern.test('https://example.com/docs/latest/api/dns.html'));
    // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlpatterntestinput-baseurl>`__
 
 URLSearchParams class
 ---------------------
@@ -586,7 +570,6 @@ Append a new name-value pair to the query string.
 * ``name`` (*string*)
 * ``value`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsappendname-value>`__
 
 URLSearchParams.delete
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -606,7 +589,6 @@ If ``value`` is not provided, removes all name-value pairs whose name is ``name`
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsdeletename-value>`__
 
 URLSearchParams.entries
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -623,7 +605,6 @@ Alias for ``urlSearchParams[Symbol.iterator]()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsentries>`__
 
 URLSearchParams.forEach
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -653,7 +634,6 @@ Iterates over each name-value pair in the query and invokes the given function.
    //   a b true
    //   c d true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsforeachfn-thisarg>`__
 
 URLSearchParams.get
 ~~~~~~~~~~~~~~~~~~~
@@ -670,7 +650,6 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsgetname>`__
 
 URLSearchParams.getAll
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -687,7 +666,6 @@ Returns the values of all name-value pairs whose name is ``name``. If there are 
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsgetallname>`__
 
 URLSearchParams.has
 ~~~~~~~~~~~~~~~~~~~
@@ -707,7 +685,6 @@ If ``value`` is provided, returns ``true`` when name-value pair with same ``name
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamshasname-value>`__
 
 URLSearchParams.keys
 ~~~~~~~~~~~~~~~~~~~~
@@ -734,7 +711,6 @@ This callable takes no arguments.
    //   foo
    //   foo
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamskeys>`__
 
 URLSearchParams.set
 ~~~~~~~~~~~~~~~~~~~
@@ -768,7 +744,6 @@ Sets the value in the ``URLSearchParams`` object associated with ``name`` to ``v
    console.log(params.toString());
    // Prints foo=def&abc=def&xyz=opq
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamssetname-value>`__
 
 URLSearchParams.sort
 ~~~~~~~~~~~~~~~~~~~~
@@ -794,7 +769,6 @@ This callable takes no arguments.
    console.log(params.toString());
    // Prints query%5B%5D=abc&query%5B%5D=123&type=search
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamssort>`__
 
 URLSearchParams.toString
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -809,7 +783,6 @@ Returns the search parameters serialized as a string, with characters percent-en
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamstostring>`__
 
 URLSearchParams.values
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -824,7 +797,6 @@ Returns an ES6 ``Iterator`` over the values of each name-value pair.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsvalues>`__
 
 Properties and constants
 ------------------------
@@ -850,4 +822,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

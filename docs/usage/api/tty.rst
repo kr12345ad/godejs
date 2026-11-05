@@ -39,7 +39,6 @@ The ``tty.isatty()`` method returns ``true`` if the given ``fd`` is associated w
 
 * ``fd`` (*number*): A numeric file descriptor
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#ttyisattyfd>`__
 
 ReadStream
 ~~~~~~~~~~
@@ -54,7 +53,6 @@ Represents the readable side of a TTY. In normal circumstances ``process.stdin``
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#class-ttyreadstream>`__
 
 WriteStream
 ~~~~~~~~~~~
@@ -78,7 +76,6 @@ This is a class; construct instances with ``new``.
      console.log(`${process.stdout.columns}x${process.stdout.rows}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#class-ttywritestream>`__
 
 ReadStream class
 ----------------
@@ -96,7 +93,7 @@ ReadStream.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream.pause
@@ -110,7 +107,7 @@ ReadStream.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream.resume
@@ -124,7 +121,7 @@ ReadStream.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream.setRawMode
@@ -144,7 +141,6 @@ When in raw mode, input is always available character-by-character, not includin
 
 * ``mode`` (*boolean|string*): If ``true`` or ``'raw'``, configures the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#readstreamsetrawmodemode>`__
 
 WriteStream class
 -----------------
@@ -162,7 +158,7 @@ WriteStream._refreshSize
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WriteStream.clearLine
@@ -181,7 +177,6 @@ WriteStream.clearLine
 * ``dir`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamclearlinedir-callback>`__
 
 WriteStream.clearScreenDown
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,7 +193,6 @@ WriteStream.clearScreenDown
 
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamclearscreendowncallback>`__
 
 WriteStream.cursorTo
 ~~~~~~~~~~~~~~~~~~~~
@@ -217,7 +211,6 @@ WriteStream.cursorTo
 * ``y`` (*number*) — optional
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamcursortox-y-callback>`__
 
 WriteStream.destroy
 ~~~~~~~~~~~~~~~~~~~
@@ -230,7 +223,7 @@ WriteStream.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WriteStream.end
@@ -244,7 +237,7 @@ WriteStream.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WriteStream.getColorDepth
@@ -264,7 +257,6 @@ Returns:
 
 * ``env`` (*Object*) — optional: An object containing the environment variables to check. This
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamgetcolordepthenv>`__
 
 WriteStream.getWindowSize
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -279,7 +271,6 @@ WriteStream.getWindowSize
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamgetwindowsize>`__
 
 WriteStream.hasColors
 ~~~~~~~~~~~~~~~~~~~~~
@@ -312,7 +303,6 @@ This has the same false positives and negatives as described in ``writeStream.ge
    process.stdout.hasColors(2 ** 24, { TMUX: '1' });
    // Returns false (the environment setting pretends to support 2 ** 8 colors).
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreamhascolorscount-env>`__
 
 WriteStream.moveCursor
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -331,7 +321,6 @@ WriteStream.moveCursor
 * ``dy`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/tty.html#writestreammovecursordx-dy-callback>`__
 
 WriteStream.write
 ~~~~~~~~~~~~~~~~~
@@ -344,7 +333,7 @@ WriteStream.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -355,4 +344,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

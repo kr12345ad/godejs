@@ -37,7 +37,6 @@ The documentation for this class has moved ``AsyncLocalStorage``.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#class-asynclocalstorage>`__
 
 AsyncResource
 ~~~~~~~~~~~~~
@@ -52,7 +51,6 @@ The documentation for this class has moved ``AsyncResource``.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#class-asyncresource>`__
 
 createHook
 ~~~~~~~~~~
@@ -82,7 +80,6 @@ The callbacks ``init()``/``before()``/``after()``/``destroy()`` are called for t
      destroy(asyncId) { },
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#async_hookscreatehookoptions>`__
 
 executionAsyncId
 ~~~~~~~~~~~~~~~~
@@ -112,7 +109,6 @@ This callable takes no arguments.
      console.log(async_hooks.executionAsyncId());  // 6 - open()
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#async_hooksexecutionasyncid>`__
 
 executionAsyncResource
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +137,6 @@ This callable takes no arguments.
      console.log(executionAsyncId(), executionAsyncResource());  // 7 FSReqWrap
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#async_hooksexecutionasyncresource>`__
 
 triggerAsyncId
 ~~~~~~~~~~~~~~
@@ -173,7 +168,6 @@ This callable takes no arguments.
      async_hooks.triggerAsyncId();
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_hooks.html#async_hookstriggerasyncid>`__
 
 AsyncLocalStorage class
 -----------------------
@@ -195,7 +189,6 @@ Binds the given function to the current execution context.
 
 * ``fn`` (*Function*): The function to bind to the current execution context.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#static-method-asynclocalstoragebindfn>`__
 
 AsyncLocalStorage.disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,7 +205,6 @@ When calling ``asyncLocalStorage.disable()``, all current contexts linked to the
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asynclocalstoragedisable>`__
 
 AsyncLocalStorage.enterWith
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -243,7 +235,6 @@ Example:
      asyncLocalStorage.getStore(); // Returns the same object
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asynclocalstorageenterwithstore>`__
 
 AsyncLocalStorage.exit
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -279,7 +270,6 @@ The optional ``args`` are passed to the callback function.
      // The error will be caught here
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asynclocalstorageexitcallback-args>`__
 
 AsyncLocalStorage.getStore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,7 +284,6 @@ Returns the current store. If called outside of an asynchronous context initiali
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asynclocalstoragegetstore>`__
 
 AsyncLocalStorage.run
 ~~~~~~~~~~~~~~~~~~~~~
@@ -333,7 +322,6 @@ The optional ``args`` are passed to the callback function.
      // The error will be caught here
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asynclocalstoragerunstore-callback-args>`__
 
 AsyncResource class
 -------------------
@@ -351,7 +339,6 @@ AsyncResource.asyncId
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asyncresourceasyncid>`__
 
 AsyncResource.bind
 ~~~~~~~~~~~~~~~~~~
@@ -369,7 +356,6 @@ Binds the given function to execute to this ``AsyncResource``'s scope.
 * ``fn`` (*Function*): The function to bind to the current ``AsyncResource``.
 * ``thisArg`` (*any*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asyncresourcebindfn-thisarg>`__
 
 AsyncResource.emitDestroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -384,7 +370,6 @@ Call all ``destroy`` hooks. This should only ever be called once. An error will 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asyncresourceemitdestroy>`__
 
 AsyncResource.runInAsyncScope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,7 +388,6 @@ Call the provided function with the provided arguments in the execution context 
 * ``thisArg`` (*any*) — optional: The receiver to be used for the function call.
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asyncresourceruninasyncscopefn-thisarg-args>`__
 
 AsyncResource.triggerAsyncId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,7 +402,6 @@ AsyncResource.triggerAsyncId
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/async_context.html#asyncresourcetriggerasyncid>`__
 
 Properties and constants
 ------------------------
@@ -485,4 +468,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -61,7 +61,6 @@ The backed-up database can be used normally during the backup process. Mutations
      console.log('Backup completed', totalPagesTransferred);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#sqlitebackupsourcedb-path-options>`__
 
 DatabaseSync
 ~~~~~~~~~~~~
@@ -100,7 +99,6 @@ This is a class; construct instances with ``new``.
    using query = db.prepare('SELECT sumint(y) as total FROM t3');
    query.get(); // { total: 21 }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#class-databasesync>`__
 
 Session
 ~~~~~~~
@@ -113,7 +111,6 @@ Session
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#class-session>`__
 
 StatementSync
 ~~~~~~~~~~~~~
@@ -139,7 +136,6 @@ This is a class; construct instances with ``new``.
    db.prepare('SELECT ?2 AS a, ?1 AS b').get('first', 'second');
    // { a: 'second', b: 'first' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#class-statementsync>`__
 
 DatabaseSync class
 ------------------
@@ -188,7 +184,6 @@ When used as a window function, the ``result`` function will be called multiple 
    using query = db.prepare('SELECT sumint(y) as total FROM t3');
    query.get(); // { total: 21 }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseaggregatename-options>`__
 
 DatabaseSync.applyChangeset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -228,7 +223,6 @@ An exception is thrown if the database is not open. This method is a wrapper aro
    targetDb.applyChangeset(changeset);
    // Now that the changeset has been applied, targetDb contains the same data as sourceDb.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseapplychangesetchangeset-options>`__
 
 DatabaseSync.close
 ~~~~~~~~~~~~~~~~~~
@@ -243,7 +237,6 @@ Closes the database connection. An exception is thrown if the database is not op
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseclose>`__
 
 DatabaseSync.createSession
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -260,7 +253,6 @@ Creates and attaches a session to the database. This method is a wrapper around 
 
 * ``options`` (*Object*) — optional: The configuration options for the session.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databasecreatesessionoptions>`__
 
 DatabaseSync.deserialize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -296,7 +288,6 @@ Loads a serialized database into this connection, replacing the current database
    console.log(query.get());
    // Prints: { value: 'hello' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databasedeserializebuffer-options>`__
 
 DatabaseSync.enableLoadExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,7 +304,6 @@ Enables or disables the ``loadExtension`` SQL function, and the ``loadExtension(
 
 * ``allow`` (*boolean*): Whether to allow loading extensions.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseenableloadextensionallow>`__
 
 DatabaseSync.exec
 ~~~~~~~~~~~~~~~~~
@@ -330,7 +320,6 @@ This method allows one or more SQL statements to be executed without returning a
 
 * ``sql`` (*string*): A SQL string to execute.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseexecsql>`__
 
 DatabaseSync.function
 ~~~~~~~~~~~~~~~~~~~~~
@@ -349,7 +338,6 @@ This method is used to create SQLite user-defined functions. This method is a wr
 * ``options`` (*Object*) — optional: Optional configuration settings for the function. The
 * ``fn`` (*Function*): The JavaScript function to call when the SQLite function is
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databasefunctionname-options-fn>`__
 
 DatabaseSync.isOpen
 ~~~~~~~~~~~~~~~~~~~
@@ -362,7 +350,6 @@ DatabaseSync.isOpen
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseisopen>`__
 
 DatabaseSync.loadExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -393,7 +380,6 @@ Loads a shared library into the database connection. This method is a wrapper ar
    // Override the entry point when the derived name does not match.
    database.loadExtension('./base64.dylib', 'sqlite3_base64_init');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseloadextensionpath-entrypoint>`__
 
 DatabaseSync.location
 ~~~~~~~~~~~~~~~~~~~~~
@@ -410,7 +396,6 @@ This method is a wrapper around ``sqlite3_db_filename()``
 
 * ``dbName`` (*string*) — optional: Name of the database. This can be ``'main'`` (the default primary database) or any other
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaselocationdbname>`__
 
 DatabaseSync.open
 ~~~~~~~~~~~~~~~~~
@@ -425,7 +410,6 @@ Opens the database specified in the ``path`` argument of the ``DatabaseSync`` co
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseopen>`__
 
 DatabaseSync.prepare
 ~~~~~~~~~~~~~~~~~~~~
@@ -443,7 +427,6 @@ Compiles a SQL statement into a prepared statement. This method is a wrapper aro
 * ``sql`` (*string*): A SQL string to compile to a prepared statement.
 * ``options`` (*Object*) — optional: Optional configuration for the prepared statement.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databasepreparesql-options>`__
 
 DatabaseSync.serialize
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -472,7 +455,6 @@ Serializes the database into a binary representation, returned as a ``Uint8Array
    const buffer = db.serialize();
    console.log(buffer.length); // Prints the byte length of the database
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseserializedbname>`__
 
 DatabaseSync.setAuthorizer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -517,7 +499,6 @@ When invoked, the callback receives five arguments:
      console.log('Operation blocked:', err.message);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databasesetauthorizercallback>`__
 
 Session class
 -------------
@@ -535,7 +516,6 @@ Retrieves a changeset containing all changes since the changeset was created. Ca
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#sessionchangeset>`__
 
 Session.close
 ~~~~~~~~~~~~~
@@ -550,7 +530,6 @@ Closes the session. An exception is thrown if the database or the session is not
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#sessionclose>`__
 
 Session.patchset
 ~~~~~~~~~~~~~~~~
@@ -565,7 +544,6 @@ Similar to the method above, but generates a more compact patchset. See Changese
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#sessionpatchset>`__
 
 StatementSync class
 -------------------
@@ -590,7 +568,6 @@ This method executes a prepared statement and returns all results as an array of
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementallnamedparameters-anonymousparameters>`__
 
 StatementSync.close
 ~~~~~~~~~~~~~~~~~~~
@@ -605,7 +582,6 @@ Closes the database connection. An exception is thrown if the database is not op
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#databaseclose>`__
 
 StatementSync.columns
 ~~~~~~~~~~~~~~~~~~~~~
@@ -620,7 +596,6 @@ This method is used to retrieve information about the columns returned by the pr
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementcolumns>`__
 
 StatementSync.get
 ~~~~~~~~~~~~~~~~~
@@ -638,7 +613,6 @@ This method executes a prepared statement and returns the first result as an obj
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementgetnamedparameters-anonymousparameters>`__
 
 StatementSync.iterate
 ~~~~~~~~~~~~~~~~~~~~~
@@ -656,7 +630,6 @@ This method executes a prepared statement and returns an iterator of objects. If
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementiteratenamedparameters-anonymousparameters>`__
 
 StatementSync.run
 ~~~~~~~~~~~~~~~~~
@@ -674,7 +647,6 @@ This method executes a prepared statement and returns an object summarizing the 
 * ``namedParameters`` (*Object*) — optional: An optional object used to bind named parameters.
 * ``...anonymousParameters`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementrunnamedparameters-anonymousparameters>`__
 
 StatementSync.setAllowBareNamedParameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -693,7 +665,6 @@ To improve ergonomics, ``node:sqlite`` allows bare named parameters, which do no
 
 * ``enabled`` (*boolean*): Enables or disables support for binding named parameters
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementsetallowbarenamedparametersenabled>`__
 
 StatementSync.setReadBigInts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -710,7 +681,6 @@ When reading from the database, SQLite ``INTEGER``\ s are mapped to JavaScript n
 
 * ``enabled`` (*boolean*): Enables or disables the use of ``BigInt``\ s when reading
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementsetreadbigintsenabled>`__
 
 StatementSync.setReturnArrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -727,7 +697,6 @@ When enabled, query results returned by the ``all()``, ``get()``, and ``iterate(
 
 * ``enabled`` (*boolean*): Enables or disables the return of query results as arrays.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/sqlite.html#statementsetreturnarraysenabled>`__
 
 Properties and constants
 ------------------------
@@ -767,4 +736,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -71,7 +71,6 @@ If the ``signal`` option is enabled, calling ``.abort()`` on the corresponding `
    // Later, when you want to close the server.
    controller.abort();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#dgramcreatesocketoptions-callback>`__
 
 Socket
 ~~~~~~
@@ -105,7 +104,6 @@ This is a class; construct instances with ``new``.
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#class-dgramsocket>`__
 
 Socket class
 ------------
@@ -149,7 +147,6 @@ When called on an unbound socket, this method will implicitly bind to a random p
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketaddmembershipmulticastaddress-multicastinterface>`__
 
 Socket.address
 ~~~~~~~~~~~~~~
@@ -166,7 +163,6 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketaddress>`__
 
 Socket.bind
 ~~~~~~~~~~~
@@ -211,7 +207,6 @@ Specifying both a ``'listening'`` event listener and passing a ``callback`` to t
    server.bind(41234);
    // Prints: server listening 0.0.0.0:41234
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketbindport-address-callback>`__
 
 Socket.close
 ~~~~~~~~~~~~
@@ -228,7 +223,6 @@ Close the underlying socket and stop listening for data on it. If a callback is 
 
 * ``callback`` (*Function*) — optional: Called when the socket has been closed.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketclosecallback>`__
 
 Socket.connect
 ~~~~~~~~~~~~~~
@@ -247,7 +241,6 @@ Associates the ``dgram.Socket`` to a remote address and port. Every message sent
 * ``address`` (*string*) — optional
 * ``callback`` (*Function*) — optional: Called when the connection is completed or on error.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketconnectport-address-callback>`__
 
 Socket.disconnect
 ~~~~~~~~~~~~~~~~~
@@ -262,7 +255,6 @@ A synchronous function that disassociates a connected ``dgram.Socket`` from its 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketdisconnect>`__
 
 Socket.dropMembership
 ~~~~~~~~~~~~~~~~~~~~~
@@ -282,7 +274,6 @@ If ``multicastInterface`` is not specified, the operating system will attempt to
 * ``multicastAddress`` (*string*)
 * ``multicastInterface`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketdropmembershipmulticastaddress-multicastinterface>`__
 
 Socket.getRecvBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -297,7 +288,6 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketgetrecvbuffersize>`__
 
 Socket.getSendBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -312,7 +302,6 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketgetsendbuffersize>`__
 
 Socket.ref
 ~~~~~~~~~~
@@ -329,7 +318,6 @@ Calling ``socket.ref()`` multiple times will have no additional effect.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketref>`__
 
 Socket.remoteAddress
 ~~~~~~~~~~~~~~~~~~~~
@@ -344,7 +332,6 @@ Returns an object containing the ``address``, ``family``, and ``port`` of the re
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketremoteaddress>`__
 
 Socket.send
 ~~~~~~~~~~~
@@ -381,7 +368,6 @@ The ``msg`` argument contains the message to be sent. Depending on its type, dif
      client.close();
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsendmsg-offset-length-port-address-callback>`__
 
 Socket.setBroadcast
 ~~~~~~~~~~~~~~~~~~~
@@ -400,7 +386,6 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 * ``flag`` (*boolean*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetbroadcastflag>`__
 
 Socket.setMulticastInterface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,7 +414,6 @@ Sets the default outgoing multicast interface of the socket to a chosen interfac
      socket.setMulticastInterface('::%eth1');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetmulticastinterfacemulticastinterface>`__
 
 Socket.setMulticastLoopback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -448,7 +432,6 @@ This method throws ``EBADF`` if called on an unbound socket.
 
 * ``flag`` (*boolean*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetmulticastloopbackflag>`__
 
 Socket.setMulticastTTL
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -467,7 +450,6 @@ The ``ttl`` argument may be between 0 and 255. The default on most systems is ``
 
 * ``ttl`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetmulticastttlttl>`__
 
 Socket.setRecvBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -486,7 +468,6 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 * ``size`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetrecvbuffersizesize>`__
 
 Socket.setSendBufferSize
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -505,7 +486,6 @@ This method throws ``ERR_SOCKET_BUFFER_SIZE`` if called on an unbound socket.
 
 * ``size`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetsendbuffersizesize>`__
 
 Socket.setTTL
 ~~~~~~~~~~~~~
@@ -524,7 +504,6 @@ The ``ttl`` argument may be between 1 and 255. The default on most systems is 64
 
 * ``ttl`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketsetttlttl>`__
 
 Socket.unref
 ~~~~~~~~~~~~
@@ -541,8 +520,7 @@ Calling ``socket.unref()`` multiple times will have no additional effect.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dgram.html#socketunref>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

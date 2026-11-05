@@ -56,7 +56,6 @@ Compiles the given code into the provided context (if no context is supplied, th
 * ``params`` (*string\[]*) — optional: An array of strings containing all parameters for the
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmcompilefunctioncode-params-options>`__
 
 createContext
 ~~~~~~~~~~~~~
@@ -95,7 +94,6 @@ If ``contextObject`` is omitted (or passed explicitly as ``undefined``), a new, 
    console.log(global.globalVar);
    // Prints: 3
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmcreatecontextcontextobject-options>`__
 
 createScript
 ~~~~~~~~~~~~
@@ -108,7 +106,7 @@ createScript
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 isContext
@@ -126,7 +124,6 @@ Returns ``true`` if the given ``object`` object has been contextified using ``vm
 
 * ``object`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmiscontextobject>`__
 
 measureMemory
 ~~~~~~~~~~~~~
@@ -176,7 +173,6 @@ Measure the memory known to V8 and used by all contexts known to the current V8 
      console.log(result);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmmeasurememoryoptions>`__
 
 Module
 ~~~~~~
@@ -277,7 +273,6 @@ This is a class; construct instances with ``new``.
      await rootModule.evaluate();
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#class-vmmodule>`__
 
 runInContext
 ~~~~~~~~~~~~
@@ -313,7 +308,6 @@ If ``options`` is a string, then it specifies the filename.
    console.log(contextObject);
    // Prints: { globalVar: 1024 }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmrunincontextcode-contextifiedobject-options>`__
 
 runInNewContext
 ~~~~~~~~~~~~~~~
@@ -357,7 +351,6 @@ It does several things at once:
      constants.DONT_CONTEXTIFY,
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmruninnewcontextcode-contextobject-options>`__
 
 runInThisContext
 ~~~~~~~~~~~~~~~~
@@ -392,7 +385,6 @@ If ``options`` is a string, then it specifies the filename.
    console.log(`evalResult: '${evalResult}', localVar: '${localVar}'`);
    // Prints: evalResult: 'eval', localVar: 'eval'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#vmruninthiscontextcode-options>`__
 
 Script
 ~~~~~~
@@ -409,7 +401,6 @@ The ``produceCachedData`` option is deprecated. Use ``script.createCachedData()`
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0110-vmscript-cached-data>`__
 
 SourceTextModule
 ~~~~~~~~~~~~~~~~
@@ -457,7 +448,6 @@ This is a class; construct instances with ``new``.
      //     meta.prop = vm.runInContext('({})', contextifiedObject);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#class-vmsourcetextmodule>`__
 
 SyntheticModule
 ~~~~~~~~~~~~~~~
@@ -494,7 +484,6 @@ This is a class; construct instances with ``new``.
      console.log('Default export:', syntheticModule.namespace.default);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#class-vmsyntheticmodule>`__
 
 Module class
 ------------
@@ -514,7 +503,7 @@ Module._evaluateNow
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Module.evaluate
@@ -534,7 +523,6 @@ If the module is a ``vm.SourceTextModule``, ``evaluate()`` must be called after 
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#moduleevaluateoptions>`__
 
 Module.instantiate
 ~~~~~~~~~~~~~~~~~~
@@ -551,7 +539,6 @@ This resolves the imported bindings of the module, including re-exported binding
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#sourcetextmoduleinstantiate>`__
 
 Module.link
 ~~~~~~~~~~~
@@ -578,7 +565,6 @@ Use ``sourceTextModule.linkRequests(modules)`` and ``sourceTextModule.instantiat
        //              ^^^^^ the module specifier
        
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#modulelinklinker>`__
 
 Script class
 ------------
@@ -623,7 +609,6 @@ This callable takes no arguments.
    const cacheWithAdd = script.createCachedData();
    // `cacheWithAdd` contains fully compiled function `add()`.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptcreatecacheddata>`__
 
 Script.runInContext
 ~~~~~~~~~~~~~~~~~~~
@@ -664,7 +649,6 @@ The following example compiles code that increments a global variable, sets the 
    console.log(context);
    // Prints: { animal: 'cat', count: 12, name: 'kitty' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptrunincontextcontextifiedobject-options>`__
 
 Script.runInNewContext
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -706,7 +690,6 @@ This method is a shortcut to ``script.runInContext(vm.createContext(options), op
    const freezeScript = new Script('Object.freeze(globalThis); globalThis;');
    const frozenContext = freezeScript.runInNewContext(constants.DONT_CONTEXTIFY);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptruninnewcontextcontextobject-options>`__
 
 Script.runInThisContext
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -743,7 +726,6 @@ The following example compiles code that increments a ``global`` variable then e
 
    // 1000
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptruninthiscontextoptions>`__
 
 SourceTextModule class
 ----------------------
@@ -763,7 +745,7 @@ SourceTextModule._evaluateNow
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 SourceTextModule.createCachedData
@@ -794,7 +776,6 @@ This callable takes no arguments.
    // Create a new module using the cached data. The code must be the same.
    const module2 = new vm.SourceTextModule('const a = 1;', { cachedData });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#sourcetextmodulecreatecacheddata>`__
 
 SourceTextModule.hasAsyncGraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -811,7 +792,6 @@ The search may be slow if the graph is big enough.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#sourcetextmodulehasasyncgraph>`__
 
 SourceTextModule.hasTopLevelAwait
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -828,7 +808,6 @@ This corresponds to the field ``[[HasTLA]]`` in Cyclic Module Record in the ECMA
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#sourcetextmodulehastoplevelawait>`__
 
 SourceTextModule.linkRequests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -854,7 +833,6 @@ The order of the module instances in the ``modules`` array should correspond to 
    import foo from 'foo';
    import source Foo from 'foo';
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#sourcetextmodulelinkrequestsmodules>`__
 
 SyntheticModule class
 ---------------------
@@ -874,7 +852,7 @@ SyntheticModule._evaluateNow
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 SyntheticModule.setExport
@@ -906,7 +884,6 @@ This method sets the module export binding slots with the given value.
      assert.strictEqual(m.namespace.x, 1);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/vm.html#syntheticmodulesetexportname-value>`__
 
 Properties and constants
 ------------------------
@@ -918,4 +895,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -28,7 +28,6 @@ create
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domaincreate>`__
 
 createDomain
 ~~~~~~~~~~~~
@@ -41,7 +40,7 @@ createDomain
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Domain
@@ -77,7 +76,6 @@ This is a class; construct instances with ``new``.
      // with the normal line number and stack message.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#class-domain>`__
 
 Domain class
 ------------
@@ -97,7 +95,7 @@ Domain._errorHandler
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Domain.add
@@ -117,7 +115,6 @@ If the ``EventEmitter`` was already bound to a domain, it is removed from that o
 
 * ``emitter`` (*EventEmitter*): emitter to be added to the domain
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainaddemitter>`__
 
 Domain.bind
 ~~~~~~~~~~~
@@ -152,7 +149,6 @@ The returned function will be a wrapper around the supplied callback function. W
      // with the normal line number and stack message.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainbindcallback>`__
 
 Domain.dispose
 ~~~~~~~~~~~~~~
@@ -169,7 +165,6 @@ Type: End-of-Life
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0012-domaindispose>`__
 
 Domain.enter
 ~~~~~~~~~~~~
@@ -186,7 +181,6 @@ Calling ``enter()`` changes only the active domain, and does not alter the domai
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainenter>`__
 
 Domain.exit
 ~~~~~~~~~~~
@@ -203,7 +197,6 @@ If there are multiple, nested domains bound to the current execution context, ``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainexit>`__
 
 Domain.intercept
 ~~~~~~~~~~~~~~~~
@@ -247,7 +240,6 @@ In this way, the common ``if (err) return callback(err);`` pattern can be replac
      // with the normal line number and stack message.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domaininterceptcallback>`__
 
 Domain.remove
 ~~~~~~~~~~~~~
@@ -264,7 +256,6 @@ The opposite of ``domain.add(emitter)``. Removes domain handling from the specif
 
 * ``emitter`` (*EventEmitter*): emitter to be removed from the domain
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainremoveemitter>`__
 
 Domain.run
 ~~~~~~~~~~
@@ -305,7 +296,6 @@ This is the most basic way to use a domain.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/domain.html#domainrunfn-args>`__
 
 Properties and constants
 ------------------------
@@ -315,4 +305,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

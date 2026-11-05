@@ -69,7 +69,6 @@ The ``nonce`` should be as unique as possible. It is recommended that a nonce is
      console.log(derivedKey.toString('hex'));  // 'af91dad...9520f15'
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoargon2algorithm-parameters-callback>`__
 
 argon2Sync
 ~~~~~~~~~~
@@ -107,7 +106,6 @@ The ``nonce`` should be as unique as possible. It is recommended that a nonce is
    const derivedKey = argon2Sync('argon2id', parameters);
    console.log(derivedKey.toString('hex'));  // 'af91dad...9520f15'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoargon2syncalgorithm-parameters>`__
 
 Certificate
 ~~~~~~~~~~~
@@ -131,7 +129,6 @@ This callable takes no arguments.
    const cert1 = new Certificate();
    const cert2 = Certificate();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#new-cryptocertificate>`__
 
 checkPrime
 ~~~~~~~~~~
@@ -150,7 +147,6 @@ Checks the primality of the ``candidate``.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocheckprimecandidate-options-callback>`__
 
 checkPrimeSync
 ~~~~~~~~~~~~~~
@@ -168,7 +164,6 @@ Checks the primality of the ``candidate``.
 * ``candidate`` (*ArrayBuffer|SharedArrayBuffer|TypedArray|Buffer|DataView|bigint*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocheckprimesynccandidate-options>`__
 
 Cipheriv
 ~~~~~~~~
@@ -220,7 +215,6 @@ This is a class; construct instances with ``new``.
      });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-cipheriv>`__
 
 createCipheriv
 ~~~~~~~~~~~~~~
@@ -242,7 +236,6 @@ The ``options`` argument controls cipher-specific settings and stream behavior. 
 * ``iv`` (*string|ArrayBuffer|Buffer|TypedArray|DataView|null*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options with these additional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatecipherivalgorithm-key-iv-options>`__
 
 createDecipheriv
 ~~~~~~~~~~~~~~~~
@@ -264,7 +257,6 @@ The ``options`` argument controls cipher-specific settings and stream behavior. 
 * ``iv`` (*string|ArrayBuffer|Buffer|TypedArray|DataView|null*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options with these additional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatedecipherivalgorithm-key-iv-options>`__
 
 createDiffieHellman
 ~~~~~~~~~~~~~~~~~~~
@@ -286,7 +278,6 @@ The ``generator`` argument can be a number, string, or ``Buffer``. If ``generato
 * ``generator`` (*number|string|ArrayBuffer|Buffer|TypedArray|DataView*) — optional
 * ``generatorEncoding`` (*string*) — optional: The encoding of the ``generator`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatediffiehellmanprime-primeencoding-generator-generatorencoding>`__
 
 createDiffieHellmanGroup
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,7 +294,6 @@ An alias for ``crypto.getDiffieHellman()``
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatediffiehellmangroupname>`__
 
 createECDH
 ~~~~~~~~~~
@@ -320,7 +310,6 @@ Creates an Elliptic Curve Diffie-Hellman (``ECDH``) key exchange object using a 
 
 * ``curveName`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreateecdhcurvename>`__
 
 createHash
 ~~~~~~~~~~
@@ -368,7 +357,6 @@ The ``functionName`` and ``customization`` options apply only to cSHAKE-128 and 
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatehashalgorithm-options>`__
 
 createHmac
 ~~~~~~~~~~
@@ -417,7 +405,6 @@ The available algorithms depend on the version and configuration of OpenSSL on t
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatehmacalgorithm-key-options>`__
 
 createMac
 ~~~~~~~~~
@@ -438,7 +425,6 @@ The following table summarizes the MAC-specific options accepted by MAC implemen
 * ``key`` (*ArrayBuffer|Buffer|TypedArray|DataView|KeyObject*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatemacalgorithm-key-options>`__
 
 createPrivateKey
 ~~~~~~~~~~~~~~~~
@@ -457,7 +443,6 @@ If the private key is encrypted, a ``passphrase`` must be specified. The length 
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreateprivatekeykey>`__
 
 createPublicKey
 ~~~~~~~~~~~~~~~
@@ -476,7 +461,6 @@ If the format is ``'pem'``, the ``'key'`` may also be an X.509 certificate.
 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatepublickeykey>`__
 
 createSecretKey
 ~~~~~~~~~~~~~~~
@@ -494,7 +478,6 @@ Creates and returns a new key object containing a secret key for symmetric encry
 * ``key`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The string encoding when ``key`` is a string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatesecretkeykey-encoding>`__
 
 createSign
 ~~~~~~~~~~
@@ -514,7 +497,6 @@ In some cases, a ``Sign`` instance can be created using the name of a signature 
 * ``algorithm`` (*string*)
 * ``options`` (*Object*) — optional: ``stream.Writable`` options
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreatesignalgorithm-options>`__
 
 createVerify
 ~~~~~~~~~~~~
@@ -534,7 +516,6 @@ In some cases, a ``Verify`` instance can be created using the name of a signatur
 * ``algorithm`` (*string*)
 * ``options`` (*Object*) — optional: ``stream.Writable`` options
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptocreateverifyalgorithm-options>`__
 
 decapsulate
 ~~~~~~~~~~~
@@ -555,7 +536,6 @@ Supported key types and their KEM algorithms are:
 * ``ciphertext`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptodecapsulatekey-ciphertext-callback>`__
 
 Decipheriv
 ~~~~~~~~~~
@@ -611,7 +591,6 @@ This is a class; construct instances with ``new``.
    decipher.write(encrypted, 'hex');
    decipher.end();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-decipheriv>`__
 
 DiffieHellman
 ~~~~~~~~~~~~~
@@ -653,7 +632,6 @@ This is a class; construct instances with ``new``.
    // OK
    assert.strictEqual(aliceSecret.toString('hex'), bobSecret.toString('hex'));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-diffiehellman>`__
 
 diffieHellman
 ~~~~~~~~~~~~~
@@ -673,7 +651,6 @@ If ``options.privateKey`` is not a ``KeyObject``, this function behaves as if ``
 * ``options`` (*Object*)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptodiffiehellmanoptions-callback>`__
 
 DiffieHellmanGroup
 ~~~~~~~~~~~~~~~~~~
@@ -697,7 +674,6 @@ This is a class; construct instances with ``new``.
    const { createDiffieHellmanGroup } = require('node:crypto');
    const dh = createDiffieHellmanGroup('modp16');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-diffiehellmangroup>`__
 
 ECDH
 ~~~~
@@ -739,7 +715,6 @@ This is a class; construct instances with ``new``.
    assert.strictEqual(aliceSecret.toString('hex'), bobSecret.toString('hex'));
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-ecdh>`__
 
 encapsulate
 ~~~~~~~~~~~
@@ -759,7 +734,6 @@ Supported key types and their KEM algorithms are:
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject*): Public Key
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoencapsulatekey-callback>`__
 
 generateKey
 ~~~~~~~~~~~
@@ -793,7 +767,6 @@ The size of a generated HMAC key should not exceed the block size of the underly
      console.log(key.export().toString('hex'));  // 46e..........620
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogeneratekeytype-options-callback>`__
 
 generateKeyPair
 ~~~~~~~~~~~~~~~
@@ -838,7 +811,6 @@ For RSA-PSS keys, ``crypto.getHashes()`` lists algorithms available to the hashi
      // Handle errors and use the generated key pair.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogeneratekeypairtype-options-callback>`__
 
 generateKeyPairSync
 ~~~~~~~~~~~~~~~~~~~
@@ -883,7 +855,6 @@ For RSA-PSS keys, ``crypto.getHashes()`` lists algorithms available to the hashi
      },
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogeneratekeypairsynctype-options>`__
 
 generateKeySync
 ~~~~~~~~~~~~~~~
@@ -914,7 +885,6 @@ The size of a generated HMAC key should not exceed the block size of the underly
    const key = generateKeySync('hmac', { length: 512 });
    console.log(key.export().toString('hex'));  // e89..........41e
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogeneratekeysynctype-options>`__
 
 generatePrime
 ~~~~~~~~~~~~~
@@ -935,7 +905,6 @@ If ``options.safe`` is ``true``, the prime will be a safe prime -- that is, ``(p
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogenerateprimesize-options-callback>`__
 
 generatePrimeSync
 ~~~~~~~~~~~~~~~~~
@@ -955,7 +924,6 @@ If ``options.safe`` is ``true``, the prime will be a safe prime -- that is, ``(p
 * ``size`` (*number*): The size (in bits) of the prime to generate.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogenerateprimesyncsize-options>`__
 
 getCipherInfo
 ~~~~~~~~~~~~~
@@ -975,7 +943,6 @@ Some ciphers accept variable length keys and initialization vectors. By default,
 * ``nameOrNid`` (*string|number*): The name or nid of the cipher to query.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetcipherinfonameornid-options>`__
 
 getCiphers
 ~~~~~~~~~~
@@ -998,7 +965,6 @@ This callable takes no arguments.
 
    console.log(getCiphers()); // ['aes-128-cbc', 'aes-128-ccm', ...]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetciphers>`__
 
 getCurves
 ~~~~~~~~~
@@ -1021,7 +987,6 @@ This callable takes no arguments.
 
    console.log(getCurves()); // ['Oakley-EC2N-3', 'Oakley-EC2N-4', ...]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetcurves>`__
 
 getDiffieHellman
 ~~~~~~~~~~~~~~~~
@@ -1060,7 +1025,6 @@ The returned object mimics the interface of objects created by ``crypto.createDi
    /* aliceSecret and bobSecret should be the same */
    console.log(aliceSecret === bobSecret);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetdiffiehellmangroupname>`__
 
 getFips
 ~~~~~~~
@@ -1075,7 +1039,6 @@ With OpenSSL 3, this reports whether the default property query includes ``fips=
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetfips>`__
 
 getHashes
 ~~~~~~~~~
@@ -1102,7 +1065,6 @@ This callable takes no arguments.
 
    console.log(getHashes()); // ['DSA', 'DSA-SHA', 'DSA-SHA1', ...]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogethashes>`__
 
 getMacs
 ~~~~~~~
@@ -1128,7 +1090,6 @@ This callable takes no arguments.
    console.log(getMacs());
    // ['blake2bmac', 'blake2smac', 'cmac', 'gmac', 'hmac', ...]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetmacs>`__
 
 getRandomValues
 ~~~~~~~~~~~~~~~
@@ -1145,7 +1106,6 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetrandomvaluestypedarray>`__
 
 Hash
 ~~~~
@@ -1186,7 +1146,6 @@ This is a class; construct instances with ``new``.
    hash.write('some data to hash');
    hash.end();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-hash>`__
 
 hash
 ~~~~
@@ -1225,7 +1184,6 @@ The available algorithms depend on the version and configuration of OpenSSL on t
    // <Buffer 10 b3 49 32 87 f8 31 e8 1a 43 88 11 a1 ff ba 01 f8 ce c4 b7>
    console.log(crypto.hash('sha1', Buffer.from(base64, 'base64'), 'buffer'));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptohashalgorithm-data-options>`__
 
 hkdf
 ~~~~
@@ -1263,7 +1221,6 @@ The supplied ``callback`` function is called with two arguments: ``err`` and ``d
      console.log(Buffer.from(derivedKey).toString('hex'));  // '24156e2...5391653'
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptohkdfdigest-ikm-salt-info-keylen-callback>`__
 
 hkdfSync
 ~~~~~~~~
@@ -1298,7 +1255,6 @@ The successfully generated ``derivedKey`` will be returned as an ``ArrayBuffer``
    const derivedKey = hkdfSync('sha512', 'key', 'salt', 'info', 64);
    console.log(Buffer.from(derivedKey).toString('hex'));  // '24156e2...5391653'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptohkdfsyncdigest-ikm-salt-info-keylen>`__
 
 Hmac
 ~~~~
@@ -1339,7 +1295,6 @@ This is a class; construct instances with ``new``.
    hmac.write('some data to hash');
    hmac.end();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-hmac>`__
 
 KeyObject
 ~~~~~~~~~
@@ -1375,7 +1330,6 @@ This is a class; construct instances with ``new``.
      // Prints: 32 (symmetric key size in bytes)
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-keyobject>`__
 
 Mac
 ~~~
@@ -1406,7 +1360,6 @@ This is a class; construct instances with ``new``.
    mac.update('some data to authenticate');
    console.log(mac.final('hex'));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-mac>`__
 
 parsePKCS12
 ~~~~~~~~~~~
@@ -1436,7 +1389,6 @@ Parses a PKCS#12 bundle, commonly stored with a ``.p12`` or ``.pfx`` extension, 
      { passphrase: 'secret' },
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoparsepkcs12bundle-options>`__
 
 pbkdf2
 ~~~~~~
@@ -1473,7 +1425,6 @@ The supplied ``callback`` function is called with two arguments: ``err`` and ``d
      console.log(derivedKey.toString('hex'));  // '3745e48...08d59ae'
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptopbkdf2password-salt-iterations-keylen-digest-callback>`__
 
 pbkdf2Sync
 ~~~~~~~~~~
@@ -1507,7 +1458,6 @@ If an error occurs an ``Error`` will be thrown, otherwise the derived key will b
    const key = pbkdf2Sync('secret', 'salt', 100000, 64, 'sha512');
    console.log(key.toString('hex'));  // '3745e48...08d59ae'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptopbkdf2syncpassword-salt-iterations-keylen-digest>`__
 
 privateDecrypt
 ~~~~~~~~~~~~~~
@@ -1527,7 +1477,6 @@ Decrypts ``buffer`` with ``privateKey``. ``buffer`` was previously encrypted usi
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoprivatedecryptprivatekey-buffer>`__
 
 privateEncrypt
 ~~~~~~~~~~~~~~
@@ -1547,7 +1496,6 @@ If ``privateKey`` is not a ``KeyObject``, this function behaves as if ``privateK
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoprivateencryptprivatekey-buffer>`__
 
 prng
 ~~~~
@@ -1564,7 +1512,6 @@ In recent versions of Node.js, there is no difference between ``crypto.randomByt
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0115-cryptoprng-cryptopseudorandombytes-cryptorng>`__
 
 pseudoRandomBytes
 ~~~~~~~~~~~~~~~~~
@@ -1577,7 +1524,7 @@ pseudoRandomBytes
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 publicDecrypt
@@ -1598,7 +1545,6 @@ If ``key`` is not a ``KeyObject``, this function behaves as if ``key`` had been 
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptopublicdecryptkey-buffer>`__
 
 publicEncrypt
 ~~~~~~~~~~~~~
@@ -1618,7 +1564,6 @@ Encrypts the content of ``buffer`` with ``key`` and returns a new ``Buffer`` wit
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey*)
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptopublicencryptkey-buffer>`__
 
 randomBytes
 ~~~~~~~~~~~
@@ -1652,7 +1597,6 @@ If a ``callback`` function is provided, the bytes are generated asynchronously a
      console.log(`${buf.length} bytes of random data: ${buf.toString('hex')}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandombytessize-callback>`__
 
 randomFill
 ~~~~~~~~~~
@@ -1698,7 +1642,6 @@ If the ``callback`` function is not provided, an error will be thrown.
      console.log(buf.toString('hex'));
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomfillbuffer-offset-size-callback>`__
 
 randomFillSync
 ~~~~~~~~~~~~~~
@@ -1736,7 +1679,6 @@ Any ``ArrayBuffer``, ``TypedArray`` or ``DataView`` instance may be passed as ``
    randomFillSync(buf, 5, 5);
    console.log(buf.toString('hex'));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomfillsyncbuffer-offset-size>`__
 
 randomInt
 ~~~~~~~~~
@@ -1771,7 +1713,6 @@ The range (``max - min``) must be less than 2<sup>48</sup>. ``min`` and ``max`` 
      console.log(`Random number chosen from (0, 1, 2): ${n}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomintmin-max-callback>`__
 
 randomUUID
 ~~~~~~~~~~
@@ -1788,7 +1729,6 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomuuidoptions>`__
 
 randomUUIDv7
 ~~~~~~~~~~~~
@@ -1805,7 +1745,6 @@ Generates a random RFC 9562 version 7 UUID. The UUID contains a millisecond prec
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomuuidv7options>`__
 
 rng
 ~~~
@@ -1818,7 +1757,7 @@ rng
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 scrypt
@@ -1861,7 +1800,6 @@ The ``salt`` should be as unique as possible. It is recommended that a salt is r
      console.log(derivedKey.toString('hex'));  // '3745e48...aa39b34'
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoscryptpassword-salt-keylen-options-callback>`__
 
 scryptSync
 ~~~~~~~~~~
@@ -1898,7 +1836,6 @@ The ``salt`` should be as unique as possible. It is recommended that a salt is r
    const key2 = scryptSync('password', 'salt', 64, { N: 1024 });
    console.log(key2.toString('hex'));  // '3745e48...aa39b34'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoscryptsyncpassword-salt-keylen-options>`__
 
 secureHeapUsed
 ~~~~~~~~~~~~~~
@@ -1911,7 +1848,6 @@ secureHeapUsed
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptosecureheapused>`__
 
 setEngine
 ~~~~~~~~~
@@ -1931,7 +1867,6 @@ Load and set the ``engine`` for some or all OpenSSL functions (selected by flags
 * ``engine`` (*string*)
 * ``flags`` (*crypto.constants*) — optional: **Default:** ``crypto.constants.ENGINE_METHOD_ALL``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptosetengineengine-flags>`__
 
 setFips
 ~~~~~~~
@@ -1950,7 +1885,6 @@ If no loaded provider supplies a requested cryptographic implementation matching
 
 * ``bool`` (*boolean*): ``true`` to enable FIPS mode, ``false`` to disable it.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptosetfipsbool>`__
 
 Sign
 ~~~~
@@ -1992,7 +1926,6 @@ This is a class; construct instances with ``new``.
    console.log(verify.verify(publicKey, signature, 'hex'));
    // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-sign>`__
 
 sign
 ~~~~
@@ -2014,7 +1947,6 @@ Calculates and returns the signature for ``data`` using the given private key an
 * ``key`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptosignalgorithm-data-key-callback>`__
 
 timingSafeEqual
 ~~~~~~~~~~~~~~~
@@ -2034,7 +1966,6 @@ This function does not leak timing information that would allow an attacker to g
 * ``a`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``b`` (*ArrayBuffer|Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptotimingsafeequala-b>`__
 
 Verify
 ~~~~~~
@@ -2051,7 +1982,6 @@ The ``Verify`` class is a utility for verifying signatures. It can be used in on
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-verify>`__
 
 verify
 ~~~~~~
@@ -2074,7 +2004,6 @@ Verifies the given signature for ``data`` using the given key and algorithm. If 
 * ``signature`` (*ArrayBuffer|Buffer|SharedArrayBuffer|TypedArray|DataView*)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoverifyalgorithm-data-key-signature-callback>`__
 
 X509Certificate
 ~~~~~~~~~~~~~~~
@@ -2099,7 +2028,6 @@ This is a class; construct instances with ``new``.
 
    console.log(x509.subject);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#class-x509certificate>`__
 
 Certificate class
 -----------------
@@ -2130,7 +2058,6 @@ Certificate.exportChallenge
    console.log(challenge.toString('utf8'));
    // Prints: the challenge as a UTF8 string
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#static-method-certificateexportchallengespkac-encoding>`__
 
 Certificate.exportPublicKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2156,7 +2083,6 @@ Certificate.exportPublicKey
    console.log(publicKey);
    // Prints: the public key as <Buffer ...>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#static-method-certificateexportpublickeyspkac-encoding>`__
 
 Certificate.verifySpkac
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2183,7 +2109,6 @@ Certificate.verifySpkac
    console.log(Certificate.verifySpkac(Buffer.from(spkac)));
    // Prints: true or false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#static-method-certificateverifyspkacspkac-encoding>`__
 
 Cipheriv class
 --------------
@@ -2209,7 +2134,6 @@ Once the ``cipher.final()`` method has been called, the ``Cipheriv`` object can 
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cipherfinaloutputencoding>`__
 
 Cipheriv.getAuthTag
 ~~~~~~~~~~~~~~~~~~~
@@ -2226,7 +2150,6 @@ If the ``authTagLength`` option was set during the ``cipher`` instance's creatio
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ciphergetauthtag>`__
 
 Cipheriv.setAAD
 ~~~~~~~~~~~~~~~
@@ -2246,7 +2169,6 @@ The ``plaintextLength`` option is optional for ``GCM``, ``OCB``, ``SIV``, and ``
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ciphersetaadbuffer-options>`__
 
 Cipheriv.setAutoPadding
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2265,7 +2187,6 @@ For block ciphers that use standard block padding, when ``autoPadding`` is ``fal
 
 * ``autoPadding`` (*boolean*) — optional: **Default:** ``true``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ciphersetautopaddingautopadding>`__
 
 Cipheriv.update
 ~~~~~~~~~~~~~~~
@@ -2286,7 +2207,6 @@ The ``outputEncoding`` specifies the output format of the enciphered data. If th
 * ``inputEncoding`` (*string*) — optional: The encoding of the data.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cipherupdatedata-inputencoding-outputencoding>`__
 
 Decipheriv class
 ----------------
@@ -2312,7 +2232,6 @@ Once the ``cipher.final()`` method has been called, the ``Cipheriv`` object can 
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cipherfinaloutputencoding>`__
 
 Decipheriv.setAAD
 ~~~~~~~~~~~~~~~~~
@@ -2332,7 +2251,6 @@ The ``plaintextLength`` option is optional for ``GCM``, ``OCB``, ``SIV``, and ``
 * ``buffer`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``options`` (*Object*) — optional: ``stream.transform`` options
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ciphersetaadbuffer-options>`__
 
 Decipheriv.setAuthTag
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2352,7 +2270,6 @@ The ``decipher.setAuthTag()`` method must be called before ``decipher.update()``
 * ``buffer`` (*string|Buffer|ArrayBuffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: String encoding to use when ``buffer`` is a string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#deciphersetauthtagbuffer-encoding>`__
 
 Decipheriv.setAutoPadding
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2371,7 +2288,6 @@ For block ciphers that use standard block padding, when ``autoPadding`` is ``fal
 
 * ``autoPadding`` (*boolean*) — optional: **Default:** ``true``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ciphersetautopaddingautopadding>`__
 
 Decipheriv.update
 ~~~~~~~~~~~~~~~~~
@@ -2392,7 +2308,6 @@ The ``outputEncoding`` specifies the output format of the enciphered data. If th
 * ``inputEncoding`` (*string*) — optional: The encoding of the data.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cipherupdatedata-inputencoding-outputencoding>`__
 
 DiffieHellman class
 -------------------
@@ -2412,7 +2327,7 @@ DiffieHellman.$godeComputeSecret
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeGenerateKeys
@@ -2426,7 +2341,7 @@ DiffieHellman.$godeGenerateKeys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeGetGenerator
@@ -2440,7 +2355,7 @@ DiffieHellman.$godeGetGenerator
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeGetPrime
@@ -2454,7 +2369,7 @@ DiffieHellman.$godeGetPrime
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeGetPrivateKey
@@ -2468,7 +2383,7 @@ DiffieHellman.$godeGetPrivateKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeGetPublicKey
@@ -2482,7 +2397,7 @@ DiffieHellman.$godeGetPublicKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeSetPrivateKey
@@ -2496,7 +2411,7 @@ DiffieHellman.$godeSetPrivateKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeSetPublicKey
@@ -2510,7 +2425,7 @@ DiffieHellman.$godeSetPublicKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.$godeVerifyError
@@ -2524,7 +2439,7 @@ DiffieHellman.$godeVerifyError
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 DiffieHellman.computeSecret
@@ -2546,7 +2461,6 @@ If ``outputEncoding`` is given a string is returned; otherwise, a ``Buffer`` is 
 * ``inputEncoding`` (*string*) — optional: The encoding of an ``otherPublicKey`` string.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmancomputesecretotherpublickey-inputencoding-outputencoding>`__
 
 DiffieHellman.generateKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2565,7 +2479,6 @@ This function is a thin wrapper around ``DH_generate_key()``. In particular, onc
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmangeneratekeysencoding>`__
 
 DiffieHellman.getGenerator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2582,7 +2495,6 @@ Returns the Diffie-Hellman generator in the specified ``encoding``. If ``encodin
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmangetgeneratorencoding>`__
 
 DiffieHellman.getPrime
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2599,7 +2511,6 @@ Returns the Diffie-Hellman prime in the specified ``encoding``. If ``encoding`` 
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmangetprimeencoding>`__
 
 DiffieHellman.getPrivateKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2616,7 +2527,6 @@ Returns the Diffie-Hellman private key in the specified ``encoding``. If ``encod
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmangetprivatekeyencoding>`__
 
 DiffieHellman.getPublicKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2633,7 +2543,6 @@ Returns the Diffie-Hellman public key in the specified ``encoding``. If ``encodi
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmangetpublickeyencoding>`__
 
 DiffieHellman.setPrivateKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2653,7 +2562,6 @@ This function does not automatically compute the associated public key. Either `
 * ``privateKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``privateKey`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmansetprivatekeyprivatekey-encoding>`__
 
 DiffieHellman.setPublicKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2671,7 +2579,6 @@ Sets the Diffie-Hellman public key. If the ``encoding`` argument is provided, ``
 * ``publicKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``publicKey`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#diffiehellmansetpublickeypublickey-encoding>`__
 
 ECDH class
 ----------
@@ -2691,7 +2598,7 @@ ECDH.$godeComputeSecret
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.$godeGenerateKeys
@@ -2705,7 +2612,7 @@ ECDH.$godeGenerateKeys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.$godeGetPrivateKey
@@ -2719,7 +2626,7 @@ ECDH.$godeGetPrivateKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.$godeGetPublicKey
@@ -2733,7 +2640,7 @@ ECDH.$godeGetPublicKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.$godeSetPrivateKey
@@ -2747,7 +2654,7 @@ ECDH.$godeSetPrivateKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.$godeSetPublicKey
@@ -2761,7 +2668,7 @@ ECDH.$godeSetPublicKey
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ECDH.computeSecret
@@ -2783,7 +2690,6 @@ If ``outputEncoding`` is given a string will be returned; otherwise a ``Buffer``
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``otherPublicKey`` string.
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhcomputesecretotherpublickey-inputencoding-outputencoding>`__
 
 ECDH.generateKeys
 ~~~~~~~~~~~~~~~~~
@@ -2803,7 +2709,6 @@ The ``format`` argument specifies point encoding and can be ``'compressed'`` or 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 * ``format`` (*string*) — optional: **Default:** ``'uncompressed'``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhgeneratekeysencoding-format>`__
 
 ECDH.getPrivateKey
 ~~~~~~~~~~~~~~~~~~
@@ -2820,7 +2725,6 @@ If ``encoding`` is specified, a string is returned; otherwise a ``Buffer`` is re
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhgetprivatekeyencoding>`__
 
 ECDH.getPublicKey
 ~~~~~~~~~~~~~~~~~
@@ -2840,7 +2744,6 @@ If ``encoding`` is specified, a string is returned; otherwise a ``Buffer`` is re
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 * ``format`` (*string*) — optional: **Default:** ``'uncompressed'``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhgetpublickeyencoding-format>`__
 
 ECDH.setPrivateKey
 ~~~~~~~~~~~~~~~~~~
@@ -2860,7 +2763,6 @@ If ``privateKey`` is not valid for the curve specified when the ``ECDH`` object 
 * ``privateKey`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``encoding`` (*string*) — optional: The encoding of the ``privateKey`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhsetprivatekeyprivatekey-encoding>`__
 
 ECDH.setPublicKey
 ~~~~~~~~~~~~~~~~~
@@ -2909,7 +2811,6 @@ There is not normally a reason to call this method because ``ECDH`` only require
    // aliceSecret and bobSecret should be the same shared secret value
    console.log(aliceSecret === bobSecret);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#ecdhsetpublickeypublickey-encoding>`__
 
 Hash class
 ----------
@@ -2957,7 +2858,6 @@ The optional ``options`` argument controls stream behavior. For XOF hash functio
 
    // Etc.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#hashcopyoptions>`__
 
 Hash.digest
 ~~~~~~~~~~~
@@ -2976,7 +2876,6 @@ The ``Hash`` object can not be used again after ``hash.digest()`` method has bee
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#hashdigestencoding>`__
 
 Hash.end
 ~~~~~~~~
@@ -2989,7 +2888,7 @@ Hash.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Hash.read
@@ -3003,7 +2902,7 @@ Hash.read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Hash.update
@@ -3024,7 +2923,6 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#hashupdatedata-inputencoding>`__
 
 Hash.write
 ~~~~~~~~~~
@@ -3037,7 +2935,7 @@ Hash.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Hmac class
@@ -3064,7 +2962,6 @@ The ``Hmac`` object can not be used again after ``hmac.digest()`` has been calle
 
 * ``encoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#hmacdigestencoding>`__
 
 Hmac.update
 ~~~~~~~~~~~
@@ -3084,7 +2981,6 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#hmacupdatedata-inputencoding>`__
 
 KeyObject class
 ---------------
@@ -3104,7 +3000,7 @@ KeyObject.$godeAsymType
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeAttachId
@@ -3118,7 +3014,7 @@ KeyObject.$godeAttachId
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeDetails
@@ -3132,7 +3028,7 @@ KeyObject.$godeDetails
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeEquals
@@ -3146,7 +3042,7 @@ KeyObject.$godeEquals
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeExport
@@ -3160,7 +3056,7 @@ KeyObject.$godeExport
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeOwnId
@@ -3174,7 +3070,7 @@ KeyObject.$godeOwnId
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeSymSize
@@ -3188,7 +3084,7 @@ KeyObject.$godeSymSize
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.$godeType
@@ -3202,7 +3098,7 @@ KeyObject.$godeType
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 KeyObject.equals
@@ -3220,7 +3116,6 @@ Returns ``true`` or ``false`` depending on whether the keys have exactly the sam
 
 * ``otherKeyObject`` (*KeyObject*): A ``KeyObject`` with which to
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#keyobjectequalsotherkeyobject>`__
 
 KeyObject.export
 ~~~~~~~~~~~~~~~~
@@ -3239,7 +3134,6 @@ For public keys, the following encoding options can be used:
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#keyobjectexportoptions>`__
 
 KeyObject.toCryptoKey
 ~~~~~~~~~~~~~~~~~~~~~
@@ -3258,7 +3152,6 @@ Converts a ``KeyObject`` instance to a ``CryptoKey``.
 * ``extractable`` (*boolean*)
 * ``keyUsages`` (*string\[]*): See Key usages.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#keyobjecttocryptokeyalgorithm-extractable-keyusages>`__
 
 Mac class
 ---------
@@ -3284,7 +3177,6 @@ To verify an authentication tag, compare equal-length ``Buffer`` values using ``
 
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#macfinaloutputencoding>`__
 
 Mac.update
 ~~~~~~~~~~
@@ -3304,7 +3196,6 @@ This method can be called multiple times before finalization. If an underlying M
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#macupdatedata-inputencoding>`__
 
 Sign class
 ----------
@@ -3331,7 +3222,6 @@ If ``privateKey`` is not a ``KeyObject``, this function behaves as if ``privateK
 * ``privateKey`` (*Object|string|ArrayBuffer|Buffer|TypedArray|DataView|KeyObject|CryptoKey|URL*)
 * ``outputEncoding`` (*string*) — optional: The encoding of the return value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#signsignprivatekey-outputencoding>`__
 
 Sign.update
 ~~~~~~~~~~~
@@ -3351,7 +3241,6 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#signupdatedata-inputencoding>`__
 
 Verify class
 ------------
@@ -3378,7 +3267,6 @@ This can be called many times with new data as it is streamed.
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``inputEncoding`` (*string*) — optional: The encoding of the ``data`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#verifyupdatedata-inputencoding>`__
 
 Verify.verify
 ~~~~~~~~~~~~~
@@ -3399,7 +3287,6 @@ If ``key`` is not a ``KeyObject``, this function behaves as if ``key`` had been 
 * ``signature`` (*string|ArrayBuffer|Buffer|TypedArray|DataView*)
 * ``signatureEncoding`` (*string*) — optional: The encoding of the ``signature`` string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#verifyverifykey-signature-signatureencoding>`__
 
 webcrypto
 ---------
@@ -3423,7 +3310,6 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetrandomvaluestypedarray>`__
 
 webcrypto.randomUUID
 ~~~~~~~~~~~~~~~~~~~~
@@ -3440,7 +3326,6 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomuuidoptions>`__
 
 webcrypto.subtle.decrypt
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3461,7 +3346,6 @@ The algorithms currently supported include:
 * ``key`` (*CryptoKey*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webcrypto.html#subtledecryptalgorithm-key-data>`__
 
 webcrypto.subtle.digest
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -3481,7 +3365,6 @@ If ``algorithm`` is provided as a ``string``, it must be one of:
 * ``algorithm`` (*string|Algorithm|CShakeParams|TurboShakeParams|KangarooTwelveParams*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webcrypto.html#subtledigestalgorithm-data>`__
 
 webcrypto.subtle.encrypt
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3502,7 +3385,6 @@ The algorithms currently supported include:
 * ``key`` (*CryptoKey*)
 * ``data`` (*ArrayBuffer|TypedArray|DataView|Buffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webcrypto.html#subtleencryptalgorithm-key-data>`__
 
 webcrypto.subtle.importKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3525,7 +3407,6 @@ If importing KDF algorithm keys, ``extractable`` must be ``false``.
 * ``extractable`` (*boolean*)
 * ``keyUsages`` (*string\[]*): See Key usages.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webcrypto.html#subtleimportkeyformat-keydata-algorithm-extractable-keyusages>`__
 
 X509Certificate class
 ---------------------
@@ -3550,7 +3431,6 @@ If the ``'subject'`` option is undefined or set to ``'default'``, the certificat
 * ``email`` (*string*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509checkemailemail-options>`__
 
 X509Certificate.checkHost
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3570,7 +3450,6 @@ If the certificate matches the given host name, the matching subject name is ret
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509checkhostname-options>`__
 
 X509Certificate.checkIP
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -3589,7 +3468,6 @@ Only RFC 5280 ``iPAddress`` subject alternative names are considered, and they m
 
 * ``ip`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509checkipip>`__
 
 X509Certificate.checkIssued
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3616,7 +3494,6 @@ This is useful for pruning a list of possible issuer certificates which have bee
      throw new Error('otherCert did not issue x509');
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509checkissuedothercert>`__
 
 X509Certificate.checkPrivateKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3633,7 +3510,6 @@ Checks whether the public key for this certificate is consistent with the given 
 
 * ``privateKey`` (*KeyObject*): A private key.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509checkprivatekeyprivatekey>`__
 
 X509Certificate.toJSON
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3648,7 +3524,6 @@ There is no standard JSON encoding for X509 certificates. The ``toJSON()`` metho
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509tojson>`__
 
 X509Certificate.toLegacyObject
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3663,7 +3538,6 @@ Returns information about this certificate using the legacy certificate object e
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509tolegacyobject>`__
 
 X509Certificate.toString
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3678,7 +3552,6 @@ Returns the PEM-encoded certificate.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509tostring>`__
 
 X509Certificate.verify
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3695,7 +3568,6 @@ Verifies that this certificate was signed by the given public key. Does not perf
 
 * ``publicKey`` (*KeyObject*): A public key.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#x509verifypublickey>`__
 
 Properties and constants
 ------------------------
@@ -3721,4 +3593,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

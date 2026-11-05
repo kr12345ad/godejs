@@ -37,7 +37,6 @@ The return value is equivalent to ``process.arch``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osarch>`__
 
 availableParallelism
 ~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +53,6 @@ This function is a small wrapper about libuv's ``uv_available_parallelism()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osavailableparallelism>`__
 
 cpus
 ~~~~
@@ -122,7 +120,6 @@ This callable takes no arguments.
      },
    ];
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#oscpus>`__
 
 endianness
 ~~~~~~~~~~
@@ -139,7 +136,6 @@ Possible values are ``'BE'`` for big endian and ``'LE'`` for little endian.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osendianness>`__
 
 freemem
 ~~~~~~~
@@ -154,7 +150,6 @@ Returns the amount of free system memory in bytes as an integer.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osfreemem>`__
 
 getPriority
 ~~~~~~~~~~~
@@ -171,7 +166,6 @@ Returns the scheduling priority for the process specified by ``pid``. If ``pid``
 
 * ``pid`` (*integer*) — optional: The process ID to retrieve scheduling priority for.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osgetprioritypid>`__
 
 homedir
 ~~~~~~~
@@ -188,7 +182,6 @@ On POSIX, it uses the ``$HOME`` environment variable if defined. Otherwise it us
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#oshomedir>`__
 
 hostname
 ~~~~~~~~
@@ -203,7 +196,6 @@ Returns the host name of the operating system as a string.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#oshostname>`__
 
 loadavg
 ~~~~~~~
@@ -220,7 +212,6 @@ The load average is a measure of system activity calculated by the operating sys
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osloadavg>`__
 
 machine
 ~~~~~~~
@@ -237,7 +228,6 @@ On POSIX systems, the machine type is determined by calling ``uname(3)``. On Win
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osmachine>`__
 
 networkInterfaces
 ~~~~~~~~~~~~~~~~~
@@ -254,7 +244,6 @@ Each key on the returned object identifies a network interface. The associated v
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osnetworkinterfaces>`__
 
 platform
 ~~~~~~~~
@@ -271,7 +260,6 @@ The return value is equivalent to ``process.platform``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osplatform>`__
 
 release
 ~~~~~~~
@@ -288,7 +276,6 @@ On POSIX systems, the operating system release is determined by calling ``uname(
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osrelease>`__
 
 setPriority
 ~~~~~~~~~~~
@@ -308,7 +295,6 @@ The ``priority`` input must be an integer between ``-20`` (high priority) and ``
 * ``pid`` (*integer*) — optional: The process ID to set scheduling priority for.
 * ``priority`` (*integer*) — optional: The scheduling priority to assign to the process.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#ossetprioritypid-priority>`__
 
 tmpdir
 ~~~~~~
@@ -325,7 +311,6 @@ On Windows, the result can be overridden by ``TEMP`` and ``TMP`` environment var
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#ostmpdir>`__
 
 totalmem
 ~~~~~~~~
@@ -340,7 +325,6 @@ Returns the total amount of system memory in bytes as an integer.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#ostotalmem>`__
 
 type
 ~~~~
@@ -357,7 +341,6 @@ See <https://en.wikipedia.org/wiki/Uname#Examples> for additional information ab
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#ostype>`__
 
 uptime
 ~~~~~~
@@ -372,7 +355,6 @@ Returns the system uptime in number of seconds.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osuptime>`__
 
 userInfo
 ~~~~~~~~
@@ -391,7 +373,6 @@ The value of ``homedir`` returned by ``os.userInfo()`` is provided by the operat
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osuserinfooptions>`__
 
 version
 ~~~~~~~
@@ -408,7 +389,6 @@ On POSIX systems, the operating system release is determined by calling ``uname(
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/os.html#osversion>`__
 
 Properties and constants
 ------------------------
@@ -531,4 +511,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

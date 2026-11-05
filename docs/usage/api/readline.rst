@@ -41,7 +41,6 @@ The ``readline.clearLine()`` method clears current line of given TTY stream in a
 * ``dir`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlineclearlinestream-dir-callback>`__
 
 clearScreenDown
 ~~~~~~~~~~~~~~~
@@ -59,7 +58,6 @@ The ``readline.clearScreenDown()`` method clears the given TTY stream from the c
 * ``stream`` (*stream.Writable*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlineclearscreendownstream-callback>`__
 
 createInterface
 ~~~~~~~~~~~~~~~
@@ -88,7 +86,6 @@ Once the ``readline.Interface`` instance is created, the most common case is to 
      output: process.stdout,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlinecreateinterfaceoptions>`__
 
 cursorTo
 ~~~~~~~~
@@ -108,7 +105,6 @@ The ``readline.cursorTo()`` method moves cursor to the specified position in a g
 * ``y`` (*number*) — optional
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlinecursortostream-x-y-callback>`__
 
 emitKeypressEvents
 ~~~~~~~~~~~~~~~~~~
@@ -136,7 +132,6 @@ Optionally, ``interface`` specifies a ``readline.Interface`` instance for which 
    if (process.stdin.isTTY)
      process.stdin.setRawMode(true);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlineemitkeypresseventsstream-interface>`__
 
 Interface
 ~~~~~~~~~
@@ -159,7 +154,6 @@ This is a class; construct instances with ``new``.
      console.log(`Oh, so your favorite food is ${answer}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#class-readlineinterface>`__
 
 moveCursor
 ~~~~~~~~~~
@@ -179,7 +173,6 @@ The ``readline.moveCursor()`` method moves the cursor *relative* to its current 
 * ``dy`` (*number*)
 * ``callback`` (*Function*) — optional: Invoked once the operation completes.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#readlinemovecursorstream-dx-dy-callback>`__
 
 Interface class
 ---------------
@@ -197,7 +190,7 @@ Interface._ask
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Interface._handleData
@@ -211,7 +204,7 @@ Interface._handleData
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Interface._handleEnd
@@ -225,7 +218,7 @@ Interface._handleEnd
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Interface._line
@@ -239,7 +232,7 @@ Interface._line
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Interface.close
@@ -257,7 +250,6 @@ Calling ``rl.close()`` does not immediately stop other events (including ``'line
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlclose>`__
 
 Interface.getCursorPos
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -272,7 +264,6 @@ Returns the real position of the cursor in relation to the input prompt + string
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlgetcursorpos>`__
 
 Interface.getPrompt
 ~~~~~~~~~~~~~~~~~~~
@@ -287,7 +278,6 @@ The ``rl.getPrompt()`` method returns the current prompt used by ``rl.prompt()``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlgetprompt>`__
 
 Interface.pause
 ~~~~~~~~~~~~~~~
@@ -304,7 +294,6 @@ Calling ``rl.pause()`` does not immediately pause other events (including ``'lin
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlpause>`__
 
 Interface.prompt
 ~~~~~~~~~~~~~~~~
@@ -323,7 +312,6 @@ When called, ``rl.prompt()`` will resume the ``input`` stream if it has been pau
 
 * ``preserveCursor`` (*boolean*) — optional: If ``true``, prevents the cursor placement from
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlpromptpreservecursor>`__
 
 Interface.question
 ~~~~~~~~~~~~~~~~~~
@@ -352,7 +340,6 @@ When called, ``rl.question()`` will resume the ``input`` stream if it has been p
      console.log(`Oh, so your favorite food is ${answer}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlquestionquery-options-callback>`__
 
 Interface.resume
 ~~~~~~~~~~~~~~~~
@@ -367,7 +354,6 @@ The ``rl.resume()`` method resumes the ``input`` stream if it has been paused.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlresume>`__
 
 Interface.setPrompt
 ~~~~~~~~~~~~~~~~~~~
@@ -384,7 +370,6 @@ The ``rl.setPrompt()`` method sets the prompt that will be written to ``output``
 
 * ``prompt`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlsetpromptprompt>`__
 
 Interface.write
 ~~~~~~~~~~~~~~~
@@ -412,8 +397,7 @@ If ``key`` is specified, ``data`` is ignored.
    // Simulate Ctrl+U to delete the line written previously
    rl.write(null, { ctrl: true, name: 'u' });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/readline.html#rlwritedata-key>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

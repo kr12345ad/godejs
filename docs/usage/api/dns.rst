@@ -42,7 +42,6 @@ Returns an array of IP address strings, formatted according to RFC 5952, that ar
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsgetservers>`__
 
 lookup
 ~~~~~~
@@ -59,7 +58,6 @@ Previous versions of Node.js supported ``dns.lookup()`` with a falsy host name l
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0118-dnslookup-support-for-a-falsy-host-name>`__
 
 lookupService
 ~~~~~~~~~~~~~
@@ -90,7 +88,6 @@ If ``address`` is not a valid IP address, a ``TypeError`` will be thrown. The ``
      // Prints: localhost ssh
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnslookupserviceaddress-port-callback>`__
 
 resolve
 ~~~~~~~
@@ -101,7 +98,7 @@ resolve
 
 *Kind:* function · *Arguments:* 3
 
-Uses the DNS protocol to resolve a host name (e.g. ``'nodejs.org'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
+Uses the DNS protocol to resolve a host name (e.g. ``'example.com'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
 
 On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS error codes.
 
@@ -111,7 +108,6 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvehostname-rrtype-callback>`__
 
 resolve4
 ~~~~~~~~
@@ -130,7 +126,6 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve4hostname-options-callback>`__
 
 resolve6
 ~~~~~~~~
@@ -149,7 +144,6 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve6hostname-options-callback>`__
 
 resolveAny
 ~~~~~~~~~~
@@ -187,7 +181,6 @@ Here is an example of the ``ret`` object passed to the callback:
        expire: 1800,
        minttl: 60 } ];
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolveanyhostname-callback>`__
 
 resolveCaa
 ~~~~~~~~~~
@@ -205,7 +198,6 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. The ``add
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvecaahostname-callback>`__
 
 resolveCname
 ~~~~~~~~~~~~
@@ -223,7 +215,6 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. The ``a
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvecnamehostname-callback>`__
 
 resolveMx
 ~~~~~~~~~
@@ -241,7 +232,6 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvemxhostname-callback>`__
 
 resolveNaptr
 ~~~~~~~~~~~~
@@ -274,7 +264,6 @@ Uses the DNS protocol to resolve regular expression-based records (``NAPTR`` rec
      preference: 100,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvenaptrhostname-callback>`__
 
 resolveNs
 ~~~~~~~~~
@@ -292,7 +281,6 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvenshostname-callback>`__
 
 resolvePtr
 ~~~~~~~~~~
@@ -310,7 +298,6 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolveptrhostname-callback>`__
 
 Resolver
 ~~~~~~~~
@@ -340,7 +327,6 @@ This is a class; construct instances with ``new``.
      // ...
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#class-dnsresolver>`__
 
 resolveSoa
 ~~~~~~~~~~
@@ -374,7 +360,6 @@ Uses the DNS protocol to resolve a start of authority record (``SOA`` record) fo
      minttl: 3600,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvesoahostname-callback>`__
 
 resolveSrv
 ~~~~~~~~~~
@@ -405,7 +390,6 @@ Uses the DNS protocol to resolve service records (``SRV`` records) for the ``hos
      name: 'service.example.com',
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvesrvhostname-callback>`__
 
 resolveTxt
 ~~~~~~~~~~
@@ -423,7 +407,6 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvetxthostname-callback>`__
 
 reverse
 ~~~~~~~
@@ -443,7 +426,6 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``ip`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsreverseip-callback>`__
 
 setServers
 ~~~~~~~~~~
@@ -473,7 +455,6 @@ An error will be thrown if an invalid address is provided.
      '[2001:4860:4860::8888]:1053',
    ]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnssetserversservers>`__
 
 promises
 --------
@@ -487,7 +468,7 @@ promises.lookup
 
 *Kind:* function · *Arguments:* 2
 
-Resolves a host name (e.g. ``'nodejs.org'``) into the first found A (IPv4) or AAAA (IPv6) record. All ``option`` properties are optional. If ``options`` is an integer, then it must be ``4`` or ``6`` – if ``options`` is not provided, then either IPv4 or IPv6 addresses, or both, are returned if found.
+Resolves a host name (e.g. ``'example.com'``) into the first found A (IPv4) or AAAA (IPv6) record. All ``option`` properties are optional. If ``options`` is an integer, then it must be ``4`` or ``6`` – if ``options`` is not provided, then either IPv4 or IPv6 addresses, or both, are returned if found.
 
 With the ``all`` option set to ``true``, the ``Promise`` is resolved with ``addresses`` being an array of objects with the properties ``address`` and ``family``.
 
@@ -519,7 +500,6 @@ With the ``all`` option set to ``true``, the ``Promise`` is resolved with ``addr
      // addresses: [{"address":"2606:2800:21f:cb07:6820:80da:af6b:8b2c","family":6}]
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromiseslookuphostname-options>`__
 
 promises.lookupService
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -549,7 +529,6 @@ If ``address`` is not a valid IP address, a ``TypeError`` will be thrown. The ``
      // Prints: localhost ssh
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromiseslookupserviceaddress-port>`__
 
 promises.resolve
 ~~~~~~~~~~~~~~~~
@@ -560,7 +539,7 @@ promises.resolve
 
 *Kind:* function · *Arguments:* 3
 
-Uses the DNS protocol to resolve a host name (e.g. ``'nodejs.org'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
+Uses the DNS protocol to resolve a host name (e.g. ``'example.com'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
 
 On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS error codes.
 
@@ -570,7 +549,6 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvehostname-rrtype-callback>`__
 
 promises.resolve4
 ~~~~~~~~~~~~~~~~~
@@ -589,7 +567,6 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve4hostname-options-callback>`__
 
 promises.resolve6
 ~~~~~~~~~~~~~~~~~
@@ -608,7 +585,6 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve6hostname-options-callback>`__
 
 promises.resolveAny
 ~~~~~~~~~~~~~~~~~~~
@@ -645,7 +621,6 @@ Here is an example of the result object:
        expire: 1800,
        minttl: 60 } ];
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolveanyhostname>`__
 
 promises.resolveCaa
 ~~~~~~~~~~~~~~~~~~~
@@ -662,7 +637,6 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. On succes
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvecaahostname>`__
 
 promises.resolveCname
 ~~~~~~~~~~~~~~~~~~~~~
@@ -679,7 +653,6 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. On succ
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvecnamehostname>`__
 
 promises.resolveMx
 ~~~~~~~~~~~~~~~~~~
@@ -696,7 +669,6 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvemxhostname>`__
 
 promises.resolveNaptr
 ~~~~~~~~~~~~~~~~~~~~~
@@ -728,7 +700,6 @@ Uses the DNS protocol to resolve regular expression-based records (``NAPTR`` rec
      preference: 100,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvenaptrhostname>`__
 
 promises.resolveNs
 ~~~~~~~~~~~~~~~~~~
@@ -745,7 +716,6 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvenshostname>`__
 
 promises.resolvePtr
 ~~~~~~~~~~~~~~~~~~~
@@ -762,7 +732,6 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolveptrhostname>`__
 
 promises.resolveSoa
 ~~~~~~~~~~~~~~~~~~~
@@ -795,7 +764,6 @@ Uses the DNS protocol to resolve a start of authority record (``SOA`` record) fo
      minttl: 3600,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvesoahostname>`__
 
 promises.resolveSrv
 ~~~~~~~~~~~~~~~~~~~
@@ -825,7 +793,6 @@ Uses the DNS protocol to resolve service records (``SRV`` records) for the ``hos
      name: 'service.example.com',
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvesrvhostname>`__
 
 promises.resolveTxt
 ~~~~~~~~~~~~~~~~~~~
@@ -842,7 +809,6 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 
 * ``hostname`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesresolvetxthostname>`__
 
 promises.reverse
 ~~~~~~~~~~~~~~~~
@@ -861,7 +827,6 @@ On error, the ``Promise`` is rejected with an ``Error`` object, where ``err.code
 
 * ``ip`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnspromisesreverseip>`__
 
 Resolver class
 --------------
@@ -883,7 +848,6 @@ Cancel all outstanding DNS queries made by this resolver. The corresponding call
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#resolvercancel>`__
 
 Resolver.getServers
 ~~~~~~~~~~~~~~~~~~~
@@ -898,7 +862,6 @@ Returns an array of IP address strings, formatted according to RFC 5952, that ar
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsgetservers>`__
 
 Resolver.lookup
 ~~~~~~~~~~~~~~~
@@ -909,7 +872,7 @@ Resolver.lookup
 
 *Kind:* function · *Arguments:* 3
 
-Resolves a host name (e.g. ``'nodejs.org'``) into the first found A (IPv4) or AAAA (IPv6) record. All ``option`` properties are optional. If ``options`` is an integer, then it must be ``4`` or ``6`` – if ``options`` is not provided, then either IPv4 or IPv6 addresses, or both, are returned if found.
+Resolves a host name (e.g. ``'example.com'``) into the first found A (IPv4) or AAAA (IPv6) record. All ``option`` properties are optional. If ``options`` is an integer, then it must be ``4`` or ``6`` – if ``options`` is not provided, then either IPv4 or IPv6 addresses, or both, are returned if found.
 
 With the ``all`` option set to ``true``, the arguments for ``callback`` change to ``(err, addresses)``, with ``addresses`` being an array of objects with the properties ``address`` and ``family``.
 
@@ -938,7 +901,6 @@ With the ``all`` option set to ``true``, the arguments for ``callback`` change t
      console.log('addresses: %j', addresses));
    // addresses: [{"address":"2606:2800:21f:cb07:6820:80da:af6b:8b2c","family":6}]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnslookuphostname-options-callback>`__
 
 Resolver.resolve
 ~~~~~~~~~~~~~~~~
@@ -949,7 +911,7 @@ Resolver.resolve
 
 *Kind:* function · *Arguments:* 3
 
-Uses the DNS protocol to resolve a host name (e.g. ``'nodejs.org'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
+Uses the DNS protocol to resolve a host name (e.g. ``'example.com'``) into an array of the resource records. The ``callback`` function has arguments ``(err, records)``. When successful, ``records`` will be an array of resource records. The type and structure of individual results varies based on ``rrtype``:
 
 On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS error codes.
 
@@ -959,7 +921,6 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``rrtype`` (*string*) — optional: Resource record type. **Default:** ``'A'``.
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvehostname-rrtype-callback>`__
 
 Resolver.resolve4
 ~~~~~~~~~~~~~~~~~
@@ -978,7 +939,6 @@ Uses the DNS protocol to resolve an IPv4 addresses (``A`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve4hostname-options-callback>`__
 
 Resolver.resolve6
 ~~~~~~~~~~~~~~~~~
@@ -997,7 +957,6 @@ Uses the DNS protocol to resolve IPv6 addresses (``AAAA`` records) for the ``hos
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolve6hostname-options-callback>`__
 
 Resolver.resolveAny
 ~~~~~~~~~~~~~~~~~~~
@@ -1035,7 +994,6 @@ Here is an example of the ``ret`` object passed to the callback:
        expire: 1800,
        minttl: 60 } ];
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolveanyhostname-callback>`__
 
 Resolver.resolveCaa
 ~~~~~~~~~~~~~~~~~~~
@@ -1053,7 +1011,6 @@ Uses the DNS protocol to resolve ``CAA`` records for the ``hostname``. The ``add
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvecaahostname-callback>`__
 
 Resolver.resolveCname
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1071,7 +1028,6 @@ Uses the DNS protocol to resolve ``CNAME`` records for the ``hostname``. The ``a
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvecnamehostname-callback>`__
 
 Resolver.resolveMx
 ~~~~~~~~~~~~~~~~~~
@@ -1089,7 +1045,6 @@ Uses the DNS protocol to resolve mail exchange records (``MX`` records) for the 
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvemxhostname-callback>`__
 
 Resolver.resolveNaptr
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1122,7 +1077,6 @@ Uses the DNS protocol to resolve regular expression-based records (``NAPTR`` rec
      preference: 100,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvenaptrhostname-callback>`__
 
 Resolver.resolveNs
 ~~~~~~~~~~~~~~~~~~
@@ -1140,7 +1094,6 @@ Uses the DNS protocol to resolve name server records (``NS`` records) for the ``
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvenshostname-callback>`__
 
 Resolver.resolvePtr
 ~~~~~~~~~~~~~~~~~~~
@@ -1158,7 +1111,6 @@ Uses the DNS protocol to resolve pointer records (``PTR`` records) for the ``hos
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolveptrhostname-callback>`__
 
 Resolver.resolveSoa
 ~~~~~~~~~~~~~~~~~~~
@@ -1192,7 +1144,6 @@ Uses the DNS protocol to resolve a start of authority record (``SOA`` record) fo
      minttl: 3600,
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvesoahostname-callback>`__
 
 Resolver.resolveSrv
 ~~~~~~~~~~~~~~~~~~~
@@ -1223,7 +1174,6 @@ Uses the DNS protocol to resolve service records (``SRV`` records) for the ``hos
      name: 'service.example.com',
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvesrvhostname-callback>`__
 
 Resolver.resolveTxt
 ~~~~~~~~~~~~~~~~~~~
@@ -1241,7 +1191,6 @@ Uses the DNS protocol to resolve text queries (``TXT`` records) for the ``hostna
 * ``hostname`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsresolvetxthostname-callback>`__
 
 Resolver.reverse
 ~~~~~~~~~~~~~~~~
@@ -1261,7 +1210,6 @@ On error, ``err`` is an ``Error`` object, where ``err.code`` is one of the DNS e
 * ``ip`` (*string*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnsreverseip-callback>`__
 
 Resolver.setServers
 ~~~~~~~~~~~~~~~~~~~
@@ -1291,7 +1239,6 @@ An error will be thrown if an invalid address is provided.
      '[2001:4860:4860::8888]:1053',
    ]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/dns.html#dnssetserversservers>`__
 
 Properties and constants
 ------------------------
@@ -1327,4 +1274,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

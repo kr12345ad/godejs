@@ -40,7 +40,6 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked after the snapshot is
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotadddeserializecallbackcallback-data>`__
 
 addSerializeCallback
 ~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +59,6 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked before serialization.
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotaddserializecallbackcallback-data>`__
 
 after
 ~~~~~
@@ -77,7 +75,6 @@ Called immediately after a promise continuation executes. This may be after a ``
 
 * ``promise`` (*Promise*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#afterpromise>`__
 
 before
 ~~~~~~
@@ -96,7 +93,6 @@ The ``before`` callback will be called 0 to N times. The ``before`` callback wil
 
 * ``promise`` (*Promise*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#beforepromise>`__
 
 cachedDataVersionTag
 ~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +118,6 @@ This callable takes no arguments.
    v8.setFlagsFromString('--allow_natives_syntax');
    console.log(v8.cachedDataVersionTag()); // 183726201
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8cacheddataversiontag>`__
 
 CPUProfileHandle
 ~~~~~~~~~~~~~~~~
@@ -135,7 +130,6 @@ CPUProfileHandle
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-cpuprofilehandle>`__
 
 createHook
 ~~~~~~~~~~
@@ -164,7 +158,6 @@ Registers functions to be called for different lifetime events of each promise.
      init(promise, parent) {},
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehookscreatehookcallbacks>`__
 
 DefaultDeserializer
 ~~~~~~~~~~~~~~~~~~~
@@ -179,7 +172,6 @@ A subclass of ``Deserializer`` corresponding to the format written by ``DefaultS
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8defaultdeserializer>`__
 
 DefaultSerializer
 ~~~~~~~~~~~~~~~~~
@@ -194,7 +186,6 @@ A subclass of ``Serializer`` that serializes ``TypedArray`` (in particular ``Buf
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8defaultserializer>`__
 
 deserialize
 ~~~~~~~~~~~
@@ -211,7 +202,6 @@ Uses a ``DefaultDeserializer`` with default options to read a JS value from a bu
 
 * ``buffer`` (*Buffer|TypedArray|DataView*): A buffer returned by ``serialize()``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8deserializebuffer>`__
 
 Deserializer
 ~~~~~~~~~~~~
@@ -224,7 +214,6 @@ Deserializer
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8deserializer>`__
 
 GCProfiler
 ~~~~~~~~~~
@@ -250,7 +239,6 @@ This is a class; construct instances with ``new``.
      console.log(profiler.stop());
    }, 1000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8gcprofiler>`__
 
 getCppHeapStatistics
 ~~~~~~~~~~~~~~~~~~~~
@@ -324,7 +312,6 @@ It returns an object with a structure similar to the ``cppgc::HeapStatistics`` o
      detail_level: 'detailed',
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getcppheapstatisticsdetaillevel>`__
 
 getHeapCodeStatistics
 ~~~~~~~~~~~~~~~~~~~~~
@@ -339,7 +326,6 @@ Get statistics about code and its metadata in the heap, see V8 ``GetHeapCodeAndM
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapcodestatistics>`__
 
 getHeapSnapshot
 ~~~~~~~~~~~~~~~
@@ -367,7 +353,6 @@ Creating a heap snapshot requires memory about twice the size of the heap at the
    const stream = v8.getHeapSnapshot();
    stream.pipe(process.stdout);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapsnapshotoptions>`__
 
 getHeapSpaceStatistics
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -384,7 +369,6 @@ The value returned is an array of objects containing the following properties:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapspacestatistics>`__
 
 getHeapStatistics
 ~~~~~~~~~~~~~~~~~
@@ -401,7 +385,6 @@ Returns an object with the following properties:
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8getheapstatistics>`__
 
 HeapProfileHandle
 ~~~~~~~~~~~~~~~~~
@@ -414,7 +397,6 @@ HeapProfileHandle
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-heapprofilehandle>`__
 
 init
 ~~~~
@@ -432,7 +414,6 @@ Called when a promise is constructed. This *does not* mean that corresponding ``
 * ``promise`` (*Promise*): The promise being created.
 * ``parent`` (*Promise*): The promise continued from, if applicable.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#initpromise-parent>`__
 
 isBuildingSnapshot
 ~~~~~~~~~~~~~~~~~~
@@ -447,7 +428,6 @@ Returns true if the Node.js instance is run to build a snapshot.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotisbuildingsnapshot>`__
 
 isStringOneByteRepresentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -496,7 +476,6 @@ If this method returns false, that does not mean that the string contains some c
    writeString('hello');
    writeString('你好');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8isstringonebyterepresentationcontent>`__
 
 onAfter
 ~~~~~~~
@@ -521,7 +500,6 @@ onAfter
 
    const stop = promiseHooks.onAfter((promise) => {});
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonafterafter>`__
 
 onBefore
 ~~~~~~~~
@@ -546,7 +524,6 @@ onBefore
 
    const stop = promiseHooks.onBefore((promise) => {});
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonbeforebefore>`__
 
 onInit
 ~~~~~~
@@ -571,7 +548,6 @@ onInit
 
    const stop = promiseHooks.onInit((promise, parent) => {});
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksoninitinit>`__
 
 onSettled
 ~~~~~~~~~
@@ -596,7 +572,6 @@ onSettled
 
    const stop = promiseHooks.onSettled((promise) => {});
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#promisehooksonsettledsettled>`__
 
 queryObjects
 ~~~~~~~~~~~~
@@ -642,7 +617,6 @@ To avoid accidental leaks, this API does not return raw references to the object
    // [ "B { foo: 'bar', bar: 'qux' }", 'A {}', "A { foo: 'bar' }" ]
    console.log(queryObjects(A, { format: 'summary' }));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8queryobjectsctor-options>`__
 
 serialize
 ~~~~~~~~~
@@ -661,7 +635,6 @@ Uses a ``DefaultSerializer`` to serialize ``value`` into a buffer.
 
 * ``value`` (*any*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8serializevalue>`__
 
 Serializer
 ~~~~~~~~~~
@@ -674,7 +647,6 @@ Serializer
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-v8serializer>`__
 
 setDeserializeMainFunction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -692,7 +664,6 @@ This sets the entry point of the Node.js application when it is deserialized fro
 * ``callback`` (*Function*): Callback to be invoked as the entry point after the
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotsetdeserializemainfunctioncallback-data>`__
 
 setFlagsFromString
 ~~~~~~~~~~~~~~~~~~
@@ -746,7 +717,6 @@ The V8 options available for a version of Node.js may be determined by running `
      clearInterval(interval);
    }, 2500);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8setflagsfromstringflags>`__
 
 setHeapSnapshotNearHeapLimit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -763,7 +733,6 @@ The API is a no-op if ``--heapsnapshot-near-heap-limit`` is already set from the
 
 * ``limit`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8setheapsnapshotnearheaplimitlimit>`__
 
 settled
 ~~~~~~~
@@ -780,7 +749,6 @@ Called when the promise receives a resolution or rejection value. This may occur
 
 * ``promise`` (*Promise*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#settledpromise>`__
 
 startCpuProfile
 ~~~~~~~~~~~~~~~
@@ -803,7 +771,6 @@ This callable takes no arguments.
    const profile = handle.stop();
    console.log(profile);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startcpuprofile>`__
 
 stopCoverage
 ~~~~~~~~~~~~
@@ -818,7 +785,6 @@ The ``v8.stopCoverage()`` method allows the user to stop the coverage collection
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8stopcoverage>`__
 
 SyncCPUProfileHandle
 ~~~~~~~~~~~~~~~~~~~~
@@ -831,7 +797,6 @@ SyncCPUProfileHandle
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#class-synccpuprofilehandle>`__
 
 takeCoverage
 ~~~~~~~~~~~~
@@ -848,7 +813,6 @@ When the process is about to exit, one last coverage will still be written to di
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8takecoverage>`__
 
 writeHeapSnapshot
 ~~~~~~~~~~~~~~~~~
@@ -896,7 +860,6 @@ A heap snapshot is specific to a single V8 isolate. When using worker threads, a
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8writeheapsnapshotfilenameoptions>`__
 
 CPUProfileHandle class
 ----------------------
@@ -914,7 +877,6 @@ Stopping collecting the profile, then return a Promise that fulfills with an err
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#cpuprofilehandlestop>`__
 
 Deserializer class
 ------------------
@@ -934,7 +896,6 @@ This method is not present on the ``Deserializer`` class itself but can be provi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializer_readhostobject>`__
 
 Deserializer.getWireFormatVersion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -949,7 +910,6 @@ Reads the underlying wire format version. Likely mostly to be useful to legacy c
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializergetwireformatversion>`__
 
 Deserializer.readDouble
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -964,7 +924,6 @@ Read a JS ``number`` value. For use inside of a custom ``deserializer._readHostO
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaddouble>`__
 
 Deserializer.readHeader
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -979,7 +938,6 @@ Reads and validates a header (including the format version). May, for example, r
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadheader>`__
 
 Deserializer.readRawBytes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -996,7 +954,6 @@ Read raw bytes from the deserializer's internal buffer. The ``length`` parameter
 
 * ``length`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadrawbyteslength>`__
 
 Deserializer.readUint32
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1011,7 +968,6 @@ Read a raw 32-bit unsigned integer and return it. For use inside of a custom ``d
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaduint32>`__
 
 Deserializer.readUint64
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1026,7 +982,6 @@ Read a raw 64-bit unsigned integer and return it as an array ``[hi, lo]`` with t
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreaduint64>`__
 
 Deserializer.readValue
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1041,7 +996,6 @@ Deserializes a JavaScript value from the buffer and returns it.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializerreadvalue>`__
 
 Deserializer.transferArrayBuffer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1059,7 +1013,6 @@ Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass th
 * ``id`` (*integer*): A 32-bit unsigned integer.
 * ``arrayBuffer`` (*ArrayBuffer|SharedArrayBuffer*): An ``ArrayBuffer`` instance.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#deserializertransferarraybufferid-arraybuffer>`__
 
 GCProfiler class
 ----------------
@@ -1079,7 +1032,6 @@ Start collecting GC data.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#profilerstart>`__
 
 GCProfiler.stop
 ~~~~~~~~~~~~~~~
@@ -1107,7 +1059,6 @@ This callable takes no arguments.
      console.log(profiler.stop());
    }, 1000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#profilerstop>`__
 
 HeapProfileHandle class
 -----------------------
@@ -1125,7 +1076,6 @@ Stopping collecting the profile, then return a Promise that fulfills with an err
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#heapprofilehandlestop>`__
 
 Serializer class
 ----------------
@@ -1147,7 +1097,6 @@ This method defaults to the ``Error`` constructor and can be overridden on subcl
 
 * ``message`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_getdatacloneerrormessage>`__
 
 Serializer._getSharedArrayBufferId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1166,7 +1115,6 @@ If the object cannot be serialized, an exception should be thrown.
 
 * ``sharedArrayBuffer`` (*SharedArrayBuffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_getsharedarraybufferidsharedarraybuffer>`__
 
 Serializer._setTreatArrayBufferViewsAsHostObjects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1183,7 +1131,6 @@ Indicate whether to treat ``TypedArray`` and ``DataView`` objects as host object
 
 * ``flag`` (*boolean*): **Default:** ``false``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_settreatarraybufferviewsashostobjectsflag>`__
 
 Serializer._writeHostObject
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1202,7 +1149,6 @@ This method is not present on the ``Serializer`` class itself but can be provide
 
 * ``object`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializer_writehostobjectobject>`__
 
 Serializer.releaseBuffer
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1217,7 +1163,6 @@ Returns the stored internal buffer. This serializer should not be used once the 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerreleasebuffer>`__
 
 Serializer.transferArrayBuffer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1235,7 +1180,6 @@ Marks an ``ArrayBuffer`` as having its contents transferred out of band. Pass th
 * ``id`` (*integer*): A 32-bit unsigned integer.
 * ``arrayBuffer`` (*ArrayBuffer*): An ``ArrayBuffer`` instance.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializertransferarraybufferid-arraybuffer>`__
 
 Serializer.writeDouble
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1252,7 +1196,6 @@ Write a JS ``number`` value. For use inside of a custom ``serializer._writeHostO
 
 * ``value`` (*number*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwritedoublevalue>`__
 
 Serializer.writeHeader
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1267,7 +1210,6 @@ Writes out a header, which includes the serialization format version.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteheader>`__
 
 Serializer.writeRawBytes
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1284,7 +1226,6 @@ Write raw bytes into the serializer's internal buffer. The deserializer will req
 
 * ``buffer`` (*Buffer|TypedArray|DataView*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriterawbytesbuffer>`__
 
 Serializer.writeUint32
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1301,7 +1242,6 @@ Write a raw 32-bit unsigned integer. For use inside of a custom ``serializer._wr
 
 * ``value`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteuint32value>`__
 
 Serializer.writeUint64
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1319,7 +1259,6 @@ Write a raw 64-bit unsigned integer, split into high and low 32-bit parts. For u
 * ``hi`` (*integer*)
 * ``lo`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwriteuint64hi-lo>`__
 
 Serializer.writeValue
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1338,7 +1277,6 @@ This throws an error if ``value`` cannot be serialized.
 
 * ``value`` (*any*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#serializerwritevaluevalue>`__
 
 startupSnapshot
 ---------------
@@ -1361,7 +1299,6 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked after the snapshot is
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotadddeserializecallbackcallback-data>`__
 
 startupSnapshot.addSerializeCallback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1381,7 +1318,6 @@ Callbacks are run in the order in which they are added.
 * ``callback`` (*Function*): Callback to be invoked before serialization.
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotaddserializecallbackcallback-data>`__
 
 startupSnapshot.isBuildingSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1396,7 +1332,6 @@ Returns true if the Node.js instance is run to build a snapshot.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotisbuildingsnapshot>`__
 
 startupSnapshot.setDeserializeMainFunction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1414,7 +1349,6 @@ This sets the entry point of the Node.js application when it is deserialized fro
 * ``callback`` (*Function*): Callback to be invoked as the entry point after the
 * ``data`` (*any*) — optional: Optional data that will be passed to the ``callback`` when it
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#v8startupsnapshotsetdeserializemainfunctioncallback-data>`__
 
 SyncCPUProfileHandle class
 --------------------------
@@ -1432,7 +1366,6 @@ Stopping collecting the profile and return the profile data.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/v8.html#synccpuprofilehandlestop>`__
 
 Properties and constants
 ------------------------
@@ -1441,4 +1374,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

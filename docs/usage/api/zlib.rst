@@ -37,7 +37,6 @@ Compress data using the Brotli algorithm.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibbrotlicompress>`__
 
 brotliCompress
 ~~~~~~~~~~~~~~
@@ -54,7 +53,6 @@ brotliCompress
 * ``options`` (*brotli options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibbrotlicompressbuffer-options-callback>`__
 
 brotliCompressSync
 ~~~~~~~~~~~~~~~~~~
@@ -72,7 +70,6 @@ Compress a chunk of data with ``BrotliCompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*brotli options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibbrotlicompresssyncbuffer-options>`__
 
 BrotliDecompress
 ~~~~~~~~~~~~~~~~
@@ -87,7 +84,6 @@ Decompress data using the Brotli algorithm.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibbrotlidecompress>`__
 
 brotliDecompress
 ~~~~~~~~~~~~~~~~
@@ -104,7 +100,6 @@ brotliDecompress
 * ``options`` (*brotli options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibbrotlidecompressbuffer-options-callback>`__
 
 brotliDecompressSync
 ~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +117,6 @@ Decompress a chunk of data with ``BrotliDecompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*brotli options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibbrotlidecompresssyncbuffer-options>`__
 
 crc32
 ~~~~~
@@ -155,7 +149,6 @@ The CRC algorithm is designed to compute checksums and to detect error in data t
    crc = zlib.crc32(Buffer.from('hello', 'utf16le'));  // 1427272415
    crc = zlib.crc32(Buffer.from('world', 'utf16le'), crc);  // 4150509955
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcrc32data-value>`__
 
 createBrotliCompress
 ~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +165,6 @@ Creates and returns a new ``BrotliCompress`` object.
 
 * ``options`` (*brotli options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatebrotlicompressoptions>`__
 
 createBrotliDecompress
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -189,7 +181,6 @@ Creates and returns a new ``BrotliDecompress`` object.
 
 * ``options`` (*brotli options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatebrotlidecompressoptions>`__
 
 createDeflate
 ~~~~~~~~~~~~~
@@ -206,7 +197,6 @@ Creates and returns a new ``Deflate`` object.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatedeflateoptions>`__
 
 createDeflateRaw
 ~~~~~~~~~~~~~~~~
@@ -225,7 +215,6 @@ An upgrade of zlib from 1.2.8 to 1.2.11 changed behavior when ``windowBits`` is 
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatedeflaterawoptions>`__
 
 createGunzip
 ~~~~~~~~~~~~
@@ -242,7 +231,6 @@ Creates and returns a new ``Gunzip`` object.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreategunzipoptions>`__
 
 createGzip
 ~~~~~~~~~~
@@ -259,7 +247,6 @@ Creates and returns a new ``Gzip`` object. See example.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreategzipoptions>`__
 
 createInflate
 ~~~~~~~~~~~~~
@@ -276,7 +263,6 @@ Creates and returns a new ``Inflate`` object.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreateinflateoptions>`__
 
 createInflateRaw
 ~~~~~~~~~~~~~~~~
@@ -293,7 +279,6 @@ Creates and returns a new ``InflateRaw`` object.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreateinflaterawoptions>`__
 
 createUnzip
 ~~~~~~~~~~~
@@ -310,7 +295,6 @@ Creates and returns a new ``Unzip`` object.
 
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreateunzipoptions>`__
 
 createZstdCompress
 ~~~~~~~~~~~~~~~~~~
@@ -327,7 +311,6 @@ Creates and returns a new ``ZstdCompress`` object.
 
 * ``options`` (*zstd options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatezstdcompressoptions>`__
 
 createZstdDecompress
 ~~~~~~~~~~~~~~~~~~~~
@@ -344,7 +327,6 @@ Creates and returns a new ``ZstdDecompress`` object.
 
 * ``options`` (*zstd options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcreatezstddecompressoptions>`__
 
 Deflate
 ~~~~~~~
@@ -359,7 +341,6 @@ Compress data using deflate.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibdeflate>`__
 
 deflate
 ~~~~~~~
@@ -376,7 +357,6 @@ deflate
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibdeflatebuffer-options-callback>`__
 
 DeflateRaw
 ~~~~~~~~~~
@@ -391,7 +371,6 @@ Compress data using deflate, and do not append a ``zlib`` header.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibdeflateraw>`__
 
 deflateRaw
 ~~~~~~~~~~
@@ -408,7 +387,6 @@ deflateRaw
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibdeflaterawbuffer-options-callback>`__
 
 deflateRawSync
 ~~~~~~~~~~~~~~
@@ -426,7 +404,6 @@ Compress a chunk of data with ``DeflateRaw``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibdeflaterawsyncbuffer-options>`__
 
 deflateSync
 ~~~~~~~~~~~
@@ -444,7 +421,6 @@ Compress a chunk of data with ``Deflate``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibdeflatesyncbuffer-options>`__
 
 Gunzip
 ~~~~~~
@@ -459,7 +435,6 @@ Decompress a gzip stream.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibgunzip>`__
 
 gunzip
 ~~~~~~
@@ -476,7 +451,6 @@ gunzip
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibgunzipbuffer-options-callback>`__
 
 gunzipSync
 ~~~~~~~~~~
@@ -494,7 +468,6 @@ Decompress a chunk of data with ``Gunzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibgunzipsyncbuffer-options>`__
 
 Gzip
 ~~~~
@@ -509,7 +482,6 @@ Compress data using gzip.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibgzip>`__
 
 gzip
 ~~~~
@@ -526,7 +498,6 @@ gzip
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibgzipbuffer-options-callback>`__
 
 gzipSync
 ~~~~~~~~
@@ -544,7 +515,6 @@ Compress a chunk of data with ``Gzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibgzipsyncbuffer-options>`__
 
 Inflate
 ~~~~~~~
@@ -559,7 +529,6 @@ Decompress a deflate stream.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibinflate>`__
 
 inflate
 ~~~~~~~
@@ -576,7 +545,6 @@ inflate
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibinflatebuffer-options-callback>`__
 
 InflateRaw
 ~~~~~~~~~~
@@ -591,7 +559,6 @@ Decompress a raw deflate stream.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibinflateraw>`__
 
 inflateRaw
 ~~~~~~~~~~
@@ -608,7 +575,6 @@ inflateRaw
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibinflaterawbuffer-options-callback>`__
 
 inflateRawSync
 ~~~~~~~~~~~~~~
@@ -626,7 +592,6 @@ Decompress a chunk of data with ``InflateRaw``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibinflaterawsyncbuffer-options>`__
 
 inflateSync
 ~~~~~~~~~~~
@@ -644,7 +609,6 @@ Decompress a chunk of data with ``Inflate``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibinflatesyncbuffer-options>`__
 
 Unzip
 ~~~~~
@@ -659,7 +623,6 @@ Decompress either a Gzip- or Deflate-compressed stream by auto-detecting the hea
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibunzip>`__
 
 unzip
 ~~~~~
@@ -676,7 +639,6 @@ unzip
 * ``options`` (*zlib options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibunzipbuffer-options-callback>`__
 
 unzipSync
 ~~~~~~~~~
@@ -694,7 +656,6 @@ Decompress a chunk of data with ``Unzip``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zlib options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibunzipsyncbuffer-options>`__
 
 ZlibBase
 ~~~~~~~~
@@ -711,7 +672,6 @@ This class inherits from ``stream.Transform``, allowing ``node:zlib`` objects to
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibzlibbase>`__
 
 ZstdCompress
 ~~~~~~~~~~~~
@@ -726,7 +686,6 @@ Compress data using the Zstd algorithm.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibzstdcompress>`__
 
 zstdCompress
 ~~~~~~~~~~~~
@@ -743,7 +702,6 @@ zstdCompress
 * ``options`` (*zstd options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibzstdcompressbuffer-options-callback>`__
 
 zstdCompressSync
 ~~~~~~~~~~~~~~~~
@@ -761,7 +719,6 @@ Compress a chunk of data with ``ZstdCompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibzstdcompresssyncbuffer-options>`__
 
 ZstdDecompress
 ~~~~~~~~~~~~~~
@@ -776,7 +733,6 @@ Decompress data using the Zstd algorithm. Concatenated Zstd and skippable frames
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#class-zlibzstddecompress>`__
 
 zstdDecompress
 ~~~~~~~~~~~~~~
@@ -793,7 +749,6 @@ zstdDecompress
 * ``options`` (*zstd options*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibzstddecompressbuffer-options-callback>`__
 
 zstdDecompressSync
 ~~~~~~~~~~~~~~~~~~
@@ -811,7 +766,6 @@ Decompress a chunk of data with ``ZstdDecompress``.
 * ``buffer`` (*Buffer|TypedArray|DataView|ArrayBuffer|string*)
 * ``options`` (*zstd options*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibzstddecompresssyncbuffer-options>`__
 
 ZlibBase class
 --------------
@@ -831,7 +785,7 @@ ZlibBase._destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._emitClose
@@ -845,7 +799,7 @@ ZlibBase._emitClose
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._emitData
@@ -859,7 +813,7 @@ ZlibBase._emitData
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._final
@@ -873,7 +827,7 @@ ZlibBase._final
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._finishOutput
@@ -887,7 +841,7 @@ ZlibBase._finishOutput
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._flush
@@ -901,7 +855,7 @@ ZlibBase._flush
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._maybeDrain
@@ -915,7 +869,7 @@ ZlibBase._maybeDrain
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._processChunk
@@ -929,7 +883,7 @@ ZlibBase._processChunk
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase._transform
@@ -943,7 +897,7 @@ ZlibBase._transform
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.addListener
@@ -957,7 +911,7 @@ ZlibBase.addListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.close
@@ -975,7 +929,6 @@ Close the underlying handle.
 
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibclosecallback>`__
 
 ZlibBase.destroy
 ~~~~~~~~~~~~~~~~
@@ -988,7 +941,7 @@ ZlibBase.destroy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.emit
@@ -1002,7 +955,7 @@ ZlibBase.emit
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.end
@@ -1016,7 +969,7 @@ ZlibBase.end
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.eventNames
@@ -1030,7 +983,7 @@ ZlibBase.eventNames
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.flush
@@ -1051,7 +1004,6 @@ Calling this only flushes data from the internal ``zlib`` state, and does not pe
 * ``kind`` — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibflushkind-callback>`__
 
 ZlibBase.isPaused
 ~~~~~~~~~~~~~~~~~
@@ -1064,7 +1016,7 @@ ZlibBase.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.listenerCount
@@ -1078,7 +1030,7 @@ ZlibBase.listenerCount
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.listeners
@@ -1092,7 +1044,7 @@ ZlibBase.listeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.off
@@ -1106,7 +1058,7 @@ ZlibBase.off
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.on
@@ -1120,7 +1072,7 @@ ZlibBase.on
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.once
@@ -1134,7 +1086,7 @@ ZlibBase.once
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.params
@@ -1156,7 +1108,6 @@ Dynamically update the compression level and compression strategy. Only applicab
 * ``strategy`` (*integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibparamslevel-strategy-callback>`__
 
 ZlibBase.pause
 ~~~~~~~~~~~~~~
@@ -1169,7 +1120,7 @@ ZlibBase.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.pipe
@@ -1183,7 +1134,7 @@ ZlibBase.pipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.prependListener
@@ -1197,7 +1148,7 @@ ZlibBase.prependListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.push
@@ -1211,7 +1162,7 @@ ZlibBase.push
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.read
@@ -1225,7 +1176,7 @@ ZlibBase.read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.removeAllListeners
@@ -1239,7 +1190,7 @@ ZlibBase.removeAllListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.removeListener
@@ -1253,7 +1204,7 @@ ZlibBase.removeListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.reset
@@ -1271,7 +1222,6 @@ For Zstd streams, cancel the current frame and start a new session while preserv
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibreset>`__
 
 ZlibBase.resume
 ~~~~~~~~~~~~~~~
@@ -1284,7 +1234,7 @@ ZlibBase.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.setEncoding
@@ -1298,7 +1248,7 @@ ZlibBase.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.unpipe
@@ -1312,7 +1262,7 @@ ZlibBase.unpipe
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ZlibBase.write
@@ -1326,7 +1276,7 @@ ZlibBase.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -1594,4 +1544,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

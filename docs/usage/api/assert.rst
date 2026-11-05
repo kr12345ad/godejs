@@ -37,7 +37,6 @@ This is a class; construct instances with ``new``.
    assertInstance.deepStrictEqual({ a: 1 }, { a: 2 });
    // Shows a full diff in the error message.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#class-assertassert>`__
 
 AssertionError
 ~~~~~~~~~~~~~~
@@ -79,7 +78,6 @@ This is a class; construct instances with ``new``.
      assert.strictEqual(err.generatedMessage, true);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#class-assertassertionerror>`__
 
 CallTracker
 ~~~~~~~~~~~
@@ -115,7 +113,6 @@ This is a class; construct instances with ``new``.
      tracker.verify();
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#class-assertcalltracker>`__
 
 deepEqual
 ~~~~~~~~~
@@ -145,7 +142,6 @@ An alias of ``assert.deepStrictEqual()``.
 
    assert.deepEqual('+00000000', false);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdeepequalactual-expected-message>`__
 
 deepStrictEqual
 ~~~~~~~~~~~~~~~
@@ -276,7 +272,6 @@ Tests for deep equality between the ``actual`` and ``expected`` parameters. "Dee
    assert.deepStrictEqual(weakSet1, weakSet1);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdeepstrictequalactual-expected-message>`__
 
 doesNotMatch
 ~~~~~~~~~~~~
@@ -312,7 +307,6 @@ If the values do match, or if the ``string`` argument is of another type than ``
    assert.doesNotMatch('I will pass', /different/);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotmatchstring-regexp-message>`__
 
 doesNotReject
 ~~~~~~~~~~~~~
@@ -348,7 +342,6 @@ If ``asyncFn`` is a function and it throws an error synchronously, ``assert.does
      );
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotrejectasyncfn-error-message>`__
 
 doesNotThrow
 ~~~~~~~~~~~~
@@ -382,7 +375,6 @@ Using ``assert.doesNotThrow()`` is actually not useful because there is no benef
      SyntaxError,
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotthrowfn-error-message>`__
 
 equal
 ~~~~~
@@ -421,7 +413,6 @@ An alias of ``assert.strictEqual()``.
    assert.equal({ a: { b: 1 } }, { a: { b: 1 } });
    // AssertionError: { a: { b: 1 } } == { a: { b: 1 } }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertequalactual-expected-message>`__
 
 fail
 ~~~~
@@ -455,7 +446,6 @@ Using ``assert.fail()`` with more than two arguments is possible but deprecated.
    assert.fail(new TypeError('need array'));
    // TypeError: need array
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertfailmessage>`__
 
 ifError
 ~~~~~~~
@@ -500,7 +490,6 @@ Throws ``value`` if ``value`` is not ``undefined`` or ``null``. This is useful w
    //     at ifErrorFrame
    //     at errorFrame
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertiferrorvalue>`__
 
 match
 ~~~~~
@@ -536,7 +525,6 @@ If the values do not match, or if the ``string`` argument is of another type tha
    assert.match('I will pass', /pass/);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertmatchstring-regexp-message>`__
 
 notDeepEqual
 ~~~~~~~~~~~~
@@ -592,7 +580,6 @@ An alias of ``assert.notDeepStrictEqual()``.
    assert.notDeepEqual(obj1, obj4);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotdeepequalactual-expected-message>`__
 
 notDeepStrictEqual
 ~~~~~~~~~~~~~~~~~~
@@ -622,7 +609,6 @@ If the values are deeply and strictly equal, an ``AssertionError`` is thrown wit
    assert.notDeepStrictEqual({ a: 1 }, { a: '1' });
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotdeepstrictequalactual-expected-message>`__
 
 notEqual
 ~~~~~~~~
@@ -658,7 +644,6 @@ An alias of ``assert.notStrictEqual()``.
    assert.notEqual(1, '1');
    // AssertionError: 1 != '1'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotequalactual-expected-message>`__
 
 notStrictEqual
 ~~~~~~~~~~~~~~
@@ -696,7 +681,6 @@ If the values are strictly equal, an ``AssertionError`` is thrown with a ``messa
    assert.notStrictEqual(1, '1');
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotstrictequalactual-expected-message>`__
 
 ok
 ~~~
@@ -753,7 +737,6 @@ If ``value`` is not truthy, an ``AssertionError`` is thrown with a ``message`` p
    //
    //   assert.ok(0)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertokvalue-message>`__
 
 partialDeepStrictEqual
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -831,7 +814,6 @@ This method always passes the same test cases as ``assert.deepStrictEqual()``, b
    );
    // AssertionError
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertpartialdeepstrictequalactual-expected-message>`__
 
 rejects
 ~~~~~~~
@@ -870,7 +852,6 @@ If ``asyncFn`` is a function and it throws an error synchronously, ``assert.reje
      );
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertrejectsasyncfn-error-message>`__
 
 strict
 ~~~~~~
@@ -883,7 +864,7 @@ strict
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 strictEqual
@@ -935,7 +916,6 @@ If the values are not strictly equal, an ``AssertionError`` is thrown with a ``m
    assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));
    // TypeError: Inputs are not identical
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertstrictequalactual-expected-message>`__
 
 throws
 ~~~~~~
@@ -1027,7 +1007,6 @@ If specified, ``error`` can be a ``Class``, ``RegExp``, a validation function, a
      err,
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertthrowsfn-error-message>`__
 
 Assert class
 ------------
@@ -1062,7 +1041,6 @@ An alias of ``assert.deepStrictEqual()``.
 
    assert.deepEqual('+00000000', false);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdeepequalactual-expected-message>`__
 
 Assert.deepStrictEqual
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1193,7 +1171,6 @@ Tests for deep equality between the ``actual`` and ``expected`` parameters. "Dee
    assert.deepStrictEqual(weakSet1, weakSet1);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdeepstrictequalactual-expected-message>`__
 
 Assert.doesNotMatch
 ~~~~~~~~~~~~~~~~~~~
@@ -1229,7 +1206,6 @@ If the values do match, or if the ``string`` argument is of another type than ``
    assert.doesNotMatch('I will pass', /different/);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotmatchstring-regexp-message>`__
 
 Assert.doesNotReject
 ~~~~~~~~~~~~~~~~~~~~
@@ -1265,7 +1241,6 @@ If ``asyncFn`` is a function and it throws an error synchronously, ``assert.does
      );
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotrejectasyncfn-error-message>`__
 
 Assert.doesNotThrow
 ~~~~~~~~~~~~~~~~~~~
@@ -1299,7 +1274,6 @@ Using ``assert.doesNotThrow()`` is actually not useful because there is no benef
      SyntaxError,
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertdoesnotthrowfn-error-message>`__
 
 Assert.equal
 ~~~~~~~~~~~~
@@ -1338,7 +1312,6 @@ An alias of ``assert.strictEqual()``.
    assert.equal({ a: { b: 1 } }, { a: { b: 1 } });
    // AssertionError: { a: { b: 1 } } == { a: { b: 1 } }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertequalactual-expected-message>`__
 
 Assert.fail
 ~~~~~~~~~~~
@@ -1382,7 +1355,6 @@ In the last three cases ``actual``, ``expected``, and ``operator`` have no influ
    assert.fail(1, 2, new TypeError('need array'));
    // TypeError: need array
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertfailactual-expected-message-operator-stackstartfn>`__
 
 Assert.ifError
 ~~~~~~~~~~~~~~
@@ -1427,7 +1399,6 @@ Throws ``value`` if ``value`` is not ``undefined`` or ``null``. This is useful w
    //     at ifErrorFrame
    //     at errorFrame
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertiferrorvalue>`__
 
 Assert.match
 ~~~~~~~~~~~~
@@ -1463,7 +1434,6 @@ If the values do not match, or if the ``string`` argument is of another type tha
    assert.match('I will pass', /pass/);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertmatchstring-regexp-message>`__
 
 Assert.notDeepEqual
 ~~~~~~~~~~~~~~~~~~~
@@ -1519,7 +1489,6 @@ An alias of ``assert.notDeepStrictEqual()``.
    assert.notDeepEqual(obj1, obj4);
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotdeepequalactual-expected-message>`__
 
 Assert.notDeepStrictEqual
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1549,7 +1518,6 @@ If the values are deeply and strictly equal, an ``AssertionError`` is thrown wit
    assert.notDeepStrictEqual({ a: 1 }, { a: '1' });
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotdeepstrictequalactual-expected-message>`__
 
 Assert.notEqual
 ~~~~~~~~~~~~~~~
@@ -1585,7 +1553,6 @@ An alias of ``assert.notStrictEqual()``.
    assert.notEqual(1, '1');
    // AssertionError: 1 != '1'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotequalactual-expected-message>`__
 
 Assert.notStrictEqual
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1623,7 +1590,6 @@ If the values are strictly equal, an ``AssertionError`` is thrown with a ``messa
    assert.notStrictEqual(1, '1');
    // OK
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertnotstrictequalactual-expected-message>`__
 
 Assert.ok
 ~~~~~~~~~
@@ -1680,7 +1646,6 @@ If ``value`` is not truthy, an ``AssertionError`` is thrown with a ``message`` p
    //
    //   assert.ok(0)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertokvalue-message>`__
 
 Assert.partialDeepStrictEqual
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1758,7 +1723,6 @@ This method always passes the same test cases as ``assert.deepStrictEqual()``, b
    );
    // AssertionError
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertpartialdeepstrictequalactual-expected-message>`__
 
 Assert.rejects
 ~~~~~~~~~~~~~~
@@ -1797,7 +1761,6 @@ If ``asyncFn`` is a function and it throws an error synchronously, ``assert.reje
      );
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertrejectsasyncfn-error-message>`__
 
 Assert.strictEqual
 ~~~~~~~~~~~~~~~~~~
@@ -1848,7 +1811,6 @@ If the values are not strictly equal, an ``AssertionError`` is thrown with a ``m
    assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));
    // TypeError: Inputs are not identical
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertstrictequalactual-expected-message>`__
 
 Assert.throws
 ~~~~~~~~~~~~~
@@ -1940,7 +1902,6 @@ If specified, ``error`` can be a ``Class``, ``RegExp``, a validation function, a
      err,
    );
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#assertthrowsfn-error-message>`__
 
 AssertionError class
 --------------------
@@ -1958,7 +1919,7 @@ AssertionError.toString
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 CallTracker class
@@ -1977,7 +1938,7 @@ CallTracker._getTracked
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 CallTracker.calls
@@ -2011,7 +1972,6 @@ The wrapper function is expected to be called exactly ``exact`` times. If the fu
    // before tracker.verify().
    const callsfunc = tracker.calls(func);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#trackercallsfn-exact>`__
 
 CallTracker.getCalls
 ~~~~~~~~~~~~~~~~~~~~
@@ -2042,7 +2002,6 @@ CallTracker.getCalls
    assert.deepStrictEqual(tracker.getCalls(callsfunc),
                           [{ thisArg: undefined, arguments: [1, 2, 3] }]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#trackergetcallsfn>`__
 
 CallTracker.report
 ~~~~~~~~~~~~~~~~~~
@@ -2085,7 +2044,6 @@ This callable takes no arguments.
    //  }
    // ]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#trackerreport>`__
 
 CallTracker.reset
 ~~~~~~~~~~~~~~~~~
@@ -2120,7 +2078,6 @@ Reset calls of the call tracker. If a tracked function is passed as an argument,
    tracker.reset(callsfunc);
    assert.strictEqual(tracker.getCalls(callsfunc).length, 0);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#trackerresetfn>`__
 
 CallTracker.verify
 ~~~~~~~~~~~~~~~~~~
@@ -2155,7 +2112,6 @@ This callable takes no arguments.
    // Will throw an error since callsfunc() was only called once.
    tracker.verify();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/assert.html#trackerverify>`__
 
 Properties and constants
 ------------------------
@@ -2165,4 +2121,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

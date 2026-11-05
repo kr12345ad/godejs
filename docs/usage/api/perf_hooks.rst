@@ -54,7 +54,6 @@ Returns a ``RecordableHistogram``.
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#perf_hookscreatehistogramoptions>`__
 
 histogram
 ~~~~~~~~~
@@ -67,7 +66,7 @@ histogram
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Histogram
@@ -98,7 +97,6 @@ This is a class; construct instances with ``new``.
      console.log(`SLO burn rate: ${rate.toFixed(2)}x — error budget depleting`);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-histogram>`__
 
 monitorEventLoopDelay
 ~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +132,6 @@ Creates a histogram object that samples and reports the event loop delay over ti
    console.log(h.percentile(50));
    console.log(h.percentile(99));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#perf_hooksmonitoreventloopdelayoptions>`__
 
 PerformanceEntry
 ~~~~~~~~~~~~~~~~
@@ -149,7 +146,6 @@ The constructor of this class is not exposed to users directly.
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceentry>`__
 
 PerformanceNodeTiming
 ~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +172,6 @@ This is a class; construct instances with ``new``.
      console.log(performance.nodeTiming.uvMetricsInfo);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performancenodetiming>`__
 
 PerformanceObserver
 ~~~~~~~~~~~~~~~~~~~
@@ -209,7 +204,6 @@ This is a class; construct instances with ``new``.
 
    performance.mark('test');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceobserver>`__
 
 PerformanceObserverEntryList
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -263,7 +257,6 @@ This is a class; construct instances with ``new``.
    performance.mark('test');
    performance.mark('meow');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#class-performanceobserverentrylist>`__
 
 Histogram class
 ---------------
@@ -283,7 +276,6 @@ Returns the value at the given percentile.
 
 * ``percentile`` (*number*): A percentile value in the range (0, 100].
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogrampercentilepercentile>`__
 
 Histogram.record
 ~~~~~~~~~~~~~~~~
@@ -298,7 +290,6 @@ Histogram.record
 
 * ``val`` (*number|bigint*): The amount to record in the histogram.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogramrecordval>`__
 
 Histogram.reset
 ~~~~~~~~~~~~~~~
@@ -313,7 +304,6 @@ Resets the collected histogram data.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#histogramreset>`__
 
 Histogram.toJSON
 ~~~~~~~~~~~~~~~~
@@ -328,7 +318,6 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
 
 performance
 -----------
@@ -350,7 +339,6 @@ If ``name`` is not provided, removes all ``PerformanceMark`` objects from the Pe
 
 * ``name`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmarksname>`__
 
 performance.clearMeasures
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,7 +355,6 @@ If ``name`` is not provided, removes all ``PerformanceMeasure`` objects from the
 
 * ``name`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmeasuresname>`__
 
 performance.eventLoopUtilization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,7 +374,6 @@ This is an alias of ``perf_hooks.eventLoopUtilization()``.
 * ``utilization1`` (*Object*) — optional: The result of a previous call to
 * ``utilization2`` (*Object*) — optional: The result of a previous call to
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceeventlooputilizationutilization1-utilization2>`__
 
 performance.getEntries
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -402,7 +388,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentries>`__
 
 performance.getEntriesByName
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -420,7 +405,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 * ``name`` (*string*)
 * ``type`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbynamename-type>`__
 
 performance.getEntriesByType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,7 +421,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 
 * ``type`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbytypetype>`__
 
 performance.mark
 ~~~~~~~~~~~~~~~~
@@ -457,7 +440,6 @@ The created ``PerformanceMark`` entry is put in the global Performance Timeline 
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemarkname-options>`__
 
 performance.measure
 ~~~~~~~~~~~~~~~~~~~
@@ -478,7 +460,6 @@ The ``startMark`` argument may identify any *existing* ``PerformanceMark`` in th
 * ``startMarkOrOptions`` (*string|Object*) — optional: Optional.
 * ``endMark`` (*string*) — optional: Optional. Must be omitted if ``startMarkOrOptions`` is an
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemeasurename-startmarkoroptions-endmark>`__
 
 performance.now
 ~~~~~~~~~~~~~~~
@@ -493,7 +474,6 @@ Returns the current high resolution millisecond timestamp, where 0 represents th
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancenow>`__
 
 performance.timerify
 ~~~~~~~~~~~~~~~~~~~~
@@ -513,7 +493,6 @@ This is an alias of ``perf_hooks.timerify()``.
 * ``fn`` (*Function*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetimerifyfn-options>`__
 
 performance.toJSON
 ~~~~~~~~~~~~~~~~~~
@@ -528,7 +507,6 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
 
 PerformanceEntry class
 ----------------------
@@ -548,7 +526,6 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
 
 PerformanceNodeTiming class
 ---------------------------
@@ -570,7 +547,6 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
 
 PerformanceObserver class
 -------------------------
@@ -586,7 +562,7 @@ PerformanceObserver._enqueue
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 PerformanceObserver._flush
@@ -600,7 +576,7 @@ PerformanceObserver._flush
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 PerformanceObserver._matches
@@ -614,7 +590,7 @@ PerformanceObserver._matches
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 PerformanceObserver.disconnect
@@ -630,7 +606,6 @@ Disconnects the ``PerformanceObserver`` instance from all notifications.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverdisconnect>`__
 
 PerformanceObserver.observe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -664,7 +639,6 @@ Subscribes the ``PerformanceObserver`` instance to notifications of new ``Perfor
    for (let n = 0; n < 3; n++)
      performance.mark(`test${n}`);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverobserveoptions>`__
 
 PerformanceObserver.takeRecords
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -677,7 +651,6 @@ PerformanceObserver.takeRecords
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobservertakerecords>`__
 
 PerformanceObserverEntryList class
 ----------------------------------
@@ -736,7 +709,6 @@ This callable takes no arguments.
    performance.mark('test');
    performance.mark('meow');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentries>`__
 
 PerformanceObserverEntryList.getEntriesByName
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -801,7 +773,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
    performance.mark('test');
    performance.mark('meow');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentriesbynamename-type>`__
 
 PerformanceObserverEntryList.getEntriesByType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -856,7 +827,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
    performance.mark('test');
    performance.mark('meow');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceobserverentrylistgetentriesbytypetype>`__
 
 Properties and constants
 ------------------------
@@ -867,4 +837,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

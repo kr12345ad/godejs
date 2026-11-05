@@ -32,7 +32,6 @@ Cancels an ``Immediate`` object created by ``setImmediate()``.
 
 * ``immediate`` (*Immediate*): An ``Immediate`` object as returned by
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#clearimmediateimmediate>`__
 
 clearInterval
 ~~~~~~~~~~~~~
@@ -49,7 +48,6 @@ Cancels a ``Timeout`` object created by ``setInterval()``.
 
 * ``timeout`` (*Timeout|string|number*): A ``Timeout`` object as returned by ``setInterval()``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#clearintervaltimeout>`__
 
 clearTimeout
 ~~~~~~~~~~~~
@@ -66,7 +64,6 @@ Cancels a ``Timeout`` object created by ``setTimeout()``.
 
 * ``timeout`` (*Timeout|string|number*): A ``Timeout`` object as returned by ``setTimeout()``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#cleartimeouttimeout>`__
 
 Immediate
 ~~~~~~~~~
@@ -83,7 +80,6 @@ By default, when an immediate is scheduled, the Node.js event loop will continue
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#class-immediate>`__
 
 setImmediate
 ~~~~~~~~~~~~
@@ -103,7 +99,6 @@ When multiple calls to ``setImmediate()`` are made, the ``callback`` functions a
 * ``callback`` (*Function*): The function to call at the end of this turn of
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#setimmediatecallback-args>`__
 
 setInterval
 ~~~~~~~~~~~
@@ -124,7 +119,6 @@ When ``delay`` is larger than ``2147483647`` or less than ``1`` or ``NaN``, the 
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#setintervalcallback-delay-args>`__
 
 setTimeout
 ~~~~~~~~~~
@@ -145,7 +139,6 @@ The ``callback`` will likely not be invoked in precisely ``delay`` milliseconds.
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#settimeoutcallback-delay-args>`__
 
 Timeout
 ~~~~~~~
@@ -162,7 +155,6 @@ By default, when a timer is scheduled using either ``setTimeout()`` or ``setInte
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#class-timeout>`__
 
 Immediate class
 ---------------
@@ -184,7 +176,6 @@ If true, the ``Immediate`` object will keep the Node.js event loop active.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#immediatehasref>`__
 
 Immediate.ref
 ~~~~~~~~~~~~~
@@ -201,7 +192,6 @@ By default, all ``Immediate`` objects are "ref'ed", making it normally unnecessa
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#immediateref>`__
 
 Immediate.unref
 ~~~~~~~~~~~~~~~
@@ -216,7 +206,6 @@ When called, the active ``Immediate`` object will not require the Node.js event 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#immediateunref>`__
 
 promises
 --------
@@ -247,7 +236,6 @@ Calling ``timersPromises.scheduler.wait(delay, options)`` is equivalent to calli
 
    await scheduler.wait(1000); // Wait one second before continuing
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timerspromisesschedulerwaitdelay-options>`__
 
 promises.scheduler.yield
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -264,7 +252,6 @@ Calling ``timersPromises.scheduler.yield()`` is equivalent to calling ``timersPr
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timerspromisesscheduleryield>`__
 
 promises.setImmediate
 ~~~~~~~~~~~~~~~~~~~~~
@@ -284,7 +271,6 @@ When multiple calls to ``setImmediate()`` are made, the ``callback`` functions a
 * ``callback`` (*Function*): The function to call at the end of this turn of
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#setimmediatecallback-args>`__
 
 promises.setInterval
 ~~~~~~~~~~~~~~~~~~~~
@@ -305,7 +291,6 @@ When ``delay`` is larger than ``2147483647`` or less than ``1`` or ``NaN``, the 
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#setintervalcallback-delay-args>`__
 
 promises.setTimeout
 ~~~~~~~~~~~~~~~~~~~
@@ -326,7 +311,6 @@ The ``callback`` will likely not be invoked in precisely ``delay`` milliseconds.
 * ``delay`` (*number*) — optional: The number of milliseconds to wait before calling the
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#settimeoutcallback-delay-args>`__
 
 Timeout class
 -------------
@@ -348,7 +332,6 @@ Cancels the timeout.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timeoutclose>`__
 
 Timeout.hasRef
 ~~~~~~~~~~~~~~
@@ -363,7 +346,6 @@ If true, the ``Timeout`` object will keep the Node.js event loop active.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timeouthasref>`__
 
 Timeout.ref
 ~~~~~~~~~~~
@@ -380,7 +362,6 @@ By default, all ``Timeout`` objects are "ref'ed", making it normally unnecessary
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timeoutref>`__
 
 Timeout.refresh
 ~~~~~~~~~~~~~~~
@@ -397,7 +378,6 @@ Using this on a timer that has already called its callback will reactivate the t
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timeoutrefresh>`__
 
 Timeout.unref
 ~~~~~~~~~~~~~
@@ -412,7 +392,6 @@ When called, the active ``Timeout`` object will not require the Node.js event lo
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/timers.html#timeoutunref>`__
 
 Properties and constants
 ------------------------
@@ -425,4 +404,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

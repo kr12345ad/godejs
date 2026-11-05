@@ -50,7 +50,6 @@ Although Windows usually treats file names, including file extensions, in a case
    path.basename('/foo/bar/baz/asdf/quux.html', '.html');
    // Returns: 'quux'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathbasenamepath-suffix>`__
 
 dirname
 ~~~~~~~
@@ -76,7 +75,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.dirname('/foo/bar/baz/asdf/quux');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathdirnamepath>`__
 
 extname
 ~~~~~~~
@@ -117,7 +115,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.extname('.index.md');
    // Returns: '.md'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathextnamepath>`__
 
 format
 ~~~~~~
@@ -176,7 +173,6 @@ When providing properties to the ``pathObject`` remember that there are combinat
    });
    // Returns: '/file.txt'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathformatpathobject>`__
 
 isAbsolute
 ~~~~~~~~~~
@@ -205,7 +201,6 @@ If the given ``path`` is a zero-length string, ``false`` will be returned.
    path.isAbsolute('qux/');       // false
    path.isAbsolute('.');          // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathisabsolutepath>`__
 
 join
 ~~~~
@@ -234,7 +229,6 @@ Zero-length ``path`` segments are ignored. If the joined path string is a zero-l
    path.join('foo', {}, 'bar');
    // Throws 'TypeError: Path must be a string. Received {}'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathjoinpaths>`__
 
 matchesGlob
 ~~~~~~~~~~~
@@ -261,7 +255,6 @@ For example:
    path.matchesGlob('/foo/bar', '/foo/*'); // true
    path.matchesGlob('/foo/bar*', 'foo/bird'); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathmatchesglobpath-pattern>`__
 
 normalize
 ~~~~~~~~~
@@ -287,7 +280,6 @@ When multiple, sequential path segment separation characters are found (e.g. ``/
    path.normalize('/foo/bar//baz/asdf/quux/..');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathnormalizepath>`__
 
 parse
 ~~~~~
@@ -318,7 +310,6 @@ The returned object will have the following properties:
    //   ext: '.txt',
    //   name: 'file' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathparsepath>`__
 
 relative
 ~~~~~~~~
@@ -345,7 +336,6 @@ If a zero-length string is passed as ``from`` or ``to``, the current working dir
    path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb');
    // Returns: '../../impl/bbb'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathrelativefrom-to>`__
 
 resolve
 ~~~~~~~
@@ -378,7 +368,6 @@ The given sequence of paths is processed from right to left, with each subsequen
    // If the current working directory is /home/myself/node,
    // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathresolvepaths>`__
 
 toNamespacedPath
 ~~~~~~~~~~~~~~~~
@@ -397,7 +386,6 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 
 * ``path`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathtonamespacedpathpath>`__
 
 posix
 -----
@@ -434,7 +422,6 @@ Although Windows usually treats file names, including file extensions, in a case
    path.basename('/foo/bar/baz/asdf/quux.html', '.html');
    // Returns: 'quux'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathbasenamepath-suffix>`__
 
 posix.dirname
 ~~~~~~~~~~~~~
@@ -460,7 +447,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.dirname('/foo/bar/baz/asdf/quux');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathdirnamepath>`__
 
 posix.extname
 ~~~~~~~~~~~~~
@@ -501,7 +487,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.extname('.index.md');
    // Returns: '.md'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathextnamepath>`__
 
 posix.format
 ~~~~~~~~~~~~
@@ -560,7 +545,6 @@ When providing properties to the ``pathObject`` remember that there are combinat
    });
    // Returns: '/file.txt'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathformatpathobject>`__
 
 posix.isAbsolute
 ~~~~~~~~~~~~~~~~
@@ -589,7 +573,6 @@ If the given ``path`` is a zero-length string, ``false`` will be returned.
    path.isAbsolute('qux/');       // false
    path.isAbsolute('.');          // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathisabsolutepath>`__
 
 posix.join
 ~~~~~~~~~~
@@ -618,7 +601,6 @@ Zero-length ``path`` segments are ignored. If the joined path string is a zero-l
    path.join('foo', {}, 'bar');
    // Throws 'TypeError: Path must be a string. Received {}'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathjoinpaths>`__
 
 posix.matchesGlob
 ~~~~~~~~~~~~~~~~~
@@ -645,7 +627,6 @@ For example:
    path.matchesGlob('/foo/bar', '/foo/*'); // true
    path.matchesGlob('/foo/bar*', 'foo/bird'); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathmatchesglobpath-pattern>`__
 
 posix.normalize
 ~~~~~~~~~~~~~~~
@@ -671,7 +652,6 @@ When multiple, sequential path segment separation characters are found (e.g. ``/
    path.normalize('/foo/bar//baz/asdf/quux/..');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathnormalizepath>`__
 
 posix.parse
 ~~~~~~~~~~~
@@ -702,7 +682,6 @@ The returned object will have the following properties:
    //   ext: '.txt',
    //   name: 'file' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathparsepath>`__
 
 posix.relative
 ~~~~~~~~~~~~~~
@@ -729,7 +708,6 @@ If a zero-length string is passed as ``from`` or ``to``, the current working dir
    path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb');
    // Returns: '../../impl/bbb'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathrelativefrom-to>`__
 
 posix.resolve
 ~~~~~~~~~~~~~
@@ -762,7 +740,6 @@ The given sequence of paths is processed from right to left, with each subsequen
    // If the current working directory is /home/myself/node,
    // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathresolvepaths>`__
 
 posix.toNamespacedPath
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -781,7 +758,6 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 
 * ``path`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathtonamespacedpathpath>`__
 
 win32
 -----
@@ -818,7 +794,6 @@ Although Windows usually treats file names, including file extensions, in a case
    path.basename('/foo/bar/baz/asdf/quux.html', '.html');
    // Returns: 'quux'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathbasenamepath-suffix>`__
 
 win32.dirname
 ~~~~~~~~~~~~~
@@ -844,7 +819,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.dirname('/foo/bar/baz/asdf/quux');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathdirnamepath>`__
 
 win32.extname
 ~~~~~~~~~~~~~
@@ -885,7 +859,6 @@ A ``TypeError`` is thrown if ``path`` is not a string.
    path.extname('.index.md');
    // Returns: '.md'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathextnamepath>`__
 
 win32.format
 ~~~~~~~~~~~~
@@ -944,7 +917,6 @@ When providing properties to the ``pathObject`` remember that there are combinat
    });
    // Returns: '/file.txt'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathformatpathobject>`__
 
 win32.isAbsolute
 ~~~~~~~~~~~~~~~~
@@ -973,7 +945,6 @@ If the given ``path`` is a zero-length string, ``false`` will be returned.
    path.isAbsolute('qux/');       // false
    path.isAbsolute('.');          // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathisabsolutepath>`__
 
 win32.join
 ~~~~~~~~~~
@@ -1002,7 +973,6 @@ Zero-length ``path`` segments are ignored. If the joined path string is a zero-l
    path.join('foo', {}, 'bar');
    // Throws 'TypeError: Path must be a string. Received {}'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathjoinpaths>`__
 
 win32.matchesGlob
 ~~~~~~~~~~~~~~~~~
@@ -1029,7 +999,6 @@ For example:
    path.matchesGlob('/foo/bar', '/foo/*'); // true
    path.matchesGlob('/foo/bar*', 'foo/bird'); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathmatchesglobpath-pattern>`__
 
 win32.normalize
 ~~~~~~~~~~~~~~~
@@ -1055,7 +1024,6 @@ When multiple, sequential path segment separation characters are found (e.g. ``/
    path.normalize('/foo/bar//baz/asdf/quux/..');
    // Returns: '/foo/bar/baz/asdf'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathnormalizepath>`__
 
 win32.parse
 ~~~~~~~~~~~
@@ -1086,7 +1054,6 @@ The returned object will have the following properties:
    //   ext: '.txt',
    //   name: 'file' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathparsepath>`__
 
 win32.relative
 ~~~~~~~~~~~~~~
@@ -1113,7 +1080,6 @@ If a zero-length string is passed as ``from`` or ``to``, the current working dir
    path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb');
    // Returns: '../../impl/bbb'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathrelativefrom-to>`__
 
 win32.resolve
 ~~~~~~~~~~~~~
@@ -1146,7 +1112,6 @@ The given sequence of paths is processed from right to left, with each subsequen
    // If the current working directory is /home/myself/node,
    // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathresolvepaths>`__
 
 win32.toNamespacedPath
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1165,7 +1130,6 @@ This method is meaningful only on Windows systems. On POSIX systems, the method 
 
 * ``path`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/path.html#pathtonamespacedpathpath>`__
 
 Properties and constants
 ------------------------
@@ -1181,4 +1145,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

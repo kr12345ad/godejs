@@ -33,7 +33,7 @@ Recoverable
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 REPLServer
@@ -62,7 +62,6 @@ This is a class; construct instances with ``new``.
    const firstInstance = repl.start(options);
    const secondInstance = new repl.REPLServer(options);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/repl.html#class-replserver>`__
 
 start
 ~~~~~
@@ -90,7 +89,6 @@ If ``options`` is a string, then it specifies the input prompt:
    // a Unix style prompt
    repl.start('$ ');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/repl.html#replstartoptions>`__
 
 REPLServer class
 ----------------
@@ -110,7 +108,7 @@ REPLServer._help
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 REPLServer._onLine
@@ -124,7 +122,7 @@ REPLServer._onLine
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 REPLServer.clearBufferedCommand
@@ -140,7 +138,6 @@ The ``replServer.clearBufferedCommand()`` method clears any command that has bee
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/repl.html#replserverclearbufferedcommand>`__
 
 REPLServer.close
 ~~~~~~~~~~~~~~~~
@@ -153,7 +150,7 @@ REPLServer.close
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 REPLServer.defaultEval
@@ -167,7 +164,7 @@ REPLServer.defaultEval
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 REPLServer.defineCommand
@@ -208,7 +205,6 @@ The following example shows two new commands added to the REPL instance:
      this.close();
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/repl.html#replserverdefinecommandkeyword-cmd>`__
 
 REPLServer.displayPrompt
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,7 +223,6 @@ When multi-line input is being entered, a pipe ``'|'`` is printed rather than th
 
 * ``preserveCursor`` (*boolean*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/repl.html#replserverdisplaypromptpreservecursor>`__
 
 REPLServer.setupContext
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,7 +235,7 @@ REPLServer.setupContext
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Properties and constants
@@ -252,4 +247,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

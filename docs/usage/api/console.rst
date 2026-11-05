@@ -71,7 +71,6 @@ If ``value`` is truthy, nothing happens.
    console.assert();
    // Assertion failed
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleassertvalue-message>`__
 
 clear
 ~~~~~
@@ -88,7 +87,6 @@ The specific operation of ``console.clear()`` can vary across operating systems 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleclear>`__
 
 Console
 ~~~~~~~
@@ -109,7 +107,6 @@ This is a class; construct instances with ``new``.
 
    const { Console } = require('node:console');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#class-console>`__
 
 count
 ~~~~~
@@ -126,7 +123,6 @@ Maintains an internal counter specific to ``label`` and outputs to ``stdout`` th
 
 * ``label`` (*string*) — optional: The display label for the counter. **Default:** ``'default'``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolecountlabel>`__
 
 countReset
 ~~~~~~~~~~
@@ -143,7 +139,6 @@ Resets the internal counter specific to ``label``.
 
 * ``label`` (*string*) — optional: The display label for the counter. **Default:** ``'default'``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolecountresetlabel>`__
 
 debug
 ~~~~~
@@ -161,7 +156,6 @@ The ``console.debug()`` function is an alias for ``console.log()``.
 * ``data`` (*any*)
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoledebugdata-args>`__
 
 dir
 ~~~
@@ -179,7 +173,6 @@ Uses ``util.inspect()`` on ``obj`` and prints the resulting string to ``stdout``
 * ``obj`` (*any*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoledirobj-options>`__
 
 dirxml
 ~~~~~~
@@ -196,7 +189,6 @@ This method calls ``console.log()`` passing it the arguments received. This meth
 
 * ``...data``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoledirxmldata>`__
 
 error
 ~~~~~
@@ -226,7 +218,6 @@ If formatting elements (e.g. ``%d``) are not found in the first string then ``ut
    console.error('error', code);
    // Prints: error 5, to stderr
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleerrordata-args>`__
 
 group
 ~~~~~
@@ -245,7 +236,6 @@ If one or more ``label``\ s are provided, those are printed first without the ad
 
 * ``...label`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolegrouplabel>`__
 
 groupCollapsed
 ~~~~~~~~~~~~~~
@@ -260,7 +250,6 @@ An alias for ``console.group()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolegroupcollapsed>`__
 
 groupEnd
 ~~~~~~~~
@@ -275,7 +264,6 @@ Decreases indentation of subsequent lines by spaces for ``groupIndentation`` len
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolegroupend>`__
 
 info
 ~~~~
@@ -293,7 +281,6 @@ The ``console.info()`` function is an alias for ``console.log()``.
 * ``data`` (*any*) — optional
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleinfodata-args>`__
 
 log
 ~~~
@@ -323,7 +310,6 @@ See ``util.format()`` for more information.
    console.log('count:', count);
    // Prints: count: 5, to stdout
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolelogdata-args>`__
 
 profile
 ~~~~~~~
@@ -349,7 +335,6 @@ This method does not display anything unless used in the inspector. The ``consol
    console.profileEnd('MyLabel');
    // Adds the profile 'MyLabel' to the Profiles panel of the inspector.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleprofilelabel>`__
 
 profileEnd
 ~~~~~~~~~~
@@ -368,7 +353,6 @@ If this method is called without a label, the most recently started profile is s
 
 * ``label`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoleprofileendlabel>`__
 
 table
 ~~~~~
@@ -413,7 +397,6 @@ Try to construct a table with the columns of the properties of ``tabularData`` (
    // │ 1       │ 'Z' │
    // └─────────┴─────┘
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletabletabulardata-properties>`__
 
 time
 ~~~~
@@ -430,7 +413,6 @@ Starts a timer that can be used to compute the duration of an operation. Timers 
 
 * ``label`` (*string*) — optional: **Default:** ``'default'``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletimelabel>`__
 
 timeEnd
 ~~~~~~~
@@ -456,7 +438,6 @@ Stops a timer that was previously started by calling ``console.time()`` and prin
    console.timeEnd('bunch-of-stuff');
    // Prints: bunch-of-stuff: 225.438ms
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletimeendlabel>`__
 
 timeLog
 ~~~~~~~
@@ -485,7 +466,6 @@ For a timer that was previously started by calling ``console.time()``, prints th
    doExpensiveProcess2(value);
    console.timeEnd('process');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletimeloglabel-data>`__
 
 timeStamp
 ~~~~~~~~~
@@ -502,7 +482,6 @@ This method does not display anything unless used in the inspector. The ``consol
 
 * ``label`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletimestamplabel>`__
 
 trace
 ~~~~~
@@ -538,7 +517,6 @@ Prints to ``stderr`` the string ``'Trace: '``, followed by the ``util.format()``
    //    at REPLServer.Interface._line (readline.js:549:8)
    //    at REPLServer.Interface._ttyWrite (readline.js:826:14)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consoletracemessage-args>`__
 
 warn
 ~~~~
@@ -556,8 +534,7 @@ The ``console.warn()`` function is an alias for ``console.error()``.
 * ``data`` (*any*) — optional
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/console.html#consolewarndata-args>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

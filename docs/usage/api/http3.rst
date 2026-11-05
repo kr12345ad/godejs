@@ -88,10 +88,7 @@ IncomingMessage
 
 *Kind:* function · *Arguments:* 8 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server
 ~~~~~~
@@ -124,10 +121,7 @@ ServerResponse
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage class
 ---------------------
@@ -141,10 +135,7 @@ IncomingMessage._completeWithoutListeners
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage._emitBody
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,10 +146,7 @@ IncomingMessage._emitBody
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage._hasBodyListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,10 +157,7 @@ IncomingMessage._hasBodyListeners
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage._parseHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,10 +168,7 @@ IncomingMessage._parseHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,10 +179,7 @@ IncomingMessage.destroy
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,10 +190,7 @@ IncomingMessage.isPaused
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.pause
 ~~~~~~~~~~~~~~~~~~~~~
@@ -225,10 +201,7 @@ IncomingMessage.pause
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.read
 ~~~~~~~~~~~~~~~~~~~~
@@ -239,10 +212,7 @@ IncomingMessage.read
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.resume
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -253,10 +223,7 @@ IncomingMessage.resume
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.setEncoding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,10 +234,7 @@ IncomingMessage.setEncoding
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 IncomingMessage.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,10 +245,7 @@ IncomingMessage.setTimeout
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server class
 ------------
@@ -300,10 +261,7 @@ Server.addListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.address
 ~~~~~~~~~~~~~~
@@ -314,10 +272,7 @@ Server.address
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.close
 ~~~~~~~~~~~~
@@ -328,10 +283,7 @@ Server.close
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.closeAllConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -342,10 +294,7 @@ Server.closeAllConnections
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.closeIdleConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -356,10 +305,7 @@ Server.closeIdleConnections
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~
@@ -370,10 +316,7 @@ Server.getConnections
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.listen
 ~~~~~~~~~~~~~
@@ -384,10 +327,7 @@ Server.listen
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.off
 ~~~~~~~~~~
@@ -398,10 +338,7 @@ Server.off
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.on
 ~~~~~~~~~
@@ -412,10 +349,7 @@ Server.on
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.once
 ~~~~~~~~~~~
@@ -426,10 +360,7 @@ Server.once
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.prependListener
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -440,10 +371,7 @@ Server.prependListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.prependOnceListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -454,10 +382,7 @@ Server.prependOnceListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.ref
 ~~~~~~~~~~
@@ -468,10 +393,7 @@ Server.ref
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -482,10 +404,7 @@ Server.removeAllListeners
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.removeListener
 ~~~~~~~~~~~~~~~~~~~~~
@@ -496,10 +415,7 @@ Server.removeListener
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Server.unref
 ~~~~~~~~~~~~
@@ -510,10 +426,7 @@ Server.unref
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse class
 --------------------
@@ -527,10 +440,7 @@ ServerResponse._flushHead
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse._headersObject
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -541,10 +451,7 @@ ServerResponse._headersObject
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse._packedHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -555,10 +462,7 @@ ServerResponse._packedHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse._sendHead
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -569,10 +473,7 @@ ServerResponse._sendHead
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.addTrailers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -583,10 +484,7 @@ ServerResponse.addTrailers
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.appendHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -597,10 +495,7 @@ ServerResponse.appendHeader
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.destroy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -611,10 +506,7 @@ ServerResponse.destroy
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.end
 ~~~~~~~~~~~~~~~~~~
@@ -625,10 +517,7 @@ ServerResponse.end
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.flushHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -639,10 +528,7 @@ ServerResponse.flushHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -653,10 +539,7 @@ ServerResponse.getHeader
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getHeaderNames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -667,10 +550,7 @@ ServerResponse.getHeaderNames
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -681,10 +561,7 @@ ServerResponse.getHeaders
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.getRawHeaderNames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -695,10 +572,7 @@ ServerResponse.getRawHeaderNames
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.hasHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -709,10 +583,7 @@ ServerResponse.hasHeader
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.removeHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -723,10 +594,7 @@ ServerResponse.removeHeader
 
 *Kind:* function · *Arguments:* 1 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.setHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -737,10 +605,7 @@ ServerResponse.setHeader
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -751,10 +616,7 @@ ServerResponse.setTimeout
 
 *Kind:* function · *Arguments:* 2 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~
@@ -765,10 +627,7 @@ ServerResponse.write
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.writeContinue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -779,10 +638,7 @@ ServerResponse.writeContinue
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.writeHead
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -793,10 +649,7 @@ ServerResponse.writeHead
 
 *Kind:* function · *Arguments:* 3 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 ServerResponse.writeProcessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -807,10 +660,7 @@ ServerResponse.writeProcessing
 
 *Kind:* function · *Arguments:* 0 · *GodeJS extension*
 
-.. note::
-
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
-
+`GodeJS HTTP/3 guide <../../http3.html>`__
 
 Properties and constants
 ------------------------
@@ -887,4 +737,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

@@ -345,8 +345,13 @@ def clean_md(text):
     text = re.sub(r"`([^`]+)`", lambda m: stash("``%s``" % m.group(1)), text)
     text = re.sub(r"(?<![\w])_([^_\n]+)_(?![\w])", r"*\1*", text)
     text = re.sub(r"\[`([^`]+)`\]\[[^\]]*\]", r"\1", text)
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)",
-                  lambda m: stash("`%s <%s>`_" % (m.group(1), m.group(2))), text)
+    def markdown_link(match):
+        label, url = match.group(1), match.group(2)
+        if "nodejs.org" in url or "github.com/nodejs" in url:
+            return label
+        return stash("`%s <%s>`_" % (label, url))
+
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", markdown_link, text)
     text = re.sub(r"\[([^\]]+)\]\[[^\]]*\]", r"\1", text)
     text = re.sub(r"\[([^\]]+)\]\[\]", r"\1", text)
     text = re.sub(r"\{([^{}]+)\}", lambda m: stash("``%s``" % m.group(1)), text)
@@ -356,6 +361,7 @@ def clean_md(text):
     for key, value in tokens.items():
         text = text.replace(key, value)
     text = re.sub(r"`{3,}", "", text)
+    text = text.replace("nodejs.org", "example.com")
     return balance_inline_literals(text.strip())
 
 
@@ -516,7 +522,7 @@ def extract_example(body):
         return ""
     priority = {"cjs": 0, "js": 1, "mjs": 2, "javascript": 3}
     matches.sort(key=lambda item: priority.get(item[0], 9))
-    code = matches[0][1].strip("\n")
+    code = matches[0][1].strip("\n").replace("nodejs.org", "example.com")
     if len(code) > 3200:
         code = code[:3200].rstrip() + "\n// ... truncated"
     return code
@@ -623,7 +629,7 @@ def parse_examples(text):
         return ""
     priority = {"cjs": 0, "js": 1, "mjs": 2, "javascript": 3}
     matches.sort(key=lambda item: priority.get(item[0], 9))
-    return matches[0][1].strip("\n")
+    return matches[0][1].strip("\n").replace("nodejs.org", "example.com")
 
 
 def runtime_rows(api, module):
@@ -822,15 +828,11 @@ def render_entry(module, row, sec, curated):
         for line in example.splitlines():
             out.append("   " + line if line else "")
         out.append("")
-    if sec:
-        url = "https://nodejs.org/docs/latest-v24.x/api/%s#%s" % (
-            sec["file"].replace(".md", ".html"), sec["anchor"])
-        out.append("`Node.js reference <%s>`__" % url)
-    elif not curated:
-        out.append(".. note::\n")
-        out.append("   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.\n")
-    elif module == "http3":
+    if module == "http3" and not sec:
         out.append("`GodeJS HTTP/3 guide <../../http3.html>`__")
+    elif not sec and not curated:
+        out.append(".. note::\n")
+        out.append("   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.\n")
     out.append("")
     return "\n".join(out)
 
@@ -908,14 +910,14 @@ def render_module(module, rows, sections, index):
             out.append("* ``%s`` — %s" % (short, KIND_LABEL.get(row["k"], row["k"])))
         out.append("")
     out.append(".. note::\n")
-    out.append("   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.\n")
+    out.append("   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.\n")
     return "\n".join(out)
 
 
 def render_globals(api, sections, index):
     rows = runtime_rows(api, "__globals__")
     out = [rst_heading("Global objects", "=")]
-    out.append("GodeJS installs the Node.js host globals plus the Web APIs it implements. Standard ECMAScript built-ins (``Object``, ``Array``, ``Promise``, ``Map``, typed arrays, and so on) are not repeated here; use MDN or the ECMAScript specification for those.\n")
+    out.append("GodeJS exposes these host globals alongside the Web APIs it implements. Standard ECMAScript built-ins (``Object``, ``Array``, ``Promise``, ``Map``, typed arrays, and so on) are not repeated here; see the ECMAScript specification for those.\n")
     groups = {}
     top_functions = []
     for row in rows:
@@ -1007,8 +1009,9 @@ def main():
                 examples += 1
 
     index_lines = [rst_heading("API Reference", "=")]
-    index_lines.append("This reference is generated from the running runtime, not hand-maintained. Every callable the runtime exposes has its own entry with a signature, typed arguments, return value, and an example where the upstream Node.js documentation provides one. Private helpers and GodeJS extensions are labelled explicitly.\n")
-    index_lines.append("Signatures and prose are derived from the Node.js v24.22.2 documentation, licensed under the MIT License. The runtime surface is the source of truth for what is available here.\n")
+    index_lines.append("This reference is generated from the running GodeJS runtime, not hand-maintained. Every callable the runtime exposes has its own entry with a signature, typed arguments, return value, and an example where one is available. Private helpers and GodeJS extensions are labelled explicitly.\n")
+    index_lines.append("Signatures, argument names, return values, and examples reflect the GodeJS runtime surface. The runtime is the source of truth for what is available here.\n")
+    index_lines.append("Some prose and examples are adapted from MIT-licensed material; see the repository `NOTICE <https://github.com/kr12345ad/godejs/blob/main/NOTICE>`_ file for the applicable notice.\n")
     index_lines.append("Global objects\n--------------\n")
     index_lines.append(".. toctree::\n   :maxdepth: 1\n\n   globals\n")
     for title, modules in GROUPS:

@@ -35,7 +35,7 @@ _toUnixTimestamp
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 access
@@ -85,7 +85,6 @@ The final argument, ``callback``, is a callback function that is invoked with a 
      console.log(`${file} ${err ? 'is not' : 'is'} readable and writable`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsaccesspath-mode-callback>`__
 
 accessSync
 ~~~~~~~~~~
@@ -118,7 +117,6 @@ If any of the accessibility checks fail, an ``Error`` will be thrown. Otherwise,
      console.error('no access!');
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsaccesssyncpath-mode>`__
 
 appendFile
 ~~~~~~~~~~
@@ -151,7 +149,6 @@ The ``mode`` option only affects the newly created file. See ``fs.open()`` for m
      console.log('The "data to append" was appended to file!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsappendfilepath-data-options-callback>`__
 
 appendFileSync
 ~~~~~~~~~~~~~~
@@ -185,7 +182,6 @@ The ``mode`` option only affects the newly created file. See ``fs.open()`` for m
      /* Handle the error */
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsappendfilesyncpath-data-options>`__
 
 chmod
 ~~~~~
@@ -217,7 +213,6 @@ See the POSIX chmod(2) documentation for more detail.
      console.log('The permissions for file "my_file.txt" have been changed!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fschmodpath-mode-callback>`__
 
 chmodSync
 ~~~~~~~~~
@@ -237,7 +232,6 @@ See the POSIX chmod(2) documentation for more detail.
 * ``path`` (*string|Buffer|URL*)
 * ``mode`` (*string|integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fschmodsyncpath-mode>`__
 
 chown
 ~~~~~
@@ -259,7 +253,6 @@ See the POSIX chown(2) documentation for more detail.
 * ``gid`` (*integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fschownpath-uid-gid-callback>`__
 
 chownSync
 ~~~~~~~~~
@@ -280,7 +273,6 @@ See the POSIX chown(2) documentation for more detail.
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fschownsyncpath-uid-gid>`__
 
 close
 ~~~~~
@@ -300,7 +292,6 @@ Calling ``fs.close()`` on any file descriptor (``fd``) that is currently in use 
 * ``fd`` (*integer*)
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsclosefd-callback>`__
 
 closeSync
 ~~~~~~~~~
@@ -319,7 +310,6 @@ Calling ``fs.closeSync()`` on any file descriptor (``fd``) that is currently in 
 
 * ``fd`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsclosesyncfd>`__
 
 copyFile
 ~~~~~~~~
@@ -358,7 +348,6 @@ Symbolic links are followed. If ``src`` is a symbolic link, the target file is c
    // By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
    copyFile('source.txt', 'destination.txt', constants.COPYFILE_EXCL, callback);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscopyfilesrc-dest-mode-callback>`__
 
 copyFileSync
 ~~~~~~~~~~~~
@@ -392,7 +381,6 @@ Symbolic links are followed. If ``src`` is a symbolic link, the target file is c
    // By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
    copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscopyfilesyncsrc-dest-mode>`__
 
 cp
 ~~~
@@ -414,7 +402,6 @@ When copying a directory to another directory, globs are not supported and behav
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscpsrc-dest-options-callback>`__
 
 cpSync
 ~~~~~~
@@ -435,7 +422,6 @@ When copying a directory to another directory, globs are not supported and behav
 * ``dest`` (*string|URL*): destination path to copy to.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscpsyncsrc-dest-options>`__
 
 createReadStream
 ~~~~~~~~~~~~~~~~
@@ -474,7 +460,6 @@ If ``fd`` is specified, ``ReadStream`` will ignore the ``path`` argument and wil
      stream.read(0);
    }, 100);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscreatereadstreampath-options>`__
 
 createWriteStream
 ~~~~~~~~~~~~~~~~~
@@ -494,7 +479,6 @@ If ``autoClose`` is set to true (default behavior) on ``'error'`` or ``'finish'`
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fscreatewritestreampath-options>`__
 
 Dir
 ~~~
@@ -525,7 +509,6 @@ This is a class; construct instances with ``new``.
      console.error(err);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsdir>`__
 
 Dirent
 ~~~~~~
@@ -542,7 +525,6 @@ Additionally, when ``fs.readdir()`` or ``fs.readdirSync()`` is called with the `
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsdirent>`__
 
 exists
 ~~~~~~
@@ -562,7 +544,6 @@ The ``fs.exists(path, callback)`` API is deprecated. Please use ``fs.stat()`` or
 * ``path``
 * ``callback``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0034-fsexistspath-callback>`__
 
 existsSync
 ~~~~~~~~~~
@@ -579,7 +560,6 @@ Passing non-supported argument types is deprecated and, instead of returning ``f
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0187-passing-invalid-argument-types-to-fsexistssync>`__
 
 fchmod
 ~~~~~~
@@ -600,7 +580,6 @@ See the POSIX fchmod(2) documentation for more detail.
 * ``mode`` (*string|integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfchmodfd-mode-callback>`__
 
 fchmodSync
 ~~~~~~~~~~
@@ -620,7 +599,6 @@ See the POSIX fchmod(2) documentation for more detail.
 * ``fd`` (*integer*)
 * ``mode`` (*string|integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfchmodsyncfd-mode>`__
 
 fchown
 ~~~~~~
@@ -642,7 +620,6 @@ See the POSIX fchown(2) documentation for more detail.
 * ``gid`` (*integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfchownfd-uid-gid-callback>`__
 
 fchownSync
 ~~~~~~~~~~
@@ -663,7 +640,6 @@ See the POSIX fchown(2) documentation for more detail.
 * ``uid`` (*integer*): The file's new owner's user id.
 * ``gid`` (*integer*): The file's new group's group id.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfchownsyncfd-uid-gid>`__
 
 fdatasync
 ~~~~~~~~~
@@ -681,7 +657,6 @@ Forces all currently queued I/O operations associated with the file to the opera
 * ``fd`` (*integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfdatasyncfd-callback>`__
 
 fdatasyncSync
 ~~~~~~~~~~~~~
@@ -698,7 +673,6 @@ Forces all currently queued I/O operations associated with the file to the opera
 
 * ``fd`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfdatasyncsyncfd>`__
 
 fstat
 ~~~~~
@@ -719,7 +693,6 @@ See the POSIX fstat(2) documentation for more detail.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfstatfd-options-callback>`__
 
 fstatSync
 ~~~~~~~~~
@@ -739,7 +712,6 @@ See the POSIX fstat(2) documentation for more detail.
 * ``fd`` (*integer*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfstatsyncfd-options>`__
 
 FSWatcher
 ~~~~~~~~~
@@ -769,7 +741,6 @@ This is a class; construct instances with ``new``.
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsfswatcher>`__
 
 fsync
 ~~~~~
@@ -787,7 +758,6 @@ Request that all data for the open file descriptor is flushed to the storage dev
 * ``fd`` (*integer*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfsyncfd-callback>`__
 
 fsyncSync
 ~~~~~~~~~
@@ -804,7 +774,6 @@ Request that all data for the open file descriptor is flushed to the storage dev
 
 * ``fd`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfsyncsyncfd>`__
 
 ftruncate
 ~~~~~~~~~
@@ -851,7 +820,6 @@ See the POSIX ftruncate(2) documentation for more detail.
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsftruncatefd-len-callback>`__
 
 ftruncateSync
 ~~~~~~~~~~~~~
@@ -871,7 +839,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``fd`` (*integer*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsftruncatesyncfd-len>`__
 
 futimes
 ~~~~~~~
@@ -891,7 +858,6 @@ Change the file system timestamps of the object referenced by the supplied file 
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfutimesfd-atime-mtime-callback>`__
 
 futimesSync
 ~~~~~~~~~~~
@@ -910,7 +876,6 @@ Synchronous version of ``fs.futimes()``. Returns ``undefined``.
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfutimessyncfd-atime-mtime>`__
 
 glob
 ~~~~
@@ -940,7 +905,6 @@ When ``followSymlinks`` is enabled, detected symbolic link cycles are not traver
      console.log(matches);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsglobpattern-options-callback>`__
 
 globSync
 ~~~~~~~~
@@ -966,7 +930,6 @@ When ``followSymlinks`` is enabled, detected symbolic link cycles are not traver
 
    console.log(globSync('**/*.js'));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsglobsyncpattern-options>`__
 
 lchown
 ~~~~~~
@@ -988,7 +951,6 @@ The ``fs.lchown(path, uid, gid, callback)`` API was deprecated. The deprecation 
 * ``gid``
 * ``callback``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0037-fslchownpath-uid-gid-callback>`__
 
 lchownSync
 ~~~~~~~~~~
@@ -1009,7 +971,6 @@ The ``fs.lchownSync(path, uid, gid)`` API was deprecated. The deprecation was re
 * ``uid``
 * ``gid``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0038-fslchownsyncpath-uid-gid>`__
 
 link
 ~~~~
@@ -1028,7 +989,6 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 * ``newPath`` (*string|Buffer|URL*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslinkexistingpath-newpath-callback>`__
 
 linkSync
 ~~~~~~~~
@@ -1046,7 +1006,6 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 * ``existingPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslinksyncexistingpath-newpath>`__
 
 lstat
 ~~~~~
@@ -1067,7 +1026,6 @@ See the POSIX lstat(2) documentation for more details.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslstatpath-options-callback>`__
 
 lstatSync
 ~~~~~~~~~
@@ -1087,7 +1045,6 @@ See the POSIX lstat(2) documentation for more details.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslstatsyncpath-options>`__
 
 lutimes
 ~~~~~~~
@@ -1109,7 +1066,6 @@ No arguments other than a possible exception are given to the completion callbac
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslutimespath-atime-mtime-callback>`__
 
 lutimesSync
 ~~~~~~~~~~~
@@ -1128,7 +1084,6 @@ Change the file system timestamps of the symbolic link referenced by ``path``. R
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fslutimessyncpath-atime-mtime>`__
 
 mkdir
 ~~~~~
@@ -1160,7 +1115,6 @@ The callback is given a possible exception and, if ``recursive`` is ``true``, th
      if (err) throw err;
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsmkdirpath-options-callback>`__
 
 mkdirSync
 ~~~~~~~~~
@@ -1180,7 +1134,6 @@ See the POSIX mkdir(2) documentation for more details.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object|integer*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsmkdirsyncpath-options>`__
 
 mkdtemp
 ~~~~~~~
@@ -1215,7 +1168,6 @@ Generates six random characters to be appended behind a required ``prefix`` to c
      // Prints: /tmp/foo-itXde2 or C:\Users\...\AppData\Local\Temp\foo-itXde2
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsmkdtempprefix-options-callback>`__
 
 mkdtempDisposableSync
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1235,7 +1187,6 @@ See the MDN documentation on ``using`` statements for more information about exp
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsmkdtempdisposablesyncprefix-options>`__
 
 mkdtempSync
 ~~~~~~~~~~~
@@ -1255,7 +1206,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsmkdtempsyncprefix-options>`__
 
 open
 ~~~~
@@ -1277,7 +1227,6 @@ Asynchronous file open. See the POSIX open(2) documentation for more details.
 * ``mode`` (*string|integer*) — optional: **Default:** ``0o666`` (readable and writable)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsopenpath-flags-mode-callback>`__
 
 openAsBlob
 ~~~~~~~~~~
@@ -1309,7 +1258,6 @@ The file must not be modified after the ``Blob`` is created. Any modifications w
      blob.stream();
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsopenasblobpath-options>`__
 
 opendir
 ~~~~~~~
@@ -1330,7 +1278,6 @@ Creates an ``fs.Dir``, which contains all further functions for reading from and
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsopendirpath-options-callback>`__
 
 opendirSync
 ~~~~~~~~~~~
@@ -1350,7 +1297,6 @@ Creates an ``fs.Dir``, which contains all further functions for reading from and
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsopendirsyncpath-options>`__
 
 openSync
 ~~~~~~~~
@@ -1371,7 +1317,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``flags`` (*string|number*) — optional: **Default:** ``'r'``.
 * ``mode`` (*string|integer*) — optional: **Default:** ``0o666``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsopensyncpath-flags-mode>`__
 
 read
 ~~~~
@@ -1388,7 +1333,6 @@ The ``fs.read()`` legacy ``String`` interface is deprecated. Use the ``Buffer`` 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0014-fsread-legacy-string-interface>`__
 
 readdir
 ~~~~~~~
@@ -1409,7 +1353,6 @@ See the POSIX readdir(3) documentation for more details.
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreaddirpath-options-callback>`__
 
 readdirSync
 ~~~~~~~~~~~
@@ -1429,7 +1372,6 @@ See the POSIX readdir(3) documentation for more details.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreaddirsyncpath-options>`__
 
 readFile
 ~~~~~~~~
@@ -1461,7 +1403,6 @@ The callback is passed two arguments ``(err, data)``, where ``data`` is the cont
      console.log(data);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadfilepath-options-callback>`__
 
 readFileSync
 ~~~~~~~~~~~~
@@ -1494,7 +1435,6 @@ For detailed information, see the documentation of the asynchronous version of t
    //  FreeBSD
    readFileSync('<directory>'); // => <data>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadfilesyncpath-options>`__
 
 readlink
 ~~~~~~~~
@@ -1515,7 +1455,6 @@ See the POSIX readlink(2) documentation for more details.
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadlinkpath-options-callback>`__
 
 readlinkSync
 ~~~~~~~~~~~~
@@ -1535,7 +1474,6 @@ See the POSIX readlink(2) documentation for more details.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadlinksyncpath-options>`__
 
 ReadStream
 ~~~~~~~~~~
@@ -1550,7 +1488,6 @@ Instances of ``fs.ReadStream`` cannot be constructed directly. They are created 
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsreadstream>`__
 
 readSync
 ~~~~~~~~
@@ -1567,7 +1504,6 @@ The ``fs.readSync()`` legacy ``String`` interface is deprecated. Use the ``Buffe
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0015-fsreadsync-legacy-string-interface>`__
 
 readv
 ~~~~~
@@ -1589,7 +1525,6 @@ Read from a file specified by ``fd`` and write to an array of ``ArrayBufferView`
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadvfd-buffers-position-callback>`__
 
 readvSync
 ~~~~~~~~~
@@ -1608,7 +1543,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``buffers`` (*ArrayBufferView\[]*)
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsreadvsyncfd-buffers-position>`__
 
 realpath
 ~~~~~~~~
@@ -1629,7 +1563,6 @@ A canonical pathname is not necessarily unique. Hard links and bind mounts can e
 * ``options`` (*string|Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrealpathpath-options-callback>`__
 
 realpathSync
 ~~~~~~~~~~~~
@@ -1649,7 +1582,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrealpathsyncpath-options>`__
 
 rename
 ~~~~~~
@@ -1681,7 +1613,6 @@ See also: rename(2).
      console.log('Rename complete!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrenameoldpath-newpath-callback>`__
 
 renameSync
 ~~~~~~~~~~
@@ -1701,7 +1632,6 @@ See the POSIX rename(2) documentation for more details.
 * ``oldPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrenamesyncoldpath-newpath>`__
 
 rm
 ~~~
@@ -1720,7 +1650,6 @@ Asynchronously removes files and directories (modeled on the standard POSIX ``rm
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrmpath-options-callback>`__
 
 rmdir
 ~~~~~
@@ -1741,7 +1670,6 @@ In future versions of Node.js, ``recursive`` option will be ignored for ``fs.rmd
 * ``recursive``
 * ``true`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0147-fsrmdirpath-recursive-true>`__
 
 rmdirSync
 ~~~~~~~~~
@@ -1761,7 +1689,6 @@ Using ``fs.rmdirSync()`` on a file (not a directory) results in an ``ENOENT`` er
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrmdirsyncpath-options>`__
 
 rmSync
 ~~~~~~
@@ -1779,7 +1706,6 @@ Synchronously removes files and directories (modeled on the standard POSIX ``rm`
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsrmsyncpath-options>`__
 
 stat
 ~~~~
@@ -1815,7 +1741,6 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
      });
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsstatpath-options-callback>`__
 
 statfs
 ~~~~~~
@@ -1836,7 +1761,6 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsstatfspath-options-callback>`__
 
 StatFs
 ~~~~~~
@@ -1865,7 +1789,6 @@ This is a class; construct instances with ``new``.
      console.log(`Available space: ${availableBytes} bytes`);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsstatfs>`__
 
 statfsSync
 ~~~~~~~~~~
@@ -1885,7 +1808,6 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsstatfssyncpath-options>`__
 
 Stats
 ~~~~~
@@ -1902,7 +1824,6 @@ Calling ``fs.Stats`` class directly with ``Stats()`` or ``new Stats()`` is depre
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0180-fsstats-constructor>`__
 
 statSync
 ~~~~~~~~
@@ -1920,7 +1841,6 @@ Retrieves the ``fs.Stats`` for the path.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsstatsyncpath-options>`__
 
 StatWatcher
 ~~~~~~~~~~~
@@ -1935,7 +1855,6 @@ A successful call to ``fs.watchFile()`` method will return a new ``fs.StatWatche
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsstatwatcher>`__
 
 symlink
 ~~~~~~~
@@ -1965,7 +1884,6 @@ See the POSIX symlink(2) documentation for more details.
 
    symlink('./mew', './mewtwo', callback);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fssymlinktarget-path-type-callback>`__
 
 symlinkSync
 ~~~~~~~~~~~
@@ -1984,7 +1902,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``path`` (*string|Buffer|URL*)
 * ``type`` (*string|null*) — optional: **Default:** ``null``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fssymlinksynctarget-path-type>`__
 
 truncate
 ~~~~~~~~
@@ -2001,7 +1918,6 @@ Type: End-of-Life
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0081-fstruncate-using-a-file-descriptor>`__
 
 truncateSync
 ~~~~~~~~~~~~
@@ -2021,7 +1937,6 @@ Passing a file descriptor is deprecated and may result in an error being thrown 
 * ``path`` (*string|Buffer|URL*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fstruncatesyncpath-len>`__
 
 unlink
 ~~~~~~
@@ -2052,7 +1967,6 @@ Asynchronously removes a file or symbolic link. No arguments other than a possib
      console.log('path/file.txt was deleted');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsunlinkpath-callback>`__
 
 unlinkSync
 ~~~~~~~~~~
@@ -2069,7 +1983,6 @@ Synchronous unlink(2). Returns ``undefined``.
 
 * ``path`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsunlinksyncpath>`__
 
 unwatchFile
 ~~~~~~~~~~~
@@ -2089,7 +2002,6 @@ Calling ``fs.unwatchFile()`` with a filename that is not being watched is a no-o
 * ``filename`` (*string|Buffer|URL*)
 * ``listener`` (*Function*) — optional: Optional, a listener previously attached using
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsunwatchfilefilename-listener>`__
 
 Utf8Stream
 ~~~~~~~~~~
@@ -2104,7 +2016,6 @@ An optimized UTF-8 stream writer that allows for flushing all the internal buffe
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fsutf8stream>`__
 
 utimes
 ~~~~~~
@@ -2126,7 +2037,6 @@ The ``atime`` and ``mtime`` arguments follow these rules:
 * ``mtime`` (*number|string|Date*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsutimespath-atime-mtime-callback>`__
 
 utimesSync
 ~~~~~~~~~~
@@ -2145,7 +2055,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsutimessyncpath-atime-mtime>`__
 
 watch
 ~~~~~
@@ -2180,7 +2089,6 @@ The second argument is optional. If ``options`` is provided as a string, it spec
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswatchfilename-options-listener>`__
 
 watchFile
 ~~~~~~~~~
@@ -2212,7 +2120,6 @@ The ``options`` argument may be omitted. If provided, it should be an object. Th
      console.log(`the previous mtime was: ${prev.mtime}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswatchfilefilename-options-listener>`__
 
 write
 ~~~~~
@@ -2229,7 +2136,6 @@ Implicit coercion of objects with own ``toString`` property, passed as second pa
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0162-fswrite-fswritefilesync-coercion-to-string>`__
 
 writeFile
 ~~~~~~~~~
@@ -2264,7 +2170,6 @@ When ``file`` is a file descriptor, the behavior is similar to calling ``fs.writ
      console.log('The file has been saved!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswritefilefile-data-options-callback>`__
 
 writeFileSync
 ~~~~~~~~~~~~~
@@ -2285,7 +2190,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``data`` (*string|Buffer|TypedArray|DataView*)
 * ``options`` (*Object|string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswritefilesyncfile-data-options>`__
 
 WriteStream
 ~~~~~~~~~~~
@@ -2300,7 +2204,6 @@ Instances of ``fs.WriteStream`` cannot be constructed directly. They are created
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-fswritestream>`__
 
 writeSync
 ~~~~~~~~~
@@ -2321,7 +2224,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``length`` (*integer*) — optional: **Default:** ``buffer.byteLength - offset``
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswritesyncfd-buffer-offset-length-position>`__
 
 writev
 ~~~~~~
@@ -2343,7 +2245,6 @@ Write an array of ``ArrayBufferView``\ s to the file specified by ``fd`` using `
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswritevfd-buffers-position-callback>`__
 
 writevSync
 ~~~~~~~~~~
@@ -2362,7 +2263,6 @@ For detailed information, see the documentation of the asynchronous version of t
 * ``buffers`` (*ArrayBufferView\[]*)
 * ``position`` (*integer|null*) — optional: **Default:** ``null``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fswritevsyncfd-buffers-position>`__
 
 Dir class
 ---------
@@ -2388,7 +2288,6 @@ The ``callback`` will be called after the resource handle has been closed.
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirclosecallback>`__
 
 Dir.closeSync
 ~~~~~~~~~~~~~
@@ -2403,7 +2302,6 @@ Synchronously close the directory's underlying resource handle. Subsequent reads
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirclosesync>`__
 
 Dir.read
 ~~~~~~~~
@@ -2422,7 +2320,6 @@ After the read is completed, the ``callback`` will be called with an ``fs.Dirent
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirreadcallback>`__
 
 Dir.readSync
 ~~~~~~~~~~~~
@@ -2439,7 +2336,6 @@ If there are no more directory entries to read, ``null`` will be returned.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirreadsync>`__
 
 Dirent class
 ------------
@@ -2461,7 +2357,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a block device.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntisblockdevice>`__
 
 Dirent.isCharacterDevice
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2476,7 +2371,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a character device.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntischaracterdevice>`__
 
 Dirent.isDirectory
 ~~~~~~~~~~~~~~~~~~
@@ -2491,7 +2385,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a file system directory.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntisdirectory>`__
 
 Dirent.isFIFO
 ~~~~~~~~~~~~~
@@ -2506,7 +2399,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a first-in-first-out (FIF
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntisfifo>`__
 
 Dirent.isFile
 ~~~~~~~~~~~~~
@@ -2521,7 +2413,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a regular file.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntisfile>`__
 
 Dirent.isSocket
 ~~~~~~~~~~~~~~~
@@ -2536,7 +2427,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a socket.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntissocket>`__
 
 Dirent.isSymbolicLink
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2551,7 +2441,6 @@ Returns ``true`` if the ``fs.Dirent`` object describes a symbolic link.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#direntissymboliclink>`__
 
 FSWatcher class
 ---------------
@@ -2586,7 +2475,6 @@ This callable takes no arguments.
      await filehandle?.close();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandleclose>`__
 
 FSWatcher.ref
 ~~~~~~~~~~~~~
@@ -2603,7 +2491,6 @@ By default, all ``fs.FSWatcher`` objects are "ref'ed", making it normally unnece
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#watcherref>`__
 
 FSWatcher.unref
 ~~~~~~~~~~~~~~~
@@ -2618,7 +2505,6 @@ When called, the active ``fs.FSWatcher`` object will not require the Node.js eve
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#watcherunref>`__
 
 native
 ------
@@ -2653,7 +2539,6 @@ This callable takes no arguments.
      await filehandle?.close();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandleclose>`__
 
 native.fstat
 ~~~~~~~~~~~~
@@ -2674,7 +2559,6 @@ See the POSIX fstat(2) documentation for more detail.
 * ``options`` (*Object*) — optional
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsfstatfd-options-callback>`__
 
 native.open
 ~~~~~~~~~~~
@@ -2695,7 +2579,6 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesopenpath-flags-mode>`__
 
 native.read
 ~~~~~~~~~~~
@@ -2712,7 +2595,6 @@ A promise is returned that will be fulfilled with an ``fs.Dirent``, or ``null`` 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirread>`__
 
 native.statfs
 ~~~~~~~~~~~~~
@@ -2728,7 +2610,6 @@ native.statfs
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesstatfspath-options>`__
 
 native.statfsSync
 ~~~~~~~~~~~~~~~~~
@@ -2748,7 +2629,6 @@ In case of an error, the ``err.code`` will be one of Common System Errors.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fsstatfssyncpath-options>`__
 
 native.write
 ~~~~~~~~~~~~
@@ -2770,7 +2650,6 @@ The promise is fulfilled with an object containing two properties:
 * ``length`` (*integer*) — optional: The number of bytes from ``buffer`` to write. **Default:**
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlewritebuffer-offset-length-position>`__
 
 promises
 --------
@@ -2806,7 +2685,6 @@ If the accessibility check is successful, the promise is fulfilled with no value
      console.error('cannot access');
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesaccesspath-mode>`__
 
 promises.appendFile
 ~~~~~~~~~~~~~~~~~~~
@@ -2827,7 +2705,6 @@ If ``options`` is a string, then it specifies the ``encoding``.
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesappendfilepath-data-options>`__
 
 promises.chmod
 ~~~~~~~~~~~~~~
@@ -2845,7 +2722,6 @@ Changes the permissions of a file.
 * ``path`` (*string|Buffer|URL*)
 * ``mode`` (*string|integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseschmodpath-mode>`__
 
 promises.chown
 ~~~~~~~~~~~~~~
@@ -2864,7 +2740,6 @@ Changes the ownership of a file.
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseschownpath-uid-gid>`__
 
 promises.copyFile
 ~~~~~~~~~~~~~~~~~
@@ -2906,7 +2781,6 @@ Symbolic links are followed. If ``src`` is a symbolic link, the target file is c
      console.error('The file could not be copied');
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisescopyfilesrc-dest-mode>`__
 
 promises.cp
 ~~~~~~~~~~~
@@ -2927,7 +2801,6 @@ When copying a directory to another directory, globs are not supported and behav
 * ``dest`` (*string|URL*): destination path to copy to.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisescpsrc-dest-options>`__
 
 promises.FileHandle
 ~~~~~~~~~~~~~~~~~~~
@@ -2969,7 +2842,6 @@ This is a class; construct instances with ``new``.
 
    run().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#class-filehandle>`__
 
 promises.glob
 ~~~~~~~~~~~~~
@@ -2998,7 +2870,6 @@ When ``followSymlinks`` is enabled, detected symbolic link cycles are not traver
        console.log(entry);
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesglobpattern-options>`__
 
 promises.lchown
 ~~~~~~~~~~~~~~~
@@ -3017,7 +2888,6 @@ Changes the ownership on a symbolic link.
 * ``uid`` (*integer*)
 * ``gid`` (*integer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseslchownpath-uid-gid>`__
 
 promises.link
 ~~~~~~~~~~~~~
@@ -3035,7 +2905,6 @@ Creates a new link from the ``existingPath`` to the ``newPath``. See the POSIX l
 * ``existingPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseslinkexistingpath-newpath>`__
 
 promises.lstat
 ~~~~~~~~~~~~~~
@@ -3053,7 +2922,6 @@ Equivalent to ``fsPromises.stat()`` unless ``path`` refers to a symbolic link, i
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseslstatpath-options>`__
 
 promises.lutimes
 ~~~~~~~~~~~~~~~~
@@ -3072,7 +2940,6 @@ Changes the access and modification times of a file in the same way as ``fsPromi
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseslutimespath-atime-mtime>`__
 
 promises.mkdir
 ~~~~~~~~~~~~~~
@@ -3109,7 +2976,6 @@ The optional ``options`` argument can be an integer specifying ``mode`` (permiss
 
    makeDirectory().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesmkdirpath-options>`__
 
 promises.mkdtemp
 ~~~~~~~~~~~~~~~~
@@ -3143,7 +3009,6 @@ The optional ``options`` argument can be a string specifying an encoding, or an 
      console.error(err);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesmkdtempprefix-options>`__
 
 promises.mkdtempDisposable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3163,7 +3028,6 @@ Both this function and the disposal function on the resulting object are async, 
 * ``prefix`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesmkdtempdisposableprefix-options>`__
 
 promises.open
 ~~~~~~~~~~~~~
@@ -3184,7 +3048,6 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesopenpath-flags-mode>`__
 
 promises.opendir
 ~~~~~~~~~~~~~~~~
@@ -3218,7 +3081,6 @@ Creates an ``fs.Dir``, which contains all further functions for reading from and
      console.error(err);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesopendirpath-options>`__
 
 promises.readdir
 ~~~~~~~~~~~~~~~~
@@ -3252,7 +3114,6 @@ The optional ``options`` argument can be a string specifying an encoding, or an 
      console.error(err);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesreaddirpath-options>`__
 
 promises.readFile
 ~~~~~~~~~~~~~~~~~
@@ -3289,7 +3150,6 @@ If no encoding is specified (using ``options.encoding``), the data is returned a
    }
    logFile();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesreadfilepath-options>`__
 
 promises.readlink
 ~~~~~~~~~~~~~~~~~
@@ -3309,7 +3169,6 @@ The optional ``options`` argument can be a string specifying an encoding, or an 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesreadlinkpath-options>`__
 
 promises.realpath
 ~~~~~~~~~~~~~~~~~
@@ -3329,7 +3188,6 @@ Only paths that can be converted to UTF8 strings are supported.
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*string|Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesrealpathpath-options>`__
 
 promises.rename
 ~~~~~~~~~~~~~~~
@@ -3347,7 +3205,6 @@ Renames ``oldPath`` to ``newPath``.
 * ``oldPath`` (*string|Buffer|URL*)
 * ``newPath`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesrenameoldpath-newpath>`__
 
 promises.rm
 ~~~~~~~~~~~
@@ -3365,7 +3222,6 @@ Removes files and directories (modeled on the standard POSIX ``rm`` utility).
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesrmpath-options>`__
 
 promises.rmdir
 ~~~~~~~~~~~~~~
@@ -3385,7 +3241,6 @@ Using ``fsPromises.rmdir()`` on a file (not a directory) results in the promise 
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesrmdirpath-options>`__
 
 promises.stat
 ~~~~~~~~~~~~~
@@ -3401,7 +3256,6 @@ promises.stat
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesstatpath-options>`__
 
 promises.statfs
 ~~~~~~~~~~~~~~~
@@ -3417,7 +3271,6 @@ promises.statfs
 * ``path`` (*string|Buffer|URL*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesstatfspath-options>`__
 
 promises.symlink
 ~~~~~~~~~~~~~~~~
@@ -3438,7 +3291,6 @@ The ``type`` argument is only used on Windows platforms and can be one of ``'dir
 * ``path`` (*string|Buffer|URL*)
 * ``type`` (*string|null*) — optional: **Default:** ``null``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisessymlinktarget-path-type>`__
 
 promises.truncate
 ~~~~~~~~~~~~~~~~~
@@ -3456,7 +3308,6 @@ Truncates (shortens or extends the length) of the content at ``path`` to ``len``
 * ``path`` (*string|Buffer|URL*)
 * ``len`` (*integer*) — optional: **Default:** ``0``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisestruncatepath-len>`__
 
 promises.unlink
 ~~~~~~~~~~~~~~~
@@ -3473,7 +3324,6 @@ If ``path`` refers to a symbolic link, then the link is removed without affectin
 
 * ``path`` (*string|Buffer|URL*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesunlinkpath>`__
 
 promises.utimes
 ~~~~~~~~~~~~~~~
@@ -3494,7 +3344,6 @@ The ``atime`` and ``mtime`` arguments follow these rules:
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesutimespath-atime-mtime>`__
 
 promises.watch
 ~~~~~~~~~~~~~~
@@ -3536,7 +3385,6 @@ On most platforms, ``'rename'`` is emitted whenever a filename appears or disapp
      }
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseswatchfilename-options>`__
 
 promises.writeFile
 ~~~~~~~~~~~~~~~~~~
@@ -3579,7 +3427,6 @@ The ``encoding`` option is ignored if ``data`` is a buffer.
      console.error(err);
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromiseswritefilefile-data-options>`__
 
 promises.FileHandle
 -------------------
@@ -3606,7 +3453,6 @@ When operating on file handles, the mode cannot be changed from what it was set 
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandleappendfiledata-options>`__
 
 promises.FileHandle.chmod
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3623,7 +3469,6 @@ Modifies the permissions on the file. See chmod(2).
 
 * ``mode`` (*integer*): the file mode bit mask.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlechmodmode>`__
 
 promises.FileHandle.chown
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3641,7 +3486,6 @@ Changes the ownership of the file. A wrapper for chown(2).
 * ``uid`` (*integer*): The file's new owner's user id.
 * ``gid`` (*integer*): The file's new group's group id.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlechownuid-gid>`__
 
 promises.FileHandle.close
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3669,7 +3513,6 @@ This callable takes no arguments.
      await filehandle?.close();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandleclose>`__
 
 promises.FileHandle.createReadStream
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3708,7 +3551,6 @@ If the ``FileHandle`` points to a character device that only supports blocking r
      stream.read(0);
    }, 100);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlecreatereadstreamoptions>`__
 
 promises.FileHandle.createWriteStream
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3727,7 +3569,6 @@ If ``autoClose`` is set to true (default behavior) on ``'error'`` or ``'finish'`
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlecreatewritestreamoptions>`__
 
 promises.FileHandle.datasync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3744,7 +3585,6 @@ Unlike ``filehandle.sync`` this method does not flush modified metadata.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandledatasync>`__
 
 promises.FileHandle.pull
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3789,7 +3629,6 @@ The file handle is locked while the iterable is being consumed and unlocked when
 
    run().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlepulltransforms-options>`__
 
 promises.FileHandle.pullSync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3834,7 +3673,6 @@ The file handle is locked while the iterable is being consumed. Unlike the async
 
    run().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlepullsynctransforms-options>`__
 
 promises.FileHandle.read
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3856,7 +3694,6 @@ If the file is not modified concurrently, the end-of-file is reached when the nu
 * ``length`` (*integer*): The number of bytes to read. **Default:**
 * ``position`` (*integer|bigint|null*): The location where to begin reading data
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadbuffer-offset-length-position>`__
 
 promises.FileHandle.readableWebStream
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3892,7 +3729,6 @@ An error will be thrown if this method is called more than once or is called aft
      await file.close();
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadablewebstreamoptions>`__
 
 promises.FileHandle.readFile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3927,7 +3763,6 @@ If ``options`` is a string, then it specifies the ``encoding``.
      await file.close();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadfileoptions>`__
 
 promises.FileHandle.readLines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3958,7 +3793,6 @@ Convenience method to create a ``readline`` interface and stream over the file. 
      }
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadlinesoptions>`__
 
 promises.FileHandle.readv
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3976,7 +3810,6 @@ Read from a file and write to an array of ``ArrayBufferView``\ s
 * ``buffers`` (*Buffer\[]|TypedArray\[]|DataView\[]*)
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadvbuffers-position>`__
 
 promises.FileHandle.stat
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3991,7 +3824,6 @@ promises.FileHandle.stat
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlestatoptions>`__
 
 promises.FileHandle.sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4006,7 +3838,6 @@ Request that all data for the open file descriptor is flushed to the storage dev
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlesync>`__
 
 promises.FileHandle.truncate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4039,7 +3870,6 @@ If the file was larger than ``len`` bytes, only the first ``len`` bytes will be 
      await filehandle?.close();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandletruncatelen>`__
 
 promises.FileHandle.utimes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4057,7 +3887,6 @@ Change the file system timestamps of the object referenced by the ``FileHandle``
 * ``atime`` (*number|string|Date*)
 * ``mtime`` (*number|string|Date*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandleutimesatime-mtime>`__
 
 promises.FileHandle.write
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4079,7 +3908,6 @@ The promise is fulfilled with an object containing two properties:
 * ``length`` (*integer*) — optional: The number of bytes from ``buffer`` to write. **Default:**
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlewritebuffer-offset-length-position>`__
 
 promises.FileHandle.writeFile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4099,7 +3927,6 @@ If ``options`` is a string, then it specifies the ``encoding``.
 * ``data`` (*string|Buffer|TypedArray|DataView|AsyncIterable|Iterable*)
 * ``options`` (*Object|string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlewritefiledata-options>`__
 
 promises.FileHandle.writer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4142,7 +3969,6 @@ The writer supports both ``Symbol.asyncDispose`` and ``Symbol.dispose``:
 
    run().catch(console.error);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlewriteroptions>`__
 
 promises.FileHandle.writev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4162,7 +3988,6 @@ The promise is fulfilled with an object containing a two properties:
 * ``buffers`` (*Buffer\[]|TypedArray\[]|DataView\[]*): a reference to the ``buffers``
 * ``position`` (*integer|null*) — optional: The offset from the beginning of the file where the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlewritevbuffers-position>`__
 
 ReadStream class
 ----------------
@@ -4180,7 +4005,7 @@ ReadStream._finishRead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream._pumpRead
@@ -4194,7 +4019,7 @@ ReadStream._pumpRead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream._read
@@ -4208,7 +4033,7 @@ ReadStream._read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream.close
@@ -4228,7 +4053,6 @@ The ``callback`` will be called after the resource handle has been closed.
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#dirclosecallback>`__
 
 ReadStream.destroy
 ~~~~~~~~~~~~~~~~~~
@@ -4243,7 +4067,6 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamdestroy>`__
 
 ReadStream.on
 ~~~~~~~~~~~~~
@@ -4256,7 +4079,7 @@ ReadStream.on
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadStream.open
@@ -4278,7 +4101,6 @@ Refer to the POSIX open(2) documentation for more detail.
 * ``flags`` (*string|number*): See support of file system ``flags``.
 * ``mode`` (*string|integer*) — optional: Sets the file mode (permission and sticky bits)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#fspromisesopenpath-flags-mode>`__
 
 ReadStream.read
 ~~~~~~~~~~~~~~~
@@ -4297,7 +4119,6 @@ If the file is not modified concurrently, the end-of-file is reached when the nu
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#filehandlereadoptions>`__
 
 ReadStream.resume
 ~~~~~~~~~~~~~~~~~
@@ -4310,7 +4131,7 @@ ReadStream.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Stats class
@@ -4333,7 +4154,6 @@ Returns ``true`` if the ``fs.Stats`` object describes a block device.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsisblockdevice>`__
 
 Stats.isCharacterDevice
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -4348,7 +4168,6 @@ Returns ``true`` if the ``fs.Stats`` object describes a character device.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsischaracterdevice>`__
 
 Stats.isDirectory
 ~~~~~~~~~~~~~~~~~
@@ -4365,7 +4184,6 @@ If the ``fs.Stats`` object was obtained from calling ``fs.lstat()`` on a symboli
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsisdirectory>`__
 
 Stats.isFIFO
 ~~~~~~~~~~~~
@@ -4380,7 +4198,6 @@ Returns ``true`` if the ``fs.Stats`` object describes a first-in-first-out (FIFO
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsisfifo>`__
 
 Stats.isFile
 ~~~~~~~~~~~~
@@ -4395,7 +4212,6 @@ Returns ``true`` if the ``fs.Stats`` object describes a regular file.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsisfile>`__
 
 Stats.isSocket
 ~~~~~~~~~~~~~~
@@ -4410,7 +4226,6 @@ Returns ``true`` if the ``fs.Stats`` object describes a socket.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsissocket>`__
 
 Stats.isSymbolicLink
 ~~~~~~~~~~~~~~~~~~~~
@@ -4427,7 +4242,6 @@ This method is only valid when using ``fs.lstat()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#statsissymboliclink>`__
 
 StatWatcher class
 -----------------
@@ -4449,7 +4263,6 @@ By default, all ``fs.FSWatcher`` objects are "ref'ed", making it normally unnece
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#watcherref>`__
 
 StatWatcher.unref
 ~~~~~~~~~~~~~~~~~
@@ -4464,7 +4277,6 @@ When called, the active ``fs.FSWatcher`` object will not require the Node.js eve
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#watcherunref>`__
 
 Utf8Stream class
 ----------------
@@ -4482,7 +4294,7 @@ Utf8Stream._drain
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Utf8Stream._open
@@ -4496,7 +4308,7 @@ Utf8Stream._open
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Utf8Stream.destroy
@@ -4512,7 +4324,6 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamdestroy>`__
 
 Utf8Stream.end
 ~~~~~~~~~~~~~~
@@ -4527,7 +4338,6 @@ Close the stream gracefully, flushing the internal buffer before closing.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamend>`__
 
 Utf8Stream.flush
 ~~~~~~~~~~~~~~~~
@@ -4544,7 +4354,6 @@ Writes the current buffer to the file if a write was not in progress. Do nothing
 
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamflushcallback>`__
 
 Utf8Stream.flushSync
 ~~~~~~~~~~~~~~~~~~~~
@@ -4559,7 +4368,6 @@ Flushes the buffered data synchronously. This is a costly operation.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamflushsync>`__
 
 Utf8Stream.reopen
 ~~~~~~~~~~~~~~~~~
@@ -4576,7 +4384,6 @@ Reopen the file in place, useful for log rotation.
 
 * ``file``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamreopenfile>`__
 
 Utf8Stream.write
 ~~~~~~~~~~~~~~~~
@@ -4593,7 +4400,6 @@ When the ``options.contentMode`` is set to ``'utf8'`` when the stream is created
 
 * ``data`` (*string|Buffer*): The data to write.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamwritedata>`__
 
 WriteStream class
 -----------------
@@ -4611,7 +4417,7 @@ WriteStream._close
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WriteStream._write
@@ -4625,7 +4431,7 @@ WriteStream._write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WriteStream.close
@@ -4643,7 +4449,6 @@ Closes ``writeStream``. Optionally accepts a callback that will be executed once
 
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#writestreamclosecallback>`__
 
 WriteStream.destroy
 ~~~~~~~~~~~~~~~~~~~
@@ -4658,7 +4463,6 @@ Close the stream immediately, without flushing the internal buffer.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamdestroy>`__
 
 WriteStream.end
 ~~~~~~~~~~~~~~~
@@ -4673,7 +4477,6 @@ Close the stream gracefully, flushing the internal buffer before closing.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/fs.html#utf8streamend>`__
 
 Properties and constants
 ------------------------
@@ -4777,4 +4580,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

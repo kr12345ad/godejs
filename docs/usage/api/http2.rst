@@ -46,7 +46,6 @@ This is a class; construct instances with ``new``.
      console.log(streamId);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-clienthttp2session>`__
 
 ClientHttp2Stream
 ~~~~~~~~~~~~~~~~~
@@ -72,7 +71,6 @@ This is a class; construct instances with ``new``.
      console.log(headers[':status']);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-clienthttp2stream>`__
 
 connect
 ~~~~~~~
@@ -102,7 +100,6 @@ Returns a ``ClientHttp2Session`` instance.
 
    client.close();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2connectauthority-options-listener>`__
 
 createSecureServer
 ~~~~~~~~~~~~~~~~~~
@@ -145,7 +142,6 @@ Returns a ``tls.Server`` instance that creates and manages ``Http2Session`` inst
 
    server.listen(8443);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2createsecureserveroptions-onrequesthandler>`__
 
 createServer
 ~~~~~~~~~~~~
@@ -187,7 +183,6 @@ Since there are no browsers known that support unencrypted HTTP/2, the use of ``
 
    server.listen(8000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2createserveroptions-onrequesthandler>`__
 
 Http2Server
 ~~~~~~~~~~~
@@ -227,7 +222,6 @@ This is a class; construct instances with ``new``.
      stream.end('world');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-http2server>`__
 
 Http2ServerRequest
 ~~~~~~~~~~~~~~~~~~
@@ -253,7 +247,6 @@ This is a class; construct instances with ``new``.
    //   accept: '*/*' }
    console.log(request.headers);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-http2http2serverrequest>`__
 
 Http2ServerResponse
 ~~~~~~~~~~~~~~~~~~~
@@ -279,7 +272,6 @@ This is a class; construct instances with ``new``.
      res.end(`Your IP address is ${ip} and your source port is ${port}.`);
    }).listen(3000);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-http2http2serverresponse>`__
 
 Http2Stream
 ~~~~~~~~~~~
@@ -308,7 +300,6 @@ This is a class; construct instances with ``new``.
    // Cancel the stream if there's no activity after 5 seconds
    req.setTimeout(5000, () => req.close(NGHTTP2_CANCEL));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#class-http2stream>`__
 
 ClientHttp2Session class
 ------------------------
@@ -330,7 +321,6 @@ If specified, the ``callback`` function is registered as a handler for the ``'cl
 
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionclosecallback>`__
 
 ClientHttp2Session.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,7 +340,6 @@ Once destroyed, the ``Http2Session`` will emit the ``'close'`` event. If ``error
 * ``error`` (*Error*) — optional: An ``Error`` object if the ``Http2Session`` is being destroyed
 * ``code`` (*number*) — optional: The HTTP/2 error code to send in the final ``GOAWAY`` frame.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessiondestroyerror-code>`__
 
 ClientHttp2Session.goaway
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -369,7 +358,6 @@ Transmits a ``GOAWAY`` frame to the connected peer *without* shutting down the `
 * ``lastStreamID`` (*number*) — optional: The numeric ID of the last processed ``Http2Stream``
 * ``opaqueData`` (*Buffer|TypedArray|DataView*) — optional: A ``TypedArray`` or ``DataView``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessiongoawaycode-laststreamid-opaquedata>`__
 
 ClientHttp2Session.ping
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -400,7 +388,6 @@ The maximum number of outstanding (unacknowledged) pings is determined by the ``
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionpingpayload-callback>`__
 
 ClientHttp2Session.ref
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -415,7 +402,6 @@ Calls ``ref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionref>`__
 
 ClientHttp2Session.request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -453,7 +439,6 @@ When a ``ClientHttp2Session`` is first created, the socket may not yet be connec
      req.on('end', () => { /* .. */ });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#clienthttp2sessionrequestheaders-options>`__
 
 ClientHttp2Session.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -471,7 +456,6 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettimeoutmsecs-callback>`__
 
 ClientHttp2Session.settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -491,7 +475,6 @@ Once called, the ``http2session.pendingSettingsAck`` property will be ``true`` w
 * ``settings`` (*HTTP/2 Settings Object*) — optional
 * ``callback`` (*Function*) — optional: Callback that is called once the session is connected or
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettingssettings-callback>`__
 
 ClientHttp2Session.unref
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -506,7 +489,6 @@ Calls ``unref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionunref>`__
 
 ClientHttp2Stream class
 -----------------------
@@ -529,7 +511,6 @@ Closes the ``Http2Stream`` instance by sending an ``RST_STREAM`` frame to the co
 * ``code`` (*number*): Unsigned 32-bit integer identifying the error code.
 * ``callback`` (*Function*) — optional: An optional function registered to listen for the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamclosecode-callback>`__
 
 ClientHttp2Stream.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -548,7 +529,6 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#requestdestroyerror>`__
 
 ClientHttp2Stream.end
 ~~~~~~~~~~~~~~~~~~~~~
@@ -569,7 +549,6 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseenddata-encoding-callback>`__
 
 ClientHttp2Stream.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -582,7 +561,7 @@ ClientHttp2Stream.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientHttp2Stream.pause
@@ -596,7 +575,7 @@ ClientHttp2Stream.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientHttp2Stream.priority
@@ -614,7 +593,6 @@ Empty method, only there to maintain some backward compatibility.
 
 * ``options``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streampriorityoptions>`__
 
 ClientHttp2Stream.resume
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -627,7 +605,7 @@ ClientHttp2Stream.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientHttp2Stream.setEncoding
@@ -641,7 +619,7 @@ ClientHttp2Stream.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ClientHttp2Stream.setTimeout
@@ -660,7 +638,6 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettimeoutmsecs-callback>`__
 
 ClientHttp2Stream.write
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -681,7 +658,6 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsewritechunk-encoding-callback>`__
 
 Http2Server class
 -----------------
@@ -699,7 +675,7 @@ Http2Server.address
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Server.close
@@ -719,7 +695,6 @@ If specified, the ``callback`` function is registered as a handler for the ``'cl
 
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionclosecallback>`__
 
 Http2Server.getConnections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -732,7 +707,7 @@ Http2Server.getConnections
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Server.listen
@@ -746,7 +721,7 @@ Http2Server.listen
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Server.ref
@@ -762,7 +737,6 @@ Calls ``ref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionref>`__
 
 Http2Server.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -780,7 +754,6 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettimeoutmsecs-callback>`__
 
 Http2Server.unref
 ~~~~~~~~~~~~~~~~~
@@ -795,7 +768,6 @@ Calls ``unref()`` on this ``Http2Session`` instance's underlying ``net.Socket``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionunref>`__
 
 Http2ServerRequest class
 ------------------------
@@ -813,7 +785,7 @@ Http2ServerRequest._emitBody
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.destroy
@@ -833,7 +805,6 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#requestdestroyerror>`__
 
 Http2ServerRequest.isPaused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -846,7 +817,7 @@ Http2ServerRequest.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.pause
@@ -860,7 +831,7 @@ Http2ServerRequest.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.read
@@ -874,7 +845,7 @@ Http2ServerRequest.read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.resume
@@ -888,7 +859,7 @@ Http2ServerRequest.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.setEncoding
@@ -902,7 +873,7 @@ Http2ServerRequest.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerRequest.setTimeout
@@ -921,7 +892,6 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettimeoutmsecs-callback>`__
 
 Http2ServerResponse class
 -------------------------
@@ -939,7 +909,7 @@ Http2ServerResponse._emitTrailers
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerResponse._headersObject
@@ -953,7 +923,7 @@ Http2ServerResponse._headersObject
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerResponse._sendHead
@@ -967,7 +937,7 @@ Http2ServerResponse._sendHead
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerResponse.addTrailers
@@ -987,7 +957,6 @@ Attempting to set a header field name or value that contains invalid characters 
 
 * ``headers`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseaddtrailersheaders>`__
 
 Http2ServerResponse.appendHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1019,7 +988,6 @@ If the value is an array, this is equivalent to calling this method multiple tim
      res.end('ok');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseappendheadername-value>`__
 
 Http2ServerResponse.destroy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1038,7 +1006,6 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#requestdestroyerror>`__
 
 Http2ServerResponse.end
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1059,7 +1026,6 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseenddata-encoding-callback>`__
 
 Http2ServerResponse.flushHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1072,7 +1038,7 @@ Http2ServerResponse.flushHeaders
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2ServerResponse.getHeader
@@ -1096,7 +1062,6 @@ Reads out a header that has already been queued but not sent to the client. The 
 
    const contentType = response.getHeader('content-type');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsegetheadername>`__
 
 Http2ServerResponse.getHeaderNames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1121,7 +1086,6 @@ This callable takes no arguments.
    const headerNames = response.getHeaderNames();
    // headerNames === ['foo', 'set-cookie']
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsegetheadernames>`__
 
 Http2ServerResponse.getHeaders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1148,7 +1112,6 @@ This callable takes no arguments.
    const headers = response.getHeaders();
    // headers === { foo: 'bar', 'set-cookie': ['foo=bar', 'bar=baz'] }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsegetheaders>`__
 
 Http2ServerResponse.hasHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1171,7 +1134,6 @@ Returns ``true`` if the header identified by ``name`` is currently set in the ou
 
    const hasContentType = response.hasHeader('content-type');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsehasheadername>`__
 
 Http2ServerResponse.removeHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1194,7 +1156,6 @@ Removes a header that has been queued for implicit sending.
 
    response.removeHeader('Content-Encoding');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseremoveheadername>`__
 
 Http2ServerResponse.setHeader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1220,7 +1181,6 @@ or
 
    response.setHeader('Content-Type', 'text/html; charset=utf-8');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsesetheadername-value>`__
 
 Http2ServerResponse.setTimeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1238,7 +1198,6 @@ Used to set a callback function that is called when there is no activity on the 
 * ``msecs`` (*number*)
 * ``callback`` (*Function*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2sessionsettimeoutmsecs-callback>`__
 
 Http2ServerResponse.write
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1259,7 +1218,6 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsewritechunk-encoding-callback>`__
 
 Http2ServerResponse.writeContinue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1274,7 +1232,6 @@ Sends a status ``100 Continue`` to the client, indicating that the request body 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsewritecontinue>`__
 
 Http2ServerResponse.writeHead
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1305,7 +1262,6 @@ Returns a reference to the ``Http2ServerResponse``, so that calls can be chained
      'Content-Type': 'text/plain; charset=utf-8',
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsewriteheadstatuscode-statusmessage-headers>`__
 
 Http2ServerResponse.writeProcessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1318,7 +1274,7 @@ Http2ServerResponse.writeProcessing
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream class
@@ -1343,7 +1299,6 @@ Sends an additional informational ``HEADERS`` frame to the connected HTTP/2 peer
 
 * ``headers`` (*HTTP/2 Headers Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamadditionalheadersheaders>`__
 
 Http2Stream.addTrailers
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1362,7 +1317,6 @@ Attempting to set a header field name or value that contains invalid characters 
 
 * ``headers`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseaddtrailersheaders>`__
 
 Http2Stream.close
 ~~~~~~~~~~~~~~~~~
@@ -1380,7 +1334,6 @@ Closes the ``Http2Stream`` instance by sending an ``RST_STREAM`` frame to the co
 * ``code`` (*number*): Unsigned 32-bit integer identifying the error code.
 * ``callback`` (*Function*) — optional: An optional function registered to listen for the
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamclosecode-callback>`__
 
 Http2Stream.destroy
 ~~~~~~~~~~~~~~~~~~~
@@ -1399,7 +1352,6 @@ It does nothing if the stream was already destroyed.
 
 * ``error`` (*Error*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#requestdestroyerror>`__
 
 Http2Stream.end
 ~~~~~~~~~~~~~~~
@@ -1420,7 +1372,6 @@ If ``data`` is specified, it is equivalent to calling ``response.write(data, enc
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responseenddata-encoding-callback>`__
 
 Http2Stream.isPaused
 ~~~~~~~~~~~~~~~~~~~~
@@ -1433,7 +1384,7 @@ Http2Stream.isPaused
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream.pause
@@ -1447,7 +1398,7 @@ Http2Stream.pause
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream.pushStream
@@ -1485,7 +1436,6 @@ Setting the weight of a push stream is not allowed in the ``HEADERS`` frame. Pas
      stream.end('some data');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streampushstreamheaders-options-callback>`__
 
 Http2Stream.read
 ~~~~~~~~~~~~~~~~
@@ -1498,7 +1448,7 @@ Http2Stream.read
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream.respond
@@ -1530,7 +1480,6 @@ When ``options.waitForTrailers`` is set, the ``Http2Stream`` will not automatica
      stream.end('some data');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamrespondheaders-options>`__
 
 Http2Stream.respondWithFD
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1572,7 +1521,6 @@ When used, the ``Http2Stream`` object's ``Duplex`` interface will be closed auto
      stream.on('close', () => fs.closeSync(fd));
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamrespondwithfdfd-headers-options>`__
 
 Http2Stream.respondWithFile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1625,7 +1573,6 @@ When used, the ``Http2Stream`` object's ``Duplex`` interface will be closed auto
                             { statCheck, onError });
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamrespondwithfilepath-headers-options>`__
 
 Http2Stream.resume
 ~~~~~~~~~~~~~~~~~~
@@ -1638,7 +1585,7 @@ Http2Stream.resume
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream.setEncoding
@@ -1652,7 +1599,7 @@ Http2Stream.setEncoding
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Http2Stream.setTimeout
@@ -1681,7 +1628,6 @@ Http2Stream.setTimeout
    // Cancel the stream if there's no activity after 5 seconds
    req.setTimeout(5000, () => req.close(NGHTTP2_CANCEL));
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#http2streamsettimeoutmsecs-callback>`__
 
 Http2Stream.write
 ~~~~~~~~~~~~~~~~~
@@ -1702,7 +1648,6 @@ This sends a chunk of the response body. This method may be called multiple time
 * ``encoding`` (*string*) — optional
 * ``callback`` (*Function*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/http2.html#responsewritechunk-encoding-callback>`__
 
 Properties and constants
 ------------------------
@@ -1733,4 +1678,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

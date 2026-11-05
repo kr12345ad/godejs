@@ -35,7 +35,6 @@ StringDecoder
 
 This is a class; construct instances with ``new``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/string_decoder.html#class-stringdecoder>`__
 
 StringDecoder class
 -------------------
@@ -57,7 +56,6 @@ If the ``buffer`` argument is provided, one final call to ``stringDecoder.write(
 
 * ``buffer`` (*string|Buffer|TypedArray|DataView*) — optional: The bytes to decode.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/string_decoder.html#stringdecoderendbuffer>`__
 
 StringDecoder.text
 ~~~~~~~~~~~~~~~~~~
@@ -70,7 +68,7 @@ StringDecoder.text
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 StringDecoder.write
@@ -88,8 +86,7 @@ Returns a decoded string, ensuring that any incomplete multibyte characters at t
 
 * ``buffer`` (*string|Buffer|TypedArray|DataView*): The bytes to decode.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/string_decoder.html#stringdecoderwritebuffer>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

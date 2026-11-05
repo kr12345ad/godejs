@@ -33,7 +33,7 @@ __rawStack
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _exceptionWithHostPort
@@ -47,7 +47,7 @@ _exceptionWithHostPort
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 _extend
@@ -65,7 +65,6 @@ The ``util._extend()`` API is deprecated because it's an unmaintained legacy API
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0060-util_extend>`__
 
 aborted
 ~~~~~~~
@@ -105,7 +104,6 @@ Listens to abort event on the provided ``signal`` and returns a promise that res
      dependent.abort(); // This will cause the `aborted` promise to resolve.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilabortedsignal-resource>`__
 
 callbackify
 ~~~~~~~~~~~
@@ -140,7 +138,6 @@ Will print:
      console.log(ret);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilcallbackifyoriginal>`__
 
 convertProcessSignalToExitCode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,7 +165,6 @@ If ``signal`` is not a valid signal name, then an error will be thrown. See ``si
    console.log(convertProcessSignalToExitCode('SIGTERM')); // 143 (128 + 15)
    console.log(convertProcessSignalToExitCode('SIGKILL')); // 137 (128 + 9)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilconvertprocesssignaltoexitcodesignal>`__
 
 debounce
 ~~~~~~~~
@@ -207,7 +203,6 @@ When the debounced function is called more than once before the delay expires, `
    // Start the initial inactivity timeout.
    onInactivity();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utildebouncefn-wait-options>`__
 
 debug
 ~~~~~
@@ -224,7 +219,6 @@ Type: End-of-Life
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0028-utildebug>`__
 
 debuglog
 ~~~~~~~~
@@ -253,7 +247,6 @@ If this program is run with ``NODE_DEBUG=foo`` in the environment, then it will 
 
    log('hello from foo [%d]', 123);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utildebuglogsection-callback>`__
 
 deprecate
 ~~~~~~~~~
@@ -285,7 +278,6 @@ When called, ``util.deprecate()`` will return a function that will emit a ``Depr
      // Do something here.
    }, 'obsoleteFunction() is deprecated. Use newShinyFunction() instead.');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utildeprecatefn-msg-code-options>`__
 
 diff
 ~~~~
@@ -343,7 +335,6 @@ If the values are equal, an empty array is returned.
    console.log(diff('same', 'same'));
    // []
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utildiffactual-expected>`__
 
 format
 ~~~~~~
@@ -370,7 +361,6 @@ The ``util.format()`` method returns a formatted string using the first argument
    util.format('%s:%s', 'foo');
    // Returns: 'foo:%s'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilformatformat-args>`__
 
 formatWithOptions
 ~~~~~~~~~~~~~~~~~
@@ -397,7 +387,6 @@ This function is identical to ``util.format()``, except in that it takes an ``in
    // Returns 'See object { foo: 42 }', where `42` is colored as a number
    // when printed to a terminal.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilformatwithoptionsinspectoptions-format-args>`__
 
 getCallSites
 ~~~~~~~~~~~~
@@ -456,7 +445,6 @@ Unlike accessing an ``error.stack``, the result returned from this API is not in
 
    anotherFunction();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilgetcallsitesframecount-options>`__
 
 getSystemErrorMap
 ~~~~~~~~~~~~~~~~~
@@ -481,7 +469,6 @@ This callable takes no arguments.
      console.error(name);  // ENOENT
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilgetsystemerrormap>`__
 
 getSystemErrorMessage
 ~~~~~~~~~~~~~~~~~~~~~
@@ -507,7 +494,6 @@ Returns the string message for a numeric error code that comes from a Node.js AP
      console.error(message);  // No such file or directory
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilgetsystemerrormessageerr>`__
 
 getSystemErrorName
 ~~~~~~~~~~~~~~~~~~
@@ -533,7 +519,6 @@ Returns the string name for a numeric error code that comes from a Node.js API. 
      console.error(name);  // ENOENT
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilgetsystemerrornameerr>`__
 
 inherits
 ~~~~~~~~
@@ -572,7 +557,6 @@ Inherit the prototype methods from one constructor into another. The prototype o
    });
    stream.write('With ES6');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilinheritsconstructor-superconstructor>`__
 
 inspect
 ~~~~~~~
@@ -588,7 +572,6 @@ inspect
 * ``object``
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilinspectobject-options>`__
 
 isArray
 ~~~~~~~
@@ -605,7 +588,6 @@ The ``util.isArray()`` API is deprecated. Please use ``Array.isArray()`` instead
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0044-utilisarray>`__
 
 isBoolean
 ~~~~~~~~~
@@ -622,7 +604,6 @@ The ``util.isBoolean()`` API has been removed. Please use ``typeof arg === 'bool
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0045-utilisboolean>`__
 
 isBuffer
 ~~~~~~~~
@@ -639,7 +620,6 @@ The ``util.isBuffer()`` API has been removed. Please use ``Buffer.isBuffer()`` i
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0046-utilisbuffer>`__
 
 isDate
 ~~~~~~
@@ -656,7 +636,6 @@ The ``util.isDate()`` API has been removed. Please use ``arg instanceof Date`` i
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0047-utilisdate>`__
 
 isDeepStrictEqual
 ~~~~~~~~~~~~~~~~~
@@ -705,7 +684,6 @@ By default, deep strict equality includes comparison of object prototypes and co
    console.log(util.isDeepStrictEqual(foo, bar, true));
    // true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilisdeepstrictequalval1-val2-options>`__
 
 isError
 ~~~~~~~
@@ -722,7 +700,6 @@ The ``util.isError()`` API has been removed. Please use ``Error.isError(arg)``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0048-utiliserror>`__
 
 isFunction
 ~~~~~~~~~~
@@ -739,7 +716,6 @@ The ``util.isFunction()`` API has been removed. Please use ``typeof arg === 'fun
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0049-utilisfunction>`__
 
 isNull
 ~~~~~~
@@ -756,7 +732,6 @@ The ``util.isNull()`` API has been removed. Please use ``arg === null`` instead.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0050-utilisnull>`__
 
 isNullOrUndefined
 ~~~~~~~~~~~~~~~~~
@@ -773,7 +748,6 @@ The ``util.isNullOrUndefined()`` API has been removed. Please use ``arg === null
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0051-utilisnullorundefined>`__
 
 isNumber
 ~~~~~~~~
@@ -790,7 +764,6 @@ The ``util.isNumber()`` API has been removed. Please use ``typeof arg === 'numbe
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0052-utilisnumber>`__
 
 isObject
 ~~~~~~~~
@@ -807,7 +780,6 @@ The ``util.isObject()`` API has been removed. Please use ``arg && typeof arg ===
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0053-utilisobject>`__
 
 isPrimitive
 ~~~~~~~~~~~
@@ -824,7 +796,6 @@ The ``util.isPrimitive()`` API has been removed. Please use ``Object(arg) !== ar
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0054-utilisprimitive>`__
 
 isRegExp
 ~~~~~~~~
@@ -841,7 +812,6 @@ The ``util.isRegExp()`` API has been removed. Please use ``arg instanceof RegExp
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0055-utilisregexp>`__
 
 isString
 ~~~~~~~~
@@ -858,7 +828,6 @@ The ``util.isString()`` API has been removed. Please use ``typeof arg === 'strin
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0056-utilisstring>`__
 
 isSymbol
 ~~~~~~~~
@@ -875,7 +844,6 @@ The ``util.isSymbol()`` API has been removed. Please use ``typeof arg === 'symbo
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0057-utilissymbol>`__
 
 isUndefined
 ~~~~~~~~~~~
@@ -892,7 +860,6 @@ The ``util.isUndefined()`` API has been removed. Please use ``arg === undefined`
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0058-utilisundefined>`__
 
 markPromiseAsHandled
 ~~~~~~~~~~~~~~~~~~~~
@@ -909,7 +876,6 @@ Marks a promise as handled so that unhandled rejections are ignored and are not 
 
 * ``promise`` (*Promise*): The promise to mark as handled
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilmarkpromiseashandledpromise>`__
 
 MIMEParams
 ~~~~~~~~~~
@@ -932,7 +898,6 @@ This is a class; construct instances with ``new``.
 
    const myParams = new MIMEParams();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#class-utilmimeparams>`__
 
 MIMEType
 ~~~~~~~~
@@ -957,7 +922,6 @@ This is a class; construct instances with ``new``.
 
    const myMIME = new MIMEType('text/plain');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#class-utilmimetype>`__
 
 parseArgs
 ~~~~~~~~~
@@ -996,7 +960,6 @@ Provides a higher level API for command-line argument parsing than interacting w
    console.log(values, positionals);
    // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilparseargsconfig>`__
 
 parseEnv
 ~~~~~~~~
@@ -1024,7 +987,6 @@ The raw contents of a ``.env`` file.
    parseEnv('HELLO=world\nHELLO=oh my\n');
    // Returns: { HELLO: 'oh my' }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilparseenvcontent>`__
 
 promisify
 ~~~~~~~~~
@@ -1057,7 +1019,6 @@ Or, equivalently using ``async function``\ s:
      // Handle the error.
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilpromisifyoriginal>`__
 
 setTraceSigInt
 ~~~~~~~~~~~~~~
@@ -1074,7 +1035,6 @@ Enable or disable printing a stack trace on ``SIGINT``. The API is only availabl
 
 * ``enable`` (*boolean*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilsettracesigintenable>`__
 
 sleep
 ~~~~~
@@ -1087,7 +1047,7 @@ sleep
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 stripVTControlCharacters
@@ -1112,7 +1072,6 @@ Returns ``str`` with any ANSI escape codes removed.
    console.log(util.stripVTControlCharacters('\u001B[4mvalue\u001B[0m'));
    // Prints "value"
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilstripvtcontrolcharactersstr>`__
 
 styleText
 ~~~~~~~~~
@@ -1151,7 +1110,6 @@ This function returns a formatted text considering the ``format`` passed for pri
    );
    console.error(errorMessage);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilstyletextformat-text-options>`__
 
 TextDecoder
 ~~~~~~~~~~~
@@ -1174,7 +1132,6 @@ This is a class; construct instances with ``new``.
    const u8arr = new Uint8Array([72, 101, 108, 108, 111]);
    console.log(decoder.decode(u8arr)); // Hello
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#class-utiltextdecoder>`__
 
 TextEncoder
 ~~~~~~~~~~~
@@ -1198,7 +1155,6 @@ This is a class; construct instances with ``new``.
    const encoder = new TextEncoder();
    const uint8array = encoder.encode('this is some data');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#class-utiltextencoder>`__
 
 throttle
 ~~~~~~~~
@@ -1240,7 +1196,6 @@ An invocation starts only when both rate and concurrency capacity are available.
      request(4),
    ]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utilthrottlefn-limit-interval-options>`__
 
 toUSVString
 ~~~~~~~~~~~
@@ -1257,7 +1212,6 @@ The ``util.toUSVString()`` API is deprecated. Please use ``String.prototype.toWe
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0175-utiltousvstring>`__
 
 transferableAbortController
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1272,7 +1226,6 @@ Creates and returns an ``AbortController`` instance whose ``AbortSignal`` is mar
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltransferableabortcontroller>`__
 
 transferableAbortSignal
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1297,7 +1250,6 @@ Marks the given ``AbortSignal`` as transferable so that it can be used with ``st
    const channel = new MessageChannel();
    channel.port2.postMessage(signal, [signal]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltransferableabortsignalsignal>`__
 
 MIMEParams class
 ----------------
@@ -1319,7 +1271,6 @@ Remove all name-value pairs whose name is ``name``.
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamsdeletename>`__
 
 MIMEParams.entries
 ~~~~~~~~~~~~~~~~~~
@@ -1334,7 +1285,6 @@ Returns an iterator over each of the name-value pairs in the parameters. Each it
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamsentries>`__
 
 MIMEParams.get
 ~~~~~~~~~~~~~~
@@ -1351,7 +1301,6 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamsgetname>`__
 
 MIMEParams.has
 ~~~~~~~~~~~~~~
@@ -1368,7 +1317,6 @@ Returns ``true`` if there is at least one name-value pair whose name is ``name``
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamshasname>`__
 
 MIMEParams.keys
 ~~~~~~~~~~~~~~~
@@ -1397,7 +1345,6 @@ This callable takes no arguments.
    //   foo
    //   bar
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamskeys>`__
 
 MIMEParams.set
 ~~~~~~~~~~~~~~
@@ -1427,7 +1374,6 @@ Sets the value in the ``MIMEParams`` object associated with ``name`` to ``value`
    console.log(params.toString());
    // Prints: foo=def;bar=1;baz=xyz
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamssetname-value>`__
 
 MIMEParams.toJSON
 ~~~~~~~~~~~~~~~~~
@@ -1457,7 +1403,6 @@ This callable takes no arguments.
    console.log(JSON.stringify(myMIMES));
    // Prints: ["image/png", "image/gif"]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimetojson>`__
 
 MIMEParams.toString
 ~~~~~~~~~~~~~~~~~~~
@@ -1474,7 +1419,6 @@ Because of the need for standard compliance, this method does not allow users to
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimetostring>`__
 
 MIMEParams.values
 ~~~~~~~~~~~~~~~~~
@@ -1489,7 +1433,6 @@ Returns an iterator over the values of each name-value pair.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimeparamsvalues>`__
 
 MIMEType class
 --------------
@@ -1526,7 +1469,6 @@ This callable takes no arguments.
    console.log(JSON.stringify(myMIMES));
    // Prints: ["image/png", "image/gif"]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimetojson>`__
 
 MIMEType.toString
 ~~~~~~~~~~~~~~~~~
@@ -1543,7 +1485,6 @@ Because of the need for standard compliance, this method does not allow users to
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#mimetostring>`__
 
 TextDecoder class
 -----------------
@@ -1568,7 +1509,6 @@ If ``textDecoder.fatal`` is ``true``, decoding errors that occur will result in 
 * ``input`` (*ArrayBuffer|DataView|TypedArray*) — optional: An ``ArrayBuffer``, ``DataView``, or
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textdecoderdecodeinput-options>`__
 
 TextEncoder class
 -----------------
@@ -1592,7 +1532,6 @@ UTF-8 encodes the ``input`` string and returns a ``Uint8Array`` containing the e
 
 * ``input`` (*string*) — optional: The text to encode. **Default:** an empty string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textencoderencodeinput>`__
 
 TextEncoder.encodeInto
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1619,7 +1558,6 @@ UTF-8 encodes the ``src`` string to the ``dest`` Uint8Array and returns an objec
    const dest = new Uint8Array(10);
    const { read, written } = encoder.encodeInto(src, dest);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textencoderencodeintosrc-dest>`__
 
 types
 -----
@@ -1652,7 +1590,6 @@ See also ``util.types.isArrayBuffer()`` and ``util.types.isSharedArrayBuffer()``
    util.types.isAnyArrayBuffer(new ArrayBuffer());  // Returns true
    util.types.isAnyArrayBuffer(new SharedArrayBuffer());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisanyarraybuffervalue>`__
 
 types.isArgumentsObject
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1677,7 +1614,6 @@ Returns ``true`` if the value is an ``arguments`` object.
      util.types.isArgumentsObject(arguments);  // Returns true
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisargumentsobjectvalue>`__
 
 types.isArrayBuffer
 ~~~~~~~~~~~~~~~~~~~
@@ -1701,7 +1637,6 @@ Returns ``true`` if the value is a built-in ``ArrayBuffer`` instance. This does 
    util.types.isArrayBuffer(new ArrayBuffer());  // Returns true
    util.types.isArrayBuffer(new SharedArrayBuffer());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisarraybuffervalue>`__
 
 types.isArrayBufferView
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1727,7 +1662,6 @@ Returns ``true`` if the value is an instance of one of the ``ArrayBuffer`` views
    util.types.isArrayBufferView(new DataView(new ArrayBuffer(16)));  // true
    util.types.isArrayBufferView(new ArrayBuffer());  // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisarraybufferviewvalue>`__
 
 types.isAsyncFunction
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1751,7 +1685,6 @@ Returns ``true`` if the value is an async function. This only reports back what 
    util.types.isAsyncFunction(function foo() {});  // Returns false
    util.types.isAsyncFunction(async function foo() {});  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisasyncfunctionvalue>`__
 
 types.isBigInt64Array
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1775,7 +1708,6 @@ Returns ``true`` if the value is a ``BigInt64Array`` instance.
    util.types.isBigInt64Array(new BigInt64Array());   // Returns true
    util.types.isBigInt64Array(new BigUint64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisbigint64arrayvalue>`__
 
 types.isBigIntObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -1800,7 +1732,6 @@ Returns ``true`` if the value is a BigInt object, e.g. created by ``Object(BigIn
    util.types.isBigIntObject(BigInt(123));   // Returns false
    util.types.isBigIntObject(123);  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisbigintobjectvalue>`__
 
 types.isBigUint64Array
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1824,7 +1755,6 @@ Returns ``true`` if the value is a ``BigUint64Array`` instance.
    util.types.isBigUint64Array(new BigInt64Array());   // Returns false
    util.types.isBigUint64Array(new BigUint64Array());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisbiguint64arrayvalue>`__
 
 types.isBooleanObject
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1852,7 +1782,6 @@ Returns ``true`` if the value is a boolean object, e.g. created by ``new Boolean
    util.types.isBooleanObject(Boolean(false)); // Returns false
    util.types.isBooleanObject(Boolean(true));  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisbooleanobjectvalue>`__
 
 types.isBoxedPrimitive
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1881,7 +1810,6 @@ For example:
    util.types.isBoxedPrimitive(Object(Symbol('foo'))); // Returns true
    util.types.isBoxedPrimitive(Object(BigInt(5))); // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisboxedprimitivevalue>`__
 
 types.isCryptoKey
 ~~~~~~~~~~~~~~~~~
@@ -1898,7 +1826,6 @@ Returns ``true`` if ``value`` is a ``CryptoKey``, ``false`` otherwise.
 
 * ``value`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesiscryptokeyvalue>`__
 
 types.isDataView
 ~~~~~~~~~~~~~~~~
@@ -1925,7 +1852,6 @@ See also ``ArrayBuffer.isView()``.
    util.types.isDataView(new DataView(ab));  // Returns true
    util.types.isDataView(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisdataviewvalue>`__
 
 types.isDate
 ~~~~~~~~~~~~
@@ -1948,7 +1874,6 @@ Returns ``true`` if the value is a built-in ``Date`` instance.
 
    util.types.isDate(new Date());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisdatevalue>`__
 
 types.isExternal
 ~~~~~~~~~~~~~~~~
@@ -1979,7 +1904,6 @@ A native ``External`` value is a special type of object that contains a raw C++ 
    types.isExternal(0); // returns false
    types.isExternal(new String('foo')); // returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisexternalvalue>`__
 
 types.isFloat16Array
 ~~~~~~~~~~~~~~~~~~~~
@@ -2004,7 +1928,6 @@ Returns ``true`` if the value is a built-in ``Float16Array`` instance.
    util.types.isFloat16Array(new Float16Array());  // Returns true
    util.types.isFloat16Array(new Float32Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisfloat16arrayvalue>`__
 
 types.isFloat32Array
 ~~~~~~~~~~~~~~~~~~~~
@@ -2029,7 +1952,6 @@ Returns ``true`` if the value is a built-in ``Float32Array`` instance.
    util.types.isFloat32Array(new Float32Array());  // Returns true
    util.types.isFloat32Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisfloat32arrayvalue>`__
 
 types.isFloat64Array
 ~~~~~~~~~~~~~~~~~~~~
@@ -2054,7 +1976,6 @@ Returns ``true`` if the value is a built-in ``Float64Array`` instance.
    util.types.isFloat64Array(new Uint8Array());  // Returns false
    util.types.isFloat64Array(new Float64Array());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisfloat64arrayvalue>`__
 
 types.isGeneratorFunction
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2078,7 +1999,6 @@ Returns ``true`` if the value is a generator function. This only reports back wh
    util.types.isGeneratorFunction(function foo() {});  // Returns false
    util.types.isGeneratorFunction(function* foo() {});  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisgeneratorfunctionvalue>`__
 
 types.isGeneratorObject
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2103,7 +2023,6 @@ Returns ``true`` if the value is a generator object as returned from a built-in 
    const generator = foo();
    util.types.isGeneratorObject(generator);  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisgeneratorobjectvalue>`__
 
 types.isInt16Array
 ~~~~~~~~~~~~~~~~~~
@@ -2128,7 +2047,6 @@ Returns ``true`` if the value is a built-in ``Int16Array`` instance.
    util.types.isInt16Array(new Int16Array());  // Returns true
    util.types.isInt16Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisint16arrayvalue>`__
 
 types.isInt32Array
 ~~~~~~~~~~~~~~~~~~
@@ -2153,7 +2071,6 @@ Returns ``true`` if the value is a built-in ``Int32Array`` instance.
    util.types.isInt32Array(new Int32Array());  // Returns true
    util.types.isInt32Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisint32arrayvalue>`__
 
 types.isInt8Array
 ~~~~~~~~~~~~~~~~~
@@ -2178,7 +2095,6 @@ Returns ``true`` if the value is a built-in ``Int8Array`` instance.
    util.types.isInt8Array(new Int8Array());  // Returns true
    util.types.isInt8Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisint8arrayvalue>`__
 
 types.isKeyObject
 ~~~~~~~~~~~~~~~~~
@@ -2195,7 +2111,6 @@ Returns ``true`` if ``value`` is a ``KeyObject``, ``false`` otherwise.
 
 * ``value`` (*Object*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesiskeyobjectvalue>`__
 
 types.isMap
 ~~~~~~~~~~~
@@ -2218,7 +2133,6 @@ Returns ``true`` if the value is a built-in ``Map`` instance.
 
    util.types.isMap(new Map());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesismapvalue>`__
 
 types.isMapIterator
 ~~~~~~~~~~~~~~~~~~~
@@ -2245,7 +2159,6 @@ Returns ``true`` if the value is an iterator returned for a built-in ``Map`` ins
    util.types.isMapIterator(map.entries());  // Returns true
    util.types.isMapIterator(map[Symbol.iterator]());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesismapiteratorvalue>`__
 
 types.isModuleNamespaceObject
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2270,7 +2183,6 @@ Returns ``true`` if the value is an instance of a Module Namespace Object.
 
    util.types.isModuleNamespaceObject(ns);  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesismodulenamespaceobjectvalue>`__
 
 types.isNativeError
 ~~~~~~~~~~~~~~~~~~~
@@ -2287,7 +2199,6 @@ The ``util.types.isNativeError`` API is deprecated. Please use ``Error.isError``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0197-utiltypesisnativeerror>`__
 
 types.isNumberObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -2311,7 +2222,6 @@ Returns ``true`` if the value is a number object, e.g. created by ``new Number()
    util.types.isNumberObject(0);  // Returns false
    util.types.isNumberObject(new Number(0));   // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisnumberobjectvalue>`__
 
 types.isPromise
 ~~~~~~~~~~~~~~~
@@ -2334,7 +2244,6 @@ Returns ``true`` if the value is a built-in ``Promise``.
 
    util.types.isPromise(Promise.resolve(42));  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesispromisevalue>`__
 
 types.isProxy
 ~~~~~~~~~~~~~
@@ -2360,7 +2269,6 @@ Returns ``true`` if the value is a ``Proxy`` instance.
    util.types.isProxy(target);  // Returns false
    util.types.isProxy(proxy);  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisproxyvalue>`__
 
 types.isRegExp
 ~~~~~~~~~~~~~~
@@ -2384,7 +2292,6 @@ Returns ``true`` if the value is a regular expression object.
    util.types.isRegExp(/abc/);  // Returns true
    util.types.isRegExp(new RegExp('abc'));  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisregexpvalue>`__
 
 types.isSet
 ~~~~~~~~~~~
@@ -2407,7 +2314,6 @@ Returns ``true`` if the value is a built-in ``Set`` instance.
 
    util.types.isSet(new Set());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesissetvalue>`__
 
 types.isSetIterator
 ~~~~~~~~~~~~~~~~~~~
@@ -2434,7 +2340,6 @@ Returns ``true`` if the value is an iterator returned for a built-in ``Set`` ins
    util.types.isSetIterator(set.entries());  // Returns true
    util.types.isSetIterator(set[Symbol.iterator]());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesissetiteratorvalue>`__
 
 types.isSharedArrayBuffer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2458,7 +2363,6 @@ Returns ``true`` if the value is a built-in ``SharedArrayBuffer`` instance. This
    util.types.isSharedArrayBuffer(new ArrayBuffer());  // Returns false
    util.types.isSharedArrayBuffer(new SharedArrayBuffer());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesissharedarraybuffervalue>`__
 
 types.isStringObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -2482,7 +2386,6 @@ Returns ``true`` if the value is a string object, e.g. created by ``new String()
    util.types.isStringObject('foo');  // Returns false
    util.types.isStringObject(new String('foo'));   // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisstringobjectvalue>`__
 
 types.isSymbolObject
 ~~~~~~~~~~~~~~~~~~~~
@@ -2507,7 +2410,6 @@ Returns ``true`` if the value is a symbol object, created by calling ``Object()`
    util.types.isSymbolObject(symbol);  // Returns false
    util.types.isSymbolObject(Object(symbol));   // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesissymbolobjectvalue>`__
 
 types.isTypedArray
 ~~~~~~~~~~~~~~~~~~
@@ -2534,7 +2436,6 @@ See also ``ArrayBuffer.isView()``.
    util.types.isTypedArray(new Uint8Array());  // Returns true
    util.types.isTypedArray(new Float64Array());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesistypedarrayvalue>`__
 
 types.isUint16Array
 ~~~~~~~~~~~~~~~~~~~
@@ -2559,7 +2460,6 @@ Returns ``true`` if the value is a built-in ``Uint16Array`` instance.
    util.types.isUint16Array(new Uint16Array());  // Returns true
    util.types.isUint16Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisuint16arrayvalue>`__
 
 types.isUint32Array
 ~~~~~~~~~~~~~~~~~~~
@@ -2584,7 +2484,6 @@ Returns ``true`` if the value is a built-in ``Uint32Array`` instance.
    util.types.isUint32Array(new Uint32Array());  // Returns true
    util.types.isUint32Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisuint32arrayvalue>`__
 
 types.isUint8Array
 ~~~~~~~~~~~~~~~~~~
@@ -2609,7 +2508,6 @@ Returns ``true`` if the value is a built-in ``Uint8Array`` instance.
    util.types.isUint8Array(new Uint8Array());  // Returns true
    util.types.isUint8Array(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisuint8arrayvalue>`__
 
 types.isUint8ClampedArray
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2634,7 +2532,6 @@ Returns ``true`` if the value is a built-in ``Uint8ClampedArray`` instance.
    util.types.isUint8ClampedArray(new Uint8ClampedArray());  // Returns true
    util.types.isUint8ClampedArray(new Float64Array());  // Returns false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisuint8clampedarrayvalue>`__
 
 types.isWeakMap
 ~~~~~~~~~~~~~~~
@@ -2657,7 +2554,6 @@ Returns ``true`` if the value is a built-in ``WeakMap`` instance.
 
    util.types.isWeakMap(new WeakMap());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisweakmapvalue>`__
 
 types.isWeakSet
 ~~~~~~~~~~~~~~~
@@ -2680,7 +2576,6 @@ Returns ``true`` if the value is a built-in ``WeakSet`` instance.
 
    util.types.isWeakSet(new WeakSet());  // Returns true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#utiltypesisweaksetvalue>`__
 
 Properties and constants
 ------------------------
@@ -2695,4 +2590,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

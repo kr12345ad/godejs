@@ -46,7 +46,6 @@ The ``punycode.decode()`` method converts a Punycode string of ASCII-only charac
    punycode.decode('maana-pta'); // 'mañana'
    punycode.decode('--dqo34k'); // '☃-⌘'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodedecodestring>`__
 
 encode
 ~~~~~~
@@ -70,7 +69,6 @@ The ``punycode.encode()`` method converts a string of Unicode codepoints to a Pu
    punycode.encode('mañana'); // 'maana-pta'
    punycode.encode('☃-⌘'); // '--dqo34k'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodeencodestring>`__
 
 toASCII
 ~~~~~~~
@@ -96,7 +94,6 @@ The ``punycode.toASCII()`` method converts a Unicode string representing an Inte
    punycode.toASCII('☃-⌘.com');   // 'xn----dqo34k.com'
    punycode.toASCII('example.com'); // 'example.com'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodetoasciidomain>`__
 
 toUnicode
 ~~~~~~~~~
@@ -122,7 +119,6 @@ The ``punycode.toUnicode()`` method converts a string representing a domain name
    punycode.toUnicode('xn----dqo34k.com');  // '☃-⌘.com'
    punycode.toUnicode('example.com');       // 'example.com'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodetounicodedomain>`__
 
 ucs2
 ----
@@ -150,7 +146,6 @@ The ``punycode.ucs2.decode()`` method returns an array containing the numeric co
    // surrogate pair for U+1D306 tetragram for centre:
    punycode.ucs2.decode('\uD834\uDF06'); // [0x1D306]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodeucs2decodestring>`__
 
 ucs2.encode
 ~~~~~~~~~~~
@@ -174,7 +169,6 @@ The ``punycode.ucs2.encode()`` method returns a string based on an array of nume
    punycode.ucs2.encode([0x61, 0x62, 0x63]); // 'abc'
    punycode.ucs2.encode([0x1D306]); // '\uD834\uDF06'
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/punycode.html#punycodeucs2encodecodepoints>`__
 
 Properties and constants
 ------------------------
@@ -184,4 +178,4 @@ Properties and constants
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.

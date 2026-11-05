@@ -22,9 +22,9 @@ Start with the command line if you are new:
    gode
 
 The reference is generated from the running runtime. Each callable has a
-signature, argument list, return value, and, when one exists, an example from
-the Node.js 24 documentation. Private helpers and GodeJS extensions are marked
-instead of being described as if they were public Node APIs.
+signature, argument list, return value, and, when one is available, an example.
+Private helpers and GodeJS extensions are marked instead of being presented as
+public APIs.
 
 .. note::
 

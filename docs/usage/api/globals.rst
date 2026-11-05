@@ -1,7 +1,7 @@
 Global objects
 ==============
 
-GodeJS installs the Node.js host globals plus the Web APIs it implements. Standard ECMAScript built-ins (``Object``, ``Array``, ``Promise``, ``Map``, typed arrays, and so on) are not repeated here; use MDN or the ECMAScript specification for those.
+GodeJS exposes these host globals alongside the Web APIs it implements. Standard ECMAScript built-ins (``Object``, ``Array``, ``Promise``, ``Map``, typed arrays, and so on) are not repeated here; see the ECMAScript specification for those.
 
 Functions
 ---------
@@ -35,7 +35,6 @@ This callable takes no arguments.
      ac.abort();
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0209-using-abortsignal-to-dispose-of-resources>`__
 
 atob
 ~~~~
@@ -48,13 +47,12 @@ atob
 
 Global alias for ``buffer.atob()``.
 
-An automated migration is available (\`source <https://github.com/nodejs/userland-migrations/tree/main/recipes/buffer-atob-btoa>\`_):
+An automated migration is available (source):
 
 **Arguments**
 
 * ``data``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#atobdata>`__
 
 btoa
 ~~~~
@@ -67,13 +65,12 @@ btoa
 
 Global alias for ``buffer.btoa()``.
 
-An automated migration is available (\`source <https://github.com/nodejs/userland-migrations/tree/main/recipes/buffer-atob-btoa>\`_):
+An automated migration is available (source):
 
 **Arguments**
 
 * ``data``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#btoadata>`__
 
 clearImmediate
 ~~~~~~~~~~~~~~
@@ -90,7 +87,6 @@ clearImmediate
 
 * ``immediateObject``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#clearimmediateimmediateobject>`__
 
 clearInterval
 ~~~~~~~~~~~~~
@@ -107,7 +103,6 @@ clearInterval
 
 * ``intervalObject``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#clearintervalintervalobject>`__
 
 clearTimeout
 ~~~~~~~~~~~~
@@ -124,7 +119,6 @@ clearTimeout
 
 * ``timeoutObject``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#cleartimeouttimeoutobject>`__
 
 CryptoKey
 ~~~~~~~~~
@@ -141,7 +135,6 @@ Passing a ``CryptoKey`` to ``node:crypto`` functions is deprecated and will thro
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0203-passing-cryptokey-to-nodecrypto-apis>`__
 
 EventTarget
 ~~~~~~~~~~~
@@ -166,7 +159,6 @@ This callable takes no arguments.
      console.log('foo event happened!');
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtarget-and-event-api>`__
 
 fetch
 ~~~~~
@@ -179,7 +171,7 @@ fetch
 
 A browser-compatible implementation of the ``fetch()`` function.
 
-The implementation is based upon \`undici <https://undici.nodejs.org>\`_, an HTTP/1.1 client written from scratch for Node.js. You can figure out which version of ``undici`` is bundled in your Node.js process reading the ``process.versions.undici`` property.
+The implementation is based upon undici, an HTTP/1.1 client written from scratch for Node.js. You can figure out which version of ``undici`` is bundled in your Node.js process reading the ``process.versions.undici`` property.
 
 This callable takes no arguments.
 
@@ -189,7 +181,6 @@ This callable takes no arguments.
 
    fetch(url, { dispatcher: new MyAgent() });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#fetch>`__
 
 queueMicrotask
 ~~~~~~~~~~~~~~
@@ -231,7 +222,6 @@ The microtask queue is managed by V8 and may be used in a similar manner to the 
      this.emit('load', data);
    };
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#queuemicrotaskcallback>`__
 
 QuotaExceededError
 ~~~~~~~~~~~~~~~~~~
@@ -244,7 +234,7 @@ QuotaExceededError
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 require
@@ -266,7 +256,6 @@ Load a CommonJS builtin or file relative to the current module. In ``-e`` and st
 
 any
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/addons.html#loading-addons-using-require>`__
 
 setImmediate
 ~~~~~~~~~~~~
@@ -284,7 +273,6 @@ setImmediate
 * ``callback``
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#setimmediatecallback-args>`__
 
 setInterval
 ~~~~~~~~~~~
@@ -303,7 +291,6 @@ setInterval
 * ``delay``
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#setintervalcallback-delay-args>`__
 
 setTimeout
 ~~~~~~~~~~
@@ -322,7 +309,6 @@ setTimeout
 * ``delay``
 * ``...args`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#settimeoutcallback-delay-args>`__
 
 structuredClone
 ~~~~~~~~~~~~~~~
@@ -340,7 +326,6 @@ The WHATWG ``structuredClone`` method.
 * ``value``
 * ``options`` — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#structuredclonevalue-options>`__
 
 localStorage
 ------------
@@ -464,7 +449,6 @@ Triggers the abort signal, causing the ``abortController.signal`` to emit the ``
 
 * ``reason`` (*any*) — optional: An optional reason, retrievable on the ``AbortSignal``'s
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#abortcontrollerabortreason>`__
 
 AbortSignal
 -----------
@@ -484,7 +468,6 @@ Returns a new already aborted ``AbortSignal``.
 
 * ``reason`` (*any*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#static-method-abortsignalabortreason>`__
 
 AbortSignal.any
 ~~~~~~~~~~~~~~~
@@ -501,7 +484,6 @@ Returns a new ``AbortSignal`` which will be aborted if any of the provided signa
 
 * ``signals`` (*AbortSignal\[]*): The ``AbortSignal``\ s of which to compose a new ``AbortSignal``.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#static-method-abortsignalanysignals>`__
 
 AbortSignal._abort
 ~~~~~~~~~~~~~~~~~~
@@ -514,7 +496,7 @@ AbortSignal._abort
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal._fire
@@ -528,7 +510,7 @@ AbortSignal._fire
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal._makeEvent
@@ -542,7 +524,7 @@ AbortSignal._makeEvent
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal.addEventListener
@@ -556,7 +538,7 @@ AbortSignal.addEventListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal.dispatchEvent
@@ -570,7 +552,7 @@ AbortSignal.dispatchEvent
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal.removeEventListener
@@ -584,7 +566,7 @@ AbortSignal.removeEventListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 AbortSignal.throwIfAborted
@@ -600,7 +582,6 @@ If ``abortSignal.aborted`` is ``true``, throws ``abortSignal.reason``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#abortsignalthrowifaborted>`__
 
 AbortSignal.timeout
 ~~~~~~~~~~~~~~~~~~~
@@ -617,7 +598,6 @@ Returns a new ``AbortSignal`` which will be aborted in ``delay`` milliseconds.
 
 * ``delay`` (*number*): The number of milliseconds to wait before triggering
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/globals.html#static-method-abortsignaltimeoutdelay>`__
 
 Blob
 ----
@@ -637,7 +617,6 @@ Returns a promise that fulfills with an ``ArrayBuffer`` containing a copy of the
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobarraybuffer>`__
 
 Blob.bytes
 ~~~~~~~~~~
@@ -661,7 +640,6 @@ This callable takes no arguments.
      console.log(bytes); // Outputs: Uint8Array(5) [ 104, 101, 108, 108, 111 ]
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobbytes>`__
 
 Blob.slice
 ~~~~~~~~~~
@@ -680,7 +658,6 @@ Creates and returns a new ``Blob`` containing a subset of this ``Blob`` objects 
 * ``end`` (*number*) — optional: The ending index.
 * ``type`` (*string*) — optional: The content-type for the new ``Blob``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobslicestart-end-type>`__
 
 Blob.stream
 ~~~~~~~~~~~
@@ -695,7 +672,6 @@ Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be r
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobstream>`__
 
 Blob.text
 ~~~~~~~~~
@@ -710,7 +686,6 @@ Returns a promise that fulfills with the contents of the ``Blob`` decoded as a U
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobtext>`__
 
 Blob.textStream
 ~~~~~~~~~~~~~~~
@@ -725,7 +700,6 @@ Returns a new ``ReadableStream`` that allows the content of the ``Blob`` to be r
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#blobtextstream>`__
 
 **Properties**
 
@@ -749,7 +723,6 @@ Closes the ``BroadcastChannel`` connection.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/worker_threads.html#broadcastchannelclose>`__
 
 BroadcastChannel.postMessage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -764,7 +737,6 @@ BroadcastChannel.postMessage
 
 * ``message`` (*any*): Any cloneable JavaScript value.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/worker_threads.html#broadcastchannelpostmessagemessage>`__
 
 BroadcastChannel.ref
 ~~~~~~~~~~~~~~~~~~~~
@@ -779,7 +751,6 @@ Opposite of ``unref()``. Calling ``ref()`` on a previously ``unref()``\ ed Broad
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/worker_threads.html#broadcastchannelref>`__
 
 BroadcastChannel.unref
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -794,7 +765,6 @@ Calling ``unref()`` on a BroadcastChannel allows the thread to exit if this is t
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/worker_threads.html#broadcastchannelunref>`__
 
 Buffer
 ------
@@ -831,7 +801,6 @@ If ``size`` is larger than ``buffer.constants.MAX_LENGTH`` or smaller than 0, ``
    console.log(buf);
    // Prints: <Buffer 00 00 00 00 00>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferallocsize-fill-encoding>`__
 
 Buffer.allocUnsafe
 ~~~~~~~~~~~~~~~~~~
@@ -866,7 +835,6 @@ The underlying memory for ``Buffer`` instances created in this way is \_not init
    console.log(buf);
    // Prints: <Buffer 00 00 00 00 00 00 00 00 00 00>
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferallocunsafesize>`__
 
 Buffer.allocUnsafeSlow
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -907,7 +875,6 @@ The underlying memory for ``Buffer`` instances created in this way is \_not init
      }
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferallocunsafeslowsize>`__
 
 Buffer.byteLength
 ~~~~~~~~~~~~~~~~~
@@ -939,7 +906,6 @@ For ``'base64'``, ``'base64url'``, and ``'hex'``, this function assumes valid in
                `${Buffer.byteLength(str, 'utf8')} bytes`);
    // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferbytelengthstring-encoding>`__
 
 Buffer.compare
 ~~~~~~~~~~~~~~
@@ -971,7 +937,6 @@ Compares ``buf1`` to ``buf2``, typically for the purpose of sorting arrays of ``
    // Prints: [ <Buffer 30 31 32 33>, <Buffer 31 32 33 34> ]
    // (This result is equal to: [buf2, buf1].)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-buffercomparebuf1-buf2>`__
 
 Buffer.concat
 ~~~~~~~~~~~~~
@@ -1014,7 +979,6 @@ If the list has no items, or if the ``totalLength`` is 0, then a new zero-length
    console.log(bufA.length);
    // Prints: 42
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferconcatlist-totallength>`__
 
 Buffer.copyBytesFrom
 ~~~~~~~~~~~~~~~~~~~~
@@ -1044,7 +1008,6 @@ Copies the underlying memory of ``view`` into a new ``Buffer``.
    console.log(buf[0]); // 255
    console.log(buf[1]); // 255
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-buffercopybytesfromview-offset-length>`__
 
 Buffer.from
 ~~~~~~~~~~~
@@ -1072,7 +1035,6 @@ If ``array`` is an ``Array``-like object (that is, one with a ``length`` propert
    // Creates a new Buffer containing the UTF-8 bytes of the string 'buffer'.
    const buf = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferfromarray>`__
 
 Buffer.isBuffer
 ~~~~~~~~~~~~~~~
@@ -1101,7 +1063,6 @@ Returns ``true`` if ``obj`` is a ``Buffer``, ``false`` otherwise.
    Buffer.isBuffer([]); // false
    Buffer.isBuffer(new Uint8Array(1024)); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferisbufferobj>`__
 
 Buffer.isEncoding
 ~~~~~~~~~~~~~~~~~
@@ -1136,7 +1097,6 @@ Returns ``true`` if ``encoding`` is the name of a supported character encoding, 
    console.log(Buffer.isEncoding(''));
    // Prints: false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-bufferisencodingencoding>`__
 
 Buffer.of
 ~~~~~~~~~
@@ -1149,7 +1109,7 @@ Buffer.of
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.asciiSlice
@@ -1163,7 +1123,7 @@ Buffer.asciiSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.asciiWrite
@@ -1177,7 +1137,7 @@ Buffer.asciiWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64Slice
@@ -1191,7 +1151,7 @@ Buffer.base64Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64urlSlice
@@ -1205,7 +1165,7 @@ Buffer.base64urlSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64urlWrite
@@ -1219,7 +1179,7 @@ Buffer.base64urlWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.base64Write
@@ -1233,7 +1193,7 @@ Buffer.base64Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.compare
@@ -1266,7 +1226,6 @@ Compares ``buf1`` to ``buf2``, typically for the purpose of sorting arrays of ``
    // Prints: [ <Buffer 30 31 32 33>, <Buffer 31 32 33 34> ]
    // (This result is equal to: [buf2, buf1].)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/buffer.html#static-method-buffercomparebuf1-buf2>`__
 
 Buffer.copy
 ~~~~~~~~~~~
@@ -1279,7 +1238,7 @@ Buffer.copy
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.equals
@@ -1293,7 +1252,7 @@ Buffer.equals
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.fill
@@ -1307,7 +1266,7 @@ Buffer.fill
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.hexSlice
@@ -1321,7 +1280,7 @@ Buffer.hexSlice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.hexWrite
@@ -1335,7 +1294,7 @@ Buffer.hexWrite
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.includes
@@ -1349,7 +1308,7 @@ Buffer.includes
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.indexOf
@@ -1363,7 +1322,7 @@ Buffer.indexOf
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.inspect
@@ -1377,7 +1336,7 @@ Buffer.inspect
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.lastIndexOf
@@ -1391,7 +1350,7 @@ Buffer.lastIndexOf
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.latin1Slice
@@ -1405,7 +1364,7 @@ Buffer.latin1Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.latin1Write
@@ -1419,7 +1378,7 @@ Buffer.latin1Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigInt64BE
@@ -1433,7 +1392,7 @@ Buffer.readBigInt64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigInt64LE
@@ -1447,7 +1406,7 @@ Buffer.readBigInt64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigUInt64BE
@@ -1461,7 +1420,7 @@ Buffer.readBigUInt64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigUint64BE
@@ -1475,7 +1434,7 @@ Buffer.readBigUint64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigUInt64LE
@@ -1489,7 +1448,7 @@ Buffer.readBigUInt64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readBigUint64LE
@@ -1503,7 +1462,7 @@ Buffer.readBigUint64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readDoubleBE
@@ -1517,7 +1476,7 @@ Buffer.readDoubleBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readDoubleLE
@@ -1531,7 +1490,7 @@ Buffer.readDoubleLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readFloatBE
@@ -1545,7 +1504,7 @@ Buffer.readFloatBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readFloatLE
@@ -1559,7 +1518,7 @@ Buffer.readFloatLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readInt16BE
@@ -1573,7 +1532,7 @@ Buffer.readInt16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readInt16LE
@@ -1587,7 +1546,7 @@ Buffer.readInt16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readInt32BE
@@ -1601,7 +1560,7 @@ Buffer.readInt32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readInt32LE
@@ -1615,7 +1574,7 @@ Buffer.readInt32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readInt8
@@ -1629,7 +1588,7 @@ Buffer.readInt8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readIntBE
@@ -1643,7 +1602,7 @@ Buffer.readIntBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readIntLE
@@ -1657,7 +1616,7 @@ Buffer.readIntLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt16BE
@@ -1671,7 +1630,7 @@ Buffer.readUInt16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUint16BE
@@ -1685,7 +1644,7 @@ Buffer.readUint16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt16LE
@@ -1699,7 +1658,7 @@ Buffer.readUInt16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUint16LE
@@ -1713,7 +1672,7 @@ Buffer.readUint16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt32BE
@@ -1727,7 +1686,7 @@ Buffer.readUInt32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUint32BE
@@ -1741,7 +1700,7 @@ Buffer.readUint32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt32LE
@@ -1755,7 +1714,7 @@ Buffer.readUInt32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUint32LE
@@ -1769,7 +1728,7 @@ Buffer.readUint32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUInt8
@@ -1783,7 +1742,7 @@ Buffer.readUInt8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUint8
@@ -1797,7 +1756,7 @@ Buffer.readUint8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUIntBE
@@ -1811,7 +1770,7 @@ Buffer.readUIntBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUintBE
@@ -1825,7 +1784,7 @@ Buffer.readUintBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUIntLE
@@ -1839,7 +1798,7 @@ Buffer.readUIntLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.readUintLE
@@ -1853,7 +1812,7 @@ Buffer.readUintLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.slice
@@ -1874,7 +1833,6 @@ This method was deprecated because it is not compatible with ``Uint8Array.protot
 * ``start``
 * ``end``
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/deprecations.html#dep0158-bufferslicestart-end>`__
 
 Buffer.subarray
 ~~~~~~~~~~~~~~~
@@ -1887,7 +1845,7 @@ Buffer.subarray
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.swap16
@@ -1901,7 +1859,7 @@ Buffer.swap16
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.swap32
@@ -1915,7 +1873,7 @@ Buffer.swap32
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.swap64
@@ -1929,7 +1887,7 @@ Buffer.swap64
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.toJSON
@@ -1943,7 +1901,7 @@ Buffer.toJSON
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.toLocaleString
@@ -1957,7 +1915,7 @@ Buffer.toLocaleString
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.toString
@@ -1971,7 +1929,7 @@ Buffer.toString
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.ucs2Slice
@@ -1985,7 +1943,7 @@ Buffer.ucs2Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.ucs2Write
@@ -1999,7 +1957,7 @@ Buffer.ucs2Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.utf8Slice
@@ -2013,7 +1971,7 @@ Buffer.utf8Slice
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.utf8Write
@@ -2027,7 +1985,7 @@ Buffer.utf8Write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.write
@@ -2041,7 +1999,7 @@ Buffer.write
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigInt64BE
@@ -2055,7 +2013,7 @@ Buffer.writeBigInt64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigInt64LE
@@ -2069,7 +2027,7 @@ Buffer.writeBigInt64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigUInt64BE
@@ -2083,7 +2041,7 @@ Buffer.writeBigUInt64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigUint64BE
@@ -2097,7 +2055,7 @@ Buffer.writeBigUint64BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigUInt64LE
@@ -2111,7 +2069,7 @@ Buffer.writeBigUInt64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeBigUint64LE
@@ -2125,7 +2083,7 @@ Buffer.writeBigUint64LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeDoubleBE
@@ -2139,7 +2097,7 @@ Buffer.writeDoubleBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeDoubleLE
@@ -2153,7 +2111,7 @@ Buffer.writeDoubleLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeFloatBE
@@ -2167,7 +2125,7 @@ Buffer.writeFloatBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeFloatLE
@@ -2181,7 +2139,7 @@ Buffer.writeFloatLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeInt16BE
@@ -2195,7 +2153,7 @@ Buffer.writeInt16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeInt16LE
@@ -2209,7 +2167,7 @@ Buffer.writeInt16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeInt32BE
@@ -2223,7 +2181,7 @@ Buffer.writeInt32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeInt32LE
@@ -2237,7 +2195,7 @@ Buffer.writeInt32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeInt8
@@ -2251,7 +2209,7 @@ Buffer.writeInt8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeIntBE
@@ -2265,7 +2223,7 @@ Buffer.writeIntBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeIntLE
@@ -2279,7 +2237,7 @@ Buffer.writeIntLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt16BE
@@ -2293,7 +2251,7 @@ Buffer.writeUInt16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUint16BE
@@ -2307,7 +2265,7 @@ Buffer.writeUint16BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt16LE
@@ -2321,7 +2279,7 @@ Buffer.writeUInt16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUint16LE
@@ -2335,7 +2293,7 @@ Buffer.writeUint16LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt32BE
@@ -2349,7 +2307,7 @@ Buffer.writeUInt32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUint32BE
@@ -2363,7 +2321,7 @@ Buffer.writeUint32BE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt32LE
@@ -2377,7 +2335,7 @@ Buffer.writeUInt32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUint32LE
@@ -2391,7 +2349,7 @@ Buffer.writeUint32LE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUInt8
@@ -2405,7 +2363,7 @@ Buffer.writeUInt8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUint8
@@ -2419,7 +2377,7 @@ Buffer.writeUint8
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUIntBE
@@ -2433,7 +2391,7 @@ Buffer.writeUIntBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUintBE
@@ -2447,7 +2405,7 @@ Buffer.writeUintBE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUIntLE
@@ -2461,7 +2419,7 @@ Buffer.writeUIntLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Buffer.writeUintLE
@@ -2475,7 +2433,7 @@ Buffer.writeUintLE
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 **Properties**
@@ -2500,7 +2458,6 @@ ByteLengthQueuingStrategy.size
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#bytelengthqueuingstrategysize>`__
 
 CompressionStream
 -----------------
@@ -2533,7 +2490,6 @@ CountQueuingStrategy.size
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#countqueuingstrategysize>`__
 
 crypto
 ------
@@ -2553,7 +2509,6 @@ A convenient alias for ``crypto.webcrypto.getRandomValues()``. This implementati
 
 * ``typedArray`` (*Buffer|TypedArray|DataView|ArrayBuffer*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptogetrandomvaluestypedarray>`__
 
 crypto.randomUUID
 ~~~~~~~~~~~~~~~~~
@@ -2570,7 +2525,6 @@ Generates a random RFC 4122 version 4 UUID. The UUID is generated using a crypto
 
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptorandomuuidoptions>`__
 
 **Properties**
 
@@ -2632,7 +2586,6 @@ Returns an array containing the current ``EventTarget`` as the only entry or emp
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventcomposedpath>`__
 
 Event.initEvent
 ~~~~~~~~~~~~~~~
@@ -2651,7 +2604,6 @@ Redundant with event constructors and incapable of setting ``composed``. This is
 * ``bubbles`` (*boolean*) — optional
 * ``cancelable`` (*boolean*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventiniteventtype-bubbles-cancelable>`__
 
 Event.preventDefault
 ~~~~~~~~~~~~~~~~~~~~
@@ -2666,7 +2618,6 @@ Sets the ``defaultPrevented`` property to ``true`` if ``cancelable`` is ``true``
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventpreventdefault>`__
 
 Event.stopImmediatePropagation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2681,7 +2632,6 @@ Stops the invocation of event listeners after the current one completes.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventstopimmediatepropagation>`__
 
 Event.stopPropagation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2696,7 +2646,6 @@ This is not used in Node.js and is provided purely for completeness.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventstoppropagation>`__
 
 **Properties**
 
@@ -2756,7 +2705,6 @@ If the ``once`` option is ``true``, the ``listener`` is removed after the next t
    // Removes the first instance of handler
    target.removeEventListener('foo', handler, { capture: true });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetaddeventlistenertype-listener-options>`__
 
 EventTarget.dispatchEvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2775,7 +2723,6 @@ The registered event listeners is synchronously invoked in the order they were r
 
 * ``event`` (*Event*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetdispatcheventevent>`__
 
 EventTarget.removeEventListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2794,7 +2741,6 @@ Removes the ``listener`` from the list of handlers for event ``type``.
 * ``listener`` (*Function|EventListener*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/events.html#eventtargetremoveeventlistenertype-listener-options>`__
 
 File
 ----
@@ -2822,7 +2768,7 @@ FormData.append
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.delete
@@ -2836,7 +2782,7 @@ FormData.delete
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.entries
@@ -2850,7 +2796,7 @@ FormData.entries
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.forEach
@@ -2864,7 +2810,7 @@ FormData.forEach
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.get
@@ -2878,7 +2824,7 @@ FormData.get
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.getAll
@@ -2892,7 +2838,7 @@ FormData.getAll
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.has
@@ -2906,7 +2852,7 @@ FormData.has
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.keys
@@ -2920,7 +2866,7 @@ FormData.keys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.set
@@ -2934,7 +2880,7 @@ FormData.set
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 FormData.values
@@ -2948,7 +2894,7 @@ FormData.values
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 global
@@ -2972,7 +2918,7 @@ Headers.append
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.delete
@@ -2986,7 +2932,7 @@ Headers.delete
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.entries
@@ -3000,7 +2946,7 @@ Headers.entries
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.forEach
@@ -3014,7 +2960,7 @@ Headers.forEach
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.get
@@ -3028,7 +2974,7 @@ Headers.get
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.getSetCookie
@@ -3042,7 +2988,7 @@ Headers.getSetCookie
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.has
@@ -3056,7 +3002,7 @@ Headers.has
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.keys
@@ -3070,7 +3016,7 @@ Headers.keys
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.set
@@ -3084,7 +3030,7 @@ Headers.set
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Headers.values
@@ -3098,7 +3044,7 @@ Headers.values
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessageChannel
@@ -3127,7 +3073,7 @@ MessagePort.close
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessagePort.hasRef
@@ -3141,7 +3087,7 @@ MessagePort.hasRef
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessagePort.postMessage
@@ -3155,7 +3101,7 @@ MessagePort.postMessage
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessagePort.ref
@@ -3169,7 +3115,7 @@ MessagePort.ref
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessagePort.start
@@ -3183,7 +3129,7 @@ MessagePort.start
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 MessagePort.unref
@@ -3197,7 +3143,7 @@ MessagePort.unref
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 navigator
@@ -3233,7 +3179,6 @@ If ``name`` is not provided, removes all ``PerformanceMark`` objects from the Pe
 
 * ``name`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmarksname>`__
 
 performance.clearMeasures
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3250,7 +3195,6 @@ If ``name`` is not provided, removes all ``PerformanceMeasure`` objects from the
 
 * ``name`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performanceclearmeasuresname>`__
 
 performance.getEntries
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3265,7 +3209,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentries>`__
 
 performance.getEntriesByName
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3283,7 +3226,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 * ``name`` (*string*)
 * ``type`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbynamename-type>`__
 
 performance.getEntriesByType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3300,7 +3242,6 @@ Returns a list of ``PerformanceEntry`` objects in chronological order with respe
 
 * ``type`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancegetentriesbytypetype>`__
 
 performance.mark
 ~~~~~~~~~~~~~~~~
@@ -3320,7 +3261,6 @@ The created ``PerformanceMark`` entry is put in the global Performance Timeline 
 * ``name`` (*string*)
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemarkname-options>`__
 
 performance.measure
 ~~~~~~~~~~~~~~~~~~~
@@ -3341,7 +3281,6 @@ The ``startMark`` argument may identify any *existing* ``PerformanceMark`` in th
 * ``startMarkOrOptions`` (*string|Object*) — optional: Optional.
 * ``endMark`` (*string*) — optional: Optional. Must be omitted if ``startMarkOrOptions`` is an
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancemeasurename-startmarkoroptions-endmark>`__
 
 performance.now
 ~~~~~~~~~~~~~~~
@@ -3356,7 +3295,6 @@ Returns the current high resolution millisecond timestamp, where 0 represents th
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancenow>`__
 
 performance.toJSON
 ~~~~~~~~~~~~~~~~~~
@@ -3371,7 +3309,6 @@ An object which is JSON representation of the ``performance`` object. It is simi
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/perf_hooks.html#performancetojson>`__
 
 **Properties**
 
@@ -3398,7 +3335,7 @@ ReadableStream._next
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadableStream._wake
@@ -3412,7 +3349,7 @@ ReadableStream._wake
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ReadableStream.cancel
@@ -3428,7 +3365,6 @@ ReadableStream.cancel
 
 * ``reason`` (*any*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreamcancelreason>`__
 
 ReadableStream.getReader
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3457,7 +3393,6 @@ Causes the ``readableStream.locked`` to be ``true``.
 
    reader.read().then(console.log);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreamgetreaderoptions>`__
 
 ReadableStream.pipeThrough
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3506,7 +3441,6 @@ Causes the ``readableStream.locked`` to be ``true`` while the pipe operation is 
        // Prints: A
    })();
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreampipethroughtransform-options>`__
 
 ReadableStream.pipeTo
 ~~~~~~~~~~~~~~~~~~~~~
@@ -3524,7 +3458,6 @@ Causes the ``readableStream.locked`` to be ``true`` while the pipe operation is 
 * ``destination`` (*WritableStream*): A ``WritableStream`` to which this
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreampipetodestination-options>`__
 
 ReadableStream.tee
 ~~~~~~~~~~~~~~~~~~
@@ -3541,7 +3474,6 @@ Causes the ``readableStream.locked`` to be ``true``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreamtee>`__
 
 ReadableStream.values
 ~~~~~~~~~~~~~~~~~~~~~
@@ -3571,7 +3503,6 @@ Causes the ``readableStream.locked`` to be ``true`` while the async iterator is 
    for await (const chunk of stream.values({ preventCancel: true }))
      console.log(Buffer.from(chunk).toString());
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#readablestreamvaluesoptions>`__
 
 Request
 -------
@@ -3589,7 +3520,7 @@ Request.arrayBuffer
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.blob
@@ -3603,7 +3534,7 @@ Request.blob
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.bytes
@@ -3617,7 +3548,7 @@ Request.bytes
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.clone
@@ -3631,7 +3562,7 @@ Request.clone
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.formData
@@ -3645,7 +3576,7 @@ Request.formData
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.json
@@ -3659,7 +3590,7 @@ Request.json
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Request.text
@@ -3673,7 +3604,7 @@ Request.text
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 require
@@ -3694,7 +3625,6 @@ For a complete ``require.resolve`` replacement, there is the import.meta.resolve
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/esm.html#no-requireresolve>`__
 
 **Properties**
 
@@ -3717,7 +3647,7 @@ Response.error
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.json
@@ -3731,7 +3661,7 @@ Response.json
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.arrayBuffer
@@ -3745,7 +3675,7 @@ Response.arrayBuffer
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.blob
@@ -3759,7 +3689,7 @@ Response.blob
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.bytes
@@ -3773,7 +3703,7 @@ Response.bytes
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.clone
@@ -3787,7 +3717,7 @@ Response.clone
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.formData
@@ -3801,7 +3731,7 @@ Response.formData
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.json
@@ -3815,7 +3745,7 @@ Response.json
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.text
@@ -3829,7 +3759,7 @@ Response.text
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 Response.redirect
@@ -3843,7 +3773,7 @@ Response.redirect
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 sessionStorage
@@ -4078,7 +4008,6 @@ If ``textDecoder.fatal`` is ``true``, decoding errors that occur will result in 
 * ``input`` (*ArrayBuffer|DataView|TypedArray*) — optional: An ``ArrayBuffer``, ``DataView``, or
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textdecoderdecodeinput-options>`__
 
 TextDecoderStream
 -----------------
@@ -4110,7 +4039,6 @@ UTF-8 encodes the ``input`` string and returns a ``Uint8Array`` containing the e
 
 * ``input`` (*string*) — optional: The text to encode. **Default:** an empty string.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textencoderencodeinput>`__
 
 TextEncoder.encodeInto
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4137,7 +4065,6 @@ UTF-8 encodes the ``src`` string to the ``dest`` Uint8Array and returns an objec
    const dest = new Uint8Array(10);
    const { read, written } = encoder.encodeInto(src, dest);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/util.html#textencoderencodeintosrc-dest>`__
 
 **Properties**
 
@@ -4188,7 +4115,6 @@ Checks if an ``input`` relative to the ``base`` can be parsed to a ``URL``.
 
    const isNotValid = URL.canParse('/foo'); // false
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlcanparseinput-base>`__
 
 URL.createObjectURL
 ~~~~~~~~~~~~~~~~~~~
@@ -4224,7 +4150,6 @@ The data stored by the registered ``Blob`` will be retained in memory until ``UR
    const otherBlob = resolveObjectURL(id);
    console.log(otherBlob.size);
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlcreateobjecturlblob>`__
 
 URL.parse
 ~~~~~~~~~
@@ -4242,7 +4167,6 @@ Parses a string as a URL. If ``base`` is provided, it will be used as the base U
 * ``input`` (*string*): The absolute or relative input URL to parse. If ``input``
 * ``base`` (*string*) — optional: The base URL to resolve against if the ``input`` is not
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlparseinput-base>`__
 
 URL.toJSON
 ~~~~~~~~~~
@@ -4270,7 +4194,6 @@ This callable takes no arguments.
    console.log(JSON.stringify(myURLs));
    // Prints ["https://www.example.com/","https://test.example.org/"]
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urltojson>`__
 
 URL.toString
 ~~~~~~~~~~~~
@@ -4285,7 +4208,6 @@ The ``toString()`` method on the ``URL`` object returns the serialized URL. The 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urltostring>`__
 
 URL.revokeObjectURL
 ~~~~~~~~~~~~~~~~~~~
@@ -4302,7 +4224,6 @@ Removes the stored ``Blob`` identified by the given ID. Attempting to revoke a I
 
 * ``id`` (*string*): A ``'blob:nodedata:...`` URL string returned by a prior call to
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlrevokeobjecturlid>`__
 
 **Properties**
 
@@ -4351,14 +4272,14 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
 
 .. code-block:: javascript
 
-   const myPattern = new URLPattern('https://nodejs.org/docs/latest/api/*.html');
-   console.log(myPattern.exec('https://nodejs.org/docs/latest/api/dns.html'));
+   const myPattern = new URLPattern('https://example.com/docs/latest/api/*.html');
+   console.log(myPattern.exec('https://example.com/docs/latest/api/dns.html'));
    // Prints:
    // {
    //  "hash": { "groups": {  "0": "" },  "input": "" },
-   //  "hostname": { "groups": {}, "input": "nodejs.org" },
+   //  "hostname": { "groups": {}, "input": "example.com" },
    //  "inputs": [
-   //    "https://nodejs.org/docs/latest/api/dns.html"
+   //    "https://example.com/docs/latest/api/dns.html"
    //  ],
    //  "password": { "groups": { "0": "" }, "input": "" },
    //  "pathname": { "groups": { "0": "dns" }, "input": "/docs/latest/api/dns.html" },
@@ -4368,7 +4289,6 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
    //  "username": { "groups": { "0": "" }, "input": "" }
    // }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlpatternexecinput-baseurl>`__
 
 URLPattern.test
 ~~~~~~~~~~~~~~~
@@ -4392,11 +4312,10 @@ If ``baseURL`` is not specified, it will default to ``undefined``.
 
 .. code-block:: javascript
 
-   const myPattern = new URLPattern('https://nodejs.org/docs/latest/api/*.html');
-   console.log(myPattern.test('https://nodejs.org/docs/latest/api/dns.html'));
+   const myPattern = new URLPattern('https://example.com/docs/latest/api/*.html');
+   console.log(myPattern.test('https://example.com/docs/latest/api/dns.html'));
    // Prints: true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlpatterntestinput-baseurl>`__
 
 **Properties**
 
@@ -4423,7 +4342,6 @@ Append a new name-value pair to the query string.
 * ``name`` (*string*)
 * ``value`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsappendname-value>`__
 
 URLSearchParams.delete
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4443,7 +4361,6 @@ If ``value`` is not provided, removes all name-value pairs whose name is ``name`
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsdeletename-value>`__
 
 URLSearchParams.entries
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -4460,7 +4377,6 @@ Alias for ``urlSearchParams[Symbol.iterator]()``.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsentries>`__
 
 URLSearchParams.forEach
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -4490,7 +4406,6 @@ Iterates over each name-value pair in the query and invokes the given function.
    //   a b true
    //   c d true
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsforeachfn-thisarg>`__
 
 URLSearchParams.get
 ~~~~~~~~~~~~~~~~~~~
@@ -4507,7 +4422,6 @@ Returns the value of the first name-value pair whose name is ``name``. If there 
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsgetname>`__
 
 URLSearchParams.getAll
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4524,7 +4438,6 @@ Returns the values of all name-value pairs whose name is ``name``. If there are 
 
 * ``name`` (*string*)
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsgetallname>`__
 
 URLSearchParams.has
 ~~~~~~~~~~~~~~~~~~~
@@ -4544,7 +4457,6 @@ If ``value`` is provided, returns ``true`` when name-value pair with same ``name
 * ``name`` (*string*)
 * ``value`` (*string*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamshasname-value>`__
 
 URLSearchParams.keys
 ~~~~~~~~~~~~~~~~~~~~
@@ -4571,7 +4483,6 @@ This callable takes no arguments.
    //   foo
    //   foo
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamskeys>`__
 
 URLSearchParams.set
 ~~~~~~~~~~~~~~~~~~~
@@ -4605,7 +4516,6 @@ Sets the value in the ``URLSearchParams`` object associated with ``name`` to ``v
    console.log(params.toString());
    // Prints foo=def&abc=def&xyz=opq
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamssetname-value>`__
 
 URLSearchParams.sort
 ~~~~~~~~~~~~~~~~~~~~
@@ -4631,7 +4541,6 @@ This callable takes no arguments.
    console.log(params.toString());
    // Prints query%5B%5D=abc&query%5B%5D=123&type=search
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamssort>`__
 
 URLSearchParams.toString
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4646,7 +4555,6 @@ Returns the search parameters serialized as a string, with characters percent-en
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamstostring>`__
 
 URLSearchParams.values
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -4661,7 +4569,6 @@ Returns an ES6 ``Iterator`` over the values of each name-value pair.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/url.html#urlsearchparamsvalues>`__
 
 **Properties**
 
@@ -4683,7 +4590,7 @@ WebSocket._deliver
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._dispatch
@@ -4697,7 +4604,7 @@ WebSocket._dispatch
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._fail
@@ -4711,7 +4618,7 @@ WebSocket._fail
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._finishClose
@@ -4725,7 +4632,7 @@ WebSocket._finishClose
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._handleFrame
@@ -4739,7 +4646,7 @@ WebSocket._handleFrame
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._handshakeRequest
@@ -4753,7 +4660,7 @@ WebSocket._handshakeRequest
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._onData
@@ -4767,7 +4674,7 @@ WebSocket._onData
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._parseFrames
@@ -4781,7 +4688,7 @@ WebSocket._parseFrames
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._sendClose
@@ -4795,7 +4702,7 @@ WebSocket._sendClose
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket._validateHandshake
@@ -4809,7 +4716,7 @@ WebSocket._validateHandshake
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket.close
@@ -4823,7 +4730,7 @@ WebSocket.close
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 WebSocket.send
@@ -4837,7 +4744,7 @@ WebSocket.send
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 **Properties**
@@ -4875,7 +4782,6 @@ Abruptly terminates the ``WritableStream``. All queued writes will be canceled w
 
 * ``reason`` (*any*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#writablestreamabortreason>`__
 
 WritableStream.close
 ~~~~~~~~~~~~~~~~~~~~
@@ -4890,7 +4796,6 @@ Closes the ``WritableStream`` when no additional writes are expected.
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#writablestreamclose>`__
 
 WritableStream.getWriter
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4905,4 +4810,3 @@ Creates and returns a new writer instance that can be used to write data into th
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/webstreams.html#writablestreamgetwriter>`__

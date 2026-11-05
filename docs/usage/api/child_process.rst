@@ -71,7 +71,6 @@ This is a class; construct instances with ``new``.
      console.log(`child process exited with code ${code}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#class-childprocess>`__
 
 exec
 ~~~~
@@ -105,7 +104,6 @@ Spawns a shell then executes the ``command`` within that shell, buffering any ge
    exec('echo "The \\$HOME variable is $HOME"');
    // The $HOME variable is escaped in the first instance, but not in the second.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processexeccommand-options-callback>`__
 
 execFile
 ~~~~~~~~
@@ -139,7 +137,6 @@ The same options as ``child_process.exec()`` are supported. Since a shell is not
      console.log(stdout);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processexecfilefile-args-options-callback>`__
 
 execFileSync
 ~~~~~~~~~~~~
@@ -190,7 +187,6 @@ If the child process intercepts and handles the ``SIGTERM`` signal and does not 
      }
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processexecfilesyncfile-args-options>`__
 
 execSync
 ~~~~~~~~
@@ -210,7 +206,6 @@ If the process times out or has a non-zero exit code, this method will throw. Th
 * ``command`` (*string*): The command to run.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processexecsynccommand-options>`__
 
 fork
 ~~~~
@@ -251,7 +246,6 @@ Keep in mind that spawned Node.js child processes are independent of the parent 
      controller.abort(); // Stops the child process
    }
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processforkmodulepath-args-options>`__
 
 spawn
 ~~~~~
@@ -291,7 +285,6 @@ The ``child_process.spawn()`` method spawns a new process using the given ``comm
      console.log(`child process exited with code ${code}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processspawncommand-args-options>`__
 
 spawnSync
 ~~~~~~~~~
@@ -312,7 +305,6 @@ The ``child_process.spawnSync()`` method is generally identical to ``child_proce
 * ``args`` (*string\[]*) — optional: List of string arguments.
 * ``options`` (*Object*) — optional
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processspawnsynccommand-args-options>`__
 
 ChildProcess class
 ------------------
@@ -332,7 +324,7 @@ ChildProcess.addListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.disconnect
@@ -350,7 +342,6 @@ The ``'disconnect'`` event will be emitted when there are no messages in the pro
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#subprocessdisconnect>`__
 
 ChildProcess.emit
 ~~~~~~~~~~~~~~~~~
@@ -363,7 +354,7 @@ ChildProcess.emit
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.getMaxListeners
@@ -377,7 +368,7 @@ ChildProcess.getMaxListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.kill
@@ -412,7 +403,6 @@ The ``ChildProcess`` object may emit an ``'error'`` event if the signal cannot b
    // Send SIGHUP to process.
    grep.kill('SIGHUP');
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#subprocesskillsignal>`__
 
 ChildProcess.listenerCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -425,7 +415,7 @@ ChildProcess.listenerCount
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.off
@@ -439,7 +429,7 @@ ChildProcess.off
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.on
@@ -453,7 +443,7 @@ ChildProcess.on
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.once
@@ -467,7 +457,7 @@ ChildProcess.once
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.ref
@@ -483,7 +473,6 @@ This method makes the IPC channel keep the event loop of the parent process runn
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#subprocesschannelref>`__
 
 ChildProcess.removeAllListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -496,7 +485,7 @@ ChildProcess.removeAllListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.removeListener
@@ -510,7 +499,7 @@ ChildProcess.removeListener
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.send
@@ -547,7 +536,6 @@ The message goes through serialization and parsing. The resulting message might 
    // Causes the child to print: CHILD got message: { hello: 'world' }
    forkedProcess.send({ hello: 'world' });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#subprocesssendmessage-sendhandle-options-callback>`__
 
 ChildProcess.setMaxListeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -560,7 +548,7 @@ ChildProcess.setMaxListeners
 
 .. note::
 
-   No matching Node.js 24 reference section was found. The signature and arity come from the runtime snapshot; this is likely a private helper or a GodeJS extension.
+   This entry comes from the runtime surface. A fuller description is not available yet, and argument names may be incomplete.
 
 
 ChildProcess.spawn
@@ -601,7 +589,6 @@ The ``child_process.spawn()`` method spawns a new process using the given ``comm
      console.log(`child process exited with code ${code}`);
    });
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#child_processspawncommand-args-options>`__
 
 ChildProcess.unref
 ~~~~~~~~~~~~~~~~~~
@@ -616,8 +603,7 @@ This method makes the IPC channel not keep the event loop of the parent process 
 
 This callable takes no arguments.
 
-`Node.js reference <https://nodejs.org/docs/latest-v24.x/api/child_process.html#subprocesschannelunref>`__
 
 .. note::
 
-   Signatures, argument names, return values and examples for Node APIs come from the Node.js v24.22.2 documentation (MIT). Entries marked as private or GodeJS extensions are generated from the runtime snapshot.
+   This page is generated from the GodeJS runtime snapshot. Signatures and argument counts reflect the running runtime; private helpers and GodeJS extensions are labelled.
