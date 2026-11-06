@@ -835,9 +835,9 @@ func usage(w io.Writer) {
 A Node.js-compatible runtime on JavaScriptCore, written in Go.
 
 If no script is given, gode reads a script from stdin or starts the REPL.
-Every Node.js CLI flag is recognized. Flags marked below are implemented;
-engine-specific flags (V8, OpenSSL, snapshots, SEA, inspector) fail with a
-clear message instead of being silently ignored.
+Node.js CLI flags are recognized. Flags marked below are implemented;
+engine-specific flags (OpenSSL, snapshots, SEA, inspector) fail with a clear
+message. V8 sampling-profiler flags are not recognized at all.
 
 Common options:
   -e, --eval=...        evaluate source as JavaScript

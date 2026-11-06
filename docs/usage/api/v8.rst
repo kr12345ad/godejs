@@ -155,27 +155,6 @@ This callable takes no arguments.
    console.log(v8.cachedDataVersionTag()); // 183726201
 
 
-CPUProfileHandle
-~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   CPUProfileHandle
-
-*Kind:* class · *Arguments:* 0
-
-This is a class; construct instances with ``new``.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.CPUProfileHandle();
-   console.log(instance);
-
-
 createHook
 ~~~~~~~~~~
 
@@ -492,27 +471,6 @@ This callable takes no arguments.
 
    const result = v8.getHeapStatistics();
    console.log(result);
-
-
-HeapProfileHandle
-~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   HeapProfileHandle
-
-*Kind:* class · *Arguments:* 0
-
-This is a class; construct instances with ``new``.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.HeapProfileHandle();
-   console.log(instance);
 
 
 init
@@ -930,28 +888,6 @@ Called when the promise receives a resolution or rejection value. This may occur
    console.log(result);
 
 
-startCpuProfile
-~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   v8.startCpuProfile()
-
-*Kind:* function · *Arguments:* 0
-
-Starting a CPU profile then return a ``SyncCPUProfileHandle`` object. This API supports ``using`` syntax.
-
-This callable takes no arguments.
-
-**Example**
-
-.. code-block:: javascript
-
-   const handle = v8.startCpuProfile();
-   const profile = handle.stop();
-   console.log(profile);
-
-
 stopCoverage
 ~~~~~~~~~~~~
 
@@ -973,27 +909,6 @@ This callable takes no arguments.
 
    const result = v8.stopCoverage();
    console.log(result);
-
-
-SyncCPUProfileHandle
-~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   SyncCPUProfileHandle
-
-*Kind:* class · *Arguments:* 0
-
-This is a class; construct instances with ``new``.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.SyncCPUProfileHandle();
-   console.log(instance);
 
 
 takeCoverage
@@ -1066,33 +981,6 @@ A heap snapshot is specific to a single V8 isolate. When using worker threads, a
        }
      });
    }
-
-
-CPUProfileHandle class
-----------------------
-
-CPUProfileHandle.stop
-~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   cpuProfileHandle.stop()
-
-*Kind:* function · *Arguments:* 0
-
-Stopping collecting the profile, then return a Promise that fulfills with an error or the profile data.
-
-This callable takes no arguments.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.CPUProfileHandle();
-   const result = instance.stop();
-   console.log(result);
 
 
 Deserializer class
@@ -1375,33 +1263,6 @@ This callable takes no arguments.
    setTimeout(() => {
      console.log(profiler.stop());
    }, 1000);
-
-
-HeapProfileHandle class
------------------------
-
-HeapProfileHandle.stop
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   heapProfileHandle.stop()
-
-*Kind:* function · *Arguments:* 0
-
-Stopping collecting the profile, then return a Promise that fulfills with an error or the profile data.
-
-This callable takes no arguments.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.HeapProfileHandle();
-   const result = instance.stop();
-   console.log(result);
 
 
 Serializer class
@@ -1830,33 +1691,6 @@ This sets the entry point of the Node.js application when it is deserialized fro
    const v8 = require('node:v8');
 
    const result = v8.startupSnapshot.setDeserializeMainFunction(() => {}, 'hello');
-   console.log(result);
-
-
-SyncCPUProfileHandle class
---------------------------
-
-SyncCPUProfileHandle.stop
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: text
-
-   syncCpuProfileHandle.stop()
-
-*Kind:* function · *Arguments:* 0
-
-Stopping collecting the profile and return the profile data.
-
-This callable takes no arguments.
-
-**Example**
-
-.. code-block:: javascript
-
-   const v8 = require('node:v8');
-
-   const instance = new v8.SyncCPUProfileHandle();
-   const result = instance.stop();
    console.log(result);
 
 

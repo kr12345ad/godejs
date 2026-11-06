@@ -31,6 +31,10 @@ type flagSpec struct {
 	takesNext bool // optional flags that consume a following non-flag (only -p)
 }
 
+// V8 sampling-profiler flags are intentionally absent. JavaScriptCore has no
+// CPU, heap, or tick sampling profiler, so these are not advertised or
+// recognized as if they could work.
+
 // rawFlags uses a trailing '=' for a required value and '?' for an optional
 // value. Everything else is boolean, including every --no- negation.
 var rawFlags = strings.Fields(`
@@ -60,10 +64,6 @@ check
 completion-bash
 config-file=
 conditions=
-cpu-prof
-cpu-prof-dir=
-cpu-prof-interval=
-cpu-prof-name=
 debug
 debug-port=
 diagnostic-dir=
@@ -112,10 +112,6 @@ force-context-aware
 force-fips?
 force-node-api-uncaught-exceptions-policy
 frozen-intrinsics
-heap-prof
-heap-prof-dir=
-heap-prof-interval=
-heap-prof-name=
 heapsnapshot-near-heap-limit=
 heapsnapshot-signal=
 help
@@ -168,8 +164,6 @@ preserve-symlinks
 preserve-symlinks-main
 print?
 process-timeout=
-prof
-prof-process
 redirect-warnings=
 report-compact
 report-dir=
@@ -234,7 +228,6 @@ trace-sync-io
 trace-tls
 trace-uncaught
 trace-warnings
-track-heap-objects
 unhandled-rejections=
 use-bundled-ca
 use-env-proxy
@@ -324,22 +317,11 @@ var unsupportedFlags = []struct {
 	{"inspect-port", "the V8 inspector protocol is unavailable on JavaScriptCore"},
 	{"inspect-publish-uid", "the V8 inspector protocol is unavailable on JavaScriptCore"},
 	{"disable-sigusr1", "the V8 inspector protocol is unavailable on JavaScriptCore"},
-	{"cpu-prof", "V8 CPU profiling is unavailable on JavaScriptCore"},
-	{"cpu-prof-dir", "V8 CPU profiling is unavailable on JavaScriptCore"},
-	{"cpu-prof-interval", "V8 CPU profiling is unavailable on JavaScriptCore"},
-	{"cpu-prof-name", "V8 CPU profiling is unavailable on JavaScriptCore"},
-	{"heap-prof", "V8 heap profiling is unavailable on JavaScriptCore"},
-	{"heap-prof-dir", "V8 heap profiling is unavailable on JavaScriptCore"},
-	{"heap-prof-interval", "V8 heap profiling is unavailable on JavaScriptCore"},
-	{"heap-prof-name", "V8 heap profiling is unavailable on JavaScriptCore"},
-	{"prof", "V8 tick profiling is unavailable on JavaScriptCore"},
-	{"prof-process", "V8 tick profiling is unavailable on JavaScriptCore"},
 	{"v8-options", "there is no V8 engine to configure"},
 	{"v8-pool-size", "there is no V8 engine to configure"},
 	{"jitless", "JavaScriptCore has no jitless mode"},
 	{"disallow-code-generation-from-strings", "JavaScriptCore cannot disable eval"},
 	{"interpreted-frames-native-stack", "JavaScriptCore has no V8 frame metadata"},
-	{"track-heap-objects", "JavaScriptCore has no V8 heap-object tracking"},
 	{"heapsnapshot-signal", "JavaScriptCore heap snapshots are not V8 snapshots"},
 	{"heapsnapshot-near-heap-limit", "JavaScriptCore heap snapshots are not V8 snapshots"},
 	{"build-snapshot", "V8 startup snapshots are unavailable on JavaScriptCore"},

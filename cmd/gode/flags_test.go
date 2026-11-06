@@ -1,6 +1,25 @@
 package main
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
+
+func TestV8SamplingProfilerFlagsAreUnknown(t *testing.T) {
+	for _, name := range []string{
+		"cpu-prof", "cpu-prof-dir", "cpu-prof-interval", "cpu-prof-name",
+		"heap-prof", "heap-prof-dir", "heap-prof-interval", "heap-prof-name",
+		"prof", "prof-process", "track-heap-objects",
+	} {
+		if _, _, ok := lookupLong(name); ok {
+			t.Errorf("--%s is still a recognized flag", name)
+		}
+		_, err := parseCLI([]string{"--" + name})
+		if err == nil || !strings.Contains(err.Error(), "bad option") {
+			t.Errorf("--%s: got error %v, want bad option", name, err)
+		}
+	}
+}
 
 func TestFormatForInputWithSourceDetectsEvalESM(t *testing.T) {
 	tests := []struct {

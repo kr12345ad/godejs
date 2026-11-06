@@ -43,7 +43,7 @@ Runtime and platforms
    GodeJS targets Node's JavaScript-visible APIs, not its engine internals.
    V8 flags, the inspector protocol, OpenSSL configuration, snapshots, SEA,
    permissions, VFS, FFI, the benchmark runner, and the Node test runner are
-   not available. See :doc:`cli` for the exact refusal list.
+   not available. See :doc:`cli` for what is accepted and what is refused.
 
 .. toctree::
    :hidden:

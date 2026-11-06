@@ -175,8 +175,7 @@ func Install(e *env.Env) js.Object {
 	if api, err := e.JS.Eval(extraPrelude, "[v8]"); err == nil && api.IsObject() {
 		obj := api.Object()
 		for _, key := range []string{
-			"CPUProfileHandle", "SyncCPUProfileHandle", "HeapProfileHandle",
-			"startCpuProfile", "startupSnapshot", "isBuildingSnapshot",
+			"startupSnapshot", "isBuildingSnapshot",
 			"addSerializeCallback", "addDeserializeCallback", "setDeserializeMainFunction",
 			"createHook", "before", "after", "onBefore", "onAfter", "onInit",
 			"onSettled", "settled", "init", "setHeapSnapshotNearHeapLimit",
@@ -553,15 +552,6 @@ func argType(v js.Value) string {
 // Implemented lists the tracked Node 24 API entries this package provides.
 func Implemented() []string {
 	return []string{
-		"v8.CPUProfileHandle",
-		"v8.CPUProfileHandle#[Symbol.asyncDispose]",
-		"v8.CPUProfileHandle#stop",
-		"v8.HeapProfileHandle",
-		"v8.HeapProfileHandle#[Symbol.asyncDispose]",
-		"v8.HeapProfileHandle#stop",
-		"v8.SyncCPUProfileHandle",
-		"v8.SyncCPUProfileHandle#[Symbol.dispose]",
-		"v8.SyncCPUProfileHandle#stop",
 		"v8.Deserializer",
 		"v8.Deserializer#_readHostObject",
 		"v8.Deserializer#getWireFormatVersion",
@@ -616,7 +606,6 @@ func Implemented() []string {
 		"v8.setFlagsFromString",
 		"v8.setHeapSnapshotNearHeapLimit",
 		"v8.settled",
-		"v8.startCpuProfile",
 		"v8.stopCoverage",
 		"v8.takeCoverage",
 		"v8.writeHeapSnapshot",
@@ -1146,8 +1135,8 @@ const serializerPrelude = `(function () {
   };
 })()`
 
-// extraPrelude holds the profile and startup-snapshot shims, which only need
-// declared shapes on a runtime that is not V8.
+// extraPrelude holds the startup-snapshot and promise-hook shims, which only
+// need declared shapes on a runtime that is not V8.
 const extraPrelude = `(function () {
   'use strict';
 
@@ -1156,76 +1145,6 @@ const extraPrelude = `(function () {
     err.code = 'ERR_NOT_BUILDING_SNAPSHOT';
     return err;
   }
-
-  function cpuProfileJson(startedAt) {
-    return JSON.stringify({
-      nodes: [],
-      startTime: startedAt,
-      endTime: Date.now(),
-      samples: [],
-      timeDeltas: []
-    });
-  }
-
-  // Node 24's v8.startCpuProfile returns a SyncCPUProfileHandle; the async
-  // CPU and heap handles live in the workers API but are part of the same
-  // documented v8 surface.
-  class SyncCPUProfileHandle {
-    constructor() {
-      this._startedAt = Date.now();
-      this._stopped = false;
-    }
-    stop() {
-      if (this._stopped) return undefined;
-      this._stopped = true;
-      return cpuProfileJson(this._startedAt);
-    }
-  }
-  if (typeof Symbol === 'function' && typeof Symbol.dispose === 'symbol') {
-    SyncCPUProfileHandle.prototype[Symbol.dispose] = function () { this.stop(); };
-  }
-
-  class CPUProfileHandle {
-    constructor() {
-      this._startedAt = Date.now();
-      this._stopped = false;
-    }
-    stop() {
-      if (this._stopped) return Promise.resolve(undefined);
-      this._stopped = true;
-      return Promise.resolve(cpuProfileJson(this._startedAt));
-    }
-  }
-  if (typeof Symbol === 'function' && typeof Symbol.asyncDispose === 'symbol') {
-    CPUProfileHandle.prototype[Symbol.asyncDispose] = function () { return this.stop(); };
-  }
-
-  class HeapProfileHandle {
-    constructor() {
-      this._startedAt = Date.now();
-      this._stopped = false;
-    }
-    stop() {
-      if (this._stopped) return Promise.resolve(undefined);
-      this._stopped = true;
-      return Promise.resolve(JSON.stringify({
-        head: {
-          callFrame: { functionName: '', scriptId: '0', url: '', lineNumber: -1, columnNumber: -1 },
-          selfSize: 0,
-          id: 1,
-          children: []
-        },
-        samples: [],
-        startTime: this._startedAt,
-        endTime: Date.now()
-      }));
-    }
-  }
-  if (typeof Symbol === 'function' && typeof Symbol.asyncDispose === 'symbol') {
-    HeapProfileHandle.prototype[Symbol.asyncDispose] = function () { return this.stop(); };
-  }
-
-  function startCpuProfile() { return new SyncCPUProfileHandle(); }
 
   function isBuildingSnapshot() { return false; }
 
@@ -1258,10 +1177,6 @@ const extraPrelude = `(function () {
   };
 
   return {
-    CPUProfileHandle: CPUProfileHandle,
-    SyncCPUProfileHandle: SyncCPUProfileHandle,
-    HeapProfileHandle: HeapProfileHandle,
-    startCpuProfile: startCpuProfile,
     startupSnapshot: startupSnapshot,
     isBuildingSnapshot: isBuildingSnapshot,
     addSerializeCallback: forbid,

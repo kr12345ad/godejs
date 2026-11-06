@@ -1,9 +1,13 @@
 Command-line interface
 ======================
 
-``gode`` accepts the Node.js 24 command line. Every flag in ``node --help`` is
-recognized with Node's arity, aliases, ``--no-`` negations and ``--`` end of
-options. Use ``gode --help`` for the complete list.
+``gode`` accepts the Node.js 24 command line for flags that JavaScriptCore can
+serve. Node's arity, aliases, ``--no-`` negations and ``--`` end of options are
+preserved. V8 sampling-profiler flags (``--cpu-prof*``, ``--heap-prof*``,
+``--prof``, ``--prof-process`` and ``--track-heap-objects``) are not
+recognized; JavaScriptCore has no equivalent. Other engine-specific flags are
+recognized and refused with an explanation. Use ``gode --help`` for the
+complete list.
 
 .. code-block:: sh
 
@@ -134,9 +138,8 @@ Explicitly refused
 Flags whose behavior would otherwise be silently wrong exit with status 9 and
 a one-line explanation. They are never ignored. The categories are:
 
-* V8 engine control and profiling: ``--jitless``, ``--v8-options``,
-  ``--v8-pool-size``, ``--cpu-prof*``, ``--heap-prof*``, ``--prof``,
-  ``--prof-process``, ``--track-heap-objects``, ``--heapsnapshot-*``,
+* V8 engine control and heap snapshots: ``--jitless``, ``--v8-options``,
+  ``--v8-pool-size``, ``--heapsnapshot-*``,
   ``--interpreted-frames-native-stack``.
 * Inspector protocol: ``--inspect*``, ``--debug-port``, ``--disable-sigusr1``,
   ``--experimental-*-inspection``.

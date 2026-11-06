@@ -202,13 +202,16 @@ func TestSerializeRoundTripsValues(t *testing.T) {
 	})()`), "buffer must be a TypedArray or a DataView")
 }
 
-func TestStartCpuProfile(t *testing.T) {
+func TestSamplingProfilerAPIsAreAbsent(t *testing.T) {
 	e := newEnv(t)
 	jstest.Equal(t, jstest.Str(t, e, `(function () {
-		var handle = v8.startCpuProfile();
-		var first = handle.stop();
-		return typeof first === 'string' && first.length > 0 && handle.stop() === undefined;
-	})()`), "true")
+		return [
+			typeof v8.startCpuProfile,
+			typeof v8.CPUProfileHandle,
+			typeof v8.SyncCPUProfileHandle,
+			typeof v8.HeapProfileHandle
+		].join(',');
+	})()`), "undefined,undefined,undefined,undefined")
 }
 
 func TestStartupSnapshotIsUnavailable(t *testing.T) {

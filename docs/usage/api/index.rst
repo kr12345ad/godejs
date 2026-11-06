@@ -87,7 +87,7 @@ Crypto, performance, tracing, terminal, and host integration.
   (34 callables)
 * :doc:`punycode <punycode>` — Unicode and ASCII domain-name conversion. (6 callables)
 * :doc:`sea <sea>` — Single executable application helpers. (4 callables)
-* :doc:`v8 <v8>` — V8-compatible inspection and serialization helpers. (67 callables)
+* :doc:`v8 <v8>` — V8-compatible inspection and serialization helpers. (60 callables)
 * :doc:`wasi <wasi>` — WASI preview 1 applications. (5 callables)
 * :doc:`zlib <zlib>` — Compress and decompress streams and buffers. (81 callables)
 
